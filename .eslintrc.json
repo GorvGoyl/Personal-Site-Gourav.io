@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "promise",
+    "jsx-a11y"
+  ],
+
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:promise/recommended",
+    "plugin:react/recommended",
+    "plugin:import/warnings",
+    "plugin:import/errors",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {}
+}
