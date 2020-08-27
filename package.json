@@ -3,9 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "//start": "starts Next.js in development mode",
+    "start": "next dev",
+    "start:local": "dotenv -e .env.local -- next dev",
+    "start:debug": "dotenv -e .env.local -- cross-env NODE_OPTIONS='--inspect' next dev",
+    "//:prod": "starts Next.js in production server",
+    "start:prod": "next start",
+    "deploy": "npm run tsc && dotenv -e .env.prod npm run export && firebase deploy -P prod --only hosting",
+    "//": "//internal commands//",
+    "//dont use NODE_ENV": "https://github.com/vercel/next.js/blob/master/errors/non-standard-node-env.md",
     "build": "next build",
-    "start": "next start"
+    "export": "next build && next export",
+    "deploy-lint": "npm run lint && npm run tsc && npm run export && firebase deploy --only hosting",
+    "tsc": "tsc",
+    "lint": "eslint ./ -c .eslintrc.json --ext .js,.jsx,.ts,.tsx",
+    "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss"
   },
   "dependencies": {
     "next": "9.5.2",
