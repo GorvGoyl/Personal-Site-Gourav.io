@@ -36,5 +36,14 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".ts", ".tsx", ".jsx"] }
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-console": "off"
+  }
 }
