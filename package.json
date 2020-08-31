@@ -5,7 +5,6 @@
   "scripts": {
     "//start": "starts Next.js in development mode",
     "start": "next dev",
-    "start:local": "next dev",
     "start:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "//:prod": "starts Next.js in production server",
     "start:prod": "next start",
