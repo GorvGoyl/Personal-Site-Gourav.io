@@ -6,7 +6,7 @@ export default function Home(): JSX.Element {
   return (
     <div>
       <Header title="Gourav Goyal" />
-      <main className=" my-20 mx-auto max-w-screen-md">
+      <main className=" py-20 px-5 mx-auto max-w-screen-md">
         <div>
           <div className="flex items-center">
             <img
@@ -21,9 +21,9 @@ export default function Home(): JSX.Element {
 
           <div className="prose prose-lg">
             <nav className="flex justify-center space-x-20">
-              <Link href="https://twitter.com/GorvGoyl">
+              {/* <Link href="https://twitter.com/GorvGoyl">
                 <a target="blank">@GorvGoyl</a>
-              </Link>
+              </Link> */}
               {/* <Link href="/blog">
                 <a>Blog</a>
               </Link>
@@ -75,7 +75,7 @@ export default function Home(): JSX.Element {
               </ul>
             </div>
           </div>
-          <div className="twitter mt-12">
+          <div className="twitter mt-12 justify-center flex">
             <a
               href="https://twitter.com/GorvGoyl?ref_src=twsrc%5Etfw"
               className="twitter-follow-button"
