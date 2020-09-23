@@ -3,7 +3,4 @@
 
 /* Write you own custom component styles here */
 
-h1 {
-  @apply text-4xl;
-}
 @tailwind utilities;

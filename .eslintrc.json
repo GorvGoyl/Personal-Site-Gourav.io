@@ -37,11 +37,13 @@
     "sourceType": "module"
   },
   "rules": {
+    "jsx-a11y/anchor-is-valid": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".ts", ".tsx", ".jsx"] }
     ],
+    "react/no-unescaped-entities": "warn",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "no-console": "off"
