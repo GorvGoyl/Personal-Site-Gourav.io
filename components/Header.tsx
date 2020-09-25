@@ -19,14 +19,14 @@ export default function Header(Props: { title: string }): JSX.Element {
       <meta property="og:url" content={site} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={desc} />
-      <meta property="og:image" content="" />
+      <meta property="og:image" content="/og.jpg" />
 
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={site} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={desc} />
-      <meta property="twitter:image" content="" />
+      <meta property="twitter:image" content="/og.jpg" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
