@@ -36,6 +36,7 @@ export default function Header(Props: { title: string }): JSX.Element {
       <meta property="twitter:image" content={image} />
       <meta name="twitter:site" content={handle} />
       <meta name="twitter:creator" content={handle} />
+      {/* icons */}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -53,12 +54,12 @@ export default function Header(Props: { title: string }): JSX.Element {
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#2d89ef" />
       <meta name="theme-color" content="#ffffff" />
       <link rel="canonical" href={site} />
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+      <link rel="manifest" href="/site.webmanifest" />
       <meta name="robots" content="index,follow" />
       <meta name="googlebot" content="index,follow" />
     </Head>
