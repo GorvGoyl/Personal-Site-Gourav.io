@@ -44,12 +44,24 @@ export default function Home(): JSX.Element {
               <ul>
                 <li>
                   <p>
+                    <Link href="https://gourav.io/chrome">
+                      <a target="blank">Notion Boost</a>
+                    </Link>{" "}
+                    <br />
+                    Chrome & Firefox browser extension for Notion.so to add
+                    features like outline (table of contents), bolder text, and
+                    more.
+                  </p>
+                </li>
+                <li>
+                  <p>
                     <Link href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar">
                       <a target="blank">Shortcut Menubar</a>
                     </Link>{" "}
-                    VSCode Extension <br />
-                    Add useful buttons like beautify, open files, undo, redo,
-                    etc to the editor in Visual Studio Code.
+                    <br />
+                    VSCode Extension which adds useful buttons like beautify,
+                    open files, undo, redo, etc to the editor in Visual Studio
+                    Code.
                   </p>
                 </li>
                 <li>
@@ -57,14 +69,14 @@ export default function Home(): JSX.Element {
                     <Link href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en">
                       <a target="blank">Popup Notes</a>
                     </Link>{" "}
-                    Chrome Extension <br />
-                    Lightweight extension to take quick notes without leaving
-                    current tab.
+                    <br />
+                    Lightweight Chrome extension to take quick notes without
+                    leaving current tab.
                   </p>
                 </li>
                 <li>
                   <p>
-                    <Link href="https://Gourav.io">
+                    <Link href="https://jerrygoyal-firebase-project.web.app/">
                       <a target="blank">Material Design Portfolio</a>
                     </Link>{" "}
                     <br />
