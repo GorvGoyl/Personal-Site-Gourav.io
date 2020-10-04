@@ -37,7 +37,7 @@ export default function Header(Props: { title: string }): JSX.Element {
       <meta property="twitter:image" content={image} />
       <meta name="twitter:site" content={handle} />
       <meta name="twitter:creator" content={handle} />
-      {/* icons */}
+      {/* icon */}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
