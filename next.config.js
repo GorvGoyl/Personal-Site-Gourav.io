@@ -15,7 +15,7 @@ module.exports = {
       {
         source: "/firefox",
         destination:
-          "https://addons.mozilla.org/en-US/developers/addon/notion-boost/",
+          "https://addons.mozilla.org/en-US/firefox/addon/notion-boost/",
         permanent: true,
       },
     ];
