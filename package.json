@@ -8,9 +8,9 @@
     "start:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "//prod": "starts Next.js in production server",
     "start:prod": "next start",
-    "deploy": "npm run tsc && dotenv -e .env.prod npm run export && firebase deploy -P prod --only hosting",
     "//": "//-internal commands-//",
     "//dont use NODE_ENV": "https://github.com/vercel/next.js/blob/master/errors/non-standard-node-env.md",
+    "deploy:old": "npm run tsc && dotenv -e .env.prod npm run export && firebase deploy -P prod --only hosting",
     "build": "next build",
     "export": "next build && next export",
     "deploy-lint": "npm run lint && npm run tsc && npm run export && firebase deploy --only hosting",
@@ -19,18 +19,19 @@
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.2.0",
-    "next": "10.0.1",
+    "@tailwindcss/typography": "^0.3.1",
+    "next": "^10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.8",
-    "@types/react": "^16.9.56",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
-    "eslint": "^7.13.0",
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "autoprefixer": "^10.0.4",
+    "eslint": "^7.14.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.15.0",
@@ -39,6 +40,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "typescript": "^4.0.5"
+    "postcss": "^8.1.10",
+    "typescript": "^4.1.2"
   }
 }

@@ -10,19 +10,35 @@ module.exports = {
     ],
   },
   theme: {
-    typography: {
-      default: {
-        css: {
-          // a: {
-          //   textDecoration: "none",
-          //   "&:hover": {
-          //     textDecoration: "underline",
-          //   },
-          // },
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            // a: {
+            //   textDecoration: "none",
+            //   "&:hover": {
+            //     textDecoration: "underline",
+            //   },
+            // },
+          },
         },
       },
     },
   },
+  // theme: {
+  //   typography: {
+  //     default: {
+  //       css: {
+  //         // a: {
+  //         //   textDecoration: "none",
+  //         //   "&:hover": {
+  //         //     textDecoration: "underline",
+  //         //   },
+  //         // },
+  //       },
+  //     },
+  //   },
+  // },
   variants: {},
   // eslint-disable-next-line global-require
   plugins: [require("@tailwindcss/typography")],
