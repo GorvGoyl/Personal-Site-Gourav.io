@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
               <p className="lead">
                 Browser extension to make Notion more productive
               </p>
-              <nav className="flex space-x-20">
+              <nav className="flex space-x-12">
                 <a
                   href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
                   target="_black"
