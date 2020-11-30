@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const defaultProps = {
   title: "Gourav Goyal",
@@ -13,12 +14,13 @@ export default function Header(Props: {
 
   const site = "https://gourav.io";
   const image = `${site}/og.jpg`;
+  const canURL = site + useRouter().pathname;
   const handle = "@GorvGoyl";
 
   return (
     <Head>
       <title>{title}</title>
-      <meta name="author" content={title} />
+      <meta name="author" content={defaultProps.title} />
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="title" content={title} />
@@ -32,14 +34,14 @@ export default function Header(Props: {
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
       <meta name="og:site_name" content={title} />
-      <meta property="og:url" content={site} />
+      <meta property="og:url" content={canURL} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={desc} />
       <meta property="og:image" content={image} />
       {/* <!-- Twitter --> */}
       {/* content="summary" */}
       <meta property="twitter:card" content="summary" />
-      <meta property="twitter:url" content={site} />
+      <meta property="twitter:url" content={canURL} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={desc} />
       <meta property="twitter:image" content={image} />
@@ -66,7 +68,7 @@ export default function Header(Props: {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#2d89ef" />
       <meta name="theme-color" content="#ffffff" />
-      <link rel="canonical" href={site} />
+      <link rel="canonical" href={canURL} />
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="robots" content="index,follow" />
