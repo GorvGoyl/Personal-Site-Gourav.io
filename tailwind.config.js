@@ -1,4 +1,6 @@
 module.exports = {
+  // to enable overriding tw-typography styles
+  important: true,
   future: {
     removeDeprecatedGapUtilities: true,
   },

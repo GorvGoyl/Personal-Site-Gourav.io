@@ -1,12 +1,20 @@
 import Head from "next/head";
 
-export default function Header(Props: { title: string }): JSX.Element {
-  const { title } = Props;
-  const desc =
-    "I'm a tech founder, full-stack developer, and a fun guy to hang around with.";
+const defaultProps = {
+  title: "Gourav Goyal",
+  desc:
+    "I'm a tech founder, full-stack developer, and a fun guy to hang around with.",
+};
+export default function Header(Props: {
+  title?: string;
+  desc?: string;
+}): JSX.Element {
+  const { title = defaultProps.title, desc = defaultProps.desc } = Props;
+
   const site = "https://gourav.io";
   const image = `${site}/og.jpg`;
   const handle = "@GorvGoyl";
+
   return (
     <Head>
       <title>{title}</title>

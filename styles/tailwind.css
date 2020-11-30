@@ -2,5 +2,22 @@
 @tailwind components;
 
 /* Write you own custom component styles here */
+.twitter-btn {
+  border-radius: 4px;
+  padding: 1px 10px 1px 9px;
+
+  background-color: #1b95e0;
+  color: #fff;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 26px;
+}
+.twitter-btn:active,
+.twitter-btn:focus,
+.twitter-btn:hover {
+  background-color: #0c7abf;
+}
 
 @tailwind utilities;

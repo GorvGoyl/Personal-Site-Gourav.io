@@ -5,7 +5,7 @@ import Header from "../components/Header";
 export default function Home(): JSX.Element {
   return (
     <div>
-      <Header title="Gourav Goyal" />
+      <Header />
       <main className=" py-20 px-5 mx-auto max-w-screen-md">
         <div>
           <div className="flex items-center">
@@ -37,7 +37,7 @@ export default function Home(): JSX.Element {
               years, I've been building products that are being used by
               thousands of people. I love to build new products, create great
               user experiences, and contribute to the open-source software
-              community.
+              community. I welcome opportunities at hey@gourav.io
             </p>
             <div>
               <h2>Side Projects</h2>
@@ -45,7 +45,9 @@ export default function Home(): JSX.Element {
                 <li>
                   <p>
                     <Link href="https://gourav.io/chrome">
-                      <a target="blank">Notion Boost</a>
+                      <a target="blank" title="Notion Boost browser extension">
+                        Notion Boost
+                      </a>
                     </Link>{" "}
                     <br />
                     Chrome & Firefox browser extension for Notion.so to add
@@ -56,7 +58,12 @@ export default function Home(): JSX.Element {
                 <li>
                   <p>
                     <Link href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar">
-                      <a target="blank">Shortcut Menubar</a>
+                      <a
+                        target="blank"
+                        title="Shortcut Menubar VSCode extension"
+                      >
+                        Shortcut Menubar
+                      </a>
                     </Link>{" "}
                     <br />
                     VSCode Extension which adds useful buttons like beautify,
@@ -67,7 +74,9 @@ export default function Home(): JSX.Element {
                 <li>
                   <p>
                     <Link href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en">
-                      <a target="blank">Popup Notes</a>
+                      <a target="blank" title="Popup Notes chrome extension">
+                        Popup Notes
+                      </a>
                     </Link>{" "}
                     <br />
                     Lightweight Chrome extension to take quick notes without
@@ -77,17 +86,40 @@ export default function Home(): JSX.Element {
                 <li>
                   <p>
                     <Link href="https://jerrygoyal-firebase-project.web.app/">
-                      <a target="blank">Material Design Portfolio</a>
+                      <a
+                        target="blank"
+                        title="Material design portfolio website"
+                      >
+                        Portfolio site
+                      </a>
                     </Link>{" "}
                     <br />
                     My old portfolio site built around material guidelines &
-                    responsiveness without using any css framework.
+                    responsiveness without using any css framework or library.
                   </p>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="twitter mt-12 justify-center flex">
+          <div className="twitter mt-12  justify-center flex">
+            <div>
+              <a
+                href="https://twitter.com/intent/follow?user_id=325435736"
+                target="_blank"
+                className="twitter-btn"
+                title="Follow @GorvGoyl on Twitter"
+              >
+                <img
+                  src="/twitter-light.svg"
+                  className="inline w-4 m-0 mr-1"
+                  alt="Twitter"
+                />
+                Follow @GorvGoyl
+              </a>
+            </div>
+          </div>
+          {/* disable below twitter widget */}
+          {/* <div className="mt-12 justify-center flex">
             <a
               href="https://twitter.com/GorvGoyl?ref_src=twsrc%5Etfw"
               className="twitter-follow-button"
@@ -102,7 +134,7 @@ export default function Home(): JSX.Element {
               src="https://platform.twitter.com/widgets.js"
               charSet="utf-8"
             />
-          </div>
+          </div> */}
         </div>
       </main>
 
