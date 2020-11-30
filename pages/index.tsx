@@ -44,10 +44,8 @@ export default function Home(): JSX.Element {
               <ul>
                 <li>
                   <p>
-                    <Link href="https://gourav.io/chrome">
-                      <a target="blank" title="Notion Boost browser extension">
-                        Notion Boost
-                      </a>
+                    <Link href="/notion-boost/whats-new">
+                      <a title="Notion Boost browser extension">Notion Boost</a>
                     </Link>{" "}
                     <br />
                     Chrome & Firefox browser extension for Notion.so to add
@@ -57,14 +55,13 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
-                    <Link href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar">
-                      <a
-                        target="blank"
-                        title="Shortcut Menubar VSCode extension"
-                      >
-                        Shortcut Menubar
-                      </a>
-                    </Link>{" "}
+                    <a
+                      href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar"
+                      target="blank"
+                      title="Shortcut Menubar VSCode extension"
+                    >
+                      Shortcut Menubar
+                    </a>{" "}
                     <br />
                     VSCode Extension which adds useful buttons like beautify,
                     open files, undo, redo, etc to the editor in Visual Studio
@@ -73,11 +70,13 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
-                    <Link href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en">
-                      <a target="blank" title="Popup Notes chrome extension">
-                        Popup Notes
-                      </a>
-                    </Link>{" "}
+                    <a
+                      href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en"
+                      target="blank"
+                      title="Popup Notes chrome extension"
+                    >
+                      Popup Notes
+                    </a>{" "}
                     <br />
                     Lightweight Chrome extension to take quick notes without
                     leaving current tab.
@@ -85,14 +84,13 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
-                    <Link href="https://jerrygoyal-firebase-project.web.app/">
-                      <a
-                        target="blank"
-                        title="Material design portfolio website"
-                      >
-                        Portfolio site
-                      </a>
-                    </Link>{" "}
+                    <a
+                      href="https://jerrygoyal-firebase-project.web.app/"
+                      target="blank"
+                      title="Material design portfolio website"
+                    >
+                      Portfolio site
+                    </a>{" "}
                     <br />
                     My old portfolio site built around material guidelines &
                     responsiveness without using any css framework or library.

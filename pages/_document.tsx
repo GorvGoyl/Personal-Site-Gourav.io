@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* enable only for production : Global Site Tag (gtag.js) - Google Analytics */}
+          {/* enable analytics script only for production */}
           {isProduction && (
             <>
               <script
