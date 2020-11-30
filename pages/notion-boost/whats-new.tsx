@@ -88,7 +88,7 @@ export default function Home(): JSX.Element {
                 <span>
                   {" "}
                   <a
-                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A//gourav.io/notion-boost/whats-new"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgourav.io%2Fnotion-boost%2Fwhats-new"
                     target="_blank"
                     title="Share on Facebook"
                   >
