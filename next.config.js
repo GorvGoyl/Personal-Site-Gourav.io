@@ -13,6 +13,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: "/notion-boost",
+        destination: "/notion-boost/whats-new",
+        permanent: true,
+      },
+      {
         source: "/firefox",
         destination:
           "https://addons.mozilla.org/en-US/firefox/addon/notion-boost/",
