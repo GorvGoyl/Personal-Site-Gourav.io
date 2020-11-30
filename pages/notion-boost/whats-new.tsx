@@ -7,7 +7,8 @@ export default function Home(): JSX.Element {
     <div>
       <Header
         title="Notion Boost - What's new?"
-        desc="Make Notion more productive"
+        desc="Browser extension to make Notion more productive"
+        imgPath="/nb-meta.png"
       />
       <main className="py-20 px-5 mx-auto max-w-screen-md">
         <div className="prose prose-lg">

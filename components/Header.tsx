@@ -5,15 +5,21 @@ const defaultProps = {
   title: "Gourav Goyal",
   desc:
     "I'm a tech founder, full-stack developer, and a fun guy to hang around with.",
+  imgPath: "/og.jpg",
 };
 export default function Header(Props: {
   title?: string;
   desc?: string;
+  imgPath?: string;
 }): JSX.Element {
-  const { title = defaultProps.title, desc = defaultProps.desc } = Props;
+  const {
+    title = defaultProps.title,
+    desc = defaultProps.desc,
+    imgPath = defaultProps.imgPath,
+  } = Props;
 
   const site = "https://gourav.io";
-  const image = `${site}/og.jpg`;
+  const imageURL = site + imgPath;
   const canURL = site + useRouter().pathname;
   const handle = "@GorvGoyl";
 
@@ -26,25 +32,25 @@ export default function Header(Props: {
       <meta name="title" content={title} />
       <meta name="description" content={desc} />
       <meta httpEquiv="content-language" content="en-us" />
-      <meta name="image" content={image} />
+      <meta name="image" content={imageURL} />
       {/* <!-- Schema.org for Google --> */}
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={desc} />
-      <meta itemProp="image" content={image} />
+      <meta itemProp="image" content={imageURL} />
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
       <meta name="og:site_name" content={title} />
       <meta property="og:url" content={canURL} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={desc} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={imageURL} />
       {/* <!-- Twitter --> */}
       {/* content="summary" */}
       <meta property="twitter:card" content="summary" />
       <meta property="twitter:url" content={canURL} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={desc} />
-      <meta property="twitter:image" content={image} />
+      <meta property="twitter:image" content={imageURL} />
       <meta name="twitter:site" content={handle} />
       <meta name="twitter:creator" content={handle} />
       {/* icons */}
