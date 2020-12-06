@@ -42,7 +42,6 @@ export default function Home(): JSX.Element {
                 </a>
                 <a
                   href="https://github.com/GorvGoyl/Notion-Boost-browser-extension#-currently-added-features"
-                  target="_black"
                   title="View all features"
                 >
                   Features
