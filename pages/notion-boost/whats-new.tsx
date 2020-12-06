@@ -41,6 +41,13 @@ export default function Home(): JSX.Element {
                   Firefox
                 </a>
                 <a
+                  href="https://github.com/GorvGoyl/Notion-Boost-browser-extension#-currently-added-features"
+                  target="_black"
+                  title="View all features"
+                >
+                  Features
+                </a>
+                <a
                   href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
                   target="_black"
                   title="View source code on Github"
