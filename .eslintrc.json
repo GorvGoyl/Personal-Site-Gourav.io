@@ -37,6 +37,10 @@
     "sourceType": "module"
   },
   "rules": {
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-unsafe-assignment": "warn",
+    "@typescript-eslint/no-unsafe-call": "warn",
+    "@typescript-eslint/require-await": "warn",
     "react/jsx-no-target-blank": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "react/react-in-jsx-scope": "off",
