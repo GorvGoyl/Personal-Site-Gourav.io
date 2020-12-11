@@ -19,6 +19,7 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "airbnb-typescript",
     "airbnb/hooks",
+    "plugin:mdx/recommended",
     "plugin:promise/recommended",
     "plugin:react/recommended",
     "plugin:import/warnings",
@@ -37,6 +38,8 @@
     "sourceType": "module"
   },
   "rules": {
+    "@typescript-eslint/lines-between-class-members": "off",
+    "mdx/no-unescaped-entities": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-unsafe-assignment": "warn",
     "@typescript-eslint/no-unsafe-call": "warn",
