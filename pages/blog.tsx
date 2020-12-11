@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getAllPosts, PostType } from "../lib/getPost";
-import Header from "../components/header";
+import Header from "../components/Header";
 import { Container, LayoutType } from "../components/layout";
 import Navbar from "../components/navbar";
 

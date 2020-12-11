@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import { Container } from "../../components/layout";
 
 export default function Home(): JSX.Element {
