@@ -1,12 +1,12 @@
-import Head from "next/head";
 import Link from "next/link";
-import Header from "../components/Header";
+import Header from "../components/header";
+import { Container } from "../components/layout";
 
 export default function Home(): JSX.Element {
   return (
     <div>
       <Header />
-      <main className=" py-20 px-5 mx-auto max-w-screen-md">
+      <Container>
         <div>
           <div className="flex items-center">
             <img
@@ -134,9 +134,7 @@ export default function Home(): JSX.Element {
             />
           </div> */}
         </div>
-      </main>
-
-      <footer />
+      </Container>
     </div>
   );
 }
