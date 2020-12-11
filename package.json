@@ -8,6 +8,7 @@
     "start:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "//prod": "starts Next.js in production server",
     "start:prod": "next start",
+    "start:vercel": "vercel dev",
     "//": "//-internal commands-//",
     "//dont use NODE_ENV": "https://github.com/vercel/next.js/blob/master/errors/non-standard-node-env.md",
     "deploy:old": "npm run tsc && dotenv -e .env.prod npm run export && firebase deploy -P prod --only hosting",
