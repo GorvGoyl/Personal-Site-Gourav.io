@@ -3,8 +3,7 @@ import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from "../lib/gtag";
-
-const isProduction = process.env.NODE_ENV === "production";
+import { isProd } from "../lib/utils";
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
@@ -12,7 +11,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
       /* invoke analytics function only for production */
-      if (isProduction) gtag.pageview(url);
+      if (isProd) gtag.pageview(url);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {

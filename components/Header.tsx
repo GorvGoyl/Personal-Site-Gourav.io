@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { isProd } from "../lib/utils";
 
 const defaultProps = {
   title: "Gourav Goyal",
@@ -12,14 +13,13 @@ export default function Header(Props: {
   desc?: string;
   imgPath?: string;
 }): JSX.Element {
-  const {
-    title = defaultProps.title,
-    desc = defaultProps.desc,
-    imgPath = defaultProps.imgPath,
-  } = Props;
+  const title = Props.title || defaultProps.title;
+  const desc = Props.desc || defaultProps.desc;
+  const imgPath = Props.imgPath || defaultProps.imgPath;
 
-  const site = "https://gourav.io";
-  const imageURL = site + imgPath;
+  const local = "http://localhost:3000";
+  const site = isProd ? "https://gourav.io" : local;
+  const imageURL = `${site}${imgPath}`;
   const canURL = site + useRouter().pathname;
   const handle = "@GorvGoyl";
 

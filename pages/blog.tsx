@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import { getAllPosts, PostType } from "../lib/getPost";
+import { getAllPosts, FrontMatter } from "../lib/getPost";
 import Header from "../components/Header";
 import { Container, LayoutType } from "../components/layout";
 import Navbar from "../components/navbar";
 
-export default function Blog(Props: { allPosts: PostType[] }): JSX.Element {
+export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
   return (
     <>
       <Header title="Blog - Gourav Goyal" />

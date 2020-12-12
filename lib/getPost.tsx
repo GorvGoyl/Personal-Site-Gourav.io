@@ -3,11 +3,14 @@ import { join } from "path";
 import matter from "gray-matter";
 import { LayoutType } from "../components/layout";
 
-export class PostType {
+export class FrontMatter {
   date: string;
   title: string;
+  desc: string;
   layout: LayoutType;
+  // below ones are auto retrieve at build time
   slug?: string;
+  og?: string;
 }
 
 const postsDirectory = join(process.cwd(), "pages", "blog");
@@ -16,24 +19,27 @@ export function getPostSlugs(): string[] {
   return fs.readdirSync(postsDirectory).filter((slug) => !slug.startsWith("."));
 }
 
-export function getPostBySlug(slug: string, fields: string[]): PostType {
+export function getPostBySlug(slug: string, fields: string[]): FrontMatter {
   const pathToPost = join(postsDirectory, slug);
   const files = fs.readdirSync(pathToPost);
   const indexFile = files.find(
     (file) => file.substr(0, file.lastIndexOf(".")) === "index"
   );
 
+  // const ogImg =
+  //   files.find((file) => file.substr(0, file.lastIndexOf(".")) === "og") || "";
   const fullPath = join(pathToPost, indexFile);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data /* content */ } = matter(fileContents);
+  const { data: frontMatter /* content */ } = matter(fileContents);
 
-  const post = data as PostType;
+  const post = frontMatter as FrontMatter;
   post.slug = slug;
+  // post.og = ogImg;
 
   return post;
 }
 
-export function getAllPosts(fields: string[]): PostType[] {
+export function getAllPosts(fields: string[]): FrontMatter[] {
   const slugs = getPostSlugs();
   const posts = slugs.map((slug) => getPostBySlug(slug, fields));
   // sort posts by date in descending order

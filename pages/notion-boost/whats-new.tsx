@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Link from "next/link";
 import Header from "../../components/Header";
 import { Container } from "../../components/layout";
 

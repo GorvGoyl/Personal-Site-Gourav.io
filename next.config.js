@@ -1,6 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/require-await */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 const withMdxEnhanced = require("next-mdx-enhanced");
-// const remarkPrism = require("remark-prism");
 const rehypePrism = require("@mapbox/rehype-prism");
+// const remarkPrism = require("remark-prism");
+
+// const { getOG } = require("./lib/getPost.tsx");
+
 // const mdx = withMdxEnhanced({
 //   defaultLayout: "layouts",
 //   fileExtensions: ["mdx", "md"],
@@ -11,31 +22,28 @@ const rehypePrism = require("@mapbox/rehype-prism");
 //   // },
 // });
 
-const redirects = async () => {
-  return [
-    {
-      source: "/chrome",
-      destination:
-        "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd",
-      permanent: true,
-    },
-    {
-      source: "/notion-boost",
-      destination: "/notion-boost/whats-new",
-      permanent: true,
-    },
-    {
-      source: "/firefox",
-      destination:
-        "https://addons.mozilla.org/en-US/firefox/addon/notion-boost/",
-      permanent: true,
-    },
-  ];
-};
+const redirects = async () => [
+  {
+    source: "/chrome",
+    destination:
+      "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd",
+    permanent: true,
+  },
+  {
+    source: "/notion-boost",
+    destination: "/notion-boost/whats-new",
+    permanent: true,
+  },
+  {
+    source: "/firefox",
+    destination: "https://addons.mozilla.org/en-US/firefox/addon/notion-boost/",
+    permanent: true,
+  },
+];
 
 module.exports = withMdxEnhanced({
   layoutPath: "layouts", // layout folder
-  defaultLayout: true, //set layouts/index.tsx as default for mdx file lacking frontmatter 'layout'
+  defaultLayout: true, // set layouts/index.tsx as default for mdx file lacking frontmatter 'layout'
   fileExtensions: ["mdx", "md"],
   remarkPlugins: [
     // require("remark-autolink-headings"),
@@ -48,10 +56,13 @@ module.exports = withMdxEnhanced({
     require("rehype-autolink-headings"),
     rehypePrism,
   ],
-  usesSrc: false, //checks for /pages folder
+  usesSrc: false, // checks for /pages folder
   // extendFrontMatter: {
-  //   process: (mdxContent, frontMatter) => {},
-  //   phase: "prebuild|loader|both",
+  //   process: (mdxContent, frontMatter) => {
+  //     const t = "dfd";
+  //     return { tt: t };
+  //   },
+  //   // phase: "prebuild|loader|both",
   // },
   reExportDataFetching: false,
 })(
@@ -66,7 +77,8 @@ module.exports = withMdxEnhanced({
             loader: "file-loader",
             options: {
               publicPath: "/_next",
-              name: "static/media/[name].[hash].[ext]",
+              // name: "static/media/[name].[hash].[ext]",
+              name: "static/media/[path][name].[ext]",
             },
           },
         ],

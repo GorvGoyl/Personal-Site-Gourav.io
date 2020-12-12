@@ -1,8 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 import { GA_TRACKING_ID } from "../lib/gtag";
-
-const isProduction = process.env.NODE_ENV === "production";
+import { isProd } from "../lib/utils";
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -10,7 +9,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           {/* enable analytics script only for production */}
-          {isProduction && (
+          {isProd && (
             <>
               <script
                 async
