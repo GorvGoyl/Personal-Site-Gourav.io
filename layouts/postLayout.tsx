@@ -17,6 +17,7 @@ export default function Pos(Props: {
   const postMediaPath = `/_next/static/media/pages${useRouter().asPath}`;
 
   // todo: directly search for og.png in blog folder instead of relying on frontmatter og tag
+  // imp: import og.png is required in mdx file else webpack won't load it
   const img = Props.frontMatter.og
     ? `${postMediaPath}/${Props.frontMatter.og}`
     : "";
