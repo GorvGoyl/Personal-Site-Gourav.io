@@ -128,7 +128,7 @@ export function Social(): JSX.Element {
             @NotionBoost
             <img
               src="/twitter.svg"
-              className="inline w-4 m-0 ml-1"
+              className="inline w-4 h-4 m-0 ml-1"
               width=""
               alt=""
             />
@@ -147,7 +147,7 @@ export function Social(): JSX.Element {
             @GorvGoyl
             <img
               src="/twitter.svg"
-              className="inline w-4 m-0 ml-1"
+              className="inline w-4 h-4 m-0 ml-1"
               width=""
               alt=""
             />

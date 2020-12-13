@@ -109,7 +109,7 @@ export default function Home(): JSX.Element {
               >
                 <img
                   src="/twitter-light.svg"
-                  className="inline w-4 m-0 mr-1"
+                  className="inline w-4 h-4 m-0 mr-1"
                   alt="Twitter"
                 />
                 Follow @GorvGoyl
