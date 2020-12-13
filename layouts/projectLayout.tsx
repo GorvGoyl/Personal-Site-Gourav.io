@@ -19,7 +19,7 @@ export default function Pos(Props: {
 
   // todo: directly search for og.png in blog folder instead of relying on frontmatter og tag
   // imp: import og.png is required in mdx file else webpack won't load it
-  const img = `${postMediaPath}/og.png`;
+  const img = `${postMediaPath}/img/og.png`;
 
   return (
     <>
