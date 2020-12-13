@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Header from "../components/Header";
-import { Container } from "../components/layout";
+import Header from "@/components/Header";
+import { Container } from "@/components/layout";
 
 export default function Home(): JSX.Element {
   return (
@@ -44,7 +44,7 @@ export default function Home(): JSX.Element {
               <ul>
                 <li>
                   <p>
-                    <Link href="/notion-boost/whats-new">
+                    <Link href="/notion-boost">
                       <a title="Notion Boost browser extension">Notion Boost</a>
                     </Link>{" "}
                     <br />

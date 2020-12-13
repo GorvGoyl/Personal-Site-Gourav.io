@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import { getAllPosts, FrontMatter } from "../lib/getPost";
-import Header from "../components/Header";
-import { Container, LayoutType } from "../components/layout";
-import Navbar from "../components/navbar";
+import { getAllPosts, FrontMatter } from "@/lib/getPost";
+import Header from "@/components/Header";
+import { Container, LayoutType } from "@/components/layout";
+import { Navbar } from "@/components/navbar";
 
 export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
   return (

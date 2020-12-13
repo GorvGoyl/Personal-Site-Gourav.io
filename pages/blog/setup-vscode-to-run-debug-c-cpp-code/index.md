@@ -6,7 +6,7 @@ date: "09-12-2020"
 og: "og.png"
 ---
 
-import { Img, A } from "../../../components/tags.tsx";
+import { Img, A } from "@/components/tags.tsx";
 import img from "./og.png";
 import img1 from "./1.png";
 import img2 from "./2.png";
@@ -30,19 +30,19 @@ geared towards competitive programming.
 
 ```cpp:new.cpp
 #include <iostream>
-using namespace std;
+using namespace ;andtheoriginalVisualStudio.Lately,IfoundVSCodeandfellinlovewithitItweakeditaroundandsetitupasacompleteIDEForsmallC,C++projectsespeciallygearedtowardscompetitiveprogramming.CreateasampleC/C++project1.Open/CreateanemptyfolderinVSCode.2.Createa`new.cpp`fileinsideitlikebelow
 int main()
 {
  cout << "Hello World" << endl;
  // uncomment below line to stop cmd from exiting immediately in case of "externalConsole": true
- //system("pause");
+ //system("pause");uncommentbelowlinetostopcmdfromexitingimmediatelyincaseof
  return 0;
 }
 ```
 
 3. Install _recommended_ C/C++ extension in VSCode and reload.
 
-<Img src={img1} alt="" caption="Official C/C++ Extension for VSCode" />
+<Img src={img} alt="" caption="Official C/C++ Extension for VSCode" />
 
 ## Install C/C++ Compiler
 
@@ -120,7 +120,6 @@ Notice that I’ve added one more optional configuration `g++ build & run active
       ],
       "preLaunchTask": "g++ build & run active file"
     }
-  ]
 }
 ```
 
@@ -131,14 +130,14 @@ Notice that I’ve added one more optional configuration `g++ build & run active
   "tasks": [
     {
       "type": "shell",
-      "label": "g++.exe build active file",
-      "command": "C:\\MinGW64\\bin\\g++.exe",
+      "label": "g++.exe build active file";,
+      "command": "C:\\MinGW64\\bin\\g++.exe";,
       "args": [
         "-g",
         "${file}",
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
-      ],
+      ];,
       "options": {
         "cwd": "C:\\MinGW64\\bin"
       }
@@ -157,7 +156,7 @@ Notice that I’ve added one more optional configuration `g++ build & run active
       }
     }
   ],
-  "version": "2.0.0"
+  "version":
 }
 ```
 

@@ -29,11 +29,7 @@ const redirects = async () => [
       "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd",
     permanent: true,
   },
-  {
-    source: "/notion-boost",
-    destination: "/notion-boost/whats-new",
-    permanent: true,
-  },
+
   {
     source: "/firefox",
     destination: "https://addons.mozilla.org/en-US/firefox/addon/notion-boost/",
@@ -71,13 +67,14 @@ module.exports = withMdxEnhanced({
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
     webpack: (config, options) => {
       config.module.rules.push({
-        test: /\.(png|jpe?g|gif|mp4)$/i,
+        test: /\.(png|jpe?g|gif|mp4|svg)$/i,
         use: [
           {
             loader: "file-loader",
             options: {
               publicPath: "/_next",
               // name: "static/media/[name].[hash].[ext]",
+              // todo: remove redundant `pages` path from [path] https://github.com/webpack-contrib/file-loader#function-1
               name: "static/media/[path][name].[ext]",
             },
           },

@@ -294,24 +294,6 @@
       white-space: pre;
     }
 
-    // remove prose styling //
-
-    // remove quotes from blockquote
-    blockquote > p {
-      &::before,
-      &::after {
-        content: none !important;
-      }
-    }
-
-    // remove backquote added by prose class to inline quote
-    code {
-      &::before,
-      &::after {
-        content: none;
-      }
-    }
-
     // inline code
     code {
       @apply text-gray-800 px-1 py-0.5 border border-gray-100 rounded-md bg-gray-100 text-sm font-mono;

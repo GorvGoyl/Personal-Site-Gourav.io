@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { LayoutType } from "../components/layout";
+import { LayoutType } from "@/components/layout";
 
 export class FrontMatter {
   date: string;

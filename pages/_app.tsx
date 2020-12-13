@@ -1,9 +1,9 @@
-import "../styles/tailwind.css";
+import "@/styles/tailwind.css";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import * as gtag from "../lib/gtag";
-import { isProd } from "../lib/utils";
+import * as gtag from "@/lib/gtag";
+import { isProd } from "@/lib/utils";
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();

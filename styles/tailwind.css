@@ -3,6 +3,27 @@
 
 @tailwind utilities;
 
+@layer base {
+  /* // remove tailwind typography prose styling // */
+
+  /* // remove quotes from blockquote */
+
+  blockquote > p::before {
+    content: none !important;
+  }
+  blockquote > p::after {
+    content: none !important;
+  }
+
+  /* // remove backquote added by prose class to inline quote */
+  code::before {
+    content: none !important;
+  }
+  code::after {
+    content: none !important;
+  }
+}
+
 @layer components {
   /* Write you own custom component styles here */
   .site-container {

@@ -1,10 +1,20 @@
+import scrollBtnCls from "./css/tags.module.scss";
+
 export function Img(Props: {
   src: string;
   alt?: string;
   caption?: string;
+  type?: string;
+  className?: string;
 }): JSX.Element {
-  const imgTag = <img src={Props.src} alt={Props.alt} />;
+  let cls = "";
+  if (Props.type === "ss") cls = "border-2";
 
+  // add any more classes provided by prop
+  if (Props.className) {
+    cls = cls ? `${cls} ${Props.className}` : Props.className;
+  }
+  const imgTag = <img src={Props.src} alt={Props.alt} className={cls} />;
   if (Props.caption) {
     return (
       <figure>
@@ -27,5 +37,18 @@ export function A(Props: {
     <a href={Props.href} target={target} title={Props.href}>
       {Props.text}
     </a>
+  );
+}
+
+export function ScrollTopBtn(): JSX.Element {
+  return (
+    <div
+      className="scrollBtnCls"
+      title="Scroll back to top"
+      role="button"
+      tabIndex={0}
+    >
+      ⭡
+    </div>
   );
 }

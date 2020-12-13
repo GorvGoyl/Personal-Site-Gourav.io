@@ -1,4 +1,5 @@
 {
+  // "root": true,
   "env": {
     "browser": true,
     "es2020": true,
@@ -29,6 +30,15 @@
     "prettier/@typescript-eslint",
     "prettier/react"
   ],
+  "settings": {
+    // to support @/ path
+    "import/resolver": {
+      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "project": "./tsconfig.json",
     "ecmaFeatures": {
@@ -36,6 +46,8 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module"
+    // "extraFileExtensions:": [".mdx"],
+    // "extensions:": [".mdx"]
   },
   "rules": {
     "@typescript-eslint/lines-between-class-members": "off",

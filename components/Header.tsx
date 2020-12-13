@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { isProd } from "../lib/utils";
+import { isProd } from "@/lib/utils";
 
 const defaultProps = {
   title: "Gourav Goyal",

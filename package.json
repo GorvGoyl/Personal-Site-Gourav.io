@@ -16,7 +16,7 @@
     "export": "next build && next export",
     "deploy-lint": "npm run lint && npm run tsc && npm run export && firebase deploy --only hosting",
     "tsc": "tsc",
-    "lint": "eslint ./ -c .eslintrc.json --ext .js,.jsx,.ts,.tsx,.mdx",
+    "lint": "eslint ./components/** ./pages/** -c .eslintrc.json --ext .js,.jsx,.ts,.tsx,.mdx, .md",
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss,.mdx"
   },
   "dependencies": {
@@ -49,6 +49,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-mdx": "^1.8.2",
