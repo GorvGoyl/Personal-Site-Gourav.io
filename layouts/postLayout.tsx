@@ -8,7 +8,7 @@ import { FrontMatter } from "@/lib/getPost";
 import post from "./css/post.module.scss";
 
 // This function must be named otherwise it disables Fast Refresh.
-export default function Pos(Props: {
+export default function Post(Props: {
   children: JSX.Element | JSX.Element[];
   frontMatter: FrontMatter;
 }): JSX.Element {

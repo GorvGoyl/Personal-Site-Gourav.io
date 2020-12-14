@@ -30,19 +30,19 @@ geared towards competitive programming.
 
 ```cpp:new.cpp
 #include <iostream>
-using namespace ;andtheoriginalVisualStudio.Lately,IfoundVSCodeandfellinlovewithitItweakeditaroundandsetitupasacompleteIDEForsmallC,C++projectsespeciallygearedtowardscompetitiveprogramming.CreateasampleC/C++project1.Open/CreateanemptyfolderinVSCode.2.Createa`new.cpp`fileinsideitlikebelow
+using namespace std;
 int main()
 {
  cout << "Hello World" << endl;
  // uncomment below line to stop cmd from exiting immediately in case of "externalConsole": true
- //system("pause");uncommentbelowlinetostopcmdfromexitingimmediatelyincaseof
+ //system("pause");
  return 0;
 }
 ```
 
 3. Install _recommended_ C/C++ extension in VSCode and reload.
 
-<Img src={img} alt="" caption="Official C/C++ Extension for VSCode" />
+<Img src={img1} alt="" caption="Official C/C++ Extension for VSCode" />
 
 ## Install C/C++ Compiler
 

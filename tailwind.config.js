@@ -5,10 +5,13 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
   },
   purge: {
-    mode: "all", // also purge unused typography styles
+    // mode: "all", // purge unused typography styles but also removes css modules
+    // preserveHtmlElements: true,
     content: [
       "./components/**/*.{js,ts,jsx,tsx}",
       "./pages/**/*.{js,ts,jsx,tsx}",
+      "./layouts/**/*.{js,ts,jsx,tsx}",
+      "./lib/**/*.{js,ts,jsx,tsx}",
     ],
   },
   theme: {

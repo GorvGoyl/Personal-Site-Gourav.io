@@ -8,7 +8,7 @@ og: "og.png"
 
 import { Img, A } from "@/components/tags";
 
-import { Title, Social,NavbarNotion } from "@/components/notionBoost";
+import { Title, Social, NavbarNotion } from "@/components/notionBoost";
 
 import og from "./img/og.png";
 import logo from "./img/logo.svg";
@@ -23,13 +23,12 @@ import outline from "./img/outline.gif";
 import scrollbtn from "./img/scrollbtn.gif";
 import toggle from "./img/toggle.gif";
 
-<Title logo={logo}/>
- <p className="lead">
-          Open-source extension for Chrome and Firefox to add features like
-          sticky outline, small text & full width by default,scroll to top
-          button, hide slash command menu, and more to
-          Notion.so website.
-        </p>
+<Title logo={logo} />
+<p className="lead">
+  Open-source extension for Chrome and Firefox to add features like sticky
+  outline, small text & full width by default,scroll to top button, hide slash
+  command menu, and more to Notion.so website.
+</p>
 <NavbarNotion />
 
 ## ⬇ Download
@@ -108,6 +107,7 @@ Fix poorly recognizable bold text when using Notion in dark mode
 ### ✔ Hide comments section from all pages
 
 comment section is useless when working solo
+
 <Img src={commenthide} type="ss" />
 
 ### ❓ Missing any feature? Suggest [here](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)

@@ -7,19 +7,19 @@ export function Img(Props: {
   type?: string;
   className?: string;
 }): JSX.Element {
-  let cls = "";
-  if (Props.type === "ss") cls = "border-2";
+  let cls = "rounded";
+  if (Props.type === "ss") cls += " border-2";
 
   // add any more classes provided by prop
   if (Props.className) {
-    cls = cls ? `${cls} ${Props.className}` : Props.className;
+    cls += Props.className;
   }
   const imgTag = <img src={Props.src} alt={Props.alt} className={cls} />;
   if (Props.caption) {
     return (
       <figure>
         {imgTag}
-        <figcaption>{Props.caption}</figcaption>
+        <figcaption className="text-center">{Props.caption}</figcaption>
       </figure>
     );
   }
