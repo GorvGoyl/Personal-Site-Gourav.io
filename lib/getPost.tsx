@@ -26,6 +26,7 @@ export function getPostBySlug(slug: string, fields: string[]): FrontMatter {
     (file) => file.substr(0, file.lastIndexOf(".")) === "index"
   );
 
+  if (!indexFile) return new FrontMatter();
   // const ogImg =
   //   files.find((file) => file.substr(0, file.lastIndexOf(".")) === "og") || "";
   const fullPath = join(pathToPost, indexFile);
@@ -41,7 +42,13 @@ export function getPostBySlug(slug: string, fields: string[]): FrontMatter {
 
 export function getAllPosts(fields: string[]): FrontMatter[] {
   const slugs = getPostSlugs();
-  const posts = slugs.map((slug) => getPostBySlug(slug, fields));
+  let posts = slugs.map((slug) => {
+    const post = getPostBySlug(slug, fields);
+    return post;
+  });
+
+  // filter empty posts
+  posts = posts.filter((x) => x.title);
   // sort posts by date in descending order
   // .sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"));
   return posts;

@@ -8,7 +8,7 @@ export default function Home(): JSX.Element {
       <Header />
       <Container>
         <div>
-          <div className="flex items-center">
+          <div className="flex items-center mb-10">
             <img
               className="w-32 rounded-full mr-8"
               src="/gourav.png"
@@ -16,21 +16,21 @@ export default function Home(): JSX.Element {
             />
             <div className="prose prose-lg">
               <h1 className="">Gourav Goyal</h1>
+              <nav className="flex space-x-14">
+                <Link href="https://twitter.com/GorvGoyl">
+                  <a target="blank">@GorvGoyl</a>
+                </Link>
+                <Link href="/blog">
+                  <a>Blog</a>
+                </Link>
+                {/* <Link href="/about">
+                <a>About Me</a>
+              </Link> */}
+              </nav>
             </div>
           </div>
 
           <div className="prose prose-lg">
-            <nav className="flex justify-center space-x-20">
-              {/* <Link href="https://twitter.com/GorvGoyl">
-                <a target="blank">@GorvGoyl</a>
-              </Link> */}
-              {/* <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-              <Link href="/about">
-                <a>About Me</a>
-              </Link> */}
-            </nav>
             <p>
               Namaste, My name is Gourav Goyal. I'm a tech founder, full-stack
               developer, and a fun guy to hang around with. For the past 6

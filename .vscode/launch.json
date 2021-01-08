@@ -10,10 +10,10 @@
       "request": "attach",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
-      "restart": true,
-      "autoAttachChildProcesses": true,
-      "continueOnAttach": true,
-      "attachExistingChildren": true
+      "restart": true
+      // "autoAttachChildProcesses": true,
+      // "continueOnAttach": true,
+      // "attachExistingChildren": true
     },
 
     {
