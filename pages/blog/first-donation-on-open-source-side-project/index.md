@@ -22,7 +22,7 @@ Out of Covid boredom, I decided to put a donate button to see what happens. I ex
 
 I made a free account on ko-fi.com, linked my PayPal account, and created a donation link. I added that link to the extension description.
 
-<Img src={img2} alt="" caption="Shortcut Menu Bar" />
+<Img src={img2}  caption="Buy me a coffee" />
 
 And guess what? someone donated 5$.
 
