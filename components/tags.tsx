@@ -14,7 +14,10 @@ export function Img(Props: {
   if (Props.className) {
     cls += Props.className;
   }
-  const imgTag = <img src={Props.src} alt={Props.alt} className={cls} />;
+
+  // set alt text from alt or caption
+  const altText = Props.alt ?? Props.caption;
+  const imgTag = <img src={Props.src} alt={altText} className={cls} />;
   if (Props.caption) {
     return (
       <figure>
