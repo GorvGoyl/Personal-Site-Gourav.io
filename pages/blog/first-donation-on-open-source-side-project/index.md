@@ -6,7 +6,7 @@ date: "11-12-2020"
 ---
 
 import { Img, A } from "@/components/tags.tsx";
-import img from "./og.jpg";
+import img from "./og.png";
 import img1 from "./1.png";
 import img2 from "./2.png";
 import img3 from "./3.png";
