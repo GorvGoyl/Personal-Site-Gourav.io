@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { TwitterIcon } from "./tags";
 
 enum Page {
   Home = "/notion-boost",
@@ -125,12 +126,10 @@ export function Social(): JSX.Element {
             target="_blank"
             title="Follow @NotionBoost on Twitter"
           >
-            @NotionBoost
-            <img
-              src="/twitter.svg"
-              className="inline w-4 h-4 m-0 ml-1"
-              width=""
-              alt=""
+            NotionBoost
+            <TwitterIcon
+              class="inline w-4 h-4 m-0 ml-1 "
+              title="@NotionBoost on Twitter"
             />
           </a>
         </span>{" "}
@@ -144,13 +143,8 @@ export function Social(): JSX.Element {
             target="_blank"
             title="Follow @GorvGoyl on Twitter"
           >
-            @GorvGoyl
-            <img
-              src="/twitter.svg"
-              className="inline w-4 h-4 m-0 ml-1"
-              width=""
-              alt=""
-            />
+            GorvGoyl
+            <TwitterIcon class="inline w-4 h-4 m-0 ml-1 " />
           </a>
         </span>
       </p>

@@ -2,12 +2,12 @@
 layout: "postLayout"
 title: "Setup VSCode to run and debug C / C++ code"
 desc: "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode"
-date: "09-12-2020"
+date: "2020-12-5"
 og: "og.png"
 ---
 
 import { Img, A } from "@/components/tags.tsx";
-import img from "./og.png";
+import og from "./og.png";
 import img1 from "./1.png";
 import img2 from "./2.png";
 import img3 from "./3.png";

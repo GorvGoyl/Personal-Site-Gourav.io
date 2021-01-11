@@ -2,7 +2,7 @@
 layout: "postLayout"
 title: "I received first-ever donation on my open-source side project and it felt great!"
 desc: "I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc."
-date: "11-12-2020"
+date: "2020-12-11"
 og: "og.png"
 ---
 

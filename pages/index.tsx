@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import { Container } from "@/components/layout";
+import { TwitterIcon } from "@/components/tags";
 
 export default function Home(): JSX.Element {
   return (
@@ -18,10 +19,13 @@ export default function Home(): JSX.Element {
               <h1 className="">Gourav Goyal</h1>
               <nav className="flex space-x-14">
                 <Link href="https://twitter.com/GorvGoyl">
-                  <a target="blank">@GorvGoyl</a>
+                  <a target="blank" title="Follow @GorvGoyl on Twitter">
+                    GorvGoyl
+                    <TwitterIcon class="inline w-4 h-4 m-0 ml-1" />
+                  </a>
                 </Link>
                 <Link href="/blog">
-                  <a>Blog</a>
+                  <a title="Blog">Blog</a>
                 </Link>
                 {/* <Link href="/about">
                 <a>About Me</a>

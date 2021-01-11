@@ -5,7 +5,9 @@ import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar, Links } from "@/components/navbar";
 import { FrontMatter } from "@/lib/getPost";
-import post from "./css/post.module.scss";
+import { Author, AuthorImg } from "@/components/tags";
+import post from "@/layouts/css/post.module.scss";
+import Link from "next/link";
 
 // This function must be named otherwise it disables Fast Refresh.
 export default function Post(Props: {
@@ -36,9 +38,21 @@ export default function Post(Props: {
             <header>
               <h1>{Props.frontMatter.title}</h1>
             </header>
+            <Author date={Props.frontMatter.date} />
             {Props.children}
           </article>
         </main>
+        <hr className="my-12" />
+        <div className="flex justify-center">
+          <AuthorImg />
+        </div>
+        <div className="text-center mt-8">
+          <Link href="/blog">
+            <a className="underline" title="View all posts">
+              ← View all posts
+            </a>
+          </Link>
+        </div>
       </Container>
     </>
   );
