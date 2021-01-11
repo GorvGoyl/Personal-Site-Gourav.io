@@ -6,7 +6,7 @@ const defaultProps = {
   title: "Gourav Goyal",
   desc:
     "I'm a tech founder, full-stack developer, and a fun guy to hang around with.",
-  imgPath: "/og.jpg",
+  imgPath: "/og.png",
 };
 export default function Header(Props: {
   title?: string;
