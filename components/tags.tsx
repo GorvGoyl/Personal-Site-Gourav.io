@@ -78,7 +78,7 @@ export function AuthorImg(): JSX.Element {
         <p className="m-0 font-medium">Gourav Goyal</p>
         <div className="">
           <Link href="https://twitter.com/GorvGoyl">
-            <a className="no-underline font-normal" target="blank">
+            <a className="font-normal" target="blank">
               GorvGoyl
               <TwitterIcon class="inline w-3 h-3 align-baseline m-0 ml-1" />
             </a>
