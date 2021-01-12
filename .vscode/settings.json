@@ -13,5 +13,8 @@
     "**/.factorypath": true,
     "**/node_modules": true,
     "node_modules": true
+  },
+  "files.associations": {
+    "*.md": "mdx"
   }
 }
