@@ -6,6 +6,7 @@ import { TwitterIcon } from "./tags";
 enum Page {
   Home = "/notion-boost",
   WhatsNew = "/notion-boost/whats-new",
+  AllFeatures = "/notion-boost/#-currently-added-features",
 }
 
 export function NavbarNotion(): JSX.Element {
@@ -36,7 +37,7 @@ export function NavbarNotion(): JSX.Element {
         </a>
       )}
       {page === Page.WhatsNew && (
-        <Link href={Page.Home}>
+        <Link href={Page.AllFeatures}>
           <a title="View all features">All Features</a>
         </Link>
       )}
