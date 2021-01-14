@@ -42,7 +42,7 @@ import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 
 <p>See{" "}
 <Link href="/notion-boost/whats-new">
-<a className="cursor-pointer" title="https://gourav.io/notion-boost/whats-new">
+<a className="" title="https://gourav.io/notion-boost/whats-new">
 what's new</a></Link> in latest update ✨</p>
 
 ## ✅ Currently added features

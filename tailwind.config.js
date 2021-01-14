@@ -19,12 +19,13 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            // a: {
-            //   textDecoration: "none",
-            //   "&:hover": {
-            //     textDecoration: "underline",
-            //   },
-            // },
+            a: {
+              cursor: "pointer",
+              // textDecoration: "none",
+              // "&:hover": {
+              //   textDecoration: "underline",
+              // },
+            },
           },
         },
       },
