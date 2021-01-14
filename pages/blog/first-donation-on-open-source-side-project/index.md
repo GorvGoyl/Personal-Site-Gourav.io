@@ -11,6 +11,7 @@ import og from "./og.png";
 import img1 from "./1.png";
 import img2 from "./2.png";
 import img3 from "./3.png";
+import img4 from "./4.png";
 
 I use VSCode as my go-to editor for anything code. When I first discovered it in 2016, I really liked how it can almost be fully customized as per the likes. Well, almost, because there was no way you could add or configure any buttons on the top side of the editor. FYI, this is possible in many popular IDEs like IntelliJ, Eclipse, Visual Studio, and even Notepad++. I was more of a mouse-guy back then so the lack of GUI buttons was hindering my so called _developer productivity_.
 
@@ -32,3 +33,9 @@ And guess what? someone donated 5$.
 I know I know, it's not that big amount, but somebody put an effort to make that transaction means he cared about it and found it useful.
 I hope it inspires people who want to contribute and build stuff in the FOSS (Free and Open-Source Software) community. It's so captivating that the whole tech industry relies (and thrives) on open source software made by people in their free time.  
 You can explore the source code of `Shortcut Menu Bar` on [Github](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension).
+
+---
+
+**Update:** It hit the front-page of Hacker News and many developers shared their stories of receiving first donation. You can <A new={true} href="https://news.ycombinator.com/item?id=25744661" text="join the conversation"  /> on HN.
+
+<Img src={img4} caption="Front-page of Hacker News" />

@@ -41,8 +41,9 @@ export function A(Props: {
   title?: string;
 }): JSX.Element {
   const target = Props.new ? "_blank" : "";
+  const title = Props.title ? Props.title : Props.href;
   return (
-    <a href={Props.href} target={target} title={Props.href}>
+    <a href={Props.href} target={target} title={title}>
       {Props.text}
     </a>
   );
