@@ -12,7 +12,9 @@ export function NavbarNotion(): JSX.Element {
   const page = useRouter().pathname;
   return (
     <nav
-      className={`flex justify-around ${page === Page.WhatsNew ? "mt-5" : ""}`}
+      className={`flex justify-between  ${
+        page === Page.WhatsNew ? "mt-5" : ""
+      }`}
     >
       <a
         href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"

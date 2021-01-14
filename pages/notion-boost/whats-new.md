@@ -8,6 +8,9 @@ og: "og.png"
 
 import { Img, A } from "@/components/tags";
 import { Title, Social,NavbarNotion } from "@/components/notionBoost";
+import showHoverText from "./img/showHoverText.gif";
+import leftAlignImage from "./img/leftAlignImage.gif";
+import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 
 import og from "./img/og.png";
 import logo from "./img/logo.png";
@@ -16,17 +19,27 @@ import logo from "./img/logo.png";
 
 <NavbarNotion />
 
-## What's new in latest update v1.6
+## What's new in this update ✨
 
-### Added 3 new features 🎉
+### v1.7
 
-- 'Scroll to top' button:  
-  Added button at the bottom-right corner of page for scrolling back to top. Quite useful for lengthy pages. The button will be visible only when the page has scrolled down a bit.
-- Close Slash command menu after space:  
-  Slash command menu which appears when pressing '/' key will be closed back by pressing the space key.
-- Don't show Slash command menu when pressing '/':  
-  Don't show the Slash command menu when pressing '/' key. Slash command menu will still be shown by clicking + ⁝⁝ icon. This setting can't be enabled along with 'Close Slash command menu after space' and vice-versa.
-- Fixed bug where the outline wasn't visible for 2 column headings.
+Added new features 🎉
+
+- **Show full text on hover:**  
+   Show full text in table cells on mouse hover.
+  <Img src={showHoverText} type="ss" />
+
+- **Hide 'Hidden columns' in board view:**  
+  Truly hide 'Hidden columns' in Kanban board view.
+  <Img src={hideHiddenColumns} type="ss" />
+- **Left align images:**  
+   Align document images to left instead of center.
+  <Img src={leftAlignImage} type="ss" />
+
+**Other info:**
+
+- Reached 2k+ downloads within 3 months of launch in Chrome store 🙌. Thank you all!
+- Fixed bug: slash menu wasn't hiding after space in some cases.
 
 ---
 
@@ -35,6 +48,18 @@ import logo from "./img/logo.png";
 ---
 
 ## Previous updates
+
+### v1.6
+
+Added 3 new features 🎉
+
+- 'Scroll to top' button:  
+  Added button at the bottom-right corner of page for scrolling back to top. Quite useful for lengthy pages. The button will be visible only when the page has scrolled down a bit.
+- Close Slash command menu after space:  
+  Slash command menu which appears when pressing '/' key will be closed back by pressing the space key.
+- Don't show Slash command menu when pressing '/':  
+  Don't show the Slash command menu when pressing '/' key. Slash command menu will still be shown by clicking + ⁝⁝ icon. This setting can't be enabled along with 'Close Slash command menu after space' and vice-versa.
+- Fixed bug where the outline wasn't visible for 2 column headings.
 
 ### v1.5
 

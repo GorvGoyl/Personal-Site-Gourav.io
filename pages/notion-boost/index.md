@@ -9,6 +9,7 @@ og: "og.png"
 import { Img, A } from "@/components/tags";
 
 import { Title, Social, NavbarNotion } from "@/components/notionBoost";
+import Link from "next/link";
 
 import og from "./img/og.png";
 import logo from "./img/logo.svg";
@@ -22,6 +23,9 @@ import hideslash from "./img/hideslash.gif";
 import outline from "./img/outline.gif";
 import scrollbtn from "./img/scrollbtn.gif";
 import toggle from "./img/toggle.gif";
+import showHoverText from "./img/showHoverText.gif";
+import leftAlignImage from "./img/leftAlignImage.gif";
+import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 
 <Title logo={logo} />
 <p className="lead">
@@ -36,17 +40,25 @@ import toggle from "./img/toggle.gif";
 - [Chrome extension](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd)
 - [Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/notion-boost/)
 
+<p>See{" "}
+<Link href="/notion-boost/whats-new">
+<a className="cursor-pointer" title="https://gourav.io/notion-boost/whats-new">
+what's new</a></Link> in latest update ✨</p>
+
 ## ✅ Currently added features
 
-- [Show sticky outline](#-show-sticky-outline)
-- [Set small text & full width for all pages](#-set-small-text--full-width-for-all-pages)
-- ['Scroll to top' button](#-scroll-to-top-button)
-- [Close Slash command menu after space](#-close-slash-command-menu-after-space)
-- [Don't show Slash command menu when pressing '/'](#-dont-show-slash-command-menu-when-pressing-)
-- [Hide floating help button from all pages](#-hide-floating-help-button-from-all-pages)
-- [Bolder text in dark mode](#-bolder-text-in-dark-mode)
-- [Hide comments section from all pages](#-hide-comments-section-from-all-pages)
-- Missing any feature? Suggest [here](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
+- [ Show sticky outline](#-show-sticky-outline)
+- [ Set small text & full width for all pages](#-set-small-text--full-width-for-all-pages)
+- [ 'Scroll to top' button](#-scroll-to-top-button)
+- [ Show full text on hover](#-show-full-text-on-hover)
+- [ Close Slash command menu after space](#-close-slash-command-menu-after-space)
+- [ Don't show Slash command menu when pressing '/'](#-dont-show-slash-command-menu-when-pressing-)
+- [ Hide floating help button from all pages](#-hide-floating-help-button-from-all-pages)
+- [ Hide 'Hidden columns' in board view](#-hide-hidden-columns-in-board-view)
+- [ Left align images](#-left-align-images)
+- [ Bolder text in dark mode](#-bolder-text-in-dark-mode)
+- [ Hide comments section from all pages](#-hide-comments-section-from-all-pages)
+- Missing some feature? Suggest on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
 
 ## ⚙ How to enable/disable a feature
 
@@ -80,6 +92,12 @@ Added button at the bottom-right corner of page for scrolling back to top. Quite
 
 <Img src={scrollbtn} type="ss" />
 
+### ✔ Show full text on hover
+
+Show full text in table cells on mouse hover.
+
+<Img src={showHoverText} type="ss" />
+
 ### ✔ Close Slash command menu after space
 
 Slash command menu which appears when pressing '/' key will be closed back by pressing the space key.
@@ -98,6 +116,18 @@ This button is located on the bottom-right corner of pages.
 
 <Img src={helpbtn} type="ss" />
 
+### ✔ Hide 'Hidden columns' in board view
+
+Truly hide 'Hidden columns' in Kanban board view.
+
+<Img src={hideHiddenColumns} type="ss" />
+
+### ✔ Left align images
+
+Align document images to left instead of center.
+
+<Img src={leftAlignImage} type="ss" />
+
 ### ✔ Bolder text in dark mode
 
 Fix poorly recognizable bold text when using Notion in dark mode
@@ -110,7 +140,7 @@ comment section is useless when working solo
 
 <Img src={commenthide} type="ss" />
 
-### ❓ Missing any feature? Suggest [here](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
+### ❓ Missing some feature? Suggest on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
 
 ---
 
