@@ -15,11 +15,13 @@ export default function Pos(Props: {
   // React hooks, for example `useState` or `useEffect`, go here.
 
   // to accomodate webpack file-loader path
-  const postMediaPath = `${webpackPath}${useRouter().asPath}`;
+  const postMediaPath = `${webpackPath}`;
 
   // todo: directly search for og.png in blog folder instead of relying on frontmatter og tag
   // imp: import og.png is required in mdx file else webpack won't load it
-  const img = `${postMediaPath}/img/og.png`;
+  const img = Props.frontMatter.og
+    ? `${postMediaPath}/${Props.frontMatter.og}`
+    : "";
 
   return (
     <>

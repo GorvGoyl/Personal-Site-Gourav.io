@@ -3,7 +3,7 @@ layout: "projectLayout"
 title: "Notion Boost - What's new?"
 desc: "See what's new in the latest update of Notion Boost browser extension"
 date: "09-12-2020"
-og: "og.png"
+og: "notion-boost/img/og.png"
 ---
 
 import { Img, A } from "@/components/tags";

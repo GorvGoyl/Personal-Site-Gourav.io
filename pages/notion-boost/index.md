@@ -3,7 +3,7 @@ layout: "projectLayout"
 title: "Notion Boost"
 desc: "Chrome and Firefox extension to boost Notion productivity with features like sticky outline, small text & full width by default, scroll to top button, hide slash command menu, hide help button, bolder text, and, more!"
 date: "09-12-2020"
-og: "og.png"
+og: "notion-boost/img/og.png"
 ---
 
 import { Img, A } from "@/components/tags";
@@ -40,11 +40,6 @@ import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 - [Chrome extension](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd)
 - [Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/notion-boost/)
 
-<p>See{" "}
-<Link href="/notion-boost/whats-new">
-<a className="" title="https://gourav.io/notion-boost/whats-new">
-what's new</a></Link> in latest update ✨</p>
-
 ## ✅ Currently added features
 
 - [ Show sticky outline](#-show-sticky-outline)
@@ -59,6 +54,11 @@ what's new</a></Link> in latest update ✨</p>
 - [ Bolder text in dark mode](#-bolder-text-in-dark-mode)
 - [ Hide comments section from all pages](#-hide-comments-section-from-all-pages)
 - Missing some feature? Suggest on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
+
+<p>See{" "}
+<Link href="/notion-boost/whats-new">
+<a className="" title="https://gourav.io/notion-boost/whats-new">
+what's new</a></Link> in latest update ✨</p>
 
 ## ⚙ How to enable/disable a feature
 
