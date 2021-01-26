@@ -38,7 +38,7 @@ export function NavbarNotion(): JSX.Element {
       )}
       {page === Page.WhatsNew && (
         <Link href={Page.AllFeatures}>
-          <a title="View all features">All Features</a>
+          <a title="View all features">All features</a>
         </Link>
       )}
       <a
