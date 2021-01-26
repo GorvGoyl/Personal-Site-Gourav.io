@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { TwitterIcon } from "./tags";
+import { TwitterIcon, A } from "./tags";
 
 enum Page {
   Home = "/notion-boost",
@@ -82,7 +82,7 @@ export function Social(): JSX.Element {
       {useRouter().pathname === Page.WhatsNew && (
         <>
           <p>
-            👍 Liked these updates? Share the news:{" "}
+            👍 Liked these updates? Share the news on{" "}
             <span>
               <a
                 href="https://twitter.com/intent/tweet?url=What%27s%20new%20in%20Notion%20Boost%0A%40NotionBoost%20%20https%3A%2F%2Fgourav.io%2Fnotion-boost%2Fwhats-new"
@@ -106,9 +106,18 @@ export function Social(): JSX.Element {
               </a>
             </span>
           </p>
-
           <p>
-            ❓ Missing any feature? Suggest here:{" "}
+            ❤ Support Notion Boost by rating{" "}
+            <A
+              href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+              text="★★★★★"
+              new
+              title="Add review"
+            />{" "}
+            on Chrome/Firefox store.
+          </p>
+          <p>
+            ❓ Missing any feature? Suggest on{" "}
             <span>
               <a
                 href="https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new"
@@ -136,7 +145,7 @@ export function Social(): JSX.Element {
             />
           </a>
         </span>{" "}
-        for upcoming features and other Notion tips.
+        for upcoming features and other Notion tips & tricks.
       </p>
       <p>
         👨‍💻 Follow the maker behind this extension:{" "}

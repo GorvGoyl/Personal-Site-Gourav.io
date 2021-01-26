@@ -8,9 +8,6 @@ og: "notion-boost/img/og.png"
 
 import { Img, A } from "@/components/tags";
 import { Title, Social,NavbarNotion } from "@/components/notionBoost";
-import showHoverText from "./img/showHoverText.gif";
-import leftAlignImage from "./img/leftAlignImage.gif";
-import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 
 import og from "./img/og.png";
 import logo from "./img/logo.png";
@@ -21,25 +18,12 @@ import logo from "./img/logo.png";
 
 ## What's new in this update ✨
 
-### v1.7
+### v1.8
 
-Added new features 🎉
-
-- **Show full text on hover:**  
-   Show full text in table cells on mouse hover.
-  <Img src={showHoverText} type="ss" />
-
-- **Hide 'Hidden columns' in board view:**  
-  Truly hide 'Hidden columns' in Kanban board view.
-  <Img src={hideHiddenColumns} type="ss" />
-- **Left align images:**  
-   Align document images to left instead of center.
-  <Img src={leftAlignImage} type="ss" />
-
-**Other info:**
-
-- Reached 2k+ downloads within 3 months of launch in Chrome store 🙌. Thank you all!
-- Fixed bug: slash menu wasn't hiding after space in some cases.
+- Broke down `small text & full width` setting into 2 seperate settings `Set full width for all pages` and `Set small text for all pages`. Thanks for feedback.
+- Full text on hover will trigger after some delay. Thanks for feedback.
+- Full text on hover is also supported for timeline view.
+- Fixed bug where NB settings were being reset after any drag-drop action in page.
 
 ---
 
@@ -48,6 +32,22 @@ Added new features 🎉
 ---
 
 ## Previous updates
+
+### v1.7
+
+Added new features 🎉
+
+- **Show full text on hover:**  
+   Show full text in table cells on mouse hover.
+- **Hide 'Hidden columns' in board view:**  
+  Truly hide 'Hidden columns' in Kanban board view.
+- **Left align images:**  
+   Align document images to left instead of center.
+
+**Other info:**
+
+- Reached 2k+ downloads within 3 months of launch in Chrome store 🙌. Thank you all!
+- Fixed bug: slash menu wasn't hiding after space in some cases.
 
 ### v1.6
 

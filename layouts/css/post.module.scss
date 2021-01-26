@@ -294,11 +294,6 @@
       white-space: pre;
     }
 
-    // inline code
-    code {
-      @apply text-gray-800 px-1 py-0.5 border border-gray-100 rounded-md bg-gray-100 text-sm font-mono;
-    }
-
     // code-title
     .remark-code-title {
       @apply border border-b-0 mt-2 px-4 py-2 rounded-t bg-black text-white border-black text-sm font-mono font-bold;

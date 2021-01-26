@@ -16,7 +16,6 @@ import logo from "./img/logo.svg";
 import boldertext from "./img/boldertext.gif";
 import commenthide from "./img/commenthide.gif";
 import disableslashmenu from "./img/disableslashmenu.gif";
-import fullwidth from "./img/fullwidth.gif";
 import header from "./img/header.jpg";
 import helpbtn from "./img/helpbtn.gif";
 import hideslash from "./img/hideslash.gif";
@@ -42,17 +41,18 @@ import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 
 ## ✅ Currently added features
 
-- [ Show sticky outline](#-show-sticky-outline)
-- [ Set small text & full width for all pages](#-set-small-text--full-width-for-all-pages)
-- [ 'Scroll to top' button](#-scroll-to-top-button)
-- [ Show full text on hover](#-show-full-text-on-hover)
-- [ Close Slash command menu after space](#-close-slash-command-menu-after-space)
-- [ Don't show Slash command menu when pressing '/'](#-dont-show-slash-command-menu-when-pressing-)
-- [ Hide floating help button from all pages](#-hide-floating-help-button-from-all-pages)
-- [ Hide 'Hidden columns' in board view](#-hide-hidden-columns-in-board-view)
-- [ Left align images](#-left-align-images)
-- [ Bolder text in dark mode](#-bolder-text-in-dark-mode)
-- [ Hide comments section from all pages](#-hide-comments-section-from-all-pages)
+- [Show sticky outline](#-show-sticky-outline)
+- [Set small text for all pages](#-set-small-text-for-all-pages)
+- [Set full width for all pages](#-set-full-width-for-all-pages)
+- ['Scroll to top' button](#-scroll-to-top-button)
+- [Show full text on hover](#-show-full-text-on-hover)
+- [Close Slash command menu after space](#-close-slash-command-menu-after-space)
+- [Don't show Slash command menu when pressing '/'](#-dont-show-slash-command-menu-when-pressing-)
+- [Hide floating help button from all pages](#-hide-floating-help-button-from-all-pages)
+- [Hide 'Hidden columns' in board view](#-hide-hidden-columns-in-board-view)
+- [Left align images](#-left-align-images)
+- [Bolder text in dark mode](#-bolder-text-in-dark-mode)
+- [Hide comments section from all pages](#-hide-comments-section-from-all-pages)
 - Missing some feature? Suggest on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
 
 <p>See{" "}
@@ -80,11 +80,13 @@ Show sticky outline (table of contents) for pages that have headings or sub-head
 
 <Img src={outline} type="ss" />
 
-### ✔ Set small text & full width for all pages
+### ✔ Set small text for all pages
 
-Option to set small text and full width for all pages by default. This locally adjusts the text and width without clicking on the Notion page toggles. So no page change is saved to the server.
+Set small text for all pages by default. This locally adjusts the text without clicking on the Notion page toggles.
 
-<Img src={fullwidth} type="ss" />
+### ✔ Set full width for all pages
+
+Set full width for all pages by default. This locally adjusts the width without clicking on the Notion page toggles.
 
 ### ✔ 'Scroll to top' button
 
