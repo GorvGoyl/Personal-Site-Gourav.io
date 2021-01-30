@@ -65,7 +65,12 @@ module.exports = withMdxEnhanced({
   // NextConfig
   {
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
-    webpack: (config, options) => {
+    webpack: (config, { dev, isServer }, options) => {
+      if (isServer) {
+        require("./scripts/generate-sitemap");
+        // require('./scripts/generate-rss');
+      }
+
       config.module.rules.push({
         test: /\.(png|jpe?g|gif|mp4|svg)$/i,
         use: [

@@ -32,7 +32,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.config.js" /* .config.js files */
+    "**/*.config.js" /* .config.js files */,
+    "scripts/generate-sitemap.js"
   ],
   "exclude": ["node_modules"]
 }
