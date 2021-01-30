@@ -18,8 +18,7 @@ const globby = require("globby");
     "!pages/api",
   ]);
 
-  const sitemap = `
-        <?xml version="1.0" encoding="UTF-8"?>
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
               .map((page) => {
@@ -38,8 +37,7 @@ const globby = require("globby");
                     `;
               })
               .join("")}
-        </urlset>
-    `;
+        </urlset>`;
 
   // const formatted = prettier.format(sitemap, {
   //   ...prettierConfig,
