@@ -68,7 +68,9 @@ module.exports = withMdxEnhanced({
     webpack: (config, { dev, isServer }, options) => {
       if (isServer) {
         require("./scripts/generate-sitemap");
-        require("./scripts/generate-rss");
+        if (!dev) {
+          require("./scripts/generate-rss");
+        }
       }
 
       config.module.rules.push({
