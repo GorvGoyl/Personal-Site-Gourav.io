@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Gourav Goyal</title>
+        <link>https://gourav.io</link>
+        <description>Blog - Gourav Goyal</description>
+        <lastBuildDate>Sun, 07 Feb 2021 16:37:15 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for https://gourav.io</generator>
+        <language>en</language>
+        <image>
+            <title>Gourav Goyal</title>
+            <url>https://gourav.io/favicon-32x32.png</url>
+            <link>https://gourav.io</link>
+        </image>
+        <copyright>All rights reserved 2021, Gourav Goyal</copyright>
+        <atom:link href="https://gourav.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[I received first-ever donation on my open-source side project and it felt great!]]></title>
+            <link>https://gourav.io/blog/first-donation-on-open-source-side-project</link>
+            <guid>I received first-ever donation on my open-source side project and it felt great!</guid>
+            <pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></description>
+            <enclosure url="https://gourav.io/_next/static/media/pages/blog/first-donation-on-open-source-side-project/og.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
+            <link>https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code</link>
+            <guid>Setup VSCode to run and debug C / C++ code</guid>
+            <pubDate>Fri, 04 Dec 2020 18:30:00 GMT</pubDate>
+            <description><![CDATA[By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode]]></description>
+            <enclosure url="https://gourav.io/_next/static/media/pages/blog/setup-vscode-to-run-debug-c-cpp-code/og.png" length="0" type="image/png"/>
+        </item>
+    </channel>
+</rss>

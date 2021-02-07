@@ -4,10 +4,16 @@
     "paths": {
       // "@components/*": ["components/*"],
       // use @/ to access path related to root of project
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     },
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true, // can set to false
@@ -17,7 +23,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true, //allow commonjs files
     "jsx": "preserve",
     // additional flags
     "noImplicitAny": true, //disable use of 'any'
@@ -33,7 +39,9 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.config.js" /* .config.js files */,
-    "scripts/generate-sitemap.js"
+    "scripts/*.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

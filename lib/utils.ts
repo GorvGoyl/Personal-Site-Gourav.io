@@ -1,5 +1,6 @@
 export const isProd = process.env.NODE_ENV === "production";
 
+// also replicate change in generate-rss.js
 export const webpackPath = "/_next/static/media/pages";
 
 export function readableDate(date: string): string {

@@ -9,16 +9,19 @@ const globby = require("globby");
 // const prettier = require("prettier");
 
 (async () => {
-  //   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
-  const pages = await globby([
-    "pages/**/*.mdx",
-    "pages/**/*.tsx",
-    "pages/**/*.md",
-    "!pages/_*.tsx",
-    "!pages/api",
-  ]);
+  try {
+    console.log("generating sitemap..");
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    //   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
+    const pages = await globby([
+      "pages/**/*.mdx",
+      "pages/**/*.tsx",
+      "pages/**/*.md",
+      "!pages/_*.tsx",
+      "!pages/api",
+    ]);
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
               .map((page) => {
@@ -39,11 +42,15 @@ const globby = require("globby");
               .join("")}
         </urlset>`;
 
-  // const formatted = prettier.format(sitemap, {
-  //   ...prettierConfig,
-  //   parser: "html",
-  // });
+    // const formatted = prettier.format(sitemap, {
+    //   ...prettierConfig,
+    //   parser: "html",
+    // });
 
-  // eslint-disable-next-line no-sync
-  fs.writeFileSync("public/sitemap.xml", sitemap);
+    // eslint-disable-next-line no-sync
+    fs.writeFileSync("public/sitemap.xml", sitemap);
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
 })();

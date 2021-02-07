@@ -10,7 +10,8 @@
       "request": "attach",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
-      "restart": true
+      "restart": true,
+      "outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"]
       // "autoAttachChildProcesses": true,
       // "continueOnAttach": true,
       // "attachExistingChildren": true

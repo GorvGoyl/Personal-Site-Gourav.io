@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://gourav.io</id>
+    <title>Gourav Goyal</title>
+    <updated>2021-02-07T16:37:15.723Z</updated>
+    <generator>Feed for https://gourav.io</generator>
+    <author>
+        <name>Gourav Goyal</name>
+        <email>hey@gourav.io</email>
+        <uri>https://twitter.com/GorvGoyl</uri>
+    </author>
+    <link rel="alternate" href="https://gourav.io"/>
+    <link rel="self" href="https://gourav.io/atom.xml"/>
+    <subtitle>Blog - Gourav Goyal</subtitle>
+    <logo>https://gourav.io/favicon-32x32.png</logo>
+    <icon>https://gourav.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Gourav Goyal</rights>
+    <entry>
+        <title type="html"><![CDATA[I received first-ever donation on my open-source side project and it felt great!]]></title>
+        <id>I received first-ever donation on my open-source side project and it felt great!</id>
+        <link href="https://gourav.io/blog/first-donation-on-open-source-side-project"/>
+        <updated>2020-12-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
+        <id>Setup VSCode to run and debug C / C++ code</id>
+        <link href="https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code"/>
+        <updated>2020-12-04T18:30:00.000Z</updated>
+        <summary type="html"><![CDATA[By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode]]></summary>
+    </entry>
+</feed>
