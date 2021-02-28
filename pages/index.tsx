@@ -44,14 +44,33 @@ export default function Home(): JSX.Element {
               community. I welcome opportunities at hey@gourav.io
             </p>
             <div>
-              <h2>Side Projects</h2>
+              <h2>Projects</h2>
               <ul>
                 <li>
                   <p>
                     <Link href="/notion-boost">
                       <a title="Notion Boost browser extension">Notion Boost</a>
-                    </Link>{" "}
-                    <br />
+                    </Link>
+                    <span className="badge-wrapper">
+                      <a
+                        title="source code"
+                        href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
+                        target="_blank"
+                      >
+                        <img
+                          alt="source code"
+                          src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
+                        />
+                      </a>
+                      <img
+                        alt="Chrome Web Store downloads"
+                        src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square"
+                      />
+                      <img
+                        alt="Chrome Web Store rating"
+                        src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square"
+                      />
+                    </span>
                     Chrome & Firefox browser extension for Notion.so to add
                     features like outline (table of contents), bolder text, and
                     more.
@@ -65,8 +84,27 @@ export default function Home(): JSX.Element {
                       title="Shortcut Menubar VSCode extension"
                     >
                       Shortcut Menubar
-                    </a>{" "}
-                    <br />
+                    </a>
+                    <span className="badge-wrapper">
+                      <a
+                        title="source code"
+                        href="https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension"
+                        target="_blank"
+                      >
+                        <img
+                          alt="source code"
+                          src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
+                        />
+                      </a>
+                      <img
+                        alt="Visual Studio Marketplace Downloads"
+                        src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square"
+                      />
+                      <img
+                        alt="Visual Studio Marketplace Rating (Stars)"
+                        src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square"
+                      />
+                    </span>
                     VSCode Extension which adds useful buttons like beautify,
                     open files, undo, redo, etc to the editor in Visual Studio
                     Code.

@@ -1,4 +1,4 @@
-import "@/styles/tailwind.css";
+import "@/styles/tailwind.scss";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";

@@ -30,8 +30,8 @@
   }
 }
 
+/* custom component styles*/
 @layer components {
-  /* Write you own custom component styles here */
   .site-container {
     @apply py-20 px-5 mx-auto max-w-screen-md;
   }
@@ -52,5 +52,12 @@
   .twitter-btn:focus,
   .twitter-btn:hover {
     background-color: #0c7abf;
+  }
+
+  .badge-wrapper {
+    @apply flex space-x-8 mt-5 mb-4;
+    img {
+      @apply m-0;
+    }
   }
 }

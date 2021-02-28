@@ -10,19 +10,19 @@
                         </url>
                     
                         <url>
-                            <loc>https://gourav.io/notion-boost</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/notion-boost/whats-new</loc>
-                        </url>
-                    
-                        <url>
                             <loc>https://gourav.io/blog/first-donation-on-open-source-side-project</loc>
                         </url>
                     
                         <url>
                             <loc>https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://gourav.io/notion-boost</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://gourav.io/notion-boost/whats-new</loc>
                         </url>
                     
         </urlset>

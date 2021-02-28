@@ -45,7 +45,11 @@ module.exports = {
   //     },
   //   },
   // },
-  variants: {},
+  variants: {
+    extend: {
+      tableLayout: ["hover", "focus"],
+    },
+  },
   // eslint-disable-next-line global-require
   plugins: [require("@tailwindcss/typography")],
 };
