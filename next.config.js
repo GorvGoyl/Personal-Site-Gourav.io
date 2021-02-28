@@ -64,6 +64,10 @@ module.exports = withMdxEnhanced({
 })(
   // NextConfig
   {
+    i18n: {
+      locales: ["en-US"],
+      defaultLocale: "en-US",
+    },
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
     webpack: (config, { dev, isServer }, options) => {
       if (isServer) {
