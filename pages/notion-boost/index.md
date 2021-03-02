@@ -26,7 +26,8 @@ import showHoverText from "./img/showHoverText.gif";
 import leftAlignImage from "./img/leftAlignImage.gif";
 import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 
-<Title logo={logo} />
+<Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
+
 <p className="lead">
   Open-source extension for Chrome and Firefox to add features like sticky
   outline, small text & full width by default,scroll to top button, hide slash

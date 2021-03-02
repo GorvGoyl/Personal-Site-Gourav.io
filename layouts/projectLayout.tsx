@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { FrontMatter } from "@/lib/getPost";
+import project from "@/layouts/css/project.module.scss";
 
 // This function must be named otherwise it disables Fast Refresh.
 export default function Pos(Props: {
@@ -33,7 +34,7 @@ export default function Pos(Props: {
       <Container layout={LayoutType.Blog}>
         <Navbar />
         <main className="mx-auto prose prose-lg">
-          <article>{Props.children}</article>
+          <article className={`${project.css}`}>{Props.children}</article>
         </main>
       </Container>
     </>

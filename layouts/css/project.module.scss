@@ -1,0 +1,49 @@
+.css {
+  :global {
+    .wrapper-outer {
+      @apply flex flex-col h-screen;
+    }
+    .wrapper-table {
+      @apply flex-grow overflow-auto;
+    }
+
+    table {
+      @apply relative w-full m-0;
+
+      thead {
+        @apply whitespace-nowrap;
+        tr {
+          th:last-child {
+            @apply pr-3;
+          }
+          th:first-child {
+            @apply pl-3;
+          }
+          th {
+            @apply sticky top-0  text-blue-900 bg-blue-200  py-3;
+          }
+        }
+      }
+
+      tbody {
+        @apply bg-blue-50 divide-y divide-gray-300;
+
+        tr {
+          td a {
+            @apply no-underline hover:underline font-normal;
+          }
+          td:last-child {
+            @apply pr-3;
+          }
+          td:first-child {
+            @apply pl-3 font-semibold;
+          }
+          td:nth-child(2),
+          td:nth-child(3) {
+            @apply lg:break-all;
+          }
+        }
+      }
+    }
+  }
+}

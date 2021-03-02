@@ -52,20 +52,29 @@ export function NavbarNotion(): JSX.Element {
   );
 }
 
-export function Title(Props: { logo: string }): JSX.Element {
+export function Title(Props: {
+  txt: string;
+  homeURL: string;
+  logo?: string;
+}): JSX.Element {
   return (
     <div className="flex items-start">
       <div className="">
         <div className="">
-          <Link href="/notion-boost">
-            <a className="no-underline inline-flex items-center">
-              <img
-                className="w-24 h-24 m-0 mr-8 -ml-1"
-                src={Props.logo}
-                alt="Notion Boost"
-              />
+          <Link href={Props.homeURL}>
+            <a
+              className="no-underline inline-flex items-center"
+              title={Props.txt}
+            >
+              {Props.logo && (
+                <img
+                  className="w-24 h-24 m-0 mr-8 -ml-1"
+                  src={Props.logo}
+                  alt={Props.txt}
+                />
+              )}
               <header>
-                <h1 className="m-0">Notion Boost</h1>
+                <h1 className="m-0">{Props.txt}</h1>
               </header>
             </a>
           </Link>
@@ -75,7 +84,7 @@ export function Title(Props: { logo: string }): JSX.Element {
   );
 }
 export function Social(): JSX.Element {
-  console.log(`useRouter().pathname: ${useRouter().basePath}`);
+  // console.log(`useRouter().pathname: ${useRouter().basePath}`);
   // 👍 Liked this extension? express your love by rating [★★★★★](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd) on chrome/firefox store.
   return (
     <div>

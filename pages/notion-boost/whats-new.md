@@ -12,7 +12,7 @@ import { Title, Social,NavbarNotion } from "@/components/notionBoost";
 import og from "./img/og.png";
 import logo from "./img/logo.png";
 
-<Title logo={logo}/>
+<Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 <NavbarNotion />
 
