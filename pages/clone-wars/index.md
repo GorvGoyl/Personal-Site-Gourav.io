@@ -1,7 +1,7 @@
 ---
 layout: "projectLayout"
 title: "Clone Wars - Open source clones of popular sites"
-desc: "70+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Trello, Whatsapp, Youtube etc. List contains source code, demo links, tech stack, and, github stars count."
+desc: "70+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Trello, Whatsapp, Youtube etc. List contains source code, demo links, tech stack, and, Github stars count."
 date: "02-03-2021"
 og: "clone-wars/img/og.png"
 ---
@@ -13,10 +13,13 @@ import Link from "next/link";
 
 import og from "./img/og.png";
 
-<Title txt="Clone Wars - Open source clones of popular sites" homeURL = "/clone-wars" />
+<Img src={og}  />
+
+<Title  txt="Clone Wars - Open source clones of popular sites" homeURL = "/clone-wars" />
 
 <p className="lead">
-  70+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Trello, Whatsapp, Youtube etc. List contains source code, demo links, tech stack, and, github stars count.
+  70+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Trello, Whatsapp, Youtube, etc. 
+  List contains source code, demo links, tech stack, and, GitHub stars count.
 </p>
 
  <nav  className= "flex justify-between  mt-5" 

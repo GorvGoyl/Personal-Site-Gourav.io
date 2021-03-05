@@ -138,6 +138,16 @@ export default function Home(): JSX.Element {
                     responsiveness without using any css framework or library.
                   </p>
                 </li>
+                <li>
+                  <p>
+                    <Link href="/clone-wars">
+                      <a title="Clone Wars">Clone Wars</a>
+                    </Link>
+                    <br />
+                    List of 70+ open-source clones of sites like Airbnb,
+                    Spotify, Tiktok, Netflix, etc.
+                  </p>
+                </li>
               </ul>
             </div>
           </div>
