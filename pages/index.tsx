@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import { Container } from "@/components/layout";
 import { TwitterIcon } from "@/components/tags";
+import { TwitterBtn } from "@/components/blocks";
 
 export default function Home(): JSX.Element {
   return (
@@ -151,23 +152,7 @@ export default function Home(): JSX.Element {
               </ul>
             </div>
           </div>
-          <div className="twitter mt-12  justify-center flex">
-            <div>
-              <a
-                href="https://twitter.com/intent/follow?user_id=325435736"
-                target="_blank"
-                className="twitter-btn"
-                title="Follow @GorvGoyl on Twitter"
-              >
-                <img
-                  src="/twitter-light.svg"
-                  className="inline w-4 h-4 m-0 mr-1"
-                  alt="Twitter"
-                />
-                Follow @GorvGoyl
-              </a>
-            </div>
-          </div>
+
           {/* disable below twitter widget */}
           {/* <div className="mt-12 justify-center flex">
             <a
@@ -186,6 +171,7 @@ export default function Home(): JSX.Element {
             />
           </div> */}
         </div>
+        <TwitterBtn />
       </Container>
     </div>
   );

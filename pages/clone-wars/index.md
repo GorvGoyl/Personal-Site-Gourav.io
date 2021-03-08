@@ -8,7 +8,6 @@ og: "clone-wars/img/og.png"
 
 import { Img, A } from "@/components/tags";
 import { TwitterIcon } from "@/components/tags";
-import { TwitterBtn } from "@/components/blocks";
 import { Title } from "@/components/notionBoost";
 import Link from "next/link";
 
@@ -155,5 +154,3 @@ import og from "./img/og.png";
 2. Add your contribution to [readme.md](https://github.com/GorvGoyl/Clone-Wars/blob/main/README.md) (you may use online md editor like [markdown.site](https://markdown.site/) for better table visualization, format with [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) in VSCode) and send me a PR!
 
 Any other feedback is also welcome :)
-
-<TwitterBtn/>

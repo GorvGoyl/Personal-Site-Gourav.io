@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { ScrollTopBtn } from "@/components/tags";
+import { TwitterBtn } from "@/components/blocks";
 import { webpackPath } from "@/lib/utils";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
@@ -36,6 +36,7 @@ export default function Pos(Props: {
         <main className="mx-auto prose prose-lg">
           <article className={`${project.css}`}>{Props.children}</article>
         </main>
+        <TwitterBtn />
       </Container>
     </>
   );
