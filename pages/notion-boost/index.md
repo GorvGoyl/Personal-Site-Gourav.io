@@ -26,8 +26,6 @@ import showHoverText from "./img/showHoverText.gif";
 import leftAlignImage from "./img/leftAlignImage.gif";
 import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 
-<Img src={og}  />
-
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 <p className="lead">
