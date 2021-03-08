@@ -68,7 +68,9 @@ export function Title(Props: {
             >
               {Props.logo && (
                 <img
-                  className="w-24 h-24 m-0 mr-8 -ml-1"
+                  className="m-0 mr-8 -ml-1"
+                  width="96"
+                  height="96"
                   src={Props.logo}
                   alt={Props.txt}
                 />

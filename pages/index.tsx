@@ -12,9 +12,9 @@ export default function Home(): JSX.Element {
         <div>
           <div className="flex items-center mb-10">
             <img
-              className="w-32 h-32 rounded-full mr-8"
-              width="1280"
-              height="720"
+              className="rounded-full mr-8"
+              width="128"
+              height="128"
               src="/gourav.png"
               alt="Gourav Goyal"
             />
