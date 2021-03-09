@@ -133,7 +133,13 @@ import og from "./img/og.png";
 
 ## Support
 
-#### ❤ Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+#### ❤ Clone Wars is live on [Product Hunt](https://www.producthunt.com/posts/clone-wars/). Check it out!
+
+<p align="center">
+<a href="https://www.producthunt.com/posts/clone-wars?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-clone-wars" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=287384&theme=dark" alt="Clone Wars - Open-source clones of sites like Airbnb, Tiktok, Netflix etc | Product Hunt"  width="250" height="54" /></a>
+</p>
+
+#### 💲 Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
 
 <p align="center">
   <a href="https://ko-fi.com/gorvgoyl">
@@ -151,6 +157,6 @@ import og from "./img/og.png";
 
 1. Create a [new issue](https://github.com/GorvGoyl/Clone-Wars/issues/new) with following details: clone name, code repo link, demo link, and tech stack used.  
    OR
-2. Add your contribution to [readme.md](https://github.com/GorvGoyl/Clone-Wars/blob/main/README.md) (you may use online md editor like [markdown.site](https://markdown.site/) for better table visualization, format with [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) in VSCode) and send me a PR!
+2. Add your contribution to [readme.md](https://github.com/GorvGoyl/Clone-Wars/blob/main/README.md) (you may use online md editor like [markdown.site](https://markdown.site/) for better table visualization) and send me a PR!
 
 Any other feedback is also welcome :)
