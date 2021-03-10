@@ -162,8 +162,8 @@ import og from "./img/og.png";
 
 2 ways to add your/their repo to the list:
 
-1. Create a [new issue](https://github.com/GorvGoyl/Clone-Wars/issues/new) with following details: clone name, code repo link, demo link, and tech stack used.  
+1. Add your contribution to [readme.md](https://github.com/GorvGoyl/Clone-Wars/blob/main/README.md) (_you may use online md editor like [markdown.site](https://markdown.site/) for better table visualization_) and send me a PR! (_faster approval and your name would be added to project contributors_)  
    OR
-2. Add your contribution to [readme.md](https://github.com/GorvGoyl/Clone-Wars/blob/main/README.md) (you may use online md editor like [markdown.site](https://markdown.site/) for better table visualization) and send me a PR!
+2. Create a [new issue](https://github.com/GorvGoyl/Clone-Wars/issues/new) with following details: clone name, code repo link, demo link, and tech stack used.
 
 Any other feedback is also welcome :)
