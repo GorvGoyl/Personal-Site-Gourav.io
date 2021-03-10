@@ -154,7 +154,7 @@ import og from "./img/og.png";
   </a>
 </p>
 
-#### 👨‍💻 Follow the maker [@GorvGoyl](https://twitter.com/intent/follow?user_id=325435736) behind this extension.
+#### 👨‍💻 Follow the maker <a href="https://twitter.com/GorvGoyl" title="Follow @GorvGoyl on Twitter">GorvGoyl<TwitterIcon class="inline w-4 h-4 m-0 ml-1 " /></a> behind this project.
 
 ---
 

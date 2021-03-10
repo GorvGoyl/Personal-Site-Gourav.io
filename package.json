@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "//start": "starts Next.js in development mode",
-    "start": "next dev",
+    "start": "start http://localhost:3000 & next dev",
     "start:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "//prod": "starts Next.js in production server.. restart again after code change",
     "start:prod": "next build && next start",
