@@ -19,7 +19,7 @@ import og from "./img/og.png";
 
 <p className="lead">
   70+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Trello, Whatsapp, Youtube, etc. 
-  List contains source code, demo links, tech stack, and, GitHub stars count.
+  List contains source code, demo links, tech stack, and, GitHub stars count. Great for learning purpose!
 </p>
 
  <nav  className= "flex justify-between  mt-5" 
