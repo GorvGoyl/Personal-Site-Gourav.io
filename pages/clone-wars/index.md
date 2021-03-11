@@ -138,6 +138,8 @@ import og from "./img/og.png";
  </div>
  </div>
 
+_Some link is broken? [let me know](https://github.com/GorvGoyl/Clone-Wars/issues/new)_
+
 ## Support
 
 #### ❤ Clone Wars is live on [Product Hunt](https://www.producthunt.com/posts/clone-wars/). Check it out!
