@@ -48,6 +48,8 @@ import og from "./img/og.png";
 
 ## List of 70+ open source clones
 
+<sup>Made by <a href="https://twitter.com/GorvGoyl" title="Follow @GorvGoyl on Twitter">GorvGoyl<TwitterIcon class="inline w-3 h-3 m-0 ml-1 " /></a></sup>
+
 <div className="wrapper-outer">
 <div className="wrapper-table">
 
