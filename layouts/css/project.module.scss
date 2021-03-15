@@ -2,11 +2,14 @@
   :global {
     // table: clone-wars
     .wrapper-outer {
-      @apply flex flex-col; // show full height table
-      // @apply flex flex-col h-screen; uncomment to limit max height of table
+      // large screen: show full height table,small: show fixed width to prevent breaking page width
+      @apply flex flex-col md:h-full h-screen;
     }
     .wrapper-table {
-      // @apply flex-grow overflow-auto; uncomment to limit max height of table
+      // small screen: show fixed width and scroll to prevent breaking page width
+      @media (max-width: 640px) {
+        overflow: auto;
+      }
     }
 
     table {
