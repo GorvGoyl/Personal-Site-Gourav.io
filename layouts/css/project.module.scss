@@ -1,10 +1,12 @@
 .css {
   :global {
+    // table: clone-wars
     .wrapper-outer {
-      @apply flex flex-col h-screen;
+      @apply flex flex-col; // show full height table
+      // @apply flex flex-col h-screen; uncomment to limit max height of table
     }
     .wrapper-table {
-      @apply flex-grow overflow-auto;
+      // @apply flex-grow overflow-auto; uncomment to limit max height of table
     }
 
     table {
