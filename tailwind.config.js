@@ -51,5 +51,18 @@ module.exports = {
     },
   },
   // eslint-disable-next-line global-require
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    // https://tailwindcss.com/docs/plugins#variants
+
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".overflow-initial": { overflow: "initial" },
+      };
+
+      addUtilities(newUtilities, {
+        variants: ["responsive"],
+      });
+    },
+  ],
 };

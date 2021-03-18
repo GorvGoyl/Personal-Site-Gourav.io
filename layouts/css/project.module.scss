@@ -3,13 +3,11 @@
     // table: clone-wars
     .wrapper-outer {
       // large screen: show full height table,small: show fixed width to prevent breaking page width
-      @apply flex flex-col md:h-full h-screen;
+      @apply flex flex-col md:h-full h-screen overflow-initial;
     }
     .wrapper-table {
       // small screen: show fixed width and scroll to prevent breaking page width
-      @media (max-width: 640px) {
-        overflow: auto;
-      }
+      @apply overflow-auto md:overflow-initial;
     }
 
     table {
