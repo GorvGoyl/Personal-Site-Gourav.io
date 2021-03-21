@@ -1,7 +1,7 @@
 ---
 layout: "projectLayout"
 title: "Clone Wars - Open source clones of popular sites"
-desc: "100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Trello, Whatsapp, Youtube etc. List contains source code, demo links, tech stack, and, Github stars count."
+desc: "100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Trello, Whatsapp, Youtube etc. List contains source code, demo links, tech stack, and Github stars count."
 date: "02-03-2021"
 og: "clone-wars/img/og.png"
 ---
