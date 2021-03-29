@@ -66,13 +66,14 @@ export function SubscribeForm(): JSX.Element {
         <input
           ref={inputEl}
           aria-label="Email for newsletter"
-          placeholder="Your email address..."
-          name="email"
           tabIndex={1}
+          id="email"
+          placeholder="Your email address..."
+          autoComplete="email"
+          name="email"
           type="email"
           onChange={handleInputChange}
           title="Subscribe to Gourav's newsletter"
-          autoComplete="email"
           required
           disabled={form.state === "loading"}
           className={`bg-white border-gray-300 focus:ring-1 focus:ring-blue-400 outline-none px-4 py-1 rounded-l-md w-full ${
