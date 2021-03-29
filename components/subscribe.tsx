@@ -1,5 +1,13 @@
 // credits: Lee Robinson
 import React, { useRef, useState } from "react";
+import Confetti from "react-dom-confetti";
+
+const config = {
+  startVelocity: 22,
+  spread: 135,
+  // stagger: 5,
+  elementCount: 70,
+};
 
 export function SubscribeForm(): JSX.Element {
   const [form, setForm] = useState({ state: "", message: "" });
@@ -43,6 +51,9 @@ export function SubscribeForm(): JSX.Element {
     <div className="border border-blue-200 rounded p-6 my-4 w-full inline-block bg-blue-50">
       <h5 className="text-lg md:text-xl font-bold">Ready for more?</h5>
       <p className="my-1">I write about startups, tech, and life in general.</p>
+      <div className="mx-auto z-50 absolute left-1/2">
+        <Confetti active={form.state === "success"} config={config} />
+      </div>
       <form
         className="flex items-center mb-4 relative mt-5"
         onSubmit={subscribe}
