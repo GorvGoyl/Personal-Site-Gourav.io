@@ -4,16 +4,10 @@
     "paths": {
       // "@components/*": ["components/*"],
       // use @/ to access path related to root of project
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true, // can set to false
@@ -26,7 +20,7 @@
     "isolatedModules": true, //allow commonjs files
     "jsx": "preserve",
     // additional flags
-    "noImplicitAny": true, //disable use of 'any'
+    "noImplicitAny": false, //set 'true' to throw error for 'any'
     "suppressImplicitAnyIndexErrors": true,
     "pretty": true,
     "noImplicitReturns": true,
@@ -41,7 +35,5 @@
     "**/*.config.js" /* .config.js files */,
     "scripts/*.js"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

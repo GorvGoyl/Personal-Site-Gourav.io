@@ -7,6 +7,7 @@ og: "og.png"
 ---
 
 import { Img, A } from "@/components/tags.tsx";
+import { SubscribeForm } from "@/components/subscribe.tsx";
 import og from "./og.png";
 import img1 from "./1.png";
 import img2 from "./2.png";
@@ -34,8 +35,10 @@ I know I know, it's not that big amount, but somebody put an effort to make that
 I hope it inspires people who want to contribute and build stuff in the FOSS (Free and Open-Source Software) community. It's so captivating that the whole tech industry relies (and thrives) on open source software made by people in their free time.  
 You can explore the source code of `Shortcut Menu Bar` on [Github](https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension).
 
----
+### Update
 
-**Update:** It hit the front-page of Hacker News and many developers shared their stories of receiving first donation. You can <A new={true} href="https://news.ycombinator.com/item?id=25744661" text="join the conversation"  /> on HN.
+It hit the front-page of Hacker News and many developers shared their stories of receiving first donation. You can <A new={true} href="https://news.ycombinator.com/item?id=25744661" text="join the conversation"  /> on HN.
 
-<Img src={img4} caption="Front-page of Hacker News" />
+<Img src={img4} className="mx-auto md:w-2/3" caption="Front-page of Hacker News" />
+
+<SubscribeForm/>

@@ -15,7 +15,7 @@ export function Img(Props: {
 
   // add any more classes provided by prop
   if (Props.className) {
-    cls += Props.className;
+    cls = cls + " " + Props.className;
   }
 
   // set alt text from alt or caption

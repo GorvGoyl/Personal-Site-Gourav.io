@@ -74,9 +74,9 @@ export default function Home(): JSX.Element {
                         src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square"
                       />
                     </span>
-                    Chrome & Firefox browser extension for Notion.so to add
-                    features like outline (table of contents), bolder text, and
-                    more.
+                    Chrome & Firefox browser extension for <em>Notion.so</em> to
+                    add features like outline (table of contents), bolder text,
+                    and more.
                   </p>
                 </li>
                 <li>
@@ -108,7 +108,7 @@ export default function Home(): JSX.Element {
                         src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square"
                       />
                     </span>
-                    VSCode Extension which adds useful buttons like beautify,
+                    VSCode extension which adds useful buttons like beautify,
                     open files, undo, redo, etc to the editor in Visual Studio
                     Code.
                   </p>
@@ -147,8 +147,8 @@ export default function Home(): JSX.Element {
                       <a title="Clone Wars">Clone Wars</a>
                     </Link>
                     <br />
-                    List of 70+ open-source clones of sites like Airbnb,
-                    Spotify, Tiktok, Netflix, etc.
+                    List of 100+ open-source clones of popular sites like
+                    Airbnb, Spotify, Tiktok, Netflix, etc.
                   </p>
                 </li>
               </ul>
