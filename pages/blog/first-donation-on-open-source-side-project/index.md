@@ -7,7 +7,6 @@ og: "og.png"
 ---
 
 import { Img, A } from "@/components/tags.tsx";
-import { SubscribeForm } from "@/components/subscribe.tsx";
 import og from "./og.png";
 import img1 from "./1.png";
 import img2 from "./2.png";
@@ -40,5 +39,3 @@ You can explore the source code of `Shortcut Menu Bar` on [Github](https://githu
 It hit the front-page of Hacker News and many developers shared their stories of receiving first donation. You can <A new={true} href="https://news.ycombinator.com/item?id=25744661" text="join the conversation"  /> on HN.
 
 <Img src={img4} className="mx-auto md:w-2/3" caption="Front-page of Hacker News" />
-
-<SubscribeForm/>

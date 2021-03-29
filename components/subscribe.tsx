@@ -6,7 +6,7 @@ const config = {
   startVelocity: 22,
   spread: 135,
   // stagger: 5,
-  elementCount: 70,
+  elementCount: 80,
 };
 
 export function SubscribeForm(): JSX.Element {
@@ -20,6 +20,7 @@ export function SubscribeForm(): JSX.Element {
     const res = await fetch("/api/subscribe", {
       body: JSON.stringify({
         email: inputEl.current.value,
+        referrer_url: `${window.location.href}`,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -48,9 +49,13 @@ export function SubscribeForm(): JSX.Element {
   }
 
   return (
-    <div className="border border-blue-200 rounded p-6 my-4 w-full inline-block bg-blue-50">
-      <h5 className="text-lg md:text-xl font-bold">Ready for more?</h5>
-      <p className="my-1">I write about startups, tech, and life in general.</p>
+    // `inline-block` to avoid margin-collapse
+    <div className="border border-blue-200 rounded p-6 mt-8 mb-4 w-full inline-block bg-blue-50">
+      <h5 className="text-lg md:text-xl font-bold">Enjoyed reading?</h5>
+      <p className="my-1">
+        Get latest articles in your inbox. I write about tech, productivity, and
+        my past learnings.
+      </p>
       <div className="mx-auto z-50 absolute left-1/2">
         <Confetti active={form.state === "success"} config={config} />
       </div>

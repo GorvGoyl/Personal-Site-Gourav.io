@@ -8,6 +8,7 @@ import { FrontMatter } from "@/lib/getPost";
 import { Author, AuthorImg } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
 import Link from "next/link";
+import { SubscribeForm } from "@/components/subscribe";
 
 // This function must be named otherwise it disables Fast Refresh.
 export default function Post(Props: {
@@ -41,6 +42,7 @@ export default function Post(Props: {
             <Author date={Props.frontMatter.date} />
             {Props.children}
           </article>
+          <SubscribeForm />
         </main>
         <hr className="my-12" />
         <div className="flex justify-center">
