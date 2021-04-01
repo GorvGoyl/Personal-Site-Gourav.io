@@ -9,7 +9,34 @@ const config = {
   elementCount: 80,
 };
 
-export function SubscribeForm(): JSX.Element {
+export enum subscribeFormType {
+  AfterArticle,
+  Generic,
+  Slim,
+}
+
+// AfterArticle, Generic (default:Generic)
+export function SubscribeForm(Props: { type: subscribeFormType }): JSX.Element {
+  const type = Props.type;
+  console.log(": " + Props.type);
+  const text = {
+    [subscribeFormType.AfterArticle]: {
+      title: "Enjoyed reading?",
+      desc:
+        "Get latest articles in your inbox. I write about tech, productivity, and my past learnings.",
+    },
+
+    [subscribeFormType.Generic]: {
+      title: "Gourav's Newsletter",
+      desc:
+        "I write about tech, productivity, and my past learnings. Get latest articles in your inbox.",
+    },
+    [subscribeFormType.Slim]: {
+      title: "Gourav's Newsletter",
+      desc: "",
+    },
+  };
+
   const [form, setForm] = useState({ state: "", message: "" });
   const inputEl = useRef(null);
 
@@ -51,11 +78,8 @@ export function SubscribeForm(): JSX.Element {
   return (
     // `inline-block` to avoid margin-collapse
     <div className="border border-blue-200 rounded p-6 mt-8 mb-4 w-full inline-block bg-blue-50">
-      <h5 className="text-lg md:text-xl font-bold">Enjoyed reading?</h5>
-      <p className="my-1">
-        Get latest articles in your inbox. I write about tech, productivity, and
-        my past learnings.
-      </p>
+      <h5 className="text-lg md:text-xl font-bold">{text[type].title}</h5>
+      <p className="my-1">{text[type].desc}</p>
       <div className="mx-auto z-50 absolute left-1/2">
         <Confetti active={form.state === "success"} config={config} />
       </div>

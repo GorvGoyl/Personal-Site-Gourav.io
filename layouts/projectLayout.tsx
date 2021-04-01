@@ -7,6 +7,7 @@ import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { FrontMatter } from "@/lib/getPost";
 import project from "@/layouts/css/project.module.scss";
+import { SubscribeForm, subscribeFormType } from "@/components/subscribe";
 
 // This function must be named otherwise it disables Fast Refresh.
 export default function Pos(Props: {
@@ -35,6 +36,8 @@ export default function Pos(Props: {
         <Navbar />
         <main className="mx-auto prose prose-lg">
           <article className={`${project.css}`}>{Props.children}</article>
+          <hr className="mb-8" />
+          <SubscribeForm type={subscribeFormType.Generic} />
         </main>
         <TwitterBtn />
       </Container>

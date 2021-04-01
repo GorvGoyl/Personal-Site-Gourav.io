@@ -9,7 +9,7 @@ export function TwitterBtn(): JSX.Element {
         <a
           href="https://twitter.com/GorvGoyl"
           target="_blank"
-          className="twitter-btn"
+          className="twitter-btn text-white no-underline"
           title="Follow 'Gourav Goyal' on Twitter"
         >
           <img

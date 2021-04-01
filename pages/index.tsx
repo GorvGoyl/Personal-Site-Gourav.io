@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import { Container } from "@/components/layout";
 import { TwitterIcon } from "@/components/tags";
 import { TwitterBtn } from "@/components/blocks";
+import { SubscribeForm, subscribeFormType } from "@/components/subscribe";
 
 export default function Home(): JSX.Element {
   return (
@@ -153,6 +154,8 @@ export default function Home(): JSX.Element {
                 </li>
               </ul>
             </div>
+            <SubscribeForm type={subscribeFormType.Generic} />
+            <TwitterBtn />
           </div>
 
           {/* disable below twitter widget */}
@@ -173,7 +176,6 @@ export default function Home(): JSX.Element {
             />
           </div> */}
         </div>
-        <TwitterBtn />
       </Container>
     </div>
   );

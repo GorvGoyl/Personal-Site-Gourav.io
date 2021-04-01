@@ -5,6 +5,9 @@ import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { readableDate } from "@/lib/utils";
+import React from "react";
+import { SubscribeForm, subscribeFormType } from "@/components/subscribe";
+import { TwitterBtn } from "@/components/blocks";
 
 export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
   return (
@@ -20,11 +23,11 @@ export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
           <div>
             {Props.allPosts.map((post) => (
               <div key={post.slug}>
-                <div className="">
+                <div>
                   <article>
                     <Link href={`/blog/${post.slug}`}>
                       <a className="no-underline">
-                        <h3 className="">{post.title}</h3>
+                        <h3>{post.title}</h3>
                       </a>
                     </Link>
                   </article>
@@ -35,6 +38,9 @@ export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
               </div>
             ))}
           </div>
+          <hr className="mb-8" />
+          <SubscribeForm type={subscribeFormType.Slim} />
+          <TwitterBtn />
         </main>
       </Container>
     </>
