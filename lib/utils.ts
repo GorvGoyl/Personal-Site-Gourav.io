@@ -9,6 +9,6 @@ export function readableDate(date: string): string {
     day: "numeric",
     year: "numeric",
   });
-  const dateString = dateFormatter.format(new Date(date));
+  const dateString = dateFormatter.format(new Date(String(date)));
   return dateString;
 }
