@@ -10,7 +10,7 @@ export function readableDate(date: string): string {
     year: "numeric",
   });
   console.log("date: " + date);
-  const dateObj = new Date(String(date));
+  const dateObj = new Date(date);
   console.log("dateObj: " + dateObj);
   const dateString = dateFormatter.format(dateObj);
   console.log("dateString: " + dateString);
