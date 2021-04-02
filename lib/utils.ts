@@ -26,9 +26,11 @@ export function readableDate(date: string): string {
       ? "0" + date.split("-")[2]
       : date.split("-")[2];
 
-  console.log("YYYY + MM + DD: " + YYYY + MM + DD);
+  // YYYY-MM-DD
+  const properDateString = `${YYYY + "-" + MM + "-" + DD}`;
 
-  const dateObj = new Date(YYYY + MM + DD);
+  console.log("YYYY-MM-DD" + properDateString);
+  const dateObj = new Date(properDateString);
 
   console.log("dateObj: " + dateObj);
   const dateString = dateFormatter.format(dateObj);
