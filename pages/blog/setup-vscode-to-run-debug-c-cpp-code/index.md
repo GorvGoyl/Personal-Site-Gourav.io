@@ -2,7 +2,7 @@
 layout: "postLayout"
 title: "Setup VSCode to run and debug C / C++ code"
 desc: "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode"
-date: "2020-12-05"
+date: "2020-12-5"
 og: "og.png"
 ---
 
