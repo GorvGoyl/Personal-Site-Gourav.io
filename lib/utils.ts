@@ -10,6 +10,10 @@ export function readableDate(date: string): string {
     year: "numeric",
   });
   console.log("date: " + date);
-  const dateString = dateFormatter.format(new Date(String(date)));
+  const dateObj = new Date(String(date));
+  console.log("dateObj: " + dateObj);
+  const dateString = dateFormatter.format(dateObj);
+  console.log("dateString: " + dateString);
+
   return dateString;
 }
