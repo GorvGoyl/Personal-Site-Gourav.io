@@ -1,6 +1,6 @@
 ---
 layout: "projectLayout"
-title: "Notion Boost"
+title: "Notion Boost - Browser extension to make Notion more productive"
 desc: "Chrome and Firefox extension to boost Notion productivity with features like sticky outline, small text & full width by default, scroll to top button, hide slash command menu, hide help button, bolder text, and, more!"
 date: "09-12-2020"
 og: "notion-boost/img/og.png"
