@@ -5,6 +5,12 @@ dist
 # don't lint nyc coverage output
 coverage
 **/.next/*
+*.png
+*.gif
+*.svg
+*.jpg
+*.jpeg
+*.scss
 **/out/*
 next-env.d.ts
 # next.config.js

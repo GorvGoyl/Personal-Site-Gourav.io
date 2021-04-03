@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import { Container } from "@/components/layout";
 import { TwitterIcon } from "@/components/tags";
 import { TwitterBtn } from "@/components/blocks";
-import { SubscribeForm, subscribeFormType } from "@/components/subscribe";
+import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
 
 export default function Home(): JSX.Element {
   return (
@@ -154,7 +154,7 @@ export default function Home(): JSX.Element {
                 </li>
               </ul>
             </div>
-            <SubscribeForm type={subscribeFormType.Generic} />
+            <SubscribeForm type={FORMTYPE.Generic} />
             <TwitterBtn />
           </div>
 

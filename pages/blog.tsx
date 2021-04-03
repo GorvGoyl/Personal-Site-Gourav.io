@@ -6,7 +6,7 @@ import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { readableDate } from "@/lib/utils";
 import React from "react";
-import { SubscribeForm, subscribeFormType } from "@/components/subscribe";
+import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
 import { TwitterBtn } from "@/components/blocks";
 
 export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
@@ -39,7 +39,7 @@ export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
             ))}
           </div>
           <hr className="mb-8" />
-          <SubscribeForm type={subscribeFormType.Slim} />
+          <SubscribeForm type={FORMTYPE.Slim} />
           <TwitterBtn />
         </main>
       </Container>

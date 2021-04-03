@@ -2,12 +2,14 @@
 
 import { isProd } from "@/lib/utils";
 import { NextApiRequest, NextApiResponse } from "next";
+
 const PROD_API = "https://api.buttondown.email/v1/subscribers";
 const PROD_API_KEY = process.env.BUTTONDOWN_API_KEY;
 const MOCK_API = process.env.MOCK_SUBSCRIBE_API;
 const isMOCK = false;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { email, referrer_url } = req.body;
 
   let addSubscriberAPI: string;
@@ -16,7 +18,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (!isProd && isMOCK) {
     addSubscriberAPI = MOCK_API;
     API_KEY = "";
-    console.log(addSubscriberAPI);
   } else {
     addSubscriberAPI = PROD_API;
     API_KEY = PROD_API_KEY;
@@ -40,7 +41,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       method: "POST",
     });
 
-    console.log("response: " + response.status);
     if (response.status >= 400) {
       const text = await response.text();
 

@@ -31,6 +31,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "**/*.md",
+    "**/*.mdx",
+    "**/*.scss",
     "**/*.tsx",
     "**/*.config.js" /* .config.js files */,
     "scripts/*.js"
