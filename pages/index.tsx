@@ -66,10 +66,16 @@ export default function Home(): JSX.Element {
                           src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
                         />
                       </a>
-                      <img
-                        alt="Chrome Web Store downloads"
-                        src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square"
-                      />
+                      <a
+                        title="Chrome Web Store link"
+                        href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+                        target="_blank"
+                      >
+                        <img
+                          alt="Chrome Web Store downloads"
+                          src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square"
+                        />
+                      </a>
                       <img
                         alt="Chrome Web Store rating"
                         src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square"
@@ -100,10 +106,16 @@ export default function Home(): JSX.Element {
                           src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
                         />
                       </a>
-                      <img
-                        alt="Visual Studio Marketplace Downloads"
-                        src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square"
-                      />
+                      <a
+                        title="VSCode Marketplace link"
+                        href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar"
+                        target="_blank"
+                      >
+                        <img
+                          alt="Visual Studio Marketplace Downloads"
+                          src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square"
+                        />
+                      </a>
                       <img
                         alt="Visual Studio Marketplace Rating (Stars)"
                         src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square"
