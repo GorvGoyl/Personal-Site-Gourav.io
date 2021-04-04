@@ -139,7 +139,7 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="GitHub Repo stars"
-                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&color=#44cc11"
+                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
                         />
                       </a>
                       <a
@@ -149,7 +149,7 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="GitHub forks"
-                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&color=#44cc11"
+                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
                         />
                       </a>
                     </span>
