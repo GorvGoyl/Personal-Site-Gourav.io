@@ -116,6 +116,37 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
+                    <Link href="/clone-wars">
+                      <a title="Clone Wars">Clone Wars</a>
+                    </Link>
+                    <span className="badge-wrapper">
+                      <a
+                        title="GitHub Repo stars"
+                        href="https://github.com/gorvgoyl/clone-wars"
+                        target="_blank"
+                      >
+                        <img
+                          alt="GitHub Repo stars"
+                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&color=#44cc11"
+                        />
+                      </a>
+                      <a
+                        title="Github forks"
+                        href="https://github.com/gorvgoyl/clone-wars"
+                        target="_blank"
+                      >
+                        <img
+                          alt="GitHub forks"
+                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&color=#44cc11"
+                        />
+                      </a>
+                    </span>
+                    List of 100+ open-source clones of popular sites like
+                    Airbnb, Spotify, Tiktok, Netflix, etc.
+                  </p>
+                </li>
+                <li>
+                  <p>
                     <a
                       href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en"
                       target="blank"
@@ -140,16 +171,6 @@ export default function Home(): JSX.Element {
                     <br />
                     My old portfolio site built around material guidelines &
                     responsiveness without using any css framework or library.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <Link href="/clone-wars">
-                      <a title="Clone Wars">Clone Wars</a>
-                    </Link>
-                    <br />
-                    List of 100+ open-source clones of popular sites like
-                    Airbnb, Spotify, Tiktok, Netflix, etc.
                   </p>
                 </li>
               </ul>

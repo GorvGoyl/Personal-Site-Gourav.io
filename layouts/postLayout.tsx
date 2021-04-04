@@ -43,7 +43,7 @@ export default function Post(Props: {
             {Props.children}
             <p>
               Thanks for reading. Connect with me on{" "}
-              <a href="https://twitter.com/GorvGoyl">Twitter </a> and{" "}
+              <a href="https://twitter.com/GorvGoyl">Twitter</a> and{" "}
               <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>.
             </p>
           </article>
