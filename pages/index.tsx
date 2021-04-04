@@ -133,17 +133,17 @@ export default function Home(): JSX.Element {
                     </Link>
                     <span className="badge-wrapper">
                       <a
-                        title="GitHub Repo stars"
+                        title="GitHub repo stars"
                         href="https://github.com/gorvgoyl/clone-wars"
                         target="_blank"
                       >
                         <img
-                          alt="GitHub Repo stars"
+                          alt="GitHub repo stars"
                           src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
                         />
                       </a>
                       <a
-                        title="Github forks"
+                        title="Github repo forks"
                         href="https://github.com/gorvgoyl/clone-wars"
                         target="_blank"
                       >
