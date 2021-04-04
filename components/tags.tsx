@@ -150,7 +150,7 @@ export function ShareIcon(): JSX.Element {
             onClick={(e) => {
               e.preventDefault();
               openWindowHandler(
-                `https://twitter.com/intent/tweet?text=${document.title} via @GorvGoyl&url=${pageURL}`,
+                `https://twitter.com/intent/tweet?text=${document.title} - @GorvGoyl&url=${pageURL}`,
                 "twitter-share",
                 "width=550,height=626"
               );

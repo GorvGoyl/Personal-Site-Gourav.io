@@ -69,6 +69,16 @@ what's new</a></Link> in latest update ✨</p>
 
 ---
 
+### 🖤 Support
+
+💲 Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+
+<p align="center">
+  <a href="https://ko-fi.com/gorvgoyl">
+  <img src="/bmc.png" width="200" alt="Buy me a Coffee"/>
+  </a>
+</p>
+
 <Social />
 
 ---
@@ -143,8 +153,4 @@ comment section is useless when working solo
 
 <Img src={commenthide} type="ss" />
 
-### ❓ Missing some feature? Suggest on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
-
----
-
-<Social />
+> Missing some feature? Suggest on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)

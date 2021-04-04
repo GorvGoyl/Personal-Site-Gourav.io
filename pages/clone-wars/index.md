@@ -186,19 +186,19 @@ _Some link is broken or clone is not good enough? [report it](https://github.com
 
 ## Support
 
-#### ❤ Follow the maker <a href="https://twitter.com/GorvGoyl" title="Follow @GorvGoyl on Twitter">GorvGoyl<TwitterIcon class="inline w-4 h-4 m-0 ml-1 " /></a> behind this project
-
-<p align="center">
- <a href="https://twitter.com/GorvGoyl">
-  <img src="https://img.shields.io/badge/@GorvGoyl-1da1f2?style=for-the-badge&labelColor=1da1f2&color=1da1f2&logo=twitter&logoColor=white&label=Follow" alt="Follow on Twitter"/>
-  </a>
-</p>
-
 #### 💲 Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
 
 <p align="center">
   <a href="https://ko-fi.com/gorvgoyl">
   <img src="https://github.com/GorvGoyl/Notion-Boost-browser-extension/raw/master/src/images/readme/bmc.png" width="200" alt="Buy me a Coffee"/>
+  </a>
+</p>
+
+#### ❤ Follow the maker <a href="https://twitter.com/GorvGoyl" title="Follow @GorvGoyl on Twitter">GorvGoyl<TwitterIcon class="inline w-4 h-4 m-0 ml-1 " /></a> behind this project
+
+<p align="center">
+ <a href="https://twitter.com/GorvGoyl">
+  <img src="https://img.shields.io/badge/@GorvGoyl-1da1f2?style=for-the-badge&labelColor=1da1f2&color=1da1f2&logo=twitter&logoColor=white&label=Follow" alt="Follow on Twitter"/>
   </a>
 </p>
 
