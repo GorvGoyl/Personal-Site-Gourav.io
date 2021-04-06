@@ -1,6 +1,7 @@
 module.exports = {
   // to enable overriding tw-typography styles
   important: true,
+  // mode: "jit",
   future: {
     removeDeprecatedGapUtilities: true,
   },
@@ -9,7 +10,7 @@ module.exports = {
     // preserveHtmlElements: true,
     content: [
       "./components/**/*.{js,ts,jsx,tsx}",
-      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./pages/**/*.{js,ts,jsx,tsx,md}",
       "./layouts/**/*.{js,ts,jsx,tsx}",
       "./lib/**/*.{js,ts,jsx,tsx}",
     ],
@@ -55,7 +56,7 @@ module.exports = {
     require("@tailwindcss/typography"),
     // https://tailwindcss.com/docs/plugins#variants
 
-    function ({ addUtilities }) {
+    ({ addUtilities }) => {
       const newUtilities = {
         ".overflow-initial": { overflow: "initial" },
       };
