@@ -15,6 +15,26 @@ export enum FORMTYPE {
   Slim,
 }
 
+function ConnectOnSocial() {
+  return (
+    <span>
+      &nbsp;Connect with me on{" "}
+      <a className="text-current font-bold" href="https://twitter.com/GorvGoyl">
+        Twitter
+      </a>{" "}
+      and{" "}
+      <a
+        className="text-current font-bold"
+        href="https://www.linkedin.com/in/gorvgoyl/"
+      >
+        {" "}
+        LinkedIn
+      </a>
+      .
+    </span>
+  );
+}
+
 function SuccessMessage(Props: { children: any }) {
   return (
     <p className="flex items-center text-sm font-bold text-green-400">
@@ -31,6 +51,7 @@ function SuccessMessage(Props: { children: any }) {
         />
       </svg>
       {Props.children}
+      <ConnectOnSocial />
     </p>
   );
 }
@@ -134,7 +155,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
     inputEl.current.value = "";
     setForm({
       state: "success",
-      message: `Done! You're now subscribed.`,
+      message: `Subscribed!`,
     });
   };
 
