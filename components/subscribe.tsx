@@ -115,6 +115,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
       body: JSON.stringify({
         email: inputEl.current.value,
         referrer_url: `${window.location.href}`,
+        referrer: document.referrer,
       }),
       headers: {
         "Content-Type": "application/json",

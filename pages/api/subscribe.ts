@@ -10,7 +10,7 @@ const isMOCK = false;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  const { email, referrer_url } = req.body;
+  const { email, referrer_url, referrer } = req.body;
 
   let addSubscriberAPI: string;
   let API_KEY: string;
@@ -33,6 +33,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         email,
         tags: ["gourav.io"],
         referrer_url: referrer_url.substring(0, 500), // max length can be 500
+        notes: referrer,
       }),
       headers: {
         Authorization: `Token ${API_KEY}`,
