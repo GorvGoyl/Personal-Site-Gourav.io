@@ -27,11 +27,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(400).json({ error: "Email is required" });
   }
 
+  const tags = ["gourav.io"];
+  if (referrer) tags.push(referrer);
+
   try {
     const response = await fetch(addSubscriberAPI, {
       body: JSON.stringify({
         email,
-        tags: ["gourav.io"],
+        tags,
         referrer_url: referrer_url.substring(0, 500), // max length can be 500
         notes: referrer,
       }),
