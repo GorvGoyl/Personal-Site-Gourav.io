@@ -64,6 +64,11 @@ module.exports = withMdxEnhanced({
 })(
   // NextConfig
   {
+    images: {
+      domains: [
+        "pbs.twimg.com", // Twitter Profile Picture
+      ],
+    },
     i18n: {
       locales: ["en-US"],
       defaultLocale: "en-US",
