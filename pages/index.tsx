@@ -23,7 +23,11 @@ export default function Home(): JSX.Element {
               <h1 className="">Gourav Goyal</h1>
               <nav className="flex space-x-14">
                 <Link href="https://twitter.com/GorvGoyl">
-                  <a target="blank" title="Follow @GorvGoyl on Twitter">
+                  <a
+                    target="blank"
+                    rel="noopener"
+                    title="Follow @GorvGoyl on Twitter"
+                  >
                     GorvGoyl
                     <TwitterIcon class="inline w-4 h-4 m-0 ml-1" />
                   </a>
@@ -70,6 +74,7 @@ export default function Home(): JSX.Element {
                         title="Chrome Web Store link"
                         href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           alt="Chrome Web Store downloads"
@@ -91,6 +96,7 @@ export default function Home(): JSX.Element {
                     <a
                       href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar"
                       target="blank"
+                      rel="noopener"
                       title="Shortcut Menubar VSCode extension"
                     >
                       Shortcut Menubar
@@ -100,6 +106,7 @@ export default function Home(): JSX.Element {
                         title="source code"
                         href="https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           alt="source code"
@@ -110,6 +117,7 @@ export default function Home(): JSX.Element {
                         title="VSCode Marketplace link"
                         href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           alt="Visual Studio Marketplace Downloads"
@@ -136,6 +144,7 @@ export default function Home(): JSX.Element {
                         title="GitHub repo stars"
                         href="https://github.com/gorvgoyl/clone-wars"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           alt="GitHub repo stars"
@@ -146,6 +155,7 @@ export default function Home(): JSX.Element {
                         title="Github repo forks"
                         href="https://github.com/gorvgoyl/clone-wars"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           alt="GitHub forks"
@@ -162,6 +172,7 @@ export default function Home(): JSX.Element {
                     <a
                       href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en"
                       target="blank"
+                      rel="noopener"
                       title="Popup Notes chrome extension"
                     >
                       Popup Notes
@@ -176,6 +187,7 @@ export default function Home(): JSX.Element {
                     <a
                       href="https://jerrygoyal-firebase-project.web.app/"
                       target="blank"
+                      rel="noopener"
                       title="Material design portfolio website"
                     >
                       Portfolio site

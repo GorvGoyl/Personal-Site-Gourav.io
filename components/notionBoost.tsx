@@ -20,6 +20,7 @@ export function NavbarNotion(): JSX.Element {
       <a
         href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
         target="_black"
+        rel="noopener"
         title="Download for Chrome"
       >
         Chrome
@@ -27,6 +28,7 @@ export function NavbarNotion(): JSX.Element {
       <a
         href="https://addons.mozilla.org/en-US/firefox/addon/notion-boost/"
         target="_black"
+        rel="noopener"
         title="Download for Firefox"
       >
         Firefox
@@ -44,6 +46,7 @@ export function NavbarNotion(): JSX.Element {
       <a
         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
         target="_black"
+        rel="noopener"
         title="View source code on Github"
       >
         Source code
@@ -98,6 +101,7 @@ export function Social(): JSX.Element {
               <a
                 href="https://twitter.com/intent/tweet?url=What%27s%20new%20in%20Notion%20Boost%0A%40NotionBoost%20%20https%3A%2F%2Fgourav.io%2Fnotion-boost%2Fwhats-new"
                 target="_blank"
+                rel="noopener"
                 title="Share on Twitter"
               >
                 Twitter
@@ -110,6 +114,7 @@ export function Social(): JSX.Element {
               <a
                 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgourav.io%2Fnotion-boost%2Fwhats-new"
                 target="_blank"
+                rel="noopener"
                 title="Share on Facebook"
               >
                 Facebook
@@ -133,6 +138,7 @@ export function Social(): JSX.Element {
               <a
                 href="https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new"
                 target="_blank"
+                rel="noopener"
                 title="Create Github issue"
               >
                 Github
@@ -147,6 +153,7 @@ export function Social(): JSX.Element {
           <a
             href="https://twitter.com/intent/follow?user_id=1312809481240154112"
             target="_blank"
+            rel="noopener"
             title="Follow @NotionBoost on Twitter"
           >
             NotionBoost
@@ -164,6 +171,7 @@ export function Social(): JSX.Element {
           <a
             href="https://twitter.com/intent/follow?user_id=325435736"
             target="_blank"
+            rel="noopener"
             title="Follow @GorvGoyl on Twitter"
           >
             GorvGoyl

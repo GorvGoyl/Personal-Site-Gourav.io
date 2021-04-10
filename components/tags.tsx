@@ -45,7 +45,7 @@ export function A(Props: {
   const target = Props.new ? "_blank" : "";
   const title = Props.title ? Props.title : Props.href;
   return (
-    <a href={Props.href} target={target} title={title}>
+    <a href={Props.href} rel="noopener" target={target} title={title}>
       {Props.text}
     </a>
   );
@@ -250,7 +250,7 @@ export function AuthorImg(): JSX.Element {
         <p className="m-0 font-medium">Gourav Goyal</p>
         <div className="">
           <Link href="https://twitter.com/GorvGoyl">
-            <a className="font-normal" target="blank">
+            <a className="font-normal" rel="noopener" target="blank">
               GorvGoyl
               <TwitterIcon class="inline w-3 h-3 align-baseline m-0 ml-1" />
             </a>

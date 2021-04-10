@@ -27,6 +27,7 @@ import og from "./img/og.png";
      <a
         href="https://github.com/GorvGoyl/clone-wars"
         target="_black"
+        rel="noopener"
         title="View source code on Github"
       >
         Source code
