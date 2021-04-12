@@ -244,7 +244,7 @@ export function AuthorImg(): JSX.Element {
     <div className="flex items-center text-base">
       <img
         className="w-14 rounded-full mr-4 my-3"
-        src="/gourav.png"
+        src="/gourav.jpg"
         alt="Gourav Goyal"
       />
       <div className="">

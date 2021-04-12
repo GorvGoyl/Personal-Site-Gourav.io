@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
               className="rounded-full mr-8"
               width="128"
               height="128"
-              src="/gourav.png"
+              src="/gourav.jpg"
               alt="Gourav Goyal"
             />
             <div className="prose prose-lg">
