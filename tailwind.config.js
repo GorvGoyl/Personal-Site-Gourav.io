@@ -22,6 +22,7 @@ module.exports = {
           css: {
             a: {
               cursor: "pointer",
+              // to avoid overflow on mobile due to long link
               overflowWrap: "anywhere",
               // textDecoration: "none",
               // "&:hover": {
@@ -29,6 +30,7 @@ module.exports = {
               // },
             },
             code: {
+              // to avoid overflow on mobile due to long code
               overflowWrap: "break-word",
             },
           },
@@ -63,6 +65,7 @@ module.exports = {
     ({ addUtilities }) => {
       const newUtilities = {
         ".overflow-initial": { overflow: "initial" },
+        ".overflow-normal": { overflowWrap: "normal" },
       };
 
       addUtilities(newUtilities, {

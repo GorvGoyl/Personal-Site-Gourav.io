@@ -4,7 +4,7 @@ import { TwitterBtn } from "@/components/blocks";
 import { webpackPath } from "@/lib/utils";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
-import { Navbar } from "@/components/navbar";
+import { Links, Navbar } from "@/components/navbar";
 import { FrontMatter } from "@/lib/getPost";
 import project from "@/layouts/css/project.module.scss";
 import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
@@ -34,7 +34,7 @@ export default function Pos(Props: {
         imgPath={img}
       />
       <Container layout={LayoutType.Blog}>
-        <Navbar />
+        <Navbar link={Links.Blog} />
         <main className="mx-auto prose prose-lg">
           <article className={`${project.css}`}>{Props.children}</article>
           <ShareIcon />

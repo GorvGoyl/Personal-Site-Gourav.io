@@ -33,7 +33,8 @@
 
         tr {
           td a {
-            @apply no-underline hover:underline font-normal;
+            // `overflow normal` to not break table links.. useful when viewing in mobile
+            @apply no-underline hover:underline font-normal overflow-normal;
           }
           td:last-child {
             @apply pr-3;
