@@ -1,7 +1,7 @@
 ---
 layout: "postLayout"
 title: "My simple Github project went Viral"
-desc: "I made a simple project which got spreaded in various tech communities and social media. Github featured it in 'Trending repositories of day' section"
+desc: "I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section"
 date: "2021-04-12"
 og: "og.jpg"
 preview: true
@@ -23,12 +23,15 @@ import img9 from "./9.png";
 import img10 from "./10.png";
 import img11 from "./11.jpg";
 
-Last month (Mar'21), I made a simple project which got spreaded in various tech communities and social media. On Github, It reached from 0 to 4k+ stars and 200+ forks within 7 days. Github featured it in _Trending repositories of day_ section for straight 5 days or so.
+Last month (Mar'21), I made a simple project which got spread in various tech communities and social media. On Github, It reached from 0 to 4k+ stars and 200+ forks within 7 days. Github featured it in _Trending repositories of day_ section for straight 5 days or so.
 
 <Img src={img1} type="ss" className="md:w-2/3" caption="Trending on Github - 13 Mar'21" />
 
-> [Clone Wars](https://gourav.io/clone-wars)  
+> **Clone Wars**  
 > 70+ open-source clones or alternatives of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, etc. List contains source code, demo links, tech stack, and, GitHub stars count.
+>
+> Project link: https://gourav.io/clone-wars  
+> Github link: https://github.com/gorvgoyl/clone-wars
 
 ## Motivation behind this project
 
