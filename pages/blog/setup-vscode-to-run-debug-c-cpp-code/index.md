@@ -3,11 +3,11 @@ layout: "postLayout"
 title: "Setup VSCode to run and debug C / C++ code"
 desc: "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode"
 date: "2020-12-5"
-og: "og.png"
+og: "og.jpg"
 ---
 
 import { Img, A } from "@/components/tags.tsx";
-import og from "./og.png";
+import og from "./og.jpg";
 import img1 from "./1.png";
 import img2 from "./2.png";
 import img3 from "./3.png";
@@ -42,7 +42,7 @@ int main()
 
 3. Install _recommended_ C/C++ extension in VSCode and reload.
 
-<Img src={img1} alt="" caption="Official C/C++ Extension for VSCode" />
+<Img src={img1} type="ss" caption="Official C/C++ Extension for VSCode" />
 
 ## Install C/C++ Compiler
 
@@ -62,15 +62,15 @@ You’ll notice that there is also a `.vscode` folder in your sample project. To
 
 VSCode can create and auto-configure these files if we try to debug for the first time. To do that, open C++ file in VSCode and either hit **F5** or go to _Debug -\> Start Debugging_ and select `C++ (GDB/LLDB)` then select `g++.exe build and debug active file`.
 
-<Img src={img2} alt="" caption="Select C++ (GDB/LLDB)" />
+<Img src={img2} type="ss" caption="Select C++ (GDB/LLDB)" />
 
-<Img src={img3} alt="" caption="Select g++.exe build and debug active file" />
+<Img src={img3} type="ss" caption="Select g++.exe build and debug active file" />
 
 This should create 2 files `launch.json` and `tasks.json` in `.vscode` folder which should look like below (update the MinGW64 path if not correct)
 
 Notice that I’ve added one more optional configuration `g++ build & run active file` in `launch.json` and `g++ build & run` in `tasks.json` file for purpose of also **Running C/C++ code without debugging**. Now you may choose which configuration to pick when you start debugging. You may remove the configuration whichever you won’t need.
 
-<Img src={img4} alt="" caption="Run & Debug or Only run code" />
+<Img src={img4} type="ss" caption="Run & Debug or Only run code" />
 
 ### launch.json
 
@@ -168,7 +168,7 @@ Open any C/C++ file, set some breakpoints (or not), and hit the Big Green Play B
 
 > (Shortcut to debug: F5 )
 
-<Img src={img5} alt="" caption="Select g++.exe build and debug active file" />
+<Img src={img5} type="ss" caption="Select g++.exe build and debug active file" />
 
 **Tip**: To hide `*.exe` files in the side explorer of VSCode, open settings and paste the below config:
 

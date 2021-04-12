@@ -22,10 +22,14 @@ module.exports = {
           css: {
             a: {
               cursor: "pointer",
+              overflowWrap: "anywhere",
               // textDecoration: "none",
               // "&:hover": {
               //   textDecoration: "underline",
               // },
+            },
+            code: {
+              overflowWrap: "break-word",
             },
           },
         },

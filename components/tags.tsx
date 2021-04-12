@@ -9,11 +9,12 @@ export function Img(Props: {
   src: string;
   alt?: string;
   caption?: string;
-  type?: string;
+  type: string;
   className?: string;
 }): JSX.Element {
-  let cls = "rounded";
-  if (Props.type === "ss") cls += " border-2";
+  let cls = "";
+  if (Props.type === "ss") cls += "rounded border-2 mx-auto";
+  if (Props.type === "badge") cls += "m-0 inline mx-2";
 
   // add any more classes provided by prop
   if (Props.className) {

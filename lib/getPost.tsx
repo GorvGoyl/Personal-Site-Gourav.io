@@ -8,6 +8,7 @@ export class FrontMatter {
   title: string;
   desc: string;
   layout: LayoutType;
+  preview?: boolean;
   // below ones are auto retrieve at build time
   slug?: string;
   og?: string;
@@ -49,7 +50,32 @@ export function getAllPosts(fields: string[]): FrontMatter[] {
 
   // filter empty posts
   posts = posts.filter((x) => x.title);
+
+  // filter preview posts
+  posts = posts.filter((x) => !x.preview);
+
   // sort posts by date in descending order
-  // .sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"));
+  try {
+    posts.sort((post1, post2) => {
+      const y1 = Number(post1.date.split("-")[0]);
+      const m1 = Number(post1.date.split("-")[1]);
+      const d1 = Number(post1.date.split("-")[2]);
+
+      const y2 = Number(post2.date.split("-")[0]);
+      const m2 = Number(post2.date.split("-")[1]);
+      const d2 = Number(post2.date.split("-")[2]);
+
+      if (y1 > y2) return -1;
+      if (y1 < y2) return 1;
+      if (m1 > m2) return -1;
+      if (m1 < m2) return 1;
+      if (d1 > d2) return -1;
+      if (d1 < d2) return 1;
+      return 0;
+    });
+  } catch (e) {
+    console.log(`Error: ${JSON.stringify(e)}`);
+  }
+
   return posts;
 }
