@@ -4,7 +4,7 @@ title: "My simple Github project went Viral"
 desc: "I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section"
 date: "2021-04-12"
 og: "og.jpg"
-preview: true
+preview: false
 ---
 
 import { Img, A } from "@/components/tags.tsx";
