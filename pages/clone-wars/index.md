@@ -47,6 +47,8 @@ import og from "./img/og.jpg";
     
   </nav>
 
+> I wrote about the [journey behing this project](https://gourav.io/blog/my-simple-github-project-went-viral)
+
 ## List of 100+ open-source clones
 
 <sup>Made by <a href="https://twitter.com/GorvGoyl" title="Follow @GorvGoyl on Twitter">GorvGoyl<TwitterIcon class="inline w-3 h-3 m-0 ml-1 " /></a></sup>
