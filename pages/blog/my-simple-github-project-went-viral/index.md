@@ -43,7 +43,7 @@ These clones were scattered all over the communities. So, I thought why not crea
 
 ## How I built it
 
-### 1. Scrapping Reddit
+### 1. Scraping Reddit
 
 I wanted to get all posts that contain the "clone" keyword. I initially did it with default reddit search `reddit.com/r/reactjs/search/?q=clone&source=recent&restrict_sr=1&sort=new`, (means _look for all posts in `reactjs` subreddit with "clone" keyword and sort by new_). It returned all posts, but that also included low-quality posts with 0 upvotes, questions on how to build a specific clone, etc. It would be a headache figuring out good clone projects from that dump. So, I used <A href="https://redditsearch.io" new={1} text="redditsearch.io"/> instead, which provides advanced Reddit filtering like return posts that have at least 10 upvotes, posted during a specific timeline, etc.
 
