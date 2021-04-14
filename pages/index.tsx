@@ -49,7 +49,11 @@ export default function Home(): JSX.Element {
               years, I've been building products that are being used by
               thousands of people. I love to build new products, create great
               user experiences, and contribute to the open-source software
-              community. I welcome opportunities at hey@gourav.io
+              community. Connect with me on{" "}
+              <a href="https://twitter.com/GorvGoyl">Twitter</a> and{" "}
+              <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>. You
+              can also reach out at{" "}
+              <a href="mailto:hey@gourav.io">hey@gourav.io</a>.
             </p>
             <div>
               <h2>Projects</h2>
