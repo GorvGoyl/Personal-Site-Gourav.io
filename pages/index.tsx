@@ -47,10 +47,16 @@ export default function Home(): JSX.Element {
               Namaste, My name is Gourav Goyal. I'm a tech founder, full-stack
               developer, and a fun guy to hang around with. For the past 6
               years, I've been building products that are being used by
-              thousands of people. I love to build new products, create great
-              user experiences, and contribute to the open-source software
-              community. Connect with me on{" "}
-              <a href="https://twitter.com/GorvGoyl">Twitter</a> and{" "}
+              thousands of people. Previously, I co-founded{" "}
+              <a
+                href="https://www.crunchbase.com/organization/evrcare"
+                target="_blank"
+                rel="noopener"
+              >
+                EvrCare
+              </a>
+              , and currently exploring <i>Indie Hackers'</i> path. Connect with
+              me on <a href="https://twitter.com/GorvGoyl">Twitter</a> and{" "}
               <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>. You
               can also reach out at{" "}
               <a href="mailto:hey@gourav.io">hey@gourav.io</a>.
