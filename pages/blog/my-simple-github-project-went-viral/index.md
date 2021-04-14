@@ -22,6 +22,7 @@ import img8 from "./8.png";
 import img9 from "./9.png";
 import img10 from "./10.png";
 import img11 from "./11.jpg";
+import img12 from "./12.jpg";
 
 Last month (Mar'21), I made a simple project which got spread in various tech communities and social media. On Github, It reached from 0 to 4k+ stars and 200+ forks within 7 days. Github featured it in _Trending repositories of day_ section for straight 5 days or so.
 
@@ -146,3 +147,9 @@ src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&l
 </a>
 
 </p>
+
+#### Update: 14 Apr'21
+
+Someone shared this article on _Hacker News_ and it hit #1 on front page!
+
+<Img src={img12} type="ss"  caption="Front page of HN - 14 Apr'21" />
