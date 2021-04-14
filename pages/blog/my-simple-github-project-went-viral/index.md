@@ -94,6 +94,8 @@ And one person donated $5 from _BuyMeACoffee_ link I put on the project. Love yo
 
 <Img src={img6} type="ss"  caption="" />
 
+100+ developers subscribed to my newsletter.
+
 Within 30 days of launch, 40k+ people came to my personal site and viewed my project (80k+ views).
 
 Here are some users insights (first 30 days since launch i.e. from that Reddit post):
