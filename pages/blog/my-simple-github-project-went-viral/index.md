@@ -53,7 +53,7 @@ Additionally, I googled "open-source alternatives" and found some fully-function
 
 > So, now there are 2 kinds of projects on the list. The first ones look quite similar (UI-wise) but aren't fully-functional and the other ones which are fully-functional but UI is different (to avoid copyright issues, etc).
 
-#### Naming the repo
+#### Naming the project
 
 I named my project after Star Wars 2008 TV Series: "The Clone Wars" and also kept the similar color scheme of OG image.
 
