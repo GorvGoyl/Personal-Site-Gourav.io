@@ -51,9 +51,11 @@ Next, I made a list of all these clones, their Github repo, demo links, tech sta
 
 Additionally, I googled "open-source alternatives" and found some fully-functional clones of Slack, Airtable, Bit.ly, Evernote, Google analytics, etc. I added these to the list.
 
-So, now there are 2 kinds of projects on the list. The first ones look quite similar (UI-wise) but aren't fully-functional and the other ones which are fully-functional but UI is different (to avoid copyright issues, etc).
+> So, now there are 2 kinds of projects on the list. The first ones look quite similar (UI-wise) but aren't fully-functional and the other ones which are fully-functional but UI is different (to avoid copyright issues, etc).
 
-BTW, I named my project after Star Wars 2008 TV Series: "The Clone Wars" and also kept the similar color scheme of OG image.
+#### Naming the repo
+
+I named my project after Star Wars 2008 TV Series: "The Clone Wars" and also kept the similar color scheme of OG image.
 
 <div className="flex items-baseline space-x-2">
 <Img src={img2} type="ss"  caption="Star Wars 2008 TV Series: The Clone Wars" />
