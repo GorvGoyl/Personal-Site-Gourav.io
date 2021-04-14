@@ -242,20 +242,25 @@ export function TwitterIcon(Props: {
 export function AuthorImg(): JSX.Element {
   return (
     <div className="flex items-center text-base">
-      <img
-        className="w-14 rounded-full mr-4 my-3"
-        src="/gourav.jpg"
-        alt="Gourav Goyal"
-      />
+      <a href="https://gourav.io">
+        <img
+          className="w-14 rounded-full mr-4 my-3"
+          src="/gourav.jpg"
+          alt="Gourav Goyal"
+        />
+      </a>
       <div className="">
         <p className="m-0 font-medium">Gourav Goyal</p>
         <div className="">
-          <Link href="https://twitter.com/GorvGoyl">
-            <a className="font-normal" rel="noopener" target="blank">
-              GorvGoyl
-              <TwitterIcon class="inline w-3 h-3 align-baseline m-0 ml-1" />
-            </a>
-          </Link>
+          <a
+            className="font-normal"
+            href="https://twitter.com/GorvGoyl"
+            rel="noopener"
+            target="blank"
+          >
+            GorvGoyl
+            <TwitterIcon class="inline w-3 h-3 align-baseline m-0 ml-1" />
+          </a>
         </div>
       </div>
     </div>
