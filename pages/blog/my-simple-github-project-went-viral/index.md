@@ -9,6 +9,7 @@ preview: false
 
 import { Img, A } from "@/components/tags.tsx";
 import { TweetEmbed } from "@/components/twitterEmbed.tsx";
+import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
 
 import og from "./og.jpg";
 import img1 from "./1.jpg";
@@ -33,6 +34,8 @@ Last month (Mar'21), I made a simple project which got spread in various tech co
 >
 > Project link: https://gourav.io/clone-wars  
 > Github link: https://github.com/gorvgoyl/clone-wars
+
+ <SubscribeForm type={FORMTYPE.Slim} />
 
 ## Motivation behind this project
 
