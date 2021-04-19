@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar, Links } from "@/components/navbar";
 import { FrontMatter } from "@/lib/getPost";
-import { Author, AuthorImg, ShareIcon } from "@/components/tags";
+import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
 import Link from "next/link";
 import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
@@ -48,7 +48,7 @@ export default function Post(Props: {
               <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>.
             </p>
           </article>
-          <ShareIcon />
+          <ShareComponent />
           <SubscribeForm type={FORMTYPE.AfterArticle} />
         </main>
         <hr className="my-12" />

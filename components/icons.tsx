@@ -3,6 +3,8 @@ export enum TYPE {
   facebook,
   linkedin,
   link,
+  calendar,
+  share,
 }
 
 export function Icon(Props: {
@@ -11,6 +13,32 @@ export function Icon(Props: {
   className?: string;
 }): JSX.Element {
   switch (Props.type) {
+    case TYPE.share:
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={Props.className}
+          width={Props.size}
+          height={Props.size}
+          fill="currentColor"
+          viewBox="0 0 34 34"
+        >
+          <path d="M17.695 28.17c.316.148.69.104.955-.117l14.194-11.755a.897.897 0 00.323-.69.87.87 0 00-.33-.69L18.65 3.205a.889.889 0 00-.955-.117.893.893 0 00-.515.815v6.15C.907 10.64.973 22.984 1.003 28.964v.713a.89.89 0 00.896.896.916.916 0 00.786-.455c4.805-8.464 8.758-8.875 14.495-8.897v6.134c0 .346.199.662.515.816zM2.817 26.504c.081-2.608.427-5.716 1.852-8.346 2.263-4.188 6.649-6.26 13.415-6.325a.898.898 0 00.89-.897V5.807l11.879 9.8-11.873 9.83v-5.12a.9.9 0 00-.904-.904c-6.296.008-10.637.383-15.259 7.09z" />
+        </svg>
+      );
+    case TYPE.calendar:
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={Props.className}
+          width={Props.size}
+          height={Props.size}
+          fill="currentColor"
+          viewBox="0 0 512 512"
+        >
+          <path d="M448 64h-21.332V21.332C426.668 9.559 417.109 0 405.332 0H384c-11.777 0-21.332 9.559-21.332 21.332V64H149.332V21.332C149.332 9.559 139.777 0 128 0h-21.332C94.891 0 85.332 9.559 85.332 21.332V64H64C28.715 64 0 92.715 0 128v320c0 35.285 28.715 64 64 64h384c35.285 0 64-28.715 64-64V128c0-35.285-28.715-64-64-64zm21.332 384c0 11.754-9.578 21.332-21.332 21.332H64c-11.754 0-21.332-9.578-21.332-21.332V214.187h426.664zm0 0" />
+        </svg>
+      );
     case TYPE.facebook:
       return (
         <svg

@@ -8,6 +8,7 @@ import { readableDate } from "@/lib/utils";
 import React from "react";
 import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
 import { TwitterBtn } from "@/components/blocks";
+import { Icon, TYPE } from "@/components/icons";
 
 export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
   return (
@@ -22,18 +23,17 @@ export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
           </header>
           <div>
             {Props.allPosts.map((post) => (
-              <div key={post.slug}>
-                <div>
-                  <article>
-                    <Link href={`/blog/${post.slug}`}>
-                      <a className="no-underline">
-                        <h3>{post.title}</h3>
-                      </a>
-                    </Link>
-                  </article>
-                </div>
-                <div className="text-gray-500 text-base text-right">
-                  — {readableDate(post.date)}
+              <div className="mb-14" key={post.slug}>
+                <article>
+                  <Link href={`/blog/${post.slug}`}>
+                    <a className="no-underline">
+                      <h3 className="mb-0">{post.title}</h3>
+                    </a>
+                  </Link>
+                </article>
+                <div className="text-gray-500 text-base flex items-center space-x-3 justify-end">
+                  <Icon type={TYPE.calendar} size="14" />
+                  <div>{readableDate(post.date)}</div>
                 </div>
               </div>
             ))}

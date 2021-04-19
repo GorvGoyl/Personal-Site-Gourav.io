@@ -54,9 +54,11 @@ export function A(Props: {
 
 function Date(Props: { date: string }): JSX.Element {
   const date = readableDate(Props.date);
+
   return (
-    <div className="text-gray-500">
-      <p>{date}</p>
+    <div className="text-gray-500 flex items-center space-x-3 text-sm">
+      <Icon type={TYPE.calendar} size="14" />
+      <p className="m-0">{date}</p>
     </div>
   );
 }
@@ -68,7 +70,7 @@ function openWindowHandler(url: string, title: string, style: string) {
     window.location.href = url;
   }
 }
-export function ShareIcon(): JSX.Element {
+export function ShareButton(Props: { children: any }): JSX.Element {
   const [isPopupShown, setPopup] = useState(false);
   const [isCopied, setCopy] = useState(0);
   const [pageURL, setPageURL] = useState("");
@@ -112,7 +114,7 @@ export function ShareIcon(): JSX.Element {
   };
 
   return (
-    <div className="relative flex justify-center my-8">
+    <>
       <div>
         <a
           ref={shareBtnRef}
@@ -123,20 +125,13 @@ export function ShareIcon(): JSX.Element {
           onClick={toggleShareMenuHandler}
           // onBlur={handleBlur}
         >
-          <img
-            src="/share.svg"
-            className="mx-auto m-0"
-            width="30"
-            height="30"
-            alt="Share"
-          />
-          Share
+          {Props.children}
         </a>
       </div>
       <div
         className={` ${
           isPopupShown ? "absolute" : "hidden"
-        } bg-white bottom-16 focus:outline-none origin-top-right  ring-1 ring-black ring-opacity-5 rounded-md shadow-lg`}
+        } bg-white bottom-full focus:outline-none origin-top-right  ring-1 ring-black ring-opacity-5 rounded-md shadow-lg`}
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="options-menu"
@@ -151,7 +146,7 @@ export function ShareIcon(): JSX.Element {
             onClick={(e) => {
               e.preventDefault();
               openWindowHandler(
-                `https://twitter.com/intent/tweet?text=${document.title} - @GorvGoyl&url=${pageURL}`,
+                `https://twitter.com/intent/tweet?text=${document.title} - by @GorvGoyl&url=${pageURL}`,
                 "twitter-share",
                 "width=550,height=626"
               );
@@ -222,11 +217,24 @@ export function ShareIcon(): JSX.Element {
           )}
         </div>
       </div>
-    </div>
+    </>
 
     // <div className="flex justify-center my-8">
 
     // </div>
+  );
+}
+
+export function ShareComponent(): JSX.Element {
+  return (
+    <div className="relative flex justify-center my-8">
+      <ShareButton>
+        <>
+          <Icon type={TYPE.share} className="mx-auto" size="26" />
+          Share
+        </>
+      </ShareButton>
+    </div>
   );
 }
 
@@ -271,7 +279,24 @@ export function Author(Props: { date: string }): JSX.Element {
   return (
     <div className="flex items-center justify-between text-base">
       <AuthorImg />
-      <Date date={Props.date} />
+      <div className="flex flex-col text-gray-500 text-sm space-y-1">
+        <div className="text-gray-500 flex items-center space-x-3 text-sm">
+          <Icon type={TYPE.calendar} size="14" />
+          <p className="m-0">{date}</p>
+        </div>
+
+        <div className="relative">
+          <ShareButton>
+            <div className="text-gray-500 flex items-center space-x-3 text-sm">
+              <Icon type={TYPE.share} className="stroke-current" size="14" />
+              <p className="m-0">Share</p>
+            </div>
+          </ShareButton>
+        </div>
+        {/* <div className="text-gray-500 flex items-center space-x-3 text-sm">
+          <ShareIcon />
+        </div> */}
+      </div>
     </div>
   );
 }
