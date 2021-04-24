@@ -81,7 +81,7 @@ I posted in 2-3 subreddits and it took off 🚀
 <Img src={img4} type="ss"  caption="reddit.com/r/reactjs" />
 <Img src={img5} type="ss"  caption="reddit.com/r/webdev" />
 
-## After effects
+## Serendipity
 
 Once the project gained some popularity many developers started raising PR to add their clone projects to the list. When I started it had around ~75 clones, but now it's more than 120+ and I still get new PR every now and then.
 
@@ -158,3 +158,10 @@ src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&l
 Someone shared this article on _Hacker News_ and it hit #1 on front page!
 
 <Img src={img12} type="ss"  caption="Front page of HN - 14 Apr'21" />
+
+#### Update: 24 Apr' 21
+
+Host of Tech Podcast (_Map Reduce Filter_) found out about Clone Wars project and invited me to be his guest. It was my first-ever podcast 🙌.  
+🎧 Listen here: [Clone wars with Gourav Goyal | Journey from Job to Incubator to Co Founder to Indie Hacking](https://anchor.fm/life-of-utkarsh/episodes/Clone-wars-with-Gourav-Goyal--Journey-from-Job-to-Incubator-to-Co-Founder-to-Indie-Hacking-evdr04/a-a57ms61)
+
+<TweetEmbed tweetId="1385831470741090304"/>
