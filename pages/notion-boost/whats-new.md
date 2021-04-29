@@ -28,23 +28,23 @@ All `pro` features can be unlocked for lifetime by paying a one-time fee ($5). P
 
 Payment can be done from inside the Notion Boost extension to use `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback please reach out to me at hey@gourav.io.
 
-Now back to the exciting stuff! I added many features ⭐ and fixed bugs 🐞 in this release:
+Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in this release:
 
-- ⭐ **Hide backlinks**  
+- ✔ **Hide backlinks**  
   Added option to hide backlinks section from all pages.
 
-- ⭐ **Disable popup when pasting link**  
-  Added opton to disable popup which comes when pasting any external URL into Notion page.
+- ✔ **Disable popup when pasting links**  
+  Added option to disable popup which comes when pasting any external URL into Notion page.
 
-- ⭐ **Show code line numbers**  
+- ✔ **Show code line numbers**  
   Added option to show line numbers for code blocks.
 
-- ⭐ **Enable spellcheck inside code blocks**  
+- ✔ **Enable spellcheck inside code blocks**  
   Added option to enable spellcheck inside code blocks.
 
-- ⭐ **Hide notification icon** `pro`  
+- ✔ **Hide notification icon** `pro`  
   Hide red notification icon from sidebar when it's in closed state and hide notification number from tab title.
-- ⭐ **Add more height to page** `pro`  
+- ✔ **Add more height to page** `pro`  
   Add more height to page by hiding top padding, image cover, & icon.
 
 - 🐞 In outline section, when heading length is too long full heading text will be shown on mouse hover.

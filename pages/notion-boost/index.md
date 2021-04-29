@@ -71,13 +71,13 @@ what's new</a></Link> in latest update ✨</p>
 
 ### 🖤 Support
 
-💲 Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+<!-- 💲 Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
 
 <p align="center">
   <a href="https://ko-fi.com/gorvgoyl">
   <img src="/bmc.png" width="200" alt="Buy me a Coffee"/>
   </a>
-</p>
+</p> -->
 
 <Social />
 

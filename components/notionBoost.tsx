@@ -54,13 +54,13 @@ export function NavbarNotion(): JSX.Element {
       {page === Page.Home && (
         <a
           href="#privacy-policy"
-          className="break-normal  mr-5"
+          className="break-normal"
           title="Privacy policy"
         >
           Privacy
         </a>
       )}
-      <a
+      {/* <a
         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
         target="_black"
         rel="noopener"
@@ -68,7 +68,7 @@ export function NavbarNotion(): JSX.Element {
         title="View source code on Github"
       >
         Source code
-      </a>
+      </a> */}
     </nav>
   );
 }
@@ -165,6 +165,16 @@ export function Social(): JSX.Element {
           </p>
         </>
       )}
+      <p>
+        ❤ Support Notion Boost by rating{" "}
+        <A
+          href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+          text="★★★★★"
+          new
+          title="Add review"
+        />{" "}
+        on Chrome/Firefox store.
+      </p>
       <p>
         ✨ Follow{" "}
         <span>
