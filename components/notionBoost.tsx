@@ -47,7 +47,7 @@ export function NavbarNotion(): JSX.Element {
       {page === Page.WhatsNew && (
         <Link href={Page.AllFeatures}>
           <a className="break-normal  mr-5" title="View all features">
-            All features
+            Features
           </a>
         </Link>
       )}
