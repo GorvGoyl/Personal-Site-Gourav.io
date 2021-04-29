@@ -169,7 +169,7 @@ export function Social(): JSX.Element {
         ✨ Follow{" "}
         <span>
           <a
-            href="https://twitter.com/intent/follow?user_id=1312809481240154112"
+            href="https://twitter.com/NotionBoost"
             target="_blank"
             rel="noopener"
             title="Follow @NotionBoost on Twitter"
@@ -187,7 +187,7 @@ export function Social(): JSX.Element {
         👨‍💻 Follow the maker behind this extension:{" "}
         <span>
           <a
-            href="https://twitter.com/intent/follow?user_id=325435736"
+            href="https://twitter.com/GorvGoyl"
             target="_blank"
             rel="noopener"
             title="Follow @GorvGoyl on Twitter"

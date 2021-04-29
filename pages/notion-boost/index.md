@@ -157,4 +157,4 @@ comment section is useless when working solo
 
 ## Privacy Policy
 
-Notion Boost extension has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send data** of any kind from your Notion account.
+Notion Boost extension has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send any data** from your Notion account.
