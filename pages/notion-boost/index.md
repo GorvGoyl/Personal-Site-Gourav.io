@@ -1,7 +1,7 @@
 ---
 layout: "projectLayout"
 title: "Notion Boost - Browser extension to make Notion more productive"
-desc: "Chrome and Firefox extension to boost Notion productivity with features like sticky outline, small text & full width by default, scroll to top button, hide slash command menu, hide help button, bolder text, and, more!"
+desc: "Boost Notion productivity with 15+ customizations like outline,small text full width for all,back to top button,hide slash command menu etc"
 date: "09-12-2020"
 og: "notion-boost/img/og.png"
 ---
@@ -29,9 +29,9 @@ import hideHiddenColumns from "./img/hideHiddenColumns.gif";
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 <p className="lead">
-  Open-source extension for Chrome and Firefox to add features like sticky
+  Chrome and Firefox extension to make Notion more productive. Add 15+ customizations to Notion like sticky
   outline, small text & full width by default,scroll to top button, hide slash
-  command menu, and more to Notion.so website.
+  command menu, and more.
 </p>
 <NavbarNotion />
 
@@ -154,3 +154,7 @@ comment section is useless when working solo
 <Img src={commenthide} type="ss" />
 
 > Missing some feature? Suggest on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
+
+## Privacy Policy
+
+Notion Boost extension has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send data** of any kind from your Notion account.

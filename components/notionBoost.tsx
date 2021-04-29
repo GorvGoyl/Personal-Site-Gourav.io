@@ -13,7 +13,7 @@ export function NavbarNotion(): JSX.Element {
   const page = useRouter().pathname;
   return (
     <nav
-      className={`flex justify-between  ${
+      className={`flex flex-wrap justify-between  ${
         page === Page.WhatsNew ? "mt-5" : ""
       }`}
     >
@@ -21,6 +21,7 @@ export function NavbarNotion(): JSX.Element {
         href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
         target="_black"
         rel="noopener"
+        className="break-normal  mr-5"
         title="Download for Chrome"
       >
         Chrome
@@ -29,24 +30,41 @@ export function NavbarNotion(): JSX.Element {
         href="https://addons.mozilla.org/en-US/firefox/addon/notion-boost/"
         target="_black"
         rel="noopener"
+        className="break-normal  mr-5"
         title="Download for Firefox"
       >
         Firefox
       </a>
       {page === Page.Home && (
-        <a href="#-currently-added-features" title="View all features">
-          All features
+        <a
+          href="#-currently-added-features"
+          className="break-normal  mr-5"
+          title="View all features"
+        >
+          Features
         </a>
       )}
       {page === Page.WhatsNew && (
         <Link href={Page.AllFeatures}>
-          <a title="View all features">All features</a>
+          <a className="break-normal  mr-5" title="View all features">
+            All features
+          </a>
         </Link>
+      )}
+      {page === Page.Home && (
+        <a
+          href="#privacy-policy"
+          className="break-normal  mr-5"
+          title="Privacy policy"
+        >
+          Privacy
+        </a>
       )}
       <a
         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
         target="_black"
         rel="noopener"
+        className="break-normal"
         title="View source code on Github"
       >
         Source code

@@ -118,7 +118,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
       <div>
         <a
           ref={shareBtnRef}
-          className="outline-none no-underline font-normal inline-block"
+          className="outline-none no-underline font-normal inline-block select-none"
           title="Share"
           tabIndex={0}
           role="button"
