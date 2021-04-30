@@ -20,7 +20,8 @@ import logo from "./img/logo.png";
 
 ### v2.0
 
-[Announcement]:  
+#### [Announcement]:
+
 I've been working on this extension since last year and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
 Having said that, I'll still work on this extension and all the existing features will remain free to use.  
 Going forward there will be 2 types of new features that come to this extension: the first ones which will be completely free and others that will come under the `pro` tag.  
@@ -30,17 +31,17 @@ Payment can be done from inside the Notion Boost extension to use `pro` features
 
 Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in this release:
 
-- ✔ **Hide backlinks**  
-  Added option to hide backlinks section from all pages.
-
-- ✔ **Disable popup when pasting links**  
-  Added option to disable popup which comes when pasting any external URL into Notion page.
-
 - ✔ **Show code line numbers**  
   Added option to show line numbers for code blocks.
 
 - ✔ **Enable spellcheck inside code blocks**  
-  Added option to enable spellcheck inside code blocks.
+  Added option to show squiggly red lines for any spelling mistakes inside code blocks.
+
+- ✔ **Disable popup when pasting links**  
+  Added option to disable popup which comes when pasting any external URL into Notion page.
+
+- ✔ **Hide backlinks**  
+  Added option to hide backlinks section from all pages.
 
 - ✔ **Hide notification icon** `pro`  
   Hide red notification icon from sidebar when it's in closed state and hide notification number from tab title.

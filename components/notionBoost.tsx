@@ -11,6 +11,7 @@ enum Page {
 
 export function NavbarNotion(): JSX.Element {
   const page = useRouter().pathname;
+  const relativePath = page === Page.WhatsNew ? "/notion-boost/" : "";
   return (
     <nav
       className={`flex flex-wrap justify-between  ${
@@ -18,18 +19,14 @@ export function NavbarNotion(): JSX.Element {
       }`}
     >
       <a
-        href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
-        target="_black"
-        rel="noopener"
+        href={`${relativePath}#chrome--brave--chromium`}
         className="break-normal  mr-5"
         title="Download for Chrome"
       >
         Chrome
       </a>
       <a
-        href="https://addons.mozilla.org/en-US/firefox/addon/notion-boost/"
-        target="_black"
-        rel="noopener"
+        href={`${relativePath}#firefox`}
         className="break-normal  mr-5"
         title="Download for Firefox"
       >
