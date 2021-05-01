@@ -148,7 +148,7 @@ export function Social(): JSX.Element {
             on Chrome/Firefox store.
           </p>
           <p>
-            ❓ Missing any feature? Suggest on{" "}
+            ❓ Missing something?
             <span>
               <a
                 href="https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new"
@@ -156,7 +156,7 @@ export function Social(): JSX.Element {
                 rel="noopener"
                 title="Create Github issue"
               >
-                Github
+                suggest / feedback
               </a>
             </span>
           </p>
