@@ -188,7 +188,7 @@ export function Social(): JSX.Element {
             />
           </a>
         </span>{" "}
-        for upcoming features and other Notion tips & tricks.
+        for many amazing Notion tips & tricks.
       </p>
       <p>
         👨‍💻 Follow the maker behind this extension:{" "}
