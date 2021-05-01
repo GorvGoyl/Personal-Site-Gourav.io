@@ -221,6 +221,10 @@ _(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#
 
 > Missing something? [suggest / feedback](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
 
+## Who made this?
+
+Notion Boost is made by Gourav Goyal (gourav.io). I am a developer, productivity freak, and an ex-founder who relies heavily on Notion to organize things and manage work. I made this extension to make Notion more productive (and less distractive) by filling the gaps which I feel are lacked in Notion.
+
 ## Privacy Policy
 
 Notion Boost extension has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send any data** from your Notion account.
