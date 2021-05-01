@@ -223,7 +223,7 @@ _(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#
 
 ## Who made this?
 
-Notion Boost is made by Gourav Goyal (gourav.io). I am a developer, productivity freak, and an ex-founder who relies heavily on Notion to organize things and manage work. I made this extension to make Notion more productive (and less distractive) by filling the gaps which I feel are lacked in Notion.
+Notion Boost is made by Gourav Goyal (https://gourav.io). I am a developer, productivity freak, and an ex-founder who relies heavily on Notion to organize things and manage work. I made this extension to make Notion more productive (and less distractive) by filling the gaps which I feel are lacked in Notion.
 
 ## Privacy Policy
 
