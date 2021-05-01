@@ -44,7 +44,7 @@ import spellcheck from "./img/spellcheck.jpg";
 
 ## ⬇ Download
 
-- [Chrome extension](#chrome--brave--chromium)
+- [Chrome / Brave / Chromium extension](#chrome--brave--chromium)
 - [Firefox addon](#firefox)
 
 ## ✅ Currently added features
