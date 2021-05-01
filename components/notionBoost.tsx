@@ -148,7 +148,7 @@ export function Social(): JSX.Element {
             on Chrome/Firefox store.
           </p>
           <p>
-            ❓ Missing something?
+            ❓ Missing something?{" "}
             <span>
               <a
                 href="https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new"
