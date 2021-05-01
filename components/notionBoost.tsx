@@ -11,6 +11,7 @@ enum Page {
 
 export function NavbarNotion(): JSX.Element {
   const page = useRouter().pathname;
+  const relativePath = page === Page.WhatsNew ? "/notion-boost/" : "";
   return (
     <nav
       className={`flex flex-wrap justify-between  ${
@@ -18,18 +19,14 @@ export function NavbarNotion(): JSX.Element {
       }`}
     >
       <a
-        href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
-        target="_black"
-        rel="noopener"
+        href={`${relativePath}#chrome--brave--chromium`}
         className="break-normal  mr-5"
         title="Download for Chrome"
       >
         Chrome
       </a>
       <a
-        href="https://addons.mozilla.org/en-US/firefox/addon/notion-boost/"
-        target="_black"
-        rel="noopener"
+        href={`${relativePath}#firefox`}
         className="break-normal  mr-5"
         title="Download for Firefox"
       >
@@ -47,20 +44,20 @@ export function NavbarNotion(): JSX.Element {
       {page === Page.WhatsNew && (
         <Link href={Page.AllFeatures}>
           <a className="break-normal  mr-5" title="View all features">
-            All features
+            Features
           </a>
         </Link>
       )}
       {page === Page.Home && (
         <a
           href="#privacy-policy"
-          className="break-normal  mr-5"
+          className="break-normal"
           title="Privacy policy"
         >
           Privacy
         </a>
       )}
-      <a
+      {/* <a
         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
         target="_black"
         rel="noopener"
@@ -68,7 +65,7 @@ export function NavbarNotion(): JSX.Element {
         title="View source code on Github"
       >
         Source code
-      </a>
+      </a> */}
     </nav>
   );
 }
@@ -166,10 +163,20 @@ export function Social(): JSX.Element {
         </>
       )}
       <p>
+        ❤ Support Notion Boost by rating{" "}
+        <A
+          href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+          text="★★★★★"
+          new
+          title="Add review"
+        />{" "}
+        on Chrome/Firefox store.
+      </p>
+      <p>
         ✨ Follow{" "}
         <span>
           <a
-            href="https://twitter.com/intent/follow?user_id=1312809481240154112"
+            href="https://twitter.com/NotionBoost"
             target="_blank"
             rel="noopener"
             title="Follow @NotionBoost on Twitter"
@@ -187,7 +194,7 @@ export function Social(): JSX.Element {
         👨‍💻 Follow the maker behind this extension:{" "}
         <span>
           <a
-            href="https://twitter.com/intent/follow?user_id=325435736"
+            href="https://twitter.com/GorvGoyl"
             target="_blank"
             rel="noopener"
             title="Follow @GorvGoyl on Twitter"

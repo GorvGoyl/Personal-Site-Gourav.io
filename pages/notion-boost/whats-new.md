@@ -18,12 +18,44 @@ import logo from "./img/logo.png";
 
 ## What's new in this update ✨
 
-### v1.8
+### v2.0
 
-- Broke down `small text & full width` setting into 2 seperate settings `Set full width for all pages` and `Set small text for all pages`. Thanks for feedback.
-- Full text on hover will trigger after some delay. Thanks for feedback.
-- Full text on hover is also supported for timeline view.
-- Fixed bug where NB settings were being reset after any drag-drop action in page.
+#### [Announcement]:
+
+I've been working on this extension since last year and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
+Having said that, I'll still work on this extension and all the existing features will remain free to use.  
+Going forward there will be 2 types of new features that come to this extension: the first ones which will be completely free and others that will come under the `pro` tag.  
+All `pro` features can be unlocked for lifetime by paying a one-time fee ($5). Please consider this as a means to support your developer. This will encourage me to further maintain this extension and introduce new features.
+
+Payment can be done from inside the Notion Boost extension to use `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback please reach out to me at hey@gourav.io.
+
+Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in this release:
+
+- ✔ **Show code line numbers**  
+  Added option to show line numbers for code blocks.
+
+- ✔ **Enable spellcheck inside code blocks**  
+  Added option to show squiggly red lines for any spelling mistakes inside code blocks.
+
+- ✔ **Disable popup when pasting links**  
+  Added option to disable popup which comes when pasting any external URL into Notion page.
+
+- ✔ **Hide backlinks**  
+  Added option to hide backlinks section from all pages.
+
+- ✔ **Hide notification icon** `pro`  
+  Hide red notification icon from sidebar when it's in closed state and hide notification number from tab title.
+- ✔ **Add more height to page** `pro`  
+  Add more height to page by hiding top padding, image cover, & icon.
+
+- 🐞 In outline section, when heading length is too long full heading text will be shown on mouse hover.
+- 🐞 "Small text for all pages" setting will work for preview pages also.
+- 🐞 "Hide comments section" setting will work for preview pages also.
+- 🐞 Emoji in page headings will also reflect in "Outline" section.
+- 🐞 Fixed Slash menu not hiding in some cases.
+
+Added [privacy policy](https://gourav.io/notion-boost#privacy-policy) section.  
+tldr; Notion Boost extension does not store or send any data from your Notion account.
 
 ---
 
@@ -32,6 +64,13 @@ import logo from "./img/logo.png";
 ---
 
 ## Previous updates
+
+### v1.8
+
+- Broke down `small text & full width` setting into 2 seperate settings `Set full width for all pages` and `Set small text for all pages`. Thanks for feedback.
+- Full text on hover will trigger after some delay. Thanks for feedback.
+- Full text on hover is also supported for timeline view.
+- Fixed bug where NB settings were being reset after any drag-drop action in page.
 
 ### v1.7
 
