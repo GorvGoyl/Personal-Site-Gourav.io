@@ -79,14 +79,14 @@ what's new</a></Link> in latest update ✨</p>
 
 #### Chrome / Brave / Chromium
 
-1. Install [Notion Boost Chrome extension](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd)
+1. Install [Notion Boost Chrome extension](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd).
 2. Visit any notion page.
 3. Click on the extension icon (clickable **only** when you are on a notion page).
 4. A popup menu will appear, you can toggle features from there.
 
 #### Firefox
 
-1. Install [Notion Boost Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/notion-boost/)
+1. Install [Notion Boost Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/notion-boost/).
 2. Visit any notion page.
 3. Click on the extension icon (it will be visible inside URL bar **only** when you are on a notion page).
 4. A popup menu will appear, you can toggle features from there.
