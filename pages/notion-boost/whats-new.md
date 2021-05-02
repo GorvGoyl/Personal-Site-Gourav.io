@@ -23,8 +23,8 @@ import logo from "./img/logo.png";
 #### [Announcement]:
 
 I've been working on this extension since last year and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
-Having said that, I will continue to work on this extension and I need your support. All the existing features will remain free to use.  
-Going forward there will be 2 types of new features that come to this extension: the first ones which will be completely free and others that will come under the `pro` tag.  
+Having said that, I will continue to work on this extension and I need your support.  
+All the existing features will remain free to use. Going forward there will be 2 types of new features that come to this extension: the first ones which will be completely free and others that will come under the `pro` tag.  
 All `pro` features can be unlocked for lifetime by paying a one-time fee ($5). Please consider this as a means to support your developer. This will encourage me to further maintain this extension and introduce new features.
 
 Payment can be done from inside the Notion Boost extension to use `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback please reach out to me at hey@gourav.io.
