@@ -136,6 +136,7 @@ export function Social(): JSX.Element {
                 <span />
               </a>
             </span>
+            .
           </p>
           <p>
             ❤ Support Notion Boost by rating{" "}
@@ -156,7 +157,7 @@ export function Social(): JSX.Element {
                 rel="noopener"
                 title="Create Github issue"
               >
-                suggest / feedback
+                suggest / feedback.
               </a>
             </span>
           </p>
@@ -202,6 +203,7 @@ export function Social(): JSX.Element {
             GorvGoyl
             <TwitterIcon class="inline w-4 h-4 m-0 ml-1 " />
           </a>
+          .
         </span>
       </p>
     </div>
