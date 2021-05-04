@@ -29,6 +29,7 @@ export default function Header(Props: {
       <meta name="author" content={defaultProps.title} />
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="monetization" content="$ilp.uphold.com/QaUmZpmzmDzA" />
       <meta name="title" content={title} />
       <meta name="description" content={desc} />
       <meta httpEquiv="content-language" content="en-us" />
