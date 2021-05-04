@@ -29,7 +29,7 @@ All `pro` features can be unlocked for lifetime by paying a one-time fee ($5). P
 
 Payment can be done from inside the Notion Boost extension to use `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback please reach out to me at hey@gourav.io.
 
-> Note: There's a temporary issue where users outside India are not able to make payment for `pro` version. I'm working on this payment issue and it will be resolved in next 1-2 days.
+> Update: Payment issue has been resolved. Users should be able to buy Notion Boost now.
 
 Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in this release:
 
