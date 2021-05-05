@@ -68,6 +68,11 @@ module.exports = withMdxEnhanced({
       locales: ["en-US"],
       defaultLocale: "en-US",
     },
+    future: {
+      // webpack5: true,
+      strictPostcssConfiguration: true,
+    },
+    reactStrictMode: true,
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
     webpack: (config, { dev, isServer }, options) => {
       if (isServer) {

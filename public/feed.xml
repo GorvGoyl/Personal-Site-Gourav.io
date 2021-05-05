@@ -4,7 +4,7 @@
         <title>Gourav Goyal</title>
         <link>https://gourav.io</link>
         <description>Blog - Gourav Goyal</description>
-        <lastBuildDate>Tue, 06 Apr 2021 20:35:24 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 05 May 2021 20:54:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for https://gourav.io</generator>
         <language>en</language>
@@ -22,6 +22,14 @@
             <pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></description>
             <enclosure url="https://gourav.io/_next/static/media/pages/blog/first-donation-on-open-source-side-project/og.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[My simple Github project went Viral]]></title>
+            <link>https://gourav.io/blog/my-simple-github-project-went-viral</link>
+            <guid>My simple Github project went Viral</guid>
+            <pubDate>Mon, 12 Apr 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section]]></description>
+            <enclosure url="https://gourav.io/_next/static/media/pages/blog/my-simple-github-project-went-viral/og.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>

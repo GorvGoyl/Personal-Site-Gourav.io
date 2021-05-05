@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gourav.io</id>
     <title>Gourav Goyal</title>
-    <updated>2021-04-06T20:35:24.366Z</updated>
+    <updated>2021-05-05T20:54:20.379Z</updated>
     <generator>Feed for https://gourav.io</generator>
     <author>
         <name>Gourav Goyal</name>
@@ -21,6 +21,13 @@
         <link href="https://gourav.io/blog/first-donation-on-open-source-side-project"/>
         <updated>2020-12-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My simple Github project went Viral]]></title>
+        <id>My simple Github project went Viral</id>
+        <link href="https://gourav.io/blog/my-simple-github-project-went-viral"/>
+        <updated>2021-04-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
