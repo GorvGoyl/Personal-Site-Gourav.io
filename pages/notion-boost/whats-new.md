@@ -42,7 +42,7 @@ Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in
 - ✔ **Disable popup when pasting links**  
   Added option to disable popup which comes when pasting any external URL into Notion page.
 
-- ✔ **Hide backlinks**  
+- ✔ **Hide backlinks for all pages**  
   Added option to hide backlinks section from all pages.
 
 - ✔ **Hide notification icon** `pro`  
