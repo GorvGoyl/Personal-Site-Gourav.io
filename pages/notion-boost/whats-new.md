@@ -7,6 +7,7 @@ og: "notion-boost/img/og.png"
 ---
 
 import { Img, A } from "@/components/tags";
+import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
 import { Title, Social,NavbarNotion } from "@/components/notionBoost";
 
 import og from "./img/og.png";
@@ -60,6 +61,10 @@ tldr; Notion Boost extension does not store or send any data from your Notion ac
 ---
 
 <Social/>
+
+---
+
+<SubscribeForm type={FORMTYPE.Generic} />
 
 ---
 
