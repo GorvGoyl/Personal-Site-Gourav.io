@@ -37,7 +37,7 @@ Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in
 - ✔ **Enable spellcheck inside code blocks**  
   Added option to show squiggly red lines for any spelling mistakes inside code blocks.
 
-- ✔ **Disable popup when pasting links**  
+- ✔ **Disable popup when pasting external links**  
   Added option to disable popup which comes when pasting any external URL into Notion page.
 
 - ✔ **Hide backlinks for all pages**  
