@@ -138,23 +138,7 @@ export function Social(): JSX.Element {
             </span>
             .
           </p>
-          <p>
-            ❤ Support Notion Boost by rating ★★★★★ on{" "}
-            <A
-              href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
-              text="Chrome"
-              new
-              title="Add review on Chrome store"
-            />{" "}
-            or{" "}
-            <A
-              href="https://addons.mozilla.org/en-US/firefox/addon/notion-boost/reviews/"
-              text="Firefox"
-              new
-              title="Add review on Firefox store"
-            />{" "}
-            store.
-          </p>
+
           <p>
             ❓ Missing something?{" "}
             <span>
