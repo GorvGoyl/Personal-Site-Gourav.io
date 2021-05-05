@@ -88,7 +88,7 @@ what's new</a></Link> in latest update ✨</p>
 
 1. Install [Notion Boost Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/notion-boost/).
 2. Visit any notion page.
-3. Click on the extension icon (it will be visible inside URL bar **only** when you are on a notion page).
+3. Click on the extension icon (it will be visible **inside URL bar** only when you are on a notion page).
 4. A popup menu will appear, you can toggle features from there.
 
 <Img src={firefox_icon} type="ss" />
