@@ -97,12 +97,12 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="Chrome Web Store downloads"
-                          src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square"
+                          src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square&color=007CF0"
                         />
                       </a>
                       <img
                         alt="Chrome Web Store rating"
-                        src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square"
+                        src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square&color=007CF0"
                       />
                     </span>
                     Chrome & Firefox browser extension for <em>Notion.so</em> to
@@ -140,12 +140,12 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="Visual Studio Marketplace Downloads"
-                          src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square"
+                          src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square&color=007CF0"
                         />
                       </a>
                       <img
                         alt="Visual Studio Marketplace Rating (Stars)"
-                        src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square"
+                        src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square&color=007CF0"
                       />
                     </span>
                     VSCode extension which adds useful buttons like beautify,
@@ -167,7 +167,7 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="GitHub repo stars"
-                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
+                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=007CF0"
                         />
                       </a>
                       <a
@@ -178,7 +178,7 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="GitHub forks"
-                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
+                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=007CF0"
                         />
                       </a>
                     </span>
