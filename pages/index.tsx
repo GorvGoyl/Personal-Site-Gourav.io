@@ -20,7 +20,15 @@ export default function Home(): JSX.Element {
               alt="Gourav Goyal"
             />
             <div className="prose prose-lg">
-              <h1 className="">Gourav Goyal</h1>
+              <h1
+                className="bg-clip-text text-transparent pb-3 mb-4 tracking-wide " // bg-gradient-to-r from-blue-500 to-green-400
+                style={{
+                  backgroundImage: "linear-gradient(90deg,#007CF0,#00DFD8)",
+                }}
+              >
+                Gourav Goyal
+              </h1>
+
               <nav className="flex space-x-14">
                 <Link href="https://twitter.com/GorvGoyl">
                   <a
