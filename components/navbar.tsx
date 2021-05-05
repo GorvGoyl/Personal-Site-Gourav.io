@@ -8,7 +8,18 @@ export enum Links {
 const NavItem = (Props: { href: string; title: string; text: string }) => (
   <Link href={Props.href}>
     <a className="inline-block py-4 px-2" title={Props.title}>
-      <div>{Props.text}</div>
+      {Props.text === "Gourav Goyal" ? (
+        <div
+          className="bg-clip-text text-transparent font-semibold"
+          style={{
+            backgroundImage: "linear-gradient(90deg,#007CF0,#00DFD8)",
+          }}
+        >
+          {Props.text}
+        </div>
+      ) : (
+        <div>{Props.text}</div>
+      )}
     </a>
   </Link>
 );
