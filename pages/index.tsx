@@ -63,8 +63,9 @@ export default function Home(): JSX.Element {
               >
                 EvrCare
               </a>
-              , and currently exploring <i>Indie Hackers'</i> path. Connect with
-              me on <a href="https://twitter.com/GorvGoyl">Twitter</a> and{" "}
+              , and currently exploring <i>Indie Hackers'</i> path. <br />{" "}
+              Connect with me on{" "}
+              <a href="https://twitter.com/GorvGoyl">Twitter</a> and{" "}
               <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>. You
               can also reach out at{" "}
               <a href="mailto:hey@gourav.io">hey@gourav.io</a>.
