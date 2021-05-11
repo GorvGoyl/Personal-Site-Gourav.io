@@ -17,7 +17,7 @@
     "export": "next build && next export",
     "deploy-lint": "npm run lint && npm run tsc && npm run export && firebase deploy --only hosting",
     "tsc": "tsc",
-    "lint": "eslint ./components/** ./pages/** -c .eslintrc.json --ext .js,.jsx,.ts,.tsx,.mdx, .md --no-error-on-unmatched-pattern",
+    "lint": "eslint ./** -c .eslintrc.js",
     "postlint": "npx stylelint '**/*.{css,scss,sass}'",
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss,.mdx"
   },
@@ -43,6 +43,7 @@
     "tailwindcss": "^2.1.2"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^10.2.0",
     "@types/gtag.js": "0.0.4",
     "@types/node": "^15.0.2",
     "@types/react": "^17.0.5",
@@ -53,6 +54,7 @@
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-next": "^10.2.1-canary.5",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.22.1",

@@ -1,18 +1,20 @@
-{
+module.exports = {
   // "root": true,
-  "env": {
-    "browser": true,
-    "es2020": true,
-    "node": true
+  env: {
+    browser: true,
+    es2020: true,
+    node: true,
   },
-  "parser": "@typescript-eslint/parser",
+  parser: "@typescript-eslint/parser",
 
-  "plugins": [
+  // all plugins (eslint-plugin-xxx) go here:
+  plugins: [
     "react",
     "@typescript-eslint",
     "react-hooks",
     "promise",
-    "jsx-a11y"
+    "jsx-a11y",
+    "@next/eslint-plugin-next",
   ],
   // "overrides": [
   //   {
@@ -24,7 +26,9 @@
   //     }
   //   }
   // ],
-  "extends": [
+
+  // all configs (eslint-config-xxx) go here:
+  extends: [
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "airbnb-typescript",
@@ -36,28 +40,29 @@
     "plugin:import/warnings",
     "plugin:import/errors",
     "plugin:jsx-a11y/recommended",
-    "prettier"
+    "next",
+    "prettier",
   ],
-  "settings": {
+  settings: {
     // to support @/ path
     "import/resolver": {
-      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+      typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
     },
-    "react": {
-      "version": "detect"
-    }
+    react: {
+      version: "detect",
+    },
   },
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "ecmaFeatures": {
-      "jsx": true
+  parserOptions: {
+    project: "./tsconfig.json",
+    ecmaFeatures: {
+      jsx: true,
     },
-    "ecmaVersion": 12,
-    "sourceType": "module"
+    ecmaVersion: 12,
+    sourceType: "module",
     // "extraFileExtensions:": [".scss"],
     // "extensions:": [".mdx"]
   },
-  "rules": {
+  rules: {
     "@typescript-eslint/lines-between-class-members": "off",
     "mdx/no-unescaped-entities": "off",
     "import/prefer-default-export": "off",
@@ -74,12 +79,12 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       1,
-      { "extensions": [".js", ".ts", ".tsx", ".jsx", ".md", ".mdx"] }
+      { extensions: [".js", ".ts", ".tsx", ".jsx", ".md", ".mdx"] },
     ],
     "react/no-unescaped-entities": "off",
     "jsx-a11y/accessible-emoji": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "off",
-    "no-console": "off"
-  }
-}
+    "no-console": "off",
+  },
+};

@@ -8,6 +8,12 @@ coverage
 *.png
 *.gif
 *.svg
+*.json
+*.xml
+*.ico
+*.txt
+*.webmanifest
+*.lock
 *.jpg
 *.jpeg
 *.scss

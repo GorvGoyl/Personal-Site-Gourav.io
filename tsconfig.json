@@ -1,11 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      // "@components/*": ["components/*"],
-      // use @/ to access path related to root of project
-      "@/*": ["./*"]
-    },
+    // default flags:
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -19,7 +14,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true, //allow commonjs files
     "jsx": "preserve",
-    // additional flags
+
+    // additional flags:
+    "baseUrl": ".",
+    "paths": {
+      // "@components/*": ["components/*"],
+      // use @/ to access path related to root of project
+      "@/*": ["./*"]
+    },
     "noImplicitAny": false, //set 'true' to throw error for 'any'
     "suppressImplicitAnyIndexErrors": true,
     "pretty": true,
@@ -35,8 +37,9 @@
     "**/*.mdx",
     "**/*.scss",
     "**/*.tsx",
-    "**/*.config.js" /* .config.js files */,
-    "scripts/*.js"
+    ".eslintrc.js",
+    "scripts/*.js",
+    "*.config.js"
   ],
   "exclude": ["node_modules"]
 }
