@@ -5,16 +5,16 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
-  purge: {
+  purge: [
     // mode: "all", // purge unused typography styles but also removes css modules
     // preserveHtmlElements: true,
-    content: [
+    [
       "./components/**/*.{js,ts,jsx,tsx}",
       "./pages/**/*.{js,ts,jsx,tsx,md}",
       "./layouts/**/*.{js,ts,jsx,tsx}",
       "./lib/**/*.{js,ts,jsx,tsx}",
     ],
-  },
+  ],
   theme: {
     extend: {
       typography: {
