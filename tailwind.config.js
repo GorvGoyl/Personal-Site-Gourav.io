@@ -8,12 +8,10 @@ module.exports = {
   purge: [
     // mode: "all", // purge unused typography styles but also removes css modules
     // preserveHtmlElements: true,
-    [
-      "./components/**/*.{js,ts,jsx,tsx}",
-      "./pages/**/*.{js,ts,jsx,tsx,md}",
-      "./layouts/**/*.{js,ts,jsx,tsx}",
-      "./lib/**/*.{js,ts,jsx,tsx}",
-    ],
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx,md,mdx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

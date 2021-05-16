@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scrollbar-width: thin;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  background: transparent;
-  width: 10px;
-  height: 10px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #edece9;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: #d3d1cb;
-}
-
 @layer base {
+  * {
+    scrollbar-width: thin;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    background: transparent;
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #edece9;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #d3d1cb;
+  }
+
   /* remove tailwind typography prose styling */
 
   /* remove quotes from blockquote */
