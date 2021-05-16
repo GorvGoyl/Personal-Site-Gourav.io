@@ -22,6 +22,10 @@
     background: #d3d1cb;
   }
 
+  h1 {
+    @apply font-semibold leading-tight text-4xl #{!important};
+  }
+
   /* remove tailwind typography prose styling */
 
   /* remove quotes from blockquote */
