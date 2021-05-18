@@ -79,16 +79,17 @@ export default function Home(): JSX.Element {
                       <a title="Notion Boost browser extension">Notion Boost</a>
                     </Link>
                     <span className="badge-wrapper">
-                      <a
+                      {/* <a
                         title="source code"
                         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
                         target="_blank"
                       >
                         <img
                           alt="source code"
+                          loading="lazy"
                           src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
                         />
-                      </a>
+                      </a> */}
                       <a
                         title="Chrome Web Store link"
                         href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
@@ -97,11 +98,13 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="Chrome Web Store downloads"
+                          loading="lazy"
                           src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square&color=007CF0"
                         />
                       </a>
                       <img
                         alt="Chrome Web Store rating"
+                        loading="lazy"
                         src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square&color=007CF0"
                       />
                     </span>
@@ -129,6 +132,7 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="source code"
+                          loading="lazy"
                           src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
                         />
                       </a>
@@ -140,11 +144,13 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="Visual Studio Marketplace Downloads"
+                          loading="lazy"
                           src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square&color=007CF0"
                         />
                       </a>
                       <img
                         alt="Visual Studio Marketplace Rating (Stars)"
+                        loading="lazy"
                         src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square&color=007CF0"
                       />
                     </span>
@@ -167,6 +173,7 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="GitHub repo stars"
+                          loading="lazy"
                           src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=007CF0"
                         />
                       </a>
@@ -178,6 +185,7 @@ export default function Home(): JSX.Element {
                       >
                         <img
                           alt="GitHub forks"
+                          loading="lazy"
                           src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=007CF0"
                         />
                       </a>

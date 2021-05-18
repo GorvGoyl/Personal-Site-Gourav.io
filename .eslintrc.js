@@ -64,6 +64,7 @@ module.exports = {
     // "extensions:": [".mdx"]
   },
   rules: {
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "@typescript-eslint/lines-between-class-members": "off",
     "mdx/no-unescaped-entities": "off",
     "import/prefer-default-export": "off",
