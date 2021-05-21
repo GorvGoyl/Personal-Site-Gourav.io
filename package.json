@@ -21,6 +21,9 @@
     "postlint": "npx stylelint '**/*.{css,scss,sass}'",
     "lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss,.mdx"
   },
+  "engines": {
+    "node": "14"
+  },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.6.0",
     "@mdx-js/loader": "^1.6.22",

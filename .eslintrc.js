@@ -14,6 +14,7 @@ module.exports = {
     "react-hooks",
     "promise",
     "jsx-a11y",
+    "eslint-plugin-import-helpers",
     "@next/eslint-plugin-next",
   ],
   // "overrides": [
@@ -64,6 +65,15 @@ module.exports = {
     // "extensions:": [".mdx"]
   },
   rules: {
+  "import-helpers/order-imports": [
+      "warn",
+      {
+        // example configuration
+        newlinesBetween: "always",
+        groups: ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        alphabetize: { order: "asc", ignoreCase: true },
+      },
+    ],
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "@typescript-eslint/lines-between-class-members": "off",
     "mdx/no-unescaped-entities": "off",

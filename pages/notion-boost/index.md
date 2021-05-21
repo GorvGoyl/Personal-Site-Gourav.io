@@ -44,7 +44,7 @@ import spellcheck from "./img/spellcheck.jpg";
 
 ## ⬇ Download
 
-- [Chrome / Brave / Chromium extension](#chrome--brave--chromium)
+- [Chrome / Brave / Edge extension](#chrome--brave--chromium)
 - [Firefox addon](#firefox)
 
 ## ✅ Currently added features
@@ -90,6 +90,15 @@ what's new</a></Link> in latest update ✨</p>
 2. Visit any notion page.
 3. Click on the extension icon (it will be visible **inside URL bar** only when you are on a notion page).
 4. A popup menu will appear, you can toggle features from there.
+
+#### Microsoft Edge
+
+1. Visit [Notion Boost Chrome extension](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd).
+2. Allow Edge to add extension from Chrome Web Store.
+3. Install Notion Boost extension.
+4. Visit any notion page.
+5. Click on the extension icon (clickable **only** when you are on a notion page).
+6. A popup menu will appear, you can toggle features from there.
 
 <Img src={firefox_icon} type="ss" />
 
