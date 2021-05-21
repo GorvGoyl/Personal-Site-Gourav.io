@@ -32,6 +32,9 @@ Payment can be done from inside the Notion Boost extension to use `pro` features
 
 Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in this release:
 
+- ✔ **You can now install Notion Boost on Microsoft Edge**  
+  More details: https://gourav.io/notion-boost#microsoft-edge
+
 - ✔ **Show code line numbers**  
   Added option to show line numbers for code blocks.
 

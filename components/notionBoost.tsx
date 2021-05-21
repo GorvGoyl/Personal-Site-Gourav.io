@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+
 import { TwitterIcon, A } from "./tags";
 
 enum Page {
@@ -21,9 +22,9 @@ export function NavbarNotion(): JSX.Element {
       <a
         href={`${relativePath}#chrome--brave--chromium`}
         className="break-normal  mr-5"
-        title="Download for Chrome"
+        title="Download for Chrome/Edge/Brave"
       >
-        Chrome
+        Chrome / Edge
       </a>
       <a
         href={`${relativePath}#firefox`}
