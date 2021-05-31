@@ -52,7 +52,7 @@ export default function Home(): JSX.Element {
 
           <div className="prose prose-lg">
             <p>
-              Namaste, My name is Gourav Goyal. I'm a tech founder, full-stack
+              Namaste, my name is Gourav Goyal. I'm a tech founder, full-stack
               developer, and a fun guy to hang around with. For the past 6
               years, I've been building products that are being used by
               thousands of people. Previously, I co-founded{" "}
