@@ -65,7 +65,7 @@ module.exports = {
     // "extensions:": [".mdx"]
   },
   rules: {
-  "import-helpers/order-imports": [
+    "import-helpers/order-imports": [
       "warn",
       {
         // example configuration

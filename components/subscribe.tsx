@@ -89,14 +89,12 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
   const text = {
     [FORMTYPE.AfterArticle]: {
       title: "Enjoyed reading?",
-      desc:
-        "Get latest articles in your inbox. I write about tech, productivity, and my past learnings.",
+      desc: "Get latest articles in your inbox. I write about tech, startups, and my past learnings.",
     },
 
     [FORMTYPE.Generic]: {
       title: "Gourav's Newsletter",
-      desc:
-        "I write about tech, productivity, and my past learnings. Get latest articles in your inbox.",
+      desc: "I write about tech, startups, and my past learnings. Get latest articles in your inbox.",
     },
     [FORMTYPE.Slim]: {
       title: "Gourav's Newsletter",

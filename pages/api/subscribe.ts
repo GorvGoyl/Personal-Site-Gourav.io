@@ -8,7 +8,10 @@ const PROD_API_KEY = process.env.BUTTONDOWN_API_KEY;
 const MOCK_API = process.env.MOCK_SUBSCRIBE_API;
 const isMOCK = false;
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function subscribe(
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<NextApiResponse> {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const { email, referrer_url, referrer } = req.body;
 
@@ -24,7 +27,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (!email) {
-    return res.status(400).json({ error: "Email is required" });
+    res.status(400).json({ error: "Email is required" });
+    return res;
   }
 
   const tags = ["gourav.io"];
@@ -49,18 +53,22 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       const text = await response.text();
 
       if (text.includes("already subscribed")) {
-        return res.status(400).json({
+        res.status(400).json({
           error: `You're already subscribed to the newsletter :)`,
         });
+        return res;
       }
 
-      return res.status(400).json({
+      res.status(400).json({
         error: text,
       });
+      return res;
     }
 
-    return res.status(201).json({ error: "" });
+    res.status(201).json({ error: "" });
+    return res;
   } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() });
+    res.status(500).json({ error: error.message || error.toString() });
+    return res;
   }
-};
+}
