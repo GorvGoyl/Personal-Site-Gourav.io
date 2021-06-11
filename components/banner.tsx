@@ -15,7 +15,7 @@ export function Banner(): JSX.Element {
         <div className="">
           <div className="inline-block">
             <p>
-              🎉 Automate Notion - 2-way calendar sync, schedule social media,
+              🎉 Automate Notion — 2 way calendar sync, schedule social media,
               etc.
             </p>
           </div>
