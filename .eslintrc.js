@@ -55,6 +55,7 @@ module.exports = {
     },
   },
   parserOptions: {
+    files: ['*.ts', '*.tsx','*.js'], // Your TypeScript files extension
     project: "./tsconfig.json",
     ecmaFeatures: {
       jsx: true,

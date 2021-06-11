@@ -1,7 +1,3 @@
-import Link from "next/link";
-import React from "react";
-import css from "./css/tags.module.scss";
-
 export function TwitterBtn(): JSX.Element {
   return (
     <div className="twitter mt-12  justify-center flex">

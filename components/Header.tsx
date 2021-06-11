@@ -1,11 +1,10 @@
+import { isProd } from "@/lib/utils";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { isProd } from "@/lib/utils";
 
 const defaultProps = {
   title: "Gourav Goyal",
-  desc:
-    "I'm a tech founder, full-stack developer, and a fun guy to hang around with.",
+  desc: "I'm a tech founder, full-stack developer, and a fun guy to hang around with.",
   imgPath: "/og.png",
 };
 export default function Header(Props: {
@@ -20,14 +19,15 @@ export default function Header(Props: {
   const local = "http://localhost:3000";
   const site = isProd ? "https://gourav.io" : local;
   const imageURL = `${site}${imgPath}`;
-  const canURL = site + useRouter().pathname;
+  const pathName = useRouter().pathname;
+  const canURL = pathName === "/" ? site : site + pathName;
   const handle = "@GorvGoyl";
 
   return (
     <Head>
       <title>{title}</title>
-      <meta name="author" content={defaultProps.title} />
       <meta charSet="UTF-8" />
+      <meta name="author" content={defaultProps.title} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="monetization" content="$ilp.uphold.com/QaUmZpmzmDzA" />
       <meta name="title" content={title} />
@@ -73,10 +73,7 @@ export default function Header(Props: {
         href="/favicon-16x16.png"
       />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-      <meta name="msapplication-TileColor" content="#2d89ef" />
-      <meta name="theme-color" content="#ffffff" />
       <link rel="canonical" href={canURL} />
-      <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="robots" content="index,follow" />
       <meta name="googlebot" content="index,follow" />

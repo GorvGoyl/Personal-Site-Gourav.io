@@ -1,7 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
-
 import { GA_TRACKING_ID } from "@/lib/gtag";
 import { isProd } from "@/lib/utils";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -35,11 +34,15 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           {/* Cloudflare Web Analytics */}
-          <script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"token": "702a5606e5314d639a0f2dd9dece9422", "spa": true}'
-          />
+          {isProd && (
+            <>
+              <script
+                defer
+                src="https://static.cloudflareinsights.com/beacon.min.js"
+                data-cf-beacon='{"token": "702a5606e5314d639a0f2dd9dece9422", "spa": true}'
+              />
+            </>
+          )}
         </body>
       </Html>
     );

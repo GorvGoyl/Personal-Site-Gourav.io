@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { GetStaticProps } from "next";
-import { getAllPosts, FrontMatter } from "@/lib/getPost";
+import { TwitterBtn } from "@/components/blocks";
 import Header from "@/components/Header";
+import { Icon, TYPE } from "@/components/icons";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
-import { readableDate } from "@/lib/utils";
-import React from "react";
 import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
-import { TwitterBtn } from "@/components/blocks";
-import { Icon, TYPE } from "@/components/icons";
+import { getAllPosts, FrontMatter } from "@/lib/getPost";
+import { readableDate } from "@/lib/utils";
+import { GetStaticProps } from "next";
+import Link from "next/link";
+import React from "react";
 
 export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
   return (
