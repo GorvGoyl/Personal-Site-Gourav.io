@@ -22,6 +22,7 @@ export function Banner(): JSX.Element {
           <div className="ml-5 text-center md:inline-block mt-2 md:mt-0 text-sm">
             <a
               href={`https://easypie.app?ref=${pathName}`}
+              target="_blank"
               className={` inline-block hover:opacity-80 cursor-pointer leading-none hover:bg-opacity-80 border border-gray-400 focus:outline-none px-3 py-2 rounded-2xl  text-gray-200 `}
             >
               Learn more
