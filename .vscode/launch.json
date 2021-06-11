@@ -10,6 +10,7 @@
       "request": "attach",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node",
+      // "type": "pwa-msedge",
       "restart": true,
       "outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"]
       // "autoAttachChildProcesses": true,
