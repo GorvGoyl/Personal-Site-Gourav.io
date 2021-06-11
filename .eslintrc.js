@@ -14,7 +14,7 @@ module.exports = {
     "react-hooks",
     "promise",
     "jsx-a11y",
-    "eslint-plugin-import-helpers",
+    // "eslint-plugin-import-helpers",
     "@next/eslint-plugin-next",
   ],
   // "overrides": [
@@ -43,7 +43,7 @@ module.exports = {
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "next",
-    "prettier",
+    // "prettier",
   ],
   settings: {
     // to support @/ path
@@ -55,7 +55,7 @@ module.exports = {
     },
   },
   parserOptions: {
-    files: ['*.ts', '*.tsx','*.js'], // Your TypeScript files extension
+    files: ["*.ts", "*.tsx", "*.js"], // Your TypeScript files extension
     project: "./tsconfig.json",
     ecmaFeatures: {
       jsx: true,
@@ -66,15 +66,22 @@ module.exports = {
     // "extensions:": [".mdx"]
   },
   rules: {
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        // example configuration
-        newlinesBetween: "always",
-        groups: ["module", "/^@shared/", ["parent", "sibling", "index"]],
-        alphabetize: { order: "asc", ignoreCase: true },
-      },
-    ],
+    "object-curly-newline": "off",
+    "@typescript-eslint/indent": "off",
+    "operator-linebreak": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/quotes": "off",
+    "linebreak-style": "off",
+    "@next/next/no-img-element": "off",
+    // "import-helpers/order-imports": [
+    //   "warn",
+    //   {
+    //     // example configuration
+    //     newlinesBetween: "always",
+    //     groups: ["module", "/^@shared/", ["parent", "sibling", "index"]],
+    //     alphabetize: { order: "asc", ignoreCase: true },
+    //   },
+    // ],
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "@typescript-eslint/lines-between-class-members": "off",
     "mdx/no-unescaped-entities": "off",

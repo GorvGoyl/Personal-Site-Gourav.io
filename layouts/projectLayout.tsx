@@ -1,13 +1,13 @@
+import { Banner } from "@/components/banner";
 import { TwitterBtn } from "@/components/blocks";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import { Links, Navbar } from "@/components/navbar";
-import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
+import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { ShareComponent } from "@/components/tags";
 import project from "@/layouts/css/project.module.scss";
 import { FrontMatter } from "@/lib/getPost";
 import { webpackPath } from "@/lib/utils";
-import { useRouter } from "next/router";
 import React from "react";
 
 // This function must be named otherwise it disables Fast Refresh.
@@ -34,6 +34,7 @@ export default function Pos(Props: {
         imgPath={img}
       />
       <Container layout={LayoutType.Blog}>
+        <Banner />
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose prose-lg">
           <article className={`${project.css}`}>{Props.children}</article>
