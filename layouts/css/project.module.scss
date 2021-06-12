@@ -7,7 +7,7 @@
     }
     .wrapper-table {
       // small screen: show fixed width and scroll to prevent breaking page width
-      @apply overflow-auto md:overflow-initial;
+      @apply overflow-auto md:overflow-initial w-max max-w-screen-md;
     }
 
     table {
