@@ -1,12 +1,23 @@
 module.exports = {
-  // "root": true,
+  root: true,
   env: {
     browser: true,
     es2020: true,
     node: true,
   },
   parser: "@typescript-eslint/parser",
-
+  parserOptions: {
+    tsconfigRootDir: __dirname, // tells parser the absolute path of your project's root directory
+    files: ["*.ts", "*.tsx", "*.js"], // files extensions required for linting
+    project: "./tsconfig.json", // tells parser the relative path of tsconfig.json
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: "module",
+    // "extraFileExtensions:": [".scss"],
+    // "extensions:": [".mdx"]
+  },
   // all plugins (eslint-plugin-xxx) go here:
   plugins: [
     "react",
@@ -31,7 +42,8 @@ module.exports = {
   // all configs (eslint-config-xxx) go here:
   extends: [
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md
+    "plugin:@typescript-eslint/recommended-requiring-type-checking", // contains rules that specifically require type information
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:mdx/recommended",
@@ -54,18 +66,11 @@ module.exports = {
       version: "detect",
     },
   },
-  parserOptions: {
-    files: ["*.ts", "*.tsx", "*.js"], // Your TypeScript files extension
-    project: "./tsconfig.json",
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: "module",
-    // "extraFileExtensions:": [".scss"],
-    // "extensions:": [".mdx"]
-  },
+
   rules: {
+    "max-len": "warn",
+    "key-spacing": "warn",
+    "react/jsx-one-expression-per-line": "off",
     "object-curly-newline": "off",
     "@typescript-eslint/indent": "off",
     "operator-linebreak": "off",
