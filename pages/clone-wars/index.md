@@ -257,7 +257,7 @@ import og from "./img/og.jpg";
  </div>
  </div>
 
-_Some link is broken or clone is not good enough? [report it](https://github.com/GorvGoyl/Clone-Wars/issues/new)_
+> _Some link is broken or clone is not good enough? [report it](https://github.com/GorvGoyl/Clone-Wars/issues/new)_
 
 ## Support
 

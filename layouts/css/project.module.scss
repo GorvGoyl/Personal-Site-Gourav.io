@@ -7,7 +7,7 @@
     }
     .wrapper-table {
       // small screen: show fixed width and scroll to prevent breaking page width
-      @apply overflow-auto md:overflow-initial w-max max-w-screen-md;
+      @apply overflow-auto md:overflow-initial w-auto md:w-max md:max-w-screen-md;
     }
 
     table {
@@ -43,8 +43,8 @@
             @apply pl-3 font-semibold;
           }
           td:nth-child(2),
-          td:nth-child(3) {
-            @apply lg:break-all;
+          td:nth-child(4) {
+            @apply lg:break-words;
           }
         }
       }
