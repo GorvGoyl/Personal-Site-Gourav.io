@@ -64,6 +64,7 @@ module.exports = withMdxEnhanced({
 })(
   // NextConfig
   {
+    webpack5: false,
     i18n: {
       locales: ["en-US"],
       defaultLocale: "en-US",

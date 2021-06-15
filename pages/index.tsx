@@ -1,8 +1,9 @@
 import { TwitterBtn } from "@/components/blocks";
 import Header from "@/components/Header";
 import { Container } from "@/components/layout";
-import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
+import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { TwitterIcon } from "@/components/tags";
+// import author from "@/public/gourav.jpg";
 import Link from "next/link";
 
 export default function Home(): JSX.Element {

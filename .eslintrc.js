@@ -54,8 +54,9 @@ module.exports = {
     // "plugin:import/errors",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
-    "next",
-    // "prettier",
+    // place "next" at last
+    "next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
+    "next/core-web-vitals",
   ],
   settings: {
     // to support @/ path
