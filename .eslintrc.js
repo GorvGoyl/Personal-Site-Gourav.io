@@ -20,9 +20,7 @@ module.exports = {
   },
   // all plugins (eslint-plugin-xxx) go here:
   plugins: [
-    "react",
     "@typescript-eslint",
-    "react-hooks",
     "promise",
     "jsx-a11y",
     // "eslint-plugin-import-helpers",
@@ -55,8 +53,9 @@ module.exports = {
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     // place "next" at last
-    "next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
-    "next/core-web-vitals",
+    // "next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
+    // "next/core-web-vitals",
+    "plugin:@next/next/recommended",
   ],
   settings: {
     // to support @/ path
