@@ -8,7 +8,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname, // tells parser the absolute path of your project's root directory
-    files: ["*.ts", "*.tsx", "*.js"], // files extensions required for linting
+    files: ["*.ts", "*.tsx", "*.js", "*.mdx", "*.md"], // files extensions required for linting
     project: "./tsconfig.json", // tells parser the relative path of tsconfig.json
     ecmaFeatures: {
       jsx: true,

@@ -31,15 +31,13 @@
     "noUnusedParameters": false
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.md",
     "**/*.mdx",
     "**/*.scss",
     "**/*.tsx",
-    ".eslintrc.js",
-    "scripts/*.js",
-    "*.config.js"
+    "**/*.js",
+    ".eslintrc.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/_gsdata_", ".next", ".vercel", "out"]
 }
