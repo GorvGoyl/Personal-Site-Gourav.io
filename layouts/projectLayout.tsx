@@ -3,6 +3,7 @@ import { TwitterBtn } from "@/components/blocks";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import { Links, Navbar } from "@/components/navbar";
+import { ScrollTopBtn } from "@/components/scrollTop";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { ShareComponent } from "@/components/tags";
 import project from "@/layouts/css/project.module.scss";
@@ -42,6 +43,7 @@ export default function Pos(Props: {
           <hr className="mb-8" />
           <SubscribeForm type={FORMTYPE.Generic} />
         </main>
+        <ScrollTopBtn />
         <TwitterBtn />
       </Container>
     </>
