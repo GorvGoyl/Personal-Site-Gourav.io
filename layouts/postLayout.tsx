@@ -1,14 +1,14 @@
-import { webpackPath } from "@/lib/utils";
-import { useRouter } from "next/router";
-import React from "react";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
-import { Navbar, Links } from "@/components/navbar";
-import { FrontMatter } from "@/lib/getPost";
+import { Links, Navbar } from "@/components/navbar";
+import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
+import { FrontMatter } from "@/lib/getPost";
+import { webpackPath } from "@/lib/utils";
 import Link from "next/link";
-import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
+import { useRouter } from "next/router";
+import React from "react";
 
 // This function must be named otherwise it disables Fast Refresh.
 export default function Post(Props: {

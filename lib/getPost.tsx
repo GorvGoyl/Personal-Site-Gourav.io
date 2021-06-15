@@ -16,10 +16,19 @@ export class FrontMatter {
 
 const postsDirectory = join(process.cwd(), "pages", "blog");
 
+// get path name of posts
 export function getPostSlugs(): string[] {
-  return fs.readdirSync(postsDirectory).filter((slug) => !slug.startsWith("."));
+  const slugs = fs.readdirSync(postsDirectory).filter((slug) => {
+    if (slug.includes(" ")) {
+      throw new Error(`space not allowed in path name: ${slug}`);
+    }
+    return !slug.startsWith(".");
+  });
+
+  return slugs;
 }
 
+// get post by path name
 export function getPostBySlug(slug: string, fields: string[]): FrontMatter {
   const pathToPost = join(postsDirectory, slug);
   const files = fs.readdirSync(pathToPost);
