@@ -51,6 +51,17 @@
   code {
     @apply text-gray-800 px-1 py-0.5 border border-gray-100 rounded-md bg-gray-100 text-sm font-mono;
   }
+
+  details {
+    @apply my-2;
+    summary {
+      @apply cursor-pointer;
+      h3,
+      h4 {
+        @apply my-0 inline-block #{!important};
+      }
+    }
+  }
 }
 
 /* custom component styles */
