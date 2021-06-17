@@ -230,8 +230,6 @@ what's new</a></Link> in the latest update ✨</p>
 
 ---
 
-## Features details
-
 ## Who made this?
 
 Notion Boost is made by Gourav Goyal (https://gourav.io). I am a tech founder and productivity freak who relies heavily on Notion to organize things and manage work. I made this extension to make Notion more productive (and less distractive) by filling the gaps which I feel are lacked in the product. I hope you find this extension helpful :)
