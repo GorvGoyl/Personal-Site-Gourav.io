@@ -12,6 +12,10 @@ import { Title, Social,NavbarNotion } from "@/components/notionBoost";
 
 import og from "./img/og.png";
 import logo from "./img/logo.png";
+import hideoutline from "./img/hideoutline.gif";
+import openfullpage from "./img/openfullpage.gif";
+import narrowspace from "./img/narrowspace.gif";
+import searchbox from "./img/searchbox.png";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
@@ -19,16 +23,55 @@ import logo from "./img/logo.png";
 
 ## What's new in this update ✨
 
+### v2.2
+
+- ✔ **Added search box**  
+  The features list is growing, and finding a particular feature could be PITA, so I added a search box to find the features quickly.
+
+<Img src={searchbox} type="ss" />
+
+- ✔ **Open full page instead of preview**  
+  Bypass preview and open the full page of a table, board, etc. by default.
+
+<Img src={openfullpage} type="ss" />
+
+- ✔ **Handy button to hide Outline on current page**  
+  Sometimes we need to hide the outline for just the current page, and for that, we need to go to the extension settings and then disable the outline feature.  
+  Now, there is a new `outline` button shown on pages which will temporarily hide the outline on the current page (until the page refresh). And of course, You can permanently disable the outline feature for all pages from the extension settings.
+
+  <Img src={hideoutline} type="ss" />
+
+- ✔ **Narrow spacing between list items** `pro`  
+  Fit more content on screen by reducing space between items in a list, i.e., bullet, checkbox, toggle list, etc.
+
+<Img src={narrowspace} type="ss" />
+
+- 🐞 Fixed bug where emojis 👀 weren't showing in outline view.
+- 🐞 Fixed bug where the outline wasn't working for the Korean language.
+- 🐞 'Disable popup menu when pasting external links' will now work for preview pages also.
+
+---
+
+<Social/>
+
+---
+
+<SubscribeForm type={FORMTYPE.Generic} />
+
+---
+
+## Previous updates
+
 ### v2.0
 
 #### [Announcement]:
 
-I've been working on this extension since last year and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
-Having said that, I will continue to work on this extension and I need your support.  
-All the existing features will remain free to use. Going forward there will be 2 types of new features that come to this extension: the first ones which will be completely free and others that will come under the `pro` tag.  
-All `pro` features can be unlocked for lifetime by paying a one-time fee ($5). Please consider this as a means to support your developer. This will encourage me to further maintain this extension and introduce new features.
+I've been working on this extension since last year (2020), and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
+Having said that, I will continue to work on this extension, and I need your support.  
+All the existing features will remain free to use. Going forward, there will be two types of new features that come to this extension: the first ones, which will be completely free, and others that will come under the `pro` tag.  
+You can unlock all `pro` features for a lifetime by paying a one-time fee ($8). Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
 
-Payment can be done from inside the Notion Boost extension to use `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback please reach out to me at hey@gourav.io.
+You can make from inside the Notion Boost extension to use all `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback, please reach out to me at hey@gourav.io.
 
 Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in this release:
 
@@ -60,18 +103,6 @@ Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in
 
 Added [privacy policy](https://gourav.io/notion-boost#privacy-policy) section.  
 tldr; Notion Boost extension does not store or send any data from your Notion account.
-
----
-
-<Social/>
-
----
-
-<SubscribeForm type={FORMTYPE.Generic} />
-
----
-
-## Previous updates
 
 ### v1.8
 
