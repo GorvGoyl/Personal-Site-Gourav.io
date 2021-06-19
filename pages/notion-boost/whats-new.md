@@ -31,7 +31,7 @@ import searchbox from "./img/searchbox.png";
 <Img src={searchbox} type="ss" />
 
 - ✔ **Open full page instead of preview**  
-  Bypass preview and open the full page of a table, board, etc. by default.
+  Long awaited feature is finally here! Now you can bypass preview and open the full page of a table, board, etc. by default.
 
 <Img src={openfullpage} type="ss" />
 
