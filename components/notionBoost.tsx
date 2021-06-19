@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { A, TwitterIcon } from "./tags";
+import { A, CopyLink, TwitterIcon } from "./tags";
 
 enum Page {
   Home = "/notion-boost",
@@ -122,7 +122,7 @@ export function Social(): JSX.Element {
                 Twitter
                 <span />
               </a>
-            </span>{" "}
+            </span>
             ,
             <span>
               {" "}
@@ -135,6 +135,10 @@ export function Social(): JSX.Element {
                 Facebook
                 <span />
               </a>
+            </span>
+            ,{" or "}
+            <span className="font-medium">
+              <CopyLink />
             </span>
             .
           </p>
