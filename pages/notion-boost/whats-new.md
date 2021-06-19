@@ -30,8 +30,8 @@ import searchbox from "./img/searchbox.png";
 
 <Img src={searchbox} type="ss" />
 
-- ✔ **Open full page instead of preview**  
-  Long awaited feature is finally here! Now you can bypass preview and open the full page of a table, board, etc. by default.
+- ✔ **Open full pages instead of preview**  
+  Long awaited feature is finally here! Now you can bypass preview and open full pages of a table, board, etc. by default.
 
 <Img src={openfullpage} type="ss" />
 
@@ -49,6 +49,8 @@ import searchbox from "./img/searchbox.png";
 - 🐞 Fixed bug where emojis 👀 weren't showing in outline view.
 - 🐞 Fixed bug where the outline wasn't working for the Korean language.
 - 🐞 'Disable popup menu when pasting external links' will now work for preview pages also.
+
+> PS: I'm also working on a new automation product to connect Notion with 20+ apps and create workflows with simple steps. Check it out: [Easypie.app](https://easypie.app?ref=whats-new/shoutout)
 
 ---
 

@@ -188,9 +188,9 @@ _(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#
 </details>
 
 <details>
-  <summary> <h4>Open full page instead of preview</h4></summary>
+  <summary> <h4>Open full pages instead of preview</h4></summary>
 
-Bypass preview and open the full page of a table, board, etc. by default.
+Bypass preview and open full pages of a table, board, etc. by default.
 
 <Img src={openfullpage} type="ss" />
 </details>
