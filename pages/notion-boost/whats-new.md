@@ -62,10 +62,6 @@ import searchbox from "./img/searchbox.png";
 
 ---
 
-## Previous updates
-
-### v2.0
-
 #### [Announcement]:
 
 I've been working on this extension since last year (2020), and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
@@ -75,7 +71,11 @@ You can unlock all `pro` features for a lifetime by a one-time payment ($9). Ple
 
 You can make from inside the Notion Boost extension to use all `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback, please reach out to me at hey@gourav.io.
 
-Now back to the exciting stuff! I added many features ✔ and fixed bugs 🐞 in this release:
+## Previous updates
+
+### v2.0
+
+I added many features ✔ and fixed bugs 🐞 in this release:
 
 - ✔ **You can now install Notion Boost on Microsoft Edge**  
   More details: https://gourav.io/notion-boost#microsoft-edge
