@@ -71,7 +71,7 @@ import searchbox from "./img/searchbox.png";
 I've been working on this extension since last year (2020), and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
 Having said that, I will continue to work on this extension, and I need your support.  
 All the existing features will remain free to use. Going forward, there will be two types of new features that come to this extension: the first ones, which will be completely free, and others that will come under the `pro` tag.  
-You can unlock all `pro` features for a lifetime by paying a one-time fee ($8). Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
+You can unlock all `pro` features for a lifetime by a one-time payment ($9). Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
 
 You can make from inside the Notion Boost extension to use all `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback, please reach out to me at hey@gourav.io.
 
