@@ -55,7 +55,7 @@
   details {
     @apply my-2;
     summary {
-      @apply cursor-pointer;
+      @apply cursor-pointer hover:bg-gray-100;
       h3,
       h4 {
         @apply my-0 inline-block #{!important};

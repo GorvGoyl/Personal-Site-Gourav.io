@@ -35,7 +35,7 @@ import searchbox from "./img/searchbox.png";
 
 <Img src={openfullpage} type="ss" />
 
-- ✔ **Handy button to hide Outline on current page**  
+- ✔ **Handy button to quickly hide Outline on current page**  
   Sometimes we need to hide the outline for just the current page, and for that, we need to go to the extension settings and then disable the outline feature.  
   Now, there is a new `outline` button shown on pages which will temporarily hide the outline on the current page (until the page refresh). And of course, You can permanently disable the outline feature for all pages from the extension settings.
 
