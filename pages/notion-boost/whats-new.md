@@ -50,7 +50,7 @@ import searchbox from "./img/searchbox.png";
 - 🐞 Fixed bug where the outline wasn't working for the Korean language.
 - 🐞 'Disable popup menu when pasting external links' will now work for preview pages also.
 
-> PS: I'm also working on a new automation product to connect Notion with 20+ apps and create workflows with simple steps. Check it out: [Easypie.app](https://easypie.app?ref=whats-new/shoutout)
+> PS: I'm also building a new automation product to connect Notion with 20+ apps and create workflows with simple steps. Check it out: [Easypie.app](https://easypie.app?ref=whats-new/shoutout)
 
 ---
 
