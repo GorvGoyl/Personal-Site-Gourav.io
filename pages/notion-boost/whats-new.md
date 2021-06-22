@@ -26,7 +26,7 @@ import searchbox from "./img/searchbox.png";
 ### v2.2
 
 - ✔ **Added search box**  
-  The features list is growing, and finding a particular feature could be PITA, so I added a search box to find the features quickly.
+  The features list is growing, and finding a particular feature could be PITA, so I added a search box to find features quickly.
 
 <Img src={searchbox} type="ss" />
 
