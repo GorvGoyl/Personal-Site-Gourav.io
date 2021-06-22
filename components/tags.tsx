@@ -5,6 +5,39 @@ import { readableDate } from "@/lib/utils";
 import Link from "next/link";
 import React, { MouseEventHandler, useEffect, useRef, useState } from "react";
 
+export function CopyLink(): JSX.Element {
+  const [pageURL, setPageURL] = useState("");
+  const [isCopied, setCopy] = useState(0);
+  useEffect(() => {
+    setPageURL(window.location.href);
+  }, []);
+
+  const handleCopy = (e: any) => {
+    e.preventDefault();
+    void navigator.clipboard.writeText(pageURL);
+    setCopy(1);
+    setTimeout(() => {
+      setCopy(0);
+    }, 1000);
+  };
+
+  return (
+    <>
+      <button
+        onClick={handleCopy}
+        title={pageURL}
+        // onBlur={handleBlur}
+        className=" underline outline-none   cursor-pointer"
+        style={{ fontWeight: "inherit" }}
+        type="button"
+      >
+        {/* <Icon type={TYPE.link} size="16" className="m-0 mr-4" /> */}
+        {isCopied === 0 ? "Copy link" : "Copied"}
+      </button>
+    </>
+  );
+}
+
 export function Img(Props: {
   src: string;
   alt?: string;
@@ -13,7 +46,7 @@ export function Img(Props: {
   className?: string;
 }): JSX.Element {
   let cls = "";
-  if (Props.type === "ss") cls += "rounded border-2 mx-auto";
+  if (Props.type === "ss") cls += "rounded border-2 mx-auto shadow-md";
   if (Props.type === "badge") cls += "m-0 inline mx-2";
 
   // add any more classes provided by prop

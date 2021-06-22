@@ -32,6 +32,9 @@ import hidenotification from "./img/hidenotification.gif";
 import moreheight from "./img/moreheight.gif";
 import codelines from "./img/codelines.jpg";
 import spellcheck from "./img/spellcheck.jpg";
+import hideoutline from "./img/hideoutline.gif";
+import openfullpage from "./img/openfullpage.gif";
+import narrowspace from "./img/narrowspace.gif";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
@@ -55,6 +58,10 @@ import spellcheck from "./img/spellcheck.jpg";
 Show sticky outline (table of contents) for pages that have headings or sub-headings. The outline will be shown on the right side of the page. Very useful for navigating a page with lots of content.
 
 <Img src={outline} type="ss" />
+
+You can also temporarily hide the outline on the current page (until the page refresh)
+
+<Img src={hideoutline} type="ss" />
 
 </details>
 
@@ -178,6 +185,24 @@ Add more height to page by hiding top padding, image cover, & icon
 _(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#announcement))_
 
 <Img src={moreheight} type="ss" />
+</details>
+
+<details>
+  <summary> <h4>Open full pages instead of preview</h4></summary>
+
+Bypass preview and open full pages of a table, board, etc. by default.
+
+<Img src={openfullpage} type="ss" />
+</details>
+
+<details>
+  <summary> <h4>Narrow spacing between list items</h4></summary>
+
+Fit more content on screen by reducing space between items in a list, i.e., bullet, checkbox, toggle list, etc.
+
+_(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#announcement))_
+
+<Img src={narrowspace} type="ss" />
 </details>
 
 > Missing something? [suggest / feedback](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)

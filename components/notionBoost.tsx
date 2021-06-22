@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-
-import { TwitterIcon, A } from "./tags";
+import { A, CopyLink, TwitterIcon } from "./tags";
 
 enum Page {
   Home = "/notion-boost",
@@ -123,7 +122,7 @@ export function Social(): JSX.Element {
                 Twitter
                 <span />
               </a>
-            </span>{" "}
+            </span>
             ,
             <span>
               {" "}
@@ -137,10 +136,14 @@ export function Social(): JSX.Element {
                 <span />
               </a>
             </span>
+            ,{" or "}
+            <span className="font-medium">
+              <CopyLink />
+            </span>
             .
           </p>
 
-          <p>
+          {/* <p>
             ❓ Missing something?{" "}
             <span>
               <a
@@ -152,7 +155,7 @@ export function Social(): JSX.Element {
                 suggest / feedback.
               </a>
             </span>
-          </p>
+          </p> */}
         </>
       )}
       <p>
@@ -188,7 +191,7 @@ export function Social(): JSX.Element {
             />
           </a>
         </span>{" "}
-        for many amazing Notion tips & tricks.
+        for Notion tips, tricks, and free goodies.
       </p>
       <p>
         👨‍💻 Follow the maker behind this extension:{" "}
