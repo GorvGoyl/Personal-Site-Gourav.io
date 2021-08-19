@@ -5,6 +5,15 @@ module.exports = {
     es2020: true,
     node: true,
   },
+  settings: {
+    // to support @/ path
+    "import/resolver": {
+      typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+    },
+    react: {
+      version: "detect",
+    },
+  },
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname, // tells parser the absolute path of your project's root directory
@@ -15,7 +24,7 @@ module.exports = {
     },
     ecmaVersion: 12,
     sourceType: "module",
-    // "extraFileExtensions:": [".scss"],
+    // extraFileExtensions: ["*.md"],
     // "extensions:": [".mdx"]
   },
   // all plugins (eslint-plugin-xxx) go here:
@@ -38,36 +47,26 @@ module.exports = {
 
   // all configs (eslint-config-xxx) go here:
   extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md
-    "plugin:@typescript-eslint/recommended-requiring-type-checking", // contains rules that specifically require type information
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:mdx/recommended",
-    "plugin:promise/recommended",
-    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:markdown/recommended",
-    // "plugin:import/warnings",
-    // "plugin:import/errors",
+    "plugin:mdx/recommended",
+    "plugin:@next/eslint-plugin-next/recommended",
+    "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
+    "plugin:promise/recommended",
     // place "next" at last
-    // "next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
+    "prettier",
+    // place "next" at last
+    "next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
     // "next/core-web-vitals",
-    "plugin:@next/next/recommended",
+    // "plugin:@next/next/recommended",
   ],
-  settings: {
-    // to support @/ path
-    "import/resolver": {
-      typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
-    },
-    react: {
-      version: "detect",
-    },
-  },
 
   rules: {
-    "max-len": "warn",
-    "key-spacing": "warn",
     "react/jsx-one-expression-per-line": "off",
     "object-curly-newline": "off",
     "@typescript-eslint/indent": "off",
@@ -76,16 +75,6 @@ module.exports = {
     "@typescript-eslint/quotes": "off",
     "linebreak-style": "off",
     "@next/next/no-img-element": "off",
-    // "import-helpers/order-imports": [
-    //   "warn",
-    //   {
-    //     // example configuration
-    //     newlinesBetween: "always",
-    //     groups: ["module", "/^@shared/", ["parent", "sibling", "index"]],
-    //     alphabetize: { order: "asc", ignoreCase: true },
-    //   },
-    // ],
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "@typescript-eslint/lines-between-class-members": "off",
     "mdx/no-unescaped-entities": "off",
     "import/prefer-default-export": "off",
