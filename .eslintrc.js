@@ -23,7 +23,6 @@ module.exports = {
     "@typescript-eslint",
     "promise",
     "jsx-a11y",
-    // "eslint-plugin-import-helpers",
     "@next/eslint-plugin-next",
   ],
   // "overrides": [
@@ -50,7 +49,6 @@ module.exports = {
     "plugin:markdown/recommended",
     // "plugin:import/warnings",
     // "plugin:import/errors",
-    "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     // place "next" at last
     // "next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json

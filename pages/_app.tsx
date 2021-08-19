@@ -1,6 +1,6 @@
-import "@/styles/tailwind.scss";
 import * as gtag from "@/lib/gtag";
 import { isProd } from "@/lib/utils";
+import "@/styles/tailwind.scss";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
