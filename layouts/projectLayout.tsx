@@ -35,7 +35,7 @@ export default function Pos(Props: {
         imgPath={img}
       />
       <Container layout={LayoutType.Blog}>
-        <Banner />
+        {/* <Banner /> */}
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose prose-lg">
           <article className={`${project.css}`}>{Props.children}</article>
