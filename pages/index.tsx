@@ -59,7 +59,7 @@ export default function Home(): JSX.Element {
               <br />
               Currently, I am working on{" "}
               <a href="https://easypie.app" target="_blank" rel="noopener">
-                www.Easypie.app
+                Easypie.app
               </a>{" "}
               - the easiest way to connect apps and automate workflows within
               minutes. No coding required.
