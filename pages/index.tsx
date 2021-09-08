@@ -127,9 +127,9 @@ export default function Home(): JSX.Element {
                         src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square&color=007CF0"
                       />
                     </span>
-                    Chrome & Firefox browser extension for <em>Notion.so</em> to
-                    add features like outline (table of contents), bolder text,
-                    and more.
+                    Chrome & Firefox browser extension for{" "}
+                    <em>www.notion.so</em> to add features like outline (table
+                    of contents), bolder text, and more.
                   </p>
                 </li>
                 <li>
