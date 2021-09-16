@@ -205,7 +205,7 @@ _(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#
 <Img src={narrowspace} type="ss" />
 </details>
 
-> Missing something? [suggest / feedback](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
+> Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
 
 <p>See{" "}
 <Link href="/notion-boost/whats-new">
@@ -261,7 +261,7 @@ Notion Boost is made by Gourav Goyal (https://gourav.io). I am a tech founder an
 
 ## Support
 
-Please reach out to me (hey@gourav.io) in case you have any feedback or suggestions.
+Please file a new issue on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new) in case you have any feedback or suggestions.
 
 ## Privacy Policy
 
