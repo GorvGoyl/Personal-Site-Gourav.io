@@ -13,6 +13,9 @@ import { Title, Social,NavbarNotion,TagDate } from "@/components/notionBoost";
 import og from "./img/og.png";
 import logo from "./img/logo.png";
 
+import indentation_lines from "./img/indentation_lines.jpg";
+import rollup_clickable from "./img/rollup_clickable.jpg";
+
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 ## What's new in this update ✨
@@ -24,8 +27,12 @@ import logo from "./img/logo.png";
 - ✔ **Add indentation lines to lists**  
   Add vertical indentation lines to bullet and to-do lists.
 
+<Img src={indentation_lines} type="ss" />
+
 - ✔ **Make Rollup URLs clickable**  
-  Make URLs in Rollup property clickable.
+  Make URLs in Rollup property clickable. Works for both: table and as page properties.
+
+<Img src={rollup_clickable} type="ss" />
 
 - ✔ **Support for \*.notion.site domain**  
   Notion Boost is now supported on all _\*.notion.site_ URLs.
