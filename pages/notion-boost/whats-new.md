@@ -8,49 +8,35 @@ og: "notion-boost/img/og.png"
 
 import { Img, A } from "@/components/tags";
 import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
-import { Title, Social,NavbarNotion } from "@/components/notionBoost";
+import { Title, Social,NavbarNotion,TagDate } from "@/components/notionBoost";
 
 import og from "./img/og.png";
 import logo from "./img/logo.png";
-import hideoutline from "./img/hideoutline.gif";
-import openfullpage from "./img/openfullpage.gif";
-import narrowspace from "./img/narrowspace.gif";
-import searchbox from "./img/searchbox.png";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
-<NavbarNotion />
-
 ## What's new in this update ✨
 
-### v2.2
+### v3.0
 
-- ✔ **Added search box**  
-  The features list is growing, and finding a particular feature could be PITA, so I added a search box to find features quickly.
+<TagDate>Sep 2021</TagDate>
 
-<Img src={searchbox} type="ss" />
+- ✔ **Add indentation lines to lists**  
+  Add vertical indentation lines to bullet and to-do lists.
 
-- ✔ **Open full pages instead of preview**  
-  Long awaited feature is finally here! Now you can bypass preview and open full pages of a table, board, etc. by default.
+- ✔ **Make Rollup URLs clickable**  
+  Make URLs in Rollup property clickable.
 
-<Img src={openfullpage} type="ss" />
+- ✔ **Support for \*.notion.site domain**  
+  Notion Boost is now supported on all _\*.notion.site_ URLs.
 
-- ✔ **Handy button to quickly hide Outline on current page**  
-  Sometimes we need to hide the outline for just the current page, and for that, we need to go to the extension settings and then disable the outline feature.  
-  Now, there is a new `outline` button shown on pages which will temporarily hide the outline on the current page (until the page refresh). And of course, You can permanently disable the outline feature for all pages from the extension settings.
+- 🐞 Fixed bug where `Add more height to page` wasn't working properly.
+- 🐞 Fixed bug where headings with links were not shown in the `outline`.
+- 🐞 Fixed bug where `Show full text on hover` wasn't working for URL types in table.
+- 🐞 Fixed bug where `Full width for all pages` wasn't working on inline tables.
+- 🐞 Fixed bug where `Full width for all pages` feature wasn't working with Grammarly extension.
 
-  <Img src={hideoutline} type="ss" />
-
-- ✔ **Narrow spacing between list items** `pro`  
-  Fit more content on screen by reducing space between items in a list, i.e., bullet, checkbox, toggle list, etc.
-
-<Img src={narrowspace} type="ss" />
-
-- 🐞 Fixed bug where emojis 👀 weren't showing in outline view.
-- 🐞 Fixed bug where the outline wasn't working for the Korean language.
-- 🐞 'Disable popup menu when pasting external links' will now work for preview pages also.
-
-> PS: I'm also building a new automation product to connect Notion with 20+ apps and create workflows with simple steps. Get access: [Easypie.app](https://easypie.app?ref=whats-new/shoutout)
+> PS: I also built seamless 2-way sync between Notion ⇋ Google Calendar, Try for Free: [Easypie.app](https://easypie.app?ref=whats-new/shoutout)
 
 ---
 
@@ -62,16 +48,28 @@ import searchbox from "./img/searchbox.png";
 
 ---
 
-#### [Announcement]:
-
-I've been working on this extension since last year (2020), and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
-Having said that, I will continue to work on this extension, and I need your support.  
-All the existing features will remain free to use. Going forward, there will be two types of new features that come to this extension: the first ones, which will be completely free, and others that will come under the `pro` tag.  
-You can unlock all `pro` features for a lifetime by a one-time payment ($9). Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
-
-You can make from inside the Notion Boost extension to use all `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later. If you have any questions or feedback, please reach out to me at hey@gourav.io.
-
 ## Previous updates
+
+### v2.2
+
+<TagDate>June 2021</TagDate>
+
+- ✔ **Added search box**  
+  The features list is growing, and finding a particular feature could be PITA, so I added a search box to find features quickly.
+
+- ✔ **Open full pages instead of preview**  
+  Long awaited feature is finally here! Now you can bypass preview and open full pages of a table, board, etc. by default.
+
+- ✔ **Handy button to quickly hide Outline on current page**  
+  Sometimes we need to hide the outline for just the current page, and for that, we need to go to the extension settings and then disable the outline feature.  
+  Now, there is a new `outline` button shown on pages which will temporarily hide the outline on the current page (until the page refresh). And of course, You can permanently disable the outline feature for all pages from the extension settings.
+
+- ✔ **Narrow spacing between list items** `pro`  
+  Fit more content on screen by reducing space between items in a list, i.e., bullet, checkbox, toggle list, etc.
+
+- 🐞 Fixed bug where emojis 👀 weren't showing in outline view.
+- 🐞 Fixed bug where the outline wasn't working for the Korean language.
+- 🐞 'Disable popup menu when pasting external links' will now work for preview pages also.
 
 ### v2.0
 
@@ -105,6 +103,17 @@ I added many features ✔ and fixed bugs 🐞 in this release:
 
 Added [privacy policy](https://gourav.io/notion-boost#privacy-policy) section.  
 tldr; Notion Boost extension does not store or send any data from your Notion account.
+
+#### [Announcement]:
+
+<TagDate>May 2021</TagDate>
+
+I've been working on this extension since last year (2020), and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
+Having said that, I will continue to work on this extension, and I need your support.  
+All the existing features will remain free to use. Going forward, there will be two types of new features that come to this extension: the first ones, which will be completely free, and others that will come under the `pro` tag.  
+You can unlock all `pro` features for a lifetime by a one-time payment. Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
+
+You can make from inside the Notion Boost extension to use all `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later.
 
 ### v1.8
 
