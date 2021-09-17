@@ -35,6 +35,8 @@ import spellcheck from "./img/spellcheck.jpg";
 import hideoutline from "./img/hideoutline.gif";
 import openfullpage from "./img/openfullpage.gif";
 import narrowspace from "./img/narrowspace.gif";
+import indentation_lines from "./img/indentation_lines.jpg";
+import rollup_clickable from "./img/rollup_clickable.jpg";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
@@ -173,7 +175,7 @@ Hide backlinks section from all pages
 
 Hide red notification icon from sidebar when it's in closed state and hide notification number from tab title
 
-_(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#announcement))_
+_(It's a `pro` feauture. [learn more](https://gourav.io/notion-boost/whats-new#announcement))_
 
 <Img src={hidenotification} type="ss" />
 </details>
@@ -182,7 +184,7 @@ _(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#
 
 Add more height to page by hiding top padding, image cover, & icon
 
-_(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#announcement))_
+_(It's a `pro` feauture. [learn more](https://gourav.io/notion-boost/whats-new#announcement))_
 
 <Img src={moreheight} type="ss" />
 </details>
@@ -200,12 +202,30 @@ Bypass preview and open full pages of a table, board, etc. by default.
 
 Fit more content on screen by reducing space between items in a list, i.e., bullet, checkbox, toggle list, etc.
 
-_(It's a `pro` feauture. [learn more.](https://gourav.io/notion-boost/whats-new#announcement))_
+_(It's a `pro` feauture. [learn more](https://gourav.io/notion-boost/whats-new#announcement))_
 
 <Img src={narrowspace} type="ss" />
 </details>
 
-> Missing something? [suggest / feedback](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
+<details>
+  <summary> <h4>Add indentation lines to lists</h4></summary>
+
+Add vertical indentation lines to bullet and to-do lists.
+
+<Img src={indentation_lines} type="ss" />
+</details>
+
+<details>
+  <summary> <h4>Make Rollup URLs clickable</h4></summary>
+
+Make URLs in Rollup property clickable. Works for both: table and as page properties.
+
+_(It's a `pro` feauture. [learn more](https://gourav.io/notion-boost/whats-new#announcement))_
+
+<Img src={rollup_clickable} type="ss" />
+</details>
+
+> Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
 
 <p>See{" "}
 <Link href="/notion-boost/whats-new">
@@ -261,7 +281,7 @@ Notion Boost is made by Gourav Goyal (https://gourav.io). I am a tech founder an
 
 ## Support
 
-Please reach out to me (hey@gourav.io) in case you have any feedback or suggestions.
+Please file a new issue on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new) in case you have any feedback or suggestions.
 
 ## Privacy Policy
 

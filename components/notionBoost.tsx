@@ -103,6 +103,15 @@ export function Title(Props: {
     </div>
   );
 }
+
+export function TagDate(props: { children: any }): JSX.Element {
+  return (
+    <sup className="bg-gray-200 text-gray-500 px-1 rounded">
+      {props.children}
+    </sup>
+  );
+}
+
 export function Social(): JSX.Element {
   // console.log(`useRouter().pathname: ${useRouter().basePath}`);
   // 👍 Liked this extension? express your love by rating [★★★★★](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd) on chrome/firefox store.
