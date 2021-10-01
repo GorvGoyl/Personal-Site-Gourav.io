@@ -9,7 +9,7 @@ preview: false
 
 import { Img, A } from "@/components/tags.tsx";
 import { TweetEmbed } from "@/components/twitterEmbed.tsx";
-import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
+import { SubscribeForm, FORMTYPE } from "@/components/subscribe.tsx";
 
 import og from "./og.jpg";
 import img1 from "./1.jpg";
@@ -113,14 +113,7 @@ Here are some users insights (first 30 days since launch i.e. from that Reddit p
 <Img src={img10} type="ss"  caption="Users by browsers" />
 </div>
 
-<!-- It has now <img
-        alt="GitHub repo stars"
-        src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
-    /> -->
-
-<p>
-Currently, this project has
-
+<span> Currently, this project has </span>
 <a
     title="GitHub repo stars"
     href="https://github.com/gorvgoyl/clone-wars"
@@ -133,9 +126,7 @@ alt="GitHub repo stars"
 src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
 />
 </a>
-<span>
-and
-</span>
+<span> and </span>
 
 <a
     title="Github repo forks"
@@ -150,8 +141,6 @@ alt="GitHub forks"
 src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
 />
 </a>
-
-</p>
 
 #### Update: 14 Apr'21
 

@@ -2,8 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Icon, TYPE } from "@/components/icons";
 import { readableDate } from "@/lib/utils";
-import Link from "next/link";
-import React, { MouseEventHandler, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function CopyLink(): JSX.Element {
   const [pageURL, setPageURL] = useState("");

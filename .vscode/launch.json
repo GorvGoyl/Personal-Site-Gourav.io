@@ -5,6 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch via NPM",
+      "request": "launch",
+      "runtimeArgs": ["run", "feed"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
       "name": "Attach",
       "port": 9229,
       "request": "attach",
@@ -13,6 +21,7 @@
       // "type": "pwa-msedge",
       "restart": true,
       "outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"]
+
       // "autoAttachChildProcesses": true,
       // "continueOnAttach": true,
       // "attachExistingChildren": true

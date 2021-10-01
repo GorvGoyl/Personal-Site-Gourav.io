@@ -1,7 +1,7 @@
 import { LayoutType } from "@/components/layout";
 import fs from "fs";
 import matter from "gray-matter";
-import { join } from "path";
+import path, { join } from "path";
 
 export class FrontMatter {
   date: string;
@@ -14,22 +14,78 @@ export class FrontMatter {
   og?: string;
 }
 
-const postsDirectory = join(process.cwd(), "pages", "blog");
+// const postsDirectory = join(process.cwd(), "content", "blog");
 
-// get path name of posts
-export function getPostSlugs(): string[] {
-  const slugs = fs.readdirSync(postsDirectory).filter((slug) => {
-    if (slug.includes(" ")) {
-      throw new Error(`space not allowed in path name: ${slug}`);
+function flatten(lists) {
+  return lists.reduce((a, b) => a.concat(b), []);
+}
+
+function getDirectories(srcpath) {
+  return fs
+    .readdirSync(srcpath)
+    .map((file) => path.join(srcpath, file))
+    .filter((path) => fs.statSync(path).isDirectory());
+}
+
+function getDirectoriesRecursive(srcpath) {
+  return [
+    srcpath,
+    ...flatten(getDirectories(srcpath).map(getDirectoriesRecursive)),
+  ];
+}
+
+function getMDFoldersList(baseDir: string) {
+  const folders = [];
+
+  const getFilesRecursively = (dir: string) => {
+    const filesInDirectory = fs.readdirSync(dir);
+    for (const file of filesInDirectory) {
+      const absolute = path.join(dir, file);
+      if (
+        fs.statSync(absolute).isDirectory() &&
+        fs.existsSync(join(absolute, "index.md"))
+      ) {
+        console.log(path.sep);
+        const tt = absolute
+          .replace(`${baseDir}${path.sep}`, "")
+          .split(path.sep);
+        folders.push(tt);
+        getFilesRecursively(absolute);
+      }
     }
-    return !slug.startsWith(".");
+  };
+
+  getFilesRecursively(baseDir);
+
+  return folders;
+}
+
+/**
+get folder names (slug) of all md posts
+input base dir: content/misc
+output: [["clone-wars"],["notion-boost"],["notion-boost","whats-new"]]
+https://nextjs.org/docs/routing/dynamic-routes#catch-all-routes
+*/
+export function getMdPostSlugs(postsDirectory: string): string[] {
+  const dir = getMDFoldersList(postsDirectory);
+
+  const slugs = dir.filter((slug) => {
+    if (slug.includes(" ")) {
+      console.error(`space isnot allowed in path name: ${slug}`);
+    } else {
+      return slug;
+    }
   });
 
   return slugs;
 }
 
 // get post by path name
-export function getPostBySlug(slug: string, fields: string[]): FrontMatter {
+export function getPostBySlug(
+  slug: string,
+  fields: string[],
+  postsDirectory: string
+): FrontMatter {
   const pathToPost = join(postsDirectory, slug);
   const files = fs.readdirSync(pathToPost);
   const indexFile = files.find(
@@ -50,10 +106,13 @@ export function getPostBySlug(slug: string, fields: string[]): FrontMatter {
   return post;
 }
 
-export function getAllPosts(fields: string[]): FrontMatter[] {
-  const slugs = getPostSlugs();
-  let posts = slugs.map((slug) => {
-    const post = getPostBySlug(slug, fields);
+export function getAllPosts(
+  fields: string[],
+  postsDirectory: string
+): FrontMatter[] {
+  const allSlugs = getMdPostSlugs(postsDirectory);
+  let posts = allSlugs.map((slugArr) => {
+    const post = getPostBySlug(slugArr[0], fields, postsDirectory);
     return post;
   });
 

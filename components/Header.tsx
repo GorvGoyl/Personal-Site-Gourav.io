@@ -1,3 +1,4 @@
+import { usePath } from "@/hooks/customHooks";
 import { isProd } from "@/lib/utils";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
@@ -16,13 +17,15 @@ export default function Header(Props: {
   const title = Props.title || defaultProps.title;
   const desc = Props.desc || defaultProps.desc;
   const ogImgRelativePath = Props.imgPath || defaultProps.imgPath;
-
   const local = "http://localhost:3000";
   const siteURL = "https://gourav.io";
   // const siteURL = isProd ? "https://gourav.io" : local;
   const ogImageURL = `${siteURL}${ogImgRelativePath}`;
-  const pathName = useRouter().pathname;
-  const pageURL = pathName === "/" ? siteURL : siteURL + pathName;
+
+  // to get url for both fixed and dynamic([slug]) paths
+  const relativeURL = usePath();
+
+  const pageURL = relativeURL === "/" ? siteURL : siteURL + relativeURL;
   const twitterHandle = "@GorvGoyl";
   const siteName = "Gourav.io";
 

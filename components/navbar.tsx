@@ -1,5 +1,5 @@
+import { usePath } from "@/hooks/customHooks";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
 
 export enum Links {
@@ -24,7 +24,7 @@ const NavItem = (Props: { href: string; title: string; text: string }) => (
   </Link>
 );
 export function Navbar(Props: { link?: Links }): JSX.Element {
-  const page = useRouter().pathname;
+  const page = usePath();
   // page !== "/blog"
   return (
     <nav className="text-xl mb-12 flex border-b-2 justify-end">
