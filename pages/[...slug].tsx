@@ -16,7 +16,7 @@ import { join } from "path";
 import React, { useMemo } from "react";
 
 export default function Project(props: { matter: any; source: string }) {
-  const Component = useMemo(
+  const MDX = useMemo(
     () => getMDXComponent(props.source),
     [props.source]
   );
@@ -34,7 +34,7 @@ export default function Project(props: { matter: any; source: string }) {
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose prose-lg">
           <article className={`${project.css}`}>
-            <Component components={MDXComponents as any} />
+            <MDX components={MDXComponents as any} />
           </article>
           <ShareComponent />
           <hr className="mb-8" />

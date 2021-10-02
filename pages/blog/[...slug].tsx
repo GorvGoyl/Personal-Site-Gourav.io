@@ -13,10 +13,7 @@ import Link from "next/link";
 import { join } from "path";
 import React, { useMemo } from "react";
 export default function Post(props: { matter: any; source: string }) {
-  const Component = useMemo(
-    () => getMDXComponent(props.source),
-    [props.source]
-  );
+  const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
 
   return (
     <>
@@ -34,7 +31,7 @@ export default function Post(props: { matter: any; source: string }) {
               <h1>{props.matter.title}</h1>
             </header>
             <Author date={props.matter.date} />
-            <Component components={MDXComponents as any} />
+            <MDX components={MDXComponents as any} />
             <p>
               Thanks for reading. Would love to hear your thoughts about it.
               Connect with me on{" "}
