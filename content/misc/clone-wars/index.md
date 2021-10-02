@@ -6,20 +6,13 @@ date: "02-03-2021"
 og: "clone-wars/img/og.jpg"
 ---
 
-import { Img, A } from "@/components/tags";
-import { TwitterIcon } from "@/components/tags";
-import { Title } from "@/components/notionBoost";
-import Link from "next/link";
-
-import og from "./img/og.jpg";
+import og from "./og.jpg";
 
 <Img src={og}  />
 
 <Title  txt="Clone Wars - Open source clones of popular sites" homeURL = "/clone-wars" />
 
-<p className="lead">
-  100+ open-source clones and alternatives of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube, etc. List contains source code, tutorials, demo links, tech stack, and GitHub stars count. Great for learning purpose!
-</p>
+<p className="lead">100+ open-source clones and alternatives of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube, etc. List contains source code, tutorials, demo links, tech stack, and GitHub stars count. Great for learning purpose!</p>
 
  <nav  className= "flex justify-between  mt-5" 
     >
@@ -28,21 +21,15 @@ import og from "./img/og.jpg";
         target="_black"
         rel="noopener"
         title="View source code on Github"
-      >
-        Source code
-      </a>
+      >Source code</a>
       <a
         href="#support"
         title="Support"
-      >
-        Support ♥
-      </a>
+      >Support ♥</a>
        <a
         href="#contribution"
         title="Contribute"
-      >
-        Contribution
-      </a>
+      >Contribution</a>
     
   </nav>
   

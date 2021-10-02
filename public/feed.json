@@ -15,7 +15,7 @@
             "url": "https://gourav.io/blog/first-donation-on-open-source-side-project",
             "title": "I received first-ever donation on my open-source side project and it felt great!",
             "summary": "I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.",
-            "image": "https://gourav.io/_next/static/media/pages/blog/first-donation-on-open-source-side-project/og.png",
+            "image": "https://gourav.io/img/blog/first-donation-on-open-source-side-project/og.png",
             "date_modified": "2020-12-11T00:00:00.000Z",
             "author": {
                 "name": "Gourav Goyal",
@@ -27,7 +27,7 @@
             "url": "https://gourav.io/blog/my-simple-github-project-went-viral",
             "title": "My simple Github project went Viral",
             "summary": "I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section",
-            "image": "https://gourav.io/_next/static/media/pages/blog/my-simple-github-project-went-viral/og.png",
+            "image": "https://gourav.io/img/blog/my-simple-github-project-went-viral/og.jpg",
             "date_modified": "2021-04-12T00:00:00.000Z",
             "author": {
                 "name": "Gourav Goyal",
@@ -39,7 +39,7 @@
             "url": "https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code",
             "title": "Setup VSCode to run and debug C / C++ code",
             "summary": "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode",
-            "image": "https://gourav.io/_next/static/media/pages/blog/setup-vscode-to-run-debug-c-cpp-code/og.png",
+            "image": "https://gourav.io/img/blog/setup-vscode-to-run-debug-c-cpp-code/og.jpg",
             "date_modified": "2020-12-04T18:30:00.000Z",
             "author": {
                 "name": "Gourav Goyal",

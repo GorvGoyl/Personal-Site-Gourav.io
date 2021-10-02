@@ -4,10 +4,11 @@ import { Icon, TYPE } from "@/components/icons";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
-import { FrontMatter, getAllPosts } from "@/lib/getPost";
+import { FrontMatter, getAllPosts as getAllPostsMatter } from "@/lib/getPost";
 import { readableDate } from "@/lib/utils";
 import { GetStaticProps } from "next";
 import Link from "next/link";
+import { join } from "path";
 import React from "react";
 
 export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
@@ -49,9 +50,14 @@ export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps = async (context) => {
-  const allPosts = getAllPosts(["title", "date", "slug"]);
+  const postsDirectory = join(process.cwd(), "content", "blog");
+
+  const allPostsMatter = getAllPostsMatter(
+    ["title", "date", "slug"],
+    postsDirectory
+  );
 
   return {
-    props: { allPosts },
+    props: { allPosts: allPostsMatter },
   };
 };

@@ -1,6 +1,5 @@
+import { usePath } from "@/hooks/customHooks";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import React from "react";
 import { A, CopyLink, TwitterIcon } from "./tags";
 
 enum Page {
@@ -10,7 +9,7 @@ enum Page {
 }
 
 export function NavbarNotion(): JSX.Element {
-  const page = useRouter().pathname;
+  const page = usePath();
   const relativePath = page === Page.WhatsNew ? "/notion-boost/" : "";
   return (
     <nav
@@ -113,11 +112,11 @@ export function TagDate(props: { children: any }): JSX.Element {
 }
 
 export function Social(): JSX.Element {
-  // console.log(`useRouter().pathname: ${useRouter().basePath}`);
   // 👍 Liked this extension? express your love by rating [★★★★★](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd) on chrome/firefox store.
+  const pathName = usePath();
   return (
     <div>
-      {useRouter().pathname === Page.WhatsNew && (
+      {pathName === Page.WhatsNew && (
         <>
           <p>
             👍 Liked these updates? Share the news on{" "}

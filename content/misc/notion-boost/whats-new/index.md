@@ -6,15 +6,12 @@ date: "09-12-2020"
 og: "notion-boost/img/og.png"
 ---
 
-import { Img, A } from "@/components/tags";
-import { SubscribeForm, FORMTYPE } from "@/components/subscribe";
-import { Title, Social,NavbarNotion,TagDate } from "@/components/notionBoost";
+import logo from "../img/logo.png";
 
-import og from "./img/og.png";
-import logo from "./img/logo.png";
+import {FORMTYPE} from "@/components/subscribe";
 
-import indentation_lines from "./img/indentation_lines.jpg";
-import rollup_clickable from "./img/rollup_clickable.jpg";
+import indentation_lines from "../img/indentation_lines.jpg";
+import rollup_clickable from "../img/rollup_clickable.jpg";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 

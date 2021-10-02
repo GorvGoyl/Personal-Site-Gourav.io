@@ -1,9 +1,10 @@
+import { usePath } from "@/hooks/customHooks";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 export function Banner(): JSX.Element {
   const [isVisible, setVisibility] = useState(true);
-  const pathName = useRouter().pathname.slice(1); // replace first "/"
+  const pathName = usePath().slice(1); // replace first "/"
 
   const handleClick = () => {
     setVisibility((x) => false);

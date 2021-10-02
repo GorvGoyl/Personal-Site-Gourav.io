@@ -15,7 +15,7 @@
       white-space: pre;
       word-spacing: normal;
       word-break: normal;
-      line-height: 1.56;
+      line-height: 1.56 !important;
       -moz-tab-size: 4;
       -o-tab-size: 4;
       tab-size: 4;
@@ -295,11 +295,11 @@
     }
 
     // code-title
-    .remark-code-title {
+    .rehype-code-title {
       @apply border border-b-0 mt-2 px-4 py-2 rounded-t bg-black text-white border-black text-sm font-mono font-bold;
     }
 
-    .remark-code-title + pre {
+    .rehype-code-title + pre {
       @apply mt-0 rounded-t-none;
     }
   }

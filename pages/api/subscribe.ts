@@ -67,7 +67,7 @@ export default async function subscribe(
 
     res.status(201).json({ error: "" });
     return res;
-  } catch (error) {
+  } catch (error: any) {
     res.status(500).json({ error: error.message || error.toString() });
     return res;
   }

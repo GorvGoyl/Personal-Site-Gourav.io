@@ -1,17 +1,10 @@
 ---
-layout: "projectLayout"
 title: "Notion Boost - Browser extension to make Notion more productive and less distractive"
 desc: "Boost Notion productivity with 15+ customizations like outline,small text full width for all,back to top button,hide slash command menu etc"
 date: "09-12-2020"
 og: "notion-boost/img/og.png"
 ---
 
-import { Img, A } from "@/components/tags";
-
-import { Title, Social, NavbarNotion } from "@/components/notionBoost";
-import Link from "next/link";
-
-import og from "./img/og.png";
 import logo from "./img/logo.svg";
 import boldertext from "./img/boldertext.gif";
 import commenthide from "./img/commenthide.gif";
@@ -40,11 +33,12 @@ import rollup_clickable from "./img/rollup_clickable.jpg";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
-<p className="lead">
+<span className="lead">
   Chrome and Firefox extension to make Notion more productive and less distractive. Add 15+ customizations to Notion like sticky
   outline, small text & full width by default,scroll to top button, hide slash
   command menu, and more.
-</p>
+</span>
+
 <NavbarNotion />
 
 ## ⬇ Download
@@ -227,10 +221,7 @@ _(It's a `pro` feauture. [learn more](https://gourav.io/notion-boost/whats-new#a
 
 > Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
 
-<p>See{" "}
-<Link href="/notion-boost/whats-new">
-<a className="" title="https://gourav.io/notion-boost/whats-new">
-what's new</a></Link> in the latest update ✨</p>
+<span>See{" "}<Link href="/notion-boost/whats-new"><a className="" title="https://gourav.io/notion-boost/whats-new">what's new</a></Link> in the latest update ✨</span>
 
 ## ⚙ How to use
 
@@ -262,14 +253,6 @@ what's new</a></Link> in the latest update ✨</p>
 ---
 
 ### 🖤 Support
-
-<!-- 💲 Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
-
-<p align="center">
-  <a href="https://ko-fi.com/gorvgoyl">
-  <img src="/bmc.png" width="200" alt="Buy me a Coffee"/>
-  </a>
-</p> -->
 
 <Social />
 

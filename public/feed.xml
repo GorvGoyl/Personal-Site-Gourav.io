@@ -4,7 +4,7 @@
         <title>Gourav Goyal</title>
         <link>https://gourav.io</link>
         <description>Blog - Gourav Goyal</description>
-        <lastBuildDate>Thu, 19 Aug 2021 23:12:14 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Oct 2021 21:14:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for https://gourav.io</generator>
         <language>en</language>
@@ -21,7 +21,7 @@
             <guid>I received first-ever donation on my open-source side project and it felt great!</guid>
             <pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></description>
-            <enclosure url="https://gourav.io/_next/static/media/pages/blog/first-donation-on-open-source-side-project/og.png" length="0" type="image/png"/>
+            <enclosure url="https://gourav.io/img/blog/first-donation-on-open-source-side-project/og.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[My simple Github project went Viral]]></title>
@@ -29,7 +29,7 @@
             <guid>My simple Github project went Viral</guid>
             <pubDate>Mon, 12 Apr 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section]]></description>
-            <enclosure url="https://gourav.io/_next/static/media/pages/blog/my-simple-github-project-went-viral/og.png" length="0" type="image/png"/>
+            <enclosure url="https://gourav.io/img/blog/my-simple-github-project-went-viral/og.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
@@ -37,7 +37,7 @@
             <guid>Setup VSCode to run and debug C / C++ code</guid>
             <pubDate>Fri, 04 Dec 2020 18:30:00 GMT</pubDate>
             <description><![CDATA[By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode]]></description>
-            <enclosure url="https://gourav.io/_next/static/media/pages/blog/setup-vscode-to-run-debug-c-cpp-code/og.png" length="0" type="image/png"/>
+            <enclosure url="https://gourav.io/img/blog/setup-vscode-to-run-debug-c-cpp-code/og.jpg" length="0" type="image/jpg"/>
         </item>
     </channel>
 </rss>
