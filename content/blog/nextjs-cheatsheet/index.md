@@ -805,7 +805,7 @@ To verify metatags:
 
 - After deployment you can verify it via https://metatags.io (enter your site name in input field)
 
-### create dynamic sitemap
+### Create dynamic sitemap
 
 Up-to date sitemap will be generated every time you do a deployment (during build process) so no need to manually add/update/remove urls in sitemap.
 
