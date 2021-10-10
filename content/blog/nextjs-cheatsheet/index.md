@@ -44,6 +44,7 @@ date: "2021-10-11"
   - [Open localhost site whenever you start Next.js server](#open-localhost-site-whenever-you-start-nextjs-server)
   - [Check if site is running in production or dev server](#check-if-site-is-running-in-production-or-dev-server)
   - [Use absolute path like @/components instead of relative path](#use-absolute-path-like-components-instead-of-relative-path)
+- [Contribute to this cheatsheet](#contribute-to-this-cheatsheet)
 
 ## Setup Next.js project
 
@@ -1162,4 +1163,6 @@ module.exports = {
 - Now import some code using `@/` in a file e.g. `import Header from "@/components/Header";`
 - You can test for any import errors by running `npm run lint`
 
-> 👋 If you'd like to collaborate on this, please edit here and submit changes.
+## Contribute to this cheatsheet
+
+👋 If you'd like to collaborate on this, please [edit here and submit your changes](https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/blog/nextjs-cheatsheet/index.md).
