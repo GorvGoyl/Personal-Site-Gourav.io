@@ -17,7 +17,7 @@
     "**/yarn.lock": true
   },
   "files.associations": {
-    "*.md": "mdx"
+    // "*.md": "mdx"
   },
   "spellright.language": ["en"],
   "spellright.documentTypes": ["markdown", "latex", "plaintext"],
