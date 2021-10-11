@@ -7,8 +7,8 @@ import { ScrollTopBtn } from "@/components/scrollTop";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { ShareComponent } from "@/components/tags";
 import project from "@/layouts/css/project.module.scss";
-import { FrontMatter } from "@/lib/getPost";
 import { webpackPath } from "@/lib/utils";
+import { FrontMatter } from "@/types/types";
 import React from "react";
 
 // This function must be named otherwise it disables Fast Refresh.
@@ -23,8 +23,8 @@ export default function Pos(Props: {
 
   // todo: directly search for og.png in blog folder instead of relying on frontmatter og tag
   // imp: import og.png is required in mdx file else webpack won't load it
-  const img = Props.frontMatter.og
-    ? `${postMediaPath}/${Props.frontMatter.og}`
+  const img = Props.frontMatter.ogURL
+    ? `${postMediaPath}/${Props.frontMatter.ogURL}`
     : "";
 
   return (

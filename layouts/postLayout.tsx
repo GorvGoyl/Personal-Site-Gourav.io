@@ -4,8 +4,8 @@ import { Links, Navbar } from "@/components/navbar";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
-import { FrontMatter } from "@/lib/getPost";
 import { webpackPath } from "@/lib/utils";
+import { FrontMatter } from "@/types/types";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
@@ -22,8 +22,8 @@ export default function Post(Props: {
 
   // todo: directly search for og.png in blog folder instead of relying on frontmatter og tag
   // imp: import og.png is required in mdx file else webpack won't load it
-  const img = Props.frontMatter.og
-    ? `${postMediaPath}/${Props.frontMatter.og}`
+  const img = Props.frontMatter.ogURL
+    ? `${postMediaPath}/${Props.frontMatter.ogURL}`
     : "";
   return (
     <>
