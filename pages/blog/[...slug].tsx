@@ -7,11 +7,13 @@ import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
 import { getMdPostSlugs } from "@/lib/getPost";
 import { getPost } from "@/lib/mdx";
+import md from "@/styles/md.module.scss";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import Link from "next/link";
 import { join } from "path";
 import React, { useMemo } from "react";
+
 export default function Post(props: { matter: any; source: string }) {
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
 
@@ -26,7 +28,7 @@ export default function Post(props: { matter: any; source: string }) {
       <Container layout={LayoutType.Blog}>
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose prose-lg">
-          <article className={`${post.code_block}`}>
+          <article className={`${post.code_block} ${md.css}`}>
             <header>
               <h1>{props.matter.title}</h1>
             </header>

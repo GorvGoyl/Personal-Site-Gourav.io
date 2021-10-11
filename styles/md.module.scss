@@ -1,0 +1,21 @@
+.css {
+  :global {
+    h1[id],
+    h2[id],
+    h3[id],
+    h4[id],
+    h5[id] {
+      &:hover {
+        .heading-link {
+          visibility: visible !important;
+        }
+      }
+      .anchor {
+        float: left;
+        padding-right: 4px;
+        margin-left: -20px;
+        line-height: 120%;
+      }
+    }
+  }
+}

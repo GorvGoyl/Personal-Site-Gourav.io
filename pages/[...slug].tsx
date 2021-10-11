@@ -10,16 +10,14 @@ import { ShareComponent } from "@/components/tags";
 import project from "@/layouts/css/project.module.scss";
 import { getMdPostSlugs } from "@/lib/getPost";
 import { getPost } from "@/lib/mdx";
+import md from "@/styles/md.module.scss";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import { join } from "path";
 import React, { useMemo } from "react";
 
 export default function Project(props: { matter: any; source: string }) {
-  const MDX = useMemo(
-    () => getMDXComponent(props.source),
-    [props.source]
-  );
+  const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
 
   return (
     <>
@@ -33,7 +31,7 @@ export default function Project(props: { matter: any; source: string }) {
         <Banner />
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose prose-lg">
-          <article className={`${project.css}`}>
+          <article className={`${project.css} ${md.css}`}>
             <MDX components={MDXComponents as any} />
           </article>
           <ShareComponent />
@@ -74,7 +72,6 @@ export const getStaticProps = async (props: { params: { slug: [string] } }) => {
 
 export const getStaticPaths: GetStaticPaths = () => {
   const postsDirectory = join(process.cwd(), "content", "misc");
-  console.log("ss");
 
   const slugsArr = getMdPostSlugs(postsDirectory);
 

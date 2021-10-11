@@ -36,6 +36,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "esbuild": "^0.13.4",
     "gray-matter": "^4.0.3",
+    "hastscript": "^7.0.2",
     "mdx-bundler": "^6.0.2",
     "next": "^11.1.2",
     "next-compose-plugins": "^2.2.1",
