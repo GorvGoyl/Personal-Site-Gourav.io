@@ -1,5 +1,6 @@
 .css {
   :global {
+    //   add link icon to headings on hover
     h1[id],
     h2[id],
     h3[id],
@@ -15,6 +16,43 @@
         padding-right: 4px;
         margin-left: -20px;
         line-height: 120%;
+      }
+    }
+
+    // contents / toc
+    .page-outline {
+      &:before {
+        content: "Contents";
+        margin-top: -36px;
+        margin-left: 36px;
+        @apply text-gray-500 block fixed text-base font-medium tracking-wide;
+      }
+      @apply hidden lg:block;
+      position: fixed;
+      right: 0;
+      margin-right: 30px;
+      top: 150px;
+      bottom: 30px;
+      max-width: 250px;
+      //   max-height: calc(100% - 120px);
+      overflow: auto;
+      ol {
+        padding: 0;
+        margin: 0;
+        li {
+          &::before {
+            content: "";
+          }
+          margin: 0;
+          a {
+            @apply text-gray-500 block text-sm no-underline font-medium px-2 py-1;
+            &:hover {
+              @apply bg-gray-100 rounded;
+            }
+
+            display: block;
+          }
+        }
       }
     }
   }

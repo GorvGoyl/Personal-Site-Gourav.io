@@ -1,18 +1,7 @@
-import { LayoutType } from "@/components/layout";
+import { FrontMatter } from "@/types/types";
 import fs from "fs";
 import matter from "gray-matter";
 import path, { join } from "path";
-
-export class FrontMatter {
-  date: string;
-  title: string;
-  desc: string;
-  layout: LayoutType;
-  preview?: boolean;
-  // below ones are auto retrieve at build time
-  slug?: string;
-  og?: string;
-}
 
 // const postsDirectory = join(process.cwd(), "content", "blog");
 

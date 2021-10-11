@@ -1,13 +1,10 @@
 ---
-layout: "postLayout"
 title: "Setup VSCode to run and debug C / C++ code"
 desc: "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode"
 date: "2020-12-5"
-og: "og.jpg"
+toc: true
 ---
 
-import { Img, A } from "@/components/tags.tsx";
-import og from "./og.jpg";
 import img1 from "./1.png";
 import img2 from "./2.png";
 import img3 from "./3.png";

@@ -2,49 +2,8 @@
 title: "Next.js Cheatsheet"
 desc: "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project"
 date: "2021-10-11"
+toc: true
 ---
-
-**Contents**:
-
-- [Setup Next.js project](#setup-nextjs-project)
-  - [Create new Next.js project](#create-new-nextjs-project)
-  - [Run locally](#run-locally)
-  - [Debug Next.js in VSCode](#debug-nextjs-in-vscode)
-  - [Run localhost in mobile](#run-localhost-in-mobile)
-  - [Disable telemetry](#disable-telemetry)
-- [Deployment](#deployment)
-  - [Deploy to Vercel](#deploy-to-vercel)
-  - [Deploy to Preview and Production](#deploy-to-preview-and-production)
-  - [Disable emails from vercel[bot] which comes after every github commit](#disable-emails-from-vercelbot-which-comes-after-every-github-commit)
-  - [Link custom domain](#link-custom-domain)
-  - [Create development url like dev.yoursite.com](#create-development-url-like-devyoursitecom)
-- [Add Typescript support](#add-typescript-support)
-  - [Add Typescript when creating a new Next.js project](#add-typescript-when-creating-a-new-nextjs-project)
-  - [Add Typescript to existing Next.js project](#add-typescript-to-existing-nextjs-project)
-  - [Check for any Typescript errors](#check-for-any-typescript-errors)
-  - [Strict Type checking (Optional)](#strict-type-checking-optional)
-- [Add ESLint to Next.js Typescript project](#add-eslint-to-nextjs-typescript-project)
-  - [Test Linting (ESLint)](#test-linting-eslint)
-  - [Disable or suppress linting errors and warnings](#disable-or-suppress-linting-errors-and-warnings)
-- [Add support for Prettier in Next.js project with ESLint](#add-support-for-prettier-in-nextjs-project-with-eslint)
-- [Add Styling](#add-styling)
-  - [Add Tailwind CSS to Next.js project](#add-tailwind-css-to-nextjs-project)
-  - [Add SASS/SCSS support to Next.js project](#add-sassscss-support-to-nextjs-project)
-- [Add SEO](#add-seo)
-  - [Set Redirect from www.yoursite.com to yoursite.com](#set-redirect-from-wwwyoursitecom-to-yoursitecom)
-  - [Add SEO meta tags and favicon](#add-seo-meta-tags-and-favicon)
-  - [create dynamic sitemap](#create-dynamic-sitemap)
-  - [Add HTML language attribute and locale](#add-html-language-attribute-and-locale)
-  - [Create dynamic RSS feed](#create-dynamic-rss-feed)
-- [Add blogging using MDX](#add-blogging-using-mdx)
-- [Add analytics to Next.js](#add-analytics-to-nextjs)
-  - [Add Cloudflare Web Analytics](#add-cloudflare-web-analytics)
-  - [Add Google Analytics](#add-google-analytics)
-- [Next.js Misc Tips](#nextjs-misc-tips)
-  - [Open localhost site whenever you start Next.js server](#open-localhost-site-whenever-you-start-nextjs-server)
-  - [Check if site is running in production or dev server](#check-if-site-is-running-in-production-or-dev-server)
-  - [Use absolute path like @/components instead of relative path](#use-absolute-path-like-components-instead-of-relative-path)
-- [Contribute to this cheatsheet](#contribute-to-this-cheatsheet)
 
 ## Setup Next.js project
 
@@ -1132,10 +1091,10 @@ For example, you can use `import Header from "@/components/Header";` no matter h
 }
 ```
 
-2. Add below to `.eslintrc.json`on:
+2. Add below to `.eslintrc.json`:
 
 ```json
-module.exports = {
+{
   "settings": {
     // to support @/ path
     "import/resolver": {

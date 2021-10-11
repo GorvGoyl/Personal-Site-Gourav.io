@@ -1,9 +1,8 @@
 ---
-layout: "projectLayout"
 title: "Notion Boost - What's new?"
 desc: "See what's new in the latest update of Notion Boost browser extension"
 date: "09-12-2020"
-og: "notion-boost/img/og.png"
+toc: true
 ---
 
 import logo from "../img/logo.png";
@@ -108,7 +107,7 @@ I added many features ✔ and fixed bugs 🐞 in this release:
 Added [privacy policy](https://gourav.io/notion-boost#privacy-policy) section.  
 tldr; Notion Boost extension does not store or send any data from your Notion account.
 
-#### [Announcement]:
+### [Announcement]
 
 <TagDate>May 2021</TagDate>
 

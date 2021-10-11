@@ -1,17 +1,12 @@
 ---
-layout: "postLayout"
 title: "My simple Github project went Viral"
 desc: "I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section"
 date: "2021-04-12"
-og: "og.jpg"
-preview: false
+toc: true
 ---
 
-import { Img, A } from "@/components/tags.tsx";
 import { TweetEmbed } from "@/components/twitterEmbed.tsx";
-import { SubscribeForm, FORMTYPE } from "@/components/subscribe.tsx";
 
-import og from "./og.jpg";
 import img1 from "./1.jpg";
 import img2 from "./2.jpg";
 import img3 from "./3.jpg";
@@ -34,8 +29,6 @@ Last month (Mar'21), I made a simple project which got spread in various tech co
 >
 > Project link: https://gourav.io/clone-wars  
 > Github link: https://github.com/gorvgoyl/clone-wars
-
- <SubscribeForm type={FORMTYPE.Slim} />
 
 ## Motivation behind this project
 

@@ -1,4 +1,7 @@
+import { FrontMatter } from "@/types/types";
+import toc from "@jsdevtools/rehype-toc";
 import fs, { constants } from "fs";
+import matter from "gray-matter";
 import { h } from "hastscript";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -26,6 +29,11 @@ export async function getPost(
   const mdDir = join(process.cwd(), mdRelativeDir);
 
   const fileContents = fs.readFileSync(mdFilePath, "utf8");
+
+  const { data } = matter(fileContents);
+
+  const frontmatter = data as FrontMatter;
+  const shouldAddToc = frontmatter.toc;
 
   if (process.platform === "win32") {
     process.env.ESBUILD_BINARY_PATH = path.join(
@@ -67,6 +75,21 @@ export async function getPost(
             content: headingLink,
           },
         ],
+        [
+          toc,
+          {
+            headings: ["h1", "h2", "h3", "h4", "h5", "h6"],
+            cssClasses: {
+              toc: "page-outline", // Change the CSS class for the TOC
+              link: "page-link", // Change the CSS class for links in the TOC
+            },
+            customizeTOC: (toc: any) => {
+              // whether to show toc based on frontmatter value
+              if (shouldAddToc) return true;
+              else return false;
+            },
+          },
+        ],
       ] as any;
 
       return options;
@@ -87,7 +110,7 @@ export async function getPost(
     }),
   });
 
-  const { code, frontmatter } = result;
+  const { code } = result;
   let ogImgWithRelativePath: string;
   let ogFileName: string;
 

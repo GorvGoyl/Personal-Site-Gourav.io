@@ -29,6 +29,7 @@
     "node": "14"
   },
   "dependencies": {
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^11.1.2",

@@ -1,7 +1,7 @@
 module.exports = {
   // to enable overriding tw-typography styles
   important: true,
-  // mode: "jit",
+  mode: "jit",
   future: {
     removeDeprecatedGapUtilities: true,
   },
