@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
                 Gourav Goyal
               </h1>
 
-              <nav className="flex space-x-14">
+              <nav className="flex justify-between md:justify-around ">
                 <Link href="https://twitter.com/GorvGoyl">
                   <a
                     target="blank"
