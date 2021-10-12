@@ -858,7 +858,7 @@ const homeURL = "https://yoursite.com";
         </urlset>
 ```
 
-- Also create `/public/robot.txt` and paste below and replace mysite.com with your site. This gives permission to web crawlers (e.g. Google) to crawl and index your site and its pages.
+- Also create `/public/robots.txt` and paste below and replace mysite.com with your site. This gives permission to web crawlers (e.g. Google) to crawl and index your site and its pages.
 
 ```
 User-agent: *
