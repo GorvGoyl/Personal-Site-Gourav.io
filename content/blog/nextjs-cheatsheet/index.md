@@ -84,29 +84,6 @@ Next.js collects completely anonymous telemetry data about general usage. Run th
 
 - `npx next telemetry disable`
 
-## Deployment
-
-### Deploy to Vercel
-
-1. Commit any pending changes to the repo and link it on Github.
-2. Create a free account at https://vercel.com/
-3. Create a new project https://vercel.com/new
-4. Import this github repository (give Github access to Vercel when asked).
-5. Skip creating a team (it's a paid feature) if asked.
-
-![](3.jpg)
-
-6. Click **Deploy**. Vercel will give you a custom public URL (ending with `.vercel.app`) for your site. You can later replace it with your own domain.
-
-![](3_1.png)
-
-![](3_2.jpg)
-
-### Deploy to Preview and Production
-
-- Push to any branch other than `main` on Github and Vercel will deploy to a custom public URL (unique for every deployment). Useful for testing purpose before making it live on production domain.
-- Push to `main` branch on Github and vercel will deploy to production domain.
-
 ### Disable emails from vercel[bot] which comes after every github commit
 
 ![2.png](2.png)
@@ -123,7 +100,35 @@ Next.js collects completely anonymous telemetry data about general usage. Run th
 
 2. Commit and push this file to Github.
 
-### Link custom domain
+## Deployment
+
+### Netlify
+
+- Deploy [new Next.js project](https://www.netlify.com/with/nextjs/).
+- Deploy [existing Next.js project](https://www.netlify.com/blog/2021/05/04/migrating-an-existing-next.js-project-to-netlify/).
+
+### Vercel
+
+1. Commit any pending changes to the repo and link it on Github.
+2. Create a free account at https://vercel.com/
+3. Create a new project https://vercel.com/new
+4. Import this github repository (give Github access to Vercel when asked).
+5. Skip creating a team (it's a paid feature) if asked.
+
+![](3.jpg)
+
+6. Click **Deploy**. Vercel will give you a custom public URL (ending with `.vercel.app`) for your site. You can later replace it with your own domain.
+
+![](3_1.png)
+
+![](3_2.jpg)
+
+#### Deploy to Preview and Production
+
+- Push to any branch other than `main` on Github and Vercel will deploy to a custom public URL (unique for every deployment). Useful for testing purpose before making it live on production domain.
+- Push to `main` branch on Github and vercel will deploy to production domain.
+
+#### Link custom domain
 
 [Detailed guide by Vercel](https://vercel.com/docs/concepts/projects/custom-domains)
 
@@ -136,7 +141,7 @@ ns2.vercel-dns.com
 
 2. Now go to https://vercel.com/dashboard/domains and add that custom domain.
 
-### Create development url like dev.yoursite.com
+#### Create development url like dev.yoursite.com
 
 Creating different environments for development and production is a neat way to do development while maintaining a bug-free production server. All the changes you do on a `dev` branch will be deployed to `dev.yoursite.com` and won't affect your prod site `yoursite.com`. Let's set this up:
 
