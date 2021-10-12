@@ -26,15 +26,18 @@
     .page-outline {
       &:before {
         content: "Contents";
-        margin-left: 36px;
+        margin-left: 7px;
         @apply text-gray-500 block text-base font-medium tracking-wide mb-3 mt-[36px] lg:mt-[-36px] lg:fixed lg:mb-0;
       }
-      @apply hidden lg:block lg:max-w-[250px] lg:mr-[30px] lg:fixed;
+      @apply hidden lg:block lg:max-w-[220px] lg:mr-[30px] lg:fixed;
       right: 0;
       top: 150px;
       bottom: 30px;
       //   max-height: calc(100% - 120px);
       overflow: auto;
+      .toc-level.toc-level-1 > li {
+        padding-left: 0;
+      }
       ol {
         padding: 0;
         margin: 0;
