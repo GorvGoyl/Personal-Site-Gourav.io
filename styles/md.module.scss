@@ -21,13 +21,13 @@
 
     // contents / toc
     .page-outline.mobile {
-      @apply visible block lg:block lg:fixed;
+      @apply visible block  lg:block lg:fixed;
     }
     .page-outline {
       &:before {
         content: "Contents";
         margin-left: 36px;
-        @apply text-gray-500 block text-base font-medium tracking-wide mt-[36px] lg:mt-[-36px] lg:fixed;
+        @apply text-gray-500 block text-base font-medium tracking-wide mb-3 mt-[36px] lg:mt-[-36px] lg:fixed lg:mb-0;
       }
       @apply hidden lg:block lg:max-w-[250px] lg:fixed;
       right: 0;
