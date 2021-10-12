@@ -1041,7 +1041,7 @@ export async function getAllFilesAndParseMatter(type) {
 11. Now, we're ready to display the list of blog pages. Create a `@/pages/blog.tsx` file, and add:
 
 ```js
-import { getAllFilesAndParseMatter } from "@/utils/MDXUtils";
+import { getAllFilesAndParseMatter } from "@/util/MDXUtils";
 import Link from "next/link";
 
 //render a list of all blog pages
