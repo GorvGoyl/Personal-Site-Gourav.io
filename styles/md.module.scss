@@ -29,9 +29,8 @@
         margin-left: 36px;
         @apply text-gray-500 block text-base font-medium tracking-wide mb-3 mt-[36px] lg:mt-[-36px] lg:fixed lg:mb-0;
       }
-      @apply hidden lg:block lg:max-w-[250px] lg:fixed;
+      @apply hidden lg:block lg:max-w-[250px] lg:mr-[30px] lg:fixed;
       right: 0;
-      margin-right: 30px;
       top: 150px;
       bottom: 30px;
       //   max-height: calc(100% - 120px);
