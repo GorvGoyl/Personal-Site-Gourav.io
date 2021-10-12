@@ -7,8 +7,6 @@ toc: true
 
 ## Setup Next.js project
 
-> Next.js version at the time of writing this article: 11.1
-
 ### Create new Next.js project
 
 - run command:`npx create-next-app`
