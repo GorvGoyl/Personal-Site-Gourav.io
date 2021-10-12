@@ -3,18 +3,7 @@
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "*.exe": true,
-    "*.class": true,
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true,
-    "**/node_modules": true,
-    "node_modules": true,
-    "**/package-lock.json": true,
-    "**/yarn.lock": true
+    "node_modules": true
   },
   "files.associations": {
     // "*.md": "mdx"
@@ -25,6 +14,5 @@
     "mdx": {
       "parser": "markdown"
     }
-  },
-  "explorerExclude.backup": null
+  }
 }
