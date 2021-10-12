@@ -578,17 +578,17 @@ https://tailwindcss.com/docs/guides/nextjs
 ```js
 module.exports = {
   future: {
-    removeDeprecatedGapUtilities: true,
+    removeDeprecatedGapUtilities: true
   },
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"], // remove unused styles in production
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 };
 ```
 
@@ -598,8 +598,8 @@ module.exports = {
 module.exports = {
   plugins: {
     tailwindcss: {},
-    autoprefixer: {},
-  },
+    autoprefixer: {}
+  }
 };
 ```
 
@@ -705,27 +705,27 @@ export default function Header(): JSX.Element {
             url: ogImageURL,
             width: 1200,
             height: 630,
-            alt: "Gourav.io - personal site and blog",
-          },
+            alt: "Gourav.io - personal site and blog"
+          }
         ],
-        site_name: siteName,
+        site_name: siteName
       }}
       twitter={{
         handle: twitterHandle,
         site: twitterHandle,
-        cardType: "summary_large_image",
+        cardType: "summary_large_image"
       }}
       additionalMetaTags={[
         {
           property: "author",
-          content: title,
-        },
+          content: title
+        }
       ]}
       additionalLinkTags={[
         {
           rel: "icon",
-          href: `${siteURL}/favicon.ico`,
-        },
+          href: `${siteURL}/favicon.ico`
+        }
         // {
         //   rel: "manifest",
         //   href: "/site.manifest",
@@ -791,7 +791,7 @@ const homeURL = "https://yoursite.com";
       "pages/**/*.tsx",
       "!pages/_*.tsx",
       "!pages/api",
-      "!pages/404.tsx",
+      "!pages/404.tsx"
     ]);
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -879,8 +879,8 @@ It'll convert from `<html>...</html>` to `<html lang="en-US">...</html>`.
 module.exports = {
   i18n: {
     locales: ["en-US"],
-    defaultLocale: "en-US",
-  },
+    defaultLocale: "en-US"
+  }
 };
 ```
 
@@ -890,7 +890,293 @@ module.exports = {
 
 ## Add blogging using MDX
 
-(coming soon)
+### Using custom React components within .mdx files
+
+The following will demonstrate how to setup a very customizable blog using markdown. You will be able to style your markdown files with react, and use react components inside markdown files. The commands use `.tsx` files, but you can follow along using `.js` files if you're not using TypeScript.
+
+1. Run: `npm i @mdx-js/loader @mdx-js/react @next/mdx next-mdx-remote`
+
+2. Create `@/components/MDX/index.tsx` file
+
+3. In `@/components/MDX/index.tsx` add:
+
+```js
+import Code from "@/components/MSX/Code";
+import Paragraph from "@/components/MSX/Paragraph";
+const MDX = {
+  p: Paragraph,
+  code: Code
+};
+
+export default MDX;
+```
+
+4.  We're instructing MDX to render all pargraph elements inside markdown files with a custom `Paragraph` component, and code blocks with a custom `Code` element. You can map any markdown elements with custom React components. For example, you can map h1, h2 tags using custom components that you can then style using any type of CSS. We'll create a custom Paragraph component to get started.
+
+5.  Let's create the custom Paragraph and Code components. Create a `@/components/MDX/Paragraph.tsx` file, and fill it with:
+
+```js
+const Paragraph = (props) => <p {...props} />;
+export default Paragraph;
+```
+
+6. In order to customize code blocks inside markdown with custom colored syntax highlighting, we will have to do a little extra work.
+
+- Run `npm i prism-react-renderer`
+- Create a `@/components/MDX/Code.tsx` file, and fill it with:
+
+```js
+import Highlight, { defaultProps } from "prism-react-renderer";
+import github from "prism-react-renderer/themes/github";
+
+const Code = ({ children }) => {
+  const language = className.replace(/language-/, "");
+  return (
+    <Highlight
+      {...defaultProps}
+      theme={github}
+      code={children.trim()}
+      language={language}
+    >
+      {({ className, tokens, getLineProps, getTokenProps }) => (
+        //style <pre> tag however you want! Maybe add some padding or margin to code blocks
+        <pre className="custom_code_block">
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  );
+};
+
+export default Code;
+```
+
+6.  Now we need to instruct our Next.js app to render our styled MDX components. We also need to tell MDX of any React components that we expect to import inside any of our markdown files.
+
+7.  Inside `_app.tsx or _app.js`, we need to initialize `@mdx-js` as follows:
+
+```js
+//...other imports
+import MDXStyledComponents from "@/components/MDX";
+import { MDXProvider } from "@mdx-js/react";
+
+//our MDXStyledComponents are the Paragraph and Code components that we styled
+
+//these are all the react components we want to import and render inside our markdown files
+const customComponentsWithMdx = {
+  SomeCustomComponent,
+  SomeLayoutComponent,
+}
+
+
+function App({ Component, pageProps }) {
+     <MDXProvider
+        components={{ ...MDXStyledComponents, ...customComponentsWithMdx }}
+      >
+      ///{...rest of App}
+      </MDXProvider>
+
+}
+```
+
+7. Add gray-matter to parse metadata from markdown blog pages. This is useful when we want to display a list of blog pages with their description or thumbnails. Start by running `npm i gray-matter`
+
+8. We need to create a location to store all our blog pages, so create a `@/data/blog` folder
+
+9. Next, create a `@/util/MDXUtils.ts` file and populate it with the following. The following utility module allows us to parse all .mdx files in `@/data/blog/` folder as well as its metadata. You can even configure this module to fetch remote blog pages.
+
+```js
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { serialize } from "next-mdx-remote/serialize";
+const root = process.cwd();
+
+export async function getFiles(type) {
+  return fs.readdirSync(path.join(root, "data", type));
+}
+
+//If slug is given, use it as file name, otherwise use type as fileName
+export async function getFileBySlug(type, slug) {
+  const source = slug
+    ? fs.readFileSync(path.join(root, "data", type, `${slug}.mdx`), "utf8")
+    : fs.readFileSync(path.join(root, "data", `${type}.mdx`), "utf8");
+
+  const { data, content } = matter(source);
+  const mdxSource = await serialize(content);
+
+  return {
+    data,
+    source: mdxSource
+  };
+}
+
+export async function getAllFilesAndParseMatter(type) {
+  const files = fs.readdirSync(path.join(root, "data", type));
+
+  return files.reduce((allPosts, postSlug) => {
+    const source = fs.readFileSync(
+      path.join(root, "data", type, postSlug),
+      "utf8"
+    );
+    const { data } = matter(source);
+
+    return [
+      {
+        ...data,
+        slug: postSlug.replace(".mdx", "")
+      },
+      ...allPosts
+    ];
+  }, []);
+}
+```
+
+11. Now, we're ready to display the list of blog pages. Create a `@/pages/blog.tsx` file, and add:
+
+```js
+import { getAllFilesAndParseMatter } from "@/utils/MDXUtils";
+import Link from "next/link";
+
+//render a list of all blog pages
+// posts should have all acquired all the metadata we defined in the .mdx file
+export default function Blog({ posts }) {
+  return (
+    <div>
+      {posts.map((post, i) => (
+        <Link
+          href={`/Blog/${post.slug}`}
+          key={`/Blog/${post.slug}-${i}`}
+          replace
+        >
+          <a>
+            <div>{post.title}</div>
+            <div>{post.summary}</div>
+          </a>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+//get metadata from all .mdx files inside @/data/blog folder
+export async function getStaticProps() {
+  const posts = await getAllFilesAndParseMatter("blog");
+  return { props: { posts } };
+}
+```
+
+10. We are ready to render our blog pages. We are going to render dynamic blog pages, the names of which will be mapped to the markdown file names. Inside `@/pages/blog/[slug].tsx`, add:
+
+```js
+import { getFiles, getFileBySlug } from "@/util/MDXUtils";
+import { MDXRemote } from "next-mdx-remote";
+import Head from "next/head";
+
+const BlogHeader = ({ title, description }) => {
+  return (
+    <>
+      <h1>{title}</h1>
+      <h5>{description}</h5>
+    </>
+  );
+};
+
+const BlogPage = ({ children, meta: { description, title } }) => (
+  <>
+    <Head>
+      <meta charSet="utf-8" />
+      <meta name="Description" content={description}></meta>
+      <title>{title}</title>
+    </Head>
+    <article>
+      <BlogHeader title={title} description={description} />
+      <div>{children}</div>
+    </article>
+  </>
+);
+
+export default function Page({ data, source }) {
+  return (
+    <BlogPage meta={data}>
+      <MDXRemote {...source} />
+    </BlogPage>
+  );
+}
+
+export async function getStaticProps({ params }) {
+  const post = await getFileBySlug("blog", params.slug);
+  return { props: { ...post } };
+}
+
+//Our page path will be the name of the .mdx blog file, without the .mdx extension
+// Example: if we have a @/data/blog/testpage.mdx,
+//   we can visit the page at domain.com/testpage
+
+//Parse all files in the @/data/blog folder, and populate pathnames without the .mdx extension
+export async function getStaticPaths() {
+  const blogs = await getFiles("blog");
+  return {
+    paths: blogs.map((b) => ({
+      params: {
+        slug: b.replace(/\.mdx/, "")
+      }
+    })),
+    fallback: false
+  };
+}
+```
+
+11. We should now be able to render our blog pages created in the `@/data/blog` folder! Or visit `/blog` to see a list of all blog pages
+
+12. Here is a sample `@/data/blog/testpage.mdx` file you can use as a check for syntax highlighting and react component renders, as well as metadata parsing. This blog page should be viewable on `/blog/testpage`
+
+````
+---
+title: "This is a test blog page"
+dateCreated: "2021-05-10"
+description: "This is a sample description of the article. Nothing special going on here."
+thumbnail: ""
+---
+
+# hello
+
+## okay
+
+```python
+def func():
+    okay
+```
+
+
+```js highlight-line="2"
+foo();
+bar();
+baz();
+```
+
+```js
+import React, { useState, useEffect } from "react";
+
+const func = () => {
+  return 5;
+};
+```
+
+`inlineCode sample`
+
+This is p tag text
+
+<div className="flex text-xl">This is tailwind test</div>
+<button>I'm a button</button>
+
+````
 
 ## Add analytics to Next.js
 
@@ -905,6 +1191,7 @@ module.exports = {
 
 ```tsx
 import Document, { Html, Main, NextScript } from "next/document";
+import Script from "next/script";
 const isProd = process.env.NODE_ENV === "production";
 
 export default class MyDocument extends Document {
@@ -917,8 +1204,8 @@ export default class MyDocument extends Document {
           {/* Cloudflare Web Analytics */}
           {isProd && (
             <>
-              <script
-                defer
+              <Script
+                strategy="lazyOnload"
                 src="https://static.cloudflareinsights.com/beacon.min.js"
                 data-cf-beacon='{"token": "your_token", "spa": true}'
               />
@@ -947,7 +1234,7 @@ export const GA_ANALYTICS_MEASUREMENT_ID = "<INSERT_MEASUREMENT_ID>";
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
   window.gtag("config", GA_ANALYTICS_MEASUREMENT_ID, {
-    page_path: url,
+    page_path: url
   });
 };
 
@@ -963,7 +1250,7 @@ export const event = ({ action, category, label, value }: GTagEvent): void => {
   window.gtag("event", action, {
     event_category: category,
     event_label: label,
-    value,
+    value
   });
 };
 ```
@@ -978,7 +1265,7 @@ npm i -D @types/gtag.js
 
 ```tsx
 import Document, { Html, Head, Main, NextScript } from "next/document";
-
+import Script from "next/script";
 import { GA_ANALYTICS_MEASUREMENT_ID } from "../lib/gtag";
 
 const isProd = process.env.NODE_ENV === "production";
@@ -991,22 +1278,19 @@ export default class MyDocument extends Document {
           {/* enable analytics script only for production */}
           {isProd && (
             <>
-              <script
-                async
+              <Script
+                strategy="lazyOnload"
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_ANALYTICS_MEASUREMENT_ID}`}
               />
-              <script
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{
-                  __html: `
+              <Script
+                strategy="lazyOnload"
+                {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_ANALYTICS_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
-            });
-          `,
-                }}
+            });`}
               />
             </>
           )}
