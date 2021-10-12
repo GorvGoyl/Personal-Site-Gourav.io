@@ -9,5 +9,6 @@ export class FrontMatter {
   // below ones are auto retrieve at build time
   slug? = "";
   toc? = false;
+  mobileToc? = false;
   ogURL? = "";
 }

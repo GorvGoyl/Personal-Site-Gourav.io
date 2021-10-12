@@ -34,6 +34,7 @@ export async function getPost(
 
   const frontmatter = data as FrontMatter;
   const shouldAddToc = frontmatter.toc;
+  const shouldAddMobileToc = frontmatter.mobileToc;
 
   if (process.platform === "win32") {
     process.env.ESBUILD_BINARY_PATH = path.join(
@@ -80,12 +81,12 @@ export async function getPost(
           {
             headings: ["h1", "h2", "h3", "h4", "h5", "h6"],
             cssClasses: {
-              toc: "page-outline", // Change the CSS class for the TOC
-              link: "page-link", // Change the CSS class for links in the TOC
+              toc: `page-outline ${shouldAddMobileToc && "mobile"}`, // Change the CSS class for the TOC
+              link: `page-link ${shouldAddMobileToc && "mobile"}`, // Change the CSS class for links in the TOC
             },
             customizeTOC: (toc: any) => {
               // whether to show toc based on frontmatter value
-              if (shouldAddToc) return true;
+              if (shouldAddToc === true) return true;
               else return false;
             },
           },

@@ -3,6 +3,7 @@ title: "Next.js Cheatsheet"
 desc: "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project"
 date: "2021-10-11"
 toc: true
+mobileToc: true
 ---
 
 ## Setup Next.js project
