@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gourav.io</id>
     <title>Gourav Goyal</title>
-    <updated>2021-10-01T21:14:59.612Z</updated>
+    <updated>2021-10-12T09:17:19.901Z</updated>
     <generator>Feed for https://gourav.io</generator>
     <author>
         <name>Gourav Goyal</name>
@@ -28,6 +28,13 @@
         <link href="https://gourav.io/blog/my-simple-github-project-went-viral"/>
         <updated>2021-04-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Next.js Cheatsheet]]></title>
+        <id>Next.js Cheatsheet</id>
+        <link href="https://gourav.io/blog/nextjs-cheatsheet"/>
+        <updated>2021-10-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>

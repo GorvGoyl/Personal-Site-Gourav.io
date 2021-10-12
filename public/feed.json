@@ -35,6 +35,18 @@
             }
         },
         {
+            "id": "Next.js Cheatsheet",
+            "url": "https://gourav.io/blog/nextjs-cheatsheet",
+            "title": "Next.js Cheatsheet",
+            "summary": "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project",
+            "image": "https://gourav.io/img/blog/nextjs-cheatsheet/og.png",
+            "date_modified": "2021-10-11T00:00:00.000Z",
+            "author": {
+                "name": "Gourav Goyal",
+                "url": "https://twitter.com/GorvGoyl"
+            }
+        },
+        {
             "id": "Setup VSCode to run and debug C / C++ code",
             "url": "https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code",
             "title": "Setup VSCode to run and debug C / C++ code",

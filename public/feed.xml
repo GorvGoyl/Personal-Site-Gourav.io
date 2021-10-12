@@ -4,7 +4,7 @@
         <title>Gourav Goyal</title>
         <link>https://gourav.io</link>
         <description>Blog - Gourav Goyal</description>
-        <lastBuildDate>Fri, 01 Oct 2021 21:14:59 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Oct 2021 09:17:19 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for https://gourav.io</generator>
         <language>en</language>
@@ -30,6 +30,14 @@
             <pubDate>Mon, 12 Apr 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section]]></description>
             <enclosure url="https://gourav.io/img/blog/my-simple-github-project-went-viral/og.jpg" length="0" type="image/jpg"/>
+        </item>
+        <item>
+            <title><![CDATA[Next.js Cheatsheet]]></title>
+            <link>https://gourav.io/blog/nextjs-cheatsheet</link>
+            <guid>Next.js Cheatsheet</guid>
+            <pubDate>Mon, 11 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project]]></description>
+            <enclosure url="https://gourav.io/img/blog/nextjs-cheatsheet/og.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
