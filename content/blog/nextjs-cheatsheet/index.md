@@ -1060,7 +1060,7 @@ Open https://localhost:3000 site in browser whenever you run `npm run start`. Ad
 
 ```json
 "scripts": {
-    "start": "start http://localhost:3000 & next dev",
+    "start": "start http://localhost:3000 & next dev", // for MAC, use `open` instead of `start`
     }
 ```
 
