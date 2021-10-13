@@ -21,7 +21,7 @@ module.exports = {
             a: {
               cursor: "pointer",
               // to avoid overflow on mobile due to long link
-              overflowWrap: "anywhere",
+              overflowWrap: "break-word",
               // textDecoration: "none",
               // "&:hover": {
               //   textDecoration: "underline",
