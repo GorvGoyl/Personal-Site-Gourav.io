@@ -29,7 +29,7 @@ module.exports = {
             },
             code: {
               // to avoid overflow on mobile due to long code
-              overflowWrap: "break-word",
+              // overflowWrap: "break-word",
             },
           },
         },
