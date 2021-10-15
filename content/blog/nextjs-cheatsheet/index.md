@@ -870,6 +870,58 @@ Sitemap: https://mysite.com/sitemap.xml
 
 - Submit this source map to Google: https://search.google.com/search-console
 
+
+### Alternative dynamic Sitemap.xml generator
+
+Using npm package `next-sitemap` 
+
+    npm i -D next-sitemap
+
+Create a config file. `next-sitemap` will look for a file named `next-sitemap.js` in the `public/` by default. Using Windows, this does not work because of a naming conflict. 
+Instead, create a file named `sitemap-generator.js` with the following configuration:  
+```
+module.exports = {
+  siteUrl: "https://yourdomain.com",
+  generateRobotsTxt: true,
+  exclude: ["/en*", "/de*", "/disallowed"],
+  alternateRefs: [
+    {
+      href: "https://yourdomain.com/en",
+      hreflang: "en",
+    },
+    {
+      href: "https://yourdomain.com/de",
+      hreflang: "de",
+    },
+  ],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        disallow: "/disallowed",
+      },
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+  },
+};
+```
+
+Finally, add the `postbuild` script to `package.json`
+```
+"scripts": {
+	"dev": "next dev",
+	"build": "next build",
+	"start": "next start",
+	"lint": "next lint",
+	"postbuild": "next-sitemap --config sitemap-generator.js"
+},
+```
+
+Notice the optional `--config sitemap-generator.js` to point to a different filename than the default `next-sitemap.js`
+
 ### Add HTML language attribute and locale
 
 It'll convert from `<html>...</html>` to `<html lang="en-US">...</html>`.
