@@ -25,6 +25,9 @@
   h1 {
     @apply font-semibold leading-tight text-4xl #{!important};
   }
+  h2 {
+    @apply font-semibold #{!important};
+  }
 
   /* remove tailwind typography prose styling */
 

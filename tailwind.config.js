@@ -18,6 +18,9 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            h2: {
+              fontWeight: 500,
+            },
             a: {
               cursor: "pointer",
               // to avoid overflow on mobile due to long link
