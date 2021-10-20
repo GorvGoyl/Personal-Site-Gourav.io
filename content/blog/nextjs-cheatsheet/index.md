@@ -68,7 +68,7 @@ Useful to put breakpoints in VSCode and pause active session to inspect data.
   - `Next.js: debug client-side`: you need to run `npm run dev` prior to starting this debugging session. Upon starting session it'll open a new chrome window and load your site. You can put breakpoints only in frontend code (no api routes).
   - `Next.js: debug full stack`: It'll open a new chrome window and you'll be able to put breakpoints in both frontend and api routes.
 
-There's a [seperate guide](https://nextjs.org/docs/advanced-features/debugging#debugging-with-chrome-devtools) to debug using Chrome DevTools instead.
+There's a [separate guide](https://nextjs.org/docs/advanced-features/debugging#debugging-with-chrome-devtools) to debug using Chrome DevTools instead.
 
 ### Run localhost in mobile
 
@@ -771,6 +771,8 @@ To verify metatags:
 
 ### Create dynamic sitemap
 
+#### Using custom post-build script
+
 Up-to date sitemap will be generated every time you do a deployment (during build process) so no need to manually add/update/remove urls in sitemap.
 
 1. Create `/scrips` folder and create new file inside it: `generate-sitemap.mjs`
@@ -866,9 +868,63 @@ User-agent: *
 Sitemap: https://mysite.com/sitemap.xml
 ```
 
-- Check in code and deploy. you should see sitemap by visitng: `https://mysite.com/sitemap.xml`
+- Check in code and deploy. you should see sitemap by visiting: `https://mysite.com/sitemap.xml`
 
 - Submit this source map to Google: https://search.google.com/search-console
+
+#### Using npm package `next-sitemap`
+
+1. Install [next-sitemap](https://www.npmjs.com/package/next-sitemap):
+
+```
+npm i -D next-sitemap
+```
+
+2. Create a config file. `next-sitemap` will look for a file named `next-sitemap.js` in the `public/` by default. Using Windows, this does not work because of a naming conflict. Instead, create a file named `sitemap-generator.js` with the following configuration:
+
+```js
+module.exports = {
+  siteUrl: "https://yourdomain.com",
+  generateRobotsTxt: true,
+  exclude: ["/en*", "/de*", "/disallowed"],
+  alternateRefs: [
+    {
+      href: "https://yourdomain.com/en",
+      hreflang: "en",
+    },
+    {
+      href: "https://yourdomain.com/de",
+      hreflang: "de",
+    },
+  ],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        disallow: "/disallowed",
+      },
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+  },
+};
+```
+
+3. Finally, add the `postbuild` script to `package.json`
+
+```json
+"scripts": {
+	"dev": "next dev",
+	"build": "next build",
+	"start": "next start",
+	"lint": "next lint",
+	"postbuild": "next-sitemap --config sitemap-generator.js"
+},
+```
+
+Notice the optional `--config sitemap-generator.js` to point to a different filename than the default `next-sitemap.js`
 
 ### Add HTML language attribute and locale
 
