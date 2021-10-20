@@ -33,7 +33,7 @@
         margin-left: 7px;
         @apply text-gray-500 block text-base font-medium tracking-wide mb-3 mt-[36px] lg:mt-[-36px] lg:fixed lg:mb-0;
       }
-      @apply hidden lg:block lg:max-w-[220px] lg:mr-[30px] lg:fixed;
+      @apply hidden lg:block lg:max-w-[200px] lg:mr-[30px] lg:fixed;
       right: 0;
       top: 150px;
       bottom: 30px;
@@ -51,7 +51,7 @@
           }
           margin: 0;
           a {
-            @apply text-gray-500 block text-sm no-underline font-medium px-2 py-1;
+            @apply text-gray-500 block text-sm lg:text-[0.8rem] lg:leading-[1.1rem] no-underline font-medium px-2 py-1;
             &:hover {
               @apply bg-gray-100 rounded;
             }
