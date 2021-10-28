@@ -21,21 +21,28 @@ export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
         <Navbar />
         <main className="prose prose-lg">
           <header>
-            <h1>Blog</h1>
+            <h2>Blog</h2>
           </header>
-          <div>
+          <div className="flex flex-col space-y-10">
             {Props.allPosts.map((post) => (
-              <div className="mb-14" key={post.slug}>
-                <article>
-                  <Link href={`/blog/${post.slug}`}>
-                    <a className="no-underline">
-                      <h3 className="mb-0">{post.title}</h3>
-                    </a>
-                  </Link>
-                </article>
-                <div className="text-gray-500 text-base flex items-center space-x-3 justify-end">
-                  <Icon type={TYPE.calendar} size="14" />
-                  <div>{readableDate(post.date)}</div>
+              <div
+                className="flex flex-col md:flex-row md:justify-between"
+                key={post.slug}
+              >
+                <div>
+                  <article>
+                    <Link href={`/blog/${post.slug}`}>
+                      <a className="no-underline ">
+                        <h4 className="my-0 ">{post.title}</h4>
+                      </a>
+                    </Link>
+                  </article>
+                </div>
+                <div className="text-gray-500 text-sm flex space-x-2 justify-end items-center">
+                  <Icon type={TYPE.calendar} size="12" />
+                  <div className="whitespace-nowrap">
+                    {readableDate(post.date)}
+                  </div>
                 </div>
               </div>
             ))}

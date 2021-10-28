@@ -30,7 +30,7 @@ export default function Project(props: { matter: any; source: string }) {
       <Container layout={LayoutType.Blog}>
         <Banner />
         <Navbar link={Links.Blog} />
-        <main className="mx-auto prose prose-lg">
+        <main className="mx-auto prose">
           <article className={`${project.css} ${md.css}`}>
             <MDX components={MDXComponents as any} />
           </article>

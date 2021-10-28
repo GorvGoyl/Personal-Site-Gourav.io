@@ -27,7 +27,7 @@ export default function Post(props: { matter: any; source: string }) {
 
       <Container layout={LayoutType.Blog}>
         <Navbar link={Links.Blog} />
-        <main className="mx-auto prose prose-lg">
+        <main className="mx-auto prose">
           <article className={`${post.code_block} ${md.css}`}>
             <header>
               <h1>{props.matter.title}</h1>

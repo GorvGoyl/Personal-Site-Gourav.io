@@ -11,7 +11,7 @@ export default function Blog(): JSX.Element {
 
       <Container layout={LayoutType.Blog}>
         <Navbar link={Links.Blog} />
-        <main className="prose prose-lg">
+        <main className="prose">
           <header>
             <h1>Oops, Page not found :(</h1>
             <h3>
