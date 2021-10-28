@@ -34,7 +34,6 @@ function getMDFoldersList(baseDir: string) {
         fs.statSync(absolute).isDirectory() &&
         fs.existsSync(join(absolute, "index.md"))
       ) {
-        console.log(path.sep);
         const tt = absolute
           .replace(`${baseDir}${path.sep}`, "")
           .split(path.sep);
