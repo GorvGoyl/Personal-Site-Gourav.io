@@ -14,7 +14,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true, //allow commonjs files
     "jsx": "preserve",
-
     // additional flags:
     "baseUrl": ".",
     "paths": {
@@ -28,7 +27,8 @@
     "noImplicitReturns": true,
     "strictNullChecks": false,
     "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "noUnusedParameters": false,
+    "incremental": true
   },
   "include": [
     "**/*.ts",
