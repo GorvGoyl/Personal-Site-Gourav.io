@@ -34,12 +34,15 @@ export default function Post(props: { matter: any; source: string }) {
             </header>
             <Author date={props.matter.date} />
             <MDX components={MDXComponents as any} />
-            <p>
-              Thanks for reading. Would love to hear your thoughts about it.
-              Connect with me on{" "}
-              <a href="https://twitter.com/GorvGoyl">Twitter</a> and{" "}
-              <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>.
-            </p>
+            <blockquote className="mt-14 font-normal">
+              <p>
+                Thanks for reading. Would love to hear your thoughts about it.
+                Connect with me on{" "}
+                <a href="https://twitter.com/GorvGoyl">Twitter</a>.
+                {/* and{" "}
+                <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>. */}
+              </p>
+            </blockquote>
           </article>
           <ShareComponent />
           <SubscribeForm type={FORMTYPE.AfterArticle} />

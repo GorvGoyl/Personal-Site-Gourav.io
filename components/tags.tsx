@@ -203,7 +203,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
             <Icon type={TYPE.linkedin} size="16" className="m-0 mr-4" />
             LinkedIn
           </button>
-          <button
+          {/* <button
             onClick={(e) => {
               e.preventDefault();
               openWindowHandler(
@@ -218,17 +218,19 @@ export function ShareButton(Props: { children: any }): JSX.Element {
           >
             <Icon type={TYPE.facebook} size="16" className="m-0 mr-4" />
             Facebook
-          </button>
+          </button> */}
           <button
             onClick={handleCopy}
             title={pageURL}
             // onBlur={handleBlur}
-            className="flex items-center w-full no-underline outline-none px-4 py-2   hover:bg-gray-100 hover:text-gray-900"
+            className="flex  items-center w-full no-underline outline-none px-4 py-2   hover:bg-gray-100 hover:text-gray-900"
             role="menuitem"
             type="button"
           >
             <Icon type={TYPE.link} size="16" className="m-0 mr-4" />
-            {isCopied === 0 ? "Copy link" : "Copied"}
+            <span className="whitespace-nowrap">
+              {isCopied === 0 ? "Copy link" : "Copied"}
+            </span>
           </button>
           {isNativeShare && (
             <button
@@ -259,7 +261,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
 
 export function ShareComponent(): JSX.Element {
   return (
-    <div className="relative flex justify-center my-8">
+    <div className="relative flex justify-center my-12">
       <ShareButton>
         <>
           <Icon type={TYPE.share} className="mx-auto" size="26" />
