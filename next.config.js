@@ -35,6 +35,12 @@ const redirects = async () => [
     destination: "https://addons.mozilla.org/en-US/firefox/addon/notion-boost/",
     permanent: true,
   },
+  {
+    source: "/cv",
+    destination:
+      "https://docs.google.com/document/d/1DKDnTMPHXx5o9HE1cWZvChabRJxmI6N6OnFIflVOtQs/edit?usp=sharing",
+    permanent: true,
+  },
 ];
 
 module.exports =
