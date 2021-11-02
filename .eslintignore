@@ -18,6 +18,7 @@ coverage
 *.jpeg
 *.mjs
 *.scss
+*.md
 **/out/*
 next-env.d.ts
 # next.config.js

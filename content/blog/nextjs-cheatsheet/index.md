@@ -1183,6 +1183,29 @@ For example, you can use `import Header from "@/components/Header";` no matter h
 - Now import some code using `@/` in a file e.g. `import Header from "@/components/Header";`
 - You can test for any import errors by running `npm run lint`
 
+### Redirect a page to an external URL
+
+Useful for creating short memorable links to your projects, resume, etc.
+
+When user visits _https://gourav.io/chrome_ then redirect to _https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd_.
+
+Create `next.config.js` at root of project and paste:
+
+```js
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: "/chrome",
+        destination:
+          "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd",
+        permanent: true,
+      },
+    ];
+  },
+};
+```
+
 ## Contribute to this cheatsheet
 
 👋 If you'd like to collaborate on this, please [edit here and submit your changes](https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/blog/nextjs-cheatsheet/index.md).
