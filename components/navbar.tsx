@@ -12,7 +12,7 @@ const NavItem = (Props: { href: string; title: string; text: string }) => (
         <div
           className="bg-clip-text text-transparent font-semibold tracking-wide"
           style={{
-            backgroundImage: "linear-gradient(90deg,#007CF0,#00DFD8)",
+            backgroundImage: "linear-gradient(90deg,#ff4d4d,#f9cb28)",
           }}
         >
           {Props.text}

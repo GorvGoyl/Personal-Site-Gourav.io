@@ -143,7 +143,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
 
   return (
     // `inline-block` to avoid margin-collapse
-    <div className="border border-blue-200 rounded p-6 mt-8 mb-4 w-full inline-block bg-blue-50">
+    <div className="border border-yellow-500 rounded p-6 mt-8 mb-4 w-full inline-block bg-yellow-50">
       <h5 className="text-lg md:text-xl font-bold">{text[type].title}</h5>
       <p className="my-1">{text[type].desc}</p>
       <div className="mx-auto z-50 absolute left-1/2">
@@ -166,13 +166,13 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
           title="Subscribe to Gourav's newsletter"
           required
           disabled={form.state === "loading"}
-          className={`bg-white border-gray-300 focus:ring-1 focus:ring-blue-400 outline-none px-4 py-1 rounded-l-md w-full ${
+          className={`bg-white border-gray-300 focus:ring-1 focus:ring-yellow-400 outline-none px-4 py-1 rounded-l-md w-full ${
             form.state === "loading" && "cursor-not-allowed hover:opacity-70"
           }`}
         />
         <button
           tabIndex={0}
-          className={`bg-gray-800 focus:ring-1 focus:ring-blue-400 outline-none px-4 py-1 rounded-r-md text-white ${
+          className={`bg-gray-800 focus:ring-1 focus:ring-yellow-400 outline-none px-4 py-1 rounded-r-md text-white ${
             form.state === "loading" && "cursor-not-allowed hover:opacity-70"
           }`}
           type="submit"

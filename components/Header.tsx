@@ -1,8 +1,5 @@
 import { usePath } from "@/hooks/customHooks";
-import { isProd } from "@/lib/utils";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
-import { useRouter } from "next/router";
 
 const defaultProps = {
   title: "Gourav Goyal",

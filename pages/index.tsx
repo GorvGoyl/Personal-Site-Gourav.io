@@ -24,7 +24,7 @@ export default function Home(): JSX.Element {
               <h1
                 className="bg-clip-text text-transparent pb-3 mb-4 tracking-wide font-bold text-5xl" // bg-gradient-to-r from-blue-500 to-green-400
                 style={{
-                  backgroundImage: "linear-gradient(90deg,#007CF0,#00DFD8)",
+                  backgroundImage: "linear-gradient(90deg,#ff4d4d,#f9cb28)",
                 }}
               >
                 Gourav Goyal
@@ -118,13 +118,13 @@ export default function Home(): JSX.Element {
                         <img
                           alt="Chrome Web Store downloads"
                           loading="lazy"
-                          src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square&color=007CF0"
+                          src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square&color=fb9836"
                         />
                       </a>
                       <img
                         alt="Chrome Web Store rating"
                         loading="lazy"
-                        src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square&color=007CF0"
+                        src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square&color=fb9836"
                       />
                     </span>
                     A popular browser extension to make Notion (
@@ -163,13 +163,13 @@ export default function Home(): JSX.Element {
                         <img
                           alt="Visual Studio Marketplace Downloads"
                           loading="lazy"
-                          src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square&color=007CF0"
+                          src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square&color=fb9836"
                         />
                       </a>
                       <img
                         alt="Visual Studio Marketplace Rating (Stars)"
                         loading="lazy"
-                        src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square&color=007CF0"
+                        src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square&color=fb9836"
                       />
                     </span>
                     VSCode extension which adds useful buttons like beautify,
@@ -192,7 +192,7 @@ export default function Home(): JSX.Element {
                         <img
                           alt="GitHub repo stars"
                           loading="lazy"
-                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=007CF0"
+                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=fb9836"
                         />
                       </a>
                       <a
@@ -204,7 +204,7 @@ export default function Home(): JSX.Element {
                         <img
                           alt="GitHub forks"
                           loading="lazy"
-                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=007CF0"
+                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=fb9836"
                         />
                       </a>
                     </span>
