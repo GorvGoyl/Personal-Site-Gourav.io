@@ -437,6 +437,7 @@ git fetch origin git reset --hard origin/main (main is the branch name)
 ### Reset `dev` branch to `main`
 
 ```
+git checkout dev
 git reset --hard origin/main
 git pull origin main
 git push -f
