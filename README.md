@@ -40,6 +40,10 @@ file: ./content/misc/notion-boost/whats-new/index.md
 url: https://gourav.io/notion-boost/whats-new
 ```
 
+To hide blog article in blog index (visible only by direct url): in `index.md` frontmatter: add `preview: true`
+
+To ignore a blog / project to show on site: add `_` before the name of folder. ex: `content/blog/_my-draft-post` , `content/misc/_my-draft-project`
+
 #### Open graph image
 
 store open graph image inside respective md folder as `og.jpg` or `og.png`, else site default `og.png` file will be picked e.g. https://gourav.io/og.png

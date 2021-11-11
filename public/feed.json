@@ -23,6 +23,18 @@
             }
         },
         {
+            "id": "Git Cheatsheet",
+            "url": "https://gourav.io/blog/git-cheatsheet",
+            "title": "Git Cheatsheet",
+            "summary": "Useful git commands for beginners like reverting commits, work between branches, manage PRs, and more",
+            "image": "https://gourav.io/img/blog/git-cheatsheet/og.png",
+            "date_modified": "2021-10-28T00:00:00.000Z",
+            "author": {
+                "name": "Gourav Goyal",
+                "url": "https://twitter.com/GorvGoyl"
+            }
+        },
+        {
             "id": "My simple Github project went Viral",
             "url": "https://gourav.io/blog/my-simple-github-project-went-viral",
             "title": "My simple Github project went Viral",

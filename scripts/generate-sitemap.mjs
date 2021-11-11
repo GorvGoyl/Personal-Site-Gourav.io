@@ -9,6 +9,7 @@ const homeURL = "https://gourav.io";
     const pages = await globby([
       "pages/**/*.tsx",
       "content/**/*.md",
+      "!content/**/_*/**/*.md", // ignore folders that start with _
       "!pages/_*.tsx",
       "!pages/api",
       "!pages/404.tsx",

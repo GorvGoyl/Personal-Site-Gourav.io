@@ -26,9 +26,17 @@
       }
     },
     {
-      "name": "Launch via NPM",
+      "name": "Debug:feed",
       "request": "launch",
       "runtimeArgs": ["run", "feed"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
+      "name": "Debug:sitemap",
+      "request": "launch",
+      "runtimeArgs": ["run", "sitemap"],
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node"

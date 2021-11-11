@@ -4,7 +4,7 @@
         <title>Gourav Goyal</title>
         <link>https://gourav.io</link>
         <description>Blog - Gourav Goyal</description>
-        <lastBuildDate>Tue, 12 Oct 2021 09:40:59 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Nov 2021 12:58:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for https://gourav.io</generator>
         <language>en</language>
@@ -22,6 +22,14 @@
             <pubDate>Fri, 11 Dec 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></description>
             <enclosure url="https://gourav.io/img/blog/first-donation-on-open-source-side-project/og.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Git Cheatsheet]]></title>
+            <link>https://gourav.io/blog/git-cheatsheet</link>
+            <guid>Git Cheatsheet</guid>
+            <pubDate>Thu, 28 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Useful git commands for beginners like reverting commits, work between branches, manage PRs, and more]]></description>
+            <enclosure url="https://gourav.io/img/blog/git-cheatsheet/og.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[My simple Github project went Viral]]></title>

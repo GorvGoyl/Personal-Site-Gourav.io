@@ -60,26 +60,42 @@ function generateRSS() {
     const blogDir = join(process.cwd(), "content", "blog");
     const postSlugs = readdirSync(blogDir);
 
+    // don't add posts to rss feed: preview posts, posts that starts with _folder
     postSlugs.forEach((slug) => {
-      const file = join(process.cwd(), "content", "blog", slug, "index.md");
-      const content = readFileSync(file);
-      const frontmatter = matter(content);
-      const postURL = `https://gourav.io/blog/${slug}`;
+      try {
+        if (slug.startsWith("_")) {
+          return;
+        }
+        const file = join(process.cwd(), "content", "blog", slug, "index.md");
+        if (!file) {
+          return;
+        }
+        const content = readFileSync(file);
+        const frontmatter = matter(content);
 
-      const postDir = join(process.cwd(), "content", "blog", slug);
-      const ogPublicPath = getOgPublicPath(postDir, slug);
+        if (frontmatter.data.preview === true) {
+          return;
+        }
 
-      feed.addItem({
-        title: frontmatter.data.title,
-        id: frontmatter.data.title,
-        link: postURL,
-        description: frontmatter.data.desc,
-        // content: html + postText,
-        author,
-        date: new Date(frontmatter.data.date),
-        image: ogPublicPath,
-      });
-      // feed.addCategory("Technology");
+        const postURL = `https://gourav.io/blog/${slug}`;
+
+        const postDir = join(process.cwd(), "content", "blog", slug);
+        const ogPublicPath = getOgPublicPath(postDir, slug);
+
+        feed.addItem({
+          title: frontmatter.data.title,
+          id: frontmatter.data.title,
+          link: postURL,
+          description: frontmatter.data.desc,
+          // content: html + postText,
+          author,
+          date: new Date(frontmatter.data.date),
+          image: ogPublicPath,
+        });
+        // feed.addCategory("Technology");
+      } catch (e) {
+        console.error("Error: ", e);
+      }
     });
 
     writeFileSync("./public/feed.xml", feed.rss2());
@@ -87,7 +103,7 @@ function generateRSS() {
     writeFileSync("./public/feed.json", feed.json1());
     console.log("feed generated");
   } catch (e) {
-    console.log(e);
+    console.error(e);
     process.exit(1);
   }
 }

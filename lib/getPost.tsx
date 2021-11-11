@@ -5,23 +5,23 @@ import path, { join } from "path";
 
 // const postsDirectory = join(process.cwd(), "content", "blog");
 
-function flatten(lists) {
-  return lists.reduce((a, b) => a.concat(b), []);
-}
+// function flatten(lists) {
+//   return lists.reduce((a, b) => a.concat(b), []);
+// }
 
-function getDirectories(srcpath) {
-  return fs
-    .readdirSync(srcpath)
-    .map((file) => path.join(srcpath, file))
-    .filter((path) => fs.statSync(path).isDirectory());
-}
+// function getDirectories(srcpath) {
+//   return fs
+//     .readdirSync(srcpath)
+//     .map((file) => path.join(srcpath, file))
+//     .filter((path) => fs.statSync(path).isDirectory());
+// }
 
-function getDirectoriesRecursive(srcpath) {
-  return [
-    srcpath,
-    ...flatten(getDirectories(srcpath).map(getDirectoriesRecursive)),
-  ];
-}
+// function getDirectoriesRecursive(srcpath) {
+//   return [
+//     srcpath,
+//     ...flatten(getDirectories(srcpath).map(getDirectoriesRecursive)),
+//   ];
+// }
 
 function getMDFoldersList(baseDir: string) {
   const folders = [];
@@ -32,6 +32,7 @@ function getMDFoldersList(baseDir: string) {
       const absolute = path.join(dir, file);
       if (
         fs.statSync(absolute).isDirectory() &&
+        !file.startsWith("_") &&
         fs.existsSync(join(absolute, "index.md"))
       ) {
         const tt = absolute
