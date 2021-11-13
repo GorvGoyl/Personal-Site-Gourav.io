@@ -236,7 +236,7 @@ git remote show origin
 git remote set-url origin new.git.url
 ```
 
-## Uncommitted changes
+## Work between branches
 
 ### Git pull without committing local changes
 
@@ -330,6 +330,33 @@ git stash apply
 - To see all stashes
   `git stash list`
 
+### Copy specific commit from one branch to another
+
+Ex: copy one commit from `dev` to `main`
+
+**using gui:**
+
+- switch to `main`: `git checkout main`
+- run `gitk --all`
+- right-click on desired commit and select `Cherry-pick this commit`
+
+**using cli:**
+
+- get commit sha1-id you want to copy
+
+```
+git checkout dev
+git log (copy desired commit_id)
+(to exit type q)
+```
+
+- copy commit:
+
+```
+git checkout main
+git cherry-pick <commit_id>
+```
+
 ## Repo Status
 
 ```
@@ -338,11 +365,16 @@ git status
 
 ### Show latest commits
 
-to exit type q
+using cli:
 
 ```
  git log
+(to exit type q)
 ```
+
+using gui:
+
+`gitk`
 
 ### Display current branch name
 
