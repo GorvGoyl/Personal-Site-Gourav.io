@@ -175,6 +175,6 @@ Open any C/C++ file, set some breakpoints (or not), and hit the Big Green Play B
  }
 ```
 
-### Collaborate
+## Collaborate
 
-👋 If you'd like to collaborate on this, please [edit here and submit your changes](https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/blog/setup-vscode-to-run-debug-c-cpp-code/index.md).
+👋 If you'd like to collaborate on this post, please [edit here and submit your changes](https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/blog/setup-vscode-to-run-debug-c-cpp-code/index.md).
