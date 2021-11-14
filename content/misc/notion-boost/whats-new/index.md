@@ -116,7 +116,7 @@ Having said that, I will continue to work on this extension, and I need your sup
 All the existing features will remain free to use. Going forward, there will be two types of new features that come to this extension: the first ones, which will be completely free, and others that will come under the `pro` tag.  
 **You can unlock all `pro` features for a lifetime by making a one-time payment.** Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
 
-** You can make payment from inside the Notion Boost extension to use all `pro` features.** You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later.
+**You can make payment from inside the Notion Boost extension to use all `pro` features.** You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later.
 
 ### v1.8
 
