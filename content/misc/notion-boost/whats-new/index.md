@@ -114,9 +114,9 @@ tldr; Notion Boost extension does not store or send any data from your Notion ac
 I've been working on this extension since last year (2020), and I realized that building and maintaining a high-quality extension on top of an ever-changing product (Notion) requires a lot of skill and time.  
 Having said that, I will continue to work on this extension, and I need your support.  
 All the existing features will remain free to use. Going forward, there will be two types of new features that come to this extension: the first ones, which will be completely free, and others that will come under the `pro` tag.  
-You can unlock all `pro` features for a lifetime by a one-time payment. Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
+**You can unlock all `pro` features for a lifetime by making a one-time payment.** Please consider this as a means to support your developer. It will encourage me to maintain this extension further and introduce new features.
 
-You can make from inside the Notion Boost extension to use all `pro` features. You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later.
+** You can make payment from inside the Notion Boost extension to use all `pro` features.** You don't need to pay again for `pro` features even when you use this extension on different browsers or uninstall/reinstall this extension later.
 
 ### v1.8
 
