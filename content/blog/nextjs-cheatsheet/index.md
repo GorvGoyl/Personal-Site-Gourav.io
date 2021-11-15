@@ -648,7 +648,7 @@ That's all. Start writing css styles in scss syntax.
 
 ### Set Redirect from www.yoursite.com to yoursite.com
 
-It means whenever someone visits www.yoursite.com it'll be redirected to youtsite.com without hurting SEO.
+It means whenever someone visits www.yoursite.com it'll be redirected to yoursite.com without hurting SEO.
 
 1. Go to domains settings inside Vercel: https://vercel.com/{username}/{project}/settings/domains
 
