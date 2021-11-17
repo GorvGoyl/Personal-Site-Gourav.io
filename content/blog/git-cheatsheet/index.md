@@ -105,12 +105,6 @@ git push origin HEAD (push local changes to remote branch with same name)
 git pull origin main (pull latest changes from remote main branch into local dev branch)
 ```
 
-### Push from one branch to another
-
-```
-git push origin from_branch:to_branch
-```
-
 ### Download big repository on poor bandwidth
 
 [https://stackoverflow.com/questions/34389446/how-do-i-download-a-large-git-repository/52090961\#52090961](https://stackoverflow.com/questions/34389446/how-do-i-download-a-large-git-repository/52090961#52090961)
@@ -237,6 +231,12 @@ git remote set-url origin new.git.url
 ```
 
 ## Work between branches
+
+### Push from one branch to another
+
+```
+git push origin from_branch:to_branch
+```
 
 ### Git pull without committing local changes
 
