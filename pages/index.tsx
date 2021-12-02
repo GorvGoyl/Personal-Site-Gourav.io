@@ -53,9 +53,9 @@ export default function Home(): JSX.Element {
 
           <div className="prose prose-lg">
             <p>
-              Namaste, my name is Gourav Goyal. I'm a tech founder, digital
-              nomad, and a fun guy to hang around with. I like to build things
-              that others find helpful.
+              Namaste, I'm a full-stack web developer, ex-founder, and a fun guy
+              to hang around with. I like to build things that others find
+              helpful. <i>(Hire me!)</i>
               <br />
               Currently, I am working on{" "}
               <a href="https://easypie.app" target="_blank" rel="noopener">
