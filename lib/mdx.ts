@@ -53,7 +53,8 @@ export async function getPost(
     );
   }
 
-  const result = await bundleMDX(fileContents, {
+  const result = await bundleMDX({
+    source: fileContents,
     cwd: mdDir,
     xdmOptions: (options) => {
       options.remarkPlugins = [
