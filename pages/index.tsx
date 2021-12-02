@@ -55,7 +55,7 @@ export default function Home(): JSX.Element {
             <p>
               Namaste, I'm a full-stack web developer, ex-founder, and a fun guy
               to hang around with. I like to build things that others find
-              helpful. <i>(Hire me!)</i>
+              useful. <i>(Hire me!)</i>
               <br />
               Currently, I am working on{" "}
               <a href="https://easypie.app" target="_blank" rel="noopener">
@@ -129,6 +129,8 @@ export default function Home(): JSX.Element {
                     </span>
                     A popular browser extension to make Notion (
                     <em>www.notion.so</em>) more productive.
+                    <br />
+                    <i>Revenue: $1000+</i>
                   </p>
                 </li>
                 <li>
@@ -214,6 +216,30 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
+                    <Link href="/">
+                      <a title="https://gourav.io">Gourav.io</a>
+                    </Link>
+                    <span className="badge-wrapper">
+                      <a
+                        title="source code"
+                        href="https://github.com/GorvGoyl/Personal-Site-Gourav.io"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <img
+                          alt="source code"
+                          loading="lazy"
+                          src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
+                        />
+                      </a>
+                    </span>
+                    Open-source portfolio and blog built using Next.js, Tailwind
+                    CSS, MDX, Typescript, and deployed on Vercel. <br />
+                    <i>Monthly visitors: 15,000+</i>
+                  </p>
+                </li>
+                <li>
+                  <p>
                     <a
                       href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en"
                       target="blank"
@@ -235,7 +261,7 @@ export default function Home(): JSX.Element {
                       rel="noopener"
                       title="Material design portfolio website"
                     >
-                      Portfolio site
+                      Portfolio site (old)
                     </a>{" "}
                     <br />
                     My old portfolio site built around material guidelines &
