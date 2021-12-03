@@ -57,7 +57,7 @@ export default function Home(): JSX.Element {
               to hang around with. I like to build things that others find
               useful. <i>(Hire me!)</i>
               <br />
-              Currently, I am working on{" "}
+              Currently, I am building{" "}
               <a href="https://easypie.app" target="_blank" rel="noopener">
                 Easypie.app
               </a>{" "}
