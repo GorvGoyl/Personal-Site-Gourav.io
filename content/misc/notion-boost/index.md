@@ -268,4 +268,4 @@ Please file a new issue on [Github](https://github.com/GorvGoyl/Notion-Boost-bro
 
 ## Privacy Policy
 
-Notion Boost extension is an open-source project and has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send any data** from your Notion account.
+Notion Boost extension is an [open-source](https://github.com/GorvGoyl/Notion-Boost-browser-extension) project and has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send any data** from your Notion account.
