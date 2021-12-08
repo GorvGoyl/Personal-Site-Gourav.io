@@ -82,7 +82,7 @@ export default function Home(): JSX.Element {
               <a rel="noopener" href="https://www.linkedin.com/in/gorvgoyl/">
                 LinkedIn
               </a>
-              , and personal{" "}
+              , and{" "}
               <Link href="/blog">
                 <a title="Blog">blog</a>
               </Link>

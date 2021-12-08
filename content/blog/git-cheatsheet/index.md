@@ -410,7 +410,7 @@ git add -i
 git config color.ui true
 ```
 
-## I fucked up
+## I f\*cked up
 
 ### Add new changes to last commit
 
