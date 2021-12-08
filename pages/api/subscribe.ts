@@ -32,7 +32,7 @@ export default async function subscribe(
   }
 
   const tags = ["gourav.io"];
-  if (referrer) tags.push(referrer);
+  if (referrer) tags.push(referrer as string);
 
   try {
     const response = await fetch(addSubscriberAPI, {
