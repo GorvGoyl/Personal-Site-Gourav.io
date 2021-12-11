@@ -33,6 +33,14 @@ Useful to put breakpoints in VSCode and pause active session to inspect data.
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Next.js: attach",
+      "port": 9229,
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node",
+      "restart": true
+    },
+    {
       "name": "Next.js: debug server-side",
       "type": "node-terminal",
       "request": "launch",
@@ -67,8 +75,13 @@ Useful to put breakpoints in VSCode and pause active session to inspect data.
   - `Next.js: debug server-side`: It'll run `npm run dev` command and you'd be able to put breakpoints for both frontend files and api routes.
   - `Next.js: debug client-side`: you need to run `npm run dev` prior to starting this debugging session. Upon starting session it'll open a new chrome window and load your site. You can put breakpoints only in frontend code (no api routes).
   - `Next.js: debug full stack`: It'll open a new chrome window and you'll be able to put breakpoints in both frontend and api routes.
+  - `Next.js: attach`: Works for both frontend and backend. Extra steps are needed to make it work:
+    1. Run: `npm i cross-env`
+    2. Add this to package.json `"start:debug": "cross-env NODE_OPTIONS='--inspect' next dev"`
+    3. Run: `npm run start:debug`
+    4. Run `Next.js: attach` session
 
-There's a [separate guide](https://nextjs.org/docs/advanced-features/debugging#debugging-with-chrome-devtools) to debug using Chrome DevTools instead.
+Also, there's a [separate guide](https://nextjs.org/docs/advanced-features/debugging#debugging-with-chrome-devtools) to debug using Chrome DevTools instead.
 
 ### Run localhost in mobile
 
