@@ -55,7 +55,7 @@ export default function Home(): JSX.Element {
             <p>
               Namaste, I'm a full-stack web developer, ex-founder, and a fun guy
               to hang around with. I like to build things that others find
-              useful. <i>(Hire me!)</i>
+              helpful. <i>(Hire me!)</i>
               <br />
               Currently, I am building{" "}
               <a href="https://easypie.app" target="_blank" rel="noopener">
