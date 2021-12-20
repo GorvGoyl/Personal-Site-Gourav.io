@@ -3,6 +3,44 @@ export const isProd = process.env.NODE_ENV === "production";
 // also replicate change in generate-rss.js
 export const webpackPath = "/_next/static/media/pages";
 
+export async function getSlugViews(slugPaths: string[]) {
+  const requestHeaders = new Headers();
+  requestHeaders.set("Content-Type", "application/json");
+  // requestHeaders.set("Authorization", token);
+
+  try {
+    const res = await fetch("/api/page-views", {
+      body: JSON.stringify(slugPaths),
+      headers: requestHeaders,
+      method: "POST",
+    });
+
+    const resobj = res;
+    const data = (await res.json())?.data;
+    return data;
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+/**
+
+convert half left of number to 000  
+ex:  
+9 -> 9  
+19 -> 10  
+192 -> 100  
+1945 -> 1900  
+19458 -> 19000
+*/
+export function roundUpViewCount(num: string) {
+  if (parseInt(num) < 10) {
+    return parseInt(num);
+  }
+  const precision = Math.pow(10, Math.ceil(num.length / 2));
+  return (Math.floor(parseInt(num) / precision) * precision).toLocaleString();
+}
+
 // accepts: YYYY-MM-DD or YYYY-M-D
 export function readableDate(date: string): string {
   try {

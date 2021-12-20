@@ -7,14 +7,37 @@ import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
 import { getMdPostSlugs } from "@/lib/getPost";
 import { getPost } from "@/lib/mdx";
+import { getSlugViews } from "@/lib/utils";
 import md from "@/styles/md.module.scss";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import Link from "next/link";
 import { join } from "path";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+const RELATIVE_PATH = "/blog/";
 
-export default function Post(props: { matter: any; source: string }) {
+export default function Post(props: {
+  matter: any;
+  source: string;
+  slug: string;
+}) {
+  const [slugViews, setSlugViews] = useState("");
+
+  useEffect(() => {
+    if (props.slug) {
+      // add relative path to slug: /blog/nextjs-cheatsheet
+      const slugPath = `${RELATIVE_PATH}${props.slug}`;
+      getSlugViews([slugPath])
+        .then((data) => {
+          setSlugViews(data[slugPath]);
+          return;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  }, [props.slug]);
+
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
 
   return (
@@ -32,7 +55,7 @@ export default function Post(props: { matter: any; source: string }) {
             <header>
               <h1>{props.matter.title}</h1>
             </header>
-            <Author date={props.matter.date} />
+            <Author date={props.matter.date} views={slugViews} />
             <MDX components={MDXComponents as any} />
             <blockquote className="mt-14 font-normal">
               <p>
@@ -84,6 +107,7 @@ export const getStaticProps = async (props: { params: { slug: [string] } }) => {
     props: {
       matter: matter,
       source: source,
+      slug: slug,
     },
   };
 };

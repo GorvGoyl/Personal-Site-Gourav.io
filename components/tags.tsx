@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Icon, TYPE } from "@/components/icons";
-import { readableDate } from "@/lib/utils";
+import { Icon } from "@/components/icons";
+import { readableDate, roundUpViewCount } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
 export function CopyLink(): JSX.Element {
@@ -89,7 +89,7 @@ function Date(Props: { date: string }): JSX.Element {
 
   return (
     <div className="text-gray-500 flex items-center space-x-3 text-sm">
-      <Icon type={TYPE.calendar} size="14" />
+      <Icon type={"calendar"} size="14" />
       <p className="m-0">{date}</p>
     </div>
   );
@@ -184,7 +184,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
               );
             }}
           >
-            <Icon type={TYPE.twitter} size="16" className="m-0 mr-4" />
+            <Icon type={"twitter"} size="16" className="m-0 mr-4" />
             Twitter
           </button>
           <button
@@ -200,7 +200,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
             role="menuitem"
             type="button"
           >
-            <Icon type={TYPE.linkedin} size="16" className="m-0 mr-4" />
+            <Icon type={"linkedin"} size="16" className="m-0 mr-4" />
             LinkedIn
           </button>
           {/* <button
@@ -227,7 +227,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
             role="menuitem"
             type="button"
           >
-            <Icon type={TYPE.link} size="16" className="m-0 mr-4" />
+            <Icon type={"link"} size="16" className="m-0 mr-4" />
             <span className="whitespace-nowrap">
               {isCopied === 0 ? "Copy link" : "Copied"}
             </span>
@@ -245,7 +245,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
               className="flex items-center w-full no-underline outline-none px-4 py-2   hover:bg-gray-100 hover:text-gray-900"
               role="menuitem"
             >
-              <Icon type={TYPE.link} size="16" className="invisible m-0 mr-4" />
+              <Icon type={"link"} size="16" className="invisible m-0 mr-4" />
               More...
             </button>
           )}
@@ -264,7 +264,7 @@ export function ShareComponent(): JSX.Element {
     <div className="relative flex justify-center my-12">
       <ShareButton>
         <>
-          <Icon type={TYPE.share} className="mx-auto" size="26" />
+          <Icon type={"share"} className="mx-auto" size="26" />
           Share
         </>
       </ShareButton>
@@ -308,22 +308,34 @@ export function AuthorImg(): JSX.Element {
     </div>
   );
 }
-export function Author(Props: { date: string }): JSX.Element {
-  const date = readableDate(Props.date);
+export function Author(props: { date: string; views: string }): JSX.Element {
+  const date = readableDate(props.date);
   return (
     <div className="flex items-center justify-between text-base">
       <AuthorImg />
       <div className="flex flex-col text-gray-500 text-sm space-y-1">
-        <div className="text-gray-500 flex items-center space-x-3 text-sm">
-          <Icon type={TYPE.calendar} size="14" />
+        {props.views && (
+          <div
+            className="text-gray-500 flex items-center space-x-3 text-sm"
+            title={`Total views: ${props.views}`}
+          >
+            <Icon type="views" size="15" />
+            <p className="m-0">{roundUpViewCount(props.views)}</p>
+          </div>
+        )}
+        <div
+          className="text-gray-500 flex items-center space-x-3 text-sm"
+          title={`Published date: ${props.date}`}
+        >
+          <Icon type={"calendar"} size="14" />
           <p className="m-0">{date}</p>
         </div>
 
         <div className="relative">
           <ShareButton>
             <div className="text-gray-500 flex items-center space-x-3 text-sm">
-              <Icon type={TYPE.share} className="stroke-current" size="14" />
-              <p className="m-0">Share</p>
+              <Icon type={"share"} className="stroke-current" size="14" />
+              <p className="m-0 underline">Share</p>
             </div>
           </ShareButton>
         </div>

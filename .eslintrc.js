@@ -67,6 +67,7 @@ module.exports = {
   ],
 
   rules: {
+    "@typescript-eslint/no-unsafe-argument": "warn",
     "@typescript-eslint/no-unsafe-return": "warn",
     "@typescript-eslint/restrict-template-expressions": "warn",
     "no-empty": "off",

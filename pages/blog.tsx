@@ -1,18 +1,36 @@
 import { TwitterBtn } from "@/components/blocks";
 import Header from "@/components/Header";
-import { Icon, TYPE } from "@/components/icons";
+import { Icon } from "@/components/icons";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { getAllPosts as getAllPostsMatter } from "@/lib/getPost";
-import { readableDate } from "@/lib/utils";
+import { getSlugViews, readableDate, roundUpViewCount } from "@/lib/utils";
 import { FrontMatter } from "@/types/types";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import { join } from "path";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
+const RELATIVE_PATH = "/blog/";
+
+export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
+  const [slugViews, setSlugViews] = useState({});
+
+  useEffect(() => {
+    if (props.allPosts.length > 0) {
+      // add relative path to slug: /blog/nextjs-cheatsheet
+      const slugPaths = props.allPosts.map((x) => RELATIVE_PATH + x.slug);
+      getSlugViews(slugPaths)
+        .then((data) => {
+          setSlugViews(data);
+          return;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  }, [props.allPosts]);
   return (
     <>
       <Header title="Blog - Gourav Goyal" />
@@ -23,25 +41,49 @@ export default function Blog(Props: { allPosts: FrontMatter[] }): JSX.Element {
           <header>
             <h2>Blog</h2>
           </header>
-          <div className="flex flex-col space-y-10">
-            {Props.allPosts.map((post) => (
+          <div className="flex flex-col space-y-11">
+            {props.allPosts.map((post) => (
               <div
-                className="flex flex-col md:flex-row md:justify-between"
+                className="flex flex-col md:flex-row md:justify-between space-y-2 md:space-y-0"
                 key={post.slug}
               >
                 <div>
                   <article>
-                    <Link href={`/blog/${post.slug}`}>
+                    <Link href={`${RELATIVE_PATH}${post.slug}`}>
                       <a className="no-underline ">
                         <h4 className="my-0 ">{post.title}</h4>
                       </a>
                     </Link>
                   </article>
                 </div>
-                <div className="text-gray-500 text-sm flex space-x-2 justify-end items-center">
-                  <Icon type={TYPE.calendar} size="12" />
-                  <div className="whitespace-nowrap">
-                    {readableDate(post.date)}
+                <div className="text-gray-500 text-xs font-medium flex space-x-2 justify-end items-center">
+                  {slugViews[RELATIVE_PATH + post.slug] && (
+                    <div
+                      className="flex items-center ml-5 mr-5"
+                      title={`Total views: ${
+                        slugViews[RELATIVE_PATH + post.slug]
+                      }`}
+                    >
+                      <Icon type="views" size="14" />
+
+                      <div className="whitespace-nowrap ml-1 ">
+                        {roundUpViewCount(slugViews[RELATIVE_PATH + post.slug])}
+                      </div>
+                    </div>
+                  )}
+                  <div
+                    className="flex items-center"
+                    title={`Published date: ${post.date}`}
+                  >
+                    <Icon
+                      type="calendar"
+                      size="11"
+                      // className="inline-block"
+                    />
+
+                    <div className="whitespace-nowrap ml-2">
+                      {readableDate(post.date)}
+                    </div>
                   </div>
                 </div>
               </div>

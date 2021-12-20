@@ -11,7 +11,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
       /* invoke analytics function only for production */
-      if (isProd) gtag.pageview(url);
+      if (isProd) gtag.pageview(url, document.title);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {

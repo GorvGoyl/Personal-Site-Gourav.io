@@ -35,3 +35,4 @@ yarn-error.log*
 
 public/img
 content/blog/_md-notes/
+tsconfig.tsbuildinfo
