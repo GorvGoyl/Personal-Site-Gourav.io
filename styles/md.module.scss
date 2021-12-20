@@ -31,7 +31,7 @@
       &:before {
         content: "Contents";
         margin-left: 7px;
-        @apply text-gray-500 block text-base font-medium tracking-wide mb-3  lg:mt-[-36px] lg:fixed lg:mb-0;
+        @apply text-gray-500 block text-base font-medium tracking-wide mb-3  lg:mt-[-46px] lg:fixed lg:mb-0;
       }
       @apply hidden lg:block lg:max-w-[200px] lg:mr-[30px] mt-[36px] lg:fixed bg-gray-50 rounded p-2;
       right: 0;
