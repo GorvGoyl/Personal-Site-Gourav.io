@@ -14,9 +14,9 @@ export async function getSlugViews(slugPaths: string[]) {
   });
 
   console.log("got response", res);
-  const data = (await res.json())?.data;
-  console.log("Got data", data);
-  return data;
+  const resObject = await res.json();
+  console.log("Got data", resObject);
+  return resObject;
 }
 
 /**

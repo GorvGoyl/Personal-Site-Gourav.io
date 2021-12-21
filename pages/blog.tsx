@@ -22,8 +22,12 @@ export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
       // add relative path to slug: /blog/nextjs-cheatsheet
       const slugPaths = props.allPosts.map((x) => RELATIVE_PATH + x.slug);
       getSlugViews(slugPaths)
-        .then((data) => {
-          setSlugViews(data);
+        .then((res) => {
+          if (res.data) {
+            setSlugViews(res.data);
+          } else {
+            console.error(res);
+          }
           return;
         })
         .catch((e) => {

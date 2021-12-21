@@ -28,8 +28,12 @@ export default function Post(props: {
       // add relative path to slug: /blog/nextjs-cheatsheet
       const slugPath = `${RELATIVE_PATH}${props.slug}`;
       getSlugViews([slugPath])
-        .then((data) => {
-          setSlugViews(data[slugPath]);
+        .then((res) => {
+          if (res.data) {
+            setSlugViews(res.data);
+          } else {
+            console.error(res);
+          }
           return;
         })
         .catch((e) => {
