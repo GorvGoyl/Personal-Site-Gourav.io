@@ -29,8 +29,8 @@ export default function Post(props: {
       const slugPath = `${RELATIVE_PATH}${props.slug}`;
       getSlugViews([slugPath])
         .then((res) => {
-          if (res.data) {
-            setSlugViews(res.data);
+          if (res.data[slugPath]) {
+            setSlugViews(res.data[slugPath]);
           } else {
             console.error(res);
           }
