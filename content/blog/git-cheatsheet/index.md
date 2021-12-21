@@ -412,6 +412,20 @@ git config color.ui true
 
 ## I f\*cked up
 
+### Switch to an old commit
+
+- Temporarily switch by creating new branch
+
+	```
+	git checkout 0d1d7fc32  (commit id)
+	```
+
+- Revert current branch to an older commit
+
+	```
+	git reset --hard <commidId> && git clean -f
+	```
+
 ### Add new changes to last commit
 
 - If you pushed last commit to remote
