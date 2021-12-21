@@ -1,3 +1,9 @@
+import {
+  GA_GOOGLE_CLIENT_EMAIL,
+  GA_GOOGLE_CLIENT_ID,
+  GA_GOOGLE_PRIVATE_KEY,
+  GA_PROPERTY_ID,
+} from "@/lib/envVar";
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
 import { google } from "googleapis";
 import { NextApiRequest, NextApiResponse } from "next";
@@ -12,9 +18,9 @@ export default async function pageViews(
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
-        client_email: process.env.GA_GOOGLE_CLIENT_EMAIL,
-        client_id: process.env.GA_GOOGLE_CLIENT_ID,
-        private_key: process.env.GA_GOOGLE_PRIVATE_KEY,
+        client_email: GA_GOOGLE_CLIENT_EMAIL,
+        client_id: GA_GOOGLE_CLIENT_ID,
+        private_key: GA_GOOGLE_PRIVATE_KEY,
       },
     });
 
@@ -27,7 +33,7 @@ export default async function pageViews(
     // Runs a simple report.
     // eslint-disable-next-line no-inner-declarations
     const response = await analyticsDataClient.runReport({
-      property: `properties/${process.env.GA_PROPERTY_ID}`,
+      property: `properties/${GA_PROPERTY_ID}`,
       dateRanges: [
         {
           startDate: startDate,

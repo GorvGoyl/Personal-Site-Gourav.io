@@ -67,6 +67,7 @@ module.exports = {
   ],
 
   rules: {
+    "mdx/no-unused-expressions": "off",
     "@typescript-eslint/no-unsafe-argument": "warn",
     "@typescript-eslint/no-unsafe-return": "warn",
     "@typescript-eslint/restrict-template-expressions": "warn",

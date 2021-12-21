@@ -1,5 +1,3 @@
-export const isProd = process.env.NODE_ENV === "production";
-
 // also replicate change in generate-rss.js
 export const webpackPath = "/_next/static/media/pages";
 
@@ -8,19 +6,17 @@ export async function getSlugViews(slugPaths: string[]) {
   requestHeaders.set("Content-Type", "application/json");
   // requestHeaders.set("Authorization", token);
 
-  try {
-    const res = await fetch("/api/page-views", {
-      body: JSON.stringify(slugPaths),
-      headers: requestHeaders,
-      method: "POST",
-    });
+  console.log("calling api page-views", slugPaths);
+  const res = await fetch("/api/page-views", {
+    body: JSON.stringify(slugPaths),
+    headers: requestHeaders,
+    method: "POST",
+  });
 
-    const resobj = res;
-    const data = (await res.json())?.data;
-    return data;
-  } catch (e) {
-    console.error(e);
-  }
+  console.log("got response", res);
+  const data = (await res.json())?.data;
+  console.log("Got data", data);
+  return data;
 }
 
 /**

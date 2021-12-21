@@ -1,10 +1,9 @@
 import { FrontMatter } from "@/types/types";
 import toc from "@jsdevtools/rehype-toc";
-import fs, { constants } from "fs";
+import fs from "fs";
 import matter from "gray-matter";
 import { h } from "hastscript";
 import { bundleMDX } from "mdx-bundler";
-import { getMDXComponent } from "mdx-bundler/client";
 import path, { join } from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";

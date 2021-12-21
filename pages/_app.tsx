@@ -1,5 +1,5 @@
+import { isProd } from "@/lib/envVar";
 import * as gtag from "@/lib/gtag";
-import { isProd } from "@/lib/utils";
 import "@/styles/tailwind.scss";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";

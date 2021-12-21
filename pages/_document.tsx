@@ -1,5 +1,5 @@
+import { isProd } from "@/lib/envVar";
 import { GA_TRACKING_ID } from "@/lib/gtag";
-import { isProd } from "@/lib/utils";
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, { Head, Html, Main, NextScript } from "next/document";
 

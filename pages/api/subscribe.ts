@@ -1,11 +1,11 @@
 // credits: Lee Robinson
 
-import { isProd } from "@/lib/utils";
+import { BUTTONDOWN_API_KEY, isProd, MOCK_SUBSCRIBE_API } from "@/lib/envVar";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const PROD_API = "https://api.buttondown.email/v1/subscribers";
-const PROD_API_KEY = process.env.BUTTONDOWN_API_KEY;
-const MOCK_API = process.env.MOCK_SUBSCRIBE_API;
+const PROD_API_KEY = BUTTONDOWN_API_KEY;
+const MOCK_API = MOCK_SUBSCRIBE_API;
 const isMOCK = false;
 
 export default async function subscribe(
