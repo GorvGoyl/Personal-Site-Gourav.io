@@ -6,16 +6,16 @@ export async function getSlugViews(slugPaths: string[]) {
   requestHeaders.set("Content-Type", "application/json");
   // requestHeaders.set("Authorization", token);
 
-  console.log("calling api page-views", slugPaths);
+  // console.log("calling api page-views", slugPaths);
   const res = await fetch("/api/page-views", {
     body: JSON.stringify(slugPaths),
     headers: requestHeaders,
     method: "POST",
   });
 
-  console.log("got response", res);
+  // console.log("got response", res);
   const resObject = await res.json();
-  console.log("Got data", resObject);
+  // console.log("Got data", resObject);
   return resObject;
 }
 
