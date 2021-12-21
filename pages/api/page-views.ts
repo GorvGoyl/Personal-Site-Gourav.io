@@ -24,11 +24,14 @@ export default async function pageViews(
       },
     });
 
+    console.log("setting up analyticsDataClient");
     // Using a default constructor instructs the client to use the credentials
     // specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
     const analyticsDataClient = new BetaAnalyticsDataClient({
       auth,
     });
+
+    console.log("getting analyticsDataClient report");
 
     // Runs a simple report.
     // eslint-disable-next-line no-inner-declarations
@@ -63,6 +66,7 @@ export default async function pageViews(
       ],
     });
 
+    console.log("Got report");
     const data = {};
     response[0].rows.forEach((x) => {
       data[x.dimensionValues[0].value] = x.metricValues[0].value;
