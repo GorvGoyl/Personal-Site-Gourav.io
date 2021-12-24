@@ -47,7 +47,11 @@ mobileToc: true
 
 ## Add local git repo to Github
 
-requires [Github CLI](https://cli.github.com/)
+Create new repo on Github and push local git repo code to it.  
+
+(requires [Github CLI](https://cli.github.com/))
+
+Run inside root of local git repo:
 
 ```
 gh repo create
