@@ -44,6 +44,17 @@ mobileToc: true
 - Option A: Clone main repo -> create a new branch -> do your thing -> send PR to `main` branch
 - Option B: Fork from the main repo -> do your thing -> send PR
 
+
+## Add local git repo to Github
+
+requires [Github CLI](https://cli.github.com/)
+
+```
+gh repo create
+git branch -M main
+git push -u origin main
+```
+
 ## Stage & Commit
 
 ```
