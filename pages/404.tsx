@@ -20,7 +20,7 @@ export default function Blog(): JSX.Element {
               </Link>
             </h3>
             <h3>
-              Or <br /> Inform me at hey@gourav.io
+              Or <br /> Let me know at hey@gourav.io
             </h3>
           </header>
           <div />
