@@ -1,5 +1,5 @@
 ---
-title: "Top AutoHotkey scripts to get more out of Windows"
+title: "Top AutoHotkey scripts to use Windows like a pro"
 desc: "Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more."
 date: "2022-01-18"
 toc: true
