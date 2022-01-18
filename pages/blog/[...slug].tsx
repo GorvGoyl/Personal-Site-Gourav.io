@@ -9,15 +9,17 @@ import { getMdPostSlugs } from "@/lib/getPost";
 import { getPost } from "@/lib/mdx";
 import { getSlugViews } from "@/lib/utils";
 import md from "@/styles/md.module.scss";
+import { FrontMatter } from "@/types/types";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { join } from "path";
 import React, { useEffect, useMemo, useState } from "react";
 const RELATIVE_PATH = "/blog/";
 
 export default function Post(props: {
-  matter: any;
+  matter: FrontMatter;
   source: string;
   slug: string;
 }) {
@@ -74,6 +76,7 @@ export default function Post(props: {
           <ShareComponent />
           <SubscribeForm type={FORMTYPE.AfterArticle} />
         </main>
+        {props.matter.comments && <Comments></Comments>}
         <hr className="my-12" />
         <div className="flex justify-center">
           <AuthorImg />
@@ -89,6 +92,31 @@ export default function Post(props: {
     </>
   );
 }
+
+const Comments = () => {
+  return (
+    <div className="giscus mt-16">
+      <Script
+        src="https://giscus.app/client.js"
+        data-repo="GorvGoyl/Personal-Site-Gourav.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyOTAyNjQ4MTU="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEU0W784CAvcn"
+        data-mapping="pathname"
+        data-reactions-enabled="0"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="en"
+        crossOrigin="anonymous"
+        async
+        strategy="lazyOnload"
+        onError={(e) => {
+          console.error("giscus script failed to load", e);
+        }}
+      ></Script>
+    </div>
+  );
+};
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps = async (props: { params: { slug: [string] } }) => {

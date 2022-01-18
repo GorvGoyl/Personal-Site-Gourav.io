@@ -4,6 +4,7 @@ desc: "Useful git commands for beginners like reverting commits, work between br
 date: "2021-10-28"
 toc: true
 mobileToc: true
+comments: true
 ---
 
 ### Jargon
@@ -44,10 +45,9 @@ mobileToc: true
 - Option A: Clone main repo -> create a new branch -> do your thing -> send PR to `main` branch
 - Option B: Fork from the main repo -> do your thing -> send PR
 
-
 ## Add local git repo to Github
 
-Create new repo on Github and push local git repo code to it.  
+Create new repo on Github and push local git repo code to it.
 
 (requires [Github CLI](https://cli.github.com/))
 
@@ -431,15 +431,15 @@ git config color.ui true
 
 - Temporarily switch by creating new branch
 
-	```
-	git checkout 0d1d7fc32  (commit id)
-	```
+  ```
+  git checkout 0d1d7fc32  (commit id)
+  ```
 
 - Revert current branch to an older commit
 
-	```
-	git reset --hard <commidId> && git clean -f
-	```
+  ```
+  git reset --hard <commidId> && git clean -f
+  ```
 
 ### Add new changes to last commit
 

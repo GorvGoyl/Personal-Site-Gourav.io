@@ -3,6 +3,7 @@ title: "Setup VSCode to run and debug C / C++ code"
 desc: "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode"
 date: "2020-12-5"
 toc: true
+comments: true
 ---
 
 import img1 from "./1.png";

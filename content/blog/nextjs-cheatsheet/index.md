@@ -4,6 +4,7 @@ desc: "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, a
 date: "2021-10-11"
 toc: true
 mobileToc: true
+comments: true
 ---
 
 ## Setup Next.js project

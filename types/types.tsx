@@ -10,5 +10,6 @@ export class FrontMatter {
   slug? = "";
   toc? = false;
   mobileToc? = false;
+  comments? = false;
   ogURL? = "";
 }
