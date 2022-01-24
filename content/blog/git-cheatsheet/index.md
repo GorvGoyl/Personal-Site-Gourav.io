@@ -54,7 +54,7 @@ Create new repo on Github and push local git repo code to it.
 Run inside root of local git repo:
 
 ```
-gh repo create
+gh repo create ( -> Push an existing local repository to GitHub)
 git branch -M main
 git push -u origin main
 ```

@@ -31,8 +31,9 @@ export default async function subscribe(
     return res;
   }
 
-  const tags = ["gourav.io"];
+  const tags = [];
   if (referrer) tags.push(referrer as string);
+  if (referrer_url) tags.push(referrer_url as string);
 
   try {
     const response = await fetch(addSubscriberAPI, {
