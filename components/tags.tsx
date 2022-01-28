@@ -37,6 +37,25 @@ export function CopyLink(): JSX.Element {
   );
 }
 
+export function Video(Props: { src: string; className?: string }): JSX.Element {
+  let cls = "";
+  cls += "rounded border-2 mx-auto shadow-md";
+  // add any more classes provided by prop
+  if (Props.className) {
+    cls = `${cls} ${Props.className}`;
+  }
+  return (
+    <video
+      src={Props.src}
+      className={cls}
+      controls={false}
+      autoPlay={true}
+      muted={true}
+      loop={true}
+    />
+  );
+}
+
 export function Img(Props: {
   src: string;
   alt?: string;

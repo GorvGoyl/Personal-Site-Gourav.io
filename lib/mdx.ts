@@ -105,6 +105,7 @@ export async function getPost(
         ".jpg": "file",
         ".gif": "file",
         ".svg": "file",
+        ".mp4": "file",
       },
       publicPath: imgOutputRelativeDir,
       write: true,

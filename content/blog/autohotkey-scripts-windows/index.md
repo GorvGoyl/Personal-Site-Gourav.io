@@ -1,6 +1,6 @@
 ---
 title: "Top AutoHotkey scripts to use Windows like a pro"
-desc: "Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more."
+desc: "Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more"
 date: "2022-01-18"
 toc: true
 mobileToc: true
@@ -13,7 +13,7 @@ import battery_alert_charged from "./battery_alert_charged.png";
 import battery_alert_low from "./battery_alert_low.png";
 import in_line_calculator from "./in_line_calculator.gif";
 import transform_text_menu from "./transform_text_menu.png";
-import window_switcher from "./window_switcher.png";
+import window_switcher from "./window_switcher.jpg";
 
 ## What's AutoHotkey
 
