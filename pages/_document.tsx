@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { isProd } from "@/lib/envVar";
 import { GA_TRACKING_ID } from "@/lib/gtag";
 // eslint-disable-next-line @next/next/no-document-import-in-page
@@ -33,6 +34,7 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <Footer></Footer>
           <NextScript />
           {/* Cloudflare Web Analytics */}
           {isProd && (
