@@ -85,6 +85,7 @@ function LoadingSpinner() {
 
 // AfterArticle, Generic (default:Generic)
 export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
+  return null;
   const { type } = Props;
   const text = {
     [FORMTYPE.AfterArticle]: {
