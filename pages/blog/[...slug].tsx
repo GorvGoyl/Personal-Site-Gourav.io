@@ -1,3 +1,4 @@
+import { Comments } from "@/components/commentBox";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import MDXComponents from "@/components/mdxComponents";
@@ -13,7 +14,6 @@ import { FrontMatter } from "@/types/types";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { join } from "path";
 import React, { useEffect, useMemo, useState } from "react";
 const RELATIVE_PATH = "/blog/";
@@ -24,7 +24,6 @@ export default function Post(props: {
   slug: string;
 }) {
   const [slugViews, setSlugViews] = useState("");
-
   useEffect(() => {
     if (props.slug) {
       // add relative path to slug: /blog/nextjs-cheatsheet
@@ -76,7 +75,7 @@ export default function Post(props: {
           <ShareComponent />
           <SubscribeForm type={FORMTYPE.AfterArticle} />
         </main>
-        {props.matter.comments && <Comments></Comments>}
+
         <hr className="my-12" />
         <div className="flex justify-center">
           <AuthorImg />
@@ -88,57 +87,11 @@ export default function Post(props: {
             </a>
           </Link>
         </div>
+        {props.matter.comments && <Comments></Comments>}
       </Container>
     </>
   );
 }
-
-const Comments = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-
-    script.setAttribute("src", "https://giscus.app/client.js");
-    script.setAttribute("data-repo", "GorvGoyl/Personal-Site-Gourav.io");
-    script.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkyOTAyNjQ4MTU");
-    script.setAttribute("data-category", "Announcements");
-    script.setAttribute("data-category-id", "DIC_kwDOEU0W784CAvcn");
-    script.setAttribute("data-mapping", "pathname");
-    script.setAttribute("data-reactions-enabled", "0");
-    script.setAttribute("data-emit-metadata", "0");
-    script.setAttribute("data-theme", "light");
-    script.setAttribute("data-lang", "en");
-    script.setAttribute("crossOrigin", "anonymous");
-
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-  return (
-    <div className="giscus mt-16">
-      {/* <Script
-        src="https://giscus.app/client.js"
-        data-repo="GorvGoyl/Personal-Site-Gourav.io"
-        data-repo-id="MDEwOlJlcG9zaXRvcnkyOTAyNjQ4MTU="
-        data-category="Announcements"
-        data-category-id="DIC_kwDOEU0W784CAvcn"
-        data-mapping="pathname"
-        data-reactions-enabled="0"
-        data-emit-metadata="0"
-        data-theme="light"
-        data-lang="en"
-        crossOrigin="anonymous"
-        strategy="lazyOnload"
-        onError={(e) => {
-          console.error("giscus script failed to load", e);
-        }}
-      ></Script> */}
-    </div>
-  );
-};
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps = async (props: { params: { slug: [string] } }) => {

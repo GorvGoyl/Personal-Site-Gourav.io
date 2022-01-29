@@ -95,9 +95,9 @@ export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
           </div>
           <hr className="mb-8" />
           <SubscribeForm type={FORMTYPE.Slim} />
-          <TwitterBtn />
         </main>
       </Container>
+      <TwitterBtn />
     </>
   );
 }

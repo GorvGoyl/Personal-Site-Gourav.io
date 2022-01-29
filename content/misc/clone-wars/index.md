@@ -2,6 +2,7 @@
 title: "Clone Wars - Open source clones of popular sites"
 desc: "100+ open-source clones and alternatives of popular sites like Airbnb, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube, etc. List contains source code, tutorials, demo links, tech stack, etc. Great for learning purpose!"
 date: "02-03-2021"
+comments: true
 ---
 
 import og from "./og.jpg";

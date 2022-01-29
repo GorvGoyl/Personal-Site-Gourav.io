@@ -271,7 +271,6 @@ export default function Home(): JSX.Element {
               </ul>
             </div>
             <SubscribeForm type={FORMTYPE.Generic} />
-            <TwitterBtn />
           </div>
 
           {/* disable below twitter widget */}
@@ -293,6 +292,7 @@ export default function Home(): JSX.Element {
           </div> */}
         </div>
       </Container>
+      <TwitterBtn />
     </div>
   );
 }
