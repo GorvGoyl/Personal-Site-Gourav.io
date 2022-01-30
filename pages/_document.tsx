@@ -9,6 +9,13 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link
+            rel="preload"
+            href="/fonts/inter-var-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
           {/* enable analytics script only for production */}
           {isProd && (
             <>

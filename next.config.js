@@ -1,27 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/require-await */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
-// const withMdxEnhanced = require("next-mdx-enhanced");
-// const rehypePrism = require("@mapbox/rehype-prism");
-// const remarkPrism = require("remark-prism");
-
-// const { getOG } = require("./lib/getPost.tsx");
-
-// const mdx = withMdxEnhanced({
-//   defaultLayout: "layouts",
-//   fileExtensions: ["mdx", "md"],
-//   rehypePlugins: [],
-//   // extendFrontMatter: {
-//   //   process: (mdxContent, frontMatter) => {},
-//   //   phase: "prebuild|loader|both",
-//   // },
-// });
-
 const redirects = async () => [
   {
     source: "/chrome",
@@ -43,43 +19,27 @@ const redirects = async () => [
   },
 ];
 
+const headers = async () => [
+  {
+    source: "/fonts/inter-var-latin.woff2",
+    headers: [
+      {
+        key: "Cache-Control",
+        value: "public, max-age=31536000, immutable",
+      },
+    ],
+  },
+];
+
 module.exports =
-  //  withMdxEnhanced({
-  //   layoutPath: "layouts", // layout folder
-  //   defaultLayout: true, // set layouts/index.tsx as default for mdx file lacking frontmatter 'layout'
-  //   fileExtensions: ["mdx", "md"],
-  //   remarkPlugins: [
-  //     // require("remark-autolink-headings"),
-  //     // require("remark-slug"),
-  //     require("remark-code-titles"),
-  //   ],
-  //   rehypePlugins: [
-  //     // needed both to add self-linking id to headings href
-  //     require("rehype-slug"),
-  //     require("rehype-autolink-headings"),
-  //     rehypePrism,
-  //   ],
-  //   usesSrc: false, // checks for /pages folder
-  //   // extendFrontMatter: {
-  //   //   process: (mdxContent, frontMatter) => {
-  //   //     const t = "dfd";
-  //   //     return { tt: t };
-  //   //   },
-  //   //   // phase: "prebuild|loader|both",
-  //   // },
-  //   reExportDataFetching: false,
-  // })
   // NextConfig
   {
-    // webpack5: false,
-
     // disabling i18n due to mdx path error
     // i18n: {
     //   locales: ["en-US"],
     //   defaultLocale: "en-US",
     // },
     future: {
-      // webpack5: true,
       strictPostcssConfiguration: true,
     },
     reactStrictMode: true,
@@ -110,4 +70,5 @@ module.exports =
       return config;
     },
     redirects,
+    headers,
   };
