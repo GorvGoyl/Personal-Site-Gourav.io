@@ -17,6 +17,12 @@ const redirects = async () => [
       "https://docs.google.com/document/d/1DKDnTMPHXx5o9HE1cWZvChabRJxmI6N6OnFIflVOtQs/edit?usp=sharing",
     permanent: true,
   },
+  {
+    source: "/cover-letter",
+    destination:
+      "https://docs.google.com/document/d/1LxSXxMXmxN2zfCcqShWSvCCIWsrnH1zY5yKA3E6XZPk/edit?usp=sharing",
+    permanent: true,
+  },
 ];
 
 const headers = async () => [
