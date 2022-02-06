@@ -1,7 +1,7 @@
 ---
-title: "Next.js Cheatsheet"
-desc: "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project"
-date: "2021-10-11"
+title: 'Next.js Cheatsheet'
+desc: 'Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project'
+date: '2021-10-11'
 toc: true
 mobileToc: true
 comments: true
@@ -31,41 +31,41 @@ Useful to put breakpoints in VSCode and pause active session to inspect data.
 
 ```json
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Next.js: attach",
-      "port": 9229,
-      "request": "attach",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node",
-      "restart": true
-    },
-    {
-      "name": "Next.js: debug server-side",
-      "type": "node-terminal",
-      "request": "launch",
-      "command": "npm run dev"
-    },
-    {
-      "name": "Next.js: debug client-side",
-      "type": "pwa-chrome",
-      "request": "launch",
-      "url": "http://localhost:3000"
-    },
-    {
-      "name": "Next.js: debug full stack",
-      "type": "node-terminal",
-      "request": "launch",
-      "command": "npm run dev",
-      "console": "integratedTerminal",
-      "serverReadyAction": {
-        "pattern": "started server on .+, url: (https?://.+)",
-        "uriFormat": "%s",
-        "action": "debugWithChrome"
-      }
-    }
-  ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Next.js: attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"restart": true
+		},
+		{
+			"name": "Next.js: debug server-side",
+			"type": "node-terminal",
+			"request": "launch",
+			"command": "npm run dev"
+		},
+		{
+			"name": "Next.js: debug client-side",
+			"type": "pwa-chrome",
+			"request": "launch",
+			"url": "http://localhost:3000"
+		},
+		{
+			"name": "Next.js: debug full stack",
+			"type": "node-terminal",
+			"request": "launch",
+			"command": "npm run dev",
+			"console": "integratedTerminal",
+			"serverReadyAction": {
+				"pattern": "started server on .+, url: (https?://.+)",
+				"uriFormat": "%s",
+				"action": "debugWithChrome"
+			}
+		}
+	]
 }
 ```
 
@@ -106,9 +106,9 @@ Next.js collects completely anonymous telemetry data about general usage. Run th
 
 ```json
 {
-  "github": {
-    "silent": true
-  }
+	"github": {
+		"silent": true
+	}
 }
 ```
 
@@ -224,9 +224,9 @@ output should be:
 
 ```json
 {
-  "scripts": {
-    "tsc": "tsc"
-  }
+	"scripts": {
+		"tsc": "tsc"
+	}
 }
 ```
 
@@ -273,9 +273,9 @@ You can either define the `type` for those errors or suppress these errors by en
 
 ```json
 {
-  "compilerOptions": {
-    "noImplicitAny": false //set 'true' to throw error for 'any'
-  }
+	"compilerOptions": {
+		"noImplicitAny": false //set 'true' to throw error for 'any'
+	}
 }
 ```
 
@@ -285,24 +285,24 @@ At this point, complete `tsconfig.json` should look like this:
 
 ```json
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true, // strict type checking is enabled
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noImplicitAny": false, // set 'true' to throw error for 'any'
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true, // strict type checking is enabled
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"noImplicitAny": false, // set 'true' to throw error for 'any'
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve"
+	},
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"exclude": ["node_modules"]
 }
 ```
 
@@ -310,28 +310,28 @@ At this point, complete `package.json` should look like this:
 
 ```json
 {
-  "name": "nextjs-template",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "tsc": "tsc"
-  },
-  "dependencies": {
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "^16.10.3",
-    "@types/react": "^17.0.27",
-    "eslint": "8.0.0",
-    "eslint-config-next": "11.1.2",
-    "typescript": "^4.4.3"
-  }
+	"name": "nextjs-template",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"tsc": "tsc"
+	},
+	"dependencies": {
+		"next": "11.1.2",
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"@types/node": "^16.10.3",
+		"@types/react": "^17.0.27",
+		"eslint": "8.0.0",
+		"eslint-config-next": "11.1.2",
+		"typescript": "^4.4.3"
+	}
 }
 ```
 
@@ -363,46 +363,46 @@ There are few steps required for adding proper support of ESLint to TS project:
 
 ```json
 {
-  "root": true,
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json", // tells parser relative path of tsconfig.json
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
+	"root": true,
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "./tsconfig.json", // tells parser relative path of tsconfig.json
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
 
-  // all plugins (eslint-plugin-xxx) go here:
-  "plugins": [
-    "@typescript-eslint",
-    "@next/eslint-plugin-next" // https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/index.js
-  ],
+	// all plugins (eslint-plugin-xxx) go here:
+	"plugins": [
+		"@typescript-eslint",
+		"@next/eslint-plugin-next" // https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/lib/index.js
+	],
 
-  // all configs (eslint-config-xxx) go here:
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking", // contains rules that specifically require type information
-    "plugin:@next/next/recommended",
-    "next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
-    "next/core-web-vitals"
-  ],
-  "rules": {
-    // ...add rules which you'd like to disable
-  }
+	// all configs (eslint-config-xxx) go here:
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking", // contains rules that specifically require type information
+		"plugin:@next/next/recommended",
+		"next", // https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
+		"next/core-web-vitals"
+	],
+	"rules": {
+		// ...add rules which you'd like to disable
+	}
 }
 ```
 
@@ -430,8 +430,8 @@ next-env.d.ts
 
 ```json
 {
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
-  "exclude": ["node_modules", ".next", ".vercel", "out"]
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+	"exclude": ["node_modules", ".next", ".vercel", "out"]
 }
 ```
 
@@ -451,9 +451,9 @@ We can also explicitly check for these issues by running a command.
 
    ```json
    {
-     "scripts": {
-       "lint": "next lint"
-     }
+   	"scripts": {
+   		"lint": "next lint"
+   	}
    }
    ```
 
@@ -464,12 +464,12 @@ Fix lint warnings & errors:
 Modify `_app.tsx` according to it:
 
 ```tsx
-import { AppProps } from "next/app";
+import { AppProps } from 'next/app';
 
-import "../styles/globals.css";
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  return <Component {...pageProps} />;
+	return <Component {...pageProps} />;
 }
 
 export default MyApp;
@@ -485,13 +485,13 @@ In `hello.ts`:
 
 ```ts
 /* eslint-disable import/no-anonymous-default-export */
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
-  name: string;
+	name: string;
 };
 export default (req: NextApiRequest, res: NextApiResponse<Data>): void => {
-  res.status(200).json({ name: "John Doe" });
+	res.status(200).json({ name: 'John Doe' });
 };
 ```
 
@@ -529,30 +529,30 @@ Run `npm run lint` to test again. There shouldn't be any issues now.
 
 ```json
 {
-  "name": "nextjs-template",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "tsc": "tsc"
-  },
-  "dependencies": {
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@next/eslint-plugin-next": "^11.1.2",
-    "@types/node": "^16.10.3",
-    "@types/react": "^17.0.27",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "eslint": "^7.23.0",
-    "eslint-config-next": "11.1.2",
-    "typescript": "^4.4.3"
-  }
+	"name": "nextjs-template",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"tsc": "tsc"
+	},
+	"dependencies": {
+		"next": "11.1.2",
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"@next/eslint-plugin-next": "^11.1.2",
+		"@types/node": "^16.10.3",
+		"@types/react": "^17.0.27",
+		"@typescript-eslint/eslint-plugin": "^4.33.0",
+		"eslint": "^7.23.0",
+		"eslint-config-next": "11.1.2",
+		"typescript": "^4.4.3"
+	}
 }
 ```
 
@@ -606,11 +606,11 @@ export default class MyDocument extends Document {
 
 ```css
 @font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: optional;
-  src: url(/fonts/inter-var-latin.woff2) format("woff2");
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: optional;
+	src: url(/fonts/inter-var-latin.woff2) format('woff2');
 }
 ```
 
@@ -619,19 +619,19 @@ export default class MyDocument extends Document {
 
 ```js
 module.exports = {
-  async headers() {
-    return [
-      {
-        source: "/fonts/inter-var-latin.woff2",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-    ];
-  },
+	async headers() {
+		return [
+			{
+				source: '/fonts/inter-var-latin.woff2',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=31536000, immutable',
+					},
+				],
+			},
+		];
+	},
 };
 ```
 
@@ -649,19 +649,19 @@ https://tailwindcss.com/docs/guides/nextjs
 
 ```js
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
-  mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"], // remove unused styles in production
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+	future: {
+		removeDeprecatedGapUtilities: true,
+	},
+	mode: 'jit',
+	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'], // remove unused styles in production
+	darkMode: false, // or 'media' or 'class'
+	theme: {
+		extend: {},
+	},
+	variants: {
+		extend: {},
+	},
+	plugins: [],
 };
 ```
 
@@ -669,10 +669,10 @@ module.exports = {
 
 ```js
 module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
+	plugins: {
+		tailwindcss: {},
+		autoprefixer: {},
+	},
 };
 ```
 
@@ -687,11 +687,11 @@ module.exports = {
 7. Import style in `pages\_app.tsx` if not done already
 
 ```tsx
-import { AppProps } from "next/app";
-import "../styles/globals.css";
+import { AppProps } from 'next/app';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  return <Component {...pageProps} />;
+	return <Component {...pageProps} />;
 }
 
 export default MyApp;
@@ -746,66 +746,66 @@ Whenever you share a website link on Twitter, LinkedIn, Whatsapp, etc, you must 
 2. Create a file `header.tsx` and paste below code:
 
 ```tsx
-import { NextSeo } from "next-seo";
-import { useRouter } from "next/router";
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 
 export default function Header(): JSX.Element {
-  const title = "Gourav Goyal";
-  const desc =
-    "I'm a tech founder, digital nomad, and a fun guy to hang around with. I like to build things that others find helpful.";
-  const ogImgRelativePath = "/og.png";
+	const title = 'Gourav Goyal';
+	const desc =
+		"I'm a tech founder, digital nomad, and a fun guy to hang around with. I like to build things that others find helpful.";
+	const ogImgRelativePath = '/og.png';
 
-  const siteURL = "https://gourav.io";
-  const ogImageURL = `${siteURL}${ogImgRelativePath}`;
-  const pathName = useRouter().pathname;
-  const pageURL = pathName === "/" ? siteURL : siteURL + pathName;
-  const twitterHandle = "@GorvGoyl";
-  const siteName = "Gourav.io";
+	const siteURL = 'https://gourav.io';
+	const ogImageURL = `${siteURL}${ogImgRelativePath}`;
+	const pathName = useRouter().pathname;
+	const pageURL = pathName === '/' ? siteURL : siteURL + pathName;
+	const twitterHandle = '@GorvGoyl';
+	const siteName = 'Gourav.io';
 
-  return (
-    <NextSeo
-      title={title}
-      description={desc}
-      canonical={pageURL}
-      openGraph={{
-        type: "website",
-        locale: "en_US", //  Default is en_US
-        url: pageURL,
-        title,
-        description: desc,
-        images: [
-          {
-            url: ogImageURL,
-            width: 1200,
-            height: 630,
-            alt: "Gourav.io - personal site and blog",
-          },
-        ],
-        site_name: siteName,
-      }}
-      twitter={{
-        handle: twitterHandle,
-        site: twitterHandle,
-        cardType: "summary_large_image",
-      }}
-      additionalMetaTags={[
-        {
-          property: "author",
-          content: title,
-        },
-      ]}
-      additionalLinkTags={[
-        {
-          rel: "icon",
-          href: `${siteURL}/favicon.ico`,
-        },
-        // {
-        //   rel: "manifest",
-        //   href: "/site.manifest",
-        // },
-      ]}
-    />
-  );
+	return (
+		<NextSeo
+			title={title}
+			description={desc}
+			canonical={pageURL}
+			openGraph={{
+				type: 'website',
+				locale: 'en_US', //  Default is en_US
+				url: pageURL,
+				title,
+				description: desc,
+				images: [
+					{
+						url: ogImageURL,
+						width: 1200,
+						height: 630,
+						alt: 'Gourav.io - personal site and blog',
+					},
+				],
+				site_name: siteName,
+			}}
+			twitter={{
+				handle: twitterHandle,
+				site: twitterHandle,
+				cardType: 'summary_large_image',
+			}}
+			additionalMetaTags={[
+				{
+					property: 'author',
+					content: title,
+				},
+			]}
+			additionalLinkTags={[
+				{
+					rel: 'icon',
+					href: `${siteURL}/favicon.ico`,
+				},
+				// {
+				//   rel: "manifest",
+				//   href: "/site.manifest",
+				// },
+			]}
+		/>
+	);
 }
 ```
 
@@ -821,15 +821,15 @@ export default function Header(): JSX.Element {
 6. import `Header.tsx` to all of your website pages which need meta tags.
 
 ```tsx
-import Header from "@/components/header";
+import Header from '@/components/header';
 
 export default function Home(): JSX.Element {
-  return (
-    <>
-      <Header />
-      ...rest of code
-    </>
-  );
+	return (
+		<>
+			<Header />
+			...rest of code
+		</>
+	);
 }
 ```
 
@@ -847,54 +847,46 @@ To verify metatags:
 
 Up-to date sitemap will be generated every time you do a deployment (during build process) so no need to manually add/update/remove urls in sitemap.
 
-1. Create `/scrips` folder and create new file inside it: `generate-sitemap.mjs`
+1. Create `/scripts` folder and create new file inside it: `generate-sitemap.mjs`
 
 2. Install required `globby` package: ` npm i -D globby`
 
 3. Paste below to `generate-sitemap.mjs`. Replace `homeURL` with your domain.
 
 ```js
-import { writeFileSync } from "fs";
-import { globby } from "globby";
-const homeURL = "https://yoursite.com";
+import { writeFileSync } from 'fs';
+import { globby } from 'globby';
+const homeURL = 'https://yoursite.com';
 
 (async () => {
-  try {
-    console.log("generating sitemap..");
+	try {
+		console.log('generating sitemap..');
 
-    const pages = await globby([
-      "pages/**/*.tsx",
-      "!pages/_*.tsx",
-      "!pages/api",
-      "!pages/404.tsx",
-    ]);
+		const pages = await globby(['pages/**/*.tsx', '!pages/_*.tsx', '!pages/api', '!pages/404.tsx']);
 
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+		const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
-              .map((page) => {
-                const path = page
-                  .replace("pages/", "/")
-                  .replace(".tsx", "")
-                  .replace("/index", "");
-                const route = path === "/index" ? "" : path;
-                const fullUrl = `${homeURL}${route}`;
-                console.log(fullUrl);
-                return `
+							.map((page) => {
+								const path = page.replace('pages/', '/').replace('.tsx', '').replace('/index', '');
+								const route = path === '/index' ? '' : path;
+								const fullUrl = `${homeURL}${route}`;
+								console.log(fullUrl);
+								return `
                         <url>
                             <loc>${fullUrl}</loc>
                         </url>
                     `;
-              })
-              .join("")}
+							})
+							.join('')}
         </urlset>`;
 
-    writeFileSync("public/sitemap.xml", sitemap);
-    console.log("sitemap generated");
-  } catch (e) {
-    console.log(e);
-    process.exit(1);
-  }
+		writeFileSync('public/sitemap.xml', sitemap);
+		console.log('sitemap generated');
+	} catch (e) {
+		console.log(e);
+		process.exit(1);
+	}
 })();
 ```
 
@@ -956,31 +948,31 @@ npm i -D next-sitemap
 
 ```js
 module.exports = {
-  siteUrl: "https://yourdomain.com",
-  generateRobotsTxt: true,
-  exclude: ["/en*", "/de*", "/disallowed"],
-  alternateRefs: [
-    {
-      href: "https://yourdomain.com/en",
-      hreflang: "en",
-    },
-    {
-      href: "https://yourdomain.com/de",
-      hreflang: "de",
-    },
-  ],
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: "*",
-        disallow: "/disallowed",
-      },
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
-  },
+	siteUrl: 'https://yourdomain.com',
+	generateRobotsTxt: true,
+	exclude: ['/en*', '/de*', '/disallowed'],
+	alternateRefs: [
+		{
+			href: 'https://yourdomain.com/en',
+			hreflang: 'en',
+		},
+		{
+			href: 'https://yourdomain.com/de',
+			hreflang: 'de',
+		},
+	],
+	robotsTxtOptions: {
+		policies: [
+			{
+				userAgent: '*',
+				disallow: '/disallowed',
+			},
+			{
+				userAgent: '*',
+				allow: '/',
+			},
+		],
+	},
 };
 ```
 
@@ -1006,10 +998,10 @@ It'll convert from `<html>...</html>` to `<html lang="en-US">...</html>`.
 
 ```js
 module.exports = {
-  i18n: {
-    locales: ["en-US"],
-    defaultLocale: "en-US",
-  },
+	i18n: {
+		locales: ['en-US'],
+		defaultLocale: 'en-US',
+	},
 };
 ```
 
@@ -1033,30 +1025,30 @@ module.exports = {
    - Replace `your_token` with your token (from that JS snippet)
 
 ```tsx
-import Document, { Html, Main, NextScript } from "next/document";
-const isProd = process.env.NODE_ENV === "production";
+import Document, { Html, Main, NextScript } from 'next/document';
+const isProd = process.env.NODE_ENV === 'production';
 
 export default class MyDocument extends Document {
-  render(): JSX.Element {
-    return (
-      <Html>
-        <body>
-          <Main />
-          <NextScript />
-          {/* Cloudflare Web Analytics */}
-          {isProd && (
-            <>
-              <script
-                defer
-                src="https://static.cloudflareinsights.com/beacon.min.js"
-                data-cf-beacon='{"token": "your_token", "spa": true}'
-              />
-            </>
-          )}
-        </body>
-      </Html>
-    );
-  }
+	render(): JSX.Element {
+		return (
+			<Html>
+				<body>
+					<Main />
+					<NextScript />
+					{/* Cloudflare Web Analytics */}
+					{isProd && (
+						<>
+							<script
+								defer
+								src='https://static.cloudflareinsights.com/beacon.min.js'
+								data-cf-beacon='{"token": "your_token", "spa": true}'
+							/>
+						</>
+					)}
+				</body>
+			</Html>
+		);
+	}
 }
 ```
 
@@ -1071,29 +1063,29 @@ Done. When you deploy your site to production. Cloudflare will track site analyt
 2. In your Next.js project, create `/lib/gtag.ts` file and add your Google Measurement ID:
 
 ```ts
-export const GA_ANALYTICS_MEASUREMENT_ID = "<INSERT_MEASUREMENT_ID>";
+export const GA_ANALYTICS_MEASUREMENT_ID = '<INSERT_MEASUREMENT_ID>';
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
-  window.gtag("config", GA_ANALYTICS_MEASUREMENT_ID, {
-    page_path: url,
-  });
+	window.gtag('config', GA_ANALYTICS_MEASUREMENT_ID, {
+		page_path: url,
+	});
 };
 
 type GTagEvent = {
-  action: string;
-  category: string;
-  label: string;
-  value: number;
+	action: string;
+	category: string;
+	label: string;
+	value: number;
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const event = ({ action, category, label, value }: GTagEvent): void => {
-  window.gtag("event", action, {
-    event_category: category,
-    event_label: label,
-    value,
-  });
+	window.gtag('event', action, {
+		event_category: category,
+		event_label: label,
+		value,
+	});
 };
 ```
 
@@ -1106,28 +1098,25 @@ npm i -D @types/gtag.js
 4. Create `/pages/_document.tsx`:
 
 ```tsx
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import { GA_ANALYTICS_MEASUREMENT_ID } from "../lib/gtag";
+import { GA_ANALYTICS_MEASUREMENT_ID } from '../lib/gtag';
 
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production';
 
 export default class MyDocument extends Document {
-  render(): JSX.Element {
-    return (
-      <Html>
-        <Head>
-          {/* enable analytics script only for production */}
-          {isProd && (
-            <>
-              <script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ANALYTICS_MEASUREMENT_ID}`}
-              />
-              <script
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{
-                  __html: `
+	render(): JSX.Element {
+		return (
+			<Html>
+				<Head>
+					{/* enable analytics script only for production */}
+					{isProd && (
+						<>
+							<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ANALYTICS_MEASUREMENT_ID}`} />
+							<script
+								// eslint-disable-next-line react/no-danger
+								dangerouslySetInnerHTML={{
+									__html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -1135,45 +1124,45 @@ export default class MyDocument extends Document {
               page_path: window.location.pathname,
             });
           `,
-                }}
-              />
-            </>
-          )}
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+								}}
+							/>
+						</>
+					)}
+				</Head>
+				<body>
+					<Main />
+					<NextScript />
+				</body>
+			</Html>
+		);
+	}
 }
 ```
 
 5. Create `/pages/_app.tsx`:
 
 ```tsx
-import { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import * as gtag from "../lib/gtag";
-const isProd = process.env.NODE_ENV === "production";
+import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import * as gtag from '../lib/gtag';
+const isProd = process.env.NODE_ENV === 'production';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  const router = useRouter();
+	const router = useRouter();
 
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      /* invoke analytics function only for production */
-      if (isProd) gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Component {...pageProps} />;
+	useEffect(() => {
+		const handleRouteChange = (url: URL) => {
+			/* invoke analytics function only for production */
+			if (isProd) gtag.pageview(url);
+		};
+		router.events.on('routeChangeComplete', handleRouteChange);
+		return () => {
+			router.events.off('routeChangeComplete', handleRouteChange);
+		};
+	}, [router.events]);
+	// eslint-disable-next-line react/jsx-props-no-spreading
+	return <Component {...pageProps} />;
 };
 
 export default App;
@@ -1198,10 +1187,10 @@ Open https://localhost:3000 site in browser whenever you run `npm run start`. Ad
 Many a times we need to enable some code only on production or dev server. You can check if site is running on production environment or dev server:
 
 ```js
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production';
 
 if (isProd) {
-  console.log("it's prod server bois");
+	console.log("it's prod server bois");
 }
 ```
 
@@ -1214,13 +1203,13 @@ For example, you can use `import Header from "@/components/Header";` no matter h
 
 ```json
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      // use @/ to access path related to root of project
-      "@/*": ["./*"]
-    }
-  }
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			// use @/ to access path related to root of project
+			"@/*": ["./*"]
+		}
+	}
 }
 ```
 
@@ -1265,16 +1254,15 @@ Create `next.config.js` at root of project and paste:
 
 ```js
 module.exports = {
-  async redirects() {
-    return [
-      {
-        source: "/chrome",
-        destination:
-          "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd",
-        permanent: true,
-      },
-    ];
-  },
+	async redirects() {
+		return [
+			{
+				source: '/chrome',
+				destination: 'https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd',
+				permanent: true,
+			},
+		];
+	},
 };
 ```
 
