@@ -847,7 +847,7 @@ To verify metatags:
 
 Up-to date sitemap will be generated every time you do a deployment (during build process) so no need to manually add/update/remove urls in sitemap.
 
-1. Create `/scrips` folder and create new file inside it: `generate-sitemap.mjs`
+1. Create `/scripts` folder and create new file inside it: `generate-sitemap.mjs`
 
 2. Install required `globby` package: ` npm i -D globby`
 
