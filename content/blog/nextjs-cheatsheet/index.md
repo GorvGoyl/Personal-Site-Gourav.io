@@ -7,6 +7,8 @@ mobileToc: true
 comments: true
 ---
 
+I've been working on multiple Next.js (React framework) projects for some time. Whenever I need to set up a new Next.js project, I follow common steps like adding ESLint with Typescript support, debugging, SEO, Tailwind, SCSS support, Sitemap, etc. So, I made this cheatsheet containing all common steps one would probably need to build a Next.js prod web app.
+
 ## Setup Next.js project
 
 ### Create new Next.js project

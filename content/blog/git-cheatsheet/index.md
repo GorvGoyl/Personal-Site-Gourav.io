@@ -7,6 +7,10 @@ mobileToc: true
 comments: true
 ---
 
+When I collaborate with others using Git, I often have to google to find the right git commands for various situations.
+Situations like how to pull changes without committing local files, save uncommitted changes in the current branch and switch, add new changes to the last commit, reset my local branch to main, revert the latest commit from local and remote, etc.
+So, I decided to write these down in one place as a handy cheatsheet so that it's easier for me (and hopefully others) to recall and use.
+
 ### Jargon
 
 - `remote` - remote means server like github, bitbucket, etc.
