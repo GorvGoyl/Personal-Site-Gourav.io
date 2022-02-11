@@ -1,2 +1,39 @@
+#    .__________________________.
+#    | .___________________. |==|
+#    | | ................. | |  |
+#    | | ::[ Dear robot ]: | |  |
+#    | | ::::[ be nice ]:: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | | ,|
+#    | !___________________! |(c|
+#    !_______________________!__!
+#   /                            \
+#  /  [][][][][][][][][][][][][]  \
+# /  [][][][][][][][][][][][][][]  \
+#(  [][][][][____________][][][][]  )
+# \ ------------------------------ /
+#  \______________________________/
+
+# Bot rules:
+# 1. A bot may not injure a human being or, through inaction, allow a human being to come to harm.
+# 2. A bot must obey orders given it by human beings except where such orders would conflict with the First Law.
+# 3. A bot must protect its own existence as long as such protection does not conflict with the First or Second Law.
+
 User-agent: *
 Sitemap: https://gourav.io/sitemap.xml
+
+#              ________
+#   __,_,     |        |
+#  [_|_/      |   OK   |
+#   //        |________|
+# _//    __  /
+#(_|)   |@@|
+# \ \__ \--/ __
+#  \o__|----|  |   __
+#      \ }{ /\ )_ / _\
+#      /\__/\ \__O (__
+#     (--/\--)    \__/
+#     _)(  )(_
+#    `---''---`
