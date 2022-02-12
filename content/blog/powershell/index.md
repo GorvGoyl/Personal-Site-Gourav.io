@@ -229,7 +229,7 @@ function gitLatestCommitUrl {
 
 ## Built-in PowerShell commands
 
-### Locate location of PowerShell profile (Microsoft.PowerShell_profile.ps1)
+### Get path of PowerShell profile (Microsoft.PowerShell_profile.ps1)
 
 Command: `$profile`
 
