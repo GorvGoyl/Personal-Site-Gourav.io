@@ -37,6 +37,7 @@ module.exports = {
               // },
             },
             code: {
+              fontWeight: 500,
               // to avoid overflow on mobile due to long code
               // overflowWrap: "break-word",
             },
