@@ -3,9 +3,9 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "start",
+      "script": "dev",
       "problemMatcher": [],
-      "label": "npm run start",
+      "label": "npm run dev",
       "detail": "next dev"
     }
   ]

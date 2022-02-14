@@ -3,6 +3,8 @@
 import { Icon } from "@/components/icons";
 import { readableDate, roundUpViewCount } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 export function CopyLink(): JSX.Element {
   const [pageURL, setPageURL] = useState("");
@@ -37,16 +39,21 @@ export function CopyLink(): JSX.Element {
   );
 }
 
-export function Video(Props: { src: string; className?: string }): JSX.Element {
+export function Video(props: {
+  src: string;
+  className?: string;
+  disableZoom?: boolean;
+}): JSX.Element {
   let cls = "";
   cls += "rounded border-2 mx-auto shadow-md";
   // add any more classes provided by prop
-  if (Props.className) {
-    cls = `${cls} ${Props.className}`;
+  if (props.className) {
+    cls = `${cls} ${props.className}`;
   }
-  return (
+
+  let VideoTag = (
     <video
-      src={Props.src}
+      src={props.src}
       className={cls}
       controls={false}
       autoPlay={true}
@@ -54,34 +61,43 @@ export function Video(Props: { src: string; className?: string }): JSX.Element {
       loop={true}
     />
   );
+  if (!props.disableZoom) {
+    VideoTag = <Zoom>{VideoTag}</Zoom>;
+  }
+  return VideoTag;
 }
 
-export function Img(Props: {
+export function Img(props: {
   src: string;
   alt?: string;
   caption?: string;
   type: string;
   className?: string;
+  disableZoom?: boolean;
 }): JSX.Element {
   let cls = "";
-  if (Props.type === "ss") cls += "rounded border-2 mx-auto shadow-md";
-  if (Props.type === "badge") cls += "m-0 inline mx-2";
+  if (props.type === "ss") cls += "rounded border-2 mx-auto shadow-md";
+  if (props.type === "badge") cls += "m-0 inline mx-2";
 
   // add any more classes provided by prop
-  if (Props.className) {
-    cls = `${cls} ${Props.className}`;
+  if (props.className) {
+    cls = `${cls} ${props.className}`;
   }
 
   // set alt text from alt or caption
-  const altText = Props.alt ? Props.alt : Props.caption;
+  const altText = props.alt ? props.alt : props.caption;
 
-  const imgTag = <img src={Props.src} alt={altText} className={cls} />;
+  let imgTag = <img src={props.src} alt={altText} className={cls} />;
 
-  if (Props.caption) {
+  if (!props.disableZoom) {
+    imgTag = <Zoom>{imgTag}</Zoom>;
+  }
+
+  if (props.caption) {
     return (
       <figure>
         {imgTag}
-        <figcaption className="text-center">{Props.caption}</figcaption>
+        <figcaption className="text-center">{props.caption}</figcaption>
       </figure>
     );
   }
