@@ -7,7 +7,7 @@ comments: true
 
 import og from "./og.jpg";
 
-<Img src={og}  />
+<Img src={og} disableZoom={true}  />
 
 <Title  txt="Clone Wars - Open source clones of popular sites" homeURL = "/clone-wars" />
 

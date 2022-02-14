@@ -116,6 +116,7 @@ Here are some users insights (first 30 days since launch i.e. from that Reddit p
     >
 <Img
 type="badge"
+disableZoom={true}
 alt="GitHub repo stars"
 src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
 />
@@ -131,6 +132,7 @@ src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&l
 
 <Img
 type="badge"
+disableZoom={true}
 alt="GitHub forks"
 src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=#44cc11"
 />
