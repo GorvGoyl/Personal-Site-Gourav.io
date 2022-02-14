@@ -24,6 +24,9 @@
       -moz-hyphens: none;
       -ms-hyphens: none;
       hyphens: none;
+      .code-line {
+        padding-right: 15px !important;
+      }
     }
 
     pre[class*="language-"]::selection,

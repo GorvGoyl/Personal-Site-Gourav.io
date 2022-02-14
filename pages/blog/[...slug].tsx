@@ -58,7 +58,9 @@ export default function Post(props: {
         <main className="mx-auto prose">
           <article className={`${post.code_block} ${md.css}`}>
             <header>
-              <h1>{props.matter.title}</h1>
+              <h1 className="text-2xl md:text-4xl md:leading-tight">
+                {props.matter.title}
+              </h1>
             </header>
             <Author date={props.matter.date} views={slugViews} />
             <MDX components={MDXComponents as any} />
