@@ -98,7 +98,7 @@ export default function Home(): JSX.Element {
                       <a title="Notion Boost browser extension">Notion Boost</a>
                     </Link>
                     <span className="badge-wrapper">
-                      {/* <a
+                      <a
                         title="source code"
                         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
                         target="_blank"
@@ -108,7 +108,7 @@ export default function Home(): JSX.Element {
                           loading="lazy"
                           src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
                         />
-                      </a> */}
+                      </a>
                       <a
                         title="Chrome Web Store link"
                         href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
@@ -233,9 +233,9 @@ export default function Home(): JSX.Element {
                         />
                       </a>
                     </span>
-                    Open-source portfolio and blog built using Next.js, Tailwind
-                    CSS, MDX, Typescript, and deployed on Vercel. <br />
-                    <i>Monthly visitors: 15,000+</i>
+                    Open-source portfolio and blog built using React (Next.js),
+                    Typescript, Tailwind CSS, MDX and deployed on Vercel. <br />
+                    <i>Total Views: 100,000+</i>
                   </p>
                 </li>
                 <li>
