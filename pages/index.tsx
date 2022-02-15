@@ -90,7 +90,7 @@ export default function Home(): JSX.Element {
               <i>hey@gourav.io</i>
             </p>
             <div>
-              <h2>Projects</h2>
+              <h2>Side Projects</h2>
               <ul>
                 <li>
                   <p>
