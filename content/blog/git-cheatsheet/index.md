@@ -49,6 +49,26 @@ So, I decided to write these down in one place as a handy cheatsheet so that it'
 - Option A: Clone main repo -> create a new branch -> do your thing -> send PR to `main` branch
 - Option B: Fork from the main repo -> do your thing -> send PR
 
+### Commit specification
+
+Use [Conventional Commits](https://www.conventionalcommits.org/) specification for adding human and machine readable meaning to commit messages.
+
+Lint commit messages using [commitlint](https://github.com/conventional-changelog/commitlint).
+
+Benefits:
+
+- Automatically generating CHANGELOGs.
+- Automatically determining a semantic version bump (based on the types of commits landed).
+- Communicating the nature of changes to teammates, the public, and other stakeholders.
+- Triggering build and publish processes.
+
+Syntax (v1.0.0):
+
+- `fix:` a commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning). ex: `fix: prevent racing of requests`
+- `feat:` a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning). ex: `feat: allow provided config object to extend other configs`
+- `!:` appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). ex: `feat!: send an email to the customer when a product is shipped` , `chore!: drop support for Node 6`
+- types other than `fix:` and `feat:` are allowed, for example [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) recommends `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, and others.
+
 ## Add local git repo to Github
 
 Create new repo on Github and push local git repo code to it.
