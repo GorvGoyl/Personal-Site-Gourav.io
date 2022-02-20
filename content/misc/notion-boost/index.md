@@ -116,9 +116,9 @@ Truly hide 'Hidden columns' in Kanban board view.
 <Img src={hideHiddenColumns} type="ss" />
 </details>
 <details>
-  <summary> <h4>Left align images</h4></summary>
+  <summary> <h4>Left align media</h4></summary>
 
-Align document images to left instead of center.
+Align document images and videos to left instead of center.
 
 <Img src={leftAlignImage} type="ss" />
 </details>
