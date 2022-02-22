@@ -153,7 +153,7 @@ Show squiggly red lines for any spelling mistakes inside code blocks
 <details>
   <summary> <h4>Don't show popup menu when pasting external links</h4></summary>
 
-Don't show popup menu i.e (dismiss, create bookmark, create embed) when pasting external links
+Don't show popup menu i.e (dismiss, create bookmark, create embed) when pasting external URLs
 
 <Img src={disablepopup} type="ss" />
 </details>
