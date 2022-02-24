@@ -16,28 +16,33 @@ import rollup_clickable from "../img/rollup_clickable.jpg";
 
 ## What's new in this update ✨
 
-### v3.0
+### v3.0.8
 
-<TagDate>Sep 2021</TagDate>
+<TagDate>Feb 2021</TagDate>
 
-- ✔ **Add indentation lines to lists**  
-  Add vertical indentation lines to bullet and to-do lists.
+**🎉 NEW FEATURES:**
 
-<Img src={indentation_lines} type="ss" />
+- `Left align media` will also align videos along with images
 
-- ✔ **Make Rollup URLs clickable**  
-  Make URLs in Rollup property clickable. Works for both: table and as page properties.
+**💪 IMPROVEMENTS:**
 
-<Img src={rollup_clickable} type="ss" />
+- Outline improvements
 
-- ✔ **Support for \*.notion.site domain**  
-  Notion Boost is now supported on all _\*.notion.site_ URLs.
+  - wrap outline to show full text
+  - smaller text and wider outline to fit more content
 
-- 🐞 Fixed bug where `Add more height to page` wasn't working properly.
-- 🐞 Fixed bug where headings with links were not shown in the `outline`.
-- 🐞 Fixed bug where `Show full text on hover` wasn't working for URL types in table.
-- 🐞 Fixed bug where `Full width for all pages` wasn't working on inline tables.
-- 🐞 Fixed bug where `Full width for all pages` feature wasn't working with Grammarly extension.
+- better performance
+
+**🐞 FIXED BUGS :**
+
+- fix: full width not working
+- fix: Removed flicker from slash command
+- fix: Add more height to page no longer hides icons and has different padding/spacing.
+- fix: Issue with slash command
+- fix: slash menu not working in tables
+- fix: Small Text Default does not work on page title
+
+👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
 
 > PS: I also built seamless 2-way sync between Notion ⇋ Google Calendar, Try for Free: [Easypie.app](https://easypie.app?ref=whats-new/shoutout)
 
@@ -47,11 +52,26 @@ import rollup_clickable from "../img/rollup_clickable.jpg";
 
 ---
 
-<SubscribeForm type={FORMTYPE.Generic} />
-
----
-
 ## Previous updates
+
+### v3.0
+
+<TagDate>Sep 2021</TagDate>
+
+- ✔ **Add indentation lines to lists**  
+  Add vertical indentation lines to bullet and to-do lists.
+
+- ✔ **Make Rollup URLs clickable**  
+  Make URLs in Rollup property clickable. Works for both: table and as page properties.
+
+- ✔ **Support for \*.notion.site domain**  
+  Notion Boost is now supported on all _\*.notion.site_ URLs.
+
+- 🐞 Fixed bug where `Add more height to page` wasn't working properly.
+- 🐞 Fixed bug where headings with links were not shown in the `outline`.
+- 🐞 Fixed bug where `Show full text on hover` wasn't working for URL types in table.
+- 🐞 Fixed bug where `Full width for all pages` wasn't working on inline tables.
+- 🐞 Fixed bug where `Full width for all pages` feature wasn't working with Grammarly extension.
 
 ### v2.2
 
