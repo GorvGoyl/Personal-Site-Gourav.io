@@ -271,6 +271,27 @@ git remote set-url origin new.git.url
 
 ## Work between branches
 
+### get latest from other branch - rebase
+
+- Get all commits from `main` branch into `feature` branch i.e. sync `feature` with `main`
+
+```
+git checkout feature
+git rebase main
+```
+
+- continue after resolving rebase conflicts if any
+
+```
+git rebase --continue
+```
+
+- Abort rebase
+
+```
+git rebase --abort
+```
+
 ### Push from one branch to another
 
 ```
@@ -485,7 +506,13 @@ Then add all files and commit again
 
 ### Resolve Merge Conflicts
 
-revert all my changes and pull latest from `main`
+- revert current merge conflicts
+
+```
+git reset --hard HEAD
+```
+
+- revert all my changes and pull latest from `main`
 
 ```
 git reset --hard HEAD
