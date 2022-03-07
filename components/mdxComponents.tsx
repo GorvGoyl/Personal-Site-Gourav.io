@@ -1,4 +1,10 @@
-import { NavbarNotion, Social, TagDate, Title } from "@/components/notionBoost";
+import {
+  Badges,
+  NavbarNotion,
+  Social,
+  TagDate,
+  Title,
+} from "@/components/notionBoost";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { A, Img, TwitterIcon, Video } from "@/components/tags";
 import Link from "next/link";
@@ -15,6 +21,7 @@ const MDXComponents = {
   TwitterIcon,
   FORMTYPE,
   SubscribeForm,
+  Badges,
 };
 
 export default MDXComponents;

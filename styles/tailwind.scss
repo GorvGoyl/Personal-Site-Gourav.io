@@ -102,10 +102,14 @@
   }
 
   .badge-wrapper {
-    @apply flex space-x-8 mt-5 mb-4;
+    @apply flex gap-5 mt-5 mb-4;
 
     img {
       @apply m-0;
     }
+  }
+
+  .display-inherit {
+    display: inherit;
   }
 }

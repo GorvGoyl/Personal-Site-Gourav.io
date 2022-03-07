@@ -1,5 +1,12 @@
 import { usePath } from "@/hooks/customHooks";
 import Link from "next/link";
+import {
+  ChromeStars,
+  ChromeUsers,
+  ChromeVersion,
+  FirefoxUsers,
+  FirefoxVersion,
+} from "./badge";
 import { A, CopyLink, TwitterIcon } from "./tags";
 
 enum Page {
@@ -68,6 +75,24 @@ export function NavbarNotion(): JSX.Element {
     </nav>
   );
 }
+
+export const Badges = () => {
+  return (
+    <>
+      <div className="flex flex-wrap gap-3">
+        <ChromeVersion />
+
+        <ChromeUsers />
+
+        <ChromeStars />
+
+        <FirefoxVersion />
+
+        <FirefoxUsers />
+      </div>
+    </>
+  );
+};
 
 export function Title(Props: {
   txt: string;

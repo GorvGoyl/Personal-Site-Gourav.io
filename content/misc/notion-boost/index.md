@@ -39,6 +39,11 @@ import rollup_clickable from "./img/rollup_clickable.jpg";
   command menu, and more.
 </span>
 
+<Badges/>
+
+<br/>
+<br/>
+
 <NavbarNotion />
 
 ## ⬇ Download

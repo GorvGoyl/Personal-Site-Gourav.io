@@ -1,3 +1,4 @@
+import { ChromeStars, ChromeUsers } from "@/components/badge";
 import { TwitterBtn } from "@/components/blocks";
 import Header from "@/components/Header";
 import { Container } from "@/components/layout";
@@ -97,7 +98,7 @@ export default function Home(): JSX.Element {
                     <Link href="/notion-boost">
                       <a title="Notion Boost browser extension">Notion Boost</a>
                     </Link>
-                    <span className="badge-wrapper">
+                    <div className="badge-wrapper">
                       <a
                         title="source code"
                         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
@@ -106,27 +107,12 @@ export default function Home(): JSX.Element {
                         <img
                           alt="source code"
                           loading="lazy"
-                          src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
+                          src="https://flat.badgen.net/badge/code/code/555555/?icon=github&label"
                         />
                       </a>
-                      <a
-                        title="Chrome Web Store link"
-                        href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <img
-                          alt="Chrome Web Store downloads"
-                          loading="lazy"
-                          src="https://img.shields.io/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?label=downloads&style=flat-square&color=fb9836"
-                        />
-                      </a>
-                      <img
-                        alt="Chrome Web Store rating"
-                        loading="lazy"
-                        src="https://img.shields.io/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?style=flat-square&color=fb9836"
-                      />
-                    </span>
+                      <ChromeUsers />
+                      <ChromeStars />
+                    </div>
                     A popular browser extension to make Notion (
                     <em>www.notion.so</em>) more productive.
                     <br />
@@ -153,7 +139,7 @@ export default function Home(): JSX.Element {
                         <img
                           alt="source code"
                           loading="lazy"
-                          src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
+                          src="https://flat.badgen.net/badge/code/code/555555/?icon=github&label"
                         />
                       </a>
                       <a
@@ -165,14 +151,14 @@ export default function Home(): JSX.Element {
                         <img
                           alt="Visual Studio Marketplace Downloads"
                           loading="lazy"
-                          src="https://img.shields.io/visual-studio-marketplace/d/jerrygoyal.shortcut-menu-bar?style=flat-square&color=fb9836"
+                          src="https://flat.badgen.net/vs-marketplace/d/jerrygoyal.shortcut-menu-bar?color=fb9836&icon=visualstudio"
                         />
                       </a>
-                      <img
+                      {/* <img
                         alt="Visual Studio Marketplace Rating (Stars)"
                         loading="lazy"
                         src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square&color=fb9836"
-                      />
+                      /> */}
                     </span>
                     VSCode extension which adds useful buttons like beautify,
                     open files, undo, redo, etc to the editor in Visual Studio
@@ -194,7 +180,7 @@ export default function Home(): JSX.Element {
                         <img
                           alt="GitHub repo stars"
                           loading="lazy"
-                          src="https://img.shields.io/github/stars/gorvgoyl/clone-wars?style=flat-square&logo=github&color=fb9836"
+                          src="https://flat.badgen.net/github/stars/gorvgoyl/clone-wars?color=fb9836&icon=github"
                         />
                       </a>
                       <a
@@ -206,7 +192,7 @@ export default function Home(): JSX.Element {
                         <img
                           alt="GitHub forks"
                           loading="lazy"
-                          src="https://img.shields.io/github/forks/gorvgoyl/clone-wars?style=flat-square&logo=github&color=fb9836"
+                          src="https://flat.badgen.net/github/forks/gorvgoyl/clone-wars?color=fb9836&icon=github"
                         />
                       </a>
                     </span>
@@ -229,7 +215,7 @@ export default function Home(): JSX.Element {
                         <img
                           alt="source code"
                           loading="lazy"
-                          src="https://img.shields.io/static/v1?label=&message=code&logo=github&style=flat-square&color=555555"
+                          src="https://flat.badgen.net/badge/code/code/555555/?icon=github&label"
                         />
                       </a>
                     </span>
