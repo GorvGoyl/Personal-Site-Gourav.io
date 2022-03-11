@@ -275,21 +275,45 @@ git remote set-url origin new.git.url
 
 - Get all commits from `main` branch into `feature` branch i.e. sync `feature` with `main`
 
+1. start rebase
+
 ```
 git checkout feature
-git rebase main
+git rebase origin/main
 ```
 
-- continue after resolving rebase conflicts if any
+2. Resolve any merge conflicts and do `git add .`
+
+3. commit changes
+
+```
+git commmit --amend
+```
+
+4. continue after resolving merge conflicts
 
 ```
 git rebase --continue
 ```
 
-- Abort rebase
+5. Force push and done
+
+```
+git commit -f
+```
+
+To abort rebase:
 
 ```
 git rebase --abort
+```
+
+### Open file from another branch w/o switching
+
+It'll create a new `file` in your repo.
+
+```
+git show branch:path/to/file > file
 ```
 
 ### Push from one branch to another
@@ -451,12 +475,6 @@ using gui:
 ### Mac
 
 - [Fork](https://git-fork.com/)
-
-### Built-in git GUI
-
-```
-gitk
-```
 
 ### Git interactive commands
 
