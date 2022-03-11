@@ -275,28 +275,19 @@ git remote set-url origin new.git.url
 
 - Get all commits from `main` branch into `feature` branch i.e. sync `feature` with `main`
 
-1. start rebase
+1. Start rebase
 
 ```
 git checkout feature
 git rebase origin/main
 ```
 
-2. Resolve any merge conflicts and do `git add .`
+2. Resolve merge conflicts if any
 
-3. commit changes
+   1. once resolved, `git add .` and commit changes `git commmit --amend`
+   2. continue after resolving merge conflicts `git rebase --continue`
 
-```
-git commmit --amend
-```
-
-4. continue after resolving merge conflicts
-
-```
-git rebase --continue
-```
-
-5. Force push and done
+3. Force push and done
 
 ```
 git commit -f
