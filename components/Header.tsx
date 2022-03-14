@@ -12,7 +12,7 @@ export default function Header(Props: {
   imgPath?: string;
 }): JSX.Element {
   const title = Props.title || defaultProps.title;
-  const desc = Props.desc || defaultProps.desc;
+  const description = Props.desc || defaultProps.desc;
   const ogImgRelativePath = Props.imgPath || defaultProps.imgPath;
   const local = "http://localhost:3000";
   const siteURL = "https://gourav.io";
@@ -30,14 +30,14 @@ export default function Header(Props: {
     <>
       <NextSeo
         title={title}
-        description={desc}
+        description={description}
         canonical={pageURL}
         openGraph={{
           type: "website",
           locale: "en_US", //  Default is en_US
           url: pageURL,
           title,
-          description: desc,
+          description: description,
           images: [
             {
               url: ogImageURL,
@@ -61,6 +61,22 @@ export default function Header(Props: {
           {
             property: "author",
             content: defaultProps.title,
+          },
+          {
+            name: "author", // linkedin takes name instead of property
+            content: defaultProps.title,
+          },
+          {
+            name: "image", // linkedin takes name instead of property
+            content: ogImageURL,
+          },
+          {
+            name: "description", // linkedin takes name instead of property
+            content: description,
+          },
+          {
+            name: "title", // linkedin takes name instead of property
+            content: title,
           },
           // {
           //   httpEquiv: "x-ua-compatible",
