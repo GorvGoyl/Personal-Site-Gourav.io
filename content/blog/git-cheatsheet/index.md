@@ -284,16 +284,18 @@ git rebase origin/main
 
 2. Resolve merge conflicts if any
 
-   1. once resolved, `git add .` and commit changes `git commmit --amend`
-   2. continue after resolving merge conflicts `git rebase --continue`
+   1. _accept current changes_ instead of _incoming changes_.
+   2. once resolved, run `git add .`
+   3. continue after resolving merge conflicts `git rebase --continue`
+   4. Repeat same steps untill no more merge conflicts
 
 3. Force push and done
 
 ```
-git commit -f
+git push -f
 ```
 
-To abort rebase:
+To abort rebase at anytime (like during conflicts):
 
 ```
 git rebase --abort
