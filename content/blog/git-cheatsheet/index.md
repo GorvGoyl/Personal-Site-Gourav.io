@@ -271,7 +271,36 @@ git remote set-url origin new.git.url
 
 ## Work between branches
 
-### get latest from other branch - rebase
+### get latest from master branch
+
+Tip: `merge` is easier than `rebase` if there are multiple commits and conflicts. [stackoverflow explanation](https://stackoverflow.com/a/11219380/3073272)
+
+#### merge
+
+1. make local `main` branch upto date with origin/upstream
+
+```
+git checkout main
+git pull
+git checkout feature
+```
+
+2. merge
+
+```
+git merge main
+git commit -m 'merge'
+```
+
+3. resolve conflicts if any. accept _incoming changes_ instead of _current changes_.
+
+4. abort merge
+
+```
+git merge --abort
+```
+
+#### rebase
 
 - Get all commits from `main` branch into `feature` branch i.e. sync `feature` with `main`
 
@@ -284,7 +313,7 @@ git rebase origin/main
 
 2. Resolve merge conflicts if any
 
-   1. _accept current changes_ instead of _incoming changes_.
+   1. accept _current changes_ instead of _incoming changes_.
    2. once resolved, run `git add .`
    3. continue after resolving merge conflicts `git rebase --continue`
    4. Repeat same steps untill no more merge conflicts
@@ -300,6 +329,10 @@ To abort rebase at anytime (like during conflicts):
 ```
 git rebase --abort
 ```
+
+#### pull
+
+`git pull` is the combination of `git fetch` + `git merge`
 
 ### Open file from another branch w/o switching
 
