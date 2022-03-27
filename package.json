@@ -25,9 +25,6 @@
     "stylelint": "npx stylelint '**/*.{css,scss,sass}'",
     "//lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss,.mdx"
   },
-  "engines": {
-    "node": "14"
-  },
   "dependencies": {
     "@google-analytics/data": "^2.8.0",
     "@jsdevtools/rehype-toc": "^3.0.2",
