@@ -37,7 +37,7 @@ export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
   }, [props.allPosts]);
   return (
     <>
-      <Header title="Blog - Gourav Goyal" />
+      <Header type="website" title="Blog - Gourav Goyal" />
 
       <Container layout={LayoutType.Blog}>
         <Navbar />
