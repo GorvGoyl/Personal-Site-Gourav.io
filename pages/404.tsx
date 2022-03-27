@@ -7,7 +7,7 @@ import React from "react";
 export default function Blog(): JSX.Element {
   return (
     <>
-      <Header title="Gourav Goyal - Page not found" />
+      <Header type="article" title="Gourav Goyal - Page not found" />
 
       <Container layout={LayoutType.Blog}>
         <Navbar link={Links.Blog} />
