@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function Home(): JSX.Element {
   return (
     <div>
-      <Header />
+      <Header type="website" />
       <Container>
         <div>
           <div className="flex items-center mb-10">

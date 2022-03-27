@@ -6,14 +6,15 @@ const defaultProps = {
   desc: "I'm a tech founder, digital nomad, and a fun guy to hang around with. I like to build things that others find helpful.",
   imgPath: "/og.png",
 };
-export default function Header(Props: {
+export default function Header(props: {
+  type: "website" | "article";
   title?: string;
   desc?: string;
   imgPath?: string;
 }): JSX.Element {
-  const title = Props.title || defaultProps.title;
-  const description = Props.desc || defaultProps.desc;
-  const ogImgRelativePath = Props.imgPath || defaultProps.imgPath;
+  const title = props.title || defaultProps.title;
+  const description = props.desc || defaultProps.desc;
+  const ogImgRelativePath = props.imgPath || defaultProps.imgPath;
   const local = "http://localhost:3000";
   const siteURL = "https://gourav.io";
   // const siteURL = isProd ? "https://gourav.io" : local;
@@ -33,11 +34,11 @@ export default function Header(Props: {
         description={description}
         canonical={pageURL}
         openGraph={{
-          type: "website",
+          type: props.type,
           locale: "en_US", //  Default is en_US
           url: pageURL,
           title,
-          description: description,
+          description,
           images: [
             {
               url: ogImageURL,
@@ -53,36 +54,43 @@ export default function Header(Props: {
           site: twitterHandle,
           cardType: "summary_large_image",
         }}
-        additionalMetaTags={[
-          {
-            property: "monetization",
-            content: "$ilp.uphold.com/QaUmZpmzmDzA",
-          },
-          {
-            property: "author",
-            content: defaultProps.title,
-          },
-          {
-            name: "author", // linkedin takes name instead of property
-            content: defaultProps.title,
-          },
-          {
-            name: "image", // linkedin takes name instead of property
-            content: ogImageURL,
-          },
-          {
-            name: "description", // linkedin takes name instead of property
-            content: description,
-          },
-          {
-            name: "title", // linkedin takes name instead of property
-            content: title,
-          },
-          // {
-          //   httpEquiv: "x-ua-compatible",
-          //   content: "IE=edge; chrome=1",
-          // },
-        ]}
+        additionalMetaTags={
+          [
+            // linkedin takes both name and property
+            {
+              name: "title",
+              property: "og:title",
+              content: title,
+            },
+            {
+              name: "image",
+              property: "og:image",
+              content: ogImageURL,
+            },
+            {
+              name: "description",
+              property: "og:description",
+              content: description,
+            },
+            {
+              property: "monetization",
+              content: "$ilp.uphold.com/QaUmZpmzmDzA",
+            },
+            {
+              property: "author",
+              content: defaultProps.title,
+            },
+            {
+              name: "author", // linkedin takes name instead of property
+              content: defaultProps.title,
+            },
+
+            // {
+            //   httpEquiv: "x-ua-compatible",
+            //   content: "IE=edge; chrome=1",
+            // },
+          ] as any
+        }
         additionalLinkTags={[
           {
             rel: "icon",

@@ -22,6 +22,7 @@ export default function Project(props: { matter: any; source: string }) {
   return (
     <>
       <Header
+        type="website"
         title={props.matter.title}
         desc={props.matter.desc}
         imgPath={props.matter.ogURL}

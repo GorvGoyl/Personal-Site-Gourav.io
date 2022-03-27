@@ -48,6 +48,7 @@ export default function Post(props: {
   return (
     <>
       <Header
+        type="article"
         title={props.matter.title}
         desc={props.matter.desc}
         imgPath={props.matter.ogURL}
