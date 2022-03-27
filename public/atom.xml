@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gourav.io</id>
     <title>Gourav Goyal</title>
-    <updated>2021-11-11T12:58:43.008Z</updated>
+    <updated>2022-03-27T11:42:20.569Z</updated>
     <generator>Feed for https://gourav.io</generator>
     <author>
         <name>Gourav Goyal</name>
@@ -14,7 +14,14 @@
     <subtitle>Blog - Gourav Goyal</subtitle>
     <logo>https://gourav.io/favicon-32x32.png</logo>
     <icon>https://gourav.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gourav Goyal</rights>
+    <rights>All rights reserved 2022, Gourav Goyal</rights>
+    <entry>
+        <title type="html"><![CDATA[Top AutoHotkey scripts to use Windows like a pro]]></title>
+        <id>Top AutoHotkey scripts to use Windows like a pro</id>
+        <link href="https://gourav.io/blog/autohotkey-scripts-windows"/>
+        <updated>2022-01-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[I received first-ever donation on my open-source side project and it felt great!]]></title>
         <id>I received first-ever donation on my open-source side project and it felt great!</id>
@@ -44,10 +51,24 @@
         <summary type="html"><![CDATA[Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Power up your PowerShell with customizations and handy custom commands]]></title>
+        <id>Power up your PowerShell with customizations and handy custom commands</id>
+        <link href="https://gourav.io/blog/powershell"/>
+        <updated>2022-02-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Setup PowerShell to add many useful custom commands, show git repo status, autocomplete commands, and more.]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
         <id>Setup VSCode to run and debug C / C++ code</id>
         <link href="https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code"/>
         <updated>2020-12-04T18:30:00.000Z</updated>
         <summary type="html"><![CDATA[By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Megalist of free & open-source apps I use on Windows]]></title>
+        <id>Megalist of free &amp; open-source apps I use on Windows</id>
+        <link href="https://gourav.io/blog/windows-free-apps"/>
+        <updated>2022-01-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[description: List of my favorite free and open-source tools for Windows that made me more efficient and productive]]></summary>
     </entry>
 </feed>

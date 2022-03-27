@@ -63,7 +63,7 @@ function generateRSS() {
     // don't add posts to rss feed: preview posts, posts that starts with _folder
     postSlugs.forEach((slug) => {
       try {
-        if (slug.startsWith("_")) {
+        if (slug.startsWith("_") || slug.startsWith(".")) {
           return;
         }
         const file = join(process.cwd(), "content", "blog", slug, "index.md");
@@ -71,6 +71,7 @@ function generateRSS() {
           return;
         }
         const content = readFileSync(file);
+
         const frontmatter = matter(content);
 
         if (frontmatter.data.preview === true) {
