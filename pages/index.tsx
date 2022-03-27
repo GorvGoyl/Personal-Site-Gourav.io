@@ -102,7 +102,7 @@ export default function Home(): JSX.Element {
                     <Link href="/notion-boost">
                       <a title="Notion Boost browser extension">Notion Boost</a>
                     </Link>
-                    <div className="badge-wrapper">
+                    <span className="badge-wrapper">
                       <a
                         title="source code"
                         href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
@@ -116,7 +116,7 @@ export default function Home(): JSX.Element {
                       </a>
                       <ChromeUsers />
                       <ChromeStars />
-                    </div>
+                    </span>
                     A popular browser extension to make Notion (
                     <em>www.notion.so</em>) more productive.
                     <br />
