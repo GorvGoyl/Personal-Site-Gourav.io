@@ -32,7 +32,7 @@ export default function Header(props: {
       <NextSeo
         title={title}
         // description={description}
-        canonical={pageURL}
+        // canonical={pageURL}
         openGraph={{
           type: props.type,
           locale: "en_US", //  Default is en_US
@@ -84,10 +84,10 @@ export default function Header(props: {
               name: "author", // linkedin takes name instead of property
               content: defaultProps.title,
             },
-            {
-              property: "og:url",
-              content: pageURL,
-            },
+            // {
+            //   property: "og:url",
+            //   content: pageURL,
+            // },
 
             // {
             //   httpEquiv: "x-ua-compatible",
