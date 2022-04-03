@@ -590,6 +590,16 @@ fetch the latest history from the remote and point your local master branch at i
 git fetch origin git reset --hard origin/main (main is the branch name)
 ```
 
+### Reset local branch to it's remote
+
+- sync local branch `main` with remote branch `main`
+
+```
+git checkout main
+git reset --hard origin/main
+git pull origin main
+```
+
 ### Reset `dev` branch to `main`
 
 ```
