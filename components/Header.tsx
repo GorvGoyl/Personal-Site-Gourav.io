@@ -51,6 +51,7 @@ export default function Header(props: {
       {date && <meta property="article:published_time" content={date} />}
       <meta property="monetization" content="$ilp.uphold.com/QaUmZpmzmDzA" />
       <meta property="author" content={authorName} />
+      <meta name="author" content={authorName} />
       <link rel="icon" href={`${domain}/favicon.ico`} />
     </Head>
   );
