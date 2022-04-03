@@ -54,47 +54,47 @@ export default function Header(props: {
           site: twitterHandle,
           cardType: "summary_large_image",
         }}
-        additionalMetaTags={
-          [
-            // linkedin takes both name and property
-            {
-              name: "title",
-              property: "og:title",
-              content: title,
-            },
-            {
-              name: "image",
-              property: "og:image",
-              content: ogImageURL,
-            },
-            {
-              name: "description",
-              property: "og:description",
-              content: description,
-            },
-            {
-              property: "monetization",
-              content: "$ilp.uphold.com/QaUmZpmzmDzA",
-            },
-            {
-              property: "author",
-              content: defaultProps.title,
-            },
-            {
-              name: "author", // linkedin takes name instead of property
-              content: defaultProps.title,
-            },
-            // {
-            //   property: "og:url",
-            //   content: pageURL,
-            // },
+        // additionalMetaTags={
+        //   [
+        //     // linkedin takes both name and property
+        //     {
+        //       name: "title",
+        //       property: "og:title",
+        //       content: title,
+        //     },
+        //     {
+        //       name: "image",
+        //       property: "og:image",
+        //       content: ogImageURL,
+        //     },
+        //     {
+        //       name: "description",
+        //       property: "og:description",
+        //       content: description,
+        //     },
+        //     {
+        //       property: "monetization",
+        //       content: "$ilp.uphold.com/QaUmZpmzmDzA",
+        //     },
+        //     {
+        //       property: "author",
+        //       content: defaultProps.title,
+        //     },
+        //     {
+        //       name: "author", // linkedin takes name instead of property
+        //       content: defaultProps.title,
+        //     },
+        //     // {
+        //     //   property: "og:url",
+        //     //   content: pageURL,
+        //     // },
 
-            // {
-            //   httpEquiv: "x-ua-compatible",
-            //   content: "IE=edge; chrome=1",
-            // },
-          ] as any
-        }
+        //     // {
+        //     //   httpEquiv: "x-ua-compatible",
+        //     //   content: "IE=edge; chrome=1",
+        //     // },
+        //   ] as any
+        // }
         additionalLinkTags={[
           {
             rel: "icon",
