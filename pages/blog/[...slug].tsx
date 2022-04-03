@@ -52,6 +52,11 @@ export default function Post(props: {
         title={props.matter.title}
         desc={props.matter.desc}
         imgPath={props.matter.ogURL}
+        date={
+          props.matter.date
+            ? new Date(props.matter.date).toISOString()
+            : undefined
+        }
       />
 
       <Container layout={LayoutType.Blog}>
