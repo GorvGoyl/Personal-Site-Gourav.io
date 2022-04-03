@@ -2,7 +2,7 @@ import { usePath } from "@/hooks/customHooks";
 import Head from "next/head";
 
 const defaultProps = {
-  title: "Gourav Goyal",
+  title: "Gourav Goyal - Personal site and blog",
   desc: "Personal site and blog of a tech guy",
   imgPath: "/og.png",
 };
