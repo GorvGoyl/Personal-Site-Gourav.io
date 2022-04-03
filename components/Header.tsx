@@ -32,7 +32,7 @@ export default function Header(props: {
       <NextSeo
         title={title}
         // description={description}
-        canonical={pageURL}
+        // canonical={pageURL}
         openGraph={{
           type: props.type,
           locale: "en_US", //  Default is en_US
