@@ -243,7 +243,7 @@ export default function Home(): JSX.Element {
                     leaving current tab.
                   </p>
                 </li>
-                <li>
+                {/* <li>
                   <p>
                     <a
                       href="https://jerrygoyal-firebase-project.web.app/"
@@ -257,7 +257,7 @@ export default function Home(): JSX.Element {
                     My old portfolio site built around material guidelines &
                     responsiveness without using any css framework or library.
                   </p>
-                </li>
+                </li> */}
               </ul>
             </div>
             <SubscribeForm type={FORMTYPE.Generic} />
