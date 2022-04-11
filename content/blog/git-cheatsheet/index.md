@@ -348,18 +348,43 @@ git show branch:path/to/file > file
 git push origin from_branch:to_branch
 ```
 
+### Git stash - locally store changes without commit
+
+- it locally stores changes and resets any modified files
+
+```
+git stash -u (-u means --include-untracked)
+```
+
+tip: Give stash a name so that it's easier to recall later in case of multiple stashes:
+
+```
+git stash push -m "my_stash"
+```
+
+- see list of all stashes
+
+```
+git stash list
+```
+
+- retrieve locally stored changes from stash
+
+  - retrieve last stash and remove it from stash list. You won't be able to retrieve it again.
+    `git stash pop`
+  - retrieve last stash but keep it in the stash list. You can retrieve it again later.
+    `git stash apply`
+
+- retrieve a particular stash but also keep it in the stash list:
+  1. find stash index name from `git stash list`
+  2. use that index name: `git stash apply stash@{n}`
+
 ### Git pull without committing local changes
 
 - hide your local uncommitted changes temporarily
 
 ```
 git stash -u (-u means --include-untracked)
-```
-
-- show all stashes
-
-```
-git stash list
 ```
 
 - get latest changes
@@ -369,26 +394,18 @@ git pull
 ```
 
 - now unhide your local uncommitted changes
-  (`pop` will restore only latest stash)
-  `git stash pop` or `git stash apply`
 
-`git stash pop` restore changes and also removes it from stack, `git stash apply` restores it but still keeps it on stack for possible later reuse (or you can then `git stash drop` it). So `git stash pop` is `git stash apply` && `git stash drop`
+```
+git stash pop
+```
 
 ### move uncommitted changes to another branch
 
-1. uncommitted changes do not belong to any branch so just switch branch
+uncommitted changes do not belong to any branch so just create/switch branch:
 
 ```
 git checkout -b <new-branch>
 ```
-
-2. Push this branch to remote
-
-```
-git push --set-upstream origin new-branch
-```
-
-3. Commit these changes or stash them to later pick it up
 
 ### Save uncommitted changes and switch branch
 
@@ -412,19 +429,21 @@ git checkout A
 git stash apply (will recover changes from last stack)
 ```
 
-- To see all stashes
-  `git stash list`
-
 ### clone uncommitted changes to new branch
 
 1. save uncommitted changes to stack for current branch stack
 
 ```
 git stash -u (-u means --include-untracked)
-git stash apply (will recover changes from last stack)
 ```
 
-2. carry these changes to `new_branch` and do your work
+2. restore these changes back (a copy of these changes is still stored in stash list)
+
+```
+git stash apply
+```
+
+1. create/switch to different branch and these uncommitted changes will be carried:
 
 ```
 git checkout -b new_branch
@@ -436,9 +455,6 @@ git checkout -b new_branch
 git checkout A
 git stash apply
 ```
-
-- To see all stashes
-  `git stash list`
 
 ### Copy specific commit from one branch to another
 
