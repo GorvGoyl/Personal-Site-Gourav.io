@@ -456,6 +456,14 @@ git checkout A
 git stash apply
 ```
 
+### checkout a specific commit
+
+get commit_sha1 from `git log`
+
+```
+git checkout <commit_sha1>
+```
+
 ### Copy specific commit from one branch to another
 
 Ex: copy one commit from `dev` to `main`
