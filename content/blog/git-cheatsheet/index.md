@@ -158,6 +158,27 @@ git pull origin main (pull latest changes from remote main branch into local dev
 4. `git commit -am "Remove ignored files"`
 5. `git push`
 
+## compare file/line revision | see line/file history
+
+- to see who and when made a change to a specific line in a file:
+
+### using VSCode extension
+
+1. install [GitLens VSCode extension](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+2. go to line, and hover over gitlens gray text
+3. click on icon that says: "open blame prior to this change"
+4. you can keep repeating it to see throughout the history of line/file.
+
+Tip: If you don't always want to see blame info at cursor location, you can switch it off via VSCode command pallete: "Gitlens: Toggle Line Blame"
+
+### using git blame command
+
+- https://stackoverflow.com/a/49144664/3073272
+
+### using git bisect command
+
+- https://stackoverflow.com/a/37306623/3073272
+
 ## PR / Review
 
 ### create PR inside VSCode
