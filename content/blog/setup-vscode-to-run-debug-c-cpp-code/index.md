@@ -118,7 +118,7 @@ Notice that I’ve added one more optional configuration `g++ build & run active
       ],
       "preLaunchTask": "g++ build & run active file"
     }
-}
+} // there
 ```
 
 ### tasks.json
