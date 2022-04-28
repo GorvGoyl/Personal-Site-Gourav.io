@@ -157,7 +157,7 @@ Notice that I’ve added one more optional configuration `g++ build & run active
   "version":
 }
 ```
-
+here
 > `externalConsole` in `launch.json` can be set to true to see code output in cmd instead.
 
 **Restart VSCode** to take effects of newly added compiler paths.
