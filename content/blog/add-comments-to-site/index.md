@@ -39,7 +39,7 @@ Comments added to the post are mirrored in the Github discussions:
 
 # Implementation
 
-- Make sure the repository is public
+- Make sure your site repository is public or create an empty new repository just for storing comments.
 - Make sure [Discussions feature](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository) is turned on for your repository.
 
 1.  Install Giscus app on Github: https://github.com/apps/giscus
