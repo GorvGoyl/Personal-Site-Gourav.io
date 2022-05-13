@@ -55,7 +55,7 @@ export function Video(props: {
     <video
       src={props.src}
       className={cls}
-      controls={false}
+      controls={props.disableZoom === true}
       autoPlay={true}
       muted={true}
       loop={true}
