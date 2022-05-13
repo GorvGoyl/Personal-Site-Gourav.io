@@ -3,7 +3,9 @@ title: "My simple Github project went Viral"
 desc: "I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section"
 date: "2021-04-12"
 toc: true
-comments: true
+hackernews: https://news.ycombinator.com/item?id=26804555
+reddit: https://www.reddit.com/r/webdev/comments/mqa14k/my_simple_github_project_went_viral_thank_you/
+twitter: https://twitter.com/GorvGoyl/status/1382265020680085509
 ---
 
 import { TweetEmbed } from "@/components/twitterEmbed.tsx";

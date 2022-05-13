@@ -4,7 +4,8 @@ desc: "Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator,
 date: "2022-01-18"
 toc: true
 mobileToc: true
-comments: true
+twitter: https://twitter.com/search?q=https%3A%2F%2Fgourav.io%2Fblog%2Fautohotkey-scripts-windows
+github: https://github.com/GorvGoyl/Personal-Site-Gourav.io/discussions/29
 ---
 
 import MoveInactiveWinScreen from "./MoveInactiveWinScreen.gif";

@@ -4,7 +4,6 @@ desc: "Add free privacy-friendly comment-box to any site in 5 minutes (powered b
 date: "2022-05-13"
 toc: true
 mobileToc: true
-comments: true
 ---
 
 import giscus_demo from "./giscus_demo.mp4";

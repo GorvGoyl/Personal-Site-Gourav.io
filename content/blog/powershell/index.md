@@ -4,7 +4,6 @@ desc: "Setup PowerShell to add many useful custom commands, show git repo status
 date: "2022-02-12"
 toc: true
 mobileToc: true
-comments: true
 ---
 
 import powershell_autocomplet_commands from "./powershell_autocomplet_commands.gif";
@@ -284,5 +283,3 @@ RawContent        : HTTP/1.1 200 OK
 
 - Profiles: [https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles)
 - Keybindings: [https://docs.microsoft.com/en-gb/previous-versions/powershell/module/psreadline/Get-PSReadLineKeyHandler](https://docs.microsoft.com/en-gb/previous-versions/powershell/module/psreadline/Get-PSReadLineKeyHandler)
-
--

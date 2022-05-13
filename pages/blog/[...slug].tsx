@@ -24,10 +24,13 @@ export default function Post(props: {
   slug: string;
 }) {
   const [slugViews, setSlugViews] = useState("");
+  const [slugPath, setSlugPath] = useState("");
   useEffect(() => {
     if (props.slug) {
       // add relative path to slug: /blog/nextjs-cheatsheet
-      const slugPath = `${RELATIVE_PATH}${props.slug}`;
+      setSlugPath(`${RELATIVE_PATH}${props.slug}`);
+      console.log(slugPath);
+
       getSlugViews([slugPath])
         .then((res) => {
           if (res.data[slugPath]) {
@@ -44,6 +47,11 @@ export default function Post(props: {
   }, [props.slug]);
 
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
+
+  console.log(slugPath);
+
+  const articleEditLink = `https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/${slugPath}/index.md`;
+  console.log("🚀 ~ articleEditLink", articleEditLink);
 
   return (
     <>
@@ -70,15 +78,10 @@ export default function Post(props: {
             </header>
             <Author date={props.matter.date} views={slugViews} />
             <MDX components={MDXComponents as any} />
-            <blockquote className="mt-14 font-normal">
-              <p>
-                Thanks for reading. Would love to hear your thoughts about it.
-                Connect with me on{" "}
-                <a href="https://twitter.com/GorvGoyl">Twitter</a>.
-                {/* and{" "}
-                <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>. */}
-              </p>
-            </blockquote>
+            <hr />
+
+            <DiscussArticle matter={props.matter} />
+            <EditArticle articleEditLink={articleEditLink} />
           </article>
           <ShareComponent />
           <SubscribeForm type={FORMTYPE.AfterArticle} />
@@ -95,7 +98,6 @@ export default function Post(props: {
             </a>
           </Link>
         </div>
-        {props.matter.comments && <Comments></Comments>}
       </Container>
     </>
   );
@@ -145,4 +147,68 @@ export const getStaticPaths: GetStaticPaths = () => {
     paths,
     fallback: false,
   };
+};
+
+const DiscussArticle = (props: { matter: FrontMatter }) => {
+  const Link = (props: { link: string; text: string }) => {
+    return (
+      <a className="inline-block my-0" target="_blank" href={props.link}>
+        <ul className="my-0">
+          <li className="mr-5">
+            <i>{props.text}</i>
+          </li>
+        </ul>
+      </a>
+    );
+  };
+
+  return (
+    <div>
+      {props.matter.twitter && (
+        <Link link={props.matter.twitter} text="Discuss on Twitter" />
+      )}
+      {props.matter.linkedin && (
+        <Link link={props.matter.linkedin} text="Discuss on LinkedIn" />
+      )}
+      {props.matter.hackernews && (
+        <Link link={props.matter.hackernews} text="Discuss on Hacker News" />
+      )}
+      {props.matter.reddit && (
+        <Link link={props.matter.reddit} text="Discuss on Reddit" />
+      )}
+      {props.matter.github && (
+        <Link link={props.matter.github} text="Discuss on Github" />
+      )}
+    </div>
+  );
+};
+
+const EditArticle = (props: { articleEditLink: string }) => {
+  return (
+    <a
+      title="Edit this post on Github"
+      className="inline-block"
+      target="_blank"
+      href={props.articleEditLink}
+    >
+      <ul>
+        <li>
+          <i>Improve this article</i>
+        </li>
+      </ul>
+    </a>
+  );
+};
+
+const ConnectOnTwitter = () => {
+  return (
+    <blockquote className="mt-14 font-normal">
+      <p>
+        Thanks for reading. Would love to hear your thoughts about it. Connect
+        with me on <a href="https://twitter.com/GorvGoyl">Twitter</a>.
+        {/* and{" "}
+    <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>. */}
+      </p>
+    </blockquote>
+  );
 };

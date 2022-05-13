@@ -2,7 +2,7 @@
 title: "I received first-ever donation on my open-source side project and it felt great!"
 desc: "I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc."
 date: "2020-12-11"
-comments: true
+hackernews: https://news.ycombinator.com/item?id=25744661
 ---
 
 import img1 from "./1.png";

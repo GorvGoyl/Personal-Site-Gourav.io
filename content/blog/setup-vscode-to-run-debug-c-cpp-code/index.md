@@ -3,7 +3,7 @@ title: "Setup VSCode to run and debug C / C++ code"
 desc: "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode"
 date: "2020-12-5"
 toc: true
-comments: true
+github: https://github.com/GorvGoyl/Personal-Site-Gourav.io/discussions/35
 ---
 
 import img1 from "./1.png";
@@ -119,7 +119,7 @@ Notice that I’ve added one more optional configuration `g++ build & run active
       "preLaunchTask": "g++ build & run active file"
     }
     ]
-} 
+}
 ```
 
 ### tasks.json
@@ -177,6 +177,4 @@ Open any C/C++ file, set some breakpoints (or not), and hit the Big Green Play B
  }
 ```
 
-## Collaborate
-
-👋 If you'd like to collaborate on this post, please [edit here and submit your changes](https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/blog/setup-vscode-to-run-debug-c-cpp-code/index.md).
+That's all!

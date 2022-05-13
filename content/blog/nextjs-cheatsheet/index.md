@@ -4,7 +4,8 @@ desc: "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, a
 date: "2021-10-11"
 toc: true
 mobileToc: true
-comments: true
+github: https://github.com/GorvGoyl/Personal-Site-Gourav.io/discussions/36
+twitter: https://twitter.com/search?q=https%3A%2F%2Fgourav.io%2Fblog%2Fnextjs-cheatsheet
 ---
 
 I've been working on multiple Next.js (React framework) projects for some time. Whenever I need to set up a new Next.js project, I follow common steps like adding ESLint with Typescript support, debugging, SEO, Tailwind, SCSS support, Sitemap, etc. So, I made this cheatsheet containing all common steps one would probably need to build a Next.js prod web app.
@@ -90,7 +91,7 @@ Also, there's a [separate guide](https://nextjs.org/docs/advanced-features/debug
 
 1. Run: `npm run dev`
 
-2. Find your desktop IPv4 address. (For Windows: `ipconfig /all`)
+2. Find your desktop IPv4 address. (For Windows: `ipconfig /all`, on Mac: `ipconfig getifaddr en0`)
 
 3. Open site in mobile: http://laptop_IPv4_address:3000 (replace `laptop_IPv4_address` with actual IPv4 address)
 

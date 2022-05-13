@@ -4,7 +4,6 @@ desc: "description: List of my favorite free and open-source tools for Windows t
 date: "2022-01-28"
 toc: true
 mobileToc: true
-comments: true
 ---
 
 import ditto_clipboard_manager from "./ditto_clipboard_manager.gif";

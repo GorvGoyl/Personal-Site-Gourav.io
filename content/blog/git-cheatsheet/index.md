@@ -4,7 +4,8 @@ desc: "Useful git commands for beginners like reverting commits, work between br
 date: "2021-10-28"
 toc: true
 mobileToc: true
-comments: true
+twitter: https://twitter.com/search?q=https%3A%2F%2Fgourav.io%2Fblog%2Fgit-cheatsheet
+github: https://github.com/GorvGoyl/Personal-Site-Gourav.io/discussions/37
 ---
 
 When I collaborate with others using Git, I often have to google to find the right git commands for various situations.
