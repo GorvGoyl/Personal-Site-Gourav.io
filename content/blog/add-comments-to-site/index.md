@@ -103,4 +103,4 @@ Comments added to the post are mirrored in the Github discussions:
 
     Alternatively, you can use [giscus-component package](https://github.com/giscus/giscus-component) for React, Vue, or Svelte sites.
 
-That's all!
+That's all, folks!!
