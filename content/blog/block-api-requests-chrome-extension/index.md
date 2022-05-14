@@ -257,4 +257,4 @@ Few notes:
 - You can at max create 30,000 such static rules ([reference](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#property-GUARANTEED_MINIMUM_STATIC_RULES)).
 - There's also a global quota of static rules shared between all extensions and can be used by extensions on a first-come, first-served basis. Global quota is not yet documented, but it's rumored to be around ~150,000 rules.
 
-That's all, folks!!
+That's all, folks!

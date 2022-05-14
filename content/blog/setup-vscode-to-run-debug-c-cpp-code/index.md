@@ -177,4 +177,4 @@ Open any C/C++ file, set some breakpoints (or not), and hit the Big Green Play B
  }
 ```
 
-That's all, folks!!
+That's all, folks!
