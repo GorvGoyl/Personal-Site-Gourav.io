@@ -267,7 +267,7 @@ Adding `declarativeNetRequest` in Manifest file will show a warning to users whe
 
 <Img src={popup_warning} type="ss" caption="popup warning due to declarativeNetRequest permission" />
 
-Not all permissions show a warning popup to users. See [list of permissions](https://developer.chrome.com/docs/extensions/mv2/permission_warnings/#permissions_with_warnings) that show warning.
+Not all permissions show warnings to users. See [list of permissions](https://developer.chrome.com/docs/extensions/mv2/permission_warnings/#permissions_with_warnings) that show warning.
 
 You can test which warnings are shown when developing the extension by following this guide: https://developer.chrome.com/docs/extensions/mv2/permission_warnings/#view_warnings
 
