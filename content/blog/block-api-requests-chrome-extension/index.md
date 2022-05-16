@@ -6,6 +6,9 @@ toc: true
 mobileToc: true
 ---
 
+import popup_warning from "./popup_warning.png";
+import host_permission from "./host_permission.png";
+
 You can conditionally block specific API requests using a chrome extension. I'll be using new chrome extension API [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest) instead of deprecated [webRequest](https://developer.chrome.com/docs/extensions/reference/webRequest/).
 
 ## `declarativeNetRequest` vs `webRequest`
@@ -257,3 +260,24 @@ Few notes:
 
 - You can at max create 30,000 such static rules ([reference](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#property-GUARANTEED_MINIMUM_STATIC_RULES)).
 - There's also a global quota of static rules shared between all extensions and can be used by extensions on a first-come, first-served basis. Global quota is not yet documented, but it's rumored to be around ~150,000 rules.
+
+## Popup warnings
+
+Adding `declarativeNetRequest` in Manifest file will show a warning to users when installing the extension: "Block content on any page"
+
+<Img src={popup_warning} type="ss" caption="popup warning due to declarativeNetRequest permission" />
+
+Not all permissions show a warning popup to users. See [list of permissions](https://developer.chrome.com/docs/extensions/mv2/permission_warnings/#permissions_with_warnings) that show warning.
+
+You can test which warnings are shown when developing the extension by following this guide: https://developer.chrome.com/docs/extensions/mv2/permission_warnings/#view_warnings
+
+## declarativeNetRequestWithHostAccess
+
+`declarativeNetRequestWithHostAccess` is a similar alternative to `declarativeNetRequest` (means you just need to replace it in manifest and rest of the code remains same) and it does not show any popup warnings!
+
+what's the catch you ask?
+
+- It's available on Chrome v96 and above versions.
+- Inconsistent support for MV2, [docs](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#:~:text=declarativeNetRequestWithHostAccess%20permission%20always%20requires%20host%20permissions) say `declarativeNetRequestWithHostAccess` permission always requires host permissions but `host_permissions` key is not available in manifest v2.
+
+<Img src={host_permission} type="ss" caption="" />

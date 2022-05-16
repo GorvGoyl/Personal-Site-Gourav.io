@@ -213,7 +213,7 @@ const ConnectOnTwitter = () => {
 
 const ThatsAll = () => {
   return (
-    <>
+    <div>
       <i> That's all, folks!</i>
       {/* <img
         className="mx-auto"
@@ -221,6 +221,6 @@ const ThatsAll = () => {
         loading="lazy"
         src="../thats_all_folks.gif"
       /> */}
-    </>
+    </div>
   );
 };
