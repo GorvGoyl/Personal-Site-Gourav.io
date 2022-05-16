@@ -198,60 +198,6 @@ It means all the APIs and their rules must be defined beforehand in a `rules.jso
       "regexFilter": "^https://www\\.(abc|def)\\.xyz\\.com/",
       "resourceTypes": ["main_frame"]
     }
-  },
-  {
-    "id": 8,
-    "priority": 2,
-    "action": {
-      "type": "allowAllRequests"
-    },
-    "condition": {
-      "urlFilter": "||b.com/path",
-      "resourceTypes": ["sub_frame"]
-    }
-  },
-  {
-    "id": 9,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "script.js",
-      "resourceTypes": ["script"]
-    }
-  },
-  {
-    "id": 10,
-    "priority": 2,
-    "action": {
-      "type": "modifyHeaders",
-      "responseHeaders": [
-        { "header": "h1", "operation": "remove" },
-        { "header": "h2", "operation": "set", "value": "v2" },
-        { "header": "h3", "operation": "append", "value": "v3" }
-      ]
-    },
-    "condition": {
-      "urlFilter": "headers.com/123",
-      "resourceTypes": ["main_frame"]
-    }
-  },
-  {
-    "id": 11,
-    "priority": 1,
-    "action": {
-      "type": "modifyHeaders",
-      "responseHeaders": [
-        { "header": "h1", "operation": "set", "value": "v4" },
-        { "header": "h2", "operation": "append", "value": "v5" },
-        { "header": "h3", "operation": "append", "value": "v6" }
-      ]
-    },
-    "condition": {
-      "urlFilter": "headers.com/12345",
-      "resourceTypes": ["main_frame"]
-    }
   }
 ]
 ```
