@@ -92,6 +92,7 @@ Few notes:
 - These rules are persisted across browser sessions and extension updates.
 - You can perform other actions as well like modifying api header, redirecting URL, etc. see [docs](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#matching-algorithm).
 - pattern matching is also supported for `urlFilter`. see [docs](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#:~:text=session%2Dscoped%20rules.-,urlFilter,-string%C2%A0optional).
+- To block WebSockets, mention url with `wss://` protocol ex: `urlFilter: "wss://augloop.office.com"`
 
 ## Statically block URLs
 
@@ -256,5 +257,3 @@ Few notes:
 
 - You can at max create 30,000 such static rules ([reference](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#property-GUARANTEED_MINIMUM_STATIC_RULES)).
 - There's also a global quota of static rules shared between all extensions and can be used by extensions on a first-come, first-served basis. Global quota is not yet documented, but it's rumored to be around ~150,000 rules.
-
-That's all, folks!

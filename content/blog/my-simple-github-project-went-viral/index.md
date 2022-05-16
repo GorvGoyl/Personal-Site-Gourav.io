@@ -4,7 +4,6 @@ desc: "I made a simple project which got spread in various tech communities and 
 date: "2021-04-12"
 toc: true
 hackernews: https://news.ycombinator.com/item?id=26804555
-reddit: https://www.reddit.com/r/webdev/comments/mqa14k/my_simple_github_project_went_viral_thank_you/
 twitter: https://twitter.com/GorvGoyl/status/1382265020680085509
 ---
 

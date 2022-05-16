@@ -1,9 +1,8 @@
-import { Comments } from "@/components/commentBox";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import MDXComponents from "@/components/mdxComponents";
 import { Links, Navbar } from "@/components/navbar";
-import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
+
 import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
 import { getMdPostSlugs } from "@/lib/getPost";
@@ -78,13 +77,14 @@ export default function Post(props: {
             </header>
             <Author date={props.matter.date} views={slugViews} />
             <MDX components={MDXComponents as any} />
-            <hr />
+
+            <ThatsAll />
 
             <DiscussArticle matter={props.matter} />
             <EditArticle articleEditLink={articleEditLink} />
           </article>
           <ShareComponent />
-          <SubscribeForm type={FORMTYPE.AfterArticle} />
+          {/* <SubscribeForm type={FORMTYPE.AfterArticle} /> */}
         </main>
 
         <hr className="my-12" />
@@ -152,18 +152,17 @@ export const getStaticPaths: GetStaticPaths = () => {
 const DiscussArticle = (props: { matter: FrontMatter }) => {
   const Link = (props: { link: string; text: string }) => {
     return (
-      <a className="inline-block my-0" target="_blank" href={props.link}>
-        <ul className="my-0">
-          <li className="mr-5">
-            <i>{props.text}</i>
-          </li>
-        </ul>
-      </a>
+      <div className="my-2">
+        💬{" "}
+        <a target="_blank" href={props.link}>
+          {props.text}
+        </a>
+      </div>
     );
   };
 
   return (
-    <div>
+    <div className="my-5">
       {props.matter.twitter && (
         <Link link={props.matter.twitter} text="Discuss on Twitter" />
       )}
@@ -185,18 +184,17 @@ const DiscussArticle = (props: { matter: FrontMatter }) => {
 
 const EditArticle = (props: { articleEditLink: string }) => {
   return (
-    <a
-      title="Edit this post on Github"
-      className="inline-block"
-      target="_blank"
-      href={props.articleEditLink}
-    >
-      <ul>
-        <li>
-          <i>Improve this article</i>
-        </li>
-      </ul>
-    </a>
+    <div className="my-5">
+      ✍️{" "}
+      <a
+        title="Edit this post on Github"
+        className="inline-block"
+        target="_blank"
+        href={props.articleEditLink}
+      >
+        Improve this article
+      </a>
+    </div>
   );
 };
 
@@ -210,5 +208,19 @@ const ConnectOnTwitter = () => {
     <a href="https://www.linkedin.com/in/gorvgoyl/">LinkedIn</a>. */}
       </p>
     </blockquote>
+  );
+};
+
+const ThatsAll = () => {
+  return (
+    <>
+      <i> That's all, folks!</i>
+      {/* <img
+        className="mx-auto"
+        alt="That's all, folks!"
+        loading="lazy"
+        src="../thats_all_folks.gif"
+      /> */}
+    </>
   );
 };

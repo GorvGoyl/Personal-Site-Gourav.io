@@ -176,5 +176,3 @@ Open any C/C++ file, set some breakpoints (or not), and hit the Big Green Play B
  "*.exe": true
  }
 ```
-
-That's all, folks!
