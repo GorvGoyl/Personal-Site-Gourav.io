@@ -98,7 +98,7 @@ Let's suppose you want to have a folder `drafts` and ignore it and everything in
 
 - We'll be using a global `.gitignore` for it that takes higher precedence over a repo's `.gitignore` file.
 - let's suppose you want to hide `.DS_Store`, `.env.production` files from all current and future repo's:
-  1. changes directory to /Users/{User}
+  1. changes directory to `/Users/{User}`
      - `cd ~`
   2. create an empty file with .gitignore
      - Mac: `touch .gitignore`
