@@ -70,6 +70,50 @@ Syntax (v1.0.0):
 - `!:` appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). ex: `feat!: send an email to the customer when a product is shipped` , `chore!: drop support for Node 6`
 - types other than `fix:` and `feat:` are allowed, for example [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) recommends `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, and others.
 
+## Advanced Tips
+
+### Exclude file(s) from git revision without adding it to .gitignore
+
+Have you ever wanted to create some file(s) in your repo but do not want it to commit or show in the git changes?
+
+Your first thought would be to mention that file in `.gitignore` and commit it, but what if I told you there's a way without even adding it to your repo's `.gitignore`:
+
+#### per repository basis
+
+Let's suppose you want to have a folder `drafts` and ignore it and everything in it from git:
+
+- create a folder `drafts` in your repo
+- add some files to it
+- those files will currently show as untracked files when running `git status`
+- Now, create a `.gitignore` file inside `drafts` and write `*` in it. That's it! Run `git status` and you wouldn't see any changes!
+
+  - you can create as many files or folders inside `drafts` and it wouldn't show up in git changes.
+  - next time, you can use this one-liner command to create a `drafts` folder and put a `.gitignore` file:
+
+  ```bash
+  mkdir drafts && echo '*' > ./drafts/.gitignore
+  ```
+
+#### for all repositories
+
+- We'll be using a global `.gitignore` for it that takes higher precedence over a repo's `.gitignore` file.
+- let's suppose you want to hide `.DS_Store`, `.env.production` files from all current and future repo's:
+  1. changes directory to /Users/{User}
+     - `cd ~`
+  2. create an empty file with .gitignore
+     - Mac: `touch .gitignore`
+     - Windows: `type nul > .gitignore` or `echo.> .gitignore`
+  3. Tell git to use that file as global ignore
+     - `git config --global core.excludesfile ~/.gitignore`
+  4. open this `.gitignore` file:
+     - Mac: `open -a TextEdit ~/.gitignore`
+     - Windows: `notepad ~/.gitignore`
+  5. and mention files (or patterns) to ignore:
+  ```txt
+  .DS_Store
+  .env.production
+  ```
+
 ## Add local git repo to Github
 
 Create new repo on Github and push local git repo code to it.
@@ -731,7 +775,7 @@ git config --system --unset credential.helper
 //Windows: delete from Control Panel\User Accounts\Credential Manager
 ```
 
-## Misc
+## More
 
 #### markdown cheatsheet
 
