@@ -29,7 +29,7 @@ export default function Project(props: { matter: any; source: string }) {
       />
 
       <Container layout={LayoutType.Blog}>
-        <Banner />
+        {/* <Banner /> */}
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose">
           <article className={`${project.css} ${md.css}`}>

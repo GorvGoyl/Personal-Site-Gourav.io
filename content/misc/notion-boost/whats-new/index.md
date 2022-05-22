@@ -7,18 +7,42 @@ toc: true
 
 import logo from "../img/logo.png";
 
-import {FORMTYPE} from "@/components/subscribe";
-
-import indentation_lines from "../img/indentation_lines.jpg";
-import rollup_clickable from "../img/rollup_clickable.jpg";
+import image_frame from "../img/image_frame.gif";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 ## What's new in this update ✨
 
+### v3.1.0
+
+<TagDate>May 2022</TagDate>
+
+**🎉 NEW FEATURES:**
+
+- **Add frame to images**  
+  Add frame around images to make them easily noticeable on page
+
+<Img src={image_frame} type="ss" />
+
+**🐞 FIXED BUGS :**
+
+- fix: full width causing layout issues in inline databases and tables
+- fix: some features not working on dark mode
+- fix: some settings not turning on
+
+👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
+
+---
+
+<Social/>
+
+---
+
+## Previous updates
+
 ### v3.0.8
 
-<TagDate>Feb 2021</TagDate>
+<TagDate>Feb 2022</TagDate>
 
 **🎉 NEW FEATURES:**
 
@@ -41,18 +65,6 @@ import rollup_clickable from "../img/rollup_clickable.jpg";
 - fix: Issue with slash command
 - fix: slash menu not working in tables
 - fix: Small Text Default does not work on page title
-
-👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
-
-> PS: I also built seamless 2-way sync between Notion ⇋ Google Calendar, Try for Free: [Easypie.app](https://easypie.app?ref=whats-new/shoutout)
-
----
-
-<Social/>
-
----
-
-## Previous updates
 
 ### v3.0
 
