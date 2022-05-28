@@ -152,7 +152,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
       </div>
       <form
         className="flex items-center mb-4 relative mt-5"
-        onSubmit={subscribe}
+        onSubmit={() => subscribe}
       >
         <input
           ref={inputEl}

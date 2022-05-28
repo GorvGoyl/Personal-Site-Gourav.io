@@ -8,16 +8,25 @@ import { ScrollTopBtn } from "@/components/scrollTop";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { AuthorImg, ShareComponent } from "@/components/tags";
 import project from "@/layouts/css/project.module.scss";
-import { getMdPostSlugs } from "@/lib/getPost";
-import { getPost } from "@/lib/mdx";
+import { getMdPostSlugs, getPost } from "@/lib/getPost";
+import { initTocPosition } from "@/lib/mdx";
 import md from "@/styles/md.module.scss";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import { join } from "path";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 
 export default function Project(props: { matter: any; source: string }) {
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
+
+  useEffect(() => {
+    const controller = initTocPosition();
+
+    // remove eventlistener
+    return () => {
+      controller.abort();
+    };
+  }, []);
 
   return (
     <>
@@ -31,7 +40,7 @@ export default function Project(props: { matter: any; source: string }) {
       <Container layout={LayoutType.Blog}>
         {/* <Banner /> */}
         <Navbar link={Links.Blog} />
-        <main className="mx-auto prose">
+        <main className="mx-auto prose max-w-screen-md">
           <article className={`${project.css} ${md.css}`}>
             <MDX components={MDXComponents as any} />
           </article>

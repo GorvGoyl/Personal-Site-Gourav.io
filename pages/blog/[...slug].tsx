@@ -5,8 +5,8 @@ import { Links, Navbar } from "@/components/navbar";
 
 import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
-import { getMdPostSlugs } from "@/lib/getPost";
-import { getPost } from "@/lib/mdx";
+import { getMdPostSlugs, getPost } from "@/lib/getPost";
+import { initTocPosition } from "@/lib/mdx";
 import { getSlugViews } from "@/lib/utils";
 import md from "@/styles/md.module.scss";
 import { FrontMatter } from "@/types/types";
@@ -45,12 +45,20 @@ export default function Post(props: {
     }
   }, [props.slug]);
 
+  useEffect(() => {
+    const controller = initTocPosition();
+
+    // remove eventlistener
+    return () => {
+      controller.abort();
+    };
+  }, []);
+
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
 
   console.log(slugPath);
 
   const articleEditLink = `https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/${slugPath}/index.md`;
-  console.log("🚀 ~ articleEditLink", articleEditLink);
 
   return (
     <>
@@ -68,7 +76,7 @@ export default function Post(props: {
 
       <Container layout={LayoutType.Blog}>
         <Navbar link={Links.Blog} />
-        <main className="mx-auto prose">
+        <main className="mx-auto prose max-w-screen-md">
           <article className={`${post.code_block} ${md.css}`}>
             <header>
               <h1 className="text-2xl md:text-4xl md:leading-tight">

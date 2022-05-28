@@ -25,17 +25,19 @@
 
     // contents / toc
     .page-outline.mobile {
-      @apply visible block  lg:block lg:fixed;
+      // set for mobile view
+      @apply visible block xl:block xl:fixed;
     }
     .page-outline {
       &:before {
         content: "Contents";
         margin-left: 7px;
-        @apply text-gray-500 block text-base font-medium tracking-wide mb-3  lg:mt-[-46px] lg:fixed lg:mb-0;
+        @apply text-gray-500 block text-base font-medium tracking-wide mb-3  xl:mt-[-46px] xl:fixed xl:mb-0;
       }
-      @apply hidden lg:block lg:max-w-[200px] lg:mr-[30px] mt-[36px] lg:fixed bg-gray-50 rounded p-2;
+      // desktop: max width of outline: based on article max width max-w-screen-md;
+      @apply hidden xl:block xl:max-w-[calc((100%-900px)/2)] xl:mr-[20px] mt-[36px] xl:fixed bg-gray-50 rounded p-2;
       right: 0;
-      top: 150px;
+      top: 210px; //value also used in scroll event
       bottom: 30px;
       //   max-height: calc(100% - 120px);
       overflow: auto;
@@ -51,7 +53,7 @@
           }
           margin: 0;
           a {
-            @apply text-gray-500 block text-sm lg:text-[0.8rem] lg:leading-[1.1rem] no-underline font-medium px-2 py-1;
+            @apply text-gray-500 block text-sm xl:text-[0.8rem] xl:leading-[1.1rem] no-underline font-normal px-2 py-1;
             &:hover {
               @apply bg-gray-100 rounded;
             }
