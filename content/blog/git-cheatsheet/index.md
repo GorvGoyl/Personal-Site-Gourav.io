@@ -359,12 +359,13 @@ git commit -m 'merge'
 ```
 
 3. resolve conflicts if any. accept _incoming changes_ instead of _current changes_.
-
-4. abort merge
+4. Push changes
 
 ```
-git merge --abort
+git push
 ```
+
+> To abort merge midway `git merge --abort`
 
 #### rebase
 
@@ -390,11 +391,7 @@ git rebase origin/main
 git push -f
 ```
 
-To abort rebase at anytime (like during conflicts):
-
-```
-git rebase --abort
-```
+> To abort rebase midway (like during conflicts): `git rebase --abort`
 
 #### pull
 
