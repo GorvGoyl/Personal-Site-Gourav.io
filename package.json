@@ -20,7 +20,7 @@
     "export": "next build && next export",
     "deploy-lint": "npm run lint && npm run tsc && npm run export && firebase deploy --only hosting",
     "tsc": "tsc",
-    "lint": "eslint **/*.{ts,tsx,js,jsx,mdx} -c .eslintrc.js",
+    "lint": "eslint **/*.{ts,tsx} -c .eslintrc.js",
     "lint-next": "next lint",
     "stylelint": "npx stylelint '**/*.{css,scss,sass}'",
     "//lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss,.mdx"

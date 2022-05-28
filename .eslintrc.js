@@ -48,7 +48,6 @@ module.exports = {
   // all configs (eslint-config-xxx) go here:
   extends: [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -67,6 +66,7 @@ module.exports = {
   ],
 
   rules: {
+    "@typescript-eslint/restrict-plus-operands": "off",
     "mdx/no-unused-expressions": "off",
     "@typescript-eslint/no-unsafe-argument": "warn",
     "@typescript-eslint/no-unsafe-return": "warn",
