@@ -218,8 +218,18 @@ const ConnectOnTwitter = () => {
 
 const ThatsAll = () => {
   return (
-    <div>
-      <i> That's all, folks!</i>
+    <div className="mt-7">
+      <i
+        className="pr-1"
+        style={{
+          backgroundImage:
+            "linear-gradient(to left, violet, indigo, blue, green, #d2d20f, #eb9c0b, red)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        That's all, folks!
+      </i>
       {/* <img
         className="mx-auto"
         alt="That's all, folks!"

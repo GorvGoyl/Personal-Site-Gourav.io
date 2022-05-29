@@ -329,9 +329,9 @@ export function AuthorImg(): JSX.Element {
       </a>
       <div className="">
         <p className="m-0 font-medium">Gourav Goyal</p>
-        <div className="">
+        <div className="text-gray-700">
           <a
-            className="font-normal"
+            className="font-normal text-[15px] text-current"
             href="https://twitter.com/GorvGoyl"
             rel="noopener"
             target="blank"
