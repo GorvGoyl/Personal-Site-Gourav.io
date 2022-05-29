@@ -39,6 +39,15 @@
     @apply font-semibold #{!important};
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply break-words; // to wrap headings with long words on mobile
+  }
+
   /* remove tailwind typography prose styling */
 
   /* remove quotes from blockquote */
