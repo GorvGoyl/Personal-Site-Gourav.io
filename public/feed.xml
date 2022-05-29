@@ -4,7 +4,7 @@
         <title>Gourav Goyal</title>
         <link>https://gourav.io</link>
         <description>Blog - Gourav Goyal</description>
-        <lastBuildDate>Sun, 27 Mar 2022 11:42:20 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 May 2022 11:12:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for https://gourav.io</generator>
         <language>en</language>
@@ -16,12 +16,28 @@
         <copyright>All rights reserved 2022, Gourav Goyal</copyright>
         <atom:link href="https://gourav.io/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes]]></title>
+            <link>https://gourav.io/blog/add-comments-to-site</link>
+            <guid>Add free privacy-friendly comment-box to any site in 5 minutes</guid>
+            <pubDate>Fri, 13 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes (powered by Github discussions)]]></description>
+            <enclosure url="https://gourav.io/og.png" length="0" type="image/png"/>
+        </item>
+        <item>
             <title><![CDATA[Top AutoHotkey scripts to use Windows like a pro]]></title>
             <link>https://gourav.io/blog/autohotkey-scripts-windows</link>
             <guid>Top AutoHotkey scripts to use Windows like a pro</guid>
             <pubDate>Tue, 18 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more]]></description>
             <enclosure url="https://gourav.io/img/blog/autohotkey-scripts-windows/og.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Block API requests via chrome extension - Manifest v2 and v3]]></title>
+            <link>https://gourav.io/blog/block-api-requests-chrome-extension</link>
+            <guid>Block API requests via chrome extension - Manifest v2 and v3</guid>
+            <pubDate>Sat, 14 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Dynamically block api requests in manifest v2 and v3 of chrome extension]]></description>
+            <enclosure url="https://gourav.io/og.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[I received first-ever donation on my open-source side project and it felt great!]]></title>

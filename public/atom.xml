@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gourav.io</id>
     <title>Gourav Goyal</title>
-    <updated>2022-03-27T11:42:20.569Z</updated>
+    <updated>2022-05-29T11:12:47.696Z</updated>
     <generator>Feed for https://gourav.io</generator>
     <author>
         <name>Gourav Goyal</name>
@@ -16,11 +16,25 @@
     <icon>https://gourav.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gourav Goyal</rights>
     <entry>
+        <title type="html"><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes]]></title>
+        <id>Add free privacy-friendly comment-box to any site in 5 minutes</id>
+        <link href="https://gourav.io/blog/add-comments-to-site"/>
+        <updated>2022-05-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes (powered by Github discussions)]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Top AutoHotkey scripts to use Windows like a pro]]></title>
         <id>Top AutoHotkey scripts to use Windows like a pro</id>
         <link href="https://gourav.io/blog/autohotkey-scripts-windows"/>
         <updated>2022-01-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Block API requests via chrome extension - Manifest v2 and v3]]></title>
+        <id>Block API requests via chrome extension - Manifest v2 and v3</id>
+        <link href="https://gourav.io/blog/block-api-requests-chrome-extension"/>
+        <updated>2022-05-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Dynamically block api requests in manifest v2 and v3 of chrome extension]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[I received first-ever donation on my open-source side project and it felt great!]]></title>

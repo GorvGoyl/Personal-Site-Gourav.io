@@ -11,12 +11,36 @@
     },
     "items": [
         {
+            "id": "Add free privacy-friendly comment-box to any site in 5 minutes",
+            "url": "https://gourav.io/blog/add-comments-to-site",
+            "title": "Add free privacy-friendly comment-box to any site in 5 minutes",
+            "summary": "Add free privacy-friendly comment-box to any site in 5 minutes (powered by Github discussions)",
+            "image": "https://gourav.io/og.png",
+            "date_modified": "2022-05-13T00:00:00.000Z",
+            "author": {
+                "name": "Gourav Goyal",
+                "url": "https://twitter.com/GorvGoyl"
+            }
+        },
+        {
             "id": "Top AutoHotkey scripts to use Windows like a pro",
             "url": "https://gourav.io/blog/autohotkey-scripts-windows",
             "title": "Top AutoHotkey scripts to use Windows like a pro",
             "summary": "Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more",
             "image": "https://gourav.io/img/blog/autohotkey-scripts-windows/og.png",
             "date_modified": "2022-01-18T00:00:00.000Z",
+            "author": {
+                "name": "Gourav Goyal",
+                "url": "https://twitter.com/GorvGoyl"
+            }
+        },
+        {
+            "id": "Block API requests via chrome extension - Manifest v2 and v3",
+            "url": "https://gourav.io/blog/block-api-requests-chrome-extension",
+            "title": "Block API requests via chrome extension - Manifest v2 and v3",
+            "summary": "Dynamically block api requests in manifest v2 and v3 of chrome extension",
+            "image": "https://gourav.io/og.png",
+            "date_modified": "2022-05-14T00:00:00.000Z",
             "author": {
                 "name": "Gourav Goyal",
                 "url": "https://twitter.com/GorvGoyl"

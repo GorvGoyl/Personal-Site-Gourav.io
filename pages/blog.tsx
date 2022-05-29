@@ -31,7 +31,7 @@ export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
           return;
         })
         .catch((e) => {
-          console.log(e);
+          console.error(e);
         });
     }
   }, [props.allPosts]);

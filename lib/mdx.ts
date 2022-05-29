@@ -3,7 +3,6 @@
  * @return {*} AbortController
  */
 export const initTocPosition = () => {
-  console.log("initTocPosition");
   const controller = new AbortController();
 
   const tocEl: HTMLElement = document.querySelector(".page-outline");

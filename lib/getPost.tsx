@@ -120,7 +120,7 @@ export function getAllPosts(
       return 0;
     });
   } catch (e) {
-    console.log(`Error: ${JSON.stringify(e)}`);
+    console.error(`Error: ${JSON.stringify(e)}`);
   }
 
   return posts;

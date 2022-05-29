@@ -45,7 +45,7 @@ const homeURL = "https://gourav.io";
     writeFileSync("public/sitemap.xml", sitemap);
     console.log("sitemap generated");
   } catch (e) {
-    console.log(e);
+    console.error(e);
     process.exit(1);
   }
 })();

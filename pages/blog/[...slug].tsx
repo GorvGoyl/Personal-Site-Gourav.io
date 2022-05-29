@@ -28,7 +28,6 @@ export default function Post(props: {
     if (props.slug) {
       // add relative path to slug: /blog/nextjs-cheatsheet
       setSlugPath(`${RELATIVE_PATH}${props.slug}`);
-      console.log(slugPath);
 
       getSlugViews([slugPath])
         .then((res) => {
@@ -40,10 +39,10 @@ export default function Post(props: {
           return;
         })
         .catch((e) => {
-          console.log(e);
+          console.error(e);
         });
     }
-  }, [props.slug]);
+  }, [props.slug, slugPath]);
 
   useEffect(() => {
     const controller = initTocPosition();
@@ -55,8 +54,6 @@ export default function Post(props: {
   }, []);
 
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
-
-  console.log(slugPath);
 
   const articleEditLink = `https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/${slugPath}/index.md`;
 

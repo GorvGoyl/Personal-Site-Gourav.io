@@ -76,7 +76,8 @@ export function Img(props: {
   disableZoom?: boolean;
 }): JSX.Element {
   let cls = "";
-  if (props.type === "ss") cls += "rounded border-2 mx-auto shadow-md";
+  if (props.type === "ss")
+    cls += "rounded border-2 mx-auto shadow-md text-center";
   if (props.type === "badge") cls += "m-0 inline mx-2";
 
   // add any more classes provided by prop
@@ -90,14 +91,14 @@ export function Img(props: {
   let imgTag = <img src={props.src} alt={altText} className={cls} />;
 
   if (!props.disableZoom) {
-    imgTag = <Zoom>{imgTag}</Zoom>;
+    imgTag = <Zoom wrapStyle={{ display: "flex" }}>{imgTag}</Zoom>; //display: "flex" to center align image
   }
 
   if (props.caption) {
     return (
-      <figure>
+      <figure className={props.type === "ss" && "text-center"}>
         {imgTag}
-        <figcaption className="text-center">{props.caption}</figcaption>
+        <figcaption className="text-center -mt-4">{props.caption}</figcaption>
       </figure>
     );
   }
