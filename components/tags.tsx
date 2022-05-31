@@ -45,7 +45,7 @@ export function Video(props: {
   disableZoom?: boolean;
 }): JSX.Element {
   let cls = "";
-  cls += "rounded border-2 mx-auto shadow-md";
+  cls += " border-solid border-gray-300 shadow border mx-auto";
   // add any more classes provided by prop
   if (props.className) {
     cls = `${cls} ${props.className}`;
@@ -77,7 +77,8 @@ export function Img(props: {
 }): JSX.Element {
   let cls = "";
   if (props.type === "ss")
-    cls += "rounded border-2 mx-auto shadow-md text-center";
+    cls +=
+      " rounded border-solid border-gray-300 border mx-auto text-center shadow";
   if (props.type === "badge") cls += "m-0 inline mx-2";
 
   // add any more classes provided by prop
