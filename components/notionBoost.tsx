@@ -180,7 +180,7 @@ export function Social(): JSX.Element {
             ❓ Missing something?{" "}
             <span>
               <a
-                href="https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new"
+                href="https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues"
                 target="_blank"
                 rel="noopener"
                 title="Create Github issue"

@@ -225,7 +225,7 @@ Add frame around images to make them easily noticeable on page.
 <Img src={image_frame} type="ss" />
 </details>
 
-> Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new)
+> Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues)
 
 <span>See{" "}<Link href="/notion-boost/whats-new"><a className="" title="https://gourav.io/notion-boost/whats-new">what's new</a></Link> in the latest update ✨</span>
 
@@ -270,7 +270,7 @@ Notion Boost is made by Gourav Goyal (https://gourav.io). I am a tech founder an
 
 ## Support
 
-Please file a new issue on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues/new) in case you have any feedback or suggestions.
+Please file a new issue on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues) in case you have any feedback or suggestions.
 
 ## Privacy Policy
 

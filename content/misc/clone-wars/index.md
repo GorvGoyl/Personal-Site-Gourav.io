@@ -255,7 +255,7 @@ import og from "./og.jpg";
  </div>
  </div>
 
-> _Some link is broken or clone is not good enough? [report it](https://github.com/GorvGoyl/Clone-Wars/issues/new)_
+> _Some link is broken or clone is not good enough? [report it](https://github.com/GorvGoyl/Clone-Wars/issues)_
 
 ## Support
 
@@ -289,4 +289,4 @@ Add clone to 1st table if you can also provide tutorial link else add it to 2nd 
 
 Edit [readme.md](https://github.com/GorvGoyl/Clone-Wars/blob/main/README.md) (_you may use online md editor like [markdown.site](https://markdown.site/) for better table visualization_) and send me a PR! Make sure there are no merge conflicts.
 
-Any other [feedback](https://github.com/GorvGoyl/Clone-Wars/issues/new) to improve this project is welcome :)
+Any other [feedback](https://github.com/GorvGoyl/Clone-Wars/issues) to improve this project is welcome :)
