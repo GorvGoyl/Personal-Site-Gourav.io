@@ -139,7 +139,10 @@ function openWindowHandler(url: string, title: string, style: string) {
     window.location.href = url;
   }
 }
-export function ShareButton(Props: { children: any }): JSX.Element {
+export function ShareButton(props: {
+  children: any;
+  position: "top" | "bottom";
+}): JSX.Element {
   const [isPopupShown, setPopup] = useState(false);
   const [isCopied, setCopy] = useState(0);
   const [pageURL, setPageURL] = useState("");
@@ -194,13 +197,13 @@ export function ShareButton(Props: { children: any }): JSX.Element {
           onClick={toggleShareMenuHandler}
           // onBlur={handleBlur}
         >
-          {Props.children}
+          {props.children}
         </a>
       </div>
       <div
-        className={` ${
-          isPopupShown ? "absolute" : "hidden"
-        } bg-white bottom-full focus:outline-none origin-top-right  ring-1 ring-black ring-opacity-5 rounded-md shadow-lg`}
+        className={` ${isPopupShown ? "absolute" : "hidden"}  ${
+          props.position === "bottom" && "!bottom-[-190px] z-50"
+        } bg-white bottom-full focus:outline-none origin-top-right border-gray-300 border rounded shadow`}
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="options-menu"
@@ -299,7 +302,7 @@ export function ShareButton(Props: { children: any }): JSX.Element {
 export function ShareComponent(): JSX.Element {
   return (
     <div className="relative flex justify-center my-12">
-      <ShareButton>
+      <ShareButton position="top">
         <>
           <Icon type={"share"} className="mx-auto" size="26" />
           Share
@@ -369,8 +372,11 @@ export function Author(props: { date: string; views: string }): JSX.Element {
         </div>
 
         <div className="relative">
-          <ShareButton>
-            <div className="text-gray-500 flex items-center space-x-3 text-sm">
+          <ShareButton position="top">
+            <div
+              title="See options to share"
+              className="text-gray-500 flex items-center space-x-3 text-sm"
+            >
               <Icon type={"share"} className="stroke-current" size="14" />
               <p className="m-0 underline">Share</p>
             </div>
@@ -381,5 +387,54 @@ export function Author(props: { date: string; views: string }): JSX.Element {
         </div> */}
       </div>
     </div>
+  );
+}
+
+export function ShareInlineBtn() {
+  const Arrow = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4 text-gray-400"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  );
+
+  return (
+    <>
+      <div className="relative inline-block">
+        <ShareButton position="bottom">
+          <div
+            title="See options to share"
+            className=" flex items-center space-x-1 border px-1 rounded border-gray-400 hover:bg-gray-100 hover:opacity-80"
+          >
+            <div>Share</div>
+            <Arrow />
+            {/* <Icon type={"share"} className="stroke-current" size="14" /> */}
+          </div>
+        </ShareButton>
+      </div>
+    </>
+  );
+}
+
+export function ShareLink() {
+  return (
+    <>
+      <div className="relative">
+        <ShareButton position="bottom">
+          <div
+            title="See options to share"
+            className=" flex items-center space-x-1 "
+          >
+            <div className="underline mr-1 font-medium">Share</div>♥
+          </div>
+        </ShareButton>
+      </div>
+    </>
   );
 }

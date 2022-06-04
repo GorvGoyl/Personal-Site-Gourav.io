@@ -20,15 +20,12 @@ import og from "./og.jpg";
         rel="noopener"
         title="View source code on Github"
       >Source code</a>
-      <a
-        href="#support"
-        title="Support"
-      >Support ♥</a>
+      <ShareLink/>
        <a
         href="#contribution"
         title="Contribute"
       >Contribution</a>
-    
+
   </nav>
   
 <blockquote>Made by <a href="https://twitter.com/GorvGoyl" title="Follow @GorvGoyl on Twitter">GorvGoyl<TwitterIcon class="inline w-4 h-4 m-0 ml-1 " /></a></blockquote>
@@ -267,23 +264,13 @@ import og from "./og.jpg";
 
 > _Some link is broken or clone is not good enough? [report it](https://github.com/GorvGoyl/Clone-Wars/issues)_
 
-## Support
+---
 
-#### 💲 Support continuous development [Buy me a Coffee](https://ko-fi.com/gorvgoyl)
+**❤ Help others by sharing this project**
 
-<p align="center">
-  <a href="https://ko-fi.com/gorvgoyl">
-  <img src="https://github.com/GorvGoyl/Notion-Boost-browser-extension/raw/master/src/images/readme/bmc.png" width="200" alt="Buy me a Coffee"/>
-  </a>
-</p>
+<ShareInlineBtn/>
 
-#### ❤ Follow the maker <a href="https://twitter.com/GorvGoyl" title="Follow @GorvGoyl on Twitter">GorvGoyl<TwitterIcon class="inline w-4 h-4 m-0 ml-1 " /></a> behind this project
-
-<p align="center">
- <a href="https://twitter.com/GorvGoyl">
-  <img src="https://img.shields.io/badge/@GorvGoyl-1da1f2?style=for-the-badge&labelColor=1da1f2&color=1da1f2&logo=twitter&logoColor=white&label=Follow" alt="Follow on Twitter"/>
-  </a>
-</p>
+**👋 Connect with maker behind this project on <a href="https://twitter.com/GorvGoyl" title="Connect with @GorvGoyl on Twitter">Twitter</a> and <a href="https://www.linkedin.com/in/gorvgoyl/" title="Connect with @GorvGoyl on linkedIn">LinkedIn</a>**
 
 ---
 

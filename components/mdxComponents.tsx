@@ -6,7 +6,14 @@ import {
   Title,
 } from "@/components/notionBoost";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
-import { A, Img, TwitterIcon, Video } from "@/components/tags";
+import {
+  A,
+  Img,
+  TwitterIcon,
+  Video,
+  ShareInlineBtn,
+  ShareLink,
+} from "@/components/tags";
 import Link from "next/link";
 
 const MDXComponents = {
@@ -22,6 +29,8 @@ const MDXComponents = {
   FORMTYPE,
   SubscribeForm,
   Badges,
+  ShareInlineBtn,
+  ShareLink,
 };
 
 export default MDXComponents;
