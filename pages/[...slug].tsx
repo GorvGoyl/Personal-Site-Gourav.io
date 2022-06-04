@@ -11,12 +11,16 @@ import project from "@/layouts/css/project.module.scss";
 import { getMdPostSlugs, getPost } from "@/lib/getPost";
 import { initTocPosition } from "@/lib/mdx";
 import md from "@/styles/md.module.scss";
+import { FrontMatter } from "@/types/types";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import { join } from "path";
 import React, { useEffect, useMemo } from "react";
 
-export default function Project(props: { matter: any; source: string }) {
+export default function Project(props: {
+  matter: FrontMatter;
+  source: string;
+}) {
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
 
   useEffect(() => {
@@ -48,7 +52,6 @@ export default function Project(props: { matter: any; source: string }) {
           <hr className="mb-8" />
           <SubscribeForm type={FORMTYPE.Generic} />
         </main>
-        {props.matter.comments && <Comments></Comments>}
         <ScrollTopBtn />
       </Container>
       <div className="flex justify-center">

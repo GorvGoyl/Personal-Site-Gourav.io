@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import MDXComponents from "@/components/mdxComponents";
 import { Links, Navbar } from "@/components/navbar";
+import { ScrollTopBtn } from "@/components/scrollTop";
 
 import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
@@ -103,6 +104,7 @@ export default function Post(props: {
             </a>
           </Link>
         </div>
+        <ScrollTopBtn />
       </Container>
     </>
   );

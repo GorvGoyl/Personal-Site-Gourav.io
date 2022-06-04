@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Icon } from "@/components/icons";
 import { readableDate, roundUpViewCount } from "@/lib/utils";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
@@ -324,24 +325,38 @@ export function TwitterIcon(Props: {
 export function AuthorImg(): JSX.Element {
   return (
     <div className="flex items-center text-base">
-      <a href="https://gourav.io">
-        <img
-          className="w-14 rounded-full mr-4 my-3"
-          src="/gourav.jpg"
-          alt="Gourav Goyal"
-        />
-      </a>
+      <Link href="/">
+        <a>
+          <img
+            className="w-14 rounded-full mr-4 my-3"
+            src="/gourav.jpg"
+            alt="Gourav Goyal"
+          />
+        </a>
+      </Link>
       <div className="">
-        <p className="m-0 font-medium">Gourav Goyal</p>
-        <div className="text-gray-700">
+        <p className="m-0 font-medium text-[17px] tracking-normal text-gray-700">
+          Gourav Goyal
+        </p>
+        <div className="text-gray-700 text-[14px]">
           <a
-            className="font-normal text-[15px] text-current"
+            title="Connect with @GorvGoyl on Twitter"
+            className="no-underline font-normal hover:underline text-current"
             href="https://twitter.com/GorvGoyl"
             rel="noopener"
             target="blank"
           >
-            GorvGoyl
-            <TwitterIcon class="inline w-3 h-3 align-baseline m-0 ml-1" />
+            Twitter
+          </a>
+          {" · "}
+          <a
+            title="Connect with @GorvGoyl on linkedIn"
+            className="no-underline font-normal hover:underline text-current"
+            href="https://www.linkedin.com/in/gorvgoyl"
+            rel="noopener"
+            target="blank"
+          >
+            LinkedIn
           </a>
         </div>
       </div>
@@ -378,7 +393,7 @@ export function Author(props: { date: string; views: string }): JSX.Element {
               className="text-gray-500 flex items-center space-x-3 text-sm"
             >
               <Icon type={"share"} className="stroke-current" size="14" />
-              <p className="m-0 underline">Share</p>
+              <p className="m-0 no-underline hover:underline">Share</p>
             </div>
           </ShareButton>
         </div>

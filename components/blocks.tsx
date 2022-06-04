@@ -11,10 +11,10 @@ export function TwitterBtn(): JSX.Element {
         >
           <img
             src="/twitter-light.svg"
-            className="inline w-4 h-4 m-0 mr-1"
+            className="inline w-3 h-3 m-0 mr-2"
             alt="Twitter"
           />
-          Follow @GorvGoyl
+          @GorvGoyl
         </a>
       </div>
     </div>
