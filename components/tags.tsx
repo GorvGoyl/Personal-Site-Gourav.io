@@ -425,7 +425,7 @@ export function ShareInlineBtn() {
         <ShareButton position="bottom">
           <div
             title="See options to share"
-            className=" flex items-center space-x-1 border px-1 rounded border-gray-400 hover:bg-gray-100 hover:opacity-80"
+            className=" flex items-center text-sm space-x-1 border px-1 rounded border-gray-400 hover:bg-gray-100 hover:opacity-80"
           >
             <div>Share</div>
             <Arrow />

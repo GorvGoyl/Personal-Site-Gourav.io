@@ -7,7 +7,7 @@ import {
   FirefoxUsers,
   FirefoxVersion,
 } from "./badge";
-import { A, CopyLink, TwitterIcon } from "./tags";
+import { A, CopyLink, ShareInlineBtn, TwitterIcon } from "./tags";
 
 enum Page {
   Home = "/notion-boost",
@@ -206,7 +206,29 @@ export function Social(): JSX.Element {
           new
           title="Add review on Firefox store"
         />{" "}
-        store.
+        store
+      </p>
+
+      <p>
+        🙏 Help others by sharing this project &nbsp; <ShareInlineBtn />
+      </p>
+      <p>
+        👋 Connect with maker behind this project on{" "}
+        <span>
+          <a
+            href="https://twitter.com/GorvGoyl"
+            title="Connect with @GorvGoyl on Twitter"
+          >
+            Twitter
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://www.linkedin.com/in/gorvgoyl/"
+            title="Connect with @GorvGoyl on linkedIn"
+          >
+            LinkedIn
+          </a>
+        </span>
       </p>
       <p>
         ✨ Follow{" "}
@@ -224,22 +246,7 @@ export function Social(): JSX.Element {
             />
           </a>
         </span>{" "}
-        for Notion tips, tricks, and free goodies.
-      </p>
-      <p>
-        👨‍💻 Follow the maker behind this extension:{" "}
-        <span>
-          <a
-            href="https://twitter.com/GorvGoyl"
-            target="_blank"
-            rel="noopener"
-            title="Follow @GorvGoyl on Twitter"
-          >
-            GorvGoyl
-            <TwitterIcon class="inline w-4 h-4 m-0 ml-1 " />
-          </a>
-          .
-        </span>
+        for Notion tips, tricks, and free goodies
       </p>
     </div>
   );
