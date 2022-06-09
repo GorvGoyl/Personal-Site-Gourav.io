@@ -1,5 +1,5 @@
 ---
-title: "Git Cheatsheet"
+title: "Git Cheatsheet - handy commands for every situation"
 desc: "Useful git commands for beginners like reverting commits, work between branches, manage PRs, and more"
 date: "2021-10-28"
 toc: true
