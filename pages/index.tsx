@@ -120,7 +120,7 @@ export default function Home(): JSX.Element {
                     A popular browser extension to make Notion (
                     <em>www.notion.so</em>) more productive.
                     <br />
-                    <i>Revenue: $2000+</i>
+                    {/* <i>Revenue: $3000+</i> */}
                   </p>
                 </li>
                 <li>

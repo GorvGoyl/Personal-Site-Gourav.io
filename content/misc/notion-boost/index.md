@@ -35,7 +35,7 @@ import image_frame from "./img/image_frame.gif";
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 <span className="lead">
-  Chrome and Firefox extension to make Notion more productive and less distractive. Add 15+ customizations to Notion like sticky
+  Chrome and Firefox extension to make [Notion](https://notion.so) more productive and less distractive. Add 20+ customizations to Notion like sticky
   outline, small text & full width by default,scroll to top button, hide slash
   command menu, and more.
 </span>

@@ -1,5 +1,5 @@
 ---
-title: "Next.js Cheatsheet"
+title: "Next.js Cheatsheet - handy snippets and tips"
 desc: "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project"
 date: "2021-10-11"
 toc: true
