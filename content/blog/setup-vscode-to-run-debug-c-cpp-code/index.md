@@ -129,14 +129,14 @@ Notice that I’ve added one more optional configuration `g++ build & run active
   "tasks": [
     {
       "type": "shell",
-      "label": "g++.exe build active file";,
-      "command": "C:\\MinGW64\\bin\\g++.exe";,
+      "label": "g++.exe build active file",
+      "command": "C:\\MinGW64\\bin\\g++.exe",
       "args": [
         "-g",
         "${file}",
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
-      ];,
+      ],
       "options": {
         "cwd": "C:\\MinGW64\\bin"
       }
@@ -155,7 +155,7 @@ Notice that I’ve added one more optional configuration `g++ build & run active
       }
     }
   ],
-  "version":
+  "version":"2.0.0"
 }
 ```
 
