@@ -217,6 +217,17 @@ Not all permissions show warnings to users. See [list of permissions](https://de
 
 You can test which warnings are shown when developing the extension by following this guide: https://developer.chrome.com/docs/extensions/mv2/permission_warnings/#view_warnings
 
+### Check for popup warning due to new permissions on updated version
+
+Note: adding a less powerful permission will not show a warning popup if the previous version already have a more powerful permission.
+
+Reference: https://developer.chrome.com/docs/extensions/mv2/permission_warnings/#view_warnings
+
+- Go to chrome://extensions -> pack previous version -> it'll pack extension (\*.crx file) and create 1 key (\*.pem file)
+- drop crx file to chrome://extensions in order to install it
+- Now pack latest version and mention \*.pem file
+- drop latest crx file to check for new permissions popup
+
 ## declarativeNetRequestWithHostAccess
 
 `declarativeNetRequestWithHostAccess` is a similar alternative to `declarativeNetRequest` (means you just need to replace it in manifest and rest of the code remains same) and it does not show any popup warnings!
