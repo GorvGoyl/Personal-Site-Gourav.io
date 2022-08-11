@@ -14,5 +14,6 @@
     "mdx": {
       "parser": "markdown"
     }
-  }
+  },
+  "git.postCommitCommand": "sync"
 }
