@@ -49,3 +49,5 @@ module.exports = {
   plugins: [],
 };
 ```
+
+Note: It'll disable the feature where you could use the slash notation to change the opacity of background, text color, etc., e.g. `bg-red-500/10` for a red-500 background color with 10% alpha.
