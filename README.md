@@ -1,10 +1,16 @@
 ![gourav.io](./public/og.png)
 
-# Personal Site - Gourav Goyal
-
-## My personal site & blog made with NextJS, MDX, Tailwind and deployed on Vercel
+# Personal site and blog - Gourav Goyal
 
 ### https://gourav.io
+
+Built with React (NextJS), MDX, and Tailwind
+
+<a href="https://vercel.com?utm_source=gorvgoyl&utm_campaign=oss">
+<img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg">
+</a>
+
+
 
 ## MDX Structure for Blog and Projects
 
