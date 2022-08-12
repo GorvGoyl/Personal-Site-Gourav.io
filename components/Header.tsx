@@ -33,25 +33,31 @@ export default function Header(props: {
 
   return (
     <Head>
+      {/* meta tags start */}
       <title>{title}</title>
       <meta name="robots" content="follow, index" />
-      <meta content={description} name="description" />
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
+      <meta property="og:locale" content="en_US" />
       <meta property="og:url" content={pageURL} />
-      <link rel="canonical" href={pageURL} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={authorName} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={ogImageURL} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={twitterHandle} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImageURL} />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:site" content={twitterHandle} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={ogImageURL} />
+      <meta property="twitter:url" content={pageURL} />
       {date && <meta property="article:published_time" content={date} />}
-      <meta property="monetization" content="$ilp.uphold.com/QaUmZpmzmDzA" />
-      <meta property="author" content={authorName} />
       <meta name="author" content={authorName} />
+      <meta property="author" content={authorName} />
+      <meta property="monetization" content="$ilp.uphold.com/QaUmZpmzmDzA" />
+      <meta name="theme-color" content="#ffffff" />
+      {/* meta tags end */}
+      <link rel="canonical" href={pageURL} />
       <link rel="icon" href={`${domain}/favicon.ico`} />
     </Head>
   );
