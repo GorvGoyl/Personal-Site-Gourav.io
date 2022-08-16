@@ -44,7 +44,7 @@ export default function Header(props: {
       <meta property="og:site_name" content={authorName} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content={ogImageURL} />
+      <meta property="og:image" name="image" content={ogImageURL} />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:site" content={twitterHandle} />
       <meta property="twitter:title" content={title} />
