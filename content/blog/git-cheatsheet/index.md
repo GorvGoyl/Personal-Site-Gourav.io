@@ -772,6 +772,11 @@ git config --system --unset credential.helper
 //Windows: delete from Control Panel\User Accounts\Credential Manager
 ```
 
+## SSH
+
+see public ssh key
+`~/.ssh/....pub`
+
 ## More
 
 #### markdown cheatsheet

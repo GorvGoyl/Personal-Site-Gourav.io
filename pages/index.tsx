@@ -16,9 +16,9 @@ export default function Home(): JSX.Element {
           <div className="flex items-center mb-10">
             <img
               className="rounded-full mr-8"
-              width="128"
-              height="128"
-              src="/gourav.jpg"
+              width="200"
+              height="200"
+              src="/profile-pic 4.png"
               alt="Gourav Goyal"
             />
             <div className="prose prose-lg">
@@ -62,23 +62,26 @@ export default function Home(): JSX.Element {
               to hang around with. I like to build things that others find
               helpful. <i>(Hire me!)</i>
               <br />
-              Currently, I am building{" "}
-              <a href="https://easypie.app" target="_blank" rel="noopener">
-                Easypie.app
+              Currently, I am working for{" "}
+              <a href="https://monadical.com" target="_blank" rel="noopener">
+                Monadical
               </a>{" "}
-              - the easiest way to connect apps and automate workflows within
-              minutes. No coding required.
+              and building cool projects.
               <br />
-              Previously, I co-founded{" "}
+              Previously, I founded{" "}
+              <a href="https://easypie.app" target="_blank" rel="noopener">
+                Easypie App
+              </a>{" "}
+              (no-code automation tool),{" "}
               <a
                 href="https://www.crunchbase.com/organization/evrcare"
                 target="_blank"
                 rel="noopener"
               >
                 EvrCare
-              </a>
-              , built multiple side projects, and worked for other tech
-              companies.
+              </a>{" "}
+              (assistance platform for elderly people), built multiple side
+              projects, and worked for other tech companies.
               <br />I share my learnings on{" "}
               <a rel="noopener" href="https://twitter.com/GorvGoyl">
                 Twitter
