@@ -15,9 +15,9 @@ export default function Home(): JSX.Element {
         <div>
           <div className="flex items-center mb-10">
             <img
-              className="rounded-full mr-8"
-              width="200"
-              height="200"
+              className="rounded-full mr-2 md:mr-8"
+              width="180"
+              height="180"
               src="/profile-pic 4-min.png"
               alt="Gourav Goyal"
             />
@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
               <Link href="/">
                 <a title="Homepage" className="no-underline">
                   <h1
-                    className="bg-clip-text text-transparent pb-3 mb-4 tracking-wide font-bold text-5xl" // bg-gradient-to-r from-blue-500 to-green-400
+                    className="bg-clip-text text-transparent pb-3 mb-4 tracking-wide font-bold text-3xl md:text-5xl" // bg-gradient-to-r from-blue-500 to-green-400
                     style={{
                       backgroundImage: "linear-gradient(90deg,#ff4d4d,#f9cb28)",
                     }}
