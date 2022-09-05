@@ -39,7 +39,7 @@ export default function Header(props: {
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta property="og:locale" content="en_US" />
-      {/* <meta property="og:url" content={pageURL} /> */}
+      <meta property="og:url" content={pageURL} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={authorName} />
       <meta property="og:description" content={description} />
@@ -57,7 +57,7 @@ export default function Header(props: {
       <meta property="monetization" content="$ilp.uphold.com/QaUmZpmzmDzA" />
       <meta name="theme-color" content="#ffffff" />
       {/* meta tags end */}
-      {/* <link rel="canonical" href={pageURL} /> */}
+      <link rel="canonical" href={pageURL} />
       <link rel="icon" href={`${domain}/favicon.ico`} />
     </Head>
   );
