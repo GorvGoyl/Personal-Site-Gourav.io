@@ -21,7 +21,7 @@ export function Banner(): JSX.Element {
             <a
               href={`https://easypie.app?ref=${pathName}`}
               target="_blank"
-              className={`whitespace-nowrap inline-block hover:opacity-80 cursor-pointer leading-none hover:bg-opacity-80 border border-gray-400 focus:outline-none px-3 py-2 rounded-2xl  text-gray-200 `}
+              className={`whitespace-nowrap inline-block hover:opacity-80 cursor-pointer leading-none hover:bg-current/80 border border-gray-400 focus:outline-none px-3 py-2 rounded-2xl  text-gray-200 `}
             >
               Try for Free
             </a>
@@ -32,7 +32,7 @@ export function Banner(): JSX.Element {
           <button
             type="button"
             onClick={handleClick}
-            className="hover:opacity-80 cursor-pointer leading-snug hover:bg-opacity-80  text-gray-200"
+            className="hover:opacity-80 cursor-pointer leading-snug hover:bg-current/80  text-gray-200"
           >
             {/* <p>✖</p> */}
             <svg viewBox="0 0 24 24" width={18} height={18}>

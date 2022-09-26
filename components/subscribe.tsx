@@ -17,7 +17,7 @@ export enum FORMTYPE {
 
 function SuccessMessage(Props: { children: any }) {
   return (
-    <p className="flex items-center text-sm font-bold text-green-400">
+    <p className="flex items-center text-sm font-bold text-emerald-400">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"

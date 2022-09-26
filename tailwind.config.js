@@ -4,11 +4,10 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   // to enable overriding tw-typography styles
   important: true,
-  mode: "jit",
   future: {
     removeDeprecatedGapUtilities: true,
   },
-  purge: [
+  content: [
     // mode: "all", // purge unused typography styles but also removes css modules
     // preserveHtmlElements: true,
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -60,21 +59,10 @@ module.exports = {
   //     },
   //   },
   // },
-  variants: {
-    extend: {
-      tableLayout: ["hover", "focus"],
-    },
-  },
-  corePlugins: {
-    textOpacity: false,
-    backgroundOpacity: false,
-    borderOpacity: false,
-    divideOpacity: false,
-    placeholderOpacity: false,
-    ringOpacity: false,
-  },
+
   plugins: [
     require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
     // https://tailwindcss.com/docs/plugins#variants
 
     ({ addUtilities }) => {
