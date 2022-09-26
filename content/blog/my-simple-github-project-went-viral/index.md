@@ -7,8 +7,6 @@ hackernews: https://news.ycombinator.com/item?id=26804555
 twitter: https://twitter.com/GorvGoyl/status/1382265020680085509
 ---
 
-import { TweetEmbed } from "@/components/twitterEmbed.tsx";
-
 import img1 from "./1.jpg";
 import img2 from "./2.jpg";
 import img3 from "./3.jpg";
