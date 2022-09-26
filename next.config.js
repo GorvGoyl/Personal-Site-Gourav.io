@@ -49,6 +49,9 @@ const nextConfig =
     //   defaultLocale: "en-US",
     // },
     reactStrictMode: true,
+    experimental: {
+      largePageDataBytes: 256,
+    },
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
     webpack: (config, { dev, isServer }, options) => {
       // if (isServer) {
