@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gourav.io</id>
     <title>Gourav Goyal</title>
-    <updated>2022-05-29T11:12:47.696Z</updated>
+    <updated>2022-09-26T03:24:42.781Z</updated>
     <generator>Feed for https://gourav.io</generator>
     <author>
         <name>Gourav Goyal</name>
@@ -44,8 +44,8 @@
         <summary type="html"><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Git Cheatsheet]]></title>
-        <id>Git Cheatsheet</id>
+        <title type="html"><![CDATA[Git Cheatsheet - handy commands for every situation]]></title>
+        <id>Git Cheatsheet - handy commands for every situation</id>
         <link href="https://gourav.io/blog/git-cheatsheet"/>
         <updated>2021-10-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Useful git commands for beginners like reverting commits, work between branches, manage PRs, and more]]></summary>
@@ -58,8 +58,8 @@
         <summary type="html"><![CDATA[I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Next.js Cheatsheet]]></title>
-        <id>Next.js Cheatsheet</id>
+        <title type="html"><![CDATA[Next.js Cheatsheet - handy snippets and tips]]></title>
+        <id>Next.js Cheatsheet - handy snippets and tips</id>
         <link href="https://gourav.io/blog/nextjs-cheatsheet"/>
         <updated>2021-10-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project]]></summary>
@@ -75,8 +75,22 @@
         <title type="html"><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
         <id>Setup VSCode to run and debug C / C++ code</id>
         <link href="https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code"/>
-        <updated>2020-12-04T18:30:00.000Z</updated>
+        <updated>2020-12-04T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show Tailwind CSS color values in HEX format in dev tools]]></title>
+        <id>Show Tailwind CSS color values in HEX format in dev tools</id>
+        <link href="https://gourav.io/blog/show-tailwind-colors-in-devtools"/>
+        <updated>2022-05-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Show Tailwind CSS color values in HEX format instead of rgba in dev tools]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sync Fastmail calendar with Google Calendar]]></title>
+        <id>Sync Fastmail calendar with Google Calendar</id>
+        <link href="https://gourav.io/blog/sync-fastmail-calendar-with-google-calendar"/>
+        <updated>2022-08-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Add Fastmail calendar events to Google Calendar]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Megalist of free & open-source apps I use on Windows]]></title>

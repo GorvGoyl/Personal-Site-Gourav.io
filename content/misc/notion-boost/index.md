@@ -264,7 +264,7 @@ Add frame around images to make them easily noticeable on page.
 
 ---
 
-## Who's the guy?
+## Who's the maker?
 
 I am a tech founder and productivity freak who relies heavily on Notion to organize things and manage work. I made this extension to make Notion more productive (and less distractive) by filling the gaps which I feel are lacked in the product. I hope you find this extension helpful :)
 

@@ -59,9 +59,9 @@
             }
         },
         {
-            "id": "Git Cheatsheet",
+            "id": "Git Cheatsheet - handy commands for every situation",
             "url": "https://gourav.io/blog/git-cheatsheet",
-            "title": "Git Cheatsheet",
+            "title": "Git Cheatsheet - handy commands for every situation",
             "summary": "Useful git commands for beginners like reverting commits, work between branches, manage PRs, and more",
             "image": "https://gourav.io/img/blog/git-cheatsheet/og.png",
             "date_modified": "2021-10-28T00:00:00.000Z",
@@ -83,9 +83,9 @@
             }
         },
         {
-            "id": "Next.js Cheatsheet",
+            "id": "Next.js Cheatsheet - handy snippets and tips",
             "url": "https://gourav.io/blog/nextjs-cheatsheet",
-            "title": "Next.js Cheatsheet",
+            "title": "Next.js Cheatsheet - handy snippets and tips",
             "summary": "Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project",
             "image": "https://gourav.io/img/blog/nextjs-cheatsheet/og.png",
             "date_modified": "2021-10-11T00:00:00.000Z",
@@ -112,7 +112,31 @@
             "title": "Setup VSCode to run and debug C / C++ code",
             "summary": "By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode",
             "image": "https://gourav.io/img/blog/setup-vscode-to-run-debug-c-cpp-code/og.jpg",
-            "date_modified": "2020-12-04T18:30:00.000Z",
+            "date_modified": "2020-12-04T16:00:00.000Z",
+            "author": {
+                "name": "Gourav Goyal",
+                "url": "https://twitter.com/GorvGoyl"
+            }
+        },
+        {
+            "id": "Show Tailwind CSS color values in HEX format in dev tools",
+            "url": "https://gourav.io/blog/show-tailwind-colors-in-devtools",
+            "title": "Show Tailwind CSS color values in HEX format in dev tools",
+            "summary": "Show Tailwind CSS color values in HEX format instead of rgba in dev tools",
+            "image": "https://gourav.io/og.png",
+            "date_modified": "2022-05-29T00:00:00.000Z",
+            "author": {
+                "name": "Gourav Goyal",
+                "url": "https://twitter.com/GorvGoyl"
+            }
+        },
+        {
+            "id": "Sync Fastmail calendar with Google Calendar",
+            "url": "https://gourav.io/blog/sync-fastmail-calendar-with-google-calendar",
+            "title": "Sync Fastmail calendar with Google Calendar",
+            "summary": "Add Fastmail calendar events to Google Calendar",
+            "image": "https://gourav.io/og.png",
+            "date_modified": "2022-08-13T00:00:00.000Z",
             "author": {
                 "name": "Gourav Goyal",
                 "url": "https://twitter.com/GorvGoyl"
