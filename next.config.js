@@ -48,9 +48,10 @@ const nextConfig =
     //   locales: ["en-US"],
     //   defaultLocale: "en-US",
     // },
+    // swcMinify: true,
     reactStrictMode: true,
     experimental: {
-      largePageDataBytes: 256,
+      largePageDataBytes: 256000,
     },
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
     webpack: (config, { dev, isServer }, options) => {
