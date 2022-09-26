@@ -37,7 +37,10 @@ const headers = async () => [
   },
 ];
 
-module.exports =
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig =
   // NextConfig
   {
     // disabling i18n due to mdx path error
@@ -45,9 +48,6 @@ module.exports =
     //   locales: ["en-US"],
     //   defaultLocale: "en-US",
     // },
-    future: {
-      strictPostcssConfiguration: true,
-    },
     reactStrictMode: true,
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
     webpack: (config, { dev, isServer }, options) => {
@@ -78,3 +78,4 @@ module.exports =
     redirects,
     headers,
   };
+module.exports = nextConfig;
