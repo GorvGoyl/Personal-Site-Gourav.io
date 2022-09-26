@@ -43,17 +43,22 @@
       overflow: auto;
       .toc-level.toc-level-1 > li {
         padding-left: 0;
+        font-weight: 600; // first level heading font-size
       }
       ol {
         padding: 0;
         margin: 0;
         li {
-          &::before {
+          font-weight: 400;
+          padding-left: 14px;
+          &::marker {
+            // disable bullet point
             content: "";
           }
           margin: 0;
           a {
-            @apply text-gray-500 block text-sm xl:text-[0.8rem] xl:leading-[1.1rem] no-underline font-normal px-2 py-1;
+            @apply text-gray-500 block text-sm xl:text-[0.8rem] xl:leading-[1.1rem] no-underline px-2 py-1;
+            font-weight: inherit;
             &:hover {
               @apply bg-gray-100 rounded;
             }
