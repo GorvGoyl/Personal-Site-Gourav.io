@@ -165,6 +165,19 @@ git add -A ; git commit -m "Your Message" (powershell)
 git add -A && git commit -m "Your Message" (bash)
 ```
 
+#### case-sensitive filename change not showing up in git changes
+
+- method 1: one time process for all repos
+  tell Git to be case-sensitive : `git config core.ignorecase false`
+
+- method 2: `git mv -f yOuRfIlEnAmE yourfilename`
+
+- method 3:
+  1.  Rename FILE.ext to whatever.ext
+  2.  Stage that file
+  3.  Now rename whatever.ext to file.ext
+  4.  Stage that file again
+
 ## Push/Pull
 
 ```
