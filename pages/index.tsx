@@ -23,7 +23,7 @@ export default function Home(): JSX.Element {
             />
             <div className="prose prose-lg">
               <Link href="/">
-                <a title="Homepage" className="no-underline">
+                <a title="Homepage" className="no-underline hover:no-underline">
                   <h1
                     className="bg-clip-text text-transparent pb-3 mb-4 tracking-wide font-bold text-3xl md:text-5xl" // bg-gradient-to-r from-blue-500 to-emerald-400
                     style={{
