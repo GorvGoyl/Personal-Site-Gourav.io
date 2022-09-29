@@ -167,16 +167,22 @@ git add -A && git commit -m "Your Message" (bash)
 
 #### case-sensitive filename change not showing up in git changes
 
-- method 1: one time process for all repos
-  tell Git to be case-sensitive : `git config core.ignorecase false`
+- method 1:
 
-- method 2: `git mv -f yOuRfIlEnAmE yourfilename`
+  1. `git mv -f path/YOURFileName.ts path/yourFileName.ts`
+  2. commit
 
-- method 3:
-  1.  Rename FILE.ext to whatever.ext
+- method 2:
+
+  1.  Rename `YOURFileName.ts` to `whatever.ts`
   2.  Stage that file
-  3.  Now rename whatever.ext to file.ext
+  3.  Now rename `whatever.ts` to `yourFileName.ts`
   4.  Stage that file again
+  5.  commit
+
+- method 3: one time process for all repos
+  - tell Git to be case-sensitive : `git config core.ignorecase false`
+  - use this method if you haven't pushed the file you want to rename to remote else it'll store both files. ex: YOURFileName.ts and yourFileName.ts
 
 ## Push/Pull
 
