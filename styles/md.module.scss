@@ -57,7 +57,7 @@
           }
           margin: 0;
           a {
-            @apply text-gray-500 block text-sm xl:text-[0.8rem] xl:leading-[1.1rem] no-underline px-2 py-1;
+            @apply text-gray-500 block text-sm xl:text-[0.8rem] xl:leading-[1.1rem] no-underline hover:no-underline px-2 py-1;
             font-weight: inherit;
             &:hover {
               @apply bg-gray-100 rounded;

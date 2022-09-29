@@ -54,7 +54,7 @@ export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
                 <div>
                   <article>
                     <Link href={`${RELATIVE_PATH}${post.slug}`}>
-                      <a className="no-underline hover:underline">
+                      <a className="no-underline hover:orange-underline">
                         <h5 className="my-0 leading-normal">{post.title}</h5>
                       </a>
                     </Link>

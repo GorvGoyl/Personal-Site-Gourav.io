@@ -3,7 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   // to enable overriding tw-typography styles
-  important: true,
+  // important: true,
   future: {
     removeDeprecatedGapUtilities: true,
   },
@@ -32,7 +32,7 @@ module.exports = {
               overflowWrap: "break-word",
               // textDecoration: "none",
               // "&:hover": {
-              //   textDecoration: "underline",
+              //   textDecoration: "underline hover:decoration-blue-400",
               // },
             },
             code: {

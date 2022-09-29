@@ -341,7 +341,7 @@ export function AuthorImg(): JSX.Element {
         <div className="text-gray-700 text-[14px]">
           <a
             title="Connect with @GorvGoyl on Twitter"
-            className="no-underline font-normal hover:underline text-current"
+            className="no-underline font-normal hover:orange-underline text-current"
             href="https://twitter.com/GorvGoyl"
             rel="noopener"
             target="blank"
@@ -351,7 +351,7 @@ export function AuthorImg(): JSX.Element {
           {" · "}
           <a
             title="Connect with @GorvGoyl on linkedIn"
-            className="no-underline font-normal hover:underline text-current"
+            className="no-underline font-normal hover:orange-underline text-current"
             href="https://www.linkedin.com/in/gorvgoyl"
             rel="noopener"
             target="blank"
@@ -393,7 +393,7 @@ export function Author(props: { date: string; views: string }): JSX.Element {
               className="text-gray-500 flex items-center space-x-3 text-sm"
             >
               <Icon type={"share"} className="stroke-current" size="14" />
-              <p className="m-0 no-underline hover:underline">Share</p>
+              <p className="m-0 no-underline hover:orange-underline">Share</p>
             </div>
           </ShareButton>
         </div>

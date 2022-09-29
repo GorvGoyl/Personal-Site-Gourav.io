@@ -105,7 +105,7 @@ export function Title(Props: {
         <div className="">
           <Link href={Props.homeURL}>
             <a
-              className="no-underline inline-flex items-center"
+              className="no-underline hover:no-underline inline-flex items-center"
               title={Props.txt}
             >
               {Props.logo && (

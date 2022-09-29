@@ -6,7 +6,7 @@ export function TwitterBtn(): JSX.Element {
           href="https://twitter.com/GorvGoyl"
           target="_blank"
           rel="noopener"
-          className="twitter-btn text-white no-underline"
+          className="twitter-btn text-white no-underline hover:no-underline"
           title="Follow 'Gourav Goyal' on Twitter"
         >
           <img
