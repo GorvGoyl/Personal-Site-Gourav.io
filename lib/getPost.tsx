@@ -169,7 +169,7 @@ export async function getPost(
   const result = await bundleMDX({
     source: fileContents,
     cwd: mdDir,
-    xdmOptions: (options) => {
+    mdxOptions: (options) => {
       options.remarkPlugins = [
         ...(options.remarkPlugins ?? []),
         remarkGfm,
