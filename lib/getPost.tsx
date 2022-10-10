@@ -10,7 +10,7 @@ import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import { remarkMdxImages } from "remark-mdx-images";
+import remarkMdxImages from "remark-mdx-images";
 
 function getMDFoldersList(baseDir: string) {
   const folders = [];

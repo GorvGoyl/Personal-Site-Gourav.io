@@ -40,7 +40,7 @@ export default function Post(props: {
           return;
         })
         .catch((e) => {
-          console.error(e);
+          console.error("getSlugViews", e);
         });
     }
   }, [props.slug, slugPath]);
