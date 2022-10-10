@@ -378,10 +378,10 @@
   dependencies:
     "glob" "7.1.7"
 
-"@next/mdx@^12.0.4":
-  "integrity" "sha512-WsiuZkzhECLp91ZGErhPKzASsFSRwcoHATOeZZvrkyjXiBodem/M3qFev6GPe9g2Ejw5Kt2DdbwUlkELDpz8aw=="
-  "resolved" "https://registry.npmjs.org/@next/mdx/-/mdx-12.0.4.tgz"
-  "version" "12.0.4"
+"@next/mdx@^12.3.1":
+  "integrity" "sha512-b7G3CsAwyD/8Eo6uDjCCqNwEi68LTyo/JYPC0N2Yu3yl/iveMDCi03ME+9JsnFPr3DcjmGSKc1ioiYM4dJUkTg=="
+  "resolved" "https://registry.npmjs.org/@next/mdx/-/mdx-12.3.1.tgz"
+  "version" "12.3.1"
 
 "@next/swc-darwin-arm64@12.3.1":
   "integrity" "sha512-hT/EBGNcu0ITiuWDYU9ur57Oa4LybD5DOQp4f22T6zLfpoBMfBibPtR8XktXmOyFHrL/6FC2p9ojdLZhWhvBHg=="
@@ -677,10 +677,10 @@
   "resolved" "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz"
   "version" "0.7.31"
 
-"@types/node@*", "@types/node@^18.7.21", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
-  "integrity" "sha512-rLFzK5bhM0YPyCoTC8bolBjMk7bwnZ8qeZUBslBfjZQou2ssJdWslx9CZ8DGM+Dx7QXQiiTVZ/6QO6kwtHkZCA=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.7.21.tgz"
-  "version" "18.7.21"
+"@types/node@*", "@types/node@^18.8.3", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
+  "integrity" "sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.8.3.tgz"
+  "version" "18.8.3"
 
 "@types/normalize-package-data@^2.4.0":
   "integrity" "sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw=="
@@ -2138,38 +2138,38 @@
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
 
-"esbuild-darwin-arm64@0.15.9":
-  "integrity" "sha512-VZIMlcRN29yg/sv7DsDwN+OeufCcoTNaTl3Vnav7dL/nvsApD7uvhVRbgyMzv0zU/PP0xRhhIpTyc7lxEzHGSw=="
-  "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.15.9.tgz"
-  "version" "0.15.9"
+"esbuild-darwin-arm64@0.15.10":
+  "integrity" "sha512-M1t5+Kj4IgSbYmunf2BB6EKLkWUq+XlqaFRiGOk8bmBapu9bCDrxjf4kUnWn59Dka3I27EiuHBKd1rSO4osLFQ=="
+  "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.15.10.tgz"
+  "version" "0.15.10"
 
-"esbuild@*", "esbuild@^0.15.9", "esbuild@0.11.x || 0.12.x || 0.13.x":
-  "integrity" "sha512-OnYr1rkMVxtmMHIAKZLMcEUlJmqcbxBz9QoBU8G9v455na0fuzlT/GLu6l+SRghrk0Mm2fSSciMmzV43Q8e0Gg=="
-  "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.15.9.tgz"
-  "version" "0.15.9"
+"esbuild@*", "esbuild@^0.15.10", "esbuild@0.11.x || 0.12.x || 0.13.x":
+  "integrity" "sha512-N7wBhfJ/E5fzn/SpNgX+oW2RLRjwaL8Y0ezqNqhjD6w0H2p0rDuEz2FKZqpqLnO8DCaWumKe8dsC/ljvVSSxng=="
+  "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.15.10.tgz"
+  "version" "0.15.10"
   optionalDependencies:
-    "@esbuild/android-arm" "0.15.9"
-    "@esbuild/linux-loong64" "0.15.9"
-    "esbuild-android-64" "0.15.9"
-    "esbuild-android-arm64" "0.15.9"
-    "esbuild-darwin-64" "0.15.9"
-    "esbuild-darwin-arm64" "0.15.9"
-    "esbuild-freebsd-64" "0.15.9"
-    "esbuild-freebsd-arm64" "0.15.9"
-    "esbuild-linux-32" "0.15.9"
-    "esbuild-linux-64" "0.15.9"
-    "esbuild-linux-arm" "0.15.9"
-    "esbuild-linux-arm64" "0.15.9"
-    "esbuild-linux-mips64le" "0.15.9"
-    "esbuild-linux-ppc64le" "0.15.9"
-    "esbuild-linux-riscv64" "0.15.9"
-    "esbuild-linux-s390x" "0.15.9"
-    "esbuild-netbsd-64" "0.15.9"
-    "esbuild-openbsd-64" "0.15.9"
-    "esbuild-sunos-64" "0.15.9"
-    "esbuild-windows-32" "0.15.9"
-    "esbuild-windows-64" "0.15.9"
-    "esbuild-windows-arm64" "0.15.9"
+    "@esbuild/android-arm" "0.15.10"
+    "@esbuild/linux-loong64" "0.15.10"
+    "esbuild-android-64" "0.15.10"
+    "esbuild-android-arm64" "0.15.10"
+    "esbuild-darwin-64" "0.15.10"
+    "esbuild-darwin-arm64" "0.15.10"
+    "esbuild-freebsd-64" "0.15.10"
+    "esbuild-freebsd-arm64" "0.15.10"
+    "esbuild-linux-32" "0.15.10"
+    "esbuild-linux-64" "0.15.10"
+    "esbuild-linux-arm" "0.15.10"
+    "esbuild-linux-arm64" "0.15.10"
+    "esbuild-linux-mips64le" "0.15.10"
+    "esbuild-linux-ppc64le" "0.15.10"
+    "esbuild-linux-riscv64" "0.15.10"
+    "esbuild-linux-s390x" "0.15.10"
+    "esbuild-netbsd-64" "0.15.10"
+    "esbuild-openbsd-64" "0.15.10"
+    "esbuild-sunos-64" "0.15.10"
+    "esbuild-windows-32" "0.15.10"
+    "esbuild-windows-64" "0.15.10"
+    "esbuild-windows-arm64" "0.15.10"
 
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
@@ -6007,10 +6007,10 @@
   "resolved" "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   "version" "4.2.0"
 
-"postcss@^8.0.0", "postcss@^8.1.0", "postcss@^8.2", "postcss@^8.2.14", "postcss@^8.3.3", "postcss@^8.4.14", "postcss@^8.4.16", "postcss@>=8.0.9":
-  "integrity" "sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ=="
-  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.16.tgz"
-  "version" "8.4.16"
+"postcss@^8.0.0", "postcss@^8.1.0", "postcss@^8.2", "postcss@^8.2.14", "postcss@^8.3.3", "postcss@^8.4.14", "postcss@^8.4.16", "postcss@^8.4.17", "postcss@>=8.0.9":
+  "integrity" "sha512-UNxNOLQydcOFi41yHNMcKRZ39NeXlr8AxGuZJsdub8vIb12fHzcq37DTU/QtbI6WLxNg2gF9Z+8qtRwTj1UI1Q=="
+  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.17.tgz"
+  "version" "8.4.17"
   dependencies:
     "nanoid" "^3.3.4"
     "picocolors" "^1.0.0"
@@ -7372,10 +7372,10 @@
     "postcss-selector-parser" "^6.0.6"
     "postcss-value-parser" "^4.1.0"
 
-"stylelint@^14.10.0", "stylelint@^14.11.0", "stylelint@^14.12.1", "stylelint@^14.5.1":
-  "integrity" "sha512-ZEM4TuksChMBfuPadQsHUkbOoRySAT9QMfDvvYxdAchOJl0p+csTMBXOu6ORAAxKhwBmxqJiep8V88bXfNs3EQ=="
-  "resolved" "https://registry.npmjs.org/stylelint/-/stylelint-14.12.1.tgz"
-  "version" "14.12.1"
+"stylelint@^14.10.0", "stylelint@^14.11.0", "stylelint@^14.13.0", "stylelint@^14.5.1":
+  "integrity" "sha512-NJSAdloiAB/jgVJKxMR90mWlctvmeBFGFVUvyKngi9+j/qPSJ5ZB+u8jOmGbLTnS7OHrII9NFGehPRyar8U5vg=="
+  "resolved" "https://registry.npmjs.org/stylelint/-/stylelint-14.13.0.tgz"
+  "version" "14.13.0"
   dependencies:
     "@csstools/selector-specificity" "^2.0.2"
     "balanced-match" "^2.0.0"
@@ -7767,10 +7767,10 @@
   dependencies:
     "is-typedarray" "^1.0.0"
 
-"typescript@^4.8.3", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.3.1":
-  "integrity" "sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.8.3.tgz"
-  "version" "4.8.3"
+"typescript@^4.8.4", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta", "typescript@>=3.3.1":
+  "integrity" "sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.8.4.tgz"
+  "version" "4.8.4"
 
 "uc.micro@^1.0.1", "uc.micro@^1.0.5":
   "integrity" "sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA=="
