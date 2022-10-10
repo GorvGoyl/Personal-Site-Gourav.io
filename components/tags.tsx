@@ -93,7 +93,8 @@ export function Img(props: {
   let imgTag = <img src={props.src} alt={altText} className={cls} />;
 
   if (!props.disableZoom) {
-    imgTag = <Zoom wrapStyle={{ display: "flex" }}>{imgTag}</Zoom>; //display: "flex" to center align image
+    // imgTag = <Zoom wrapStyle={{ display: "flex" }}>{imgTag}</Zoom>; //display: "flex" to center align image
+    imgTag = <Zoom>{imgTag}</Zoom>; //display: "flex" to center align image
   }
 
   if (props.caption) {
