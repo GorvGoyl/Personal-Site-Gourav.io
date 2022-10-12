@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gourav.io</id>
     <title>Gourav Goyal</title>
-    <updated>2022-10-10T03:40:31.371Z</updated>
+    <updated>2022-10-12T17:52:48.576Z</updated>
     <generator>Feed for https://gourav.io</generator>
     <author>
         <name>Gourav Goyal</name>
@@ -11,72 +11,21 @@
     </author>
     <link rel="alternate" href="https://gourav.io"/>
     <link rel="self" href="https://gourav.io/atom.xml"/>
-    <subtitle>Blog - Gourav Goyal</subtitle>
+    <subtitle>Gourav's Blog - Tech | Productivity | Life</subtitle>
     <logo>https://gourav.io/favicon-32x32.png</logo>
     <icon>https://gourav.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gourav Goyal</rights>
     <entry>
-        <title type="html"><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes]]></title>
-        <id>Add free privacy-friendly comment-box to any site in 5 minutes</id>
-        <link href="https://gourav.io/blog/add-comments-to-site"/>
-        <updated>2022-05-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes (powered by Github discussions)]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Top AutoHotkey scripts to use Windows like a pro]]></title>
-        <id>Top AutoHotkey scripts to use Windows like a pro</id>
-        <link href="https://gourav.io/blog/autohotkey-scripts-windows"/>
-        <updated>2022-01-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Useful AutoHotkey scripts (Windows) for quick lookup, in-line calculator, remap keys, battery alert, and more]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Block API requests via chrome extension - Manifest v2 and v3]]></title>
-        <id>Block API requests via chrome extension - Manifest v2 and v3</id>
-        <link href="https://gourav.io/blog/block-api-requests-chrome-extension"/>
-        <updated>2022-05-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Dynamically block api requests in manifest v2 and v3 of chrome extension]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I received first-ever donation on my open-source side project and it felt great!]]></title>
-        <id>I received first-ever donation on my open-source side project and it felt great!</id>
-        <link href="https://gourav.io/blog/first-donation-on-open-source-side-project"/>
-        <updated>2020-12-11T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[I decided to build an extension for VSCode. That would add handy buttons for many common commands like save file, format file, show opened files etc.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Git Cheatsheet - handy commands for every situation]]></title>
-        <id>Git Cheatsheet - handy commands for every situation</id>
-        <link href="https://gourav.io/blog/git-cheatsheet"/>
-        <updated>2021-10-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Useful git commands for beginners like reverting commits, work between branches, manage PRs, and more]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[My simple Github project went Viral]]></title>
-        <id>My simple Github project went Viral</id>
-        <link href="https://gourav.io/blog/my-simple-github-project-went-viral"/>
-        <updated>2021-04-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[I made a simple project which got spread in various tech communities and social media. Github featured it in 'Trending repositories of day' section]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Next.js Cheatsheet - handy snippets and tips]]></title>
-        <id>Next.js Cheatsheet - handy snippets and tips</id>
-        <link href="https://gourav.io/blog/nextjs-cheatsheet"/>
-        <updated>2021-10-11T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Setup debugging, custom domains, Tailwind CSS, SEO, Typescript, ESLint, analytics, and much more to Next.js project]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Power up your PowerShell with customizations and handy custom commands]]></title>
-        <id>Power up your PowerShell with customizations and handy custom commands</id>
-        <link href="https://gourav.io/blog/powershell"/>
-        <updated>2022-02-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Setup PowerShell to add many useful custom commands, show git repo status, autocomplete commands, and more.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Setup VSCode to run and debug C / C++ code]]></title>
-        <id>Setup VSCode to run and debug C / C++ code</id>
-        <link href="https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code"/>
-        <updated>2020-12-04T18:30:00.000Z</updated>
-        <summary type="html"><![CDATA[By the end of this short guide, you’d be able to run, debug, and get IntelliSense for C/C++ files in VSCode]]></summary>
+        <title type="html"><![CDATA[Sync Fastmail calendar with Google Calendar]]></title>
+        <id>Sync Fastmail calendar with Google Calendar</id>
+        <link href="https://gourav.io/blog/sync-fastmail-calendar-with-google-calendar"/>
+        <updated>2022-08-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Add Fastmail calendar events to Google Calendar]]></summary>
+        <author>
+            <name>Gourav Goyal</name>
+            <email>hey@gourav.io</email>
+            <uri>https://twitter.com/GorvGoyl</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Show Tailwind CSS color values in HEX format in dev tools]]></title>
@@ -84,19 +33,46 @@
         <link href="https://gourav.io/blog/show-tailwind-colors-in-devtools"/>
         <updated>2022-05-29T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Show Tailwind CSS color values in HEX format instead of rgba in dev tools]]></summary>
+        <author>
+            <name>Gourav Goyal</name>
+            <email>hey@gourav.io</email>
+            <uri>https://twitter.com/GorvGoyl</uri>
+        </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Sync Fastmail calendar with Google Calendar]]></title>
-        <id>Sync Fastmail calendar with Google Calendar</id>
-        <link href="https://gourav.io/blog/sync-fastmail-calendar-with-google-calendar"/>
-        <updated>2022-08-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Add Fastmail calendar events to Google Calendar]]></summary>
+        <title type="html"><![CDATA[Block API requests via chrome extension - Manifest v2 and v3]]></title>
+        <id>Block API requests via chrome extension - Manifest v2 and v3</id>
+        <link href="https://gourav.io/blog/block-api-requests-chrome-extension"/>
+        <updated>2022-05-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Dynamically block api requests in manifest v2 and v3 of chrome extension]]></summary>
+        <author>
+            <name>Gourav Goyal</name>
+            <email>hey@gourav.io</email>
+            <uri>https://twitter.com/GorvGoyl</uri>
+        </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Megalist of free & open-source apps I use on Windows]]></title>
-        <id>Megalist of free &amp; open-source apps I use on Windows</id>
-        <link href="https://gourav.io/blog/windows-free-apps"/>
-        <updated>2022-01-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[description: List of my favorite free and open-source tools for Windows that made me more efficient and productive]]></summary>
+        <title type="html"><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes]]></title>
+        <id>Add free privacy-friendly comment-box to any site in 5 minutes</id>
+        <link href="https://gourav.io/blog/add-comments-to-site"/>
+        <updated>2022-05-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Add free privacy-friendly comment-box to any site in 5 minutes (powered by Github discussions)]]></summary>
+        <author>
+            <name>Gourav Goyal</name>
+            <email>hey@gourav.io</email>
+            <uri>https://twitter.com/GorvGoyl</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Power up your PowerShell with customizations and handy custom commands]]></title>
+        <id>Power up your PowerShell with customizations and handy custom commands</id>
+        <link href="https://gourav.io/blog/powershell"/>
+        <updated>2022-02-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Setup PowerShell to add many useful custom commands, show git repo status, autocomplete commands, and more.]]></summary>
+        <author>
+            <name>Gourav Goyal</name>
+            <email>hey@gourav.io</email>
+            <uri>https://twitter.com/GorvGoyl</uri>
+        </author>
     </entry>
 </feed>

@@ -2,13 +2,13 @@
  * if desktop view: set position of toc on scroll event
  * @return {*} AbortController
  */
-export const initTocPosition = () => {
+export const initOutlinePosition = (): AbortController => {
   const controller = new AbortController();
 
-  const tocEl: HTMLElement = document.querySelector(".page-outline");
+  const tocEl: HTMLElement | null = document.querySelector(".page-outline");
   if (tocEl && tocEl.style) {
     const isDesktopView =
-      getComputedStyle(document.querySelector(".page-outline")).position ===
+      getComputedStyle(document.querySelector(".page-outline")!).position ===
       "fixed";
 
     if (isDesktopView) {

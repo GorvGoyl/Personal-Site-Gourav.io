@@ -4,17 +4,18 @@ import { Icon } from "@/components/icons";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
-import { getAllPosts as getAllPostsMatter } from "@/lib/getPost";
 import { getSlugViews, readableDate, roundUpViewCount } from "@/lib/utils";
-import { FrontMatter } from "@/types/types";
+import { FrontmatterBlogpost } from "@/types/types";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import { join } from "path";
 import React, { useEffect, useState } from "react";
-
+import { getAllPublishedPostsFrontmatterFromNotion } from "@/lib/notionUtils";
 const RELATIVE_PATH = "/blog/";
 
-export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
+export default function Blog(props: {
+  allPosts: FrontmatterBlogpost[];
+}): JSX.Element {
   const [slugViews, setSlugViews] = useState({});
 
   useEffect(() => {
@@ -104,14 +105,8 @@ export default function Blog(props: { allPosts: FrontMatter[] }): JSX.Element {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps = async (context) => {
-  const postsDirectory = join(process.cwd(), "content", "blog");
-
-  const allPostsMatter = getAllPostsMatter(
-    ["title", "date", "slug"],
-    postsDirectory
-  );
-
+  const blogIndex = await getAllPublishedPostsFrontmatterFromNotion();
   return {
-    props: { allPosts: allPostsMatter },
+    props: { allPosts: blogIndex },
   };
 };

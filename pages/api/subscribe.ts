@@ -31,7 +31,7 @@ export default async function subscribe(
     return res;
   }
 
-  const tags = [];
+  const tags = [] as string[];
   if (referrer) tags.push(referrer as string);
   if (referrer_url) tags.push(referrer_url as string);
 

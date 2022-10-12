@@ -10,51 +10,15 @@
                         </url>
                     
                         <url>
-                            <loc>https://gourav.io/clone-wars</loc>
-                        </url>
-                    
-                        <url>
                             <loc>https://gourav.io/notion-boost</loc>
                         </url>
                     
                         <url>
-                            <loc>https://gourav.io/blog/add-comments-to-site</loc>
+                            <loc>https://gourav.io/clone-wars</loc>
                         </url>
                     
                         <url>
-                            <loc>https://gourav.io/blog/autohotkey-scripts-windows</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/block-api-requests-chrome-extension</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/first-donation-on-open-source-side-project</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/git-cheatsheet</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/my-simple-github-project-went-viral</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/nextjs-cheatsheet</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/powershell</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/setup-vscode-to-run-debug-c-cpp-code</loc>
-                        </url>
-                    
-                        <url>
-                            <loc>https://gourav.io/blog/show-tailwind-colors-in-devtools</loc>
+                            <loc>https://gourav.io/notion-boost/whats-new</loc>
                         </url>
                     
                         <url>
@@ -62,11 +26,19 @@
                         </url>
                     
                         <url>
-                            <loc>https://gourav.io/blog/windows-free-apps</loc>
+                            <loc>https://gourav.io/blog/show-tailwind-colors-in-devtools</loc>
                         </url>
                     
                         <url>
-                            <loc>https://gourav.io/notion-boost/whats-new</loc>
+                            <loc>https://gourav.io/blog/block-api-requests-chrome-extension</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://gourav.io/blog/add-comments-to-site</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://gourav.io/blog/powershell</loc>
                         </url>
                     
         </urlset>

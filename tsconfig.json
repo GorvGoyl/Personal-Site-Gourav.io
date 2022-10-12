@@ -25,7 +25,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "pretty": true,
     "noImplicitReturns": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true, //needs to be true for zod to work
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "incremental": true

@@ -1,5 +1,3 @@
-import { Banner } from "@/components/banner";
-import { Comments } from "@/components/commentBox";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import MDXComponents from "@/components/mdxComponents";
@@ -8,23 +6,23 @@ import { ScrollTopBtn } from "@/components/scrollTop";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
 import { AuthorImg, ShareComponent } from "@/components/tags";
 import project from "@/layouts/css/project.module.scss";
-import { getMdPostSlugs, getPost } from "@/lib/getPost";
-import { initTocPosition } from "@/lib/mdx";
+import { getMdPostSlugs, getPost } from "@/lib/localContentUtils";
+import { initOutlinePosition } from "@/lib/mdx";
 import md from "@/styles/md.module.scss";
-import { FrontMatter } from "@/types/types";
+import { FrontmatterProject } from "@/types/types";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import { join } from "path";
 import React, { useEffect, useMemo } from "react";
 
 export default function Project(props: {
-  matter: FrontMatter;
+  matter: FrontmatterProject;
   source: string;
 }) {
   const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
 
   useEffect(() => {
-    const controller = initTocPosition();
+    const controller = initOutlinePosition();
 
     // remove eventlistener
     return () => {
@@ -38,7 +36,7 @@ export default function Project(props: {
         type="website"
         title={props.matter.title}
         desc={props.matter.desc}
-        imgPath={props.matter.ogURL}
+        imgPath={props.matter.ogImgURL}
       />
 
       <Container layout={LayoutType.Blog}>
@@ -61,16 +59,15 @@ export default function Project(props: {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticProps = async (props: { params: { slug: [string] } }) => {
+export const getStaticProps = async (props: Path) => {
   const slugArr = props.params.slug;
   const slug = slugArr.join("/");
-  const mdRelativeDir = `content/misc/${slug}`;
+  const mdRelativeDir = `content/projects/${slug}`;
 
   const mdFileName = "index.md";
 
   // store all images (including og image) to the base markdown folder even in case of md sub-folders
-  const imgOutputRelativeDir = `/img/${slugArr[0]}`;
+  const imgOutputRelativeDir = `/projects/${slugArr[0]}`;
 
   const { matter, source } = await getPost(
     mdRelativeDir,
@@ -86,12 +83,17 @@ export const getStaticProps = async (props: { params: { slug: [string] } }) => {
   };
 };
 
+type Path = {
+  params: {
+    slug: string[]; //should be same as filename i.e. [...slug]
+  };
+};
 export const getStaticPaths: GetStaticPaths = () => {
-  const postsDirectory = join(process.cwd(), "content", "misc");
+  const postsDirectory = join(process.cwd(), "content", "projects");
 
   const slugsArr = getMdPostSlugs(postsDirectory);
 
-  const paths = [];
+  const paths = [] as Path[];
 
   for (const slug of slugsArr) {
     paths.push({

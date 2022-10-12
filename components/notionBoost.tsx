@@ -209,9 +209,9 @@ export function Social(): JSX.Element {
         store
       </p>
 
-      <p>
+      <div>
         🙏 Help others by sharing this project &nbsp; <ShareInlineBtn />
-      </p>
+      </div>
       <p>
         👋 Connect with maker behind this project on{" "}
         <span>

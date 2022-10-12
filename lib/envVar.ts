@@ -26,6 +26,14 @@ export const GA_GOOGLE_PRIVATE_KEY = process.env.GA_GOOGLE_PRIVATE_KEY || "";
 
 isServer && (GA_GOOGLE_PRIVATE_KEY || console.error("GA_GOOGLE_PRIVATE_KEY"));
 
+export const NOTION_API_KEY = process.env.NOTION_API_KEY || "";
+
+isServer && (NOTION_API_KEY || console.error("NOTION_API_KEY"));
+
+export const NOTION_BLOGPOSTS_DB = process.env.NOTION_BLOGPOSTS_DB || "";
+
+isServer && (NOTION_BLOGPOSTS_DB || console.error("NOTION_BLOGPOSTS_DB"));
+
 export const GA_PROPERTY_ID = process.env.GA_PROPERTY_ID || "";
 
 isServer && (GA_PROPERTY_ID || console.error("GA_PROPERTY_ID"));

@@ -99,7 +99,7 @@ export function Img(props: {
 
   if (props.caption) {
     return (
-      <figure className={props.type === "ss" && "text-center"}>
+      <figure className={props.type === "ss" ? "text-center" : undefined}>
         {imgTag}
         <figcaption className="text-center -mt-4">{props.caption}</figcaption>
       </figure>
@@ -153,7 +153,7 @@ export function ShareButton(props: {
   const shareBtnRef = useRef(null);
   useEffect(() => {
     setPageURL(window.location.href);
-    if (navigator.share) {
+    if (typeof navigator.share === "function") {
       setNativeShare(true);
     }
   }, []);
@@ -161,9 +161,9 @@ export function ShareButton(props: {
   function handleClickOutside(e: any) {
     if (
       shareMenuRef.current &&
-      !shareMenuRef.current.contains(e.target) &&
+      !(shareMenuRef.current as HTMLElement).contains(e.target) &&
       shareBtnRef.current &&
-      !shareBtnRef.current.contains(e.target)
+      !(shareBtnRef.current as HTMLElement).contains(e.target)
     ) {
       document.removeEventListener("click", handleClickOutside);
       setPopup(false);
@@ -192,7 +192,7 @@ export function ShareButton(props: {
       <div>
         <a
           ref={shareBtnRef}
-          className="outline-none no-underline font-normal inline-block select-none"
+          className="outline-none hover:no-underline no-underline font-normal inline-block select-none"
           title="Share"
           tabIndex={0}
           role="button"
