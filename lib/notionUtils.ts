@@ -206,7 +206,7 @@ const imgTransformer = async (
     throw new Error("unhandled case: imgBlock has children");
   }
   let mediaUrl = "",
-    caption = "";
+    captionPlain = "";
   let src: "external" | "aws-s3" = "aws-s3";
   if (imgBlock.image.type === "external") {
     mediaUrl = imgBlock.image.external.url; //ends with filename.png
@@ -222,16 +222,10 @@ const imgTransformer = async (
     src = "aws-s3";
   }
 
-  if (
-    imgBlock.image.caption.length > 1 &&
-    imgBlock.image.caption[1].plain_text !== ""
-  )
-    throw new Error(
-      "unhandled case: image caption has more than 1 element" +
-        JSON.stringify(imgBlock.image.caption, null, 2)
-    );
-
-  caption = (imgBlock.image.caption?.[0]?.plain_text || "").trim();
+  captionPlain = imgBlock.image.caption
+    .map((item) => item.plain_text)
+    .join("")
+    .trim();
 
   const { mediaDestination, mediaRelativePath, destFileName } =
     getDestMediaInfoFromURL(mediaUrl, slugLowercase, src);
@@ -240,11 +234,11 @@ const imgTransformer = async (
   await downloadFile(mediaUrl, mediaDestination, "overwrite");
 
   // image with below caption is considered og:image and not shown in post
-  if (caption === "og:image") {
+  if (captionPlain === "og:image") {
     setOgImageURLcallback(mediaRelativePath, destFileName);
     return "";
   } else {
-    const imgComponent = `<Img src="${mediaRelativePath}" type="ss" caption="${caption}" />`;
+    const imgComponent = `<Img src="${mediaRelativePath}" type="ss" caption="${captionPlain}" />`;
     return imgComponent;
   }
 };
@@ -258,7 +252,7 @@ const videoTransformer = async (
     throw new Error("unhandled case: videoBlock has children");
   }
   let mediaUrl = "",
-    caption = "";
+    captionPlain = "";
   let src: "external" | "aws-s3" = "aws-s3";
   if (videoBlock.video.type === "external") {
     mediaUrl = videoBlock.video.external.url; //ends with filename.mp4
@@ -274,19 +268,14 @@ const videoTransformer = async (
     src = "aws-s3";
   }
 
-  if (
-    videoBlock.video.caption.length > 1 &&
-    videoBlock.video.caption[1].plain_text !== ""
-  )
-    throw new Error(
-      "unhandled case: video caption has more than 1 element" +
-        JSON.stringify(videoBlock.video.caption, null, 2)
-    );
-  caption = (videoBlock.video.caption?.[0]?.plain_text || "").trim();
-
-  if (caption) {
-    throw new Error("captions are not yet handled for videos: " + caption);
+  captionPlain = videoBlock.video.caption
+    .map((item) => item.plain_text)
+    .join("")
+    .trim();
+  if (captionPlain) {
+    throw new Error("captions are not yet handled for videos: " + captionPlain);
   }
+
   const { mediaDestination, mediaRelativePath } = getDestMediaInfoFromURL(
     mediaUrl,
     slugLowercase,
