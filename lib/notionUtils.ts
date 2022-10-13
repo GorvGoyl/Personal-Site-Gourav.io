@@ -148,14 +148,28 @@ export async function getPostContentFromNotion(
     videoTransformer(block, slugLowercase)
   );
 
+  n2m.setCustomTransformer("column_list", async (block) => {
+    const mdBlocks = await n2m.pageToMarkdown(block.id);
+    const mdString = n2m.toMarkdownString(mdBlocks);
+    return `
+    <div style={{display:"flex",columnGap:"10px"}}>
+   ${mdString}
+    </div>
+    `;
+  });
+
+  n2m.setCustomTransformer("column", (block) => {
+    // avoid rendering columns twice
+    return "";
+  });
+
   const mdBlocks = await n2m.pageToMarkdown(frontmatter.postId);
   const mdString = n2m.toMarkdownString(mdBlocks);
 
-  const postContent = await convertMdxString(mdString, frontmatter);
+  const postContent = await convertMdxStringToCode(mdString, frontmatter);
 
   // save og image name in cache
   if (ogImageName) {
-    console.log("🚀 ~ ogImageName", ogImageName);
     frontmatterCache.addOGImage(frontmatter.postId, ogImageName);
   }
   return {
@@ -208,7 +222,10 @@ const imgTransformer = async (
     src = "aws-s3";
   }
 
-  if (imgBlock.image.caption.length > 1)
+  if (
+    imgBlock.image.caption.length > 1 &&
+    imgBlock.image.caption[1].plain_text !== ""
+  )
     throw new Error(
       "unhandled case: image caption has more than 1 element" +
         JSON.stringify(imgBlock.image.caption, null, 2)
@@ -224,8 +241,6 @@ const imgTransformer = async (
 
   // image with below caption is considered og:image and not shown in post
   if (caption === "og:image") {
-    console.log("🚀 ~ caption", caption);
-
     setOgImageURLcallback(mediaRelativePath, destFileName);
     return "";
   } else {
@@ -259,7 +274,10 @@ const videoTransformer = async (
     src = "aws-s3";
   }
 
-  if (videoBlock.video.caption.length > 1)
+  if (
+    videoBlock.video.caption.length > 1 &&
+    videoBlock.video.caption[1].plain_text !== ""
+  )
     throw new Error(
       "unhandled case: video caption has more than 1 element" +
         JSON.stringify(videoBlock.video.caption, null, 2)
@@ -340,7 +358,7 @@ const getDestMediaInfoFromURL = (
   return { mediaRelativePath, mediaDestination, destFileName };
 };
 
-const convertMdxString = async (
+const convertMdxStringToCode = async (
   mdString: string,
   frontmatter: FrontmatterBlogpost
 ) => {
