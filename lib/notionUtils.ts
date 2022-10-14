@@ -3,6 +3,7 @@ import { Client } from "@notionhq/client";
 import {
   ImageBlockObjectResponse,
   PageObjectResponse,
+  SyncedBlockBlockObjectResponse,
   VideoBlockObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { NOTION_API_KEY, NOTION_BLOGPOSTS_DB } from "./envVar";
@@ -147,6 +148,22 @@ export async function getPostContentFromNotion(
   n2m.setCustomTransformer("video", (block) =>
     videoTransformer(block, slugLowercase)
   );
+
+  n2m.setCustomTransformer("synced_block", async (block) => {
+    const syncedBlock = block as SyncedBlockBlockObjectResponse;
+    const originalSyncedBlockId =
+      syncedBlock.synced_block.synced_from?.block_id;
+
+    const isReferenceSyncedBlock = !!originalSyncedBlockId;
+    // check if it's a 'reference synced block'
+    if (isReferenceSyncedBlock) {
+      const mdBlocks = await n2m.pageToMarkdown(originalSyncedBlockId);
+      const mdString = n2m.toMarkdownString(mdBlocks);
+      return mdString;
+    } else {
+      return ""; // 'original synced blocks' are handled like normal blocks by n2m so avoid rendering it twice
+    }
+  });
 
   n2m.setCustomTransformer("column_list", async (block) => {
     const mdBlocks = await n2m.pageToMarkdown(block.id);
