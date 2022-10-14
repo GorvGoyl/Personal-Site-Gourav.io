@@ -6,29 +6,32 @@ import { ScrollTopBtn } from "@/components/scrollTop";
 
 import { Author, AuthorImg, ShareComponent } from "@/components/tags";
 import post from "@/layouts/css/post.module.scss";
-import { getMdPostSlugs, getPost } from "@/lib/getPost";
-import { initTocPosition } from "@/lib/mdx";
+import { PHASE_PRODUCTION_BUILD } from "next/constants";
+
+import { initOutlinePosition } from "@/lib/mdx";
+import {
+  getAllPublishedPostsFrontmatterFromNotion,
+  getPostContentFromNotion,
+  getPostIdFromSlugFromNotion,
+} from "@/lib/notionUtils";
 import { getSlugViews } from "@/lib/utils";
 import md from "@/styles/md.module.scss";
-import { FrontMatter } from "@/types/types";
+import { FrontmatterBlogpost } from "@/types/types";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths } from "next";
 import Link from "next/link";
-import { join } from "path";
 import React, { useEffect, useMemo, useState } from "react";
+import { frontmatterCache } from "@/lib/cache";
 const RELATIVE_PATH = "/blog/";
 
-export default function Post(props: {
-  matter: FrontMatter;
-  source: string;
-  slug: string;
-}) {
+export default function Post(props: Post) {
   const [slugViews, setSlugViews] = useState("");
   const [slugPath, setSlugPath] = useState("");
+  // show views
   useEffect(() => {
-    if (props.slug) {
+    if (props.frontmatter.slug) {
       // add relative path to slug: /blog/nextjs-cheatsheet
-      setSlugPath(`${RELATIVE_PATH}${props.slug}`);
+      setSlugPath(`${RELATIVE_PATH}${props.frontmatter.slug}`);
 
       getSlugViews([slugPath])
         .then((res) => {
@@ -43,10 +46,11 @@ export default function Post(props: {
           console.error("getSlugViews", e);
         });
     }
-  }, [props.slug, slugPath]);
+  }, [props.frontmatter.slug, slugPath]);
 
+  // handle outline (move up on scroll down event)
   useEffect(() => {
-    const controller = initTocPosition();
+    const controller = initOutlinePosition();
 
     // remove eventlistener
     return () => {
@@ -54,20 +58,21 @@ export default function Post(props: {
     };
   }, []);
 
-  const MDX = useMemo(() => getMDXComponent(props.source), [props.source]);
-
-  const articleEditLink = `https://github.com/GorvGoyl/Personal-Site-Gourav.io/blob/main/content/${slugPath}/index.md`;
+  const MDX = useMemo(
+    () => getMDXComponent(props.postContent),
+    [props.postContent]
+  );
 
   return (
     <>
       <Header
         type="article"
-        title={props.matter.title}
-        desc={props.matter.desc}
-        imgPath={props.matter.ogURL}
+        title={props.frontmatter.title}
+        desc={props.frontmatter.desc || props.frontmatter.title}
+        imgPath={props.ogImageURL}
         date={
-          props.matter.date
-            ? new Date(props.matter.date).toISOString()
+          props.frontmatter.date
+            ? new Date(props.frontmatter.date).toISOString()
             : undefined
         }
       />
@@ -78,16 +83,16 @@ export default function Post(props: {
           <article className={`${post.code_block} ${md.css}`}>
             <header>
               <h1 className="text-2xl md:text-4xl md:leading-tight">
-                {props.matter.title}
+                {props.frontmatter.title}
               </h1>
             </header>
-            <Author date={props.matter.date} views={slugViews} />
+            <Author date={props.frontmatter.date} views={slugViews} />
             <MDX components={MDXComponents as any} />
 
             <ThatsAll />
 
-            <DiscussArticle matter={props.matter} />
-            <EditArticle articleEditLink={articleEditLink} />
+            <DiscussArticle matter={props.frontmatter} />
+            {/* <EditArticle articleEditLink={articleEditLink} /> */}
           </article>
           <ShareComponent />
           {/* <SubscribeForm type={FORMTYPE.AfterArticle} /> */}
@@ -111,41 +116,52 @@ export default function Post(props: {
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticProps = async (props: { params: { slug: [string] } }) => {
-  const slugArr = props.params.slug;
-  const slug = slugArr.join("/");
-
-  const mdRelativeDir = `content/blog/${slug}`;
-
-  const mdFileName = "index.md";
-
-  const imgOutputRelativeDir = `/img/blog/${slugArr[0]}`;
-
-  const { matter, source } = await getPost(
-    mdRelativeDir,
-    mdFileName,
-    imgOutputRelativeDir
+export const getStaticProps = async (props: Path) => {
+  const postSlug = props.params.slug[0];
+  let frontmatter = frontmatterCache.getBySlug(postSlug);
+  if (!frontmatter) {
+    console.log("empty cache, fetching from notion");
+    frontmatter = await getPostIdFromSlugFromNotion(postSlug);
+  }
+  const { ogImageURL, postContent } = await getPostContentFromNotion(
+    frontmatter
   );
 
+  const postParams: Post = {
+    frontmatter: frontmatter,
+    postContent: postContent,
+    ogImageURL: ogImageURL,
+  };
   return {
-    props: {
-      matter: matter,
-      source: source,
-      slug: slug,
-    },
+    props: postParams,
   };
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const postsDirectory = join(process.cwd(), "content", "blog");
-  const slugsArr = getMdPostSlugs(postsDirectory);
+type Post = {
+  frontmatter: FrontmatterBlogpost;
+  postContent: string;
+  ogImageURL: string | null;
+};
+type Path = {
+  params: {
+    slug: [string]; //should be same as filename i.e. [...slug]
+  };
+};
 
-  const paths = [];
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allPostsFrontmatter = await getAllPublishedPostsFrontmatterFromNotion();
 
-  for (const slug of slugsArr) {
+  if (process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD) {
+    console.log("saving to cache");
+    frontmatterCache.set(allPostsFrontmatter);
+  }
+
+  const paths = [] as Path[];
+
+  for (const frontmatter of allPostsFrontmatter) {
     paths.push({
       params: {
-        slug,
+        slug: [frontmatter.slug],
       },
     });
   }
@@ -156,7 +172,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
-const DiscussArticle = (props: { matter: FrontMatter }) => {
+const DiscussArticle = (props: { matter: FrontmatterBlogpost }) => {
   const Link = (props: { link: string; text: string }) => {
     return (
       <div className="my-2">

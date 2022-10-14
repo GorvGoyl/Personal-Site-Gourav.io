@@ -85,7 +85,7 @@ function LoadingSpinner() {
 
 // AfterArticle, Generic (default:Generic)
 export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
-  return null;
+  return <></>;
   const { type } = Props;
   const text = {
     [FORMTYPE.AfterArticle]: {
@@ -112,7 +112,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
 
     const res = await fetch("/api/subscribe", {
       body: JSON.stringify({
-        email: inputEl.current.value,
+        email: (inputEl.current as unknown as any).value,
         referrer_url: `${window.location.href}`,
         referrer: document.referrer,
       }),
@@ -131,7 +131,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
       return;
     }
 
-    inputEl.current.value = "";
+    (inputEl.current as unknown as any).value = "";
     setForm({
       state: "success",
       message: `Done! You're now subscribed.`,

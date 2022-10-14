@@ -73,3 +73,22 @@ export function readableDate(date: string): string {
     return "";
   }
 }
+
+/**
+ * Returns a hash code from a string
+ * @param  {String} str The string to hash.
+ * @return {Number}    A 32bit integer
+ * @ref https://stackoverflow.com/a/7616484/3073272
+ */
+export function hashCode(str: string): number {
+  let hash = 0,
+    i: number,
+    chr: number;
+  if (str.length === 0) return hash;
+  for (i = 0; i < str.length; i++) {
+    chr = str.charCodeAt(i);
+    hash = (hash << 5) - hash + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
+}

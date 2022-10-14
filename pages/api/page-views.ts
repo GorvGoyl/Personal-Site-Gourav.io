@@ -64,9 +64,13 @@ export default async function pageViews(
     });
 
     const data = {};
-    response[0].rows.forEach((x) => {
-      data[x.dimensionValues[0].value] = x.metricValues[0].value;
-    });
+    if (response && response[0] && response[0].rows) {
+      response[0].rows.forEach((x) => {
+        if (x.dimensionValues && x.dimensionValues[0].value && x.metricValues) {
+          data[x.dimensionValues[0].value] = x.metricValues[0].value;
+        }
+      });
+    }
 
     res.status(200).json({
       data,

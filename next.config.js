@@ -54,31 +54,6 @@ const nextConfig =
       largePageDataBytes: 256000,
     },
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
-    webpack: (config, { dev, isServer }, options) => {
-      // if (isServer) {
-      //   if (!dev) {
-      //     require("./scripts/generate-sitemap.js");
-      //     require("./scripts/generate-rss.js");
-      //   }
-      // }
-
-      // config.module.rules.push({
-      //   test: /\.(png|jpe?g|gif|mp4|svg)$/i,
-      //   use: [
-      //     {
-      //       loader: "file-loader",
-      //       options: {
-      //         publicPath: "/_next",
-      //         // name: "static/media/[name].[hash].[ext]",
-      //         // todo: remove redundant `pages` path from [path] https://github.com/webpack-contrib/file-loader#function-1
-      //         name: "static/media/[path][name].[ext]",
-      //       },
-      //     },
-      //   ],
-      // });
-
-      return config;
-    },
     redirects,
     headers,
   };

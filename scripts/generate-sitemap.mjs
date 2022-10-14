@@ -1,6 +1,6 @@
 import { writeFileSync } from "fs";
 import { globby } from "globby";
-const homeURL = "https://gourav.io";
+import { getPublishedPostsSlugs, homeUrl } from "./helper.mjs";
 
 (async () => {
   try {
@@ -15,6 +15,10 @@ const homeURL = "https://gourav.io";
       "!pages/404.tsx",
     ]);
 
+    const publishedPostsSlugs = getPublishedPostsSlugs();
+
+    pages.push(...publishedPostsSlugs);
+
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
@@ -24,14 +28,14 @@ const homeURL = "https://gourav.io";
                 }
                 const path = page
                   .replace("pages/", "/")
-                  .replace("content/misc/", "/")
+                  .replace("content/projects/", "/")
                   .replace("content/", "/")
                   .replace(".tsx", "")
                   .replace(".mdx", "")
                   .replace(".md", "")
                   .replace("/index", "");
                 const route = path === "/index" ? "" : path;
-                const fullUrl = `${homeURL}${route}`;
+                const fullUrl = `${homeUrl}${route}`;
                 console.log(fullUrl);
                 return `
                         <url>

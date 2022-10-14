@@ -1,47 +1,22 @@
 import { Feed } from "feed";
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "fs";
-import matter from "gray-matter";
+import { writeFileSync } from "fs";
 import { join } from "path";
+import { getPublishedPostsFrontmatter, homeUrl } from "./helper.mjs";
 
-const homeUrl = "https://gourav.io";
 const imgOutputPath = `${homeUrl}/img/blog/`;
 
 const author = {
   name: "Gourav Goyal",
   email: "hey@gourav.io",
-  link: "https://twitter.com/GorvGoyl",
+  link: "https://gourav.io/blog",
 };
-
-// picks stored og.jpg/og.png in blogpost folder, if not found use default site og.png
-function getOgPublicPath(postDir, slug) {
-  let ogFileName = "";
-  let ogPublicPath = "";
-
-  if (existsSync(`${postDir}/og.png`)) {
-    ogFileName = "og.png";
-  }
-
-  if (existsSync(`${postDir}/og.jpg`)) {
-    if (ogFileName) {
-      console.error(`found 2 og files, overriding og.jpg over ${ogFileName}`);
-    }
-    ogFileName = "og.jpg";
-  }
-  if (ogFileName) {
-    ogPublicPath = `${imgOutputPath}${slug}/${ogFileName}`;
-  } else {
-    ogPublicPath = `${homeUrl}/og.png`;
-  }
-
-  return ogPublicPath;
-}
 
 function generateRSS() {
   try {
     console.log("generating blog feed...");
     const feed = new Feed({
       title: "Gourav Goyal",
-      description: "Blog - Gourav Goyal",
+      description: "Gourav's Blog - Tech | Productivity | Life",
       id: homeUrl,
       link: homeUrl,
       language: "en",
@@ -57,41 +32,35 @@ function generateRSS() {
       author,
     });
 
-    const blogDir = join(process.cwd(), "content", "blog");
-    const postSlugs = readdirSync(blogDir);
+    const postsFrontmatter = getPublishedPostsFrontmatter();
 
     // don't add posts to rss feed: preview posts, posts that starts with _folder
-    postSlugs.forEach((slug) => {
+    postsFrontmatter.forEach((frontmatter) => {
       try {
-        if (slug.startsWith("_") || slug.startsWith(".")) {
-          return;
+        const postURL = `https://gourav.io/blog/${frontmatter.slug}`;
+
+        const postDir = join(
+          process.cwd(),
+          "content",
+          "blog",
+          frontmatter.slug
+        );
+
+        // use default og image if no image is provided
+        let ogImgFullPath = `${homeUrl}/og.png`;
+        if (frontmatter.ogImage) {
+          ogImgFullPath = `${postURL}/${frontmatter.ogImage}`;
         }
-        const file = join(process.cwd(), "content", "blog", slug, "index.md");
-        if (!file) {
-          return;
-        }
-        const content = readFileSync(file);
-
-        const frontmatter = matter(content);
-
-        if (frontmatter.data.preview === true) {
-          return;
-        }
-
-        const postURL = `https://gourav.io/blog/${slug}`;
-
-        const postDir = join(process.cwd(), "content", "blog", slug);
-        const ogPublicPath = getOgPublicPath(postDir, slug);
 
         feed.addItem({
-          title: frontmatter.data.title,
-          id: frontmatter.data.title,
+          title: frontmatter.title,
+          id: frontmatter.title,
           link: postURL,
-          description: frontmatter.data.desc,
+          description: frontmatter.desc,
           // content: html + postText,
-          author,
-          date: new Date(frontmatter.data.date),
-          image: ogPublicPath,
+          author: [author],
+          date: new Date(frontmatter.date),
+          image: ogImgFullPath,
         });
         // feed.addCategory("Technology");
       } catch (e) {
