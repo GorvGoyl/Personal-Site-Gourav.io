@@ -10,7 +10,7 @@ import { PHASE_PRODUCTION_BUILD } from "next/constants";
 
 import { initOutlinePosition } from "@/lib/mdx";
 import {
-  getAllPublishedPostsFrontmatterFromNotion,
+  getAllPublishedAndPreviewPostsFrontmatterFromNotion,
   getPostContentFromNotion,
   getPostIdFromSlugFromNotion,
 } from "@/lib/notionUtils";
@@ -149,7 +149,8 @@ type Path = {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allPostsFrontmatter = await getAllPublishedPostsFrontmatterFromNotion();
+  const allPostsFrontmatter =
+    await getAllPublishedAndPreviewPostsFrontmatterFromNotion();
 
   if (process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD) {
     console.log("saving to cache");
@@ -236,7 +237,7 @@ const ConnectOnTwitter = () => {
 
 const ThatsAll = () => {
   return (
-    <div className="mt-7">
+    <div className="mt-10">
       <i
         className="pr-1"
         style={{

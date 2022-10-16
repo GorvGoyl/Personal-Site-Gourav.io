@@ -16,6 +16,7 @@ import {
   ShareLink,
 } from "@/components/tags";
 import Link from "next/link";
+import { Announce } from "./announce";
 
 const MDXComponents = {
   Link,
@@ -33,6 +34,7 @@ const MDXComponents = {
   ShareInlineBtn,
   ShareLink,
   TweetEmbed,
+  Announce,
 };
 
 export default MDXComponents;

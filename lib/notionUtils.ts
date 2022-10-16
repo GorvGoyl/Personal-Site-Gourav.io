@@ -22,24 +22,34 @@ import { ListBlockChildrenResponseResult } from "notion-to-md/build/types";
 import { hashCode } from "./utils";
 import { frontmatterCache } from "./cache";
 const notionClient = new Client({ auth: NOTION_API_KEY });
-export async function getAllPublishedPostsFrontmatterFromNotion(): Promise<
+export async function getAllPublishedAndPreviewPostsFrontmatterFromNotion(): Promise<
   FrontmatterBlogpost[]
 > {
   const response = await notionClient.databases.query({
     database_id: NOTION_BLOGPOSTS_DB,
     filter: {
-      and: [
+      or: [
         {
-          property: "Published",
+          property: "Preview",
           checkbox: {
             equals: true,
           },
         },
         {
-          property: "Published date",
-          date: {
-            on_or_before: new Date().toISOString(),
-          },
+          and: [
+            {
+              property: "Published",
+              checkbox: {
+                equals: true,
+              },
+            },
+            {
+              property: "Published date",
+              date: {
+                on_or_before: new Date().toISOString(),
+              },
+            },
+          ],
         },
       ],
     },
@@ -100,28 +110,6 @@ export async function getPostIdFromSlugFromNotion(
 
   return frontMatter;
 }
-
-// /**
-// return: ["my-first-blog-post", "my-second-blog-post"]
-// https://nextjs.org/docs/routing/dynamic-routes#catch-all-routes
-// */
-// export async function geAllPostsSlugsFromNotion(): Promise<string[]> {
-//   const blogIndex = await getAllPostsFrontmatterFromNotion();
-
-//   const slugs = blogIndex.map((x) => {
-//     if (!x.slug) {
-//       throw new Error(`slug is not present for ${x.title}`);
-//     }
-//     if (x.slug.includes(" ")) {
-//       throw new Error(
-//         `space is not allowed in slug. title: ${x.title}, slug: ${x.slug}`
-//       );
-//     }
-//     return x.slug;
-//   });
-
-//   return slugs;
-// }
 
 /** Returns content of page Id.
  * - It also handle images by saving them in public/blog/post/file.png \

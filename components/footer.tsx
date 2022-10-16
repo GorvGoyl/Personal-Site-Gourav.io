@@ -16,7 +16,7 @@ export function Footer(): JSX.Element {
           </a>{" "}
           🖤
         </div>
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <a
             href="https://vercel.com?utm_source=gorv&utm_campaign=oss"
             target="_blank"
@@ -29,7 +29,7 @@ export function Footer(): JSX.Element {
               src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
             />
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

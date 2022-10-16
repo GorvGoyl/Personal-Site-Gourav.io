@@ -4,7 +4,7 @@ import path from "path";
 
 const cacheFilePath = path.join(
   process.cwd(),
-  "frontmatterOfPublishedPosts.json"
+  "frontmatterOfPublishedAndPreviewPosts.json"
 );
 
 export const frontmatterCache = {
@@ -15,7 +15,7 @@ export const frontmatterCache = {
     try {
       data = readFileSync(cacheFilePath);
     } catch (e) {
-      console.warn(e);
+      // console.warn(e);
     }
     if (data) {
       const FrontmatterBlogpostsArr: FrontmatterBlogpost[] = JSON.parse(
@@ -44,8 +44,11 @@ export const frontmatterCache = {
 
     return FrontmatterBlogpostsArr;
   },
-  set: (frontmatterOfPublishedPosts: FrontmatterBlogpost[]) => {
-    writeFileSync(cacheFilePath, JSON.stringify(frontmatterOfPublishedPosts));
+  set: (frontmatterOfPublishedAndPreviewPosts: FrontmatterBlogpost[]) => {
+    writeFileSync(
+      cacheFilePath,
+      JSON.stringify(frontmatterOfPublishedAndPreviewPosts)
+    );
   },
   addOGImage: (pageId: string, ogImageName: string) => {
     const frontmatterBlogpostsArr = frontmatterCache.get();

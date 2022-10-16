@@ -1,4 +1,4 @@
-import { TwitterBtn } from "@/components/blocks";
+import { TwitterBtn } from "@/components/twitterBtn";
 import Header from "@/components/Header";
 import { Icon } from "@/components/icons";
 import { Container, LayoutType } from "@/components/layout";
@@ -10,7 +10,7 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 import { join } from "path";
 import React, { useEffect, useState } from "react";
-import { getAllPublishedPostsFrontmatterFromNotion } from "@/lib/notionUtils";
+import { getAllPublishedAndPreviewPostsFrontmatterFromNotion } from "@/lib/notionUtils";
 const RELATIVE_PATH = "/blog/";
 
 export default function Blog(props: {
@@ -105,8 +105,12 @@ export default function Blog(props: {
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps = async (context) => {
-  const blogIndex = await getAllPublishedPostsFrontmatterFromNotion();
+  const previewAndPublishedPostsMatter =
+    await getAllPublishedAndPreviewPostsFrontmatterFromNotion();
+  const publishedPostsMatter = previewAndPublishedPostsMatter.filter(
+    (x) => !x.preview
+  );
   return {
-    props: { allPosts: blogIndex },
+    props: { allPosts: publishedPostsMatter },
   };
 };

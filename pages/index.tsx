@@ -1,5 +1,5 @@
 import { ChromeStars, ChromeUsers } from "@/components/badge";
-import { TwitterBtn } from "@/components/blocks";
+import { TwitterBtn } from "@/components/twitterBtn";
 import Header from "@/components/Header";
 import { Container } from "@/components/layout";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";

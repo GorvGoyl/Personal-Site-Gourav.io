@@ -40,7 +40,7 @@ tsconfig.tsbuildinfo
 # gets generated at build time so ignore it
 public/blog/
 public/projects/
-frontmatterOfPublishedPosts.json
+frontmatterOfPublishedAndPreviewPosts.json
 public/atom.xml
 public/feed.json
 public/feed.xml
@@ -49,3 +49,4 @@ public/atom.xml
 public/atom.xml
 public/feed.json
 public/sitemap.xml
+frontmatterOfPublishedPosts.json
