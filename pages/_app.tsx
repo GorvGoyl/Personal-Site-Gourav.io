@@ -16,12 +16,12 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     router.events.on("routeChangeComplete", handleRouteChange);
     if (isProd) {
       console.log(
-        "%cBuilt with Next.js (React), Typescript, Tailwind CSS | Blog content using Markdown (MDX) | Deployed on Vercel",
+        "%cBuilt with Next.js (React), Typescript, Tailwind CSS | Blog content using Notion and Markdown | Deployed on Vercel",
         "color: #6af549; font-size: 14px; background: #282c34;"
       );
       console.log(
         "%cSource-code: https://github.com/GorvGoyl/Personal-Site-Gourav.io",
-        "color: #6af549; font-size: 14px;"
+        "color: #6af549; font-size: 14px; background: #282c34;"
       );
     }
 
