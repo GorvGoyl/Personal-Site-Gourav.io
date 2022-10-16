@@ -108,7 +108,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const previewAndPublishedPostsMatter =
     await getAllPublishedAndPreviewPostsFrontmatterFromNotion();
   const publishedPostsMatter = previewAndPublishedPostsMatter.filter(
-    (x) => !x.preview
+    (x) => x.published && x.date <= new Date().toISOString()
   );
   return {
     props: { allPosts: publishedPostsMatter },
