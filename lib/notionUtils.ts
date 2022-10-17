@@ -153,6 +153,11 @@ export async function getPostContentFromNotion(
     }
   });
 
+  n2m.setCustomTransformer("child_database", (block) => {
+    // don't render inline databases as they are internally used to track progress of articles
+    return "";
+  });
+
   n2m.setCustomTransformer("column_list", async (block) => {
     const mdBlocks = await n2m.pageToMarkdown(block.id);
     const mdString = n2m.toMarkdownString(mdBlocks);
