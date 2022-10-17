@@ -59,16 +59,15 @@ export default function Home(): JSX.Element {
           <div className="prose prose-lg">
             <p>
               Namaste, I'm a full-stack web developer, ex-founder, and a fun guy
-              to hang around with. I like to build things that others find
-              helpful. <i>(Hire me!)</i>
+              to hang out with. I like to build things that others find helpful.{" "}
+              <i>(Hire me!)</i>
               <br />
-              Currently, I am working for{" "}
-              <a href="https://monadical.com" target="_blank" rel="noopener">
+              {/* Currently, I am working for{" "} */}
+              {/* <a href="https://monadical.com" target="_blank" rel="noopener">
                 Monadical
-              </a>{" "}
-              and building cool projects.
-              <br />
-              Previously, I founded{" "}
+              </a>{" "} */}
+              {/* and building cool projects. */}
+              {/* <br /> */}I founded{" "}
               <a href="https://easypie.app" target="_blank" rel="noopener">
                 Easypie App
               </a>{" "}
