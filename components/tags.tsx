@@ -339,7 +339,7 @@ export function AuthorImg(): JSX.Element {
         <p className="m-0 font-medium text-[17px] tracking-normal text-gray-700">
           Gourav Goyal
         </p>
-        <div className="text-gray-700 text-[14px]">
+        <div className="text-gray-700 text-[13px]">
           <a
             title="Connect with @GorvGoyl on Twitter"
             className="no-underline font-normal hover:orange-underline text-current"
