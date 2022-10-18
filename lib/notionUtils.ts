@@ -137,21 +137,22 @@ export async function getPostContentFromNotion(
     videoTransformer(block, slugLowercase)
   );
 
-  n2m.setCustomTransformer("synced_block", async (block) => {
-    const syncedBlock = block as SyncedBlockBlockObjectResponse;
-    const originalSyncedBlockId =
-      syncedBlock.synced_block.synced_from?.block_id;
+  // n2m.setCustomTransformer("synced_block", (block) => {
+  //   return ""; // avoid rendering it twice
+  // const syncedBlock = block as SyncedBlockBlockObjectResponse;
+  // const originalSyncedBlockId =
+  //   syncedBlock.synced_block.synced_from?.block_id;
 
-    const isReferenceSyncedBlock = !!originalSyncedBlockId;
-    // check if it's a 'reference synced block'
-    if (isReferenceSyncedBlock) {
-      const mdBlocks = await n2m.pageToMarkdown(originalSyncedBlockId);
-      const mdString = n2m.toMarkdownString(mdBlocks);
-      return mdString;
-    } else {
-      return ""; // 'original synced blocks' are handled like normal blocks by n2m so avoid rendering it twice
-    }
-  });
+  // const isReferenceSyncedBlock = !!originalSyncedBlockId;
+  // // check if it's a 'reference synced block'
+  // if (isReferenceSyncedBlock) {
+  //   const mdBlocks = await n2m.pageToMarkdown(originalSyncedBlockId);
+  //   const mdString = n2m.toMarkdownString(mdBlocks);
+  //   return mdString;
+  // } else {
+  //   return ""; // 'original synced blocks' are handled like normal blocks by n2m so avoid rendering it twice
+  // }
+  // });
 
   n2m.setCustomTransformer("child_database", (block) => {
     // don't render inline databases as they are internally used to track progress of articles
