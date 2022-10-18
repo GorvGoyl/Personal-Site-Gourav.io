@@ -30,12 +30,12 @@
     }
     .page-outline {
       &:before {
-        content: "Contents";
+        content: "Post Outline";
         margin-left: 7px;
-        @apply text-gray-500 block text-base font-medium tracking-wide mb-3  xl:mt-[-46px] xl:fixed xl:mb-0;
+        @apply text-slate-500 block text-base font-medium tracking-wide mb-3  xl:mt-[-46px] xl:fixed xl:mb-0;
       }
       // desktop: max width of outline: based on article max width max-w-screen-md;
-      @apply hidden xl:block xl:max-w-[calc((100%-900px)/2)] xl:mr-[20px] mt-[36px] xl:fixed bg-gray-50 rounded p-2;
+      @apply hidden xl:block xl:max-w-[calc((100%-900px)/2)] xl:mr-[20px] mt-[36px] xl:fixed bg-slate-50 rounded p-2;
       right: 0;
       top: 210px; //value also used in scroll event
       bottom: 30px;
@@ -57,10 +57,10 @@
           }
           margin: 0;
           a {
-            @apply text-gray-500 block text-sm xl:text-[0.8rem] xl:leading-[1.1rem] no-underline hover:no-underline px-2 py-1;
+            @apply text-slate-500 block text-sm xl:text-[0.8rem] xl:leading-[1.1rem] no-underline hover:no-underline px-2 py-1;
             font-weight: inherit;
             &:hover {
-              @apply bg-gray-100 rounded;
+              @apply bg-slate-100 rounded;
             }
 
             display: block;
