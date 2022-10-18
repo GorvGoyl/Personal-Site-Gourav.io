@@ -62,20 +62,24 @@ export default function Blog(props: {
                   </article>
                 </div>
                 <div className="text-gray-500 text-xs font-medium flex space-x-2 justify-end items-center">
-                  {slugViews[RELATIVE_PATH + post.slug] && (
-                    <div
-                      className="flex items-center ml-5 mr-5"
-                      title={`Total views: ${
-                        slugViews[RELATIVE_PATH + post.slug]
-                      }`}
-                    >
-                      <Icon type="views" size="14" />
+                  <div className="flex items-center ml-5 mr-5">
+                    {slugViews[RELATIVE_PATH + post.slug] && (
+                      <div
+                        className="flex items-center"
+                        title={`Total views: ${
+                          slugViews[RELATIVE_PATH + post.slug]
+                        }`}
+                      >
+                        <Icon type="views" size="14" />
 
-                      <div className="whitespace-nowrap ml-1 ">
-                        {roundUpViewCount(slugViews[RELATIVE_PATH + post.slug])}
+                        <div className="whitespace-nowrap ml-1 ">
+                          {roundUpViewCount(
+                            slugViews[RELATIVE_PATH + post.slug]
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                   <div
                     className="flex items-center"
                     title={`Published date: ${post.date}`}
