@@ -330,7 +330,7 @@ export function AuthorImg(): JSX.Element {
         <a>
           <img
             className="w-20 rounded-full mr-3 my-3"
-            src="/profile-pic 4-min.png"
+            src="/gourav_min_400.png"
             alt="Gourav Goyal"
           />
         </a>

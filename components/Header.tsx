@@ -17,18 +17,18 @@ export default function Header(props: {
   const type = props.type;
   const description = props.desc || defaultProps.desc;
   const ogImgRelativePath = props.imgPath || defaultProps.imgPath;
-  const local = "http://localhost:3000";
-  const domain = "https://gourav.io";
+  const liveDomain = "https://gourav.io";
   const date = props.date;
   // const siteURL = isProd ? "https://gourav.io" : local;
-  const ogImageURL = `${domain}${ogImgRelativePath}`;
+  const currentDomain =
+    typeof window == "undefined" ? liveDomain : window.location.origin;
+  const ogImageURL = `${liveDomain}${ogImgRelativePath}`;
 
   // to get url for both fixed and dynamic([slug]) paths
   const relativeURL = usePath();
 
-  const pageURL = relativeURL === "/" ? domain : domain + relativeURL;
+  const pageURL = relativeURL === "/" ? liveDomain : liveDomain + relativeURL;
   const twitterHandle = "@GorvGoyl";
-  const siteName = "Gourav.io";
   const authorName = "Gourav Goyal";
 
   return (
@@ -56,9 +56,22 @@ export default function Header(props: {
       <meta property="author" content={authorName} />
       <meta property="monetization" content="$ilp.uphold.com/QaUmZpmzmDzA" />
       <meta name="theme-color" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#da532c" />
       {/* meta tags end */}
       <link rel="canonical" href={pageURL} />
-      <link rel="icon" href={`${domain}/favicon.ico`} />
+      <link rel="icon" href={`${currentDomain}/favicon.ico`} />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href={`${currentDomain}/favicon-32x32.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href={`${currentDomain}/favicon-16x16.png`}
+      />
     </Head>
   );
 }
