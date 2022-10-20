@@ -2,29 +2,36 @@
 
 # Personal site and blog - Gourav Goyal
 
-### https://gourav.io
+### Homepage
 
-Built with React (NextJS), MDX, and Tailwind
+https://gourav.io
 
-<a href="https://vercel.com?utm_source=gorv&utm_campaign=oss">
+### Blog posts
+
+https://gourav.io/blog
+
+### Tech Stack
+
+Made with React (NextJS), Typescript, Tailwind CSS, MDX, Notion as CMS.  
+Deployed on Vercel.
+
+<!-- <a href="https://vercel.com?utm_source=gorv&utm_campaign=oss">
 <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg">
-</a>
+</a> -->
 
-## MDX Structure for Blog and Projects
+## How I render blog posts
 
-#### File names and public urls mapping
+I use Notion as CMS. I store all my drafts and published posts in a Notion table. I run a script that automates the blog posts fetching and generating pre-rendered pages at build time for better performance.
 
-markdown file should be named as `index.md` inside respective md folder
+## How I render project pages
 
-for blog:
+I use local Markdown (MDX) files (./content) to render project pages like https://gourav.io/notion-boost , https://gourav.io/clone-wars.
 
-```
-folder: ./content/blog/first-donation-on-open-source-side-project
-file: ./content/blog/first-donation-on-open-source-side-project/index.md
-url: https://gourav.io/blog/first-donation-on-open-source-side-project
-```
+### File names and public URLs mapping
 
-for projects:
+Markdown file should be named as `index.md` inside the respective md folder
+
+For projects:
 
 ```
 folder: ./content/misc/clone-wars
@@ -36,7 +43,7 @@ file: ./content/misc/notion-boost/index.md
 url: https://gourav.io/notion-boost
 ```
 
-it also works with sub paths:
+It also works with sub-paths:
 
 ```
 folder: ./content/misc/notion-boost/whats-new
@@ -44,31 +51,20 @@ file: ./content/misc/notion-boost/whats-new/index.md
 url: https://gourav.io/notion-boost/whats-new
 ```
 
-To hide blog article in blog index (visible only by direct url): in `index.md` frontmatter: add `preview: true`
+### Open graph image
 
-To ignore a blog / project to show on site: add `_` before the name of folder. ex: `content/blog/_my-draft-post` , `content/misc/_my-draft-project`
-
-#### Open graph image
-
-store open graph image inside respective md folder as `og.jpg` or `og.png`, else site default `og.png` file will be picked e.g. https://gourav.io/og.png
+Store open graph image inside respective md folder as `og.jpg` or `og.png`, else site default `og.png` file will be picked e.g. https://gourav.io/og.png
 
 ```
 folder: ./content/misc/notion-boost
 og image: ./content/misc/notion-boost/og.jpg or ./content/misc/notion-boost/og.png
-
-folder: ./content/blog/first-donation-on-open-source-side-project
-og image: ./content/blog/first-donation-on-open-source-side-project/og.jpg or ./content/blog/first-donation-on-open-source-side-project/og.png
 ```
 
-#### Images
+### Images
 
-store all related images inside its md folder.
+Store all related images inside its md folder.
 
 ```
-folder: ./content/blog/first-donation-on-open-source-side-project
-images:
-./content/blog/first-donation-on-open-source-side-project/img1.png
-./content/blog/first-donation-on-open-source-side-project/img2.gif
 
 folder: ./content/misc/notion-boost
 images:
@@ -76,7 +72,7 @@ images:
 ./content/misc/notion-boost/img2.gif
 ```
 
-in case of md sub-folders: store images (including og image) to the base markdown folder
+in the case of md sub-folders: store images (including og image) in the base markdown folder
 
 ```
 folder: ./content/misc/notion-boost/whats-new
