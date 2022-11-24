@@ -64,7 +64,7 @@ Show sticky outline (table of contents) for pages that have headings or sub-head
 
 You can also temporarily hide the outline on the current page (until the page refresh)
 
-<Img src={hideoutline} type="ss" />
+<Img src={hideoutline} loading="lazy" type="ss" />
 
 </details>
 
@@ -85,105 +85,105 @@ Set full width for all pages by default. This locally adjusts the width without 
 
 Added button at the bottom-right corner of page for scrolling back to top. Quite useful for lengthy pages. The button will be visible only when the page has scrolled down a bit.
 
-<Img src={scrollbtn} type="ss" />
+<Img src={scrollbtn} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Show full text on hover</h4></summary>
 
 Show full text in table cells on mouse hover.
 
-<Img src={showHoverText} type="ss" />
+<Img src={showHoverText} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Close Slash command menu after space</h4></summary>
 
 Slash command menu which appears when pressing '/' key will be closed back by pressing the space key.
 
-<Img src={hideslash} type="ss" />
+<Img src={hideslash} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Don't show Slash command menu when pressing '/'</h4></summary>
 
 Don't show the Slash command menu when pressing '/' key. Slash command menu will still be shown by clicking + ⁝⁝ icon. This setting can't be enabled along with 'Close Slash command menu after space' and vice-versa.
 
-<Img src={disableslashmenu} type="ss" />
+<Img src={disableslashmenu} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Hide floating help button from all pages</h4></summary>
 
 This button is located on the bottom-right corner of pages.
 
-<Img src={helpbtn} type="ss" />
+<Img src={helpbtn} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Hide 'Hidden columns' in board view</h4></summary>
 
 Truly hide 'Hidden columns' in Kanban board view.
 
-<Img src={hideHiddenColumns} type="ss" />
+<Img src={hideHiddenColumns} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Left align media</h4></summary>
 
 Align document images and videos to left instead of center.
 
-<Img src={leftAlignImage} type="ss" />
+<Img src={leftAlignImage} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Bolder text in dark mode</h4></summary>
 
 Fix poorly recognizable bold text when using Notion in dark mode
 
-<Img src={boldertext} type="ss" />
+<Img src={boldertext} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Hide comments section from all pages</h4></summary>
 
 Comment section is useless when working solo
 
-<Img src={commenthide} type="ss" />
+<Img src={commenthide} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Show code line numbers</h4></summary>
 
 Show line numbers for code blocks
 
-<Img src={codelines} type="ss" />
+<Img src={codelines} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Enable spellcheck inside code blocks</h4></summary>
 
 Show squiggly red lines for any spelling mistakes inside code blocks
 
-<Img src={spellcheck} type="ss" />
+<Img src={spellcheck} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Don't show popup menu when pasting external links</h4></summary>
 
 Don't show popup menu i.e (dismiss, create bookmark, create embed) when pasting external URLs
 
-<Img src={disablepopup} type="ss" />
+<Img src={disablepopup} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Hide backlinks</h4></summary>
 
 Hide backlinks section from all pages
 
-<Img src={hidebacklinks} type="ss" />
+<Img src={hidebacklinks} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Hide notification icon</h4></summary>
 
 Hide red notification icon from sidebar when it's in closed state and hide notification number from tab title
 
-<Img src={hidenotification} type="ss" />
+<Img src={hidenotification} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Add more height to page</h4></summary>
 
 Add more height to page by hiding top padding, image cover, & icon
 
-<Img src={moreheight} type="ss" />
+<Img src={moreheight} loading="lazy" type="ss" />
 </details>
 
 <details>
@@ -191,7 +191,7 @@ Add more height to page by hiding top padding, image cover, & icon
 
 Bypass preview and open full pages of a table, board, etc. by default.
 
-<Img src={openfullpage} type="ss" />
+<Img src={openfullpage} loading="lazy" type="ss" />
 </details>
 
 <details>
@@ -199,7 +199,7 @@ Bypass preview and open full pages of a table, board, etc. by default.
 
 Fit more content on screen by reducing space between items in a list, i.e., bullet, checkbox, toggle list, etc.
 
-<Img src={narrowspace} type="ss" />
+<Img src={narrowspace} loading="lazy" type="ss" />
 </details>
 
 <details>
@@ -207,7 +207,7 @@ Fit more content on screen by reducing space between items in a list, i.e., bull
 
 Add vertical indentation lines to bullet and to-do lists.
 
-<Img src={indentation_lines} type="ss" />
+<Img src={indentation_lines} loading="lazy" type="ss" />
 </details>
 
 <details>
@@ -215,7 +215,7 @@ Add vertical indentation lines to bullet and to-do lists.
 
 Make URLs in Rollup property clickable. Works for both: table and as page properties.
 
-<Img src={rollup_clickable} type="ss" />
+<Img src={rollup_clickable} loading="lazy" type="ss" />
 </details>
 
 <details>
@@ -223,7 +223,7 @@ Make URLs in Rollup property clickable. Works for both: table and as page proper
 
 Add frame around images to make them easily noticeable on page.
 
-<Img src={image_frame} type="ss" />
+<Img src={image_frame} loading="lazy" type="ss" />
 </details>
 
 > Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues)
@@ -255,7 +255,7 @@ Add frame around images to make them easily noticeable on page.
 3. Click on the extension icon (it will be visible **inside URL bar** only when you are on a notion page).
 4. A popup menu will appear, you can toggle features from there.
 
-<Img src={firefox_icon} type="ss" />
+<Img src={firefox_icon} loading="lazy" type="ss" />
 
 ---
 

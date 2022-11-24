@@ -23,7 +23,7 @@ import image_frame from "../img/image_frame.gif";
 - **Add frame to images**  
   Add frame around images to make them easily noticeable on page
 
-<Img src={image_frame} type="ss" />
+<Img src={image_frame} loading="lazy" type="ss" />
 
 **🐞 FIXED BUGS :**
 

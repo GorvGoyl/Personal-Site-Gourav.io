@@ -75,6 +75,7 @@ export function Img(props: {
   type: string;
   className?: string;
   disableZoom?: boolean;
+  loading?: "lazy" | "eager"; // lazy loading
 }): JSX.Element {
   let cls = "";
   if (props.type === "ss")
@@ -90,7 +91,14 @@ export function Img(props: {
   // set alt text from alt or caption
   const altText = props.alt ? props.alt : props.caption;
 
-  let imgTag = <img src={props.src} alt={altText} className={cls} />;
+  let imgTag = (
+    <img
+      src={props.src}
+      alt={altText}
+      loading={props.loading}
+      className={cls}
+    />
+  );
 
   if (!props.disableZoom) {
     // imgTag = <Zoom wrapStyle={{ display: "flex" }}>{imgTag}</Zoom>; //display: "flex" to center align image
