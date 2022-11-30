@@ -194,7 +194,7 @@ const parseFrontmatterFromPost = (page: PageObjectResponse) => {
     title: page.properties["Title"]["title"][0]?.["plain_text"],
     desc: page.properties["Description"]["rich_text"][0]?.["plain_text"],
     slug: page.properties["Slug"]["rich_text"][0]?.["plain_text"],
-    date: page.properties["Published date"]["date"]["start"],
+    date: page.properties["Published date"]["date"]?.["start"],
     postId: page.id,
     preview: page.properties["Preview"]["checkbox"],
     published: page.properties["Published"]["checkbox"],
