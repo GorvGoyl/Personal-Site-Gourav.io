@@ -4,11 +4,10 @@ import { Icon } from "@/components/icons";
 import { Container, LayoutType } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
-import { getSlugViews, readableDate, roundUpViewCount } from "@/lib/utils";
+import { getSlugViews, getReadableDate, roundUpViewCount } from "@/lib/utils";
 import { FrontmatterBlogpost } from "@/types/types";
 import { GetStaticProps } from "next";
 import Link from "next/link";
-import { join } from "path";
 import React, { useEffect, useState } from "react";
 import { getAllPublishedAndPreviewPostsFrontmatterFromNotion } from "@/lib/notionUtils";
 const RELATIVE_PATH = "/blog/";
@@ -82,7 +81,7 @@ export default function Blog(props: {
                   </div>
                   <div
                     className="flex items-center"
-                    title={`Published date: ${post.date}`}
+                    title={`${post.date ? "Published date: " + post.date : ""}`}
                   >
                     <Icon
                       type="calendar"
@@ -91,7 +90,7 @@ export default function Blog(props: {
                     />
 
                     <div className="whitespace-nowrap ml-2">
-                      {readableDate(post.date)}
+                      {getReadableDate(post.date || "")}
                     </div>
                   </div>
                 </div>
@@ -112,7 +111,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const previewAndPublishedPostsMatter =
     await getAllPublishedAndPreviewPostsFrontmatterFromNotion();
   const publishedPostsMatter = previewAndPublishedPostsMatter.filter(
-    (x) => x.published && x.date <= new Date().toISOString()
+    (x) => x.published && x.date && x.date <= new Date().toISOString()
   );
   return {
     props: { allPosts: publishedPostsMatter },

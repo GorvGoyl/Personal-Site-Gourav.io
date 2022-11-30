@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Icon } from "@/components/icons";
-import { readableDate, roundUpViewCount } from "@/lib/utils";
+import { getReadableDate, roundUpViewCount } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Zoom from "react-medium-image-zoom";
@@ -132,7 +132,7 @@ export function A(Props: {
 }
 
 function Date(Props: { date: string }): JSX.Element {
-  const date = readableDate(Props.date);
+  const date = getReadableDate(Props.date);
 
   return (
     <div className="text-gray-500 flex items-center space-x-3 text-sm">
@@ -372,8 +372,12 @@ export function AuthorImg(): JSX.Element {
     </div>
   );
 }
-export function Author(props: { date: string; views: string }): JSX.Element {
-  const date = readableDate(props.date);
+export function Author(props: {
+  date: string | null;
+  views: string;
+}): JSX.Element {
+  const readableDate = props.date ? getReadableDate(props.date) : "";
+  const dateHover = `${props.date ? "Published date: " + props.date : ""}`;
   return (
     <div className="flex items-center justify-between text-base">
       <AuthorImg />
@@ -389,10 +393,10 @@ export function Author(props: { date: string; views: string }): JSX.Element {
         )}
         <div
           className="text-gray-500 flex items-center space-x-3 text-sm"
-          title={`Published date: ${props.date}`}
+          title={dateHover}
         >
           <Icon type={"calendar"} size="14" />
-          <p className="m-0">{date}</p>
+          <p className="m-0">{readableDate}</p>
         </div>
 
         <div className="relative">

@@ -38,8 +38,9 @@ export function roundUpViewCount(num: string) {
 }
 
 // accepts: YYYY-MM-DD or YYYY-M-D
-export function readableDate(date: string): string {
+export function getReadableDate(date: string): string {
   try {
+    if (!date) return "";
     const dateFormatter = new Intl.DateTimeFormat("en-US", {
       month: "short",
       day: "numeric",

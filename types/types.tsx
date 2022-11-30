@@ -1,8 +1,7 @@
-import { LayoutType } from "@/components/layout";
 import { z } from "zod";
 
 export const FrontmatterBlogpostSchema = z.object({
-  date: z.string().min(3),
+  date: z.string().nullable(),
   title: z.string().trim().min(3),
   desc: z.string().trim(),
   slug: z.string().min(3), //don't trim/modify slug as it is used to fetch page id again
