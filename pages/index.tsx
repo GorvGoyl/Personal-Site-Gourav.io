@@ -108,6 +108,7 @@ export default function Home(): JSX.Element {
                     >
                       ChatGPT Writer
                     </a>
+                    <br />
                     Free Chrome extension that crafts personalized email replies
                     in no time using AI (ChatGPT).
                     <br />
