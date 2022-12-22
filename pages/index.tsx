@@ -58,8 +58,8 @@ export default function Home(): JSX.Element {
 
           <div className="prose prose-lg">
             <p>
-              Namaste, I'm a full-stack web developer, ex-founder, and a fun guy
-              to hang out with. I like to build things that others find helpful.{" "}
+              Namaste, I'm a web developer, founder, and a fun guy to hang out
+              with. I like to build things that others find helpful.{" "}
               <i>(Hire me!)</i>
               <br />
               {/* Currently, I am working for{" "} */}
@@ -99,6 +99,21 @@ export default function Home(): JSX.Element {
             <div>
               <h2>Side Projects</h2>
               <ul>
+                <li>
+                  <p>
+                    <a
+                      href="https://chatgptwriter.ai"
+                      target={"_blank"}
+                      title="Notion Boost browser extension"
+                    >
+                      ChatGPT Writer
+                    </a>
+                    Free Chrome extension that crafts personalized email replies
+                    in no time using AI (ChatGPT).
+                    <br />
+                    {/* <i>Revenue: $3000+</i> */}
+                  </p>
+                </li>
                 <li>
                   <p>
                     <Link href="/notion-boost">

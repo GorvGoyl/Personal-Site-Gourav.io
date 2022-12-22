@@ -36,6 +36,7 @@ export default function Header(props: {
       {/* meta tags start */}
       <title>{title}</title>
       <meta name="robots" content="follow, index" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta property="og:locale" content="en_US" />
