@@ -62,7 +62,7 @@ export default function Home(): JSX.Element {
               with. I like to build things that others find helpful.{" "}
               <i>(Hire me!)</i>
               <br />
-              {/* Currently, I am working for{" "} */}
+              {/* Currently, I am  working for{" "} */}
               {/* <a href="https://monadical.com" target="_blank" rel="noopener">
                 Monadical
               </a>{" "} */}
