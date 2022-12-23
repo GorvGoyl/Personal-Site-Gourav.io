@@ -1,3 +1,4 @@
+import { BannerChromeExtensionChatGPTWriter } from "@/components/banner";
 import Header from "@/components/Header";
 import { Container, LayoutType } from "@/components/layout";
 import MDXComponents from "@/components/mdxComponents";
@@ -40,7 +41,7 @@ export default function Project(props: {
       />
 
       <Container layout={LayoutType.Blog}>
-        {/* <Banner /> */}
+        <BannerChromeExtensionChatGPTWriter />
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose max-w-screen-md">
           <article className={`${project.css} ${md.css}`}>
