@@ -10,6 +10,7 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { getAllPublishedAndPreviewPostsFrontmatterFromNotion } from "@/lib/notionUtils";
+import { BannerChromeExtensionChatGPTWriter } from "@/components/banner";
 const RELATIVE_PATH = "/blog/";
 
 export default function Blog(props: {
@@ -40,6 +41,7 @@ export default function Blog(props: {
       <Header type="website" title="Blog - Gourav Goyal" />
 
       <Container layout={LayoutType.Blog}>
+        <BannerChromeExtensionChatGPTWriter />
         <Navbar />
         <main className="prose prose-lg">
           <header>

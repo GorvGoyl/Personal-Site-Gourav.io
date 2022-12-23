@@ -22,6 +22,7 @@ import { GetStaticPaths } from "next";
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import { frontmatterCache } from "@/lib/cache";
+import { BannerChromeExtensionChatGPTWriter } from "@/components/banner";
 const RELATIVE_PATH = "/blog/";
 
 export default function Post(props: Post) {
@@ -78,6 +79,7 @@ export default function Post(props: Post) {
       />
 
       <Container layout={LayoutType.Blog}>
+        <BannerChromeExtensionChatGPTWriter />
         <Navbar link={Links.Blog} />
         <main className="mx-auto prose max-w-screen-md">
           <article className={`${post.code_block} ${md.css}`}>
