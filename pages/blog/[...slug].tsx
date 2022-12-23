@@ -33,18 +33,18 @@ export default function Post(props: Post) {
       // add relative path to slug: /blog/nextjs-cheatsheet
       setSlugPath(`${RELATIVE_PATH}${props.frontmatter.slug}`);
 
-      getSlugViews([slugPath])
-        .then((res) => {
-          if (res.data[slugPath]) {
-            setSlugViews(res.data[slugPath]);
-          } else {
-            console.error(res);
-          }
-          return;
-        })
-        .catch((e) => {
-          console.error("getSlugViews", e);
-        });
+      // getSlugViews([slugPath])
+      //   .then((res) => {
+      //     if (res.data[slugPath]) {
+      //       setSlugViews(res.data[slugPath]);
+      //     } else {
+      //       console.error(res);
+      //     }
+      //     return;
+      //   })
+      //   .catch((e) => {
+      //     console.error("getSlugViews", e);
+      //   });
     }
   }, [props.frontmatter.slug, slugPath]);
 

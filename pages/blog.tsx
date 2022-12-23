@@ -21,18 +21,18 @@ export default function Blog(props: {
     if (props.allPosts.length > 0) {
       // add relative path to slug: /blog/nextjs-cheatsheet
       const slugPaths = props.allPosts.map((x) => RELATIVE_PATH + x.slug);
-      getSlugViews(slugPaths)
-        .then((res) => {
-          if (res.data) {
-            setSlugViews(res.data);
-          } else {
-            console.error(res);
-          }
-          return;
-        })
-        .catch((e) => {
-          console.error(e);
-        });
+      // getSlugViews(slugPaths)
+      //   .then((res) => {
+      //     if (res.data) {
+      //       setSlugViews(res.data);
+      //     } else {
+      //       console.error(res);
+      //     }
+      //     return;
+      //   })
+      //   .catch((e) => {
+      //     console.error(e);
+      //   });
     }
   }, [props.allPosts]);
   return (
