@@ -117,6 +117,22 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
+                    <a
+                      href="https://gimmesummary.ai"
+                      target={"_blank"}
+                      title="Gimme Summary AI chrome extension"
+                    >
+                      Gimme Summary AI
+                    </a>
+                    <br />
+                    Free chrome extension to summarize articles on the web using
+                    AI (ChatGPT).
+                    <br />
+                    {/* <i>Revenue: $3000+</i> */}
+                  </p>
+                </li>
+                <li>
+                  <p>
                     <Link href="/notion-boost">
                       <a title="Notion Boost browser extension">Notion Boost</a>
                     </Link>
