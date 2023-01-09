@@ -68,7 +68,7 @@ export function BannerChromeExtensionChatGPTWriter(): JSX.Element {
             target="_blank"
             className={`whitespace-nowrap inline-block hover:opacity-80 cursor-pointer leading-none hover:bg-current/80 border border-gray-400 focus:outline-none px-3 py-2 rounded-2xl  text-gray-200 `}
           >
-            Download free extension
+            Free Chrome extension
           </a>
         </div>
       </div>
