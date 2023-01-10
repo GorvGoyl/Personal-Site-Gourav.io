@@ -118,8 +118,9 @@ export default function Home(): JSX.Element {
                         link="https://chrome.google.com/webstore/detail/chatgpt-writer-email-writ/pdnenlnelpdomajfejgapbdpmjkfpjkp/"
                       />
                     </span>
-                    Free Chrome extension that crafts personalized email replies
-                    in no time using AI (ChatGPT).
+                    Free Chrome extension to generate entire emails and messages
+                    based on a few keywords that you input using ChatGPT AI. All
+                    sites are supported.
                     <br />
                     {/* <i>Revenue: $3000+</i> */}
                   </p>

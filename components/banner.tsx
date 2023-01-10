@@ -60,7 +60,7 @@ export function BannerChromeExtensionChatGPTWriter(): JSX.Element {
     <div className=" text-base bg-gradient-to-r from-gray-700 to-gray-900 text-gray-100  rounded-none md:rounded-b -mt-2 -mx-5 md:mx-0 px-4 py-4 flex justify-between">
       <div className="flex justify-between w-full">
         <div className="">
-          <p>Let AI write personalized emails for you 🔥</p>
+          <p>Let AI write emails and messages for you 🔥</p>
         </div>
         <div className="ml-4 text-center text-sm">
           <a
