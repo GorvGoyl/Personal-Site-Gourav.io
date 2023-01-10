@@ -1,8 +1,8 @@
-export const ChromeUsers = () => (
+export const ChromeUsers = (props: { id: string; link: string }) => (
   <>
     <a
       title="Chrome extension link"
-      href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+      href={props.link}
       target="_blank"
       rel="noopener"
     >
@@ -10,7 +10,7 @@ export const ChromeUsers = () => (
         alt="Chrome users"
         loading="lazy"
         className="m-0"
-        src="https://flat.badgen.net/chrome-web-store/users/eciepnnimnjaojlkcpdpcgbfkpcagahd?color=fb9836&icon=chrome"
+        src={`https://flat.badgen.net/chrome-web-store/users/${props.id}?color=fb9836&icon=chrome`}
       />
     </a>
   </>
@@ -34,11 +34,11 @@ export const ChromeVersion = () => (
   </>
 );
 
-export const ChromeStars = () => (
+export const ChromeStars = (props: { id: string; link: string }) => (
   <>
     <a
       title="Chrome extension link"
-      href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+      href={props.link}
       target="_blank"
       rel="noopener"
     >
@@ -46,7 +46,7 @@ export const ChromeStars = () => (
         alt="Chrome extension stars"
         loading="lazy"
         className="m-0"
-        src="https://flat.badgen.net/chrome-web-store/stars/eciepnnimnjaojlkcpdpcgbfkpcagahd?color=fb9836&icon=chrome"
+        src={`https://flat.badgen.net/chrome-web-store/stars/${props.id}?color=fb9836&icon=chrome`}
       />
     </a>
   </>

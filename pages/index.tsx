@@ -108,7 +108,16 @@ export default function Home(): JSX.Element {
                     >
                       ChatGPT Writer
                     </a>
-                    <br />
+                    <span className="badge-wrapper">
+                      <ChromeUsers
+                        id="pdnenlnelpdomajfejgapbdpmjkfpjkp"
+                        link="https://chrome.google.com/webstore/detail/chatgpt-writer-email-writ/pdnenlnelpdomajfejgapbdpmjkfpjkp/"
+                      />
+                      <ChromeStars
+                        id="pdnenlnelpdomajfejgapbdpmjkfpjkp"
+                        link="https://chrome.google.com/webstore/detail/chatgpt-writer-email-writ/pdnenlnelpdomajfejgapbdpmjkfpjkp/"
+                      />
+                    </span>
                     Free Chrome extension that crafts personalized email replies
                     in no time using AI (ChatGPT).
                     <br />
@@ -148,8 +157,18 @@ export default function Home(): JSX.Element {
                           src="https://flat.badgen.net/badge/code/code/555555/?icon=github&label"
                         />
                       </a>
-                      <ChromeUsers />
-                      <ChromeStars />
+                      <ChromeUsers
+                        id={"eciepnnimnjaojlkcpdpcgbfkpcagahd"}
+                        link={
+                          "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+                        }
+                      />
+                      <ChromeStars
+                        id={"eciepnnimnjaojlkcpdpcgbfkpcagahd"}
+                        link={
+                          "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+                        }
+                      />
                     </span>
                     A popular browser extension to make Notion (
                     <em>www.notion.so</em>) more productive.
@@ -262,7 +281,7 @@ export default function Home(): JSX.Element {
                     <i>Total Views: 100,000+</i>
                   </p>
                 </li>
-                <li>
+                {/* <li>
                   <p>
                     <a
                       href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en"
@@ -276,7 +295,7 @@ export default function Home(): JSX.Element {
                     Lightweight Chrome extension to take quick notes without
                     leaving current tab.
                   </p>
-                </li>
+                </li> */}
                 {/* <li>
                   <p>
                     <a
