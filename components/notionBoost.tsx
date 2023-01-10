@@ -82,9 +82,19 @@ export const Badges = () => {
       <div className="flex flex-wrap gap-3">
         <ChromeVersion />
 
-        <ChromeUsers />
+        <ChromeUsers
+          id={"eciepnnimnjaojlkcpdpcgbfkpcagahd"}
+          link={
+            "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+          }
+        />
 
-        <ChromeStars />
+        <ChromeStars
+          id={"eciepnnimnjaojlkcpdpcgbfkpcagahd"}
+          link={
+            "https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+          }
+        />
 
         <FirefoxVersion />
 
