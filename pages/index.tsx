@@ -59,7 +59,7 @@ export default function Home(): JSX.Element {
           <div className="prose prose-lg">
             <p>
               Namaste, I'm a web developer, founder, and a fun guy to hang out
-              with. I like to build things that others find helpful.{" "}
+              with. I enjoy building things that others find helpful.{" "}
               <i>(Hire me!)</i>
               <br />
               {/* Currently, I am  working for{" "} */}
@@ -67,11 +67,11 @@ export default function Home(): JSX.Element {
                 Monadical
               </a>{" "} */}
               {/* and building cool projects. */}
-              {/* <br /> */}I founded{" "}
+              {/* <br /> */}I previously founded{" "}
               <a href="https://easypie.app" target="_blank" rel="noopener">
                 Easypie App
               </a>{" "}
-              (no-code automation tool),{" "}
+              (a no-code automation tool),{" "}
               <a
                 href="https://www.crunchbase.com/organization/evrcare"
                 target="_blank"
@@ -79,8 +79,8 @@ export default function Home(): JSX.Element {
               >
                 EvrCare
               </a>{" "}
-              (assistance platform for elderly people), built multiple side
-              projects, and worked for other tech companies.
+              (an assistance platform for elderly people), built multiple
+              projects, and have worked for other tech companies.
               <br />I share my learnings on{" "}
               <a rel="noopener" href="https://twitter.com/GorvGoyl">
                 Twitter
@@ -89,15 +89,15 @@ export default function Home(): JSX.Element {
               <a rel="noopener" href="https://www.linkedin.com/in/gorvgoyl/">
                 LinkedIn
               </a>
-              , and{" "}
+              , and my{" "}
               <Link href="/blog">
                 <a title="Blog">blog</a>
               </Link>
-              . You can reach out to me on social media or at{" "}
-              <i>hey@gourav.io</i>
+              . <br />
+              For business inquiries, reach out to me at <i>hey@gourav.io</i>
             </p>
             <div>
-              <h2>Side Projects</h2>
+              <h2>Projects</h2>
               <ul>
                 <li>
                   <p>
@@ -119,8 +119,8 @@ export default function Home(): JSX.Element {
                       />
                     </span>
                     Free Chrome extension to generate entire emails and messages
-                    based on a few keywords that you input using ChatGPT AI. All
-                    sites are supported.
+                    using ChatGPT AI. All sites are supported and enhanced
+                    support for Gmail.
                     <br />
                     {/* <i>Revenue: $3000+</i> */}
                   </p>
