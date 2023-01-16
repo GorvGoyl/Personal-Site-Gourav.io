@@ -8,28 +8,31 @@ mobileOutline: false
 
 import logo from "../img/logo.png";
 
-import image_frame from "../img/image_frame.gif";
-
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 ## What's new in this update ✨
 
-### v3.1.0
+### v3.2.0
 
-<TagDate>May 2022</TagDate>
+<TagDate>Jan 2023</TagDate>
 
 **🎉 NEW FEATURES:**
 
-- **Add frame to images**  
-  Add frame around images to make them easily noticeable on page
+- **Hide slash command placeholder**  
+  Hide placeholder "Type '/' for commands" while retaining the functionality.
 
-<Img src={image_frame} loading="lazy" type="ss" />
+- **Scroll to top from the Outline**  
+  Clicking on "Outline" header will scroll the page to the top.
+
+- **Narrow spacing between all items**  
+  Earlier it was applicable only to bullet lists and checklists. Now it will reduce the spacing between all items like headings, lists, etc, to fit more content on the screen.
 
 **🐞 FIXED BUGS :**
 
-- fix: full width causing layout issues in inline databases and tables
-- fix: some features not working on dark mode
-- fix: some settings not turning on
+- fixed: table flickering when hovering over hyperlink
+- fixed: hide backlinks feature not working
+- fixed: Toggle Outline button not showing on notion subdomains i.e. \*.notion.site
+- fixed: Table overflow issue on notion subdomains i.e. \*.notion.site
 
 👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
 
@@ -40,6 +43,21 @@ import image_frame from "../img/image_frame.gif";
 ---
 
 ## Previous updates
+
+### v3.1.0
+
+<TagDate>May 2022</TagDate>
+
+**🎉 NEW FEATURES:**
+
+- **Add frame to images**  
+  Add frame around images to make them easily noticeable on page
+
+**🐞 FIXED BUGS :**
+
+- fix: full width causing layout issues in inline databases and tables
+- fix: some features not working on dark mode
+- fix: some settings not turning on
 
 ### v3.0.8
 

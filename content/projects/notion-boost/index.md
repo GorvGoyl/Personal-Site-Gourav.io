@@ -226,6 +226,13 @@ Add frame around images to make them easily noticeable on page.
 <Img src={image_frame} loading="lazy" type="ss" />
 </details>
 
+<details>
+  <summary> <h4>Hide slash command placeholder</h4> </summary>
+
+Hide placeholder: Type '/' for commands
+
+</details>
+
 > Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues)
 
 <span>See{" "}<Link href="/notion-boost/whats-new"><a className="" title="https://gourav.io/notion-boost/whats-new">what's new</a></Link> in the latest update ✨</span>

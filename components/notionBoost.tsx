@@ -149,6 +149,23 @@ export function TagDate(props: { children: any }): JSX.Element {
 export function Social(): JSX.Element {
   // 👍 Liked this extension? express your love by rating [★★★★★](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd) on chrome/firefox store.
   const pathName = usePath();
+
+  function PatreonLogo() {
+    return (
+      <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#FA5252"
+          viewBox="0 0 50 50"
+          width="20"
+          height="20"
+        >
+          <path d="M15 7H9C8.447 7 8 7.447 8 8v33c0 .553.447 1 1 1h6c.553 0 1-.447 1-1V8C16 7.447 15.553 7 15 7zM31 7A13 13 0 1031 33 13 13 0 1031 7z" />
+        </svg>
+      </span>
+    );
+  }
+
   return (
     <div>
       {pathName === Page.WhatsNew && (
@@ -183,7 +200,6 @@ export function Social(): JSX.Element {
             <span className="font-medium">
               <CopyLink />
             </span>
-            .
           </p>
 
           {/* <p>
@@ -201,7 +217,7 @@ export function Social(): JSX.Element {
           </p> */}
         </>
       )}
-      <p>
+      {/* <p>
         ❤ Support Notion Boost by rating ★★★★★ on{" "}
         <A
           href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
@@ -217,13 +233,23 @@ export function Social(): JSX.Element {
           title="Add review on Firefox store"
         />{" "}
         store
+      </p> */}
+
+      <p className="flex items-center gap-1">
+        <span>
+          ❤️ Support my work,{" "}
+          <a target={"_blank"} href="https://www.patreon.com/user?u=86740203">
+            Become my patron
+          </a>
+        </span>
+        <PatreonLogo />
       </p>
 
-      <div>
+      {/* <div>
         🙏 Help others by sharing this project &nbsp; <ShareInlineBtn />
-      </div>
+      </div> */}
       <p>
-        👋 Connect with maker behind this project on{" "}
+        👋 Connect with me on{" "}
         <span>
           <a
             href="https://twitter.com/GorvGoyl"
@@ -231,7 +257,7 @@ export function Social(): JSX.Element {
           >
             Twitter
           </a>{" "}
-          and{" "}
+          or{" "}
           <a
             href="https://www.linkedin.com/in/gorvgoyl/"
             title="Connect with @GorvGoyl on linkedIn"
@@ -240,7 +266,16 @@ export function Social(): JSX.Element {
           </a>
         </span>
       </p>
+
       <p>
+        🎁 Checkout my other cool projects:{" "}
+        <span>
+          <a href="https://gourav.io" title="Gourav's Portfolio">
+            https://gourav.io
+          </a>{" "}
+        </span>
+      </p>
+      {/* <p>
         ✨ Follow{" "}
         <span>
           <a
@@ -257,7 +292,7 @@ export function Social(): JSX.Element {
           </a>
         </span>{" "}
         for Notion tips, tricks, and free goodies
-      </p>
+      </p> */}
     </div>
   );
 }
