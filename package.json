@@ -31,6 +31,7 @@
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.1.4",
     "@next/mdx": "^12.3.1",
+    "@vercel/analytics": "^0.1.8",
     "esbuild": "0.14.10",
     "googleapis": "^108.0.0",
     "gray-matter": "^4.0.3",

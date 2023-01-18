@@ -1,6 +1,7 @@
 import { isProd } from "@/lib/envVar";
 import * as gtag from "@/lib/gtag";
 import "@/styles/tailwind.scss";
+import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -29,8 +30,12 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
 };
 
 export default App;
