@@ -105,10 +105,8 @@ export default function Post(props: Post) {
           <AuthorImg />
         </div>
         <div className="text-center mt-8">
-          <Link href="/blog">
-            <a className="underline" title="View all posts">
-              ← View all posts
-            </a>
+          <Link href="/blog" className="underline" title="View all posts">
+            ← View all posts
           </Link>
         </div>
         <ScrollTopBtn />

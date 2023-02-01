@@ -5,6 +5,12 @@ import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
@@ -31,10 +37,10 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     };
   }, [router.events]);
   return (
-    <>
+    <div className={`${inter.variable} font-sans`}>
       <Component {...pageProps} />
       <Analytics />
-    </>
+    </div>
   );
 };
 

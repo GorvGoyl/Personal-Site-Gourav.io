@@ -335,13 +335,11 @@ export function AuthorImg(): JSX.Element {
   return (
     <div className="flex items-center text-base">
       <Link href="/">
-        <a>
-          <img
-            className="w-20 rounded-full mr-3 my-3"
-            src="/gourav_min_400.png"
-            alt="Gourav Goyal"
-          />
-        </a>
+        <img
+          className="w-20 rounded-full mr-3 my-3"
+          src="/gourav_min_400.png"
+          alt="Gourav Goyal"
+        />
       </Link>
       <div className="">
         <p className="m-0 font-medium text-[17px] tracking-normal text-gray-700">

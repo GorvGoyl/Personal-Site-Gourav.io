@@ -22,32 +22,33 @@ export default function Home(): JSX.Element {
               alt="Gourav Goyal"
             />
             <div className="prose prose-lg">
-              <Link href="/">
-                <a title="Homepage" className="no-underline hover:no-underline">
-                  <h1
-                    className="bg-clip-text text-transparent pb-3 mb-4 tracking-wide font-bold text-3xl md:text-5xl" // bg-gradient-to-r from-blue-500 to-emerald-400
-                    style={{
-                      backgroundImage: "linear-gradient(90deg,#ff4d4d,#f9cb28)",
-                    }}
-                  >
-                    Gourav Goyal
-                  </h1>
-                </a>
+              <Link
+                href="/"
+                title="Homepage"
+                className="no-underline hover:no-underline"
+              >
+                <h1
+                  className="bg-clip-text text-transparent pb-3 mb-4 tracking-wide font-bold text-3xl md:text-5xl" // bg-gradient-to-r from-blue-500 to-emerald-400
+                  style={{
+                    backgroundImage: "linear-gradient(90deg,#ff4d4d,#f9cb28)",
+                  }}
+                >
+                  Gourav Goyal
+                </h1>
               </Link>
 
               <nav className="flex justify-between md:justify-around ">
-                <Link href="https://twitter.com/GorvGoyl">
-                  <a
-                    target="blank"
-                    rel="noopener"
-                    title="Follow @GorvGoyl on Twitter"
-                  >
-                    GorvGoyl
-                    <TwitterIcon class="inline w-4 h-4 m-0 ml-1" />
-                  </a>
-                </Link>
-                <Link href="/blog">
-                  <a title="Blog">Blog</a>
+                <a
+                  href="https://twitter.com/GorvGoyl"
+                  target="blank"
+                  title="Follow @GorvGoyl on Twitter"
+                >
+                  GorvGoyl
+                  <TwitterIcon class="inline w-4 h-4 m-0 ml-1" />
+                </a>
+
+                <Link href="/blog" title="Blog">
+                  Blog
                 </Link>
                 {/* <Link href="/about">
                 <a>About Me</a>
@@ -90,8 +91,8 @@ export default function Home(): JSX.Element {
                 LinkedIn
               </a>
               , and my{" "}
-              <Link href="/blog">
-                <a title="Blog">blog</a>
+              <Link href="/blog" title="Blog">
+                blog
               </Link>
               . <br />
               For business inquiries, reach out to me at <i>hey@gourav.io</i>
@@ -143,8 +144,11 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
-                    <Link href="/notion-boost">
-                      <a title="Notion Boost browser extension">Notion Boost</a>
+                    <Link
+                      href="/notion-boost"
+                      title="Notion Boost browser extension"
+                    >
+                      Notion Boost
                     </Link>
                     <span className="badge-wrapper">
                       <a
@@ -225,8 +229,8 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
-                    <Link href="/clone-wars">
-                      <a title="Clone Wars">Clone Wars</a>
+                    <Link href="/clone-wars" title="Clone Wars">
+                      Clone Wars
                     </Link>
                     <span className="badge-wrapper">
                       <a
@@ -260,8 +264,8 @@ export default function Home(): JSX.Element {
                 </li>
                 <li>
                   <p>
-                    <Link href="/">
-                      <a title="https://gourav.io">Gourav.io</a>
+                    <Link href="/" title="https://gourav.io">
+                      Gourav.io
                     </Link>
                     <span className="badge-wrapper">
                       <a

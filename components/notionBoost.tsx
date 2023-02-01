@@ -48,10 +48,12 @@ export function NavbarNotion(): JSX.Element {
         </a>
       )}
       {page === Page.WhatsNew && (
-        <Link href={Page.AllFeatures}>
-          <a className="break-normal  mr-5" title="View all features">
-            Features
-          </a>
+        <Link
+          href={Page.AllFeatures}
+          className="break-normal  mr-5"
+          title="View all features"
+        >
+          Features
         </Link>
       )}
       {page === Page.Home && (
@@ -113,24 +115,23 @@ export function Title(Props: {
     <div className="flex items-start">
       <div className="">
         <div className="">
-          <Link href={Props.homeURL}>
-            <a
-              className="no-underline hover:no-underline inline-flex items-center"
-              title={Props.txt}
-            >
-              {Props.logo && (
-                <img
-                  className="m-0 mr-8 -ml-1"
-                  width="96"
-                  height="96"
-                  src={Props.logo}
-                  alt={Props.txt}
-                />
-              )}
-              <header>
-                <h1 className="m-0">{Props.txt}</h1>
-              </header>
-            </a>
+          <Link
+            href={Props.homeURL}
+            className="no-underline hover:no-underline inline-flex items-center"
+            title={Props.txt}
+          >
+            {Props.logo && (
+              <img
+                className="m-0 mr-8 -ml-1"
+                width="96"
+                height="96"
+                src={Props.logo}
+                alt={Props.txt}
+              />
+            )}
+            <header>
+              <h1 className="m-0">{Props.txt}</h1>
+            </header>
           </Link>
         </div>
       </div>

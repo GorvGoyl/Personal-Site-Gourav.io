@@ -235,7 +235,7 @@ Hide placeholder: Type '/' for commands
 
 > Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues)
 
-<span>See{" "}<Link href="/notion-boost/whats-new"><a className="" title="https://gourav.io/notion-boost/whats-new">what's new</a></Link> in the latest update ✨</span>
+<span>See{" "}<Link href="/notion-boost/whats-new" title="https://gourav.io/notion-boost/whats-new">what's new</Link> in the latest update ✨</span>
 
 ## ⚙ How to use
 

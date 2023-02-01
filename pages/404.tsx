@@ -15,8 +15,8 @@ export default function Blog(): JSX.Element {
           <header>
             <h1>Oops, Page not found :(</h1>
             <h3>
-              <Link href="/">
-                <a title="gourav.io">Go to Homepage</a>
+              <Link href="/" title="gourav.io">
+                Go to Homepage
               </Link>
             </h3>
             <h3>

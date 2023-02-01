@@ -11,24 +11,23 @@ const NavItem = (props: {
   text: string;
   className?: string;
 }) => (
-  <Link href={props.href}>
-    <a
-      className={`inline-block py-4 px-2  ${props.className}`}
-      title={props.title}
-    >
-      {props.text === "Gourav Goyal" ? (
-        <div
-          className={`bg-clip-text text-transparent font-semibold tracking-wide`}
-          style={{
-            backgroundImage: "linear-gradient(90deg,#ff4d4d,#f9cb28)",
-          }}
-        >
-          {props.text}
-        </div>
-      ) : (
-        <div>{props.text}</div>
-      )}
-    </a>
+  <Link
+    href={props.href}
+    className={`inline-block py-4 px-2  ${props.className}`}
+    title={props.title}
+  >
+    {props.text === "Gourav Goyal" ? (
+      <div
+        className={`bg-clip-text text-transparent font-semibold tracking-wide`}
+        style={{
+          backgroundImage: "linear-gradient(90deg,#ff4d4d,#f9cb28)",
+        }}
+      >
+        {props.text}
+      </div>
+    ) : (
+      <div>{props.text}</div>
+    )}
   </Link>
 );
 export function Navbar(Props: { link?: Links }): JSX.Element {
