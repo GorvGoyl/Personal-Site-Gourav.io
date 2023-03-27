@@ -95,7 +95,7 @@ export default function Home(): JSX.Element {
                 blog
               </Link>
               . <br />
-              For business inquiries, reach out to me at <i>hey@gourav.io</i>
+              For business inquiries, reach out at <i>hey[at]gourav.io</i>
             </p>
             <div>
               <h2>Projects</h2>
