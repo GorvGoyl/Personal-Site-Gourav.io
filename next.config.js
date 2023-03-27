@@ -52,6 +52,7 @@ const nextConfig =
     reactStrictMode: true,
     experimental: {
       largePageDataBytes: 256000,
+      scrollRestoration: true,
     },
     pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
     redirects,
