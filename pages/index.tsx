@@ -8,6 +8,13 @@ import { TwitterIcon } from "@/components/tags";
 import Link from "next/link";
 
 export default function Home(): JSX.Element {
+  const LinkStyle = ({ children }: { children: React.ReactNode }) => {
+    return (
+      <span className=" whitespace-pre underline font-[400] inline-block hover:opacity-80 cursor-pointer text-left hover:bg-opacity-80 focus:outline-none ">
+        {children}
+      </span>
+    );
+  };
   return (
     <div>
       <Header type="website" />
@@ -59,45 +66,82 @@ export default function Home(): JSX.Element {
 
           <div className="prose prose-lg">
             <p>
-              Namaste, I'm a web developer, founder, and a fun guy to hang out
-              with. I enjoy building things that others find helpful.{" "}
-              <i>(Hire me!)</i>
-              <br />
-              {/* Currently, I am  working for{" "} */}
+              Namaste 🙏, I am a web developer, founder, and a fun guy to hang
+              out with. I have over 8 years of experience in the software
+              industry, building end-to-end products and leading teams. <br />I
+              share my learnings on{" "}
+              <a target="_blank" href="https://twitter.com/GorvGoyl">
+                <LinkStyle>Twitter</LinkStyle>
+              </a>
+              ,{" "}
+              <a target="_blank" href="https://www.linkedin.com/in/gorvgoyl/">
+                <LinkStyle>LinkedIn</LinkStyle>
+              </a>
+              , and my{" "}
+              <Link href="/blog" title="Blog">
+                <LinkStyle>blog</LinkStyle>
+              </Link>
+              .{/* Currently, I am  working for{" "} */}
               {/* <a href="https://monadical.com" target="_blank" rel="noopener">
                 Monadical
               </a>{" "} */}
               {/* and building cool projects. */}
-              {/* <br /> */}I previously founded{" "}
-              <a href="https://easypie.app" target="_blank" rel="noopener">
-                Easypie App
-              </a>{" "}
-              (a no-code automation tool),{" "}
-              <a
-                href="https://www.crunchbase.com/organization/evrcare"
-                target="_blank"
-                rel="noopener"
-              >
-                EvrCare
-              </a>{" "}
-              (an assistance platform for elderly people), built multiple
-              projects, and have worked for other tech companies.
-              <br />I share my learnings on{" "}
-              <a rel="noopener" href="https://twitter.com/GorvGoyl">
-                Twitter
-              </a>
-              ,{" "}
-              <a rel="noopener" href="https://www.linkedin.com/in/gorvgoyl/">
-                LinkedIn
-              </a>
-              , and my{" "}
-              <Link href="/blog" title="Blog">
-                blog
-              </Link>
-              . <br />
+              <ul>
+                <li>
+                  Expertise: Web development (React, TS, Node.js), Chrome
+                  extension development, AI, startup consultation, and product
+                  management
+                </li>
+                <li>
+                  Startups I founded:{" "}
+                  <a
+                    href="https://chatgptwriter.ai"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <LinkStyle>ChatGPT Writer</LinkStyle>
+                  </a>{" "}
+                  (AI powered writing tool),{" "}
+                  <a href="https://easypie.app" target="_blank" rel="noopener">
+                    <LinkStyle>Easypie App</LinkStyle>
+                  </a>{" "}
+                  (no-code automation tool),{" "}
+                  <a
+                    href="https://www.crunchbase.com/organization/evrcare"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <LinkStyle>EvrCare</LinkStyle>
+                  </a>{" "}
+                  (assistance platform for elderly people)
+                </li>
+                <li>
+                  Companies/clients I have worked for: YC-backed startups,
+                  individual clients, big tech corps like Samsung, Honeywell,
+                  etc.
+                </li>
+                <li>
+                  My open-source projects:{" "}
+                  <a target="_blank" href="https://github.com/gorvgoyl/">
+                    <LinkStyle>Github</LinkStyle>
+                  </a>
+                </li>
+                <li>
+                  Technical writing:{" "}
+                  <a
+                    target="_blank"
+                    href="https://stackoverflow.com/users/3073272/gorvgoyl"
+                  >
+                    <LinkStyle>StackOverflow profile</LinkStyle>
+                  </a>{" "}
+                  and{" "}
+                  <Link href="/blog" title="Blog">
+                    <LinkStyle>blog</LinkStyle>
+                  </Link>
+                </li>
+              </ul>
               <div className="py-2 px-3 mt-5 text-base rounded-lg bg-slate-200 text-slate-700">
-                👋 For business inquiries (web development, chrome ext.
-                development, consultation, etc), reach out at{" "}
+                👋 For business inquiries reach out to me at{" "}
                 <i>hey@gourav.io</i>
               </div>
             </p>
