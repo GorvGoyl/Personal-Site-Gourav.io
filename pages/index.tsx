@@ -95,7 +95,7 @@ export default function Home(): JSX.Element {
                 blog
               </Link>
               . <br />
-              <div className="py-1 px-2 mt-5 text-base rounded bg-slate-200 text-slate-700">
+              <div className="py-2 px-3 mt-5 text-base rounded-lg bg-slate-200 text-slate-700">
                 👋 For business inquiries (web development, chrome ext.
                 development, consultation, etc), reach out at{" "}
                 <i>hey@gourav.io</i>
