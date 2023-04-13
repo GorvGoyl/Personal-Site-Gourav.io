@@ -65,7 +65,7 @@ export default function Home(): JSX.Element {
           </div>
 
           <div className="prose prose-lg">
-            <p>
+            <div>
               Namaste 🙏, I am a web developer, founder, and a fun guy to hang
               out with. I have over 8 years of experience in the software
               industry, building end-to-end products and leading teams. <br />I
@@ -86,6 +86,10 @@ export default function Home(): JSX.Element {
                 Monadical
               </a>{" "} */}
               {/* and building cool projects. */}
+              <div className="py-2 px-3 mt-5 text-base rounded-lg bg-slate-200 text-slate-700">
+                👋 For business inquiries reach out to me at{" "}
+                <i>hey@gourav.io</i>
+              </div>
               <ul>
                 <li>
                   Expertise: Web development (React, TS, Node.js), Chrome
@@ -140,11 +144,7 @@ export default function Home(): JSX.Element {
                   </Link>
                 </li>
               </ul>
-              <div className="py-2 px-3 mt-5 text-base rounded-lg bg-slate-200 text-slate-700">
-                👋 For business inquiries reach out to me at{" "}
-                <i>hey@gourav.io</i>
-              </div>
-            </p>
+            </div>
             <div>
               <h2>Projects</h2>
               <ul>
