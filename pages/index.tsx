@@ -177,6 +177,22 @@ export default function Home(): JSX.Element {
                 <li>
                   <p>
                     <a
+                      href="https://chatgptmessage.ai"
+                      target={"_blank"}
+                      title="ChatGPT Message AI"
+                    >
+                      ChatGPT Message AI
+                    </a>
+                    <br />
+                    Use ChatGPT AI inside WhatsApp. Interact with AI without
+                    ever leaving WhatsApp.
+                    <br />
+                    {/* <i>Revenue: $3000+</i> */}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a
                       href="https://gimmesummary.ai"
                       target={"_blank"}
                       title="Gimme Summary AI chrome extension"
