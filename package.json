@@ -30,7 +30,6 @@
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.3.0",
-    "@next/font": "^13.4.19",
     "@next/mdx": "^13.4.19",
     "@vercel/analytics": "^0.1.8",
     "esbuild": "0.17.5",

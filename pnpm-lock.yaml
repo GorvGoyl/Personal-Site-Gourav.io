@@ -17,9 +17,6 @@ dependencies:
   '@mdx-js/loader':
     specifier: ^2.3.0
     version: 2.3.0(webpack@5.88.2)
-  '@next/font':
-    specifier: ^13.4.19
-    version: 13.4.19
   '@next/mdx':
     specifier: ^13.4.19
     version: 13.4.19(@mdx-js/loader@2.3.0)
@@ -676,10 +673,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font@13.4.19:
-    resolution: {integrity: sha512-yOuSRYfqksWcaG/sATr1/DEGvvI8gnmAAnQCCZ0+L9p4Pio3/DMu71J56YHh9Hz84LDN4tMVzuux0ssCuM50sA==}
-    dev: false
 
   /@next/mdx@13.4.19(@mdx-js/loader@2.3.0):
     resolution: {integrity: sha512-EaWA30YxAqFcyQYNxCoL9/TCcZP1Nk6pvW0vf1M54qDAkAGiloWQqyttVKVbRz+qOYk92he6mBB4ej/7pmEinQ==}

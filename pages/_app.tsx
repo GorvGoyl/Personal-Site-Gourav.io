@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
