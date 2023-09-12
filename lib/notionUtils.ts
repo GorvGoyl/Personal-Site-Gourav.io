@@ -178,7 +178,10 @@ export async function getPostContentFromNotion(
   const mdBlocks = await n2m.pageToMarkdown(frontmatter.postId);
   const mdString = n2m.toMarkdownString(mdBlocks);
 
-  const postContent = await convertMdxStringToCode(mdString, frontmatter);
+  const postContent = await convertMdxStringToCode(
+    mdString["parent"],
+    frontmatter
+  );
 
   // save og image name in cache
   if (ogImageName) {
