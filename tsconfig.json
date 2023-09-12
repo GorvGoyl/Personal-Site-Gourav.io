@@ -23,6 +23,7 @@
     },
     "noImplicitAny": false, //set 'true' to throw error for 'any'
     "suppressImplicitAnyIndexErrors": true,
+    "ignoreDeprecations": "5.0",
     "pretty": true,
     "noImplicitReturns": true,
     "strictNullChecks": true, //needs to be true for zod to work
