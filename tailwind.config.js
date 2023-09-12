@@ -64,7 +64,6 @@ module.exports = {
   // safelist: ["bg-slate-200", "gap-2", "text-slate-600", "rounded-md"],
   plugins: [
     require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
     // https://tailwindcss.com/docs/plugins#variants
 
     ({ addUtilities }) => {
