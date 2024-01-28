@@ -10,7 +10,30 @@ import logo from "../img/logo.png";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
-## What's new in this update ✨
+## Notion Boost Extension Just Got Updated 🍾
+
+### v3.3.0
+
+<TagDate>Jan 2024</TagDate>
+
+**NEW FEATURES 🎉**
+
+**Disable AI menu when pressing space key**  
+ Option to disable AI command menu when pressing space key.
+
+**FIXED BUGS 🐞**
+
+Fixed issues related to features such as enabling full width by default, hiding the slash menu, removing the notification badge, increasing page height, and setting small text as the default, among others.
+
+👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
+
+---
+
+<Social/>
+
+---
+
+## Previous updates
 
 ### v3.2.0
 
@@ -26,23 +49,6 @@ import logo from "../img/logo.png";
 
 - **Narrow spacing between all items**  
   Earlier it was applicable only to bullet lists and checklists. Now it will reduce the spacing between all items like headings, lists, etc, to fit more content on the screen.
-
-**🐞 FIXED BUGS :**
-
-- fixed: table flickering when hovering over hyperlink
-- fixed: hide backlinks feature not working
-- fixed: Toggle Outline button not showing on notion subdomains i.e. \*.notion.site
-- fixed: Table overflow issue on notion subdomains i.e. \*.notion.site
-
-👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
-
----
-
-<Social/>
-
----
-
-## Previous updates
 
 ### v3.1.0
 

@@ -87,6 +87,14 @@ Added button at the bottom-right corner of page for scrolling back to top. Quite
 
 <Img src={scrollbtn} loading="lazy" type="ss" />
 </details>
+
+<details>
+  <summary> <h4>Disable AI menu when pressing space key</h4> </summary>
+
+Disable AI command menu when pressing the space key.
+
+</details>
+
 <details>
   <summary> <h4>Show full text on hover</h4></summary>
 
