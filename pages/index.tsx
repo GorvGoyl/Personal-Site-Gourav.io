@@ -66,10 +66,16 @@ export default function Home(): JSX.Element {
 
           <div className="prose prose-lg">
             <div>
-              Namaste 🙏, I am a web developer, founder, and a fun guy to hang
-              out with. I have over 8 years of experience in the software
-              industry, building end-to-end products and leading teams. <br />I
-              share my learnings on{" "}
+              Namaste 🙏, I am a tech startup founder who values delivering a
+              great user experience. I am currently building{" "}
+              <a href="https://chatgptwriter.ai" target="_blank" rel="noopener">
+                <LinkStyle>ChatGPT Writer</LinkStyle>
+              </a>
+              , among other passion projects. Since 2015, I have been working in
+              the software industry, building end-to-end products and leading
+              teams. And trust me, I've debugged more code than most people have
+              read their Terms of Service agreements. <br />I share my learnings
+              on{" "}
               <a target="_blank" href="https://twitter.com/GorvGoyl">
                 <LinkStyle>Twitter</LinkStyle>
               </a>
@@ -86,7 +92,7 @@ export default function Home(): JSX.Element {
                 Monadical
               </a>{" "} */}
               {/* and building cool projects. */}
-              <div className="py-2 px-3 mt-5 text-base rounded-lg bg-slate-200 text-slate-700">
+              <div className="p-3 mt-5 text-base rounded-lg bg-slate-200 text-slate-700">
                 👋 For business inquiries reach out to me at{" "}
                 <i>hey@gourav.io</i>
               </div>
@@ -94,7 +100,7 @@ export default function Home(): JSX.Element {
                 <li>
                   Expertise: Web development (React, TS, Node.js), Chrome
                   extension development, AI, startup consultation, and product
-                  management
+                  management.
                 </li>
                 <li>
                   Startups I founded:{" "}
@@ -117,7 +123,7 @@ export default function Home(): JSX.Element {
                   >
                     <LinkStyle>EvrCare</LinkStyle>
                   </a>{" "}
-                  (assistance platform for elderly people)
+                  (assistance platform for elderly people).
                 </li>
                 <li>
                   Companies/clients I have worked for: YC-backed startups,
@@ -125,10 +131,11 @@ export default function Home(): JSX.Element {
                   etc.
                 </li>
                 <li>
-                  My open-source projects:{" "}
+                  Checkout my open-source projects on{" "}
                   <a target="_blank" href="https://github.com/gorvgoyl/">
                     <LinkStyle>Github</LinkStyle>
                   </a>
+                  .
                 </li>
                 <li>
                   Technical writing:{" "}
