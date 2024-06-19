@@ -66,9 +66,11 @@ export function BannerChromeExtensionChatGPTWriter(): JSX.Element {
           <a
             href={`https://chatgptwriter.ai?ref=${pathName}`}
             target="_blank"
-            className={`whitespace-nowrap inline-block hover:opacity-80 cursor-pointer leading-none hover:bg-current/80 border border-gray-400 focus:outline-none px-3 py-2 rounded-2xl  text-gray-200 `}
+            className={
+              "text-sm hover:bg-white hover:text-black hover:no-underline hover:border-transparent whitespace-nowrap inline-block  cursor-pointer leading-none  border border-gray-400 focus:outline-none px-3 py-2 rounded-full text-gray-200"
+            }
           >
-            Free Chrome extension
+            Try for Free
           </a>
         </div>
       </div>
