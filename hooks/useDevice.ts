@@ -4,7 +4,7 @@ export function useDevice(): 'mobile' | 'desktop' {
     const [device, setDevice] = useState<'mobile' | 'desktop'>('desktop');
 
     useEffect(() => {
-        if (isSmallScreen()) {
+        if (isMobile() || isSmallScreen()) {
             setDevice('mobile');
         } else {
             setDevice('desktop');

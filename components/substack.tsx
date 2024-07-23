@@ -5,7 +5,7 @@ export function SubstackForm() {
     const width = device === 'mobile' ? '350' : '480';
     return (
         <div className="flex flex-row items-center justify-center">
-            <div className="relative flex w-fit flex-col items-center justify-center rounded-2xl border-2 border-orange-400 px-5 py-2">
+            <div className="relative flex w-fit flex-col items-center justify-center rounded-2xl border-2 border-orange-400 px-5 py-2 text-center">
                 <div className="mt-4 text-xl font-bold">Gourav's Newsletter</div>
                 <div className="mb-1 mt-3 text-base text-slate-500">
                     I write about startups, tech, productivity, personal development, and more.
