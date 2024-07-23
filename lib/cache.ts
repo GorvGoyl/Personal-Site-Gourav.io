@@ -1,6 +1,7 @@
-import { FrontmatterBlogpost } from "@/types/types";
+
 import { readFileSync, writeFileSync } from "fs";
 import path from "path";
+import type { FrontmatterBlogpost } from "../types/types";
 
 const cacheFilePath = path.join(
   process.cwd(),
@@ -22,7 +23,7 @@ export const frontmatterCache = {
         data as unknown as string
       );
 
-      frontmatter = FrontmatterBlogpostsArr.find((fm) => fm.slug === postSlug);
+      frontmatter = FrontmatterBlogpostsArr.find((fm) => {return fm.slug === postSlug});
     }
 
     return frontmatter;

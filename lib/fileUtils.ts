@@ -35,11 +35,11 @@ export function downloadFile(
       if (response.statusCode === 200) {
         ensureDirectoryExistence(dest);
         const file = fs.createWriteStream(dest, { flags: "w" });
-        file.on("finish", () => resolve());
+        file.on("finish", () => {return resolve()});
         file.on("error", (err: any) => {
           console.error("writing error", err);
           file.close();
-          fs.unlink(dest, () => reject(err.message)); // Delete temp file
+          fs.unlink(dest, () => {return reject(err.message)}); // Delete temp file
         });
         response.pipe(file);
       } else if (response.statusCode === 302 || response.statusCode === 301) {
@@ -48,10 +48,10 @@ export function downloadFile(
           response.headers.location || "",
           dest,
           duplicateCase
-        ).then(() => resolve());
+        ).then(() => {return resolve()});
       } else {
         reject(
-          `Server responded with ${response.statusCode}: ${response.statusMessage}`
+           new Error(`Server responded with ${response.statusCode}: ${response.statusMessage}`)
         );
       }
     });

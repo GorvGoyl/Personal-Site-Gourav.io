@@ -6,13 +6,13 @@ export function ScrollTopBtn(): JSX.Element {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight) {
-        if (isVisible === false) setVisibility((x) => true);
-      } else if (isVisible === true) setVisibility((x) => false);
+        if (isVisible === false) {setVisibility((x) => {return true});}
+      } else if (isVisible === true) {setVisibility((x) => {return false});}
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {return window.removeEventListener("scroll", handleScroll)};
   }, [isVisible]);
 
   const handleClick = () => {

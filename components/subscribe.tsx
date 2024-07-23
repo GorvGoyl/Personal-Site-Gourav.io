@@ -1,5 +1,5 @@
 // credits: Lee Robinson
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Confetti from "react-dom-confetti";
 
 const config = {
@@ -85,7 +85,6 @@ function LoadingSpinner() {
 
 // AfterArticle, Generic (default:Generic)
 export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
-  return <></>;
   const { type } = Props;
   const text = {
     [FORMTYPE.AfterArticle]: {
@@ -106,7 +105,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
   const [form, setForm] = useState({ state: "", message: "" });
   const inputEl = useRef(null);
 
-  const subscribe = async (e) => {
+  const subscribe = async (e:any) => {
     e.preventDefault();
     setForm({ state: "loading", message: "" });
 
@@ -152,7 +151,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
       </div>
       <form
         className="flex items-center mb-4 relative mt-5"
-        onSubmit={() => subscribe}
+        onSubmit={() => {return subscribe}}
       >
         <input
           ref={inputEl}
@@ -165,7 +164,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }): JSX.Element {
           type="email"
           onChange={handleInputChange}
           title="Subscribe to Gourav's newsletter"
-          required
+          required={true}
           disabled={form.state === "loading"}
           className={`bg-white border-gray-300 focus:ring-1 focus:ring-yellow-400 outline-none px-4 py-1 rounded-l-md w-full ${
             form.state === "loading" && "cursor-not-allowed hover:opacity-70"

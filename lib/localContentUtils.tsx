@@ -1,4 +1,4 @@
-import { FrontmatterProject } from "@/types/types";
+
 import toc from "@jsdevtools/rehype-toc";
 import fs from "fs";
 import matter from "gray-matter";
@@ -11,6 +11,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkMdxImages from "remark-mdx-images";
+import type { FrontmatterProject } from "../types/types";
 
 function getMDFoldersList(baseDir: string): string[][] {
   const folders = [] as string[][];
@@ -67,10 +68,10 @@ export function getPostBySlug(
   const pathToPost = join(postsDirectory, slug);
   const files = fs.readdirSync(pathToPost);
   const indexFile = files.find(
-    (file) => file.substr(0, file.lastIndexOf(".")) === "index"
+    (file) => {return file.substr(0, file.lastIndexOf(".")) === "index"}
   );
 
-  if (!indexFile) throw new Error("index file not found for slug: " + slug);
+  if (!indexFile) {throw new Error("index file not found for slug: " + slug);}
   // const ogImg =
   //   files.find((file) => file.substr(0, file.lastIndexOf(".")) === "og") || "";
   const fullPath = join(pathToPost, indexFile);
@@ -159,7 +160,7 @@ export async function getPost(
             },
             customizeTOC: (toc: any) => {
               // whether to show toc based on frontmatter value
-              if (shouldAddToc === true) return true;
+              if (shouldAddToc === true) {return true;}
               return false;
             },
           },
@@ -168,7 +169,7 @@ export async function getPost(
 
       return options;
     },
-    esbuildOptions: (options) => ({
+    esbuildOptions: (options) => {return {
       ...options,
       outdir: imgOutDir, //blog/git-cheatsheet/
       target: ["es2020"],
@@ -183,7 +184,7 @@ export async function getPost(
       },
       publicPath: imgOutputRelativeDir,
       write: true,
-    }),
+    }},
   });
 
   const { code } = result;

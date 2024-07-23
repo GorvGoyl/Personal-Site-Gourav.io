@@ -1,26 +1,24 @@
-import { FrontmatterBlogpostSchema, FrontmatterBlogpost } from "@/types/types";
+
+import toc from "@jsdevtools/rehype-toc";
 import { Client } from "@notionhq/client";
-import {
-  ImageBlockObjectResponse,
-  PageObjectResponse,
-  SyncedBlockBlockObjectResponse,
-  VideoBlockObjectResponse,
-} from "@notionhq/client/build/src/api-endpoints";
-import { NOTION_API_KEY, NOTION_BLOGPOSTS_DB } from "./envVar";
+
+import type { ImageBlockObjectResponse, PageObjectResponse, RichTextItemResponse, VideoBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { bundleMDX } from "mdx-bundler";
+import { NotionToMarkdown } from "notion-to-md";
+import type { ListBlockChildrenResponseResult } from "notion-to-md/build/types";
 import path, { join } from "path";
-import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { headingLink } from "./localContentUtils";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import { bundleMDX } from "mdx-bundler";
-import toc from "@jsdevtools/rehype-toc";
-import { NotionToMarkdown } from "notion-to-md";
-import { downloadFile } from "./fileUtils";
-import { ListBlockChildrenResponseResult } from "notion-to-md/build/types";
-import { hashCode } from "./utils";
+import type { z } from "zod";
+import { type FrontmatterBlogpost, FrontmatterBlogpostSchema } from "../types/types";
 import { frontmatterCache } from "./cache";
+import { NOTION_API_KEY, NOTION_BLOGPOSTS_DB } from "./envVar";
+import { downloadFile } from "./fileUtils";
+import { headingLink } from "./localContentUtils";
+import { hashCode } from "./utils";
 const notionClient = new Client({ auth: NOTION_API_KEY });
 export async function getAllPublishedAndPreviewPostsFrontmatterFromNotion(): Promise<
   FrontmatterBlogpost[]
@@ -132,10 +130,10 @@ export async function getPostContentFromNotion(
   const n2m = new NotionToMarkdown({ notionClient });
 
   n2m.setCustomTransformer("image", (block) =>
-    imgTransformer(block, slugLowercase, setOgImageURLcallback)
+    {return imgTransformer(block, slugLowercase, setOgImageURLcallback)}
   );
   n2m.setCustomTransformer("video", (block) =>
-    videoTransformer(block, slugLowercase)
+    {return videoTransformer(block, slugLowercase)}
   );
 
   // n2m.setCustomTransformer("synced_block", (block) => {
@@ -195,15 +193,15 @@ export async function getPostContentFromNotion(
 
 const parseFrontmatterFromPost = (page: PageObjectResponse) => {
   const frontMatter: FrontmatterBlogpost = {
-    title: page.properties["Title"]["title"][0]?.["plain_text"],
-    desc: page.properties["Description"]["rich_text"][0]?.["plain_text"],
-    slug: page.properties["Slug"]["rich_text"][0]?.["plain_text"],
-    date: page.properties["Published date"]["date"]?.["start"] || null,
+    title: (page.properties['Title'] as PostMetaDatatitleType)["title"][0]?.["plain_text"],
+    desc: (page.properties['Description'] as PostMetaDataDescriptionType)["rich_text"][0]?.["plain_text"],
+    slug: (page.properties['Slug'] as PostMetaDataSlugType)["rich_text"][0]?.["plain_text"],
+    date: (page.properties['Published date'] as PostMetaDataDateType)["date"]?.["start"] || null,
     postId: page.id,
-    preview: page.properties["Preview"]["checkbox"],
-    published: page.properties["Published"]["checkbox"],
-    desktopOutline: page.properties["Desktop outline"]["checkbox"],
-    mobileOutline: page.properties["Mobile outline"]["checkbox"],
+    preview: (page.properties['Preview'] as PostMetaDataCheckboxType).checkbox,
+    published: (page.properties['Published'] as PostMetaDataCheckboxType).checkbox,
+    desktopOutline: (page.properties['Desktop outline'] as PostMetaDataCheckboxType).checkbox,
+    mobileOutline: (page.properties['Mobile outline'] as PostMetaDataCheckboxType).checkbox,
   };
 
   const fmParsed = FrontmatterBlogpostSchema.parse(frontMatter);
@@ -238,7 +236,7 @@ const imgTransformer = async (
   }
 
   captionPlain = imgBlock.image.caption
-    .map((item) => item.plain_text)
+    .map((item) => {return item.plain_text})
     .join("")
     .trim();
 
@@ -252,10 +250,10 @@ const imgTransformer = async (
   if (captionPlain === "og:image") {
     setOgImageURLcallback(mediaRelativePath, destFileName);
     return "";
-  } else {
+  } 
     const imgComponent = `<Img src="${mediaRelativePath}" type="ss" caption="${captionPlain}" />`;
     return imgComponent;
-  }
+  
 };
 
 const videoTransformer = async (
@@ -284,7 +282,7 @@ const videoTransformer = async (
   }
 
   captionPlain = videoBlock.video.caption
-    .map((item) => item.plain_text)
+    .map((item) => {return item.plain_text})
     .join("")
     .trim();
   if (captionPlain) {
@@ -425,12 +423,63 @@ const convertMdxStringToCode = async (
 
       return options;
     },
-    esbuildOptions: (options) => ({
+    esbuildOptions: (options) => {return {
       ...options,
       target: ["es2020"],
-    }),
+    }},
   });
 
   const { code } = result;
   return code;
+};
+
+export type BlogPostMetaDataType = z.infer<typeof FrontmatterBlogpostSchema>;
+
+type PostMetaDatatitleType = {
+    type: 'title';
+    title: Array<RichTextItemResponse>;
+    id: string;
+};
+
+type PostMetaDataDescriptionType = {
+    type: 'rich_text';
+    rich_text: Array<RichTextItemResponse>;
+    id: string;
+};
+
+type PostMetaDataSlugType = {
+    type: 'rich_text';
+    rich_text: Array<RichTextItemResponse>;
+    id: string;
+};
+
+type PostMetaDataDateType = {
+    type: 'date';
+    date: {
+        start: string;
+    };
+    id: string;
+};
+
+type PostMetaDataImagesArrayType =
+    | {
+          name: string;
+          type: 'external';
+          external: {
+              url: string;
+          };
+      }[]
+    | {
+          name: string;
+          type: 'file';
+          file: {
+              url: string;
+              expiry_time: string;
+          };
+      }[]
+    | [];
+
+type PostMetaDataCheckboxType = {
+    type: 'checkbox';
+    checkbox: boolean;
 };

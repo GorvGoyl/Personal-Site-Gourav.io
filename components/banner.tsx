@@ -1,13 +1,13 @@
-import { usePath } from "@/hooks/customHooks";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
+
+import { useState } from "react";
+import { usePath } from "../hooks/customHooks";
 
 export function Banner(): JSX.Element {
   const [isVisible, setVisibility] = useState(true);
   const pathName = usePath().slice(1); // replace first "/"
 
   const handleClick = () => {
-    setVisibility((x) => false);
+    setVisibility((x) => {return false});
   };
 
   return isVisible ? (
@@ -53,7 +53,7 @@ export function BannerChromeExtensionChatGPTWriter(): JSX.Element {
   const pathName = usePath().slice(1); // replace first "/"
 
   const handleClick = () => {
-    setVisibility((x) => false);
+    setVisibility((x) => {return false});
   };
 
   return isVisible ? (

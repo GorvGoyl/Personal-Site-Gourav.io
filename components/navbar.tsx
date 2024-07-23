@@ -1,17 +1,17 @@
-import { usePath } from "@/hooks/customHooks";
+
 import Link from "next/link";
-import React from "react";
+import { usePath } from "../hooks/customHooks";
 
 export enum Links {
   Blog,
 }
-const NavItem = (props: {
+function NavItem(props: {
   href: string;
   title: string;
   text: string;
   className?: string;
-}) => (
-  <Link
+}) {
+  return <Link
     href={props.href}
     className={`inline-block py-4 px-2  ${props.className}`}
     title={props.title}
@@ -29,7 +29,7 @@ const NavItem = (props: {
       <div>{props.text}</div>
     )}
   </Link>
-);
+}
 export function Navbar(Props: { link?: Links }): JSX.Element {
   const page = usePath();
   // page !== "/blog"

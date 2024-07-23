@@ -1,22 +1,22 @@
+import Link from "next/link";
+import { Announce } from "./announce";
 import {
   Badges,
   NavbarNotion,
   Social,
   TagDate,
   Title,
-} from "@/components/notionBoost";
-import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
-import { TweetEmbed } from "@/components/twitterEmbed";
+} from "./notionBoost";
+import { FORMTYPE, SubscribeForm } from "./subscribe";
 import {
   A,
   Img,
-  TwitterIcon,
-  Video,
   ShareInlineBtn,
   ShareLink,
-} from "@/components/tags";
-import Link from "next/link";
-import { Announce } from "./announce";
+  TwitterIcon,
+  Video,
+} from "./tags";
+import { TweetEmbed } from "./twitterEmbed";
 
 const MDXComponents = {
   Link,

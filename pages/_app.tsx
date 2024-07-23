@@ -1,25 +1,17 @@
-import { isProd } from "@/lib/envVar";
-import * as gtag from "@/lib/gtag";
-import "@/styles/tailwind.scss";
-import { AppProps } from "next/app";
-import { useRouter } from "next/router";
+
+import type { AppProps } from "next/app";
+import { Inter } from 'next/font/google';
+import "../styles/tailwind.scss";
+
 import { useEffect } from "react";
-import { Inter } from "next/font/google";
+import { isProd } from "../lib/envVar";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({ subsets: ['latin'] });
 
-const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  const router = useRouter();
+function App({ Component, pageProps }: AppProps): JSX.Element {
 
   useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      /* invoke analytics function only for production */
-      if (isProd) gtag.pageview(url, document.title);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
     if (isProd) {
       console.log(
         "%cBuilt with Next.js (React), Typescript, Tailwind CSS | Blog content using Notion and Markdown | Deployed on Vercel",
@@ -31,15 +23,13 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       );
     }
 
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  
+  },[]);
   return (
-    <div className={`${inter.variable} font-sans`}>
-      <Component {...pageProps} />
-    </div>
+    <div className={inter.className}>
+  <Component {...pageProps} />
+            </div>
   );
-};
+}
 
 export default App;

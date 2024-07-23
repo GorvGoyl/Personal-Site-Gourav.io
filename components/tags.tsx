@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { Icon } from "@/components/icons";
-import { getReadableDate, roundUpViewCount } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import { getReadableDate, roundUpViewCount } from "../lib/utils";
+import { Icon } from "./icons";
 
 export function CopyLink(): JSX.Element {
   const [pageURL, setPageURL] = useState("");
@@ -24,8 +22,7 @@ export function CopyLink(): JSX.Element {
   };
 
   return (
-    <>
-      <button
+    <button
         onClick={handleCopy}
         title={pageURL}
         // onBlur={handleBlur}
@@ -36,7 +33,6 @@ export function CopyLink(): JSX.Element {
         {/* <Icon type={TYPE.link} size="16" className="m-0 mr-4" /> */}
         {isCopied === 0 ? "Copy link" : "Copied"}
       </button>
-    </>
   );
 }
 
@@ -79,9 +75,9 @@ export function Img(props: {
 }): JSX.Element {
   let cls = "";
   if (props.type === "ss")
-    cls +=
-      " rounded border-solid border-gray-300 border mx-auto text-center shadow";
-  if (props.type === "badge") cls += "m-0 inline mx-2";
+    {cls +=
+      " rounded border-solid border-gray-300 border mx-auto text-center shadow";}
+  if (props.type === "badge") {cls += "m-0 inline mx-2";}
 
   // add any more classes provided by prop
   if (props.className) {
@@ -178,7 +174,7 @@ export function ShareButton(props: {
     }
   }
 
-  const toggleShareMenuHandler = (e) => {
+  const toggleShareMenuHandler = (e:any) => {
     if (!isPopupShown) {
       setCopy(0);
       document.addEventListener("click", handleClickOutside);
@@ -417,8 +413,8 @@ export function Author(props: {
 }
 
 export function ShareInlineBtn() {
-  const Arrow = () => (
-    <svg
+  function Arrow() {
+  return <svg
       xmlns="http://www.w3.org/2000/svg"
       className="h-4 w-4 text-gray-400"
       fill="none"
@@ -428,11 +424,10 @@ export function ShareInlineBtn() {
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
     </svg>
-  );
+}
 
   return (
-    <>
-      <div className="relative inline-block">
+    <div className="relative inline-block">
         <ShareButton position="bottom">
           <div
             title="See options to share"
@@ -444,14 +439,12 @@ export function ShareInlineBtn() {
           </div>
         </ShareButton>
       </div>
-    </>
   );
 }
 
 export function ShareLink() {
   return (
-    <>
-      <div className="relative">
+    <div className="relative">
         <ShareButton position="bottom">
           <div
             title="See options to share"
@@ -461,6 +454,5 @@ export function ShareLink() {
           </div>
         </ShareButton>
       </div>
-    </>
   );
 }

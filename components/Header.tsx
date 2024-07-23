@@ -1,5 +1,6 @@
-import { usePath } from "@/hooks/customHooks";
+
 import Head from "next/head";
+import { usePath } from "../hooks/customHooks";
 
 const defaultProps = {
   title: "Gourav Goyal - Personal site and blog",

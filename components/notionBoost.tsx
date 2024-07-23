@@ -1,5 +1,6 @@
-import { usePath } from "@/hooks/customHooks";
+
 import Link from "next/link";
+import { usePath } from "../hooks/customHooks";
 import {
   ChromeStars,
   ChromeUsers,
@@ -7,7 +8,7 @@ import {
   FirefoxUsers,
   FirefoxVersion,
 } from "./badge";
-import { A, CopyLink, ShareInlineBtn, TwitterIcon } from "./tags";
+import { CopyLink } from "./tags";
 
 enum Page {
   Home = "/notion-boost",
@@ -78,10 +79,9 @@ export function NavbarNotion(): JSX.Element {
   );
 }
 
-export const Badges = () => {
+export function Badges() {
   return (
-    <>
-      <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-3">
         <ChromeVersion />
 
         <ChromeUsers
@@ -102,9 +102,8 @@ export const Badges = () => {
 
         <FirefoxUsers />
       </div>
-    </>
   );
-};
+}
 
 export function Title(Props: {
   txt: string;

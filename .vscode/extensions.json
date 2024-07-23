@@ -1,0 +1,29 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint",
+        "figma.figma-vscode-extension",
+        "sleistner.vscode-fileutils",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.copilot-labs",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "ionutvmi.path-autocomplete",
+        "postman.postman-for-vscode",
+        "esbenp.prettier-vscode",
+        "yoavbls.pretty-ts-errors",
+        "alefragnani.project-manager",
+        "bradlc.vscode-tailwindcss",
+        "julienetie.vscode-template-literals",
+        "meganrogge.template-string-converter",
+        "chakrounanas.turbo-console-log",
+        "vscode-icons-team.vscode-icons",
+        "github.vscode-github-actions",
+        "p42ai.refactor",
+        "webhint.vscode-webhint",
+        "joao-mbn.react-extract"
+    ]
+}

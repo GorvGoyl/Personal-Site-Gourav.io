@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "no-inline-styles": "off",
+    "axe/forms": "warning",
+    "axe/aria": "hint",
+    "axe/parsing": "hint",
+    "disown-opener": "warning",
+    "apple-touch-icons": "warning",
+    "button-type": "warning",
+    "axe/name-role-value": "warning"
+  }
+}

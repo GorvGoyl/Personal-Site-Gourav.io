@@ -1,20 +1,19 @@
-import { ChromeStars, ChromeUsers } from "@/components/badge";
-import { TwitterBtn } from "@/components/twitterBtn";
-import Header from "@/components/Header";
-import { Container } from "@/components/layout";
-import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
-import { TwitterIcon } from "@/components/tags";
+import { ChromeStars, ChromeUsers } from "../components/badge";
+import Header from "../components/Header";
+import { Container } from "../components/layout";
+import { TwitterIcon } from "../components/tags";
+import { TwitterBtn } from "../components/twitterBtn";
 // import author from "@/public/gourav.jpg";
 import Link from "next/link";
 
+function LinkStyle({ children }: { children: React.ReactNode }) {
+  return (
+    <span className=" whitespace-pre underline font-[400] inline-block hover:opacity-80 cursor-pointer text-left hover:bg-opacity-80 focus:outline-none ">
+      {children}
+    </span>
+  );
+}
 export default function Home(): JSX.Element {
-  const LinkStyle = ({ children }: { children: React.ReactNode }) => {
-    return (
-      <span className=" whitespace-pre underline font-[400] inline-block hover:opacity-80 cursor-pointer text-left hover:bg-opacity-80 focus:outline-none ">
-        {children}
-      </span>
-    );
-  };
   return (
     <div>
       <Header type="website" />
@@ -389,7 +388,7 @@ export default function Home(): JSX.Element {
                 </li> */}
               </ul>
             </div>
-            <SubscribeForm type={FORMTYPE.Generic} />
+            {/* <SubscribeForm type={FORMTYPE.Generic} /> */}
           </div>
 
           {/* disable below twitter widget */}

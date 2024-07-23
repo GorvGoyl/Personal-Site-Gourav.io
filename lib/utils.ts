@@ -40,7 +40,7 @@ export function roundUpViewCount(num: string) {
 // accepts: YYYY-MM-DD or YYYY-M-D
 export function getReadableDate(date: string): string {
   try {
-    if (!date) return "";
+    if (!date) {return "";}
     const dateFormatter = new Intl.DateTimeFormat("en-US", {
       month: "short",
       day: "numeric",
@@ -85,7 +85,7 @@ export function hashCode(str: string): number {
   let hash = 0,
     i: number,
     chr: number;
-  if (str.length === 0) return hash;
+  if (str.length === 0) {return hash;}
   for (i = 0; i < str.length; i++) {
     chr = str.charCodeAt(i);
     hash = (hash << 5) - hash + chr;

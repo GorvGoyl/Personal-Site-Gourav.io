@@ -8,8 +8,8 @@ export function TweetEmbed(Props: { tweetId: string }): JSX.Element {
     setLoad(true);
   };
 
-  const LoadingTweet = () => (
-    <div
+  function LoadingTweet() {
+  return <div
       // keep same width as twitter widget
       style={{ maxWidth: "550px" }}
       className="rounded-xl border border-gray-300 px-6 pt-4 pb-3 w-full relative text-gray-300"
@@ -69,7 +69,7 @@ export function TweetEmbed(Props: { tweetId: string }): JSX.Element {
         </div>
       </div>
     </div>
-  );
+}
 
   return (
     <div className="my-4">

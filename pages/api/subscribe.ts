@@ -1,7 +1,8 @@
 // credits: Lee Robinson
 
-import { BUTTONDOWN_API_KEY, isProd, MOCK_SUBSCRIBE_API } from "@/lib/envVar";
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { BUTTONDOWN_API_KEY, MOCK_SUBSCRIBE_API, isProd } from "../../lib/envVar";
+
 
 const PROD_API = "https://api.buttondown.email/v1/subscribers";
 const PROD_API_KEY = BUTTONDOWN_API_KEY;
@@ -12,7 +13,6 @@ export default async function subscribe(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<NextApiResponse> {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { email, referrer_url, referrer } = req.body;
 
   let addSubscriberAPI: string;
@@ -32,8 +32,8 @@ export default async function subscribe(
   }
 
   const tags = [] as string[];
-  if (referrer) tags.push(referrer as string);
-  if (referrer_url) tags.push(referrer_url as string);
+  if (referrer) {tags.push(referrer as string);}
+  if (referrer_url) {tags.push(referrer_url as string);}
 
   try {
     const response = await fetch(addSubscriberAPI, {

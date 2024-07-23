@@ -1,36 +1,23 @@
 {
   "compilerOptions": {
-    // default flags:
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "ES2020"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true, // can set to false
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true, //allow commonjs files
+    "isolatedModules": true,
     "jsx": "preserve",
-    // additional flags:
-    "baseUrl": ".",
-    "paths": {
-      // "@components/*": ["components/*"],
-      // use @/ to access path related to root of project
-      "@/*": ["./*"]
-    },
-    "noImplicitAny": false, //set 'true' to throw error for 'any'
-    "suppressImplicitAnyIndexErrors": true,
-    "ignoreDeprecations": "5.0",
-    "pretty": true,
-    "noImplicitReturns": true,
-    "strictNullChecks": true, //needs to be true for zod to work
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "incremental": true
-  },
+    "incremental": true,
+    "useUnknownInCatchVariables": true
+},
+"allowUnreachableCode": true,
   "include": [
     "**/*.ts",
     "**/*.md",

@@ -1,28 +1,27 @@
-import Header from "@/components/Header";
-import { Container, LayoutType } from "@/components/layout";
-import MDXComponents from "@/components/mdxComponents";
-import { Links, Navbar } from "@/components/navbar";
-import { ScrollTopBtn } from "@/components/scrollTop";
+import { Container, LayoutType } from "../../components/layout";
+import MDXComponents from "../../components/mdxComponents";
+import { Links, Navbar } from "../../components/navbar";
+import { ScrollTopBtn } from "../../components/scrollTop";
 
-import { Author, AuthorImg, ShareComponent } from "@/components/tags";
-import post from "@/layouts/css/post.module.scss";
 import { PHASE_PRODUCTION_BUILD } from "next/constants";
+import { Author, AuthorImg, ShareComponent } from "../../components/tags";
+import post from "../../layouts/css/post.module.scss";
 
-import { initOutlinePosition } from "@/lib/mdx";
+import { getMDXComponent } from "mdx-bundler/client";
+import type { GetStaticPaths } from "next";
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
+import { BannerChromeExtensionChatGPTWriter } from "../../components/banner";
+import Header from "../../components/Header";
+import { frontmatterCache } from "../../lib/cache";
+import { initOutlinePosition } from "../../lib/mdx";
 import {
   getAllPublishedAndPreviewPostsFrontmatterFromNotion,
   getPostContentFromNotion,
   getPostIdFromSlugFromNotion,
-} from "@/lib/notionUtils";
-import { getSlugViews } from "@/lib/utils";
-import md from "@/styles/md.module.scss";
-import { FrontmatterBlogpost } from "@/types/types";
-import { getMDXComponent } from "mdx-bundler/client";
-import { GetStaticPaths } from "next";
-import Link from "next/link";
-import React, { useEffect, useMemo, useState } from "react";
-import { frontmatterCache } from "@/lib/cache";
-import { BannerChromeExtensionChatGPTWriter } from "@/components/banner";
+} from "../../lib/notionUtils";
+import md from "../../styles/md.module.scss";
+import type { FrontmatterBlogpost } from "../../types/types";
 const RELATIVE_PATH = "/blog/";
 
 export default function Post(props: Post) {
@@ -60,7 +59,7 @@ export default function Post(props: Post) {
   }, []);
 
   const MDX = useMemo(
-    () => getMDXComponent(props.postContent),
+    () => {return getMDXComponent(props.postContent)},
     [props.postContent]
   );
 
@@ -115,7 +114,6 @@ export default function Post(props: Post) {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps = async (props: Path) => {
   const postSlug = props.params.slug[0];
   let frontmatter = frontmatterCache.getBySlug(postSlug);
@@ -173,8 +171,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const DiscussArticle = (props: { matter: FrontmatterBlogpost }) => {
-  const Link = (props: { link: string; text: string }) => {
+function DiscussArticle(props: { matter: FrontmatterBlogpost }) {
+  function Link(props: { link: string; text: string }) {
     return (
       <div className="my-2">
         💬{" "}
@@ -183,7 +181,7 @@ const DiscussArticle = (props: { matter: FrontmatterBlogpost }) => {
         </a>
       </div>
     );
-  };
+  }
 
   return (
     <div className="my-5">
@@ -204,9 +202,9 @@ const DiscussArticle = (props: { matter: FrontmatterBlogpost }) => {
       )}
     </div>
   );
-};
+}
 
-const EditArticle = (props: { articleEditLink: string }) => {
+function EditArticle(props: { articleEditLink: string }) {
   return (
     <div className="my-5">
       ✍️{" "}
@@ -220,9 +218,9 @@ const EditArticle = (props: { articleEditLink: string }) => {
       </a>
     </div>
   );
-};
+}
 
-const ConnectOnTwitter = () => {
+function ConnectOnTwitter() {
   return (
     <blockquote className="mt-14 font-normal">
       <p>
@@ -233,9 +231,9 @@ const ConnectOnTwitter = () => {
       </p>
     </blockquote>
   );
-};
+}
 
-const ThatsAll = () => {
+function ThatsAll() {
   return (
     <div className="mt-10">
       <i
@@ -257,4 +255,4 @@ const ThatsAll = () => {
       /> */}
     </div>
   );
-};
+}

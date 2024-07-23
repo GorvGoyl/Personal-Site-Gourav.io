@@ -1,41 +1,24 @@
-import { TwitterBtn } from "@/components/twitterBtn";
-import Header from "@/components/Header";
-import { Icon } from "@/components/icons";
-import { Container, LayoutType } from "@/components/layout";
-import { Navbar } from "@/components/navbar";
-import { FORMTYPE, SubscribeForm } from "@/components/subscribe";
-import { getSlugViews, getReadableDate, roundUpViewCount } from "@/lib/utils";
-import { FrontmatterBlogpost } from "@/types/types";
-import { GetStaticProps } from "next";
+
+import type { GetStaticProps } from "next";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { getAllPublishedAndPreviewPostsFrontmatterFromNotion } from "@/lib/notionUtils";
-import { BannerChromeExtensionChatGPTWriter } from "@/components/banner";
+import { BannerChromeExtensionChatGPTWriter } from "../components/banner";
+import Header from "../components/Header";
+import { Icon } from "../components/icons";
+import { Container, LayoutType } from "../components/layout";
+import { Navbar } from "../components/navbar";
+import { TwitterBtn } from "../components/twitterBtn";
+import { getAllPublishedAndPreviewPostsFrontmatterFromNotion } from "../lib/notionUtils";
+import { getReadableDate } from "../lib/utils";
+import type { FrontmatterBlogpost } from "../types/types";
+
 const RELATIVE_PATH = "/blog/";
 
 export default function Blog(props: {
   allPosts: FrontmatterBlogpost[];
 }): JSX.Element {
-  const [slugViews, setSlugViews] = useState({});
 
-  useEffect(() => {
-    if (props.allPosts.length > 0) {
-      // add relative path to slug: /blog/nextjs-cheatsheet
-      const slugPaths = props.allPosts.map((x) => RELATIVE_PATH + x.slug);
-      // getSlugViews(slugPaths)
-      //   .then((res) => {
-      //     if (res.data) {
-      //       setSlugViews(res.data);
-      //     } else {
-      //       console.error(res);
-      //     }
-      //     return;
-      //   })
-      //   .catch((e) => {
-      //     console.error(e);
-      //   });
-    }
-  }, [props.allPosts]);
+
+
   return (
     <>
       <Header type="website" title="Blog - Gourav Goyal" />
@@ -48,7 +31,7 @@ export default function Blog(props: {
             <h2>Blog</h2>
           </header>
           <div className="flex flex-col space-y-11">
-            {props.allPosts.map((post) => (
+            {props.allPosts.map((post) => {return (
               <div
                 className="flex flex-col md:flex-row md:justify-between space-y-2 md:space-y-0"
                 key={post.slug}
@@ -64,24 +47,7 @@ export default function Blog(props: {
                   </article>
                 </div>
                 <div className="text-gray-500 text-xs font-medium flex space-x-2 justify-end items-center">
-                  <div className="flex items-center ml-5 mr-5">
-                    {slugViews[RELATIVE_PATH + post.slug] && (
-                      <div
-                        className="flex items-center"
-                        title={`Total views: ${
-                          slugViews[RELATIVE_PATH + post.slug]
-                        }`}
-                      >
-                        <Icon type="views" size="14" />
-
-                        <div className="whitespace-nowrap ml-1 ">
-                          {roundUpViewCount(
-                            slugViews[RELATIVE_PATH + post.slug]
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
+               
                   <div
                     className="flex items-center"
                     title={`${post.date ? "Published date: " + post.date : ""}`}
@@ -98,10 +64,10 @@ export default function Blog(props: {
                   </div>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
           <hr className="mb-8" />
-          <SubscribeForm type={FORMTYPE.Slim} />
+          {/* <SubscribeForm type={FORMTYPE.Slim} /> */}
         </main>
       </Container>
       <TwitterBtn />
@@ -109,12 +75,12 @@ export default function Blog(props: {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
+
 export const getStaticProps: GetStaticProps = async (context) => {
   const previewAndPublishedPostsMatter =
     await getAllPublishedAndPreviewPostsFrontmatterFromNotion();
   const publishedPostsMatter = previewAndPublishedPostsMatter.filter(
-    (x) => x.published && x.date && x.date <= new Date().toISOString()
+    (x) => {return x.published && x.date && x.date <= new Date().toISOString()}
   );
   return {
     props: { allPosts: publishedPostsMatter },
