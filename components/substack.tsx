@@ -1,4 +1,8 @@
+import { useDevice } from '../hooks/useDevice';
+
 export function SubstackForm() {
+    const device = useDevice();
+    const width = device === 'mobile' ? '350' : '480';
     return (
         <div className="flex flex-row items-center justify-center">
             <div className="relative flex w-fit flex-col items-center justify-center rounded-2xl border-2 border-orange-400 px-5 py-2">
@@ -9,7 +13,7 @@ export function SubstackForm() {
                 <iframe
                     id="substack-embed"
                     src="https://gorvgoyl.substack.com/embed"
-                    width="480"
+                    width={width}
                     height="150"
                     loading="lazy"
                     title="Substack Embed"
