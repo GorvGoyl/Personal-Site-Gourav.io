@@ -4,7 +4,7 @@ export function useDevice(): 'mobile' | 'desktop' {
     const [device, setDevice] = useState<'mobile' | 'desktop'>('desktop');
 
     useEffect(() => {
-        if (isMobile()) {
+        if (isSmallScreen()) {
             setDevice('mobile');
         } else {
             setDevice('desktop');
@@ -23,4 +23,11 @@ export function isMobile() {
     const regexp = /android|iphone|kindle|ipad/iu;
 
     return regexp.test(details);
+}
+
+export function isSmallScreen() {
+    if (typeof window === 'undefined') {
+        return false;
+    }
+    return window.innerWidth < 768;
 }
