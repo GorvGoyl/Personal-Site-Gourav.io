@@ -11,6 +11,7 @@ export function SubstackForm() {
                     src="https://gorvgoyl.substack.com/embed"
                     width="480"
                     height="150"
+                    loading="lazy"
                     title="Substack Embed"
                     className="relative"
                     frameBorder="0"
