@@ -260,7 +260,7 @@ const videoTransformer = async (
     captionPlain = "";
   const src = "aws-s3";
   if (videoBlock.video.type === "external") {
-    throw new Error(`External Image found! URL: ${videoBlock.video.external.url} on article: ${slugLowercase}`);
+    throw new Error(`External Video found! URL: ${videoBlock.video.external.url} on article: ${slugLowercase}`);
   }
 
   mediaUrl = videoBlock.video.file.url;
