@@ -1,97 +1,102 @@
-
-import { useState } from "react";
-import { usePath } from "../hooks/customHooks";
+import { useState } from 'react';
+import { usePath } from '../hooks/customHooks';
 
 export function Banner(): JSX.Element {
-  const [isVisible, setVisibility] = useState(true);
-  const pathName = usePath().slice(1); // replace first "/"
+    const [isVisible, setVisibility] = useState(true);
+    const pathName = usePath().slice(1); // replace first "/"
 
-  const handleClick = () => {
-    setVisibility((x) => {return false});
-  };
+    const handleClick = () => {
+        setVisibility((x) => {
+            return false;
+        });
+    };
 
-  return isVisible ? (
-    <div className=" text-base bg-gradient-to-r from-gray-700 to-gray-900 text-gray-100  rounded-none md:rounded-b -mt-2 -mx-5 md:mx-0 px-4 py-4 flex justify-between">
-      <div className="flex justify-between w-full">
-        <div className="">
-          <p>🎉 Notion ⇋ Google Calendar 2-way Sync</p>
+    return isVisible ? (
+        <div className="-mx-5 -mt-2 flex justify-between rounded-none bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-4 text-base text-gray-100 md:mx-0 md:rounded-b">
+            <div className="flex w-full justify-between">
+                <div className="">
+                    <p>🎉 Notion ⇋ Google Calendar 2-way Sync</p>
+                </div>
+                <div className="ml-4 text-center text-sm">
+                    <a
+                        href={`https://easypie.app?ref=${pathName}`}
+                        target="_blank"
+                        className={`hover:bg-current/80 inline-block cursor-pointer whitespace-nowrap rounded-2xl border border-gray-400 px-3 py-2 leading-none text-gray-200 hover:opacity-80 focus:outline-none`}>
+                        Try for Free
+                    </a>
+                </div>
+            </div>
+
+            <div className="ml-4">
+                <button
+                    type="button"
+                    onClick={handleClick}
+                    className="hover:bg-current/80 cursor-pointer leading-snug text-gray-200 hover:opacity-80">
+                    {/* <p>✖</p> */}
+                    <svg
+                        viewBox="0 0 24 24"
+                        width={18}
+                        height={18}>
+                        <path
+                            fill="currentColor"
+                            d="M19.8 5.8l-1.6-1.6-6.2 6.2-6.2-6.2-1.6 1.6 6.2 6.2-6.2 6.2 1.6 1.6 6.2-6.2 6.2 6.2 1.6-1.6-6.2-6.2 6.2-6.2z"
+                        />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div className="ml-4 text-center text-sm">
-          <a
-            href={`https://easypie.app?ref=${pathName}`}
-            target="_blank"
-            className={`whitespace-nowrap inline-block hover:opacity-80 cursor-pointer leading-none hover:bg-current/80 border border-gray-400 focus:outline-none px-3 py-2 rounded-2xl  text-gray-200 `}
-          >
-            Try for Free
-          </a>
-        </div>
-      </div>
-
-      <div className="ml-4">
-        <button
-          type="button"
-          onClick={handleClick}
-          className="hover:opacity-80 cursor-pointer leading-snug hover:bg-current/80  text-gray-200"
-        >
-          {/* <p>✖</p> */}
-          <svg viewBox="0 0 24 24" width={18} height={18}>
-            <path
-              fill="currentColor"
-              d="M19.8 5.8l-1.6-1.6-6.2 6.2-6.2-6.2-1.6 1.6 6.2 6.2-6.2 6.2 1.6 1.6 6.2-6.2 6.2 6.2 1.6-1.6-6.2-6.2 6.2-6.2z"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  ) : (
-    <></>
-  );
+    ) : (
+        <></>
+    );
 }
 
 export function BannerChromeExtensionChatGPTWriter(): JSX.Element {
-  const [isVisible, setVisibility] = useState(true);
-  const pathName = usePath().slice(1); // replace first "/"
+    const [isVisible, setVisibility] = useState(true);
+    const pathName = usePath().slice(1); // replace first "/"
 
-  const handleClick = () => {
-    setVisibility((x) => {return false});
-  };
+    const handleClick = () => {
+        setVisibility((x) => {
+            return false;
+        });
+    };
 
-  return isVisible ? (
-    <div className=" text-base bg-gradient-to-r from-gray-700 to-gray-900 text-gray-100  rounded-none md:rounded-b -mt-2 -mx-5 md:mx-0 px-4 py-4 flex justify-between">
-      <div className="flex justify-between w-full">
-        <div className="">
-          <p>Let AI write emails and messages for you 🔥</p>
+    return isVisible ? (
+        <div className="-mx-5 -mt-2 flex justify-between rounded-none bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-4 text-base text-gray-100 md:mx-0 md:rounded-b">
+            <div className="flex w-full justify-between">
+                <div className="">
+                    <p>Let AI write emails and messages for you 🔥</p>
+                </div>
+                <div className="ml-4 text-center text-sm">
+                    <a
+                        href={`https://chatgptwriter.ai?ref=${pathName}`}
+                        target="_blank"
+                        className={
+                            'inline-block cursor-pointer whitespace-nowrap rounded-full border border-gray-400 px-3 py-2 text-sm leading-none text-gray-200 hover:border-transparent hover:bg-white hover:text-black hover:no-underline focus:outline-none'
+                        }>
+                        Try for Free
+                    </a>
+                </div>
+            </div>
+
+            <div className="ml-4">
+                <button
+                    type="button"
+                    onClick={handleClick}
+                    className="hover:bg-current/80 cursor-pointer leading-snug text-gray-200 hover:opacity-80">
+                    {/* <p>✖</p> */}
+                    <svg
+                        viewBox="0 0 24 24"
+                        width={18}
+                        height={18}>
+                        <path
+                            fill="currentColor"
+                            d="M19.8 5.8l-1.6-1.6-6.2 6.2-6.2-6.2-1.6 1.6 6.2 6.2-6.2 6.2 1.6 1.6 6.2-6.2 6.2 6.2 1.6-1.6-6.2-6.2 6.2-6.2z"
+                        />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div className="ml-4 text-center text-sm">
-          <a
-            href={`https://chatgptwriter.ai?ref=${pathName}`}
-            target="_blank"
-            className={
-              "text-sm hover:bg-white hover:text-black hover:no-underline hover:border-transparent whitespace-nowrap inline-block  cursor-pointer leading-none  border border-gray-400 focus:outline-none px-3 py-2 rounded-full text-gray-200"
-            }
-          >
-            Try for Free
-          </a>
-        </div>
-      </div>
-
-      <div className="ml-4">
-        <button
-          type="button"
-          onClick={handleClick}
-          className="hover:opacity-80 cursor-pointer leading-snug hover:bg-current/80  text-gray-200"
-        >
-          {/* <p>✖</p> */}
-          <svg viewBox="0 0 24 24" width={18} height={18}>
-            <path
-              fill="currentColor"
-              d="M19.8 5.8l-1.6-1.6-6.2 6.2-6.2-6.2-1.6 1.6 6.2 6.2-6.2 6.2 1.6 1.6 6.2-6.2 6.2 6.2 1.6-1.6-6.2-6.2 6.2-6.2z"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  ) : (
-    <></>
-  );
+    ) : (
+        <></>
+    );
 }

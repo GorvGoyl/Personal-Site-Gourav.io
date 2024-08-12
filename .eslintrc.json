@@ -1,103 +1,104 @@
 {
-  "plugins": ["jsx-a11y", "promise", "regexp"],
-  "extends": [
-    "plugin:jsx-a11y/recommended",
-    "next/core-web-vitals",
-    "plugin:valtio/recommended",
-    "plugin:promise/recommended",
-    "plugin:regexp/recommended"
-  ],
-  // "extends": ["plugin:react-hooks-unreliable-deps/recommended", "next/core-web-vitals"],
-  "rules": {
-    "no-control-regex": "warn",
-    "promise/catch-or-return": "off",
-    "promise/always-return": "off",
-    "guard-for-in": "error",
-    "no-prototype-builtins": "error",
-    // "func-style": ["warn", "declaration"],
-    "no-template-curly-in-string": "error",
-    "no-unmodified-loop-condition": "error",
-    "max-depth": ["warn", { "max": 6 }],
-    "max-params": ["warn", { "max": 6 }],
-    "no-lone-blocks": "error",
-    // "no-lonely-if": "warn",
-    "no-multi-assign": "error",
-    "no-multi-str": "error",
-    "no-nested-ternary": "error",
-    "no-return-assign": "error",
-    "no-throw-literal": "error",
-    "no-undef-init": "error",
-    // "no-undefined": "error",
-    "no-unneeded-ternary": "error",
-    "no-useless-return": "error",
-    "no-var": "error",
-    "prefer-object-has-own": "error",
-    "prefer-object-spread": "warn",
-    "prefer-promise-reject-errors": "error",
-    "prefer-rest-params": "error",
-    "prefer-spread": "error",
-    "require-await": "error",
-    "require-unicode-regexp": "warn",
-    "prefer-const": [
-      "error",
-      {
-        "destructuring": "any",
-        "ignoreReadBeforeAssign": true
-      }
+    "plugins": ["jsx-a11y", "promise", "regexp"],
+    "extends": [
+        "plugin:jsx-a11y/recommended",
+        "next/core-web-vitals",
+        "plugin:valtio/recommended",
+        "plugin:promise/recommended",
+        "plugin:regexp/recommended"
     ],
-    "arrow-body-style": ["warn", "always"],
-    "no-else-return": "warn",
-    "react/display-name": "warn",
-    "no-unreachable": "warn",
-    "react/button-has-type": "error",
-    "react/iframe-missing-sandbox": "warn",
-    "react/function-component-definition": [
-      "warn",
-      {
-        "namedComponents": "function-declaration",
-        "unnamedComponents": ["function-expression", "arrow-function"]
-      }
-    ],
-    "react/jsx-boolean-value": ["error", "always"],
-    "react/jsx-child-element-spacing": "warn",
-    "react/prefer-es6-class": ["warn", "always"],
-    "react/jsx-no-useless-fragment": ["warn", { "allowExpressions": true }],
-    "react/no-array-index-key": "warn",
-    "react/no-invalid-html-attribute": "warn",
-    "react/no-unstable-nested-components": [
-      "warn",
-      {
-        "allowAsProps": true,
-        "customValidators": [] /* optional array of validators used for propTypes validation */
-      }
-    ],
-    "react/self-closing-comp": [
-      "warn",
-      {
-        "component": true,
-        "html": true
-      }
-    ],
-    "react/void-dom-elements-no-children": "warn",
-    "curly": "error",
-    "react/jsx-no-target-blank": "off",
-    "react/no-unescaped-entities": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": [
-      "error",
-      {
-        // add your custom hooks here
-        "additionalHooks": "(useMyCustomHook|useMyOtherCustomHook)"
-      }
-    ],
-    // "react-hooks-unreliable-deps/reference-deps": ["warn"]
-    "jsx-a11y/lang": "warn",
-    "jsx-a11y/no-autofocus": "off",
-    "jsx-a11y/anchor-is-valid": "warn",
-    "jsx-a11y/click-events-have-key-events": "warn",
-    "jsx-a11y/no-static-element-interactions": "warn",
-    "jsx-a11y/no-redundant-roles": "off",
-    "valtio/state-snapshot-rule": "error",
-    "jsx-a11y/interactive-supports-focus": "warn"
-  }
+    // "extends": ["plugin:react-hooks-unreliable-deps/recommended", "next/core-web-vitals"],
+    "rules": {
+        "@next/next/no-img-element": "off",
+        "no-control-regex": "warn",
+        "promise/catch-or-return": "off",
+        "promise/always-return": "off",
+        "guard-for-in": "error",
+        "no-prototype-builtins": "error",
+        // "func-style": ["warn", "declaration"],
+        "no-template-curly-in-string": "error",
+        "no-unmodified-loop-condition": "error",
+        "max-depth": ["warn", { "max": 6 }],
+        "max-params": ["warn", { "max": 6 }],
+        "no-lone-blocks": "error",
+        // "no-lonely-if": "warn",
+        "no-multi-assign": "error",
+        "no-multi-str": "error",
+        "no-nested-ternary": "error",
+        "no-return-assign": "error",
+        "no-throw-literal": "error",
+        "no-undef-init": "error",
+        // "no-undefined": "error",
+        "no-unneeded-ternary": "error",
+        "no-useless-return": "error",
+        "no-var": "error",
+        "prefer-object-has-own": "error",
+        "prefer-object-spread": "warn",
+        "prefer-promise-reject-errors": "error",
+        "prefer-rest-params": "error",
+        "prefer-spread": "error",
+        "require-await": "error",
+        "require-unicode-regexp": "warn",
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": true
+            }
+        ],
+        "arrow-body-style": ["warn", "always"],
+        "no-else-return": "warn",
+        "react/display-name": "warn",
+        "no-unreachable": "warn",
+        "react/button-has-type": "error",
+        "react/iframe-missing-sandbox": "warn",
+        "react/function-component-definition": [
+            "warn",
+            {
+                "namedComponents": "function-declaration",
+                "unnamedComponents": ["function-expression", "arrow-function"]
+            }
+        ],
+        "react/jsx-boolean-value": ["error", "always"],
+        "react/jsx-child-element-spacing": "warn",
+        "react/prefer-es6-class": ["warn", "always"],
+        "react/jsx-no-useless-fragment": ["warn", { "allowExpressions": true }],
+        "react/no-array-index-key": "warn",
+        "react/no-invalid-html-attribute": "warn",
+        "react/no-unstable-nested-components": [
+            "warn",
+            {
+                "allowAsProps": true,
+                "customValidators": [] /* optional array of validators used for propTypes validation */
+            }
+        ],
+        "react/self-closing-comp": [
+            "warn",
+            {
+                "component": true,
+                "html": true
+            }
+        ],
+        "react/void-dom-elements-no-children": "warn",
+        "curly": "error",
+        "react/jsx-no-target-blank": "off",
+        "react/no-unescaped-entities": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": [
+            "error",
+            {
+                // add your custom hooks here
+                "additionalHooks": "(useMyCustomHook|useMyOtherCustomHook)"
+            }
+        ],
+        // "react-hooks-unreliable-deps/reference-deps": ["warn"]
+        "jsx-a11y/lang": "warn",
+        "jsx-a11y/no-autofocus": "off",
+        "jsx-a11y/anchor-is-valid": "warn",
+        "jsx-a11y/click-events-have-key-events": "warn",
+        "jsx-a11y/no-static-element-interactions": "warn",
+        "jsx-a11y/no-redundant-roles": "off",
+        "valtio/state-snapshot-rule": "error",
+        "jsx-a11y/interactive-supports-focus": "warn"
+    }
 }

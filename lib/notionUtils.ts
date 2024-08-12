@@ -220,28 +220,20 @@ const imgTransformer = async (
   }
   let mediaUrl = "",
     captionPlain = "";
-  let src: "external" | "aws-s3" = "aws-s3";
+  const src = "aws-s3";
   if (imgBlock.image.type === "external") {
-    mediaUrl = imgBlock.image.external.url; //ends with filename.png
-    console.warn(
-      "❗️ external image url found, it's better to store it in Notion instead",
-      mediaUrl
-    );
-    src = "external";
+    throw new Error(`External Image found! URL: ${imgBlock.image.external.url} on article: ${slugLowercase}`)
   }
 
-  if (imgBlock.image.type === "file") {
-    mediaUrl = imgBlock.image.file.url;
-    src = "aws-s3";
-  }
-
+  mediaUrl = imgBlock.image.file.url;
+    
   captionPlain = imgBlock.image.caption
     .map((item) => {return item.plain_text})
     .join("")
     .trim();
 
   const { mediaDestination, mediaRelativePath, destFileName } =
-    getDestMediaInfoFromURL(mediaUrl, slugLowercase, src);
+    getDestMediaInfoFromURL(mediaUrl, slugLowercase);
 
   // copy images to public/blog/git-cheatsheet/*
   await downloadFile(mediaUrl, mediaDestination, "overwrite");
@@ -266,21 +258,13 @@ const videoTransformer = async (
   }
   let mediaUrl = "",
     captionPlain = "";
-  let src: "external" | "aws-s3" = "aws-s3";
+  const src = "aws-s3";
   if (videoBlock.video.type === "external") {
-    mediaUrl = videoBlock.video.external.url; //ends with filename.mp4
-    src = "external";
-    console.warn(
-      "❗️ external video url found, it's better to store it in Notion instead",
-      mediaUrl
-    );
+    throw new Error(`External Video found! URL: ${videoBlock.video.external.url} on article: ${slugLowercase}`);
   }
 
-  if (videoBlock.video.type === "file") {
-    mediaUrl = videoBlock.video.file.url;
-    src = "aws-s3";
-  }
-
+  mediaUrl = videoBlock.video.file.url;
+   
   captionPlain = videoBlock.video.caption
     .map((item) => {return item.plain_text})
     .join("")
@@ -291,8 +275,7 @@ const videoTransformer = async (
 
   const { mediaDestination, mediaRelativePath } = getDestMediaInfoFromURL(
     mediaUrl,
-    slugLowercase,
-    src
+    slugLowercase
   );
 
   // copy images to public/blog/git-cheatsheet/*
@@ -315,10 +298,9 @@ const videoTransformer = async (
 const getDestMediaInfoFromURL = (
   mediaUrl: string,
   slugLowercase: string,
-  src: "aws-s3" | "external"
 ) => {
   let destFileName = "";
-  if (src == "aws-s3") {
+  
     /** ex: ['Untitled', 'png'] */
     const srcFile = mediaUrl
       .split("?")[0]
@@ -333,19 +315,7 @@ const getDestMediaInfoFromURL = (
     const hash = hashCode(mediaUrl.split("?")[0]).toString();
     /** ex: Untitled--1163d970-85c3-462c-ac0d-b2b86495539b.png */
     destFileName = `${srcFileName}--${hash}.${fileExt}`;
-  } else if (src == "external") {
-    /** ex: ['Untitled', 'png'] */
-    const srcFile = mediaUrl
-      .split("/")
-      .at(-1)
-      ?.split(".") as unknown as string[];
-    /** ex: Untitled */
-    const srcFileName = decodeURIComponent(srcFile?.[0]);
-    /** ex: png */
-    const fileExt = srcFile?.[1];
-    const hash = hashCode(mediaUrl.split("?")[0]).toString();
-    destFileName = `${srcFileName}--${hash}.${fileExt}`;
-  }
+  
 
   if (!destFileName) {
     throw new Error("destFileName is empty for img url: " + mediaUrl);
