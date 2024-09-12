@@ -18,95 +18,111 @@ import { frontmatterCache } from "./cache";
 import { NOTION_API_KEY, NOTION_BLOGPOSTS_DB } from "./envVar";
 import { downloadFile } from "./fileUtils";
 import { headingLink } from "./localContentUtils";
-import { hashCode } from "./utils";
+import { hashCode, retryWithExponentialBackoff } from "./utils";
 const notionClient = new Client({ auth: NOTION_API_KEY });
+
+const maxRetries = 3;
+const initialDelayInMs = 1000;
+
 export async function getAllPublishedAndPreviewPostsFrontmatterFromNotion(): Promise<
   FrontmatterBlogpost[]
 > {
-  const response = await notionClient.databases.query({
-    database_id: NOTION_BLOGPOSTS_DB,
-    filter: {
-      or: [
-        {
-          property: "Preview",
-          checkbox: {
-            equals: true,
-          },
-        },
-        {
-          and: [
+  return await retryWithExponentialBackoff(
+    async () => {
+      const response = await notionClient.databases.query({
+        database_id: NOTION_BLOGPOSTS_DB,
+        filter: {
+          or: [
             {
-              property: "Published",
+              property: "Preview",
               checkbox: {
                 equals: true,
               },
             },
             {
-              property: "Published date",
-              date: {
-                on_or_before: new Date().toISOString(),
-              },
+              and: [
+                {
+                  property: "Published",
+                  checkbox: {
+                    equals: true,
+                  },
+                },
+                {
+                  property: "Published date",
+                  date: {
+                    on_or_before: new Date().toISOString(),
+                  },
+                },
+              ],
             },
           ],
         },
-      ],
+        sorts: [
+          {
+            property: "Published date",
+            direction: "descending",
+          },
+        ],
+      });
+
+      if (response.has_more) {
+        throw new Error("unhandled case when more than 100 articles are present");
+      }
+
+      const allPostsFrontmatter: FrontmatterBlogpost[] = [];
+      response.results.forEach((p) => {
+        const page = p as PageObjectResponse;
+
+        const frontMatter = parseFrontmatterFromPost(page);
+        allPostsFrontmatter.push(frontMatter);
+      });
+
+      if (allPostsFrontmatter.length === 0) {
+        throw new Error("whelp! no posts found. This shouldn't suppose to happen");
+      }
+
+      return allPostsFrontmatter;
     },
-    sorts: [
-      {
-        property: "Published date",
-        direction: "descending",
-      },
-    ],
-  });
-
-  if (response.has_more) {
-    throw new Error("unhandled case when more than 100 articles are present");
-  }
-
-  const allPostsFrontmatter: FrontmatterBlogpost[] = [];
-  response.results.forEach((p) => {
-    const page = p as PageObjectResponse;
-
-    const frontMatter = parseFrontmatterFromPost(page);
-    allPostsFrontmatter.push(frontMatter);
-  });
-
-  if (allPostsFrontmatter.length === 0) {
-    throw new Error("whelp! no posts found. This shouldn't suppose to happen");
-  }
-
-  return allPostsFrontmatter;
+    maxRetries, 
+    initialDelayInMs 
+  );
 }
 
 export async function getPostIdFromSlugFromNotion(
   postSlug: string
 ): Promise<FrontmatterBlogpost> {
-  const response = await notionClient.databases.query({
-    database_id: NOTION_BLOGPOSTS_DB,
-    filter: {
-      and: [
-        {
-          property: "Slug",
-          rich_text: {
-            equals: postSlug,
-          },
+  return await retryWithExponentialBackoff(
+    async () => {
+      const response = await notionClient.databases.query({
+        database_id: NOTION_BLOGPOSTS_DB,
+        filter: {
+          and: [
+            {
+              property: "Slug",
+              rich_text: {
+                equals: postSlug,
+              },
+            },
+          ],
         },
-      ],
+      });
+
+      if (response.results.length === 0) {
+        throw new Error(`article not found for slug: ${postSlug}`);
+      }
+      if (response.results.length > 1) {
+        throw new Error(`multiple articles with same slug found: ${postSlug}`);
+      }
+
+      const page = response.results[0] as PageObjectResponse;
+
+      const frontMatter = parseFrontmatterFromPost(page);
+
+      return frontMatter;
     },
-  });
-
-  if (response.results.length === 0) {
-    throw new Error(`article not found for slug: ${postSlug}`);
-  }
-  if (response.results.length > 1) {
-    throw new Error(`multiple articles with same slug found: ${postSlug}`);
-  }
-
-  const page = response.results[0] as PageObjectResponse;
-
-  const frontMatter = parseFrontmatterFromPost(page);
-
-  return frontMatter;
+    maxRetries, 
+    initialDelayInMs 
+  );
 }
 
 /** Returns content of page Id.
@@ -173,7 +189,13 @@ export async function getPostContentFromNotion(
     return "";
   });
 
-  const mdBlocks = await n2m.pageToMarkdown(frontmatter.postId);
+  const mdBlocks = await retryWithExponentialBackoff(
+      async () => {
+          return await n2m.pageToMarkdown(frontmatter.postId);
+      },
+      maxRetries, 
+      initialDelayInMs 
+  );
   const mdString = n2m.toMarkdownString(mdBlocks);
 
   const postContent = await convertMdxStringToCode(
