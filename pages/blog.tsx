@@ -5,10 +5,10 @@ import Header from '../components/Header';
 import { Icon } from '../components/icons';
 import { Container, LayoutType } from '../components/layout';
 import { Navbar } from '../components/navbar';
+import { ReadableDate } from '../components/ReadableDate';
 import { SubstackForm } from '../components/substack';
 import { TwitterBtn } from '../components/twitterBtn';
 import { getAllPublishedAndPreviewPostsFrontmatterFromNotion } from '../lib/notionUtils';
-import { getReadableDate } from '../lib/utils';
 import type { FrontmatterBlogpost } from '../types/types';
 
 const RELATIVE_PATH = '/blog/';
@@ -53,9 +53,11 @@ export default function Blog(props: { allPosts: FrontmatterBlogpost[] }): JSX.El
                                                 // className="inline-block"
                                             />
 
-                                            <div className="ml-2 whitespace-nowrap">
-                                                {getReadableDate(post.date || '')}
-                                            </div>
+                                            {post.date && (
+                                                <div className="ml-2 whitespace-nowrap">
+                                                    <ReadableDate date={post.date} />
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

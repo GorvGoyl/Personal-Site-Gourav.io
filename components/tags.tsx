@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
-import { getReadableDate, roundUpViewCount } from '../lib/utils';
+import { roundUpViewCount } from '../lib/utils';
 import { Icon } from './icons';
+import { ReadableDate } from './ReadableDate';
 
 export function CopyLink(): JSX.Element {
     const [pageURL, setPageURL] = useState('');
@@ -120,20 +121,6 @@ export function A(Props: { href: string; text: string; new: boolean; title?: str
             title={title}>
             {Props.text}
         </a>
-    );
-}
-
-function Date(Props: { date: string }): JSX.Element {
-    const date = getReadableDate(Props.date);
-
-    return (
-        <div className="flex items-center space-x-3 text-sm text-gray-500">
-            <Icon
-                type={'calendar'}
-                size="14"
-            />
-            <p className="m-0">{date}</p>
-        </div>
     );
 }
 
@@ -378,7 +365,6 @@ export function AuthorImg(): JSX.Element {
     );
 }
 export function Author(props: { date: string | null; views: string }): JSX.Element {
-    const readableDate = props.date ? getReadableDate(props.date) : '';
     const dateHover = `${props.date ? 'Published date: ' + props.date : ''}`;
     return (
         <div className="flex items-center justify-between text-base">
@@ -402,7 +388,7 @@ export function Author(props: { date: string | null; views: string }): JSX.Eleme
                         type={'calendar'}
                         size="14"
                     />
-                    <p className="m-0">{readableDate}</p>
+                    {props.date && <p className="m-0">{<ReadableDate date={props.date} />}</p>}
                 </div>
 
                 <div className="relative">
