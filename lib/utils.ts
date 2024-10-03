@@ -57,3 +57,38 @@ export function hashCode(str: string): number {
     }
     return hash;
 }
+
+/**
+ * Retries a given operation a specified number of times with a delay between each attempt.
+ * If all attempts fail, the function throws an error.
+ *
+ * @param operation - A function to execute with retries.
+ * @param maxAttempts - The maximum number of retry attempts.
+ * @param initialDelayMs - The initial delay between retries in milliseconds.
+ * @returns - The result of the operation, or throws an error if all attempts fail.
+ */
+
+export async function retryWithExponentialBackoff<T>(
+    operation: () => T | Promise<T>,
+    maxAttempts: number,
+    initialDelayMs: number,
+): Promise<T> {
+    let delayMs = initialDelayMs;
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        try {
+            return await operation();
+        } catch (error) {
+            if (attempt === maxAttempts) {
+                console.error('Max retry attempts reached. Error:', error);
+                throw error;
+            }
+            // Exponential backoff delay
+            await new Promise((resolve) => {
+               setTimeout(resolve, delayMs);
+           });
+            delayMs *= 2;
+        }
+    }
+    // This line will never be reached due to the throw in the loop,but TypeScript requires it for type safety
+    throw new Error('Max retry attempts reached');
+}
