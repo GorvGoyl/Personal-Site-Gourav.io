@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { BannerChromeExtensionChatGPTWriter } from '../../components/banner';
 import Header from '../../components/Header';
+import { Hiring } from '../../components/hiring';
 import { SubstackForm } from '../../components/substack';
 import { frontmatterCache } from '../../lib/cache';
 import { initOutlinePosition } from '../../lib/mdx';
@@ -88,6 +89,7 @@ export default function Post(props: Post) {
                         <MDX components={MDXComponents as any} />
 
                         <ThatsAll />
+                        <Hiring />
 
                         <DiscussArticle matter={props.frontmatter} />
                         {/* <EditArticle articleEditLink={articleEditLink} /> */}

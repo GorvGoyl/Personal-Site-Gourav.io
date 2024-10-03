@@ -1,5 +1,6 @@
 import { ChromeStars, ChromeUsers } from '../components/badge';
 import Header from '../components/Header';
+import { Hiring } from '../components/hiring';
 import { Container } from '../components/layout';
 import { SubstackForm } from '../components/substack';
 import { TwitterIcon } from '../components/tags';
@@ -9,7 +10,7 @@ import Link from 'next/link';
 
 function LinkStyle({ children }: { children: React.ReactNode }) {
     return (
-        <span className="inline-block cursor-pointer whitespace-pre text-left font-[400] underline hover:bg-opacity-80 hover:opacity-80 focus:outline-none">
+        <span className="hover:orange-underline inline-block cursor-pointer whitespace-pre text-left font-[400] underline focus:outline-none">
             {children}
         </span>
     );
@@ -102,12 +103,12 @@ export default function Home(): JSX.Element {
                                 👋 For business inquiries reach out to me at <i>hey@gourav.io</i>
                             </div>
                             <ul>
-                                <li>
+                                {/* <li>
                                     Expertise: Web development (React, TS, Node.js), Chrome extension development, AI,
                                     startup consultation, and product management.
-                                </li>
+                                </li> */}
                                 <li>
-                                    Startups I founded:{' '}
+                                    My Startups:{' '}
                                     <a
                                         href="https://chatgptwriter.ai"
                                         target="_blank"
@@ -144,7 +145,7 @@ export default function Home(): JSX.Element {
                                     .
                                 </li>
                                 <li>
-                                    Technical writing:{' '}
+                                    Technical Writing:{' '}
                                     <a
                                         target="_blank"
                                         href="https://stackoverflow.com/users/3073272/gorvgoyl">
@@ -156,8 +157,12 @@ export default function Home(): JSX.Element {
                                         title="Blog">
                                         <LinkStyle>blog</LinkStyle>
                                     </Link>
+                                    .
                                 </li>
                             </ul>
+                        </div>
+                        <div>
+                            <Hiring />
                         </div>
                         <div>
                             <h2>Projects</h2>
@@ -186,34 +191,7 @@ export default function Home(): JSX.Element {
                                         {/* <i>Revenue: $3000+</i> */}
                                     </p>
                                 </li>
-                                <li>
-                                    <p>
-                                        <a
-                                            href="https://chatgptmessage.ai"
-                                            target={'_blank'}
-                                            title="ChatGPT Message AI">
-                                            ChatGPT Message AI
-                                        </a>
-                                        <br />
-                                        Use ChatGPT AI inside WhatsApp. Interact with AI without ever leaving WhatsApp.
-                                        <br />
-                                        {/* <i>Revenue: $3000+</i> */}
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <a
-                                            href="https://gimmesummary.ai"
-                                            target={'_blank'}
-                                            title="Gimme Summary AI chrome extension">
-                                            Gimme Summary AI
-                                        </a>
-                                        <br />
-                                        Free chrome extension to summarize articles on the web using AI (ChatGPT).
-                                        <br />
-                                        {/* <i>Revenue: $3000+</i> */}
-                                    </p>
-                                </li>
+
                                 <li>
                                     <p>
                                         <Link
@@ -334,7 +312,7 @@ export default function Home(): JSX.Element {
                                             href="/"
                                             title="https://gourav.io">
                                             Gourav.io
-                                        </Link>
+                                        </Link>{' '}
                                         <span className="badge-wrapper">
                                             <a
                                                 title="source code"
@@ -347,10 +325,62 @@ export default function Home(): JSX.Element {
                                                     src="https://flat.badgen.net/badge/code/code/555555/?icon=github&label"
                                                 />
                                             </a>
+                                            <a
+                                                title="GitHub repo stars"
+                                                href="https://github.com/gorvgoyl/Personal-Site-Gourav.io"
+                                                target="_blank"
+                                                rel="noopener">
+                                                <img
+                                                    alt="GitHub repo stars"
+                                                    loading="lazy"
+                                                    src="https://flat.badgen.net/github/stars/gorvgoyl/Personal-Site-Gourav.io?color=fb9836&icon=github"
+                                                />
+                                            </a>
+                                            <a
+                                                title="Github repo forks"
+                                                href="https://github.com/gorvgoyl/Personal-Site-Gourav.io"
+                                                target="_blank"
+                                                rel="noopener">
+                                                <img
+                                                    alt="GitHub forks"
+                                                    loading="lazy"
+                                                    src="https://flat.badgen.net/github/forks/gorvgoyl/Personal-Site-Gourav.io?color=fb9836&icon=github"
+                                                />
+                                            </a>
                                         </span>
                                         Open-source portfolio and blog built using React (Next.js), Typescript, Tailwind
                                         CSS, MDX and deployed on Vercel. <br />
-                                        <i>Total Views: 100,000+</i>
+                                        {/* <i>Total Views: 100,000+</i> */}
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a
+                                            href="https://chatgptmessage.ai"
+                                            target={'_blank'}
+                                            title="ChatGPT Message AI">
+                                            ChatGPT Message AI
+                                        </a>{' '}
+                                        (discontinued)
+                                        <br />
+                                        Use ChatGPT AI inside WhatsApp. Interact with AI without ever leaving WhatsApp.
+                                        <br />
+                                        {/* <i>Revenue: $3000+</i> */}
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <a
+                                            href="https://gimmesummary.ai"
+                                            target={'_blank'}
+                                            title="Gimme Summary AI chrome extension">
+                                            Gimme Summary AI
+                                        </a>{' '}
+                                        (discontinued)
+                                        <br />
+                                        Free chrome extension to summarize articles on the web using AI (ChatGPT).
+                                        <br />
+                                        {/* <i>Revenue: $3000+</i> */}
                                     </p>
                                 </li>
                                 {/* <li>
