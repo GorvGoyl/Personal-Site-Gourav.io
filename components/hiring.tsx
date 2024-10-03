@@ -3,7 +3,7 @@ import { TerminalIcon } from './icons/TerminalIcon';
 
 export function Hiring() {
     return (
-        <div className="my-5 flex gap-2 rounded-sm bg-black px-3 py-2 font-mono text-sm leading-snug text-green-500 underline-offset-4">
+        <div className="my-5 flex gap-2 rounded-sm bg-black px-3 py-2 font-mono text-sm text-green-500 underline-offset-4">
             <div>
                 <TerminalIcon className="mt-0.5 h-4 w-4" />
             </div>{' '}
