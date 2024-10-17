@@ -32,7 +32,7 @@ export default function Blog(props: { allPosts: FrontmatterBlogpost[] }): JSX.El
                         {props.allPosts.map((post) => {
                             return (
                                 <div
-                                    className="flex flex-col space-y-2 md:flex-row md:justify-between md:space-y-0"
+                                    className="flex flex-col space-x-0 space-y-2 md:flex-row md:justify-between md:space-x-2 md:space-y-0"
                                     key={post.slug}>
                                     <div>
                                         <article>
