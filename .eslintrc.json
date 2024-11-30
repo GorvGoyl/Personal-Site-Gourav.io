@@ -1,15 +1,52 @@
 {
-    "plugins": ["jsx-a11y", "promise", "regexp"],
+    "plugins": ["jsx-a11y", "promise", "regexp", "@typescript-eslint", "react-google-translate"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "projectService": true
+    },
     "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/strict-type-checked",
         "plugin:jsx-a11y/recommended",
         "next/core-web-vitals",
         "plugin:valtio/recommended",
         "plugin:promise/recommended",
         "plugin:regexp/recommended"
     ],
-    // "extends": ["plugin:react-hooks-unreliable-deps/recommended", "next/core-web-vitals"],
+
     "rules": {
-        "@next/next/no-img-element": "off",
+        "no-empty": "off",
+        "@typescript-eslint/no-unnecessary-condition": "off",
+        "@typescript-eslint/use-unknown-in-catch-callback-variable": "off",
+        "no-constant-condition": "warn",
+        "@typescript-eslint/no-extraneous-class": "warn",
+        "@typescript-eslint/no-unnecessary-type-parameters": "warn",
+        "regexp/no-unused-capturing-group": "warn",
+        "@typescript-eslint/no-redundant-type-constituents": "warn",
+        "@typescript-eslint/no-deprecated": "warn",
+        "@typescript-eslint/no-base-to-string": "warn",
+        "@typescript-eslint/prefer-promise-reject-errors": "warn",
+        "@typescript-eslint/no-misused-promises": "warn",
+        "@typescript-eslint/await-thenable": "warn",
+        "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+        "@typescript-eslint/no-unsafe-call": "warn",
+        "@typescript-eslint/no-unsafe-return": "warn",
+        "@typescript-eslint/no-unnecessary-template-expression": "off",
+        "@typescript-eslint/no-unsafe-argument": "warn",
+        "@typescript-eslint/no-confusing-void-expression": "warn",
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-unsafe-member-access": "warn",
+        "@typescript-eslint/only-throw-error": "warn",
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "@typescript-eslint/restrict-plus-operands": "warn",
+        "@typescript-eslint/no-floating-promises": "warn",
+        "no-inner-declarations": "warn",
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
+        "@typescript-eslint/no-non-null-assertion": "warn",
+        "@typescript-eslint/no-unused-expressions": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-unused-vars": "off",
+        // "object-shorthand": ["warn", "never"],
         "no-control-regex": "warn",
         "promise/catch-or-return": "off",
         "promise/always-return": "off",
@@ -99,6 +136,16 @@
         "jsx-a11y/no-static-element-interactions": "warn",
         "jsx-a11y/no-redundant-roles": "off",
         "valtio/state-snapshot-rule": "error",
-        "jsx-a11y/interactive-supports-focus": "warn"
+        "jsx-a11y/interactive-supports-focus": "warn",
+        "no-restricted-syntax": [
+            "warn",
+            {
+                "selector": "CallExpression[callee.object.name='crypto'][callee.property.name='randomUUID']",
+                "message": "Please use uuidv7() from 'uuidv7' package instead of crypto.randomUUID() for better db indexing."
+            }
+        ],
+        "react-google-translate/no-conditional-text-nodes-with-siblings": "error",
+        "react-google-translate/no-return-text-nodes": "error",
+        "@next/next/no-img-element": "off"
     }
 }

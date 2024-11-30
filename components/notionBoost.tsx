@@ -3,11 +3,11 @@ import { usePath } from '../hooks/customHooks';
 import { ChromeStars, ChromeUsers, ChromeVersion, FirefoxUsers, FirefoxVersion } from './badge';
 import { CopyLink } from './tags';
 
-enum Page {
-    Home = '/notion-boost',
-    WhatsNew = '/notion-boost/whats-new',
-    AllFeatures = '/notion-boost/#-currently-added-features',
-}
+const Page = {
+    Home: '/notion-boost',
+    WhatsNew: '/notion-boost/whats-new',
+    AllFeatures: '/notion-boost/#-currently-added-features',
+};
 
 export function NavbarNotion(): JSX.Element {
     const page = usePath();

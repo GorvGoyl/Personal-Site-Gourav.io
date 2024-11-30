@@ -31,7 +31,7 @@ export function CopyLink(): JSX.Element {
             style={{ fontWeight: 'inherit' }}
             type="button">
             {/* <Icon type={TYPE.link} size="16" className="m-0 mr-4" /> */}
-            {isCopied === 0 ? 'Copy link' : 'Copied'}
+            {isCopied === 0 ? <span>Copy link</span> : <span>Copied</span>}
         </button>
     );
 }
