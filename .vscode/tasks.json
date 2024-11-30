@@ -1,12 +1,90 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "type": "npm",
-      "script": "dev",
-      "problemMatcher": [],
-      "label": "npm run dev",
-      "detail": "next dev"
-    }
-  ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Restart TypeScript Server",
+            "type": "process",
+            "command": "${command:typescript.restartTsServer}",
+            "problemMatcher": [],
+            "hide": true
+        },
+        {
+            "label": "Restart ESLint",
+            "type": "process",
+            "command": "${command:eslint.restart}",
+            "hide": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "Restart ESLint and TypeScript Server",
+            "dependsOn": ["Restart TypeScript Server", "Restart ESLint"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run active file",
+            "detail": "tsx ${file} --env-file=.env.development.local",
+            "type": "shell",
+            "command": "pnpm run tsx ${file}",
+            "isBackground": false,
+            // "runOptions": {
+            //     "reevaluateOnRerun": true,
+            //     "instanceLimit": 1
+            // },
+            // "group": {
+            //     "kind": "build",
+            //     "isDefault": false
+            // },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "label": "Run active file (prod)",
+            "detail": "tsx ${file} --env-file=.env.production.local",
+            "type": "shell",
+            "command": "pnpm run tsx-prod ${file}",
+            "isBackground": false,
+            // "runOptions": {
+            //     "reevaluateOnRerun": true,
+            //     "instanceLimit": 1
+            // },
+            // "group": {
+            //     "kind": "build",
+            //     "isDefault": false
+            // },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "label": "pnpm build",
+            "detail": "next build"
+        },
+        {
+            "type": "npm",
+            "script": "dev",
+            "problemMatcher": [],
+            "label": "pnpm dev",
+            "detail": "next dev",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated"
+            }
+        }
+    ]
 }
