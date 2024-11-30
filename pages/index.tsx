@@ -165,10 +165,10 @@ export default function Home(): JSX.Element {
                             <Hiring />
                         </div>
                         <div>
-                            <h2>Projects</h2>
+                            <h2>Startups & Projects</h2>
                             <ul>
                                 <li>
-                                    <p>
+                                    <div>
                                         <a
                                             href="https://chatgptwriter.ai"
                                             target={'_blank'}
@@ -189,11 +189,11 @@ export default function Home(): JSX.Element {
                                         All sites are supported and enhanced support for Gmail.
                                         <br />
                                         {/* <i>Revenue: $3000+</i> */}
-                                    </p>
+                                    </div>
                                 </li>
 
                                 <li>
-                                    <p>
+                                    <div>
                                         <Link
                                             href="/notion-boost"
                                             title="Notion Boost browser extension">
@@ -227,10 +227,10 @@ export default function Home(): JSX.Element {
                                         productive.
                                         <br />
                                         {/* <i>Revenue: $3000+</i> */}
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
+                                    <div>
                                         <a
                                             href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar"
                                             target="blank"
@@ -269,10 +269,10 @@ export default function Home(): JSX.Element {
                                         </span>
                                         VSCode extension which adds useful buttons like beautify, open files, undo,
                                         redo, etc to the editor in Visual Studio Code.
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
+                                    <div>
                                         <Link
                                             href="/clone-wars"
                                             title="Clone Wars">
@@ -304,7 +304,20 @@ export default function Home(): JSX.Element {
                                         </span>
                                         List of 100+ open-source clones of popular sites like Airbnb, Spotify, Tiktok,
                                         Netflix, etc.
-                                    </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <Link
+                                            href="/devtools"
+                                            title="Devtools">
+                                            Devtools
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        Collection of useful tools for developers (Code Runner, Aspect Ratio Calculator,
+                                        etc).
+                                    </div>
                                 </li>
                                 <li>
                                     <p>
@@ -354,7 +367,21 @@ export default function Home(): JSX.Element {
                                     </p>
                                 </li>
                                 <li>
-                                    <p>
+                                    <div>
+                                        <a
+                                            href="https://easypie.app"
+                                            target={'_blank'}
+                                            title="Easypie App">
+                                            Easypie App
+                                        </a>{' '}
+                                        (discontinued)
+                                        <br />
+                                        No-code automation tool.
+                                        <br />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
                                         <a
                                             href="https://chatgptmessage.ai"
                                             target={'_blank'}
@@ -366,10 +393,10 @@ export default function Home(): JSX.Element {
                                         Use ChatGPT AI inside WhatsApp. Interact with AI without ever leaving WhatsApp.
                                         <br />
                                         {/* <i>Revenue: $3000+</i> */}
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
+                                    <div>
                                         <a
                                             href="https://gimmesummary.ai"
                                             target={'_blank'}
@@ -381,7 +408,21 @@ export default function Home(): JSX.Element {
                                         Free chrome extension to summarize articles on the web using AI (ChatGPT).
                                         <br />
                                         {/* <i>Revenue: $3000+</i> */}
-                                    </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a
+                                            href="https://www.crunchbase.com/organization/evrcare"
+                                            target={'_blank'}
+                                            title="EvrCare">
+                                            EvrCare
+                                        </a>{' '}
+                                        (discontinued)
+                                        <br />
+                                        Assistance platform for elderly people.
+                                        <br />
+                                    </div>
                                 </li>
                                 {/* <li>
                   <p>

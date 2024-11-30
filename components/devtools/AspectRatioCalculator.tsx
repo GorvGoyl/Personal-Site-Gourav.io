@@ -24,19 +24,19 @@ export function AspectRatioCalculator() {
     };
 
     return (
-        <div className="mt-10 max-w-[300px] rounded-md">
+        <div className="mt-10 w-[450px] rounded-md">
             <a
                 className="no-underline hover:no-underline"
                 href="#aspect-ratio-calculator">
                 <h2 className="mb-2 text-lg font-bold">Aspect Ratio Calculator</h2>
             </a>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-row gap-2">
                 <input
                     type="text"
                     placeholder="Enter dimensions like 1920x1080"
                     value={dimensions}
                     onChange={handleInputChange}
-                    className="rounded border border-neutral-300 bg-neutral-100 p-2"
+                    className="w-[280px] rounded border border-neutral-300 bg-neutral-100 p-2"
                 />
                 {aspectRatio && (
                     <div className="mt-2">

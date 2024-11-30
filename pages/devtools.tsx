@@ -23,6 +23,13 @@ export default function Devtools() {
                         <CodeRunner />
                     </div>
                 </main>
+                <div className="mb-[-20px] mt-20 text-center text-xs text-neutral-500 underline">
+                    <a
+                        target="_blank"
+                        href="https://github.com/GorvGoyl/Personal-Site-Gourav.io/issues">
+                        Suggest more tools
+                    </a>
+                </div>
             </Container>
         </>
     );
