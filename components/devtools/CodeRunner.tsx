@@ -39,7 +39,7 @@ export function CodeRunner() {
 
     return (
         <div className="mt-10">
-            <div className="flex flex-row items-baseline gap-2">
+            <div className="flex flex-col items-baseline justify-start gap-2 md:flex-row">
                 <div>
                     <a
                         className="no-underline hover:no-underline"
@@ -52,7 +52,7 @@ export function CodeRunner() {
                 </div>
             </div>
 
-            <div className="mt-2 gap-5 md:flex md:flex-row">
+            <div className="mt-5 gap-5 md:flex md:flex-row">
                 <div>
                     <div className="mb-4 flex justify-between text-sm">
                         <button
