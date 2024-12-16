@@ -1,4 +1,5 @@
 import { AspectRatioCalculator } from '../components/devtools/AspectRatioCalculator';
+import { CharacterLengthCalculator } from '../components/devtools/CharacterLengthCalculator';
 import { CodeRunner } from '../components/devtools/CodeRunner';
 import Header from '../components/Header';
 import { Container, LayoutType } from '../components/layout';
@@ -18,8 +19,11 @@ export default function Devtools() {
                     <header>
                         <h1>Devtools</h1>
                     </header>
-                    <div>
-                        <AspectRatioCalculator />
+                    <div className="mt-10">
+                        <div className="inline-flex flex-col gap-2">
+                            <AspectRatioCalculator />
+                            <CharacterLengthCalculator />
+                        </div>
                         <CodeRunner />
                     </div>
                 </main>

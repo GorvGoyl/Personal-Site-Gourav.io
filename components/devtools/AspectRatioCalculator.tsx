@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { Button } from '../Button';
+import { Popup } from '../Popup';
 
 export function AspectRatioCalculator() {
+    const [isOpen, setIsOpen] = useState(false);
     const [dimensions, setDimensions] = useState<string>('');
     const [aspectRatio, setAspectRatio] = useState<string | null>(null);
 
@@ -24,26 +27,40 @@ export function AspectRatioCalculator() {
     };
 
     return (
-        <div className="mt-10 w-[450px] rounded-md">
-            <a
-                className="no-underline hover:no-underline"
-                href="#aspect-ratio-calculator">
-                <h2 className="mb-2 text-lg font-bold">Aspect Ratio Calculator</h2>
-            </a>
-            <div className="flex flex-row gap-2">
-                <input
-                    type="text"
-                    placeholder="Enter dimensions like 1920x1080"
-                    value={dimensions}
-                    onChange={handleInputChange}
-                    className="w-[280px] rounded border border-neutral-300 bg-neutral-100 p-2"
-                />
-                {aspectRatio && (
-                    <div className="mt-2">
-                        <strong>Aspect Ratio:</strong> {aspectRatio}
+        <>
+            <Button
+                onClick={() => {
+                    setIsOpen(true);
+                }}>
+                Aspect Ratio Calculator
+            </Button>
+
+            <Popup
+                isOpen={isOpen}
+                onClose={() => {
+                    setIsOpen(false);
+                }}>
+                <div className="space-y-4">
+                    <h2 className="text-xl font-semibold">Aspect Ratio Calculator</h2>
+
+                    <div className="space-y-2">
+                        <input
+                            type="text"
+                            placeholder="Enter dimensions like 1920x1080"
+                            value={dimensions}
+                            onChange={handleInputChange}
+                            className="w-full rounded-lg border p-3 dark:border-neutral-600 dark:bg-neutral-700"
+                            autoFocus={true}
+                        />
+
+                        {aspectRatio && (
+                            <div className="mt-2">
+                                <strong>Aspect Ratio:</strong> {aspectRatio}
+                            </div>
+                        )}
                     </div>
-                )}
-            </div>
-        </div>
+                </div>
+            </Popup>
+        </>
     );
 }
