@@ -165,7 +165,11 @@ export default function Home(): JSX.Element {
                             <Hiring />
                         </div>
                         <div>
-                            <h2>Startups & Projects</h2>
+                            <a
+                                className="no-underline"
+                                href="#projects">
+                                <h2 id="projects">Startups & Projects</h2>
+                            </a>
                             <ul>
                                 <li>
                                     <div>
