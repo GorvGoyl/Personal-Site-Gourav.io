@@ -319,8 +319,8 @@ export default function Home(): JSX.Element {
                                         </Link>
                                     </div>
                                     <div>
-                                        Collection of useful tools for developers (Code Runner, Aspect Ratio Calculator,
-                                        etc).
+                                        Collection of handy tools for devs (Code Runner, UUID Generator, Aspect Ratio
+                                        Calculator, LLM Token Counter, etc).
                                     </div>
                                 </li>
                                 <li>
