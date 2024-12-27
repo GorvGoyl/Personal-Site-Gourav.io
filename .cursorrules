@@ -25,3 +25,5 @@
 - Do not use default when exporting any react component.
 
 - Do not use full React namespace type i.e `React.` when writing react components.
+
+- when generating tailwind classes, do not generate dark mode classes.
