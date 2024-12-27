@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../Button';
 import { Popup } from '../Popup';
+import { ArrowNorthEastIcon } from '../icons/ArrowNorthEastIcon';
 
 type CounterType = 'characters' | 'words' | 'tokens';
 
@@ -159,18 +160,41 @@ export function LLMTokenCounter() {
                                     <span className="ml-2 text-neutral-500">(Estimated cost: ${calculateCost()})</span>
                                 )}
                             </label>
-                            <input
-                                type="number"
-                                id="price"
-                                value={pricePerMillion}
-                                onChange={(e) => {
-                                    setPricePerMillion(e.target.value);
-                                }}
-                                className="w-full rounded-lg border p-3 dark:border-neutral-600 dark:bg-neutral-700"
-                                placeholder="Enter price per million tokens"
-                                min="0"
-                                step="0.01"
-                            />
+                            <div className="relative">
+                                <span className="absolute left-3 top-1/2 -translate-y-1/2">$</span>
+                                <input
+                                    type="number"
+                                    id="price"
+                                    value={pricePerMillion}
+                                    onChange={(e) => {
+                                        setPricePerMillion(e.target.value);
+                                    }}
+                                    className="w-full rounded-lg border p-3 pl-6 dark:border-neutral-600 dark:bg-neutral-700"
+                                    placeholder="Enter price per million tokens"
+                                    min="0"
+                                    step="1"
+                                />
+                            </div>
+                        </div>
+                        <div className="flex flex-row justify-between gap-2 pt-2 text-sm text-neutral-500">
+                            <a
+                                href="https://openai.com/api/pricing/"
+                                target="_blank"
+                                className="hover:text-neutral-700">
+                                OpenAI Pricing <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
+                            </a>
+                            <a
+                                href="https://www.anthropic.com/pricing#anthropic-api"
+                                target="_blank"
+                                className="hover:text-neutral-700">
+                                Claude Pricing <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
+                            </a>
+                            <a
+                                href="https://ai.google.dev/pricing"
+                                target="_blank"
+                                className="hover:text-neutral-700">
+                                Gemini Pricing <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
+                            </a>
                         </div>
                     </div>
                 </div>
