@@ -12,7 +12,7 @@ export default function Devtools() {
         <>
             <Header
                 type="website"
-                title="Devtools"
+                title="Devtools - Code runner, LLM token counter, Aspect ratio calculator, etc."
             />
 
             <Container layout={LayoutType.Devtools}>
