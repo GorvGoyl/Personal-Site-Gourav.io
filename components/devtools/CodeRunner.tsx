@@ -100,7 +100,7 @@ export function CodeRunner() {
                     </div>
                 </div>
 
-                <div className="mt-[51px] h-[300px] w-full">
+                <div className="mt-[51px] h-[300px] w-full md:w-[500px]">
                     <CodeOutput code={output} />
                 </div>
             </div>
