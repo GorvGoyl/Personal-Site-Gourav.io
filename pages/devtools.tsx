@@ -2,6 +2,7 @@ import { AspectRatioCalculator } from '../components/devtools/AspectRatioCalcula
 import { CharacterLengthCalculator } from '../components/devtools/CharacterLengthCalculator';
 import { CodeRunner } from '../components/devtools/CodeRunner';
 import { LLMTokenCounter } from '../components/devtools/LLMTokenCounter';
+import { SvgPreview } from '../components/devtools/SvgPreview';
 import { UuidGenerator } from '../components/devtools/UuidGenerator';
 import Header from '../components/Header';
 import { Container, LayoutType } from '../components/layout';
@@ -27,6 +28,7 @@ export default function Devtools() {
                             <CharacterLengthCalculator />
                             <UuidGenerator />
                             <LLMTokenCounter />
+                            <SvgPreview />
                         </div>
                         <CodeRunner />
                     </div>

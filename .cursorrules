@@ -27,3 +27,5 @@
 - Do not use full React namespace type i.e `React.` when writing react components.
 
 - when generating tailwind classes, do not generate dark mode classes.
+- when generating react components, do not use ternary operators. instead use early return.
+- do not create nested react components, instead create separate components.
