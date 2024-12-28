@@ -51,7 +51,7 @@ export function SvgPreview() {
                 onClick={() => {
                     setIsOpen(true);
                 }}>
-                SVG Editor
+                SVG Preview
             </Button>
 
             <Popup
