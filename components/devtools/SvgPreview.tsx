@@ -72,7 +72,7 @@ export function SvgPreview() {
 
                     {svgCode && !error && (
                         <div className="flex flex-col gap-2">
-                            <p className="text-base text-neutral-500">Preview</p>
+                            <p className="text-center text-base text-neutral-500">Preview</p>
                             <div
                                 className="flex items-center justify-center rounded p-4"
                                 dangerouslySetInnerHTML={{ __html: svgCode }}
