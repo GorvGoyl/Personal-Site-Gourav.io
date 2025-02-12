@@ -178,7 +178,7 @@ export function LLMTokenCounter() {
                         </div>
                         <div className="flex flex-row justify-between gap-2 pt-2 text-sm text-neutral-500">
                             <a
-                                href="https://openai.com/api/pricing/"
+                                href="https://platform.openai.com/docs/pricing"
                                 target="_blank"
                                 className="hover:text-neutral-700">
                                 OpenAI Pricing <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
