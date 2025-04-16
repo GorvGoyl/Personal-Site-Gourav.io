@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../Button';
 import { Popup } from '../Popup';
-import { ArrowNorthEastIcon } from '../icons/ArrowNorthEastIcon';
 
 type CounterType = 'characters' | 'words' | 'tokens';
 
@@ -174,50 +173,6 @@ export function LLMTokenCounter() {
                                     min="0"
                                     step="1"
                                 />
-                            </div>
-                        </div>
-                        <div className="flex flex-row justify-between gap-2 pt-2 text-sm text-neutral-500">
-                            <div className="flex flex-col space-y-1">
-                                <a
-                                    href="https://platform.openai.com/docs/pricing"
-                                    target="_blank"
-                                    className="hover:text-neutral-700">
-                                    OpenAI Pricing <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
-                                </a>
-                                <a
-                                    href="https://platform.openai.com/docs/models"
-                                    target="_blank"
-                                    className="hover:text-neutral-700">
-                                    OpenAI Models <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
-                                </a>
-                            </div>
-                            <div className="flex flex-col space-y-1">
-                                <a
-                                    href="https://www.anthropic.com/pricing#anthropic-api"
-                                    target="_blank"
-                                    className="hover:text-neutral-700">
-                                    Claude Pricing <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
-                                </a>
-                                <a
-                                    href="https://docs.anthropic.com/en/docs/about-claude/models/all-models#model-comparison-table"
-                                    target="_blank"
-                                    className="hover:text-neutral-700">
-                                    Claude Models <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
-                                </a>
-                            </div>
-                            <div className="flex flex-col space-y-1">
-                                <a
-                                    href="https://ai.google.dev/pricing"
-                                    target="_blank"
-                                    className="hover:text-neutral-700">
-                                    Gemini Pricing <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
-                                </a>
-                                <a
-                                    href="https://ai.google.dev/gemini-api/docs"
-                                    target="_blank"
-                                    className="hover:text-neutral-700">
-                                    Gemini Models <ArrowNorthEastIcon className="inline-block h-3.5 w-3.5" />
-                                </a>
                             </div>
                         </div>
                     </div>

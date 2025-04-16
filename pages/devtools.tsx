@@ -1,4 +1,5 @@
 import { AspectRatioCalculator } from '../components/devtools/AspectRatioCalculator';
+import { Bookmarks } from '../components/devtools/Bookmarks';
 import { CharacterLengthCalculator } from '../components/devtools/CharacterLengthCalculator';
 import { CodeRunner } from '../components/devtools/CodeRunner';
 import { ColorFill } from '../components/devtools/ColorFill';
@@ -30,6 +31,7 @@ export default function Devtools() {
                             <UuidGenerator />
                             <LLMTokenCounter />
                             <SvgPreview />
+                            <Bookmarks />
                         </div>
                         <div className="mt-10">
                             <ColorFill />
