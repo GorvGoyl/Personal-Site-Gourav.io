@@ -25,7 +25,7 @@ export function CharacterLengthCalculator() {
                 onClick={() => {
                     setIsOpen(true);
                 }}>
-                Character Length Calculator
+                🔢 Character Length Calculator
             </Button>
 
             <Popup
@@ -34,7 +34,7 @@ export function CharacterLengthCalculator() {
                     setIsOpen(false);
                 }}>
                 <div className="w-[500px] space-y-4">
-                    <h2 className="text-xl font-semibold">Character Length Calculator</h2>
+                    <h2 className="text-xl font-semibold">🔢 Character Length Calculator</h2>
 
                     <div className="space-y-2">
                         <textarea

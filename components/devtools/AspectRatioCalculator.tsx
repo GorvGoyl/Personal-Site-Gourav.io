@@ -32,7 +32,7 @@ export function AspectRatioCalculator() {
                 onClick={() => {
                     setIsOpen(true);
                 }}>
-                Aspect Ratio Calculator
+                📏 Aspect Ratio Calculator
             </Button>
 
             <Popup
@@ -41,7 +41,7 @@ export function AspectRatioCalculator() {
                     setIsOpen(false);
                 }}>
                 <div className="w-[300px] space-y-4">
-                    <h2 className="text-xl font-semibold">Aspect Ratio Calculator</h2>
+                    <h2 className="text-xl font-semibold">📏 Aspect Ratio Calculator</h2>
 
                     <div className="space-y-2">
                         <input

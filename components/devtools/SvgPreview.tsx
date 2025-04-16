@@ -51,7 +51,7 @@ export function SvgPreview() {
                 onClick={() => {
                     setIsOpen(true);
                 }}>
-                SVG Preview
+                🖼️ SVG Preview
             </Button>
 
             <Popup
@@ -60,7 +60,7 @@ export function SvgPreview() {
                     setIsOpen(false);
                 }}>
                 <div className="flex w-[500px] flex-col gap-4">
-                    <h2 className="text-xl font-semibold">SVG Preview</h2>
+                    <h2 className="text-xl font-semibold">🖼️ SVG Preview</h2>
                     <textarea
                         className="h-32 w-full rounded border border-neutral-200 p-2 font-mono text-sm"
                         placeholder="Paste your SVG code here..."

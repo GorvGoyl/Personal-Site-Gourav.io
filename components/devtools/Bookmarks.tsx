@@ -12,7 +12,7 @@ export function Bookmarks() {
                 onClick={() => {
                     setIsOpen(true);
                 }}>
-                Bookmarks
+                🔖 Bookmarks
             </Button>
 
             <Popup
@@ -21,7 +21,7 @@ export function Bookmarks() {
                     setIsOpen(false);
                 }}>
                 <div className="w-[400px] space-y-4">
-                    <h2 className="text-xl font-semibold">Bookmarks</h2>
+                    <h2 className="text-xl font-semibold">🔖 Bookmarks</h2>
 
                     <section>
                         <h3 className="mb-2 text-lg font-medium">LLM Leaderboards</h3>

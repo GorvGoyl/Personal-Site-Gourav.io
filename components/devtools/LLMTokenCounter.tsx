@@ -74,7 +74,7 @@ export function LLMTokenCounter() {
                 onClick={() => {
                     setIsOpen(true);
                 }}>
-                LLM Token Counter
+                🪙 LLM Token Counter
             </Button>
 
             <Popup
@@ -85,7 +85,7 @@ export function LLMTokenCounter() {
                 }}>
                 <div className="w-[400px] space-y-4">
                     <div className="flex items-center justify-between">
-                        <h2 className="text-xl font-semibold">LLM Token Counter</h2>
+                        <h2 className="text-xl font-semibold">🪙 LLM Token Counter</h2>
                         <button
                             type="button"
                             onClick={resetValues}

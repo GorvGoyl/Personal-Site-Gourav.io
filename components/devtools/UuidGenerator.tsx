@@ -24,7 +24,7 @@ export function UuidGenerator() {
                 onClick={() => {
                     setIsOpen(true);
                 }}>
-                UUID Generator
+                🆔 UUID Generator
             </Button>
 
             <Popup
@@ -33,7 +33,7 @@ export function UuidGenerator() {
                     setIsOpen(false);
                 }}>
                 <div className="w-[400px] space-y-4">
-                    <h2 className="text-xl font-semibold">UUID Generator</h2>
+                    <h2 className="text-xl font-semibold">🆔 UUID Generator</h2>
 
                     <div className="space-y-4">
                         <div className="space-y-2">
