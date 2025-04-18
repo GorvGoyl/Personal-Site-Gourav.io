@@ -28,7 +28,7 @@ export function Bookmarks() {
                         <ul className="list-inside list-disc space-y-2 text-sm">
                             <li>
                                 <a
-                                    href="https://lmarena.ai"
+                                    href="https://lmarena.ai/?leaderboard"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-600 underline hover:text-blue-800">
