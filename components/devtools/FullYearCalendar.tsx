@@ -85,6 +85,23 @@ function generateMonthData(year: number, monthIndex: number): Month {
     return { name: MONTH_NAMES[monthIndex], days: monthData };
 }
 
+function getDayClasses(day: Day | null, today: Date, isWeekend: boolean): string {
+    const classes = ['flex', 'h-7', 'w-7', 'items-center', 'justify-center', 'rounded-full', 'p-1'];
+    if (day === null) {
+        classes.push('text-transparent');
+        return classes.join(' ');
+    }
+
+    const isToday = day.date === today.getDate() && day.month === today.getMonth() && day.year === today.getFullYear();
+    if (isToday) {
+        classes.push('bg-blue-500', 'text-white');
+    } else if (isWeekend) {
+        classes.push('bg-neutral-200');
+    }
+
+    return classes.join(' ');
+}
+
 function generateYearCalendar(year: number): Month[] {
     const calendar: Month[] = [];
     for (let i = 0; i < 12; i++) {
@@ -122,7 +139,7 @@ export function FullYearCalendar() {
                                     key={month.name}
                                     className="rounded-lg border p-3 shadow-sm">
                                     <h3 className="mb-2 text-center text-lg font-medium">{month.name}</h3>
-                                    <div className="grid grid-cols-7 text-center text-xs font-semibold">
+                                    <div className="grid grid-cols-7 text-xs font-semibold">
                                         {DAYS_IN_WEEK.map((day) => {
                                             return <div key={day}>{day}</div>;
                                         })}
@@ -137,7 +154,7 @@ export function FullYearCalendar() {
                                                     return (
                                                         <div
                                                             key={dayIndex}
-                                                            className={`flex h-7 w-7 items-center justify-center rounded-full p-1 ${day && day.date === today.getDate() && day.month === today.getMonth() && day.year === today.getFullYear() ? 'bg-blue-500 text-white' : isWeekend && day ? 'bg-neutral-200' : ''} ${day === null ? 'text-transparent' : ''} `}>
+                                                            className={getDayClasses(day, today, isWeekend)}>
                                                             {day ? day.date : ''}
                                                         </div>
                                                     );
