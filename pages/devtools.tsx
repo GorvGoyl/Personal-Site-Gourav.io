@@ -3,6 +3,7 @@ import { Bookmarks } from '../components/devtools/Bookmarks';
 import { CharacterLengthCalculator } from '../components/devtools/CharacterLengthCalculator';
 import { CodeRunner } from '../components/devtools/CodeRunner';
 import { ColorFill } from '../components/devtools/ColorFill';
+import { FullYearCalendar } from '../components/devtools/FullYearCalendar';
 import { LLMTokenCounter } from '../components/devtools/LLMTokenCounter';
 import { SvgPreview } from '../components/devtools/SvgPreview';
 import { UuidGenerator } from '../components/devtools/UuidGenerator';
@@ -32,6 +33,7 @@ export default function Devtools() {
                             <LLMTokenCounter />
                             <SvgPreview />
                             <Bookmarks />
+                            <FullYearCalendar />
                         </div>
                         <div className="mt-10">
                             <ColorFill />
