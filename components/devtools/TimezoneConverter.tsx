@@ -123,6 +123,22 @@ export function TimezoneConverter() {
 
     const displayTime = new Date(liveTime.getTime() + timeOffsetInHours * 60 * 60 * 1000);
 
+    type TimeOfDayCategory = 'Night' | 'Morning' | 'Afternoon' | 'Evening';
+
+    const getTimeOfDayCategory = (date: Date, timeZone: string): TimeOfDayCategory => {
+        const hour = parseInt(date.toLocaleTimeString('en-US', { timeZone, hour: 'numeric', hourCycle: 'h23' }), 10);
+        if (hour >= 20 || hour < 6) {
+            return 'Night';
+        } // 8 PM to 5:59 AM
+        if (hour >= 6 && hour < 12) {
+            return 'Morning';
+        } // 6 AM to 11:59 AM
+        if (hour >= 12 && hour < 17) {
+            return 'Afternoon';
+        } // 12 PM to 4:59 PM
+        return 'Evening'; // 5 PM to 7:59 PM
+    };
+
     const formatTime = (date: Date, timeZone: string) => {
         return date.toLocaleTimeString('en-US', {
             timeZone,
@@ -210,15 +226,32 @@ export function TimezoneConverter() {
                     </div>
                     <div className="space-y-3">
                         {timezones.map((tz) => {
+                            const category = getTimeOfDayCategory(displayTime, tz.id);
+                            let styleClasses = 'text-neutral-800'; // Default text color
+                            if (category === 'Night') {
+                                styleClasses = 'bg-slate-700 text-neutral-200';
+                            } else if (category === 'Morning') {
+                                styleClasses = 'bg-yellow-100 text-neutral-800';
+                            } else if (category === 'Afternoon') {
+                                styleClasses = 'bg-sky-100 text-neutral-800';
+                            } else if (category === 'Evening') {
+                                styleClasses = 'bg-orange-100 text-neutral-800';
+                            }
+
                             return (
                                 <div
                                     key={tz.id}
-                                    className="flex items-center justify-between rounded-md border border-neutral-200 bg-neutral-50 p-3">
+                                    className={`flex items-center justify-between rounded-md border border-neutral-200 p-3 ${styleClasses}`}>
                                     <div className="flex flex-col gap-1.5">
-                                        <div className="font-medium">{tz.name}</div>
-                                        <div className="text-sm text-neutral-600">
+                                        <div
+                                            className={`font-medium ${category === 'Night' ? 'text-neutral-100' : 'text-neutral-900'}`}>
+                                            {tz.name}
+                                        </div>
+                                        <div
+                                            className={`text-sm ${category === 'Night' ? 'text-neutral-300' : 'text-neutral-600'}`}>
                                             {formatTime(displayTime, tz.id)}{' '}
-                                            <span className="ml-3 text-xs text-neutral-500">
+                                            <span
+                                                className={`ml-3 text-xs ${category === 'Night' ? 'text-neutral-400' : 'text-neutral-500'}`}>
                                                 {formatDate(displayTime, tz.id)}
                                             </span>
                                         </div>
@@ -229,7 +262,7 @@ export function TimezoneConverter() {
                                             onClick={() => {
                                                 handleRemoveTimezone(tz.id);
                                             }}
-                                            className="text-xs text-red-500 hover:text-red-700">
+                                            className={`text-xs ${category === 'Night' ? 'text-red-400 hover:text-red-300' : 'text-red-500 hover:text-red-700'}`}>
                                             Remove
                                         </button>
                                     )}
