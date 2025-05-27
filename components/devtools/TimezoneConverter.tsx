@@ -172,7 +172,7 @@ export function TimezoneConverter() {
                 onClose={() => {
                     setIsOpen(false);
                 }}>
-                <div className="rounded-lg border border-neutral-200 p-5">
+                <div className="w-[300] rounded-lg border border-neutral-200 p-5 md:w-auto">
                     <h2 className="mb-4 text-xl font-semibold">Timezone Converter</h2>
 
                     <div className="mb-4">
