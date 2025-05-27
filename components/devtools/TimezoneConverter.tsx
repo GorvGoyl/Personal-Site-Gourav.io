@@ -7,11 +7,43 @@ type Timezone = {
     name: string;
 };
 
-const initialUserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const initialUserTimezoneId = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const localStorageKey = 'timezonesConverterAddedTimezones';
 
 export function TimezoneConverter() {
     const [isOpen, setIsOpen] = useState(false);
-    const [timezones, setTimezones] = useState<Timezone[]>([{ id: initialUserTimezone, name: initialUserTimezone }]);
+    const [timezones, setTimezones] = useState<Timezone[]>(() => {
+        const storedTimezonesString = typeof window !== 'undefined' ? localStorage.getItem(localStorageKey) : null;
+        const defaultTimezones = [{ id: initialUserTimezoneId, name: initialUserTimezoneId }];
+        if (storedTimezonesString) {
+            try {
+                const storedTimezones = JSON.parse(storedTimezonesString) as Timezone[];
+                // Ensure the user's current timezone is always present and first
+                const userTzExists = storedTimezones.some((tz) => {
+                    return tz.id === initialUserTimezoneId;
+                });
+                if (!userTzExists) {
+                    return [
+                        ...defaultTimezones,
+                        ...storedTimezones.filter((tz) => {
+                            return tz.id !== initialUserTimezoneId;
+                        }),
+                    ];
+                }
+                // if it exists, make sure it is first
+                return [
+                    ...defaultTimezones,
+                    ...storedTimezones.filter((tz) => {
+                        return tz.id !== initialUserTimezoneId;
+                    }),
+                ];
+            } catch (e) {
+                console.error('Error parsing stored timezones:', e);
+                return defaultTimezones;
+            }
+        }
+        return defaultTimezones;
+    });
     const [liveTime, setLiveTime] = useState(new Date());
     const [timeOffsetInHours, setTimeOffsetInHours] = useState(0);
     const [selectedTimezone, setSelectedTimezone] = useState('');
@@ -28,6 +60,20 @@ export function TimezoneConverter() {
         };
     }, [isOpen]);
 
+    // Save to localStorage whenever timezones change
+    useEffect(() => {
+        // Store only timezones added by the user, not the initial one if it's the only one.
+        const timezonesToStore = timezones.filter((tz) => {
+            return tz.id !== initialUserTimezoneId;
+        });
+        if (timezonesToStore.length > 0) {
+            localStorage.setItem(localStorageKey, JSON.stringify(timezonesToStore));
+        } else {
+            // if only initial timezone, clear storage or store empty array
+            localStorage.removeItem(localStorageKey);
+        }
+    }, [timezones]);
+
     const handleAddTimezone = () => {
         if (
             selectedTimezone &&
@@ -35,17 +81,20 @@ export function TimezoneConverter() {
                 return tz.id === selectedTimezone;
             })
         ) {
-            setTimezones([...timezones, { id: selectedTimezone, name: selectedTimezone }]);
+            const newTimezones = [...timezones, { id: selectedTimezone, name: selectedTimezone }];
+            setTimezones(newTimezones);
             setSelectedTimezone('');
         }
     };
 
     const handleRemoveTimezone = (timezoneId: string) => {
-        setTimezones(
-            timezones.filter((tz) => {
-                return tz.id !== timezoneId;
-            }),
-        );
+        if (timezoneId === initialUserTimezoneId) {
+            return;
+        } // Prevent removing the initial user timezone
+        const newTimezones = timezones.filter((tz) => {
+            return tz.id !== timezoneId;
+        });
+        setTimezones(newTimezones);
     };
 
     const availableTimezones = [
@@ -65,7 +114,7 @@ export function TimezoneConverter() {
         'Australia/Sydney',
     ].filter((tz) => {
         return (
-            tz !== initialUserTimezone &&
+            tz !== initialUserTimezoneId &&
             !timezones.find((t) => {
                 return t.id === tz;
             })
@@ -141,7 +190,7 @@ export function TimezoneConverter() {
                                 setSelectedTimezone(e.target.value);
                             }}
                             className="mr-2 rounded border border-neutral-300 p-2">
-                            <option value="">Select a timezone to add</option>
+                            <option value="">Select Timezone</option>
                             {availableTimezones.map((tz) => {
                                 return (
                                     <option
@@ -174,7 +223,7 @@ export function TimezoneConverter() {
                                             </span>
                                         </div>
                                     </div>
-                                    {tz.id !== initialUserTimezone && (
+                                    {tz.id !== initialUserTimezoneId && (
                                         <button
                                             type="button"
                                             onClick={() => {
