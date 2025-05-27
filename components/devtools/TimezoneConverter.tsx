@@ -199,13 +199,13 @@ export function TimezoneConverter() {
                         />
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-4 flex flex-wrap gap-2">
                         <select
                             value={selectedTimezone}
                             onChange={(e) => {
                                 setSelectedTimezone(e.target.value);
                             }}
-                            className="mr-2 rounded border border-neutral-300 p-2">
+                            className="rounded border border-neutral-300 p-2">
                             <option value="">Select Timezone</option>
                             {availableTimezones.map((tz) => {
                                 return (
