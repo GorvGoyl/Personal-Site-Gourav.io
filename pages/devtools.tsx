@@ -6,6 +6,7 @@ import { ColorFill } from '../components/devtools/ColorFill';
 import { FullYearCalendar } from '../components/devtools/FullYearCalendar';
 import { LLMTokenCounter } from '../components/devtools/LLMTokenCounter';
 import { SvgPreview } from '../components/devtools/SvgPreview';
+import { TimezoneConverter } from '../components/devtools/TimezoneConverter';
 import { UuidGenerator } from '../components/devtools/UuidGenerator';
 import Header from '../components/Header';
 import { Container, LayoutType } from '../components/layout';
@@ -34,6 +35,7 @@ export default function Devtools() {
                             <SvgPreview />
                             <Bookmarks />
                             <FullYearCalendar />
+                            <TimezoneConverter />
                         </div>
                         <div className="mt-10">
                             <ColorFill />
