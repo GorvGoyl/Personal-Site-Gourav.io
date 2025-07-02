@@ -1,8 +1,6 @@
 import { ChromeStars, ChromeUsers } from '../components/badge';
 import Header from '../components/Header';
-import { Hiring } from '../components/hiring';
 import { Container } from '../components/layout';
-import { SubstackForm } from '../components/substack';
 import { TwitterIcon } from '../components/tags';
 import { TwitterBtn } from '../components/twitterBtn';
 // import author from "@/public/gourav.jpg";
@@ -161,9 +159,7 @@ export default function Home(): JSX.Element {
                                 </li>
                             </ul>
                         </div>
-                        <div>
-                            <Hiring />
-                        </div>
+                        <div>{/* <Hiring /> */}</div>
                         <div>
                             <a
                                 className="no-underline"
@@ -189,8 +185,8 @@ export default function Home(): JSX.Element {
                                                 link="https://chrome.google.com/webstore/detail/chatgpt-writer-email-writ/pdnenlnelpdomajfejgapbdpmjkfpjkp/"
                                             />
                                         </span>
-                                        Free Chrome extension to generate entire emails and messages using ChatGPT AI.
-                                        All sites are supported and enhanced support for Gmail.
+                                        AI-powered browser extension and web app for all your writing needs. Free to
+                                        Try.
                                         <br />
                                         {/* <i>Revenue: $3000+</i> */}
                                     </div>
@@ -462,9 +458,9 @@ export default function Home(): JSX.Element {
                         </div>
                         {/* <SubscribeForm type={FORMTYPE.Generic} /> */}
                     </div>
-                    <div className="mt-10">
+                    {/* <div className="mt-10">
                         <SubstackForm />
-                    </div>
+                    </div> */}
                 </div>
             </Container>
             <TwitterBtn />

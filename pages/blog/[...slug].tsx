@@ -14,7 +14,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { BannerChromeExtensionChatGPTWriter } from '../../components/banner';
 import Header from '../../components/Header';
 import { Hiring } from '../../components/hiring';
-import { SubstackForm } from '../../components/substack';
 import { frontmatterCache } from '../../lib/cache';
 import { initOutlinePosition } from '../../lib/mdx';
 import {
@@ -109,9 +108,9 @@ export default function Post(props: Post) {
                     </Link>
                 </div>
 
-                <div className="mt-14">
+                {/* <div className="mt-14">
                     <SubstackForm />
-                </div>
+                </div> */}
 
                 <div className="mt-5 flex justify-center">
                     <AuthorImg />

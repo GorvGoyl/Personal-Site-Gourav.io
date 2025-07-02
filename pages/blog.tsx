@@ -6,7 +6,6 @@ import { Icon } from '../components/icons';
 import { Container, LayoutType } from '../components/layout';
 import { Navbar } from '../components/navbar';
 import { ReadableDate } from '../components/ReadableDate';
-import { SubstackForm } from '../components/substack';
 import { TwitterBtn } from '../components/twitterBtn';
 import { getAllPublishedAndPreviewPostsFrontmatterFromNotion } from '../lib/notionUtils';
 import type { FrontmatterBlogpost } from '../types/types';
@@ -66,9 +65,9 @@ export default function Blog(props: { allPosts: FrontmatterBlogpost[] }): JSX.El
                     </div>
 
                     {/* <SubscribeForm type={FORMTYPE.Slim} /> */}
-                    <div className="mt-20">
+                    {/* <div className="mt-20">
                         <SubstackForm />
-                    </div>
+                    </div> */}
                 </main>
             </Container>
             <TwitterBtn />
