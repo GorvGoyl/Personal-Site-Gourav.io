@@ -105,34 +105,7 @@ export default function Home(): JSX.Element {
                                     Expertise: Web development (React, TS, Node.js), Chrome extension development, AI,
                                     startup consultation, and product management.
                                 </li> */}
-                                <li>
-                                    My Startups:{' '}
-                                    <a
-                                        href="https://chatgptwriter.ai"
-                                        target="_blank"
-                                        rel="noopener">
-                                        <LinkStyle>ChatGPT Writer</LinkStyle>
-                                    </a>{' '}
-                                    (AI powered writing tool),{' '}
-                                    <a
-                                        href="https://easypie.app"
-                                        target="_blank"
-                                        rel="noopener">
-                                        <LinkStyle>Easypie App</LinkStyle>
-                                    </a>{' '}
-                                    (no-code automation tool),{' '}
-                                    <a
-                                        href="https://www.crunchbase.com/organization/evrcare"
-                                        target="_blank"
-                                        rel="noopener">
-                                        <LinkStyle>EvrCare</LinkStyle>
-                                    </a>{' '}
-                                    (assistance platform for elderly people).
-                                </li>
-                                <li>
-                                    Companies/clients I have worked for: YC-backed startups, individual clients, big
-                                    tech corps like Samsung, Honeywell, etc.
-                                </li>
+
                                 <li>
                                     Checkout my open-source projects on{' '}
                                     <a
