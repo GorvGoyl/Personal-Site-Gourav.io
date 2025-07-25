@@ -206,32 +206,32 @@ export function FullYearCalendar() {
                                                     return (
                                                         <div
                                                             key={dayIndex}
-                                                            className={`relative ${day ? 'cursor-pointer' : ''}`}
-                                                            onClick={() => {
-                                                                if (day) {
-                                                                    handleAddOrEditNote(day);
-                                                                }
-                                                            }}>
+                                                            className="relative">
                                                             <div
-                                                                className={getDayClasses(
+                                                                className={`${getDayClasses(
                                                                     day,
                                                                     today,
                                                                     isWeekend,
                                                                     hasNote,
-                                                                )}>
+                                                                )} ${day ? 'cursor-pointer' : ''}`}
+                                                                onClick={() => {
+                                                                    if (day) {
+                                                                        handleAddOrEditNote(day);
+                                                                    }
+                                                                }}>
                                                                 {day ? day.date : ''}
                                                             </div>
                                                             {day && notes[formatDateKey(day)] && (
-                                                                <div className="absolute bottom-full left-1/2 z-10 mb-1 w-max -translate-x-1/2 transform rounded bg-amber-100 p-1 text-left text-[10px] opacity-95 shadow-lg">
+                                                                <div className="pointer-events-none absolute bottom-full left-1/2 z-10 w-max -translate-x-1/2 transform rounded bg-amber-100 px-1 text-left text-[10px] shadow-lg">
                                                                     <span>{notes[formatDateKey(day)]}</span>
                                                                     <button
                                                                         type="button"
-                                                                        className="ml-1 text-[10px] font-bold text-red-500"
+                                                                        className="pointer-events-auto ml-1 text-[10px] font-bold text-red-500 opacity-80"
                                                                         onClick={(e) => {
                                                                             e.stopPropagation();
                                                                             handleDeleteNote(day);
                                                                         }}>
-                                                                        🗑️
+                                                                        ⛌
                                                                     </button>
                                                                 </div>
                                                             )}
