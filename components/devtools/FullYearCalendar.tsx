@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Popup } from '../Popup';
 
@@ -11,6 +11,10 @@ type Day = {
 type Month = {
     name: string;
     days: (Day | null)[][];
+};
+
+type Notes = {
+    [date: string]: string;
 };
 
 const MONTH_NAMES = [
@@ -85,7 +89,7 @@ function generateMonthData(year: number, monthIndex: number): Month {
     return { name: MONTH_NAMES[monthIndex], days: monthData };
 }
 
-function getDayClasses(day: Day | null, today: Date, isWeekend: boolean): string {
+function getDayClasses(day: Day | null, today: Date, isWeekend: boolean, hasNote: boolean): string {
     const classes = ['flex', 'h-7', 'w-7', 'items-center', 'justify-center', 'rounded-full', 'p-1'];
     if (day === null) {
         classes.push('text-transparent');
@@ -95,6 +99,8 @@ function getDayClasses(day: Day | null, today: Date, isWeekend: boolean): string
     const isToday = day.date === today.getDate() && day.month === today.getMonth() && day.year === today.getFullYear();
     if (isToday) {
         classes.push('bg-blue-500', 'text-white');
+    } else if (hasNote) {
+        classes.push('bg-amber-200');
     } else if (isWeekend) {
         classes.push('bg-neutral-200');
     }
@@ -112,9 +118,54 @@ function generateYearCalendar(year: number): Month[] {
 
 export function FullYearCalendar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [notes, setNotes] = useState<Notes>({});
+    const [isNotesLoaded, setIsNotesLoaded] = useState(false);
     const currentYear = new Date().getFullYear();
     const yearCalendar = generateYearCalendar(currentYear);
     const today = new Date();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            try {
+                const savedNotes = localStorage.getItem('full-year-calendar-notes');
+                if (savedNotes) {
+                    setNotes(JSON.parse(savedNotes));
+                }
+            } catch (error) {
+                console.error('Failed to parse notes from localStorage', error);
+            } finally {
+                setIsNotesLoaded(true);
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        if (isNotesLoaded && typeof window !== 'undefined') {
+            localStorage.setItem('full-year-calendar-notes', JSON.stringify(notes));
+        }
+    }, [notes, isNotesLoaded]);
+
+    const formatDateKey = (day: Day): string => {
+        return `${day.year}-${day.month + 1}-${day.date}`;
+    };
+
+    const handleAddOrEditNote = (day: Day) => {
+        const dateKey = formatDateKey(day);
+        const noteText = prompt('Enter your note:', notes[dateKey] || '');
+        if (noteText !== null) {
+            setNotes((prev) => {
+                return { ...prev, [dateKey]: noteText };
+            });
+        }
+    };
+
+    const handleDeleteNote = (day: Day) => {
+        const dateKey = formatDateKey(day);
+        setNotes((prev) => {
+            const { [dateKey]: _, ...newNotes } = prev;
+            return newNotes;
+        });
+    };
 
     return (
         <>
@@ -151,11 +202,39 @@ export function FullYearCalendar() {
                                                 className="mt-1 grid grid-cols-7 text-center text-sm">
                                                 {week.map((day, dayIndex) => {
                                                     const isWeekend = dayIndex === 5 || dayIndex === 6;
+                                                    const hasNote = day ? !!notes[formatDateKey(day)] : false;
                                                     return (
                                                         <div
                                                             key={dayIndex}
-                                                            className={getDayClasses(day, today, isWeekend)}>
-                                                            {day ? day.date : ''}
+                                                            className={`relative ${day ? 'cursor-pointer' : ''}`}
+                                                            onClick={() => {
+                                                                if (day) {
+                                                                    handleAddOrEditNote(day);
+                                                                }
+                                                            }}>
+                                                            <div
+                                                                className={getDayClasses(
+                                                                    day,
+                                                                    today,
+                                                                    isWeekend,
+                                                                    hasNote,
+                                                                )}>
+                                                                {day ? day.date : ''}
+                                                            </div>
+                                                            {day && notes[formatDateKey(day)] && (
+                                                                <div className="absolute bottom-full left-1/2 z-10 mb-1 w-max -translate-x-1/2 transform rounded bg-amber-100 p-1 text-left text-[10px] opacity-95 shadow-lg">
+                                                                    <span>{notes[formatDateKey(day)]}</span>
+                                                                    <button
+                                                                        type="button"
+                                                                        className="ml-1 text-[10px] font-bold text-red-500"
+                                                                        onClick={(e) => {
+                                                                            e.stopPropagation();
+                                                                            handleDeleteNote(day);
+                                                                        }}>
+                                                                        🗑️
+                                                                    </button>
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     );
                                                 })}
