@@ -1,6 +1,7 @@
 {
-  "cleanUrls": true,
-  "github": {
-    "silent": true
-  }
+    "cleanUrls": true,
+    "github": {
+        "silent": true
+    },
+    "installCommand": "pnpm install"
 }
