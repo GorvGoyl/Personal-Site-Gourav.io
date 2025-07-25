@@ -5,7 +5,7 @@
     },
     "installCommand": "pnpm install",
     "functions": {
-        "api/**": {
+        "*": {
             "excludeFiles": "{.next,.pnpm-store,*.cache,node_modules,public,app}/**"
         }
     }
