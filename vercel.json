@@ -3,10 +3,5 @@
     "github": {
         "silent": true
     },
-    "installCommand": "pnpm install",
-    "functions": {
-        "*": {
-            "excludeFiles": "{.next,.pnpm-store,*.cache,node_modules,public,app}/**"
-        }
-    }
+    "installCommand": "pnpm install"
 }
