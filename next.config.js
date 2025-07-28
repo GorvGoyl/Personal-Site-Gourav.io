@@ -27,7 +27,7 @@ const nextConfig =
         //   defaultLocale: "en-US",
         // },
         // swcMinify: true,
-        output: 'standalone',
+        // output: 'standalone',
         staticPageGenerationTimeout: 120, // in seconds
         reactStrictMode: true,
         experimental: {
