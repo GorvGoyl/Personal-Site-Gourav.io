@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export function ScrollTopBtn(): JSX.Element {
+export function ScrollTopBtn() {
     const [isVisible, setVisibility] = useState(true);
 
     useEffect(() => {

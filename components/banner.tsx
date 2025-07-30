@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { usePath } from '../hooks/customHooks';
 
-export function Banner(): JSX.Element {
+export function Banner() {
     const [isVisible, setVisibility] = useState(true);
     const pathName = usePath().slice(1); // replace first "/"
 
@@ -50,7 +50,7 @@ export function Banner(): JSX.Element {
     );
 }
 
-export function BannerChromeExtensionChatGPTWriter(): JSX.Element {
+export function BannerChromeExtensionChatGPTWriter() {
     const [isVisible, setVisibility] = useState(true);
     const pathName = usePath().slice(1); // replace first "/"
 

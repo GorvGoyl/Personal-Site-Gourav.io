@@ -13,7 +13,7 @@ function LinkStyle({ children }: { children: React.ReactNode }) {
         </span>
     );
 }
-export default function Home(): JSX.Element {
+export default function Home() {
     return (
         <div>
             <Header type="website" />

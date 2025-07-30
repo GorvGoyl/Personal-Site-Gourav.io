@@ -2,7 +2,7 @@ import Header from '../../components/Header';
 import { Container, LayoutType } from '../../components/layout';
 import { Links, Navbar } from '../../components/navbar';
 
-function Privacy(): JSX.Element {
+function Privacy() {
     return (
         <>
             <Header

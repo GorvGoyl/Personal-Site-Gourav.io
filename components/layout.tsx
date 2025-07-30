@@ -4,7 +4,7 @@ export enum LayoutType {
     Devtools = 'pt-2 px-5 mx-auto max-w-screen-xl',
 }
 
-export function Container(Props: { layout?: LayoutType; children: JSX.Element | JSX.Element[] }): JSX.Element {
+export function Container(Props: { layout?: LayoutType; children: React.ReactNode | React.ReactNode[] }) {
     // const styles: LayoutType = {
     //   default: "py-20 px-5 mx-auto max-w-screen-md",
     //   blog: "pt-2 pb-20 px-5 mx-auto max-w-screen-md",

@@ -12,7 +12,7 @@ import type { FrontmatterBlogpost } from '../types/types';
 
 const RELATIVE_PATH = '/blog/';
 
-export default function Blog(props: { allPosts: FrontmatterBlogpost[] }): JSX.Element {
+export default function Blog(props: { allPosts: FrontmatterBlogpost[] }) {
     return (
         <>
             <Header

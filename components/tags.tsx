@@ -6,7 +6,7 @@ import { roundUpViewCount } from '../lib/utils';
 import { Icon } from './icons';
 import { ReadableDate } from './ReadableDate';
 
-export function CopyLink(): JSX.Element {
+export function CopyLink() {
     const [pageURL, setPageURL] = useState('');
     const [isCopied, setCopy] = useState(0);
     useEffect(() => {
@@ -36,7 +36,7 @@ export function CopyLink(): JSX.Element {
     );
 }
 
-export function Video(props: { src: string; className?: string; disableZoom?: boolean }): JSX.Element {
+export function Video(props: { src: string; className?: string; disableZoom?: boolean }) {
     let cls = '';
     cls += ' border-solid border-gray-300 shadow border mx-auto';
     // add any more classes provided by prop
@@ -68,7 +68,7 @@ export function Img(props: {
     className?: string;
     disableZoom?: boolean;
     loading?: 'lazy' | 'eager'; // lazy loading
-}): JSX.Element {
+}) {
     let cls = '';
     if (props.type === 'ss') {
         cls += ' rounded border-solid border-gray-300 border mx-auto text-center shadow';
@@ -110,7 +110,7 @@ export function Img(props: {
     return imgTag;
 }
 
-export function A(Props: { href: string; text: string; new: boolean; title?: string }): JSX.Element {
+export function A(Props: { href: string; text: string; new: boolean; title?: string }) {
     const target = Props.new ? '_blank' : '';
     const title = Props.title ? Props.title : Props.href;
     return (
@@ -131,7 +131,7 @@ function openWindowHandler(url: string, title: string, style: string) {
         window.location.href = url;
     }
 }
-export function ShareButton(props: { children: any; position: 'top' | 'bottom' }): JSX.Element {
+export function ShareButton(props: { children: any; position: 'top' | 'bottom' }) {
     const [isPopupShown, setPopup] = useState(false);
     const [isCopied, setCopy] = useState(0);
     const [pageURL, setPageURL] = useState('');
@@ -299,7 +299,7 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
     );
 }
 
-export function ShareComponent(): JSX.Element {
+export function ShareComponent() {
     return (
         <div className="relative my-12 flex justify-center">
             <ShareButton position="top">
@@ -316,7 +316,7 @@ export function ShareComponent(): JSX.Element {
     );
 }
 
-export function TwitterIcon(Props: { class?: string; title?: string }): JSX.Element {
+export function TwitterIcon(Props: { class?: string; title?: string }) {
     const defaultCls = 'inline w-3 h-3 align-baseline m-0 ml-1';
     const title = Props.title ?? '@GorvGoyl on twitter';
     const cls = Props.class ?? defaultCls;
@@ -329,7 +329,7 @@ export function TwitterIcon(Props: { class?: string; title?: string }): JSX.Elem
         />
     );
 }
-export function AuthorImg(): JSX.Element {
+export function AuthorImg() {
     return (
         <div className="flex items-center text-base">
             <Link href="/">
@@ -364,7 +364,7 @@ export function AuthorImg(): JSX.Element {
         </div>
     );
 }
-export function Author(props: { date: string | null; views: string }): JSX.Element {
+export function Author(props: { date: string | null; views: string }) {
     const dateHover = `${props.date ? 'Published date: ' + props.date : ''}`;
     return (
         <div className="flex items-center justify-between text-base">

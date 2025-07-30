@@ -12,7 +12,7 @@ export default function Header(props: {
     desc?: string;
     imgPath?: string | null;
     date?: string;
-}): JSX.Element {
+}) {
     const title = props.title || defaultProps.title;
     const type = props.type;
     const description = props.desc || defaultProps.desc;

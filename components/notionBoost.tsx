@@ -9,7 +9,7 @@ const Page = {
     AllFeatures: '/notion-boost/#-currently-added-features',
 };
 
-export function NavbarNotion(): JSX.Element {
+export function NavbarNotion() {
     const page = usePath();
     const relativePath = page === Page.WhatsNew ? '/notion-boost/' : '';
     return (
@@ -85,7 +85,7 @@ export function Badges() {
     );
 }
 
-export function Title(Props: { txt: string; homeURL: string; logo?: string }): JSX.Element {
+export function Title(Props: { txt: string; homeURL: string; logo?: string }) {
     return (
         <div className="flex items-start">
             <div className="">
@@ -113,11 +113,11 @@ export function Title(Props: { txt: string; homeURL: string; logo?: string }): J
     );
 }
 
-export function TagDate(props: { children: any }): JSX.Element {
+export function TagDate(props: { children: any }) {
     return <sup className="rounded bg-gray-200 px-1 text-gray-500">{props.children}</sup>;
 }
 
-export function Social(): JSX.Element {
+export function Social() {
     // 👍 Liked this extension? express your love by rating [★★★★★](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd) on chrome/firefox store.
     const pathName = usePath();
 

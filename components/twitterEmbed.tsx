@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Tweet } from 'react-twitter-widgets';
 
-export function TweetEmbed(Props: { tweetId: string }): JSX.Element {
+export function TweetEmbed(Props: { tweetId: string }) {
     const [isLoaded, setLoad] = useState(false);
 
     const load = () => {

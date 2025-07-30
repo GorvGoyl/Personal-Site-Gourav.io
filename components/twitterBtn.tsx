@@ -1,4 +1,4 @@
-export function TwitterBtn(): JSX.Element {
+export function TwitterBtn() {
     return (
         <div className="twitter mt-12 flex justify-center">
             <div>
