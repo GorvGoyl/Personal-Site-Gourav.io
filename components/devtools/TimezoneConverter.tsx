@@ -45,7 +45,7 @@ export function TimezoneConverter() {
         return defaultTimezones;
     });
     const [liveTime, setLiveTime] = useState(new Date());
-    const [timeOffsetInHours, setTimeOffsetInHours] = useState(0);
+    const [timeOffsetInHalfHours, setTimeOffsetInHalfHours] = useState(0);
     const [selectedTimezone, setSelectedTimezone] = useState('');
 
     useEffect(() => {
@@ -121,7 +121,7 @@ export function TimezoneConverter() {
         );
     });
 
-    const displayTime = new Date(liveTime.getTime() + timeOffsetInHours * 60 * 60 * 1000);
+    const displayTime = new Date(liveTime.getTime() + timeOffsetInHalfHours * 30 * 60 * 1000);
 
     type TimeOfDayCategory = 'Night' | 'Morning' | 'Afternoon' | 'Evening';
 
@@ -162,7 +162,7 @@ export function TimezoneConverter() {
                 onClick={() => {
                     setIsOpen(true);
                     // Reset offset when opening popup if desired, or maintain state
-                    // setTimeOffsetInHours(0);
+                    // setTimeOffsetInHalfHours(0);
                 }}>
                 🕰️ Timezone Converter
             </Button>
@@ -181,19 +181,19 @@ export function TimezoneConverter() {
                             className="mb-1 block text-sm font-medium text-neutral-700">
                             Adjust Time{' '}
                             <span>
-                                {timeOffsetInHours >= 0 ? <span>+</span> : <span />}
-                                {timeOffsetInHours} <span>hours</span>
+                                {timeOffsetInHalfHours >= 0 ? <span>+</span> : <span />}
+                                {timeOffsetInHalfHours / 2} <span>hours</span>
                             </span>
                         </label>
                         <input
                             type="range"
                             id="timeOffsetSlider"
-                            min="-12"
-                            max="12"
+                            min="-24"
+                            max="24"
                             step="1"
-                            value={timeOffsetInHours}
+                            value={timeOffsetInHalfHours}
                             onChange={(e) => {
-                                setTimeOffsetInHours(parseInt(e.target.value, 10));
+                                setTimeOffsetInHalfHours(parseInt(e.target.value, 10));
                             }}
                             className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200"
                         />
@@ -201,6 +201,7 @@ export function TimezoneConverter() {
 
                     <div className="mb-4 flex flex-wrap gap-2">
                         <select
+                            aria-label="Select timezone"
                             value={selectedTimezone}
                             onChange={(e) => {
                                 setSelectedTimezone(e.target.value);
