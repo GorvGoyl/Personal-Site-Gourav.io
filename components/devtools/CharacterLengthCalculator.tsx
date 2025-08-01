@@ -23,11 +23,16 @@ export function CharacterLengthCalculator() {
         const sizeInBytes = new Blob([inputText]).size;
 
         if (sizeInBytes < 1024) {
-            return `${sizeInBytes} Bytes (8 bits)`;
+            return `${sizeInBytes} Byte`;
         }
 
         const sizeInKB = sizeInBytes / 1024;
-        return `${sizeInKB.toFixed(2)} KB`;
+        if (sizeInKB < 1024) {
+            return `${sizeInKB.toFixed(2)} KB`;
+        }
+
+        const sizeInMB = sizeInKB / 1024;
+        return `${sizeInMB.toFixed(2)} MB`;
     };
 
     return (
@@ -52,26 +57,29 @@ export function CharacterLengthCalculator() {
                             value={text}
                             onChange={handleTextChange}
                             placeholder="Paste your text here..."
-                            className="h-40 w-full rounded-lg border p-3 dark:border-neutral-600 dark:bg-neutral-700"
+                            className="h-40 w-full rounded-lg border p-3"
                             autoFocus={true}
                         />
 
-                        <div className="space-y-1">
-                            <p>
-                                <span>Characters (with spaces): {text.length}</span>
-                            </p>
-                            <p>
-                                <span>Characters (without spaces): {text.replace(/\s/g, '').length}</span>
-                            </p>
-                            <p>
-                                <span>
-                                    Words:{' '}
-                                    {text.trim() ? <span>{text.trim().split(/\s+/).length}</span> : <span>0</span>}
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="flex flex-col rounded-lg bg-neutral-100 p-3">
+                                <span className="text-sm text-neutral-600">Characters (with spaces)</span>
+                                <span className="text-2xl font-semibold">{text.length}</span>
+                            </div>
+                            <div className="flex flex-col rounded-lg bg-neutral-100 p-3">
+                                <span className="text-sm text-neutral-600">Characters (without spaces)</span>
+                                <span className="text-2xl font-semibold">{text.replace(/\s/g, '').length}</span>
+                            </div>
+                            <div className="flex flex-col rounded-lg bg-neutral-100 p-3">
+                                <span className="text-sm text-neutral-600">Words</span>
+                                <span className="text-2xl font-semibold">
+                                    {text.trim() ? text.trim().split(/\s+/).length : 0}
                                 </span>
-                            </p>
-                            <p>
-                                <span>Size: {formatSize(text)}</span>
-                            </p>
+                            </div>
+                            <div className="flex flex-col rounded-lg bg-neutral-100 p-3">
+                                <span className="text-sm text-neutral-600">Size</span>
+                                <span className="text-2xl font-semibold">{formatSize(text)}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
