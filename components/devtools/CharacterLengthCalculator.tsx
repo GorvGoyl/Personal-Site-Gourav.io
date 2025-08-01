@@ -19,6 +19,17 @@ export function CharacterLengthCalculator() {
         localStorage.setItem('characterCalculatorText', newText);
     };
 
+    const formatSize = (inputText: string) => {
+        const sizeInBytes = new Blob([inputText]).size;
+
+        if (sizeInBytes < 1024) {
+            return `${sizeInBytes} Bytes (8 bits)`;
+        }
+
+        const sizeInKB = sizeInBytes / 1024;
+        return `${sizeInKB.toFixed(2)} KB`;
+    };
+
     return (
         <>
             <Button
@@ -57,6 +68,9 @@ export function CharacterLengthCalculator() {
                                     Words:{' '}
                                     {text.trim() ? <span>{text.trim().split(/\s+/).length}</span> : <span>0</span>}
                                 </span>
+                            </p>
+                            <p>
+                                <span>Size: {formatSize(text)}</span>
                             </p>
                         </div>
                     </div>
