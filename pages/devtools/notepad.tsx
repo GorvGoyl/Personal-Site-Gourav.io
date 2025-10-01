@@ -5,6 +5,7 @@ import { Links, Navbar } from '../../components/navbar';
 
 export default function NotepadPage() {
     const [text, setText] = useState('');
+    const [fontSize, setFontSize] = useState(16);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
@@ -12,6 +13,11 @@ export default function NotepadPage() {
         const savedNotes = localStorage.getItem('notepadText');
         if (savedNotes) {
             setText(savedNotes);
+        }
+        // Load saved font size from localStorage
+        const savedFontSize = localStorage.getItem('notepadFontSize');
+        if (savedFontSize) {
+            setFontSize(Number.parseInt(savedFontSize, 10));
         }
         // Focus the textarea after loading
         if (textareaRef.current) {
@@ -29,6 +35,18 @@ export default function NotepadPage() {
     const handleClear = () => {
         setText('');
         localStorage.removeItem('notepadText');
+    };
+
+    const increaseFontSize = () => {
+        const newSize = Math.min(fontSize + 2, 32);
+        setFontSize(newSize);
+        localStorage.setItem('notepadFontSize', newSize.toString());
+    };
+
+    const decreaseFontSize = () => {
+        const newSize = Math.max(fontSize - 2, 10);
+        setFontSize(newSize);
+        localStorage.setItem('notepadFontSize', newSize.toString());
     };
 
     const getStats = () => {
@@ -59,12 +77,31 @@ export default function NotepadPage() {
                                 <span>{stats.words} words</span>
                                 <span>{stats.lines} lines</span>
                             </div>
-                            <button
-                                type="button"
-                                onClick={handleClear}
-                                className="text-xs text-neutral-500 hover:text-red-600">
-                                clear
-                            </button>
+                            <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-2">
+                                    <button
+                                        type="button"
+                                        onClick={decreaseFontSize}
+                                        className="text-xs text-neutral-500 hover:text-neutral-900"
+                                        title="Decrease font size">
+                                        A-
+                                    </button>
+                                    <span className="text-xs text-neutral-400">{fontSize}px</span>
+                                    <button
+                                        type="button"
+                                        onClick={increaseFontSize}
+                                        className="text-xs text-neutral-500 hover:text-neutral-900"
+                                        title="Increase font size">
+                                        A+
+                                    </button>
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={handleClear}
+                                    className="text-xs text-neutral-500 hover:text-red-600">
+                                    clear
+                                </button>
+                            </div>
                         </div>
 
                         <textarea
@@ -73,7 +110,8 @@ export default function NotepadPage() {
                             onChange={handleTextChange}
                             placeholder="Start typing..."
                             spellCheck={false}
-                            className="min-h-[600px] w-full resize-none border-0 p-0 font-mono text-base focus:outline-none focus:ring-0"
+                            style={{ fontSize: `${fontSize}px` }}
+                            className="min-h-[600px] w-full resize-none border-0 p-0 font-mono focus:outline-none focus:ring-0"
                         />
                     </div>
                 </main>
