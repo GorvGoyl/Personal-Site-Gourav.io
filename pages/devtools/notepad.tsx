@@ -6,6 +6,7 @@ import { Links, Navbar } from '../../components/navbar';
 export default function NotepadPage() {
     const [text, setText] = useState('');
     const [fontSize, setFontSize] = useState(16);
+    const [padding, setPadding] = useState(0);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
@@ -18,6 +19,11 @@ export default function NotepadPage() {
         const savedFontSize = localStorage.getItem('notepadFontSize');
         if (savedFontSize) {
             setFontSize(Number.parseInt(savedFontSize, 10));
+        }
+        // Load saved padding from localStorage
+        const savedPadding = localStorage.getItem('notepadPadding');
+        if (savedPadding) {
+            setPadding(Number.parseInt(savedPadding, 10));
         }
         // Focus the textarea after loading
         if (textareaRef.current) {
@@ -47,6 +53,18 @@ export default function NotepadPage() {
         const newSize = Math.max(fontSize - 2, 10);
         setFontSize(newSize);
         localStorage.setItem('notepadFontSize', newSize.toString());
+    };
+
+    const increasePadding = () => {
+        const newPadding = Math.min(padding + 20, 200);
+        setPadding(newPadding);
+        localStorage.setItem('notepadPadding', newPadding.toString());
+    };
+
+    const decreasePadding = () => {
+        const newPadding = Math.max(padding - 20, 0);
+        setPadding(newPadding);
+        localStorage.setItem('notepadPadding', newPadding.toString());
     };
 
     const getStats = () => {
@@ -95,6 +113,23 @@ export default function NotepadPage() {
                                         A+
                                     </button>
                                 </div>
+                                <div className="flex items-center gap-2">
+                                    <button
+                                        type="button"
+                                        onClick={decreasePadding}
+                                        className="text-xs text-neutral-500 hover:text-neutral-900"
+                                        title="Decrease padding">
+                                        ←
+                                    </button>
+                                    <span className="text-xs text-neutral-400">{padding}px</span>
+                                    <button
+                                        type="button"
+                                        onClick={increasePadding}
+                                        className="text-xs text-neutral-500 hover:text-neutral-900"
+                                        title="Increase padding">
+                                        →
+                                    </button>
+                                </div>
                                 <button
                                     type="button"
                                     onClick={handleClear}
@@ -110,8 +145,12 @@ export default function NotepadPage() {
                             onChange={handleTextChange}
                             placeholder="Start typing..."
                             spellCheck={false}
-                            style={{ fontSize: `${fontSize}px` }}
-                            className="min-h-[600px] w-full resize-none border-0 p-0 font-mono focus:outline-none focus:ring-0"
+                            style={{
+                                fontSize: `${fontSize}px`,
+                                paddingLeft: `${padding}px`,
+                                paddingRight: `${padding}px`,
+                            }}
+                            className="min-h-[600px] w-full resize-none border-0 py-0 font-mono focus:outline-none focus:ring-0"
                         />
                     </div>
                 </main>
