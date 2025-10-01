@@ -5,6 +5,7 @@ import { CodeRunner } from '../components/devtools/CodeRunner';
 import { ColorFill } from '../components/devtools/ColorFill';
 import { FullYearCalendar } from '../components/devtools/FullYearCalendar';
 import { LLMTokenCounter } from '../components/devtools/LLMTokenCounter';
+import { Notepad } from '../components/devtools/Notepad';
 import { SvgPreview } from '../components/devtools/SvgPreview';
 import { TimezoneConverter } from '../components/devtools/TimezoneConverter';
 import { UuidGenerator } from '../components/devtools/UuidGenerator';
@@ -36,6 +37,7 @@ export default function Devtools() {
                             <Bookmarks />
                             <FullYearCalendar />
                             <TimezoneConverter />
+                            <Notepad />
                         </div>
                         <div className="mt-10">
                             <ColorFill />
