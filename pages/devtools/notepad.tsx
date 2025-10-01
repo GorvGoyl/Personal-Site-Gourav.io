@@ -48,7 +48,7 @@ export default function NotepadPage() {
                 title="Notepad - Simple notepad with localStorage"
             />
 
-            <Container layout={LayoutType.Devtools}>
+            <Container layout={LayoutType.Blog}>
                 <Navbar link={Links.Blog} />
                 <main>
                     <h1 className="mb-6 text-2xl font-semibold">Notepad</h1>
