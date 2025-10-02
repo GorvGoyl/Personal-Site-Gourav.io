@@ -149,8 +149,10 @@ export default function NotepadPage() {
                                 fontSize: `${fontSize}px`,
                                 paddingLeft: `${padding}px`,
                                 paddingRight: `${padding}px`,
+                                scrollbarWidth: 'none',
+                                msOverflowStyle: 'none',
                             }}
-                            className="min-h-[600px] w-full resize-none border-0 py-0 font-mono focus:outline-none focus:ring-0"
+                            className="min-h-[600px] w-full resize-none border-0 py-0 font-mono focus:outline-none focus:ring-0 [&::-webkit-scrollbar]:hidden"
                         />
                     </div>
                 </main>
