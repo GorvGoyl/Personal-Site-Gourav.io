@@ -138,7 +138,7 @@ export default function Home() {
                                     </div>
                                     <p className="leading-relaxed text-slate-600">
                                         AI-powered browser extension and web app for all your writing needs. Free to
-                                        Try.
+                                        Try. Users can also use their own API key.
                                     </p>
                                     {/* <i>Revenue: $3000+</i> */}
                                 </div>
