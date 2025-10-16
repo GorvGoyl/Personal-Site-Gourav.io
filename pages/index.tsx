@@ -69,8 +69,8 @@ export default function Home() {
                             <a
                                 href="https://jetwriter.ai"
                                 target="_blank"
-                                title="JetWriter AI">
-                                <LinkStyle>JetWriter AI</LinkStyle>
+                                title="Jetwriter AI">
+                                <LinkStyle>Jetwriter AI</LinkStyle>
                             </a>
                             , among other passion projects. Since 2015, I have been working in the software industry,
                             building end-to-end products and leading teams. And trust me, I've debugged more code than
@@ -92,6 +92,12 @@ export default function Home() {
                                 title="Blog">
                                 <LinkStyle>blog</LinkStyle>
                             </Link>
+                            . Checkout my open-source projects on{' '}
+                            <a
+                                target="_blank"
+                                href="https://github.com/gorvgoyl/">
+                                <LinkStyle>Github</LinkStyle>
+                            </a>
                             .{/* Currently, I am  working for{" "} */}
                             {/* <a href="https://monadical.com" target="_blank" rel="noopener">
                 Monadical
@@ -100,37 +106,6 @@ export default function Home() {
                             <div className="mt-5 rounded-lg bg-slate-200 p-3 text-base text-slate-700">
                                 👋 For business inquiries reach out to me at <i>hey@gourav.io</i>
                             </div>
-                            <ul>
-                                {/* <li>
-                                    Expertise: Web development (React, TS, Node.js), Chrome extension development, AI,
-                                    startup consultation, and product management.
-                                </li> */}
-
-                                <li>
-                                    Checkout my open-source projects on{' '}
-                                    <a
-                                        target="_blank"
-                                        href="https://github.com/gorvgoyl/">
-                                        <LinkStyle>Github</LinkStyle>
-                                    </a>
-                                    .
-                                </li>
-                                <li>
-                                    Technical Writing:{' '}
-                                    <a
-                                        target="_blank"
-                                        href="https://stackoverflow.com/users/3073272/gorvgoyl">
-                                        <LinkStyle>StackOverflow profile</LinkStyle>
-                                    </a>{' '}
-                                    and{' '}
-                                    <Link
-                                        href="/blog"
-                                        title="Blog">
-                                        <LinkStyle>blog</LinkStyle>
-                                    </Link>
-                                    .
-                                </li>
-                            </ul>
                         </div>
                         <div>{/* <Hiring /> */}</div>
                         <div>
@@ -139,16 +114,18 @@ export default function Home() {
                                 href="#projects">
                                 <h2 id="projects">Startups & Projects</h2>
                             </a>
-                            <ul>
-                                <li>
-                                    <div>
+                            <div className="not-prose space-y-6">
+                                {/* Jetwriter AI */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <a
                                             href="https://jetwriter.ai"
                                             target={'_blank'}
-                                            title="JetWriter AI browser extension">
-                                            JetWriter AI
+                                            title="Jetwriter AI browser extension"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
+                                            Jetwriter AI
                                         </a>
-                                        <span className="badge-wrapper">
+                                        <div className="flex flex-wrap gap-2 md:justify-end">
                                             <ChromeUsers
                                                 id="pdnenlnelpdomajfejgapbdpmjkfpjkp"
                                                 link="https://chrome.google.com/webstore/detail/chatgpt-writer-email-writ/pdnenlnelpdomajfejgapbdpmjkfpjkp/"
@@ -157,22 +134,25 @@ export default function Home() {
                                                 id="pdnenlnelpdomajfejgapbdpmjkfpjkp"
                                                 link="https://chrome.google.com/webstore/detail/chatgpt-writer-email-writ/pdnenlnelpdomajfejgapbdpmjkfpjkp/"
                                             />
-                                        </span>
+                                        </div>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
                                         AI-powered browser extension and web app for all your writing needs. Free to
                                         Try.
-                                        <br />
-                                        {/* <i>Revenue: $3000+</i> */}
-                                    </div>
-                                </li>
+                                    </p>
+                                    {/* <i>Revenue: $3000+</i> */}
+                                </div>
 
-                                <li>
-                                    <div>
+                                {/* Notion Boost */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <Link
                                             href="/notion-boost"
-                                            title="Notion Boost browser extension">
+                                            title="Notion Boost browser extension"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
                                             Notion Boost
                                         </Link>
-                                        <span className="badge-wrapper">
+                                        <div className="flex flex-wrap gap-2 md:justify-end">
                                             <a
                                                 title="source code"
                                                 href="https://github.com/GorvGoyl/Notion-Boost-browser-extension"
@@ -195,23 +175,27 @@ export default function Home() {
                                                     'https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd'
                                                 }
                                             />
-                                        </span>
+                                        </div>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
                                         A popular browser extension to make Notion (<em>www.notion.so</em>) more
                                         productive.
-                                        <br />
-                                        {/* <i>Revenue: $3000+</i> */}
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
+                                    </p>
+                                    {/* <i>Revenue: $3000+</i> */}
+                                </div>
+
+                                {/* Shortcut Menubar */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <a
                                             href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar"
                                             target="blank"
                                             rel="noopener"
-                                            title="Shortcut Menubar VSCode extension">
+                                            title="Shortcut Menubar VSCode extension"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
                                             Shortcut Menubar
                                         </a>
-                                        <span className="badge-wrapper">
+                                        <div className="flex flex-wrap gap-2 md:justify-end">
                                             <a
                                                 title="source code"
                                                 href="https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension"
@@ -239,19 +223,24 @@ export default function Home() {
                         loading="lazy"
                         src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square&color=fb9836"
                       /> */}
-                                        </span>
+                                        </div>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
                                         VSCode extension which adds useful buttons like beautify, open files, undo,
                                         redo, etc to the editor in Visual Studio Code.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
+                                    </p>
+                                </div>
+
+                                {/* Clone Wars */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <Link
                                             href="/clone-wars"
-                                            title="Clone Wars">
+                                            title="Clone Wars"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
                                             Clone Wars
                                         </Link>
-                                        <span className="badge-wrapper">
+                                        <div className="flex flex-wrap gap-2 md:justify-end">
                                             <a
                                                 title="GitHub repo stars"
                                                 href="https://github.com/gorvgoyl/clone-wars"
@@ -274,32 +263,40 @@ export default function Home() {
                                                     src="https://flat.badgen.net/github/forks/gorvgoyl/clone-wars?color=fb9836&icon=github"
                                                 />
                                             </a>
-                                        </span>
+                                        </div>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
                                         List of 100+ open-source clones of popular sites like Airbnb, Spotify, Tiktok,
                                         Netflix, etc.
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
+                                    </p>
+                                </div>
+
+                                {/* Devtools */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
                                         <Link
                                             href="/devtools"
-                                            title="Devtools">
+                                            title="Devtools"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
                                             Devtools
                                         </Link>
                                     </div>
-                                    <div>
+                                    <p className="leading-relaxed text-slate-600">
                                         Collection of handy tools for devs (Code Runner, UUID Generator, Aspect Ratio
                                         Calculator, LLM Token Counter, etc).
-                                    </div>
-                                </li>
-                                <li>
-                                    <p>
+                                    </p>
+                                </div>
+
+                                {/* Gourav.io */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <Link
                                             href="/"
-                                            title="https://gourav.io">
+                                            title="https://gourav.io"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
                                             Gourav.io
-                                        </Link>{' '}
-                                        <span className="badge-wrapper">
+                                        </Link>
+                                        <div className="flex flex-wrap gap-2 md:justify-end">
                                             <a
                                                 title="source code"
                                                 href="https://github.com/GorvGoyl/Personal-Site-Gourav.io"
@@ -333,70 +330,94 @@ export default function Home() {
                                                     src="https://flat.badgen.net/github/forks/gorvgoyl/Personal-Site-Gourav.io?color=fb9836&icon=github"
                                                 />
                                             </a>
-                                        </span>
+                                        </div>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
                                         Open-source portfolio and blog built using React (Next.js), Typescript, Tailwind
-                                        CSS, MDX and deployed on Vercel. <br />
-                                        {/* <i>Total Views: 100,000+</i> */}
+                                        CSS, MDX and deployed on Vercel.
                                     </p>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a
-                                            href="https://easypie.app"
-                                            target={'_blank'}
-                                            title="Easypie App">
-                                            Easypie App
-                                        </a>{' '}
-                                        (discontinued)
-                                        <br />
-                                        No-code automation tool.
-                                        <br />
+                                    {/* <i>Total Views: 100,000+</i> */}
+                                </div>
+
+                                {/* Easypie App */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <div className="flex items-center gap-2">
+                                            <a
+                                                href="https://easypie.app"
+                                                target={'_blank'}
+                                                title="Easypie App"
+                                                className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
+                                                Easypie App
+                                            </a>
+                                            <span className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+                                                discontinued
+                                            </span>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a
-                                            href="https://chatgptmessage.ai"
-                                            target={'_blank'}
-                                            title="ChatGPT Message AI">
-                                            ChatGPT Message AI
-                                        </a>{' '}
-                                        (discontinued)
-                                        <br />
+                                    <p className="leading-relaxed text-slate-600">No-code automation tool.</p>
+                                </div>
+
+                                {/* ChatGPT Message AI */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <div className="flex items-center gap-2">
+                                            <div
+                                                title="ChatGPT Message AI"
+                                                className="text-xl font-semibold text-slate-900">
+                                                ChatGPT Message AI
+                                            </div>
+                                            <span className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+                                                discontinued
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
                                         Use ChatGPT AI inside WhatsApp. Interact with AI without ever leaving WhatsApp.
-                                        <br />
-                                        {/* <i>Revenue: $3000+</i> */}
+                                    </p>
+                                    {/* <i>Revenue: $3000+</i> */}
+                                </div>
+
+                                {/* Gimme Summary AI */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <div className="flex items-center gap-2">
+                                            <div
+                                                title="Gimme Summary AI chrome extension"
+                                                className="text-xl font-semibold text-slate-900">
+                                                Gimme Summary AI
+                                            </div>
+                                            <span className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+                                                discontinued
+                                            </span>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a
-                                            href="https://gimmesummary.ai"
-                                            target={'_blank'}
-                                            title="Gimme Summary AI chrome extension">
-                                            Gimme Summary AI
-                                        </a>{' '}
-                                        (discontinued)
-                                        <br />
+                                    <p className="leading-relaxed text-slate-600">
                                         Free chrome extension to summarize articles on the web using AI (ChatGPT).
-                                        <br />
-                                        {/* <i>Revenue: $3000+</i> */}
+                                    </p>
+                                    {/* <i>Revenue: $3000+</i> */}
+                                </div>
+
+                                {/* EvrCare */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <div className="flex items-center gap-2">
+                                            <a
+                                                href="https://www.crunchbase.com/organization/evrcare"
+                                                target={'_blank'}
+                                                title="EvrCare"
+                                                className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
+                                                EvrCare
+                                            </a>
+                                            <span className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+                                                discontinued
+                                            </span>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a
-                                            href="https://www.crunchbase.com/organization/evrcare"
-                                            target={'_blank'}
-                                            title="EvrCare">
-                                            EvrCare
-                                        </a>{' '}
-                                        (discontinued)
-                                        <br />
+                                    <p className="leading-relaxed text-slate-600">
                                         Assistance platform for elderly people.
-                                        <br />
-                                    </div>
-                                </li>
+                                    </p>
+                                </div>
                                 {/* <li>
                   <p>
                     <a
@@ -427,7 +448,7 @@ export default function Home() {
                     responsiveness without using any css framework or library.
                   </p>
                 </li> */}
-                            </ul>
+                            </div>
                         </div>
                         {/* <SubscribeForm type={FORMTYPE.Generic} /> */}
                     </div>
