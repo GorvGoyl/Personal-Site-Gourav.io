@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { BannerChromeExtensionChatGPTWriter } from '../components/banner';
+import { BannerChromeExtension } from '../components/banner';
 import Header from '../components/Header';
 import { Icon } from '../components/icons';
 import { Container, LayoutType } from '../components/layout';
@@ -21,7 +21,7 @@ export default function Blog(props: { allPosts: FrontmatterBlogpost[] }) {
             />
 
             <Container layout={LayoutType.Blog}>
-                <BannerChromeExtensionChatGPTWriter />
+                <BannerChromeExtension />
                 <Navbar />
                 <main className="prose prose-lg">
                     <header>

@@ -50,7 +50,7 @@ export function Banner() {
     );
 }
 
-export function BannerChromeExtensionChatGPTWriter() {
+export function BannerChromeExtension() {
     const [isVisible, setVisibility] = useState(true);
     const pathName = usePath().slice(1); // replace first "/"
 
@@ -68,7 +68,7 @@ export function BannerChromeExtensionChatGPTWriter() {
                 </div>
                 <div className="ml-4 text-center text-sm">
                     <a
-                        href={`https://chatgptwriter.ai?ref=${pathName}`}
+                        href={`https://jetwriter.ai?ref=${pathName}`}
                         target="_blank"
                         className={
                             'inline-block cursor-pointer whitespace-nowrap rounded-full border border-gray-400 px-3 py-2 text-sm leading-none text-gray-200 hover:border-transparent hover:bg-white hover:text-black hover:no-underline focus:outline-none'

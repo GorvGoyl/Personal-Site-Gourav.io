@@ -11,7 +11,7 @@ import { getMDXComponent } from 'mdx-bundler/client';
 import type { GetStaticPaths } from 'next';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-import { BannerChromeExtensionChatGPTWriter } from '../../components/banner';
+import { BannerChromeExtension } from '../../components/banner';
 import Header from '../../components/Header';
 import { Hiring } from '../../components/hiring';
 import { frontmatterCache } from '../../lib/cache';
@@ -74,7 +74,7 @@ export default function Post(props: Post) {
             />
 
             <Container layout={LayoutType.Blog}>
-                <BannerChromeExtensionChatGPTWriter />
+                <BannerChromeExtension />
                 <Navbar link={Links.Blog} />
                 <main className="prose mx-auto max-w-screen-md">
                     <article className={`${post.code_block} ${md.css}`}>

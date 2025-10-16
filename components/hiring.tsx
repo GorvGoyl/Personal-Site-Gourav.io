@@ -12,7 +12,7 @@ export function Hiring() {
                 <Link
                     className="font-semibold text-green-500 underline"
                     target="_blank"
-                    href={'https://chatgptwriter.ai'}>
+                    href={'https://jetwriter.ai'}>
                     AI Startup
                 </Link>
                 .{' '}
@@ -20,8 +20,8 @@ export function Hiring() {
                     Send resume:{' '}
                     <a
                         className="font-semibold text-green-500 underline"
-                        href="mailto:gourav@chatgptwriter.ai">
-                        gourav@chatgptwriter.ai
+                        href="mailto:gourav@jetwriter.ai">
+                        gourav@jetwriter.ai
                     </a>{' '}
                 </div>
             </div>

@@ -67,10 +67,10 @@ export default function Home() {
                             Namaste 🙏, I am a tech startup founder who values delivering a great user experience. I am
                             currently building{' '}
                             <a
-                                href="https://chatgptwriter.ai"
+                                href="https://jetwriter.ai"
                                 target="_blank"
-                                rel="noopener">
-                                <LinkStyle>ChatGPT Writer</LinkStyle>
+                                title="JetWriter AI">
+                                <LinkStyle>JetWriter AI</LinkStyle>
                             </a>
                             , among other passion projects. Since 2015, I have been working in the software industry,
                             building end-to-end products and leading teams. And trust me, I've debugged more code than
@@ -143,10 +143,10 @@ export default function Home() {
                                 <li>
                                     <div>
                                         <a
-                                            href="https://chatgptwriter.ai"
+                                            href="https://jetwriter.ai"
                                             target={'_blank'}
-                                            title="Notion Boost browser extension">
-                                            ChatGPT Writer
+                                            title="JetWriter AI browser extension">
+                                            JetWriter AI
                                         </a>
                                         <span className="badge-wrapper">
                                             <ChromeUsers
