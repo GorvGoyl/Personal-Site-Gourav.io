@@ -334,45 +334,8 @@ export default function TodoApp() {
             <div className="mx-auto max-w-screen-md px-5">
                 <div className="py-6">
                     <div className="mx-auto max-w-3xl">
-                        {/* Add Section Form */}
-                        <div className="mb-6 rounded-lg bg-white p-3 shadow-sm md:p-4">
-                            <h2 className="mb-2 text-sm font-semibold text-slate-900">Add New Section</h2>
-                            <div className="flex flex-col gap-2 sm:flex-row">
-                                <input
-                                    type="text"
-                                    value={newSectionName}
-                                    onChange={(e) => {
-                                        setNewSectionName(e.target.value);
-                                    }}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter') {
-                                            addSection();
-                                        }
-                                    }}
-                                    placeholder="e.g., Shopping, Work Tasks, Personal"
-                                    className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
-                                    onFocus={handleFocus}
-                                    onBlur={handleBlur}
-                                />
-                                <button
-                                    type="button"
-                                    onClick={addSection}
-                                    className="rounded bg-slate-500 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-orange-300">
-                                    Add Section
-                                </button>
-                            </div>
-                        </div>
-
                         {/* Sections List */}
                         <div className="space-y-4">
-                            {sections.length === 0 && (
-                                <div className="rounded-lg bg-white p-6 text-center shadow-sm">
-                                    <p className="text-sm text-slate-500">
-                                        No sections yet. Create your first section to get started!
-                                    </p>
-                                </div>
-                            )}
-
                             {sections.map((section, index) => {
                                 const completedCount = section.todos.filter((todo) => {
                                     return todo.completed;
@@ -707,6 +670,41 @@ export default function TodoApp() {
                                 );
                             })}
                         </div>
+                        {/* Add Section Form */}
+                        <div className="mt-6 rounded-lg bg-white p-3 shadow-sm md:p-4">
+                            <h2 className="mb-2 text-sm font-semibold text-slate-900">Add New Section</h2>
+                            <div className="flex flex-col gap-2 sm:flex-row">
+                                <input
+                                    type="text"
+                                    value={newSectionName}
+                                    onChange={(e) => {
+                                        setNewSectionName(e.target.value);
+                                    }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            addSection();
+                                        }
+                                    }}
+                                    placeholder="e.g., Shopping, Work Tasks, Personal"
+                                    className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
+                                    onFocus={handleFocus}
+                                    onBlur={handleBlur}
+                                />
+                                <button
+                                    type="button"
+                                    onClick={addSection}
+                                    className="rounded bg-slate-500 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-orange-300">
+                                    Add Section
+                                </button>
+                            </div>
+                        </div>
+                        {sections.length === 0 && (
+                            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
+                                <p className="text-sm text-slate-500">
+                                    No sections yet. Create your first section to get started!
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
