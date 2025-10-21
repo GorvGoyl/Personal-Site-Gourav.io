@@ -298,7 +298,7 @@ export default function Home() {
                                         </Link>
                                     </div>
                                     <p className="leading-relaxed text-slate-600">
-                                        A simple and elegant todo app with sections. Perfect for organizing tasks like
+                                        A simple and fast todo app with sections. Perfect for organizing tasks like
                                         groceries, bills, etc on mobile. No signup required.
                                     </p>
                                 </div>

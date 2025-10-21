@@ -353,7 +353,7 @@ export default function TodoApp() {
                 <title>Todo App - Gourav Goyal</title>
                 <meta
                     name="description"
-                    content="A simple and elegant todo app with sections"
+                    content="A simple and fast todo app with sections"
                 />
                 <style>{`
                     footer {
