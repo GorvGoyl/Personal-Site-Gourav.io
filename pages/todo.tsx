@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect, useState, type FocusEvent } from 'react';
+import { useEffect, useRef, useState, type ChangeEvent, type FocusEvent } from 'react';
 import { useDevice } from '../hooks/useDevice';
 
 type TodoItem = {
@@ -26,6 +26,7 @@ export default function TodoApp() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isInputFocused, setIsInputFocused] = useState(false);
     const device = useDevice();
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     // Load data from localStorage on mount
     useEffect(() => {
@@ -285,6 +286,41 @@ export default function TodoApp() {
         setEditingTodoText('');
     }
 
+    function exportData() {
+        const jsonString = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(sections, null, 2))}`;
+        const link = document.createElement('a');
+        link.href = jsonString;
+        link.download = 'todos.json';
+        link.click();
+    }
+
+    function importData(event: ChangeEvent<HTMLInputElement>) {
+        const file = event.target.files?.[0];
+        if (!file) {
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const text = e.target?.result;
+            if (typeof text === 'string') {
+                try {
+                    const data = JSON.parse(text) as Section[];
+                    // Basic validation
+                    if (Array.isArray(data)) {
+                        setSections(data);
+                    } else {
+                        alert('Invalid file format.');
+                    }
+                } catch (error) {
+                    console.error('Failed to parse JSON file:', error);
+                    alert('Failed to import data. Please check the file format.');
+                }
+            }
+        };
+        reader.readAsText(file);
+    }
+
     function handleFocus(event: FocusEvent<HTMLInputElement>) {
         if (device === 'desktop') {
             return;
@@ -329,12 +365,40 @@ export default function TodoApp() {
             <div className="border-b border-slate-200 bg-white shadow-sm">
                 <div className="mx-auto max-w-screen-md px-5">
                     <div className="flex items-center justify-between py-3">
-                        <div className="text-lg font-bold text-slate-900">Todo App</div>
                         <Link
-                            href="/"
-                            className="text-sm text-slate-600 hover:text-orange-500">
-                            ← Home
+                            href="/todo"
+                            className="text-lg font-bold text-slate-900">
+                            Todo App
                         </Link>
+                        <div className="flex items-center gap-4">
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    fileInputRef.current?.click();
+                                }}
+                                className="rounded-md px-2 py-1 text-sm text-slate-600 hover:bg-slate-100 hover:text-orange-500">
+                                Import
+                            </button>
+                            <input
+                                type="file"
+                                ref={fileInputRef}
+                                onChange={importData}
+                                className="hidden"
+                                accept=".json"
+                                title="Import JSON file"
+                            />
+                            <button
+                                type="button"
+                                onClick={exportData}
+                                className="rounded-md px-2 py-1 text-sm text-slate-600 hover:bg-slate-100 hover:text-orange-500">
+                                Export
+                            </button>
+                            <Link
+                                href="/"
+                                className="rounded-md px-2 py-1 text-sm text-slate-600 hover:bg-slate-100 hover:text-orange-500">
+                                ← Home
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -376,6 +440,7 @@ export default function TodoApp() {
                                                         autoFocus={true}
                                                         onFocus={handleFocus}
                                                         onBlur={handleBlur}
+                                                        aria-label="Edit section name"
                                                     />
                                                     <div className="flex gap-1.5">
                                                         <button
@@ -550,6 +615,7 @@ export default function TodoApp() {
                                                                     autoFocus={true}
                                                                     onFocus={handleFocus}
                                                                     onBlur={handleBlur}
+                                                                    aria-label="Edit todo text"
                                                                 />
                                                                 <div className="flex shrink-0 gap-1">
                                                                     <button

@@ -291,7 +291,7 @@ export default function Home() {
                                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="mb-3">
                                         <Link
-                                            href="/todo-app"
+                                            href="/todo"
                                             title="Todo App"
                                             className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
                                             Todo App
