@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState, type FocusEvent } from 'react';
+import { useDevice } from '../hooks/useDevice';
 
 type TodoItem = {
     id: string;
@@ -24,6 +25,7 @@ export default function TodoApp() {
     const [editingTodoText, setEditingTodoText] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
     const [isInputFocused, setIsInputFocused] = useState(false);
+    const device = useDevice();
 
     // Load data from localStorage on mount
     useEffect(() => {
@@ -284,6 +286,9 @@ export default function TodoApp() {
     }
 
     function handleFocus(event: FocusEvent<HTMLInputElement>) {
+        if (device === 'desktop') {
+            return;
+        }
         setIsInputFocused(true);
         const target = event.target;
         setTimeout(() => {
@@ -300,6 +305,9 @@ export default function TodoApp() {
     }
 
     function handleBlur() {
+        if (device === 'desktop') {
+            return;
+        }
         setIsInputFocused(false);
     }
 
