@@ -541,7 +541,7 @@ export default function TodoApp() {
                                                 onClick={() => {
                                                     addTodo(section.id);
                                                 }}
-                                                className="rounded bg-orange-500 px-3 py-1.5 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-1 focus:ring-orange-300">
+                                                className="rounded border border-orange-300 bg-orange-100 px-3 py-1.5 text-sm font-medium text-orange-600 hover:bg-orange-200 focus:outline-none focus:ring-1 focus:ring-orange-300">
                                                 Add Item
                                             </button>
                                         </div>
