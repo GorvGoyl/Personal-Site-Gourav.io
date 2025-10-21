@@ -22,6 +22,8 @@
         "export": "next build && next export",
         "deploy-lint": "pnpm run lint && pnpm run tsc && pnpm run export && firebase deploy --only hosting",
         "tsc": "tsc",
+        "myip_mac": "echo http://`ipconfig getifaddr en0`:3000",
+        "myip_win": "ipconfig /all && echo 'use like http://laptop_IPv4_address:3000'",
         "lint": "eslint **/*.{ts,tsx} -c .eslintrc.js",
         "lint-next": "next lint",
         "stylelint": "npx stylelint '**/*.{css,scss,sass}'",

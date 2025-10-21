@@ -287,6 +287,22 @@ export default function Home() {
                                     </p>
                                 </div>
 
+                                {/* Todo App */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <Link
+                                            href="/todo-app"
+                                            title="Todo App"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
+                                            Todo App
+                                        </Link>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
+                                        A simple and elegant todo app with sections. Perfect for organizing tasks like
+                                        groceries, bills, etc on mobile. No signup required.
+                                    </p>
+                                </div>
+
                                 {/* Gourav.io */}
                                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
