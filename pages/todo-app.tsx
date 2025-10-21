@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FocusEvent } from 'react';
 
 type TodoItem = {
     id: string;
@@ -282,6 +282,21 @@ export default function TodoApp() {
         setEditingTodoText('');
     }
 
+    function handleFocus(event: FocusEvent<HTMLInputElement>) {
+        const target = event.target;
+        setTimeout(() => {
+            const elementTop = target.getBoundingClientRect().top + window.scrollY;
+            const viewportHeight = window.innerHeight;
+            // Position the element at one-third from the top of the viewport.
+            const offset = viewportHeight / 3;
+
+            window.scrollTo({
+                top: elementTop - offset,
+                behavior: 'smooth',
+            });
+        }, 100);
+    }
+
     return (
         <div className="min-h-screen bg-slate-50">
             <Head>
@@ -330,6 +345,7 @@ export default function TodoApp() {
                                     }}
                                     placeholder="e.g., Shopping, Work Tasks, Personal"
                                     className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
+                                    onFocus={handleFocus}
                                 />
                                 <button
                                     type="button"
@@ -380,6 +396,7 @@ export default function TodoApp() {
                                                         }}
                                                         className="flex-1 rounded border border-slate-300 px-2 py-1 text-base font-semibold text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
                                                         autoFocus={true}
+                                                        onFocus={handleFocus}
                                                     />
                                                     <div className="flex gap-1.5">
                                                         <button
@@ -508,6 +525,7 @@ export default function TodoApp() {
                                                 }}
                                                 placeholder="Add item..."
                                                 className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
+                                                onFocus={handleFocus}
                                             />
                                             <button
                                                 type="button"
@@ -550,6 +568,7 @@ export default function TodoApp() {
                                                                     }}
                                                                     className="flex-1 rounded border border-slate-300 px-2 py-1 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
                                                                     autoFocus={true}
+                                                                    onFocus={handleFocus}
                                                                 />
                                                                 <div className="flex shrink-0 gap-1">
                                                                     <button
