@@ -594,7 +594,7 @@ export default function TodoApp() {
                                                 return (
                                                     <div
                                                         key={todo.id}
-                                                        className="flex items-center gap-2 rounded border border-slate-200 bg-slate-50 p-2 transition-colors hover:border-slate-300">
+                                                        className="flex items-center gap-2 rounded border border-slate-200 bg-slate-50 px-2 py-0.5 transition-colors hover:border-slate-300">
                                                         {editingTodoId === todo.id ? (
                                                             <>
                                                                 <input
