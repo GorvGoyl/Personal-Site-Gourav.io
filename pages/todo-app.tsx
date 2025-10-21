@@ -23,6 +23,7 @@ export default function TodoApp() {
     const [editingTodoId, setEditingTodoId] = useState<string | null>(null);
     const [editingTodoText, setEditingTodoText] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isInputFocused, setIsInputFocused] = useState(false);
 
     // Load data from localStorage on mount
     useEffect(() => {
@@ -283,6 +284,7 @@ export default function TodoApp() {
     }
 
     function handleFocus(event: FocusEvent<HTMLInputElement>) {
+        setIsInputFocused(true);
         const target = event.target;
         setTimeout(() => {
             const elementTop = target.getBoundingClientRect().top + window.scrollY;
@@ -294,11 +296,15 @@ export default function TodoApp() {
                 top: elementTop - offset,
                 behavior: 'smooth',
             });
-        }, 100);
+        }, 300);
+    }
+
+    function handleBlur() {
+        setIsInputFocused(false);
     }
 
     return (
-        <div className="min-h-screen bg-slate-50">
+        <div className={`min-h-screen bg-slate-50 ${isInputFocused ? 'pb-[50vh]' : ''}`}>
             <Head>
                 <title>Todo App - Gourav Goyal</title>
                 <meta
@@ -346,6 +352,7 @@ export default function TodoApp() {
                                     placeholder="e.g., Shopping, Work Tasks, Personal"
                                     className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
                                     onFocus={handleFocus}
+                                    onBlur={handleBlur}
                                 />
                                 <button
                                     type="button"
@@ -397,6 +404,7 @@ export default function TodoApp() {
                                                         className="flex-1 rounded border border-slate-300 px-2 py-1 text-base font-semibold text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
                                                         autoFocus={true}
                                                         onFocus={handleFocus}
+                                                        onBlur={handleBlur}
                                                     />
                                                     <div className="flex gap-1.5">
                                                         <button
@@ -526,6 +534,7 @@ export default function TodoApp() {
                                                 placeholder="Add item..."
                                                 className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
                                                 onFocus={handleFocus}
+                                                onBlur={handleBlur}
                                             />
                                             <button
                                                 type="button"
@@ -569,6 +578,7 @@ export default function TodoApp() {
                                                                     className="flex-1 rounded border border-slate-300 px-2 py-1 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
                                                                     autoFocus={true}
                                                                     onFocus={handleFocus}
+                                                                    onBlur={handleBlur}
                                                                 />
                                                                 <div className="flex shrink-0 gap-1">
                                                                     <button
