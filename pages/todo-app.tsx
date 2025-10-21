@@ -200,6 +200,50 @@ export default function TodoApp() {
         setSections(newSections);
     }
 
+    function moveTodoUp(sectionId: string, todoId: string) {
+        setSections(
+            sections.map((section) => {
+                if (section.id === sectionId) {
+                    const todoIndex = section.todos.findIndex((todo) => {
+                        return todo.id === todoId;
+                    });
+                    if (todoIndex <= 0) {
+                        return section;
+                    }
+
+                    const newTodos = [...section.todos];
+                    const temp = newTodos[todoIndex];
+                    newTodos[todoIndex] = newTodos[todoIndex - 1];
+                    newTodos[todoIndex - 1] = temp;
+                    return { ...section, todos: newTodos };
+                }
+                return section;
+            }),
+        );
+    }
+
+    function moveTodoDown(sectionId: string, todoId: string) {
+        setSections(
+            sections.map((section) => {
+                if (section.id === sectionId) {
+                    const todoIndex = section.todos.findIndex((todo) => {
+                        return todo.id === todoId;
+                    });
+                    if (todoIndex === -1 || todoIndex >= section.todos.length - 1) {
+                        return section;
+                    }
+
+                    const newTodos = [...section.todos];
+                    const temp = newTodos[todoIndex];
+                    newTodos[todoIndex] = newTodos[todoIndex + 1];
+                    newTodos[todoIndex + 1] = temp;
+                    return { ...section, todos: newTodos };
+                }
+                return section;
+            }),
+        );
+    }
+
     return (
         <div className="min-h-screen bg-slate-50">
             <Head>
@@ -252,7 +296,7 @@ export default function TodoApp() {
                                 <button
                                     type="button"
                                     onClick={addSection}
-                                    className="rounded bg-orange-500 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-orange-600 focus:outline-none focus:ring-1 focus:ring-orange-300">
+                                    className="rounded bg-slate-500 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-orange-300">
                                     Add Section
                                 </button>
                             </div>
@@ -327,7 +371,7 @@ export default function TodoApp() {
                                                         )}
                                                     </div>
                                                     <div className="flex shrink-0 gap-1">
-                                                        <div className="flex flex-col gap-0.5">
+                                                        <div className="mr-2 flex flex-col gap-0.5">
                                                             <button
                                                                 type="button"
                                                                 onClick={() => {
@@ -374,49 +418,26 @@ export default function TodoApp() {
                                                             onClick={() => {
                                                                 startEditingSection(section.id, section.name);
                                                             }}
-                                                            className="rounded bg-slate-200 p-1.5 text-slate-700 hover:bg-slate-300"
+                                                            className="rounded px-2 py-0.5 text-slate-400 hover:text-slate-900"
                                                             title="Edit section">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                className="h-3.5 w-3.5"
+                                                                className="h-4 w-4"
                                                                 viewBox="0 0 20 20"
                                                                 fill="currentColor">
                                                                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
                                                             </svg>
                                                         </button>
-                                                        {section.todos.some((todo) => {
-                                                            return todo.completed;
-                                                        }) && (
-                                                            <button
-                                                                type="button"
-                                                                onClick={() => {
-                                                                    clearCompletedTodos(section.id);
-                                                                }}
-                                                                className="rounded bg-slate-200 p-1.5 text-slate-700 hover:bg-slate-300"
-                                                                title="Clear completed">
-                                                                <svg
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    className="h-3.5 w-3.5"
-                                                                    viewBox="0 0 20 20"
-                                                                    fill="currentColor">
-                                                                    <path
-                                                                        fillRule="evenodd"
-                                                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                                        clipRule="evenodd"
-                                                                    />
-                                                                </svg>
-                                                            </button>
-                                                        )}
                                                         <button
                                                             type="button"
                                                             onClick={() => {
                                                                 deleteSection(section.id);
                                                             }}
-                                                            className="rounded bg-red-100 p-1.5 text-red-700 hover:bg-red-200"
+                                                            className="rounded px-2 py-1 text-slate-400 hover:text-red-500"
                                                             title="Delete section">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                className="h-3.5 w-3.5"
+                                                                className="h-4 w-4"
                                                                 viewBox="0 0 20 20"
                                                                 fill="currentColor">
                                                                 <path
@@ -468,7 +489,7 @@ export default function TodoApp() {
                                                 </p>
                                             )}
 
-                                            {section.todos.map((todo) => {
+                                            {section.todos.map((todo, todoIndex) => {
                                                 return (
                                                     <div
                                                         key={todo.id}
@@ -491,25 +512,69 @@ export default function TodoApp() {
                                                                 {todo.text}
                                                             </span>
                                                         </label>
-                                                        <button
-                                                            type="button"
-                                                            onClick={() => {
-                                                                deleteTodo(section.id, todo.id);
-                                                            }}
-                                                            className="text-slate-400 hover:text-red-600"
-                                                            title="Delete item">
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                className="h-4 w-4"
-                                                                viewBox="0 0 20 20"
-                                                                fill="currentColor">
-                                                                <path
-                                                                    fillRule="evenodd"
-                                                                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                                                                    clipRule="evenodd"
-                                                                />
-                                                            </svg>
-                                                        </button>
+                                                        <div className="flex shrink-0 gap-3">
+                                                            <div className="flex flex-col gap-0.5">
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={() => {
+                                                                        moveTodoUp(section.id, todo.id);
+                                                                    }}
+                                                                    disabled={todoIndex === 0}
+                                                                    className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
+                                                                    title="Move up">
+                                                                    <svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        className="h-3 w-3"
+                                                                        viewBox="0 0 20 20"
+                                                                        fill="currentColor">
+                                                                        <path
+                                                                            fillRule="evenodd"
+                                                                            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                                                                            clipRule="evenodd"
+                                                                        />
+                                                                    </svg>
+                                                                </button>
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={() => {
+                                                                        moveTodoDown(section.id, todo.id);
+                                                                    }}
+                                                                    disabled={todoIndex === section.todos.length - 1}
+                                                                    className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
+                                                                    title="Move down">
+                                                                    <svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        className="h-3 w-3"
+                                                                        viewBox="0 0 20 20"
+                                                                        fill="currentColor">
+                                                                        <path
+                                                                            fillRule="evenodd"
+                                                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                                            clipRule="evenodd"
+                                                                        />
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <button
+                                                                type="button"
+                                                                onClick={() => {
+                                                                    deleteTodo(section.id, todo.id);
+                                                                }}
+                                                                className="text-slate-400 hover:text-red-600"
+                                                                title="Delete item">
+                                                                <svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    className="h-4 w-4"
+                                                                    viewBox="0 0 20 20"
+                                                                    fill="currentColor">
+                                                                    <path
+                                                                        fillRule="evenodd"
+                                                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                                        clipRule="evenodd"
+                                                                    />
+                                                                </svg>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 );
                                             })}
