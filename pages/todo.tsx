@@ -42,6 +42,22 @@ export default function TodoApp() {
         setIsLoaded(true);
     }, []);
 
+    // Register service worker for PWA functionality
+    useEffect(() => {
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker
+                    .register('/sw-todo.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    }, []);
+
     // Save data to localStorage whenever sections change
     useEffect(() => {
         if (isLoaded) {
@@ -355,6 +371,73 @@ export default function TodoApp() {
                     name="description"
                     content="A simple and fast todo app with sections"
                 />
+
+                {/* PWA Meta Tags */}
+                <meta
+                    name="application-name"
+                    content="Todo App"
+                />
+                <meta
+                    name="apple-mobile-web-app-capable"
+                    content="yes"
+                />
+                <meta
+                    name="apple-mobile-web-app-status-bar-style"
+                    content="default"
+                />
+                <meta
+                    name="apple-mobile-web-app-title"
+                    content="Todo App"
+                />
+                <meta
+                    name="mobile-web-app-capable"
+                    content="yes"
+                />
+                <meta
+                    name="theme-color"
+                    content="#000000"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+                />
+
+                {/* PWA Manifest */}
+                <link
+                    rel="manifest"
+                    href="/manifest-todo.json"
+                />
+
+                {/* Apple Touch Icons */}
+                <link
+                    rel="apple-touch-icon"
+                    href="/apple-touch-icon.png"
+                />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="192x192"
+                    href="/android-chrome-192x192.png"
+                />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="512x512"
+                    href="/android-chrome-512x512.png"
+                />
+
+                {/* Favicons */}
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href="/favicon-32x32.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                    href="/favicon-16x16.png"
+                />
+
                 <style>{`
                     footer {
                         display: none !important;

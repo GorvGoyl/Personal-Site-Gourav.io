@@ -1,0 +1,31 @@
+{
+    "name": "Todo App - Organize Your Tasks",
+    "short_name": "Todo",
+    "description": "A simple and fast todo application with sections. Organize your tasks efficiently with offline support.",
+    "start_url": "/todo",
+    "scope": "/todo",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#f8fafc",
+    "theme_color": "#000000",
+    "categories": ["productivity", "utilities"],
+    "icons": [
+        {
+            "src": "/todo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/todo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/todo.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+}
