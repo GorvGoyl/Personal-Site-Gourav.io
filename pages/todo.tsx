@@ -15,6 +15,11 @@ type Section = {
     todos: TodoItem[];
 };
 
+type BeforeInstallPromptEvent = Event & {
+    prompt: () => Promise<void>;
+    userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+};
+
 export default function TodoApp() {
     const [sections, setSections] = useState<Section[]>([]);
     const [newSectionName, setNewSectionName] = useState('');
@@ -25,8 +30,10 @@ export default function TodoApp() {
     const [editingTodoText, setEditingTodoText] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
     const [isInputFocused, setIsInputFocused] = useState(false);
+    const [showInstallPrompt, setShowInstallPrompt] = useState(false);
     const device = useDevice();
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const deferredPromptRef = useRef<BeforeInstallPromptEvent | null>(null);
 
     // Load data from localStorage on mount
     useEffect(() => {
@@ -56,6 +63,35 @@ export default function TodoApp() {
                     });
             });
         }
+    }, []);
+
+    // Capture the install prompt event
+    useEffect(() => {
+        const handleBeforeInstallPrompt = (event: Event) => {
+            // Check if user has previously dismissed the prompt
+            const isDismissed = localStorage.getItem('pwa-install-dismissed');
+            if (isDismissed === 'true') {
+                return;
+            }
+
+            // Prevent the mini-infobar from appearing on mobile
+            event.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPromptRef.current = event as BeforeInstallPromptEvent;
+            // Show the install button
+            setShowInstallPrompt(true);
+        };
+
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+        // Check if app is already installed
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            setShowInstallPrompt(false);
+        }
+
+        return () => {
+            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
     }, []);
 
     // Save data to localStorage whenever sections change
@@ -363,6 +399,34 @@ export default function TodoApp() {
         setIsInputFocused(false);
     }
 
+    async function handleInstallClick() {
+        if (!deferredPromptRef.current) {
+            return;
+        }
+
+        // Show the install prompt
+        await deferredPromptRef.current.prompt();
+
+        // Wait for the user to respond to the prompt
+        const choiceResult = await deferredPromptRef.current.userChoice;
+
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+        } else {
+            console.log('User dismissed the install prompt');
+        }
+
+        // Clear the deferred prompt
+        deferredPromptRef.current = null;
+        setShowInstallPrompt(false);
+    }
+
+    function handleDismissInstall() {
+        // Store dismissal preference in localStorage
+        localStorage.setItem('pwa-install-dismissed', 'true');
+        setShowInstallPrompt(false);
+    }
+
     return (
         <div className={`min-h-screen bg-slate-50 ${isInputFocused ? 'pb-[50vh]' : ''}`}>
             <Head>
@@ -444,6 +508,54 @@ export default function TodoApp() {
                     }
                 `}</style>
             </Head>
+
+            {/* PWA Install Prompt Banner */}
+            {showInstallPrompt && (
+                <div className="border-b border-blue-200 bg-blue-50 px-5 py-3">
+                    <div className="mx-auto flex max-w-screen-md items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                            <img
+                                src="/todo.png"
+                                alt="Todo App Icon"
+                                className="h-10 w-10 shrink-0 rounded-lg"
+                            />
+                            <div>
+                                <p className="text-sm font-medium text-slate-900">Install Todo App</p>
+                                <p className="text-xs text-slate-700">Add to home screen for quick access</p>
+                            </div>
+                        </div>
+                        <div className="flex shrink-0 gap-2">
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    handleInstallClick().catch((error) => {
+                                        console.error('Install failed:', error);
+                                    });
+                                }}
+                                className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1">
+                                Install
+                            </button>
+                            <button
+                                type="button"
+                                onClick={handleDismissInstall}
+                                className="rounded-md px-2 py-1.5 text-sm text-slate-700 hover:bg-slate-100 focus:outline-none"
+                                aria-label="Dismiss install prompt">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="border-b border-slate-200 bg-white shadow-sm">
                 <div className="mx-auto max-w-screen-md px-5">
