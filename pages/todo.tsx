@@ -447,7 +447,7 @@ export default function TodoApp() {
                 />
                 <meta
                     name="apple-mobile-web-app-status-bar-style"
-                    content="default"
+                    content="black-translucent"
                 />
                 <meta
                     name="apple-mobile-web-app-title"
@@ -459,7 +459,7 @@ export default function TodoApp() {
                 />
                 <meta
                     name="theme-color"
-                    content="#000000"
+                    content="#f8fafc"
                 />
                 <meta
                     name="viewport"
