@@ -5,9 +5,13 @@
     "start_url": "/todo",
     "scope": "/todo",
     "display": "standalone",
-    "orientation": "portrait",
-    "background_color": "#f8fafc",
-    "theme_color": "#000000",
+    "orientation": "any",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "edge_side_panel": {},
+    "launch_handler": {
+        "client_mode": "auto"
+    },
     "categories": ["productivity", "utilities"],
     "icons": [
         {
