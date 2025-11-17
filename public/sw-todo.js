@@ -2,7 +2,7 @@ const CACHE_NAME = 'todo-app-v1';
 const TODO_PAGE_CACHE = 'todo-page-cache-v1';
 
 // Assets to cache for the todo app
-const urlsToCache = ['/todo', '/manifest-todo.json'];
+const urlsToCache = ['/todo', '/manifest-todo.json', '/todo.png'];
 
 // Install event - cache the todo page and assets
 self.addEventListener('install', (event) => {
@@ -39,7 +39,33 @@ self.addEventListener('fetch', (event) => {
     const { request } = event;
     const url = new URL(request.url);
 
-    // Only handle requests for the todo page and its assets
+    // Cache Next.js build assets (JS, CSS, images under /_next) with a cache-first strategy
+    if (url.pathname.startsWith('/_next')) {
+        event.respondWith(
+            caches.open(CACHE_NAME).then((cache) => {
+                return cache.match(request).then((cachedResponse) => {
+                    if (cachedResponse) {
+                        return cachedResponse;
+                    }
+
+                    return fetch(request)
+                        .then((networkResponse) => {
+                            if (networkResponse && networkResponse.status === 200) {
+                                cache.put(request, networkResponse.clone());
+                            }
+                            return networkResponse;
+                        })
+                        .catch(() => {
+                            // If the asset is not in cache and the network fails, just fail silently.
+                            return caches.match('/todo');
+                        });
+                });
+            }),
+        );
+        return;
+    }
+
+    // Only handle requests for the todo page and its core assets
     if (
         url.pathname.startsWith('/todo') ||
         url.pathname === '/manifest-todo.json' ||
