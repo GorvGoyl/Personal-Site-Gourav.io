@@ -168,7 +168,7 @@ export default function TodoApp() {
         setSections(
             sections.map((section) => {
                 if (section.id === sectionId) {
-                    return { ...section, todos: [...section.todos, newTodo] };
+                    return { ...section, todos: [newTodo, ...section.todos] };
                 }
                 return section;
             }),
