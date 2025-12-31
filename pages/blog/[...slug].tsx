@@ -13,7 +13,6 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { BannerChromeExtension } from '../../components/banner';
 import Header from '../../components/Header';
-import { Hiring } from '../../components/hiring';
 import { frontmatterCache } from '../../lib/cache';
 import { initOutlinePosition } from '../../lib/mdx';
 import {
@@ -88,7 +87,7 @@ export default function Post(props: Post) {
                         <MDX components={MDXComponents as any} />
 
                         <ThatsAll />
-                        <Hiring />
+                        {/* <Hiring /> */}
 
                         <DiscussArticle matter={props.frontmatter} />
                         {/* <EditArticle articleEditLink={articleEditLink} /> */}
