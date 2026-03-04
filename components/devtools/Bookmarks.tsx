@@ -28,22 +28,23 @@ export function Bookmarks() {
                         <ul className="list-inside list-disc space-y-2 text-sm">
                             <li>
                                 <a
-                                    href="https://lmarena.ai/?leaderboard"
+                                    href="https://yupp.ai/leaderboard/text"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 underline hover:text-blue-800">
+                                    Yupp Leaderboard <ArrowNorthEastIcon className="inline-block h-3 w-3" />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://arena.ai/leaderboard"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-600 underline hover:text-blue-800">
                                     LMSys Leaderboard <ArrowNorthEastIcon className="inline-block h-3 w-3" />
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    href="https://web.lmarena.ai/leaderboard"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 underline hover:text-blue-800">
-                                    LMSys Dev Leaderboard <ArrowNorthEastIcon className="inline-block h-3 w-3" />
-                                </a>
-                            </li>
+
                             <li>
                                 <a
                                     href="https://aider.chat/docs/leaderboards/"
@@ -61,6 +62,15 @@ export function Bookmarks() {
                                     className="text-blue-600 underline hover:text-blue-800">
                                     ArtificialAnalysis Leaderboard{' '}
                                     <ArrowNorthEastIcon className="inline-block h-3 w-3" />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://fmhy.net/ai#ai-benchmarks"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 underline hover:text-blue-800">
+                                    FMHY AI Benchmarks <ArrowNorthEastIcon className="inline-block h-3 w-3" />
                                 </a>
                             </li>
                         </ul>
