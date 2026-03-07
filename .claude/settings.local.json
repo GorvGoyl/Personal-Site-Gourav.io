@@ -1,6 +1,6 @@
 {
     "permissions": {
-        "allow": ["Bash(grep:*)", "Bash(xargs:*)", "WebSearch"]
+        "allow": ["Bash(grep:*)", "Bash(xargs:*)", "WebSearch", "Edit", "Write"]
     },
 
     "env": {
