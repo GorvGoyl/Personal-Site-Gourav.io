@@ -73,6 +73,26 @@ export function Bookmarks() {
                                     FMHY AI Benchmarks <ArrowNorthEastIcon className="inline-block h-3 w-3" />
                                 </a>
                             </li>
+                            <li>
+                                <a
+                                    href="https://agentset.ai/embeddings"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 underline hover:text-blue-800">
+                                    Agentset Embeddings Leaderboard{' '}
+                                    <ArrowNorthEastIcon className="inline-block h-3 w-3" />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://agentset.ai/rerankers"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 underline hover:text-blue-800">
+                                    Agentset Rerankers Leaderboard{' '}
+                                    <ArrowNorthEastIcon className="inline-block h-3 w-3" />
+                                </a>
+                            </li>
                         </ul>
                     </section>
 
