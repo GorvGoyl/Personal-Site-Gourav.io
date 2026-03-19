@@ -295,6 +295,22 @@ export default function Home() {
                                     </p>
                                 </div>
 
+                                {/* Timer */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <Link
+                                            href="/timer"
+                                            title="Meetup Timer"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
+                                            Meetup Timer
+                                        </Link>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
+                                        A simple countdown timer for meetup intro rounds. Plays a sound when time is
+                                        almost up. Big display, works great on phone.
+                                    </p>
+                                </div>
+
                                 {/* Gourav.io */}
                                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">

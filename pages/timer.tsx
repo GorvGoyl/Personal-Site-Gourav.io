@@ -135,12 +135,7 @@ export default function TimerPage() {
                 const next = prev - 1;
                 const offset = reminderOffsetRef.current;
 
-                if (
-                    offset !== null &&
-                    next === offset &&
-                    next > 0 &&
-                    !reminderFiredRef.current
-                ) {
+                if (offset !== null && next === offset && next > 0 && !reminderFiredRef.current) {
                     reminderFiredRef.current = true;
                     if (audioContextRef.current) {
                         playReminderTone(audioContextRef.current);
@@ -216,23 +211,31 @@ export default function TimerPage() {
         <>
             <Head>
                 <title>Timer</title>
-                <meta name="description" content="Meetup intro round timer" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta
+                    name="description"
+                    content="Meetup intro round timer"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
             </Head>
 
             <style>{`footer { display: none !important; }`}</style>
 
-            <div className="min-h-screen flex flex-col bg-white">
+            <div className="flex min-h-screen flex-col bg-white">
                 {/* Header bar */}
                 <nav className="flex items-center justify-between px-4 py-3 text-sm text-slate-500">
-                    <span className="font-semibold text-slate-700 text-base">Timer</span>
-                    <Link href="/" className="hover:text-slate-800">
+                    <span className="text-base font-semibold text-slate-700">Meetup Timer</span>
+                    <Link
+                        href="/"
+                        className="hover:text-slate-800">
                         Home
                     </Link>
                 </nav>
 
                 {/* Timer centered */}
-                <div className="flex-1 flex flex-col items-center justify-center gap-8 px-4 pb-8">
+                <div className="flex flex-1 flex-col items-center justify-center gap-8 px-4 pb-8">
                     <TimerDisplay
                         remainingSeconds={remainingSeconds}
                         totalSeconds={totalSeconds}
@@ -255,14 +258,14 @@ export default function TimerPage() {
 
                     {/* Reminder setting */}
                     {!isRunning && (
-                        <div className="flex items-center gap-2 text-slate-500 text-sm mt-4">
-                            <label className="flex items-center gap-2 cursor-pointer">
+                        <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+                            <label className="flex cursor-pointer items-center gap-2">
                                 <input
                                     type="checkbox"
                                     title="Enable reminder"
                                     checked={reminderOffsetSeconds !== null}
                                     onChange={(e) => handleReminderToggle(e.target.checked)}
-                                    className="w-4 h-4 accent-blue-600"
+                                    className="h-4 w-4 accent-blue-600"
                                 />
                                 Remind
                             </label>
@@ -278,7 +281,7 @@ export default function TimerPage() {
                                         value={reminderInput}
                                         onChange={(e) => setReminderInput(e.target.value)}
                                         onBlur={handleReminderBlur}
-                                        className="w-16 text-center border border-slate-300 rounded-md px-2 py-1 focus:border-blue-500 focus:outline-none"
+                                        className="w-16 rounded-md border border-slate-300 px-2 py-1 text-center focus:border-blue-500 focus:outline-none"
                                     />
                                     <span>sec before end</span>
                                 </>
