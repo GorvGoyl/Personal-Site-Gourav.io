@@ -4,8 +4,6 @@
         "DISABLE_ERROR_REPORTING": "1",
         "DISABLE_BUG_COMMAND": "1"
     },
-    "effortLevel": "high",
-    "model": "opus",
     "permissions": {
         "allow": [
             "Bash(grep:*)",
@@ -17,7 +15,11 @@
             "mcp__ide__getDiagnostics",
             "Bash(npx tsx:*)",
             "Bash(claude:*)",
-            "WebFetch"
+            "WebFetch",
+            "Bash(pnpm tsc:*)",
+            "Bash(pnpm lint:*)"
         ]
-    }
+    },
+    "model": "opus",
+    "effortLevel": "high"
 }

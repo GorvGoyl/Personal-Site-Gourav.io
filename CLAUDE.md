@@ -14,22 +14,29 @@ pnpm stylelint        # CSS/SCSS linting
 ```
 
 Content generation (runs automatically in postbuild):
+
 ```bash
 pnpm sitemap          # Generate sitemap.xml
 pnpm feed             # Generate RSS feed
 ```
+
+## Package Manager
+
+Always use `pnpm`, never `npm` or `yarn`. This applies to installing dependencies, running scripts, and all other package manager operations.
 
 ## Architecture Overview
 
 ### Content Sourcing (Hybrid Model)
 
 **Blog posts** are sourced from Notion as CMS:
+
 - Notion API fetches posts at build time (`lib/notionUtils.ts`)
 - Converted to markdown via `notion-to-md`, then bundled with MDX
 - Images are downloaded from Notion and saved to `public/blog/{slug}/`
 - Frontmatter validated with Zod schemas (`types/types.tsx`)
 
 **Project pages** use local markdown files:
+
 - Located in `content/projects/{project-name}/index.md`
 - Supports nested routes: `content/projects/notion-boost/whats-new/index.md`
 - Images and OG images stored in the same folder as the markdown file
@@ -50,6 +57,7 @@ Content goes through: remark-gfm → rehype-slug → rehype-code-titles → rehy
 ## Code Style Requirements
 
 From `.cursorrules`:
+
 - TypeScript, React, Next.js, Tailwind CSS
 - Function-declaration syntax for React components
 - Prefer `Type` over `Interface`
@@ -64,6 +72,7 @@ From `.cursorrules`:
 ## Environment Variables
 
 Required for full functionality:
+
 - `NOTION_API_KEY` - Notion integration token
 - `NOTION_BLOGPOSTS_DB` - Notion database ID for blog posts
 - `BUTTONDOWN_API_KEY` - Newsletter subscription

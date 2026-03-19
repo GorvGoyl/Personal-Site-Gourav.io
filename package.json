@@ -42,6 +42,7 @@
         "mdx-bundler": "^10.0.3",
         "next": "16.2.0",
         "notion-to-md": "^3.1.1",
+        "npm-check-updates": "^19.6.5",
         "react": "18.3.1",
         "react-dom": "18.3.1",
         "react-dom-confetti": "^0.2.0",

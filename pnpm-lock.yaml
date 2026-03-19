@@ -38,6 +38,9 @@ importers:
       notion-to-md:
         specifier: ^3.1.1
         version: 3.1.1(encoding@0.1.13)
+      npm-check-updates:
+        specifier: ^19.6.5
+        version: 19.6.5
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -4999,6 +5002,11 @@ packages:
   notion-to-md@3.1.1:
     resolution: {integrity: sha512-Zaa2P1B9Rx99bevFYTGuUMYbbfdHn2G1AZMsytYGDWIJjr6Ie1qp/8CorpwVUh1qrquES/V2PkEREqCuTu1zKA==}
     engines: {node: '>=12'}
+
+  npm-check-updates@19.6.5:
+    resolution: {integrity: sha512-XlBUMC30relXfEerrnX239W9iB30U6Woz0Hj42Sv6iSF4EGOvj2mS2r45sZ3RglH0VPBxXOWooMxObZ/SMZhrw==}
+    engines: {node: '>=20.0.0', npm: '>=8.12.1'}
+    hasBin: true
 
   npm-install-checks@6.3.0:
     resolution: {integrity: sha512-W29RiK/xtpCGqn6f3ixfRYGk+zRyr+Ew9F2E20BfXxT5/euLdA/Nm7fO7OeTGuAmTs30cpgInyJ0cYe708YTZw==}
@@ -13034,6 +13042,8 @@ snapshots:
       node-fetch: 2.7.0(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
+
+  npm-check-updates@19.6.5: {}
 
   npm-install-checks@6.3.0:
     dependencies:
