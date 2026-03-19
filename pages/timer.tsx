@@ -64,17 +64,12 @@ export default function TimerPage() {
         }
     }, [totalSeconds, reminderOffsetSeconds, isLoaded]);
 
-    // Wake Lock management
+    // Keep screen on while the page is open
     useEffect(() => {
-        if (isRunning) {
-            requestWakeLock();
-        } else {
-            releaseWakeLock();
-        }
+        requestWakeLock();
 
-        // Re-acquire wake lock when tab becomes visible again (browsers release it on hide)
         function handleVisibilityChange() {
-            if (document.visibilityState === 'visible' && isRunning) {
+            if (document.visibilityState === 'visible') {
                 requestWakeLock();
             }
         }
@@ -84,7 +79,7 @@ export default function TimerPage() {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
             releaseWakeLock();
         };
-    }, [isRunning]);
+    }, []);
 
     async function requestWakeLock() {
         try {
