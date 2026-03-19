@@ -68,6 +68,7 @@ From `.cursorrules`:
 - No nested components - create separate components
 - No dark mode Tailwind classes
 - Keep existing comments when refactoring
+- Avoid `useEffect` unless necessary. Prefer derived state, event handlers, etc. Reference: "You Might Not Need an Effect" from the React docs.
 
 ## Environment Variables
 
