@@ -240,6 +240,7 @@ export default function TimerPage() {
                         remainingSeconds={remainingSeconds}
                         totalSeconds={totalSeconds}
                         isRunning={isRunning}
+                        isIdle={isIdle}
                         isEditing={isEditing}
                         reminderOffsetSeconds={reminderOffsetSeconds}
                         onStartEditing={() => setIsEditing(true)}
@@ -257,7 +258,7 @@ export default function TimerPage() {
                     />
 
                     {/* Reminder setting */}
-                    {!isRunning && (
+                    {isIdle && (
                         <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
                             <label className="flex cursor-pointer items-center gap-2">
                                 <input

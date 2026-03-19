@@ -16,6 +16,7 @@ export function TimerControls(props: TimerControlsProps) {
             <StartPauseButton
                 isRunning={props.isRunning}
                 isFinished={props.isFinished}
+                isIdle={props.isIdle}
                 onStart={props.onStart}
                 onPause={props.onPause}
             />
@@ -35,6 +36,7 @@ export function TimerControls(props: TimerControlsProps) {
 function StartPauseButton(props: {
     isRunning: boolean;
     isFinished: boolean;
+    isIdle: boolean;
     onStart: () => void;
     onPause: () => void;
 }) {
@@ -56,7 +58,7 @@ function StartPauseButton(props: {
             onClick={props.onStart}
             className={`${btnBase} bg-blue-600 text-white hover:bg-blue-700`}
         >
-            {props.isFinished ? 'Restart' : 'Start'}
+            {props.isFinished ? 'Restart' : props.isIdle ? 'Start' : 'Resume'}
         </button>
     );
 }

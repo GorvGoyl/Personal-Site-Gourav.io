@@ -4,6 +4,7 @@ type TimerDisplayProps = {
     remainingSeconds: number;
     totalSeconds: number;
     isRunning: boolean;
+    isIdle: boolean;
     isEditing: boolean;
     reminderOffsetSeconds: number | null;
     onStartEditing: () => void;
@@ -42,7 +43,7 @@ export function TimerDisplay(props: TimerDisplayProps) {
     const displayMinutes = String(minutes).padStart(2, '0');
     const displaySeconds = String(seconds).padStart(2, '0');
 
-    const canEdit = !props.isRunning;
+    const canEdit = props.isIdle;
     const partClass = `transition-colors duration-300 ${canEdit ? 'cursor-pointer hover:opacity-80' : 'cursor-default'}`;
 
     return (
@@ -66,7 +67,7 @@ export function TimerDisplay(props: TimerDisplayProps) {
                     {displaySeconds}
                 </button>
             </div>
-            {canEdit && !isFinished && (
+            {canEdit && (
                 <p className="text-slate-400 text-sm mt-1">tap to edit</p>
             )}
         </div>
