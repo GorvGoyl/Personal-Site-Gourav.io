@@ -1,31 +1,23 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "useUnknownInCatchVariables": true
-},
-"allowUnreachableCode": true,
-  "include": [
-    "**/*.ts",
-    "**/*.md",
-    "**/*.mdx",
-    "**/*.scss",
-    "**/*.tsx",
-    "**/*.js",
-    ".eslintrc.js"
-  ],
-  "exclude": ["node_modules", ".next", ".vercel", "out"]
+    "compilerOptions": {
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "verbatimModuleSyntax": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "incremental": true,
+        "useUnknownInCatchVariables": true
+    },
+    "allowUnreachableCode": true,
+    "include": ["**/*.ts", "**/*.md", "**/*.mdx", "**/*.scss", "**/*.tsx", "**/*.js", ".eslintrc.js"],
+    "exclude": ["node_modules", ".next", ".vercel", "out"]
 }

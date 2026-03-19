@@ -40,7 +40,7 @@
         "gray-matter": "^4.0.3",
         "hastscript": "^9.0.0",
         "mdx-bundler": "^10.0.3",
-        "next": "15.4.10",
+        "next": "16.2.0",
         "notion-to-md": "^3.1.1",
         "react": "18.3.1",
         "react-dom": "18.3.1",
@@ -63,14 +63,14 @@
     },
     "devDependencies": {
         "@hint/configuration-development": "^8.3.20",
-        "@next/eslint-plugin-next": "15.4.5",
+        "@next/eslint-plugin-next": "16.2.0",
         "@notionhq/client": "^2.2.15",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "@tailwindcss/forms": "^0.5.9",
         "@tailwindcss/typography": "^0.5.15",
         "@types/eslint": "8.56.10",
         "@types/node": "^22.10.1",
-        "@types/react": "19.1.9",
+        "@types/react": "19.2.14",
         "@typescript-eslint/eslint-plugin": "^8.16.0",
         "@typescript-eslint/parser": "^8.16.0",
         "autoprefixer": "^10.4.20",
@@ -78,7 +78,7 @@
         "eslint": "^8.57.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-airbnb-typescript": "^18.0.0",
-        "eslint-config-next": "15.4.5",
+        "eslint-config-next": "16.2.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-jsx-a11y": "^6.10.2",
         "eslint-plugin-markdown": "^5.1.0",
@@ -107,7 +107,7 @@
     },
     "pnpm": {
         "overrides": {
-            "@types/react": "19.1.9"
+            "@types/react": "19.2.14"
         }
     }
 }
