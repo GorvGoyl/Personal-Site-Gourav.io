@@ -98,10 +98,6 @@ export default function Home() {
                                 href="https://github.com/gorvgoyl/">
                                 <LinkStyle>Github</LinkStyle>
                             </a>
-                            .{/* Currently, I am  working for{" "} */}
-                            {/* <a href="https://monadical.com" target="_blank" rel="noopener">
-                Monadical
-              </a>{" "} */}
                             {/* and building cool projects. */}
                             <div className="mt-5 rounded-lg bg-slate-200 p-3 text-base text-slate-700">
                                 👋 For business inquiries reach out to me at <i>hey@gourav.io</i>
@@ -218,11 +214,6 @@ export default function Home() {
                                                     src="https://flat.badgen.net/vs-marketplace/d/jerrygoyal.shortcut-menu-bar?color=fb9836&icon=visualstudio"
                                                 />
                                             </a>
-                                            {/* <img
-                        alt="Visual Studio Marketplace Rating (Stars)"
-                        loading="lazy"
-                        src="https://img.shields.io/visual-studio-marketplace/stars/jerrygoyal.shortcut-menu-bar?style=flat-square&color=fb9836"
-                      /> */}
                                         </div>
                                     </div>
                                     <p className="leading-relaxed text-slate-600">
@@ -435,36 +426,6 @@ export default function Home() {
                                         Assistance platform for elderly people.
                                     </p>
                                 </div>
-                                {/* <li>
-                  <p>
-                    <a
-                      href="https://chrome.google.com/webstore/detail/popup-notes/pakngoacmndjaomplokegbepmohpfofb?hl=en"
-                      target="blank"
-                      rel="noopener"
-                      title="Popup Notes chrome extension"
-                    >
-                      Popup Notes
-                    </a>{" "}
-                    <br />
-                    Lightweight Chrome extension to take quick notes without
-                    leaving current tab.
-                  </p>
-                </li> */}
-                                {/* <li>
-                  <p>
-                    <a
-                      href="https://jerrygoyal-firebase-project.web.app/"
-                      target="blank"
-                      rel="noopener"
-                      title="Material design portfolio website"
-                    >
-                      Portfolio site (old)
-                    </a>{" "}
-                    <br />
-                    My old portfolio site built around material guidelines &
-                    responsiveness without using any css framework or library.
-                  </p>
-                </li> */}
                             </div>
                         </div>
                         {/* <SubscribeForm type={FORMTYPE.Generic} /> */}
