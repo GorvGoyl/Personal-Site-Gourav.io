@@ -184,7 +184,7 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
           </div>
         </div>
       {menuOpen && (
-        <div className="fixed inset-0 z-20" onClick={() => setMenuOpen(false)} />
+        <div className="fixed inset-0 z-[5]" onClick={() => setMenuOpen(false)} />
       )}
       {renderScreen()}
       {showRolesGuide && (
