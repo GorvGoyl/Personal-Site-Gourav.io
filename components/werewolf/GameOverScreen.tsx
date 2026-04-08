@@ -9,7 +9,7 @@ type Props = {
 
 export function GameOverScreen({ state, dispatch, winner }: Props) {
   function handleNewGame() {
-    dispatch({ type: "NEW_GAME" })
+    dispatch({ type: "RESTART_SAME_PLAYERS" })
   }
 
   const totalRounds = state.nightEvents.length
@@ -189,7 +189,7 @@ export function GameOverScreen({ state, dispatch, winner }: Props) {
           onClick={handleNewGame}
           className="w-full rounded-xl bg-[#7b68ee] py-3.5 text-center text-sm font-bold text-white active:bg-[#6a5acd]"
         >
-          New Game
+          Play Again
         </button>
       </div>
     </div>
