@@ -1,4 +1,4 @@
-export type Role = "courtesan" | "queen_wolf" | "wolf" | "wizard" | "seer" | "villager"
+export type Role = "courtesan" | "queen_wolf" | "wolf" | "baby_wolf" | "wizard" | "seer" | "villager"
 
 export type Player = {
   id: string

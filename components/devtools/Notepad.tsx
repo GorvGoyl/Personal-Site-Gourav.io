@@ -3,7 +3,7 @@ import { Button } from '../Button';
 
 export function Notepad() {
     return (
-        <Link href="/devtools/notepad">
+        <Link href="/notepad">
             <Button
                 onClick={() => {
                     // Link handles navigation

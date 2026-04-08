@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import Header from '../../components/Header';
-import { Container, LayoutType } from '../../components/layout';
-import { Links, Navbar } from '../../components/navbar';
+import Header from '../components/Header';
+import { Container, LayoutType } from '../components/layout';
+import { Links, Navbar } from '../components/navbar';
 
 export default function NotepadPage() {
     const [text, setText] = useState('');
