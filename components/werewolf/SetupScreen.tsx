@@ -12,7 +12,8 @@ export function SetupScreen({ state, dispatch }: Props) {
   function handleAdd() {
     const trimmed = name.trim()
     if (!trimmed) return
-    dispatch({ type: "ADD_PLAYER", name: trimmed })
+    const capitalized = trimmed.charAt(0).toUpperCase() + trimmed.slice(1)
+    dispatch({ type: "ADD_PLAYER", name: capitalized })
     setName("")
   }
 
