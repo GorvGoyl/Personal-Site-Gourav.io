@@ -1,5 +1,5 @@
 import type { GameState, GameAction } from "./types"
-import { getPlayerName, ROLE_EMOJI, isWolf } from "./types"
+import { getPlayerName, ROLE_EMOJI, isWolf, getRoleDisplayName } from "./types"
 
 type Props = {
   state: GameState
@@ -167,13 +167,12 @@ export function GameOverScreen({ state, dispatch, winner }: Props) {
             // Show original baby wolf role even after transformation
             const isBabyWolf = p.id === state.babyWolfPlayerId
             const displayEmoji = isBabyWolf ? ROLE_EMOJI.baby_wolf : (p.role ? ROLE_EMOJI[p.role] : "")
+            const rn = state.roleNames
             const displayRole = isBabyWolf
-              ? (p.role === "wolf" ? "Baby Wolf → Wolf" : "Baby Wolf")
-              : p.role === "queen_wolf"
-                ? "Queen Wolf"
-                : p.role
-                  ? p.role.charAt(0).toUpperCase() + p.role.slice(1)
-                  : "?"
+              ? (p.role === "wolf"
+                ? `${getRoleDisplayName("baby_wolf", rn)} → ${getRoleDisplayName("wolf", rn)}`
+                : getRoleDisplayName("baby_wolf", rn))
+              : getRoleDisplayName(p.role, rn)
             return (
               <div key={p.id} className="py-1 text-gray-300">
                 {displayEmoji} {p.name}

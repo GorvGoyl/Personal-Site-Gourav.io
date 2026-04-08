@@ -26,6 +26,9 @@ function loadSavedState(): GameState | null {
       if (state.babyWolfTransformNight === undefined) {
         state.babyWolfTransformNight = null
       }
+      if (!state.roleNames) {
+        state.roleNames = {}
+      }
       return state
     }
   } catch {

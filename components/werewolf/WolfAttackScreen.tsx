@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { GameState, GameAction } from "./types"
-import { isWolf, getPlayerName } from "./types"
+import { isWolf, getPlayerName, getRoleDisplayName } from "./types"
 import { PlayerGrid } from "./PlayerGrid"
 
 type Props = {
@@ -26,9 +26,9 @@ export function WolfAttackScreen({ state, dispatch }: Props) {
         <div className="text-xs font-semibold uppercase tracking-widest text-[#7b68ee]">
           Night {state.currentNight}
         </div>
-        <div className="mt-1 text-xl font-bold">🐺 Wolves Attack</div>
+        <div className="mt-1 text-xl font-bold">🐺 {getRoleDisplayName("wolf", state.roleNames)}s Attack</div>
         <div className="mt-1 text-sm text-gray-400">
-          &quot;Wolves, open your eyes. Choose a victim.&quot;
+          &quot;{getRoleDisplayName("wolf", state.roleNames)}s, open your eyes. Choose a victim.&quot;
         </div>
         <div className="mt-0.5 text-sm text-[#f39c12]">Tap the player they want to kill</div>
       </div>
@@ -36,7 +36,7 @@ export function WolfAttackScreen({ state, dispatch }: Props) {
       {state.babyWolfTransformNight === state.currentNight && state.babyWolfPlayerId && (
         <div className="mx-3 mb-4 rounded-lg border-l-[3px] border-[#f39c12] bg-[#f39c12]/10 px-3.5 py-3">
           <div className="text-xs font-semibold text-[#f39c12]">
-            🐺👶 Baby Wolf Transformed!
+            🐺👶 {getRoleDisplayName("baby_wolf", state.roleNames)} Transformed!
           </div>
           <div className="mt-0.5 text-[11px] text-gray-400">
             Tap {getPlayerName(state.players, state.babyWolfPlayerId)}&apos;s shoulder before waking the wolves
@@ -58,11 +58,11 @@ export function WolfAttackScreen({ state, dispatch }: Props) {
         return (
           <div className="mx-3 mt-3 rounded-lg border-l-[3px] border-[#e94560] bg-[#e94560]/10 px-3 py-2">
             <div className="text-xs font-semibold text-[#e94560]">
-              Courtesan is with: {guestName}
+              {getRoleDisplayName("courtesan", state.roleNames)} is with: {guestName}
             </div>
             <div className="mt-0.5 text-[11px] text-gray-400">
               {guestIsWolf
-                ? `${guestName} is a wolf — Courtesan will die`
+                ? `${guestName} is a wolf — ${getRoleDisplayName("courtesan", state.roleNames)} will die`
                 : `If wolves pick ${guestName}, no one dies`}
             </div>
           </div>

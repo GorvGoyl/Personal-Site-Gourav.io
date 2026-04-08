@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { GameState, GameAction } from "./types"
-import { isWolf } from "./types"
+import { isWolf, getRoleDisplayName } from "./types"
 import { PlayerGrid } from "./PlayerGrid"
 
 type Props = {
@@ -42,12 +42,12 @@ export function SeerScreen({ state, dispatch }: Props) {
         <div className="text-xs font-semibold uppercase tracking-widest text-[#7b68ee]">
           Night {state.currentNight}
         </div>
-        <div className="mt-1 text-xl font-bold">👁️ Seer</div>
+        <div className="mt-1 text-xl font-bold">👁️ {getRoleDisplayName("seer", state.roleNames)}</div>
         <div className="mt-1 text-sm text-gray-400">
-          &quot;Seer, open your eyes. Who do you check?&quot;
+          &quot;{getRoleDisplayName("seer", state.roleNames)}, open your eyes. Who do you check?&quot;
         </div>
         {!isAlive && (
-          <div className="mt-2 text-sm text-gray-500">Seer is dead — pretend to wait, then continue</div>
+          <div className="mt-2 text-sm text-gray-500">{getRoleDisplayName("seer", state.roleNames)} is dead — pretend to wait, then continue</div>
         )}
       </div>
 

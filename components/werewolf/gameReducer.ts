@@ -20,6 +20,7 @@ export function createInitialState(): GameState {
     timerMinutes: 3,
     babyWolfPlayerId: null,
     babyWolfTransformNight: null,
+    roleNames: {},
   }
 }
 
@@ -328,7 +329,7 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
 
     case "NEW_GAME": {
       playerCounter = 0
-      return createInitialState()
+      return { ...createInitialState(), roleNames: state.roleNames }
     }
 
     case "RESTART_SAME_PLAYERS": {
@@ -339,11 +340,16 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         timerMinutes: state.timerMinutes,
         babyWolfPlayerId: null,
         babyWolfTransformNight: null,
+        roleNames: state.roleNames,
       }
     }
 
     case "SET_TIMER_MINUTES": {
       return { ...state, timerMinutes: action.minutes }
+    }
+
+    case "SET_ROLE_NAMES": {
+      return { ...state, roleNames: action.roleNames }
     }
 
     case "RESTORE_STATE": {

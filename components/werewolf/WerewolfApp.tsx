@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react"
 import type { GameState, GameAction } from "./types"
-import { ROLE_EMOJI, isWolf } from "./types"
+import { ROLE_EMOJI, isWolf, getRoleDisplayName } from "./types"
 import { SetupScreen } from "./SetupScreen"
 import { RoleConfigScreen } from "./RoleConfigScreen"
 import { RoleDiscoveryScreen } from "./RoleDiscoveryScreen"
@@ -12,6 +12,7 @@ import { NightResultsScreen } from "./NightResultsScreen"
 import { DayVoteScreen } from "./DayVoteScreen"
 import { GameOverScreen } from "./GameOverScreen"
 import { RolesGuideScreen } from "./RolesGuideScreen"
+import { RoleNamesScreen } from "./RoleNamesScreen"
 
 type Props = {
   state: GameState
@@ -26,6 +27,7 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
   const [copied, setCopied] = useState(false)
   const [showRolesGuide, setShowRolesGuide] = useState(false)
   const [showPlayerRoles, setShowPlayerRoles] = useState(false)
+  const [showRoleNames, setShowRoleNames] = useState(false)
 
   const openRolesGuide = useCallback(() => {
     setShowRolesGuide(true)
@@ -103,12 +105,7 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                   </svg>
                 </button>
                 {menuOpen && (
-                  <>
-                    <div
-                      className="fixed inset-0 z-10"
-                      onClick={() => setMenuOpen(false)}
-                    />
-                    <div className="absolute right-0 top-full z-20 mt-1 min-w-[200px] rounded-xl border border-gray-700 bg-[#1a1a2e] py-2 shadow-xl">
+                    <div className="absolute right-0 top-full z-30 mt-1 min-w-[200px] rounded-xl border border-gray-700 bg-[#1a1a2e] py-2 shadow-xl">
                       <button
                         type="button"
                         onClick={() => {
@@ -119,6 +116,17 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                       >
                         <span className="w-5 text-center text-base">📖</span>
                         Roles Guide
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setMenuOpen(false)
+                          setShowRoleNames(true)
+                        }}
+                        className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
+                      >
+                        <span className="w-5 text-center text-base">✏️</span>
+                        Role Names
                       </button>
                       {state.players.some((p) => p.role !== null) && (
                         <button
@@ -171,14 +179,19 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                         {copied ? "Copied!" : "Debug State"}
                       </button>
                     </div>
-                  </>
                 )}
             </div>
           </div>
         </div>
+      {menuOpen && (
+        <div className="fixed inset-0 z-20" onClick={() => setMenuOpen(false)} />
+      )}
       {renderScreen()}
       {showRolesGuide && (
         <RolesGuideScreen onClose={closeRolesGuide} />
+      )}
+      {showRoleNames && (
+        <RoleNamesScreen state={state} dispatch={dispatch} onClose={() => setShowRoleNames(false)} />
       )}
       {showPlayerRoles && (
         <div className="fixed inset-0 z-30 overflow-y-auto bg-[#0f0f1a]">
@@ -200,11 +213,12 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                   const wolf = isWolf(p.role)
                   const isBabyWolf = p.id === state.babyWolfPlayerId
                   const emoji = isBabyWolf ? ROLE_EMOJI.baby_wolf : ROLE_EMOJI[p.role ?? "villager"]
+                  const rn = state.roleNames
                   const roleName = isBabyWolf
-                    ? (p.role === "wolf" ? "Baby Wolf → Wolf" : "Baby Wolf")
-                    : p.role === "queen_wolf" ? "Queen Wolf"
-                    : p.role ? p.role.charAt(0).toUpperCase() + p.role.slice(1)
-                    : "Villager"
+                    ? (p.role === "wolf"
+                      ? `${getRoleDisplayName("baby_wolf", rn)} → ${getRoleDisplayName("wolf", rn)}`
+                      : getRoleDisplayName("baby_wolf", rn))
+                    : getRoleDisplayName(p.role, rn)
                   const isWolfTeam = wolf || (isBabyWolf && p.role === "wolf")
                   const isBabyWolfUntransformed = isBabyWolf && p.role === "baby_wolf"
                   const isVillageSupporter = !isWolfTeam && !isBabyWolfUntransformed

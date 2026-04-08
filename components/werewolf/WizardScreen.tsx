@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { GameState, GameAction } from "./types"
-import { isWolf, getPlayerName } from "./types"
+import { isWolf, getPlayerName, getRoleDisplayName } from "./types"
 import { PlayerGrid } from "./PlayerGrid"
 
 type Props = {
@@ -74,12 +74,12 @@ export function WizardScreen({ state, dispatch }: Props) {
         <div className="text-xs font-semibold uppercase tracking-widest text-[#7b68ee]">
           Night {state.currentNight}
         </div>
-        <div className="mt-1 text-xl font-bold">🧙 Wizard</div>
+        <div className="mt-1 text-xl font-bold">🧙 {getRoleDisplayName("wizard", state.roleNames)}</div>
         <div className="mt-1 text-sm text-gray-400">
-          &quot;Wizard, open your eyes&quot;
+          &quot;{getRoleDisplayName("wizard", state.roleNames)}, open your eyes&quot;
         </div>
         {!wizardCanAct && (
-          <div className="mt-2 text-sm text-gray-500">Wizard is dead — pretend to wait, then continue</div>
+          <div className="mt-2 text-sm text-gray-500">{getRoleDisplayName("wizard", state.roleNames)} is dead — pretend to wait, then continue</div>
         )}
         {wizardCanAct && (
           <>

@@ -1,5 +1,5 @@
 import type { GameState, GameAction } from "./types"
-import { isWolf, getPlayerName } from "./types"
+import { isWolf, getPlayerName, getRoleDisplayName } from "./types"
 
 function wasBabyWolfTargeted(state: GameState): boolean {
   const lastNight = state.nightEvents[state.nightEvents.length - 1]
@@ -69,7 +69,7 @@ export function NightResultsScreen({ state, dispatch }: Props) {
       {wasBabyWolfTargeted(state) && (
         <div className="mx-3 mb-4 rounded-lg border-l-[3px] border-[#f39c12] bg-[#f39c12]/10 px-3.5 py-2.5">
           <div className="text-xs font-semibold text-[#f39c12]">
-            🐺👶 Baby Wolf was targeted
+            🐺👶 {getRoleDisplayName("baby_wolf", state.roleNames)} was targeted
           </div>
           <div className="mt-0.5 text-[11px] text-gray-400">
             {getPlayerName(state.players, state.babyWolfPlayerId)} will transform into a wolf next night

@@ -1,5 +1,6 @@
 import { useState } from "react"
-import type { GameState, GameAction, GameConfig } from "./types"
+import type { GameState, GameAction, GameConfig, Role } from "./types"
+import { getRoleDisplayName } from "./types"
 
 type Props = {
   state: GameState
@@ -8,16 +9,16 @@ type Props = {
 
 type OptionalRole = {
   key: keyof Pick<GameConfig, "hasQueenWolf" | "hasBabyWolf" | "hasCourtesan" | "hasWizard" | "hasSeer">
-  label: string
+  role: Role
   emoji: string
 }
 
 const OPTIONAL_ROLES: OptionalRole[] = [
-  { key: "hasQueenWolf", label: "Queen Wolf", emoji: "👑🐺" },
-  { key: "hasBabyWolf", label: "Baby Wolf", emoji: "🐺👶" },
-  { key: "hasCourtesan", label: "Courtesan", emoji: "🌹" },
-  { key: "hasWizard", label: "Wizard", emoji: "🧙" },
-  { key: "hasSeer", label: "Seer", emoji: "👁️" },
+  { key: "hasQueenWolf", role: "queen_wolf", emoji: "👑🐺" },
+  { key: "hasBabyWolf", role: "baby_wolf", emoji: "🐺👶" },
+  { key: "hasCourtesan", role: "courtesan", emoji: "🌹" },
+  { key: "hasWizard", role: "wizard", emoji: "🧙" },
+  { key: "hasSeer", role: "seer", emoji: "👁️" },
 ]
 
 export function RoleConfigScreen({ state, dispatch }: Props) {
@@ -80,21 +81,26 @@ export function RoleConfigScreen({ state, dispatch }: Props) {
     dispatch({ type: "SET_GAME_CONFIG", config })
   }
 
+  const rn = state.roleNames
+
   // Build summary text
   function getSummary(): string {
     const parts: string[] = []
+    const wolfName = getRoleDisplayName("wolf", rn)
+    const qwName = getRoleDisplayName("queen_wolf", rn)
     if (config.hasQueenWolf && regularWolfCount > 0) {
-      parts.push(`${config.wolfCount} wolves (1 Queen + ${regularWolfCount} regular)`)
+      parts.push(`${config.wolfCount} ${wolfName}s (1 ${qwName} + ${regularWolfCount} regular)`)
     } else if (config.hasQueenWolf) {
-      parts.push("1 Queen Wolf")
+      parts.push(`1 ${qwName}`)
     } else {
-      parts.push(`${config.wolfCount} ${config.wolfCount > 1 ? "wolves" : "wolf"}`)
+      parts.push(`${config.wolfCount} ${wolfName}${config.wolfCount > 1 ? "s" : ""}`)
     }
-    if (config.hasBabyWolf) parts.push("Baby Wolf")
-    if (config.hasCourtesan) parts.push("Courtesan")
-    if (config.hasWizard) parts.push("Wizard")
-    if (config.hasSeer) parts.push("Seer")
-    if (villagerCount > 0) parts.push(`${villagerCount} villager${villagerCount > 1 ? "s" : ""}`)
+    if (config.hasBabyWolf) parts.push(getRoleDisplayName("baby_wolf", rn))
+    if (config.hasCourtesan) parts.push(getRoleDisplayName("courtesan", rn))
+    if (config.hasWizard) parts.push(getRoleDisplayName("wizard", rn))
+    if (config.hasSeer) parts.push(getRoleDisplayName("seer", rn))
+    const vName = getRoleDisplayName("villager", rn)
+    if (villagerCount > 0) parts.push(`${villagerCount} ${vName}${villagerCount > 1 ? "s" : ""}`)
     return parts.join(", ")
   }
 
@@ -171,7 +177,7 @@ export function RoleConfigScreen({ state, dispatch }: Props) {
                 }`}
               >
                 <div className="text-lg">{role.emoji}</div>
-                <div className="mt-0.5 text-xs">{role.label}</div>
+                <div className="mt-0.5 text-xs">{getRoleDisplayName(role.role, rn)}</div>
               </button>
             )
           })}

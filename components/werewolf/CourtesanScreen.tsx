@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { GameState, GameAction } from "./types"
-import { getPlayerName } from "./types"
+import { getPlayerName, getRoleDisplayName } from "./types"
 import { PlayerGrid } from "./PlayerGrid"
 
 type Props = {
@@ -34,14 +34,14 @@ export function CourtesanScreen({ state, dispatch }: Props) {
         <div className="text-xs font-semibold uppercase tracking-widest text-[#7b68ee]">
           Night {state.currentNight}
         </div>
-        <div className="mt-1 text-xl font-bold">🌹 Courtesan</div>
+        <div className="mt-1 text-xl font-bold">🌹 {getRoleDisplayName("courtesan", state.roleNames)}</div>
         <div className="mt-1 text-sm text-gray-400">
-          &quot;Courtesan, open your eyes. Who do you invite?&quot;
+          &quot;{getRoleDisplayName("courtesan", state.roleNames)}, open your eyes. Who do you invite?&quot;
         </div>
         {isAlive ? (
           <div className="mt-0.5 text-sm text-[#f39c12]">Tap the player she invites</div>
         ) : (
-          <div className="mt-2 text-sm text-gray-500">Courtesan is dead — pretend to wait, then continue</div>
+          <div className="mt-2 text-sm text-gray-500">{getRoleDisplayName("courtesan", state.roleNames)} is dead — pretend to wait, then continue</div>
         )}
       </div>
 

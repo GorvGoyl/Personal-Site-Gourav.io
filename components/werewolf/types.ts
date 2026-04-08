@@ -69,6 +69,7 @@ export type GameState = {
   timerMinutes: number
   babyWolfPlayerId: string | null
   babyWolfTransformNight: number | null
+  roleNames: Partial<Record<Role, string>>
 }
 
 export type GameAction =
@@ -93,6 +94,7 @@ export type GameAction =
   | { type: "RESTART_SAME_PLAYERS" }
   | { type: "RESTORE_STATE"; state: GameState }
   | { type: "SET_TIMER_MINUTES"; minutes: number }
+  | { type: "SET_ROLE_NAMES"; roleNames: Partial<Record<Role, string>> }
 
 export const ROLE_DISCOVERY_STEPS = [
   { role: "courtesan" as Role, label: "Courtesan", emoji: "🌹", instruction: '"Courtesan, open your eyes"', multiSelect: false },
@@ -111,6 +113,21 @@ export const ROLE_EMOJI: Record<Role, string> = {
   wizard: "🧙",
   seer: "👁️",
   villager: "😇",
+}
+
+export const DEFAULT_ROLE_NAMES: Record<Role, string> = {
+  courtesan: "Courtesan",
+  queen_wolf: "Queen Wolf",
+  wolf: "Wolf",
+  baby_wolf: "Baby Wolf",
+  wizard: "Wizard",
+  seer: "Seer",
+  villager: "Villager",
+}
+
+export function getRoleDisplayName(role: Role | null, overrides?: Partial<Record<Role, string>>): string {
+  if (!role) return "Villager"
+  return overrides?.[role] || DEFAULT_ROLE_NAMES[role]
 }
 
 export function isWolf(role: Role | null): boolean {

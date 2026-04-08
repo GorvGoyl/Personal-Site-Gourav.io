@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { GameState, GameAction } from "./types"
-import { isWolf, getActiveRoleSteps, getRegularWolfCount } from "./types"
+import { isWolf, getActiveRoleSteps, getRegularWolfCount, getRoleDisplayName } from "./types"
 import { PlayerGrid } from "./PlayerGrid"
 
 type Props = {
@@ -61,13 +61,15 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
             Night 1
           </div>
           <div className="mt-1 text-xl font-bold">
-            {stepInfo.emoji} {stepInfo.label}
+            {stepInfo.emoji} {getRoleDisplayName(stepInfo.role, state.roleNames)}
           </div>
-          <div className="mt-1 text-sm text-gray-400">{stepInfo.instruction}</div>
+          <div className="mt-1 text-sm text-gray-400">
+            &quot;{getRoleDisplayName(stepInfo.role, state.roleNames)}, open your eyes&quot;
+          </div>
           <div className="mt-0.5 text-sm text-[#f39c12]">
             {stepInfo.multiSelect
-              ? `Select ${expectedWolfCount} player${expectedWolfCount > 1 ? "s" : ""} — the ${stepInfo.label}`
-              : `Tap the player who is the ${stepInfo.label}`}
+              ? `Select ${expectedWolfCount} player${expectedWolfCount > 1 ? "s" : ""} — the ${getRoleDisplayName(stepInfo.role, state.roleNames)}${expectedWolfCount > 1 ? "s" : ""}`
+              : `Tap the player who is the ${getRoleDisplayName(stepInfo.role, state.roleNames)}`}
           </div>
         </div>
 
@@ -141,9 +143,9 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
         <div className="text-xs font-semibold uppercase tracking-widest text-[#7b68ee]">
           Night 1
         </div>
-        <div className="mt-1 text-xl font-bold">👁️ Seer Check</div>
+        <div className="mt-1 text-xl font-bold">👁️ {getRoleDisplayName("seer", state.roleNames)} Check</div>
         <div className="mt-1 text-sm text-gray-400">
-          &quot;Seer, who do you want to check?&quot;
+          &quot;{getRoleDisplayName("seer", state.roleNames)}, who do you want to check?&quot;
         </div>
         {seer && (
           <div className="mt-0.5 text-xs text-gray-500">
