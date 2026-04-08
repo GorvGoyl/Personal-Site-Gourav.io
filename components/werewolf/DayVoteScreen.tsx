@@ -59,6 +59,7 @@ export function DayVoteScreen({ state, dispatch }: Props) {
   // Timer state
   const timerMinutes = state.timerMinutes
   const [timerRunning, setTimerRunning] = useState(false)
+  const [timerPaused, setTimerPaused] = useState(false)
   const [timerSeconds, setTimerSeconds] = useState(0)
   const [timerDone, setTimerDone] = useState(false)
 
@@ -78,36 +79,25 @@ export function DayVoteScreen({ state, dispatch }: Props) {
     return audioCtxRef.current
   }
 
-  const startTimer = useCallback(() => {
-    if (timerMinutes <= 0) return
-    const total = timerMinutes * 60
-    totalSecondsRef.current = total
-    setTimerSeconds(total)
-    setTimerRunning(true)
-    setTimerDone(false)
-    warningFiredRef.current = false
-    endFiredRef.current = false
-
-    // Init audio context on user gesture
-    getAudioCtx()
-
+  function startCountdown(remaining: number) {
     if (intervalRef.current) clearInterval(intervalRef.current)
-    let remaining = total
+    let left = remaining
     intervalRef.current = setInterval(() => {
-      remaining--
-      setTimerSeconds(remaining)
+      left--
+      setTimerSeconds(left)
 
-      // 80% elapsed = 20% remaining
+      const total = totalSecondsRef.current
       const warningAt = Math.floor(total * 0.2)
-      if (remaining === warningAt && !warningFiredRef.current) {
+      if (left === warningAt && !warningFiredRef.current) {
         warningFiredRef.current = true
         const ctx = audioCtxRef.current
         if (ctx) playLoudWarning(ctx)
       }
 
-      if (remaining <= 0) {
+      if (left <= 0) {
         if (intervalRef.current) clearInterval(intervalRef.current)
         setTimerRunning(false)
+        setTimerPaused(false)
         setTimerDone(true)
         if (!endFiredRef.current) {
           endFiredRef.current = true
@@ -116,11 +106,37 @@ export function DayVoteScreen({ state, dispatch }: Props) {
         }
       }
     }, 1000)
+  }
+
+  const startTimer = useCallback(() => {
+    if (timerMinutes <= 0) return
+    const total = timerMinutes * 60
+    totalSecondsRef.current = total
+    setTimerSeconds(total)
+    setTimerRunning(true)
+    setTimerPaused(false)
+    setTimerDone(false)
+    warningFiredRef.current = false
+    endFiredRef.current = false
+    getAudioCtx()
+    startCountdown(total)
   }, [timerMinutes])
+
+  function pauseTimer() {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    setTimerPaused(true)
+  }
+
+  function resumeTimer() {
+    setTimerPaused(false)
+    getAudioCtx()
+    startCountdown(timerSeconds)
+  }
 
   function stopTimer() {
     if (intervalRef.current) clearInterval(intervalRef.current)
     setTimerRunning(false)
+    setTimerPaused(false)
     setTimerSeconds(0)
     setTimerDone(false)
   }
@@ -185,7 +201,7 @@ export function DayVoteScreen({ state, dispatch }: Props) {
   const timerProgress = totalSecondsRef.current > 0
     ? 1 - timerSeconds / totalSecondsRef.current
     : 0
-  const isWarningZone = timerRunning && timerProgress >= 0.8
+  const isWarningZone = timerRunning && !timerPaused && timerProgress >= 0.8
 
   return (
     <div className="mx-auto max-w-md px-4 py-6">
@@ -252,6 +268,18 @@ export function DayVoteScreen({ state, dispatch }: Props) {
               )}
               {isWarningZone && !timerDone && (
                 <div className="text-xs font-semibold text-[#f39c12]">Hurry up!</div>
+              )}
+              {timerPaused && (
+                <div className="text-xs font-semibold text-gray-400">Paused</div>
+              )}
+              {!timerDone && (
+                <button
+                  type="button"
+                  onClick={timerPaused ? resumeTimer : pauseTimer}
+                  className="rounded-lg border border-gray-600 px-3 py-1.5 text-xs font-semibold text-gray-400 active:bg-[#2a2a3e]"
+                >
+                  {timerPaused ? "Resume" : "Pause"}
+                </button>
               )}
               <button
                 type="button"
