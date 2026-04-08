@@ -311,6 +311,22 @@ export default function Home() {
                                     </p>
                                 </div>
 
+                                {/* Werewolf */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <Link
+                                            href="/werewolf"
+                                            title="Werewolf GM Tracker"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
+                                            Werewolf GM Tracker
+                                        </Link>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
+                                        A phone-first game master companion for Werewolf. Tracks roles, night actions,
+                                        death resolution, day votes, and generates an end-of-game timeline recap.
+                                    </p>
+                                </div>
+
                                 {/* Gourav.io */}
                                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">

@@ -50,3 +50,6 @@ public/atom.xml
 public/feed.json
 public/sitemap.xml
 frontmatterOfPublishedPosts.json
+.claude/settings.local.json
+.superpowers
+docs/superpowers
