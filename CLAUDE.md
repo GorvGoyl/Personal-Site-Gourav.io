@@ -54,6 +54,13 @@ Always use `pnpm`, never `npm` or `yarn`. This applies to installing dependencie
 
 Content goes through: remark-gfm → rehype-slug → rehype-code-titles → rehype-prism-plus → rehype-autolink-headings → rehype-toc
 
+## Testing
+
+- All test files go in the `__tests__/` folder at the project root. Do not create subfolders unless necessary — keep things flat and simple.
+- Name test files by scope/domain (e.g., `email.test.ts`, `jina.test.ts`), not by individual function or module. One test file per scope.
+- When writing test scripts, never duplicate source functions. Instead, export the function from the source module and import it directly in the test.
+- Use relative imports (e.g., `../../modules/...`) in scripts since `@/` path aliases are not resolved by `tsx` outside of Next.js.
+
 ## Code Style Requirements
 
 From `.cursorrules`:
