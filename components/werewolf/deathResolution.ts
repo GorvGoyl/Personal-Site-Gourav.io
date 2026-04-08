@@ -44,7 +44,11 @@ export function resolveDeaths(
       }
     } else {
       // Scenario C: Normal attack
-      deaths.push({ playerId: wolfTarget, cause: "Attacked by wolves" })
+      // Baby wolf doesn't die from direct wolf attack — they transform instead
+      const target = players.find((p) => p.id === wolfTarget)
+      if (!target || target.role !== "baby_wolf") {
+        deaths.push({ playerId: wolfTarget, cause: "Attacked by wolves" })
+      }
     }
   }
 

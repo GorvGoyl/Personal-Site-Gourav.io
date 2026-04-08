@@ -13,9 +13,18 @@ function loadSavedState(): GameState | null {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) {
       const state = JSON.parse(saved)
-      // Backward compat: add default gameConfig if missing
+      // Backward compat: add defaults for fields that may be missing in saved state
       if (!state.gameConfig) {
         state.gameConfig = DEFAULT_GAME_CONFIG
+      }
+      if (state.gameConfig.hasBabyWolf === undefined) {
+        state.gameConfig.hasBabyWolf = false
+      }
+      if (state.babyWolfPlayerId === undefined) {
+        state.babyWolfPlayerId = null
+      }
+      if (state.babyWolfTransformNight === undefined) {
+        state.babyWolfTransformNight = null
       }
       return state
     }

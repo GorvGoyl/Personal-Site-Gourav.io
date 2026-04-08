@@ -7,13 +7,14 @@ type Props = {
 }
 
 type OptionalRole = {
-  key: keyof Pick<GameConfig, "hasQueenWolf" | "hasCourtesan" | "hasWizard" | "hasSeer">
+  key: keyof Pick<GameConfig, "hasQueenWolf" | "hasBabyWolf" | "hasCourtesan" | "hasWizard" | "hasSeer">
   label: string
   emoji: string
 }
 
 const OPTIONAL_ROLES: OptionalRole[] = [
   { key: "hasQueenWolf", label: "Queen Wolf", emoji: "👑🐺" },
+  { key: "hasBabyWolf", label: "Baby Wolf", emoji: "🐺👶" },
   { key: "hasCourtesan", label: "Courtesan", emoji: "🌹" },
   { key: "hasWizard", label: "Wizard", emoji: "🧙" },
   { key: "hasSeer", label: "Seer", emoji: "👁️" },
@@ -24,6 +25,7 @@ export function RoleConfigScreen({ state, dispatch }: Props) {
 
   const playerCount = state.players.length
   const specialRoleCount =
+    (config.hasBabyWolf ? 1 : 0) +
     (config.hasCourtesan ? 1 : 0) +
     (config.hasWizard ? 1 : 0) +
     (config.hasSeer ? 1 : 0)
@@ -58,6 +60,7 @@ export function RoleConfigScreen({ state, dispatch }: Props) {
       }
       // Recalculate maxWolves with new special role count
       const newSpecialCount =
+        (next.hasBabyWolf ? 1 : 0) +
         (next.hasCourtesan ? 1 : 0) +
         (next.hasWizard ? 1 : 0) +
         (next.hasSeer ? 1 : 0)
@@ -85,8 +88,9 @@ export function RoleConfigScreen({ state, dispatch }: Props) {
     } else if (config.hasQueenWolf) {
       parts.push("1 Queen Wolf")
     } else {
-      parts.push(`${config.wolfCount} wolf${config.wolfCount > 1 ? "ves" : ""}`)
+      parts.push(`${config.wolfCount} ${config.wolfCount > 1 ? "wolves" : "wolf"}`)
     }
+    if (config.hasBabyWolf) parts.push("Baby Wolf")
     if (config.hasCourtesan) parts.push("Courtesan")
     if (config.hasWizard) parts.push("Wizard")
     if (config.hasSeer) parts.push("Seer")

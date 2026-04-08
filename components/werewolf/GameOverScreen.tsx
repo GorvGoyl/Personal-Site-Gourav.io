@@ -85,6 +85,8 @@ export function GameOverScreen({ state, dispatch, winner }: Props) {
                           🐺 Wolves attacked {getPlayerName(state.players, night.wolfTarget)}
                           {night.deaths.some((d) => d.playerId === night.wolfTarget) ? (
                             " → 💀 Died"
+                          ) : night.wolfTarget === state.babyWolfPlayerId ? (
+                            <span className="text-[#f39c12]"> → 🐺👶 Transformed</span>
                           ) : (
                             <span className="text-[#2ecc71]"> → Saved</span>
                           )}
@@ -161,19 +163,24 @@ export function GameOverScreen({ state, dispatch, winner }: Props) {
           Role Reveal
         </div>
         <div className="grid grid-cols-2 gap-1 text-xs">
-          {state.players.map((p) => (
-            <div key={p.id} className="py-1 text-gray-300">
-              {p.role ? ROLE_EMOJI[p.role] : ""} {p.name}
-              <span className="text-gray-500">
-                {" "}
-                ({p.role === "queen_wolf"
-                  ? "Queen Wolf"
-                  : p.role
-                    ? p.role.charAt(0).toUpperCase() + p.role.slice(1)
-                    : "?"})
-              </span>
-            </div>
-          ))}
+          {state.players.map((p) => {
+            // Show original baby wolf role even after transformation
+            const isBabyWolf = p.id === state.babyWolfPlayerId
+            const displayEmoji = isBabyWolf ? ROLE_EMOJI.baby_wolf : (p.role ? ROLE_EMOJI[p.role] : "")
+            const displayRole = isBabyWolf
+              ? (p.role === "wolf" ? "Baby Wolf → Wolf" : "Baby Wolf")
+              : p.role === "queen_wolf"
+                ? "Queen Wolf"
+                : p.role
+                  ? p.role.charAt(0).toUpperCase() + p.role.slice(1)
+                  : "?"
+            return (
+              <div key={p.id} className="py-1 text-gray-300">
+                {displayEmoji} {p.name}
+                <span className="text-gray-500"> ({displayRole})</span>
+              </div>
+            )
+          })}
         </div>
       </div>
 

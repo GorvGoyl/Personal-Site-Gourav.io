@@ -1,5 +1,6 @@
-import { useState, useRef } from "react"
+import { useState, useEffect, useCallback } from "react"
 import type { GameState, GameAction } from "./types"
+import { ROLE_EMOJI, isWolf } from "./types"
 import { SetupScreen } from "./SetupScreen"
 import { RoleConfigScreen } from "./RoleConfigScreen"
 import { RoleDiscoveryScreen } from "./RoleDiscoveryScreen"
@@ -10,6 +11,7 @@ import { SeerScreen } from "./SeerScreen"
 import { NightResultsScreen } from "./NightResultsScreen"
 import { DayVoteScreen } from "./DayVoteScreen"
 import { GameOverScreen } from "./GameOverScreen"
+import { RolesGuideScreen } from "./RolesGuideScreen"
 
 type Props = {
   state: GameState
@@ -22,6 +24,29 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
   const phase = state.currentPhase
   const [menuOpen, setMenuOpen] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [showRolesGuide, setShowRolesGuide] = useState(false)
+  const [showPlayerRoles, setShowPlayerRoles] = useState(false)
+
+  const openRolesGuide = useCallback(() => {
+    setShowRolesGuide(true)
+    window.history.replaceState(null, "", "#rules")
+  }, [])
+
+  const closeRolesGuide = useCallback(() => {
+    setShowRolesGuide(false)
+    window.history.replaceState(null, "", window.location.pathname)
+  }, [])
+
+  useEffect(() => {
+    if (window.location.hash === "#rules") {
+      setShowRolesGuide(true)
+    }
+    function onHashChange() {
+      setShowRolesGuide(window.location.hash === "#rules")
+    }
+    window.addEventListener("hashchange", onHashChange)
+    return () => window.removeEventListener("hashchange", onHashChange)
+  }, [])
 
   function renderScreen() {
     switch (phase.type) {
@@ -50,12 +75,9 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
     }
   }
 
-  const showHeader = canGoBack || phase.type !== "setup"
-
   return (
     <>
-      {showHeader && (
-        <div className="sticky top-0 z-10 bg-[#0f0f1a]/90 backdrop-blur-sm">
+      <div className="sticky top-0 z-10 bg-[#0f0f1a]/90 backdrop-blur-sm">
           <div className="mx-auto flex max-w-md items-center justify-between px-4 py-2">
             {canGoBack ? (
               <button
@@ -68,8 +90,7 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
             ) : (
               <div />
             )}
-            {phase.type !== "setup" && (
-              <div className="relative">
+            <div className="relative">
                 <button
                   type="button"
                   onClick={() => setMenuOpen(!menuOpen)}
@@ -88,6 +109,29 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                       onClick={() => setMenuOpen(false)}
                     />
                     <div className="absolute right-0 top-full z-20 mt-1 min-w-[180px] rounded-lg border border-gray-700 bg-[#1a1a2e] py-1 shadow-lg">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setMenuOpen(false)
+                          openRolesGuide()
+                        }}
+                        className="w-full px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
+                      >
+                        Roles Guide
+                      </button>
+                      {state.players.some((p) => p.role !== null) && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setMenuOpen(false)
+                            setShowPlayerRoles(true)
+                          }}
+                          className="w-full px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
+                        >
+                          View Player Roles
+                        </button>
+                      )}
+                      <div className="my-1 border-t border-gray-700" />
                       <button
                         type="button"
                         onClick={() => {
@@ -124,12 +168,13 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                     </div>
                   </>
                 )}
-              </div>
-            )}
+            </div>
           </div>
         </div>
-      )}
       {renderScreen()}
+      {showRolesGuide && (
+        <RolesGuideScreen onClose={closeRolesGuide} />
+      )}
     </>
   )
 }

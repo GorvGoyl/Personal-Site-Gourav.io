@@ -19,7 +19,7 @@ export function PlayerGrid({
 }: Props) {
   return (
     <div className="grid grid-cols-2 gap-2 px-3">
-      {players.map((player) => {
+      {[...players].sort((a, b) => a.name.localeCompare(b.name)).map((player) => {
         const isSelected = selectedIds.includes(player.id)
         const isDisabled = disabledIds.includes(player.id)
         const isDead = !player.isAlive

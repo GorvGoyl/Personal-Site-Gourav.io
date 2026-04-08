@@ -18,6 +18,8 @@ export function createInitialState(): GameState {
     currentNightEvent: {},
     gameConfig: DEFAULT_GAME_CONFIG,
     timerMinutes: 3,
+    babyWolfPlayerId: null,
+    babyWolfTransformNight: null,
   }
 }
 
@@ -96,6 +98,7 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         players: state.players.map((p) =>
           p.id === action.playerId ? { ...p, role: action.role } : p,
         ),
+        babyWolfPlayerId: action.role === "baby_wolf" ? action.playerId : state.babyWolfPlayerId,
       }
     }
 
@@ -246,12 +249,21 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         deaths,
       }
 
+      // Detect baby wolf targeted by wolves (survived due to baby wolf immunity)
+      const wolfTarget = state.currentNightEvent.wolfTarget
+      const wolfTargetPlayer = wolfTarget ? state.players.find((p) => p.id === wolfTarget) : null
+      const babyWolfTargeted = wolfTargetPlayer?.role === "baby_wolf"
+        && !deaths.some((d) => d.playerId === wolfTarget)
+
       const newState = {
         ...state,
         players: updatedPlayers,
         nightEvents: [...state.nightEvents, nightEvent],
         lastCourtesanGuest: state.currentNightEvent.courtesanGuest ?? null,
         currentNightEvent: {},
+        babyWolfTransformNight: babyWolfTargeted
+          ? state.currentNight + 1
+          : state.babyWolfTransformNight,
       }
 
       const winPhase = checkWinCondition(newState)
@@ -298,8 +310,16 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
 
     case "START_NEXT_NIGHT": {
       const nextNight = state.currentNight + 1
+      // Transform baby wolf if this is the transformation night
+      const transformBabyWolf = state.babyWolfTransformNight === nextNight
+      const players = transformBabyWolf
+        ? state.players.map((p) =>
+            p.id === state.babyWolfPlayerId ? { ...p, role: "wolf" as const } : p,
+          )
+        : state.players
       const newState = {
         ...state,
+        players,
         currentNight: nextNight,
         currentNightEvent: { night: nextNight },
       }
@@ -317,6 +337,8 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         players: state.players.map((p) => ({ ...p, role: null, isAlive: true })),
         gameConfig: state.gameConfig,
         timerMinutes: state.timerMinutes,
+        babyWolfPlayerId: null,
+        babyWolfTransformNight: null,
       }
     }
 

@@ -25,9 +25,11 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
 
     function handleSelect(id: string) {
       if (stepInfo.multiSelect) {
-        setSelectedIds((prev) =>
-          prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
-        )
+        setSelectedIds((prev) => {
+          if (prev.includes(id)) return prev.filter((x) => x !== id)
+          if (prev.length >= expectedWolfCount) return prev
+          return [...prev, id]
+        })
       } else {
         setSelectedIds([id])
       }

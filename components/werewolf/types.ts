@@ -27,6 +27,7 @@ export type DayEvent = {
 export type GameConfig = {
   wolfCount: number       // total wolves INCLUDING queen wolf
   hasQueenWolf: boolean
+  hasBabyWolf: boolean
   hasCourtesan: boolean
   hasWizard: boolean
   hasSeer: boolean
@@ -35,6 +36,7 @@ export type GameConfig = {
 export const DEFAULT_GAME_CONFIG: GameConfig = {
   wolfCount: 2,
   hasQueenWolf: true,
+  hasBabyWolf: false,
   hasCourtesan: true,
   hasWizard: true,
   hasSeer: true,
@@ -65,6 +67,8 @@ export type GameState = {
   currentNightEvent: Partial<NightEvent>
   gameConfig: GameConfig
   timerMinutes: number
+  babyWolfPlayerId: string | null
+  babyWolfTransformNight: number | null
 }
 
 export type GameAction =
@@ -96,12 +100,14 @@ export const ROLE_DISCOVERY_STEPS = [
   { role: "wolf" as Role, label: "Wolves", emoji: "🐺", instruction: '"Wolves, open your eyes"', multiSelect: true },
   { role: "wizard" as Role, label: "Wizard", emoji: "🧙", instruction: '"Wizard, open your eyes"', multiSelect: false },
   { role: "seer" as Role, label: "Seer", emoji: "👁️", instruction: '"Seer, open your eyes"', multiSelect: false },
+  { role: "baby_wolf" as Role, label: "Baby Wolf", emoji: "🐺👶", instruction: '"Baby Wolf, open your eyes"', multiSelect: false },
 ] as const
 
 export const ROLE_EMOJI: Record<Role, string> = {
   courtesan: "🌹",
   queen_wolf: "👑🐺",
   wolf: "🐺",
+  baby_wolf: "🐺👶",
   wizard: "🧙",
   seer: "👁️",
   villager: "😇",
@@ -124,6 +130,7 @@ export function getActiveRoleSteps(config: GameConfig) {
     if (step.role === "wolf") return regularWolfCount > 0
     if (step.role === "wizard") return config.hasWizard
     if (step.role === "seer") return config.hasSeer
+    if (step.role === "baby_wolf") return config.hasBabyWolf
     return false
   })
 }

@@ -33,6 +33,17 @@ export function WolfAttackScreen({ state, dispatch }: Props) {
         <div className="mt-0.5 text-sm text-[#f39c12]">Tap the player they want to kill</div>
       </div>
 
+      {state.babyWolfTransformNight === state.currentNight && state.babyWolfPlayerId && (
+        <div className="mx-3 mb-4 rounded-lg border-l-[3px] border-[#f39c12] bg-[#f39c12]/10 px-3.5 py-3">
+          <div className="text-xs font-semibold text-[#f39c12]">
+            🐺👶 Baby Wolf Transformed!
+          </div>
+          <div className="mt-0.5 text-[11px] text-gray-400">
+            Tap {getPlayerName(state.players, state.babyWolfPlayerId)}&apos;s shoulder before waking the wolves
+          </div>
+        </div>
+      )}
+
       <PlayerGrid
         players={alivePlayers}
         selectedIds={selected ? [selected] : []}

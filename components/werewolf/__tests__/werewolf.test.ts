@@ -29,6 +29,7 @@ function buildGameWithRoles(config?: Partial<GameConfig>): GameState {
   const fullConfig: GameConfig = {
     wolfCount: 2,
     hasQueenWolf: true,
+    hasBabyWolf: false,
     hasCourtesan: true,
     hasWizard: true,
     hasSeer: true,
@@ -55,6 +56,8 @@ function buildGameWithRoles(config?: Partial<GameConfig>): GameState {
       state = gameReducer(state, { type: "ASSIGN_ROLE", playerId: ids[3], role: "wizard" })      // ha
     } else if (step.role === "seer") {
       state = gameReducer(state, { type: "ASSIGN_ROLE", playerId: ids[2], role: "seer" })        // chris
+    } else if (step.role === "baby_wolf") {
+      state = gameReducer(state, { type: "ASSIGN_ROLE", playerId: ids[5], role: "baby_wolf" })   // julia
     }
     state = gameReducer(state, { type: "ADVANCE_ROLE_DISCOVERY" })
   }
@@ -130,6 +133,7 @@ describe("Role Config", () => {
     const config: GameConfig = {
       wolfCount: 1,
       hasQueenWolf: false,
+      hasBabyWolf: false,
       hasCourtesan: false,
       hasWizard: true,
       hasSeer: true,
@@ -144,6 +148,7 @@ describe("Role Config", () => {
     const allEnabled: GameConfig = {
       wolfCount: 2,
       hasQueenWolf: true,
+      hasBabyWolf: false,
       hasCourtesan: true,
       hasWizard: true,
       hasSeer: true,
@@ -155,6 +160,7 @@ describe("Role Config", () => {
     const minimal: GameConfig = {
       wolfCount: 2,
       hasQueenWolf: false,
+      hasBabyWolf: false,
       hasCourtesan: false,
       hasWizard: false,
       hasSeer: false,
@@ -165,6 +171,7 @@ describe("Role Config", () => {
     const queenOnly: GameConfig = {
       wolfCount: 1,
       hasQueenWolf: true,
+      hasBabyWolf: false,
       hasCourtesan: false,
       hasWizard: false,
       hasSeer: false,
@@ -706,6 +713,7 @@ describe("Game Reset", () => {
     const customConfig: GameConfig = {
       wolfCount: 3,
       hasQueenWolf: false,
+      hasBabyWolf: false,
       hasCourtesan: true,
       hasWizard: false,
       hasSeer: true,

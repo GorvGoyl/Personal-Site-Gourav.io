@@ -27,7 +27,8 @@ export function WizardScreen({ state, dispatch }: Props) {
 
   if (wolfTarget) {
     const target = state.players.find((p) => p.id === wolfTarget)
-    if (target) {
+    // Baby wolf doesn't die from wolf attack (they transform), so not in danger
+    if (target && target.role !== "baby_wolf") {
       inDanger.push({ id: target.id, name: target.name, reason: "Attacked by wolves" })
     }
   }
