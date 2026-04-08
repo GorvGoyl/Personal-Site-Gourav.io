@@ -90,6 +90,7 @@ export default function WerewolfPage() {
         <meta name="description" content="Track your Werewolf game as the game master" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
+      <style>{`footer { display: none !important; }`}</style>
       <div className="min-h-screen bg-[#0f0f1a] text-white">
         <WerewolfApp
           state={state}
