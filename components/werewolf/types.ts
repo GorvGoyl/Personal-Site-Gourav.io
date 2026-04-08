@@ -24,8 +24,25 @@ export type DayEvent = {
   revealedRole: Role | null
 }
 
+export type GameConfig = {
+  wolfCount: number       // total wolves INCLUDING queen wolf
+  hasQueenWolf: boolean
+  hasCourtesan: boolean
+  hasWizard: boolean
+  hasSeer: boolean
+}
+
+export const DEFAULT_GAME_CONFIG: GameConfig = {
+  wolfCount: 2,
+  hasQueenWolf: true,
+  hasCourtesan: true,
+  hasWizard: true,
+  hasSeer: true,
+}
+
 export type GamePhase =
   | { type: "setup" }
+  | { type: "role_config" }
   | { type: "night_role_discovery"; step: number }
   | { type: "night_courtesan" }
   | { type: "night_wolves" }
@@ -46,12 +63,14 @@ export type GameState = {
   wizardKillPotionUsed: boolean
   lastCourtesanGuest: string | null
   currentNightEvent: Partial<NightEvent>
+  gameConfig: GameConfig
 }
 
 export type GameAction =
   | { type: "ADD_PLAYER"; name: string }
   | { type: "REMOVE_PLAYER"; id: string }
-  | { type: "START_NIGHT_1" }
+  | { type: "START_ROLE_CONFIG" }
+  | { type: "SET_GAME_CONFIG"; config: GameConfig }
   | { type: "ASSIGN_ROLE"; playerId: string; role: Role }
   | { type: "ASSIGN_WOLVES"; playerIds: string[] }
   | { type: "ADVANCE_ROLE_DISCOVERY" }
@@ -93,4 +112,20 @@ export function isWolf(role: Role | null): boolean {
 export function getPlayerName(players: Player[], id: string | null): string {
   if (!id) return ""
   return players.find((p) => p.id === id)?.name ?? ""
+}
+
+export function getActiveRoleSteps(config: GameConfig) {
+  const regularWolfCount = config.wolfCount - (config.hasQueenWolf ? 1 : 0)
+  return ROLE_DISCOVERY_STEPS.filter((step) => {
+    if (step.role === "courtesan") return config.hasCourtesan
+    if (step.role === "queen_wolf") return config.hasQueenWolf
+    if (step.role === "wolf") return regularWolfCount > 0
+    if (step.role === "wizard") return config.hasWizard
+    if (step.role === "seer") return config.hasSeer
+    return false
+  })
+}
+
+export function getRegularWolfCount(config: GameConfig): number {
+  return config.wolfCount - (config.hasQueenWolf ? 1 : 0)
 }

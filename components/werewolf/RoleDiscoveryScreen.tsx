@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { GameState, GameAction } from "./types"
-import { ROLE_DISCOVERY_STEPS, isWolf } from "./types"
+import { isWolf, getActiveRoleSteps, getRegularWolfCount } from "./types"
 import { PlayerGrid } from "./PlayerGrid"
 
 type Props = {
@@ -14,12 +14,14 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
   const [seerTarget, setSeerTarget] = useState<string | null>(null)
   const [seerRevealed, setSeerRevealed] = useState(false)
 
-  const isSeerCheckStep = step === 5
+  const activeSteps = getActiveRoleSteps(state.gameConfig)
+  const isSeerCheckStep = state.gameConfig.hasSeer && step === activeSteps.length
 
-  // Steps 0-4: role assignment
+  // Steps 0 to activeSteps.length-1: role assignment
   if (!isSeerCheckStep) {
-    const stepInfo = ROLE_DISCOVERY_STEPS[step]
+    const stepInfo = activeSteps[step]
     const assignedIds = state.players.filter((p) => p.role !== null).map((p) => p.id)
+    const expectedWolfCount = getRegularWolfCount(state.gameConfig)
 
     function handleSelect(id: string) {
       if (stepInfo.multiSelect) {
@@ -31,8 +33,12 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
       }
     }
 
+    const canConfirm = stepInfo.multiSelect
+      ? selectedIds.length === expectedWolfCount
+      : selectedIds.length > 0
+
     function handleConfirm() {
-      if (selectedIds.length === 0) return
+      if (!canConfirm) return
 
       if (stepInfo.multiSelect) {
         dispatch({ type: "ASSIGN_WOLVES", playerIds: selectedIds })
@@ -43,6 +49,8 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
       setSelectedIds([])
       dispatch({ type: "ADVANCE_ROLE_DISCOVERY" })
     }
+
+    const totalDots = activeSteps.length + (state.gameConfig.hasSeer ? 1 : 0)
 
     return (
       <div className="mx-auto max-w-md px-4 py-6">
@@ -55,7 +63,9 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
           </div>
           <div className="mt-1 text-sm text-gray-400">{stepInfo.instruction}</div>
           <div className="mt-0.5 text-sm text-[#f39c12]">
-            Tap the player{stepInfo.multiSelect ? "s" : ""} who {stepInfo.multiSelect ? "are" : "is"} the {stepInfo.label}
+            {stepInfo.multiSelect
+              ? `Select ${expectedWolfCount} player${expectedWolfCount > 1 ? "s" : ""} — the ${stepInfo.label}`
+              : `Tap the player who is the ${stepInfo.label}`}
           </div>
         </div>
 
@@ -68,7 +78,7 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
         />
 
         <div className="mt-4 flex justify-center gap-2">
-          {ROLE_DISCOVERY_STEPS.map((_, i) => (
+          {Array.from({ length: totalDots }, (_, i) => (
             <div
               key={i}
               className={`h-2.5 w-2.5 rounded-full ${
@@ -76,18 +86,15 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
               }`}
             />
           ))}
-          <div
-            className={`h-2.5 w-2.5 rounded-full ${step === 5 ? "bg-[#7b68ee]" : "bg-gray-700"}`}
-          />
         </div>
 
         <div className="mt-4 px-3">
           <button
             type="button"
-            disabled={selectedIds.length === 0}
+            disabled={!canConfirm}
             onClick={handleConfirm}
             className={`w-full rounded-xl py-3.5 text-center text-sm font-bold ${
-              selectedIds.length > 0
+              canConfirm
                 ? "bg-[#7b68ee] text-white active:bg-[#6a5acd]"
                 : "bg-gray-800 text-gray-500"
             }`}
@@ -99,9 +106,8 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
     )
   }
 
-  // Step 5: Seer check
+  // Seer check step
   const seer = state.players.find((p) => p.role === "seer")
-  const assignedIds = state.players.filter((p) => p.role !== null).map((p) => p.id)
 
   function handleSeerSelect(id: string) {
     if (seerRevealed) return
@@ -124,6 +130,8 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
       ? "wolf"
       : "not_wolf"
     : null
+
+  const totalDots = activeSteps.length + 1
 
   return (
     <div className="mx-auto max-w-md px-4 py-6">
@@ -172,10 +180,14 @@ export function RoleDiscoveryScreen({ state, dispatch, step }: Props) {
       )}
 
       <div className="mt-4 flex justify-center gap-2">
-        {ROLE_DISCOVERY_STEPS.map((_, i) => (
-          <div key={i} className="h-2.5 w-2.5 rounded-full bg-[#7b68ee] opacity-50" />
+        {Array.from({ length: totalDots }, (_, i) => (
+          <div
+            key={i}
+            className={`h-2.5 w-2.5 rounded-full ${
+              i < step ? "bg-[#7b68ee] opacity-50" : i === step ? "bg-[#7b68ee]" : "bg-gray-700"
+            }`}
+          />
         ))}
-        <div className="h-2.5 w-2.5 rounded-full bg-[#7b68ee]" />
       </div>
 
       <div className="mt-4 px-3">

@@ -74,14 +74,14 @@ export function SetupScreen({ state, dispatch }: Props) {
       <button
         type="button"
         disabled={state.players.length < 5}
-        onClick={() => dispatch({ type: "START_NIGHT_1" })}
+        onClick={() => dispatch({ type: "START_ROLE_CONFIG" })}
         className={`w-full rounded-xl py-3.5 text-center text-sm font-bold ${
           state.players.length >= 5
-            ? "bg-[#e94560] text-white active:bg-[#d63851]"
+            ? "bg-[#7b68ee] text-white active:bg-[#6a5acd]"
             : "bg-gray-800 text-gray-500"
         }`}
       >
-        Start Night 1 →
+        Next: Configure Roles →
       </button>
       {state.players.length < 5 && state.players.length > 0 && (
         <div className="mt-2 text-center text-xs text-gray-500">

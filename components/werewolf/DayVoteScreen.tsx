@@ -49,7 +49,7 @@ export function DayVoteScreen({ state, dispatch }: Props) {
               wasWolf ? "text-[#e94560]" : "text-[#2ecc71]"
             }`}
           >
-            was a {wasWolf ? (selectedPlayer.role === "queen_wolf" ? "Queen Wolf 👑🐺" : "Wolf 🐺") : "Villager"}
+            was a {wasWolf ? "Wolf 🐺" : "Villager"}
           </div>
         </div>
 

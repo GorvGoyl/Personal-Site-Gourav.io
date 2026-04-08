@@ -3,6 +3,7 @@ import { useReducer, useCallback, useRef, useState, useEffect } from "react"
 import { gameReducer, createInitialState } from "../../components/werewolf/gameReducer"
 import { WerewolfApp } from "../../components/werewolf/WerewolfApp"
 import type { GameAction, GameState } from "../../components/werewolf/types"
+import { DEFAULT_GAME_CONFIG } from "../../components/werewolf/types"
 
 const STORAGE_KEY = "werewolf-game"
 const MAX_HISTORY = 30
@@ -10,7 +11,14 @@ const MAX_HISTORY = 30
 function loadSavedState(): GameState | null {
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved) return JSON.parse(saved)
+    if (saved) {
+      const state = JSON.parse(saved)
+      // Backward compat: add default gameConfig if missing
+      if (!state.gameConfig) {
+        state.gameConfig = DEFAULT_GAME_CONFIG
+      }
+      return state
+    }
   } catch {
     // Ignore corrupt data
   }

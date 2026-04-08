@@ -1,6 +1,7 @@
 import { useState, useRef } from "react"
 import type { GameState, GameAction } from "./types"
 import { SetupScreen } from "./SetupScreen"
+import { RoleConfigScreen } from "./RoleConfigScreen"
 import { RoleDiscoveryScreen } from "./RoleDiscoveryScreen"
 import { CourtesanScreen } from "./CourtesanScreen"
 import { WolfAttackScreen } from "./WolfAttackScreen"
@@ -26,6 +27,8 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
     switch (phase.type) {
       case "setup":
         return <SetupScreen state={state} dispatch={dispatch} />
+      case "role_config":
+        return <RoleConfigScreen state={state} dispatch={dispatch} />
       case "night_role_discovery":
         return <RoleDiscoveryScreen state={state} dispatch={dispatch} step={phase.step} />
       case "night_courtesan":

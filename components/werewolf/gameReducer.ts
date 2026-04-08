@@ -1,5 +1,5 @@
-import type { GameState, GameAction, GamePhase, NightEvent } from "./types"
-import { isWolf } from "./types"
+import type { GameState, GameAction, GamePhase, GameConfig, NightEvent } from "./types"
+import { isWolf, getActiveRoleSteps, DEFAULT_GAME_CONFIG } from "./types"
 import { resolveDeaths } from "./deathResolution"
 
 let playerCounter = 0
@@ -16,6 +16,7 @@ export function createInitialState(): GameState {
     wizardKillPotionUsed: false,
     lastCourtesanGuest: null,
     currentNightEvent: {},
+    gameConfig: DEFAULT_GAME_CONFIG,
   }
 }
 
@@ -33,23 +34,27 @@ function checkWinCondition(state: GameState): GamePhase | null {
   return null
 }
 
-function getNextNightPhase(): GamePhase {
-  return { type: "night_courtesan" }
+// Build ordered list of night phases based on game config
+function getNightPhaseOrder(config: GameConfig): Array<GamePhase["type"]> {
+  const phases: Array<GamePhase["type"]> = []
+  if (config.hasCourtesan) phases.push("night_courtesan")
+  phases.push("night_wolves")
+  if (config.hasWizard) phases.push("night_wizard")
+  if (config.hasSeer) phases.push("night_seer")
+  return phases
 }
 
-function getPhaseAfterCourtesan(): GamePhase {
-  return { type: "night_wolves" }
+function getFirstNightPhase(config: GameConfig): GamePhase {
+  const order = getNightPhaseOrder(config)
+  return { type: order[0] } as GamePhase
 }
 
-function getPhaseAfterWolves(): GamePhase {
-  return { type: "night_wizard" }
-}
-
-function getPhaseAfterWizard(): GamePhase {
-  return { type: "night_seer" }
-}
-
-function getPhaseAfterSeer(): GamePhase {
+function getPhaseAfter(currentType: string, config: GameConfig): GamePhase {
+  const order = getNightPhaseOrder(config)
+  const idx = order.indexOf(currentType as GamePhase["type"])
+  if (idx >= 0 && idx < order.length - 1) {
+    return { type: order[idx + 1] } as GamePhase
+  }
   return { type: "night_results" }
 }
 
@@ -70,9 +75,14 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
       return { ...state, players: state.players.filter((p) => p.id !== action.id) }
     }
 
-    case "START_NIGHT_1": {
+    case "START_ROLE_CONFIG": {
+      return { ...state, currentPhase: { type: "role_config" } }
+    }
+
+    case "SET_GAME_CONFIG": {
       return {
         ...state,
+        gameConfig: action.config,
         currentPhase: { type: "night_role_discovery", step: 0 },
         currentNight: 1,
         currentNightEvent: { night: 1 },
@@ -100,10 +110,11 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
     case "ADVANCE_ROLE_DISCOVERY": {
       const phase = state.currentPhase as { type: "night_role_discovery"; step: number }
       const nextStep = phase.step + 1
+      const activeSteps = getActiveRoleSteps(state.gameConfig)
+      const hasSeerCheck = state.gameConfig.hasSeer
+      const totalSteps = activeSteps.length + (hasSeerCheck ? 1 : 0)
 
-      // After step 4 (Seer assigned), move to Seer check (step 5)
-      // After step 5 (Seer check done), auto-assign villagers and go to day
-      if (nextStep > 5) {
+      if (nextStep >= totalSteps) {
         const updatedPlayers = state.players.map((p) =>
           p.role === null ? { ...p, role: "villager" as const } : p,
         )
@@ -149,14 +160,18 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
     }
 
     case "SET_COURTESAN_GUEST": {
-      return {
+      const updated = {
         ...state,
         currentNightEvent: {
           ...state.currentNightEvent,
           courtesanGuest: action.playerId,
         },
-        currentPhase: getPhaseAfterCourtesan(),
       }
+      const nextPhase = getPhaseAfter("night_courtesan", state.gameConfig)
+      if (nextPhase.type === "night_results") {
+        return gameReducer(updated, { type: "RESOLVE_NIGHT" })
+      }
+      return { ...updated, currentPhase: nextPhase }
     }
 
     case "SET_WOLF_TARGET": {
@@ -167,10 +182,11 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
           wolfTarget: action.playerId,
         },
       }
-      return {
-        ...updated,
-        currentPhase: getPhaseAfterWolves(),
+      const nextPhase = getPhaseAfter("night_wolves", state.gameConfig)
+      if (nextPhase.type === "night_results") {
+        return gameReducer(updated, { type: "RESOLVE_NIGHT" })
       }
+      return { ...updated, currentPhase: nextPhase }
     }
 
     case "SET_WIZARD_SAVE": {
@@ -197,17 +213,7 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
 
     case "SKIP_TO_NEXT_PHASE": {
       const phase = state.currentPhase
-      let nextPhase: GamePhase = state.currentPhase
-      if (phase.type === "night_courtesan") {
-        nextPhase = getPhaseAfterCourtesan()
-      } else if (phase.type === "night_wolves") {
-        nextPhase = getPhaseAfterWolves()
-      } else if (phase.type === "night_wizard") {
-        nextPhase = getPhaseAfterWizard()
-      } else if (phase.type === "night_seer") {
-        nextPhase = getPhaseAfterSeer()
-      }
-      // If next phase is night_results, resolve the night first
+      const nextPhase = getPhaseAfter(phase.type, state.gameConfig)
       if (nextPhase.type === "night_results") {
         return gameReducer(state, { type: "RESOLVE_NIGHT" })
       }
@@ -296,7 +302,7 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         currentNight: nextNight,
         currentNightEvent: { night: nextNight },
       }
-      return { ...newState, currentPhase: getNextNightPhase() }
+      return { ...newState, currentPhase: getFirstNightPhase(state.gameConfig) }
     }
 
     case "NEW_GAME": {
@@ -308,6 +314,7 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
       return {
         ...createInitialState(),
         players: state.players.map((p) => ({ ...p, role: null, isAlive: true })),
+        gameConfig: state.gameConfig,
       }
     }
 
