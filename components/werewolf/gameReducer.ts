@@ -17,6 +17,7 @@ export function createInitialState(): GameState {
     lastCourtesanGuest: null,
     currentNightEvent: {},
     gameConfig: DEFAULT_GAME_CONFIG,
+    timerMinutes: 3,
   }
 }
 
@@ -315,7 +316,12 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
         ...createInitialState(),
         players: state.players.map((p) => ({ ...p, role: null, isAlive: true })),
         gameConfig: state.gameConfig,
+        timerMinutes: state.timerMinutes,
       }
+    }
+
+    case "SET_TIMER_MINUTES": {
+      return { ...state, timerMinutes: action.minutes }
     }
 
     case "RESTORE_STATE": {

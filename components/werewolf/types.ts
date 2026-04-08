@@ -64,6 +64,7 @@ export type GameState = {
   lastCourtesanGuest: string | null
   currentNightEvent: Partial<NightEvent>
   gameConfig: GameConfig
+  timerMinutes: number
 }
 
 export type GameAction =
@@ -87,6 +88,7 @@ export type GameAction =
   | { type: "NEW_GAME" }
   | { type: "RESTART_SAME_PLAYERS" }
   | { type: "RESTORE_STATE"; state: GameState }
+  | { type: "SET_TIMER_MINUTES"; minutes: number }
 
 export const ROLE_DISCOVERY_STEPS = [
   { role: "courtesan" as Role, label: "Courtesan", emoji: "🌹", instruction: '"Courtesan, open your eyes"', multiSelect: false },
