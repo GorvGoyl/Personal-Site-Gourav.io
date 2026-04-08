@@ -108,15 +108,16 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                       className="fixed inset-0 z-10"
                       onClick={() => setMenuOpen(false)}
                     />
-                    <div className="absolute right-0 top-full z-20 mt-1 min-w-[180px] rounded-lg border border-gray-700 bg-[#1a1a2e] py-1 shadow-lg">
+                    <div className="absolute right-0 top-full z-20 mt-1 min-w-[200px] rounded-xl border border-gray-700 bg-[#1a1a2e] py-2 shadow-xl">
                       <button
                         type="button"
                         onClick={() => {
                           setMenuOpen(false)
                           openRolesGuide()
                         }}
-                        className="w-full px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
+                        className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
                       >
+                        <span className="w-5 text-center text-base">📖</span>
                         Roles Guide
                       </button>
                       {state.players.some((p) => p.role !== null) && (
@@ -126,21 +127,23 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                             setMenuOpen(false)
                             setShowPlayerRoles(true)
                           }}
-                          className="w-full px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
+                          className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
                         >
-                          View Player Roles
+                          <span className="w-5 text-center text-base">👥</span>
+                          Player Roles
                         </button>
                       )}
-                      <div className="my-1 border-t border-gray-700" />
+                      <div className="my-1.5 border-t border-gray-700/50" />
                       <button
                         type="button"
                         onClick={() => {
                           setMenuOpen(false)
                           dispatch({ type: "RESTART_SAME_PLAYERS" })
                         }}
-                        className="w-full px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
+                        className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
                       >
-                        Restart with same players
+                        <span className="w-5 text-center text-base">🔄</span>
+                        Restart Game
                       </button>
                       <button
                         type="button"
@@ -148,11 +151,12 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                           setMenuOpen(false)
                           dispatch({ type: "NEW_GAME" })
                         }}
-                        className="w-full px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
+                        className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-gray-300 active:bg-[#2a2a3e]"
                       >
-                        New game
+                        <span className="w-5 text-center text-base">✨</span>
+                        New Game
                       </button>
-                      <div className="my-1 border-t border-gray-700" />
+                      <div className="my-1.5 border-t border-gray-700/50" />
                       <button
                         type="button"
                         onClick={() => {
@@ -161,9 +165,10 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
                           setTimeout(() => setCopied(false), 1500)
                           setMenuOpen(false)
                         }}
-                        className="w-full px-4 py-2.5 text-left text-sm text-gray-500 active:bg-[#2a2a3e]"
+                        className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-gray-500 active:bg-[#2a2a3e]"
                       >
-                        {copied ? "Copied!" : "Copy debug state"}
+                        <span className="w-5 text-center text-base">📋</span>
+                        {copied ? "Copied!" : "Debug State"}
                       </button>
                     </div>
                   </>
@@ -174,6 +179,75 @@ export function WerewolfApp({ state, dispatch, onBack, canGoBack }: Props) {
       {renderScreen()}
       {showRolesGuide && (
         <RolesGuideScreen onClose={closeRolesGuide} />
+      )}
+      {showPlayerRoles && (
+        <div className="fixed inset-0 z-30 overflow-y-auto bg-[#0f0f1a]">
+          <div className="mx-auto max-w-md px-4 py-6">
+            <div className="mb-6 flex items-center justify-between">
+              <div className="text-xl font-bold">Player Roles</div>
+              <button
+                type="button"
+                onClick={() => setShowPlayerRoles(false)}
+                className="rounded-lg px-3 py-1.5 text-sm font-medium text-gray-400 active:text-white"
+              >
+                Close
+              </button>
+            </div>
+            <div className="space-y-1.5">
+              {[...state.players]
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((p) => {
+                  const wolf = isWolf(p.role)
+                  const isBabyWolf = p.id === state.babyWolfPlayerId
+                  const emoji = isBabyWolf ? ROLE_EMOJI.baby_wolf : ROLE_EMOJI[p.role ?? "villager"]
+                  const roleName = isBabyWolf
+                    ? (p.role === "wolf" ? "Baby Wolf → Wolf" : "Baby Wolf")
+                    : p.role === "queen_wolf" ? "Queen Wolf"
+                    : p.role ? p.role.charAt(0).toUpperCase() + p.role.slice(1)
+                    : "Villager"
+                  const isWolfTeam = wolf || (isBabyWolf && p.role === "wolf")
+                  const isBabyWolfUntransformed = isBabyWolf && p.role === "baby_wolf"
+                  const isVillageSupporter = !isWolfTeam && !isBabyWolfUntransformed
+                    && p.role !== null && p.role !== "villager"
+                  const borderColor = isWolfTeam
+                    ? "border-[#e94560]/40"
+                    : isBabyWolfUntransformed
+                      ? "border-[#7b68ee]/40"
+                      : isVillageSupporter
+                        ? "border-[#2ecc71]/40"
+                        : "border-gray-700/40"
+                  const roleColor = isWolfTeam
+                    ? "text-[#e94560]"
+                    : isBabyWolfUntransformed
+                      ? "text-[#7b68ee]"
+                      : isVillageSupporter
+                        ? "text-[#2ecc71]"
+                        : "text-gray-400"
+                  return (
+                    <div
+                      key={p.id}
+                      className={`flex items-center justify-between rounded-lg border bg-[#1a1a2e] px-4 py-3 ${borderColor} ${
+                        !p.isAlive ? "opacity-40" : ""
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="text-lg">{emoji}</div>
+                        <div>
+                          <div className={`text-sm font-semibold ${!p.isAlive ? "text-gray-500 line-through" : "text-white"}`}>
+                            {p.name}
+                          </div>
+                          <div className={`text-xs ${roleColor}`}>
+                            {roleName}
+                          </div>
+                        </div>
+                      </div>
+                      {!p.isAlive && <div className="text-sm text-gray-600">💀</div>}
+                    </div>
+                  )
+                })}
+            </div>
+          </div>
+        </div>
       )}
     </>
   )
