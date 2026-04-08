@@ -1,0 +1,55 @@
+{
+  "env": {
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_BUG_COMMAND": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(xargs:*)",
+      "WebSearch",
+      "Bash(git:*)",
+      "Bash(pnpm run:*)",
+      "Bash(npx tsc:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npx tsx:*)",
+      "Bash(claude:*)",
+      "WebFetch",
+      "Bash(pnpm tsc:*)",
+      "Bash(pnpm lint:*)"
+    ]
+  },
+  "model": "opus",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay .claude/sounds/Glass.aiff"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay .claude/sounds/Sosumi.aiff"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "autoMemoryEnabled": true
+}
