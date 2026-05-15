@@ -327,6 +327,22 @@ export default function Home() {
                                     </p>
                                 </div>
 
+                                {/* Calendar */}
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="mb-3">
+                                        <Link
+                                            href="/calendar"
+                                            title="Full Year Calendar"
+                                            className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
+                                            Full Year Calendar
+                                        </Link>
+                                    </div>
+                                    <p className="leading-relaxed text-slate-600">
+                                        A full-year calendar to jot quick notes on any date. No signup required. Data
+                                        is saved locally in your browser.
+                                    </p>
+                                </div>
+
                                 {/* Gourav.io */}
                                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
