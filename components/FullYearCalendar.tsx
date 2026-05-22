@@ -45,9 +45,6 @@ function generateMonthData(year: number, monthIndex: number): Month {
     const firstDay = getFirstDayOfMonth(year, monthIndex);
     const monthData: (Day | null)[][] = [];
     let currentDay = 1;
-    const today = new Date();
-    const isCurrentMonth = today.getFullYear() === year && today.getMonth() === monthIndex;
-    const currentDate = today.getDate();
 
     for (let i = 0; i < 6; i++) {
         // Max 6 weeks to display a month
@@ -87,14 +84,18 @@ function generateMonthData(year: number, monthIndex: number): Month {
     return { name: MONTH_NAMES[monthIndex], days: monthData };
 }
 
-function getDayClasses(day: Day | null, today: Date, isWeekend: boolean, hasNote: boolean): string {
+function getDayClasses(day: Day | null, today: Date | null, isWeekend: boolean, hasNote: boolean): string {
     const classes = ['flex', 'h-7', 'w-7', 'items-center', 'justify-center', 'rounded-full', 'p-1'];
     if (day === null) {
         classes.push('text-transparent');
         return classes.join(' ');
     }
 
-    const isToday = day.date === today.getDate() && day.month === today.getMonth() && day.year === today.getFullYear();
+    const isToday =
+        today !== null &&
+        day.date === today.getDate() &&
+        day.month === today.getMonth() &&
+        day.year === today.getFullYear();
     if (isToday) {
         classes.push('bg-blue-500', 'text-white');
     } else if (hasNote) {
@@ -117,9 +118,14 @@ function generateYearCalendar(year: number): Month[] {
 export function FullYearCalendar() {
     const [notes, setNotes] = useState<Notes>({});
     const [isNotesLoaded, setIsNotesLoaded] = useState(false);
-    const currentYear = new Date().getFullYear();
+    // Resolve "today" on the client; new Date() during static generation freezes to build time.
+    const [today, setToday] = useState<Date | null>(null);
+    const currentYear = (today ?? new Date()).getFullYear();
     const yearCalendar = generateYearCalendar(currentYear);
-    const today = new Date();
+
+    useEffect(() => {
+        setToday(new Date());
+    }, []);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
