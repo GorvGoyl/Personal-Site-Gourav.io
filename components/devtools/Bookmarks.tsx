@@ -37,7 +37,7 @@ export function Bookmarks() {
                             </li>
                             <li>
                                 <a
-                                    href="https://arena.ai/leaderboard"
+                                    href="https://arena.ai/leaderboard/text"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-600 underline hover:text-blue-800">
