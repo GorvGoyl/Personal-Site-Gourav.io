@@ -27,7 +27,8 @@
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "afplay .claude/sounds/Glass.aiff"
+                        "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/done-sound.sh",
+                        "async": true
                     }
                 ]
             }
