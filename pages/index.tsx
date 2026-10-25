@@ -315,7 +315,7 @@ export default function Home() {
                                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="mb-3">
                                         <a
-                                            href="https://gorv-werewolf.vercel.app"
+                                            href="https://werewolf.gourav.io"
                                             target="_blank"
                                             rel="noopener"
                                             title="Werewolf GM Tracker"

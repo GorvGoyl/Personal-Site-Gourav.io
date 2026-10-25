@@ -2,28 +2,33 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 
 // Werewolf GM moved to its own Vercel project (repo GorvGoyl/werewolf)
-const NEW_HOME = 'https://gorv-werewolf.vercel.app/';
+const NEW_HOME = 'https://werewolf.gourav.io/';
 
 // Sends visitors to the new home. Player names and role names saved by the old version live in
-// this site's localStorage, which the new app can't read, so they're handed over once in the URL hash.
-// Plain ES5 so it can run inline before the page hydrates; the flag stops it from running twice.
+// this site's localStorage, which the new app can't read, so they're handed over in the URL hash,
+// once per new home. Plain ES5 so it can run inline before the page hydrates; the flag stops it
+// from running twice.
 const HAND_OFF_SCRIPT = `(function () {
   if (window.__werewolfHandOff) return;
   window.__werewolfHandOff = true;
+  var home = ${JSON.stringify(NEW_HOME)};
   var hash = '';
   try {
     var raw = localStorage.getItem('werewolf-game');
-    if (raw) {
-      var saved = JSON.parse(raw);
+    var moved = localStorage.getItem('werewolf-game-moved');
+    var data = raw || (localStorage.getItem('werewolf-handed-to') !== home ? moved : null);
+    if (data) {
+      var saved = JSON.parse(data);
       var names = (saved.players || []).map(function (p) { return p && p.name; }).filter(Boolean);
       var payload = { v: 1, names: names, roleNames: saved.roleNames || {}, timerMinutes: saved.timerMinutes, gameConfig: saved.gameConfig };
       hash = '#import=' + encodeURIComponent(JSON.stringify(payload));
-      localStorage.setItem('werewolf-game-moved', raw);
+      localStorage.setItem('werewolf-game-moved', data);
       localStorage.removeItem('werewolf-game');
+      localStorage.setItem('werewolf-handed-to', home);
     }
   } catch (e) {}
   if (!hash && window.location.hash === '#rules') hash = '#rules';
-  window.location.replace(${JSON.stringify(NEW_HOME)} + hash);
+  window.location.replace(home + hash);
 })();`;
 
 export default function WerewolfMovedPage() {
@@ -54,7 +59,7 @@ export default function WerewolfMovedPage() {
                     <a
                         href={NEW_HOME}
                         className="font-semibold text-violet-300 underline">
-                        gorv-werewolf.vercel.app
+                        werewolf.gourav.io
                     </a>
                 </p>
             </main>
