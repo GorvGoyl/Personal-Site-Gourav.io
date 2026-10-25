@@ -314,16 +314,19 @@ export default function Home() {
                                 {/* Werewolf */}
                                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                                     <div className="mb-3">
-                                        <Link
-                                            href="/werewolf"
+                                        <a
+                                            href="https://gorv-werewolf.vercel.app"
+                                            target="_blank"
+                                            rel="noopener"
                                             title="Werewolf GM Tracker"
                                             className="text-xl font-semibold text-slate-900 transition-colors hover:text-orange-500">
                                             Werewolf GM Tracker
-                                        </Link>
+                                        </a>
                                     </div>
                                     <p className="leading-relaxed text-slate-600">
-                                        A phone-first game master companion for Werewolf. Tracks roles, night actions,
-                                        death resolution, day votes, and generates an end-of-game timeline recap.
+                                        A phone-first game master companion for Werewolf. Reads you the night script,
+                                        tracks roles, night actions, deaths and day votes, and ends with a timeline
+                                        recap.
                                     </p>
                                 </div>
 
