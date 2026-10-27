@@ -6,10 +6,10 @@ import { bundleMDX } from 'mdx-bundler';
 import path, { join } from 'path';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
+import rehypeMdxImportMedia from 'rehype-mdx-import-media';
 import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
-import remarkMdxImages from 'remark-mdx-images';
 import type { FrontmatterProject } from '../types/types';
 
 function getMDFoldersList(baseDir: string): string[][] {
@@ -114,10 +114,11 @@ export async function getPost(
         source: fileContents,
         cwd: mdDir,
         mdxOptions: (options) => {
-            options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm, remarkMdxImages] as any;
+            options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm] as any;
 
             options.rehypePlugins = [
                 ...(options?.rehypePlugins ?? []),
+                rehypeMdxImportMedia,
                 rehypeSlug,
                 rehypeCodeTitles,
                 rehypePrism,
