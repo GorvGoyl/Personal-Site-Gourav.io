@@ -10,7 +10,8 @@ import tseslint from 'typescript-eslint';
 const tsFiles = ['**/*.{ts,tsx}'];
 
 export default defineConfig([
-    globalIgnores(['out/', 'public/', '.vercel/', '.superpowers/', 'docs/']),
+    // .claude/ holds Claude Code session worktrees: full copies of this repo
+    globalIgnores(['out/', 'public/', '.vercel/', '.superpowers/', 'docs/', '.claude/']),
     {
         files: tsFiles,
         extends: [js.configs.recommended, tseslint.configs.strictTypeChecked],
