@@ -2,10 +2,8 @@
 import toc from "@jsdevtools/rehype-toc";
 import { Client, isFullDatabase } from "@notionhq/client";
 
-import type { CodeBlockObjectResponse, ImageBlockObjectResponse, PageObjectResponse, RichTextItemResponse, VideoBlockObjectResponse } from "@notionhq/client";
+import type { ImageBlockObjectResponse, PageObjectResponse, RichTextItemResponse, VideoBlockObjectResponse } from "@notionhq/client";
 import { bundleMDX } from "mdx-bundler";
-import { NotionToMarkdown } from "notion-to-md";
-import type { ListBlockChildrenResponseResult } from "notion-to-md/build/types";
 import path, { join } from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
@@ -18,6 +16,7 @@ import { frontmatterCache } from "./cache";
 import { NOTION_API_KEY, NOTION_BLOGPOSTS_DB } from "./envVar";
 import { downloadFile } from "./fileUtils";
 import { headingLink } from "./localContentUtils";
+import { notionPageToMarkdown } from "./notionToMarkdown";
 import { hashCode, retryWithExponentialBackoff } from "./utils";
 const notionClient = new Client({ auth: NOTION_API_KEY });
 
@@ -159,73 +158,21 @@ export async function getPostContentFromNotion(
     ogImageURL = url;
     ogImageName = ogImgName;
   };
-  const n2m = new NotionToMarkdown({ notionClient });
-
-  n2m.setCustomTransformer("image", (block) =>
-    {return imgTransformer(block, slugLowercase, setOgImageURLcallback)}
-  );
-  n2m.setCustomTransformer("video", (block) =>
-    {return videoTransformer(block, slugLowercase)}
-  );
-
-  // n2m.setCustomTransformer("synced_block", (block) => {
-  //   return ""; // avoid rendering it twice
-  // const syncedBlock = block as SyncedBlockBlockObjectResponse;
-  // const originalSyncedBlockId =
-  //   syncedBlock.synced_block.synced_from?.block_id;
-
-  // const isReferenceSyncedBlock = !!originalSyncedBlockId;
-  // // check if it's a 'reference synced block'
-  // if (isReferenceSyncedBlock) {
-  //   const mdBlocks = await n2m.pageToMarkdown(originalSyncedBlockId);
-  //   const mdString = n2m.toMarkdownString(mdBlocks);
-  //   return mdString;
-  // } else {
-  //   return ""; // 'original synced blocks' are handled like normal blocks by n2m so avoid rendering it twice
-  // }
-  // });
-
-  n2m.setCustomTransformer("code", (block) => {
-    // same output as notion-to-md, except it joins a code block's rich text items with newlines, which would break code made of several items
-    const { code } = block as CodeBlockObjectResponse;
-    const text = code.rich_text.map((item) => {return item.plain_text}).join("").trim();
-    if (!text) {
-      return "";
-    }
-    return `\`\`\`${code.language}\n${text}\n\`\`\``;
-  });
-
-  n2m.setCustomTransformer("child_database", (block) => {
-    // don't render inline databases as they are internally used to track progress of articles
-    return "";
-  });
-
-  n2m.setCustomTransformer("column_list", async (block) => {
-    const mdBlocks = await n2m.pageToMarkdown(block.id);
-    const mdString = n2m.toMarkdownString(mdBlocks);
-    return `
-    <div style={{display:"flex",columnGap:"10px"}}>
-   ${mdString}
-    </div>
-    `;
-  });
-
-  n2m.setCustomTransformer("column", (block) => {
-    // avoid rendering columns twice
-    return "";
-  });
-
-  const mdBlocks = await retryWithExponentialBackoff(
+  const mdString = await retryWithExponentialBackoff(
       async () => {
-          return await n2m.pageToMarkdown(frontmatter.postId);
+          return await notionPageToMarkdown(notionClient, frontmatter.postId, {
+            image: (block) => {return imgTransformer(block, slugLowercase, setOgImageURLcallback)},
+            video: (block) => {return videoTransformer(block, slugLowercase)},
+            // don't render inline databases as they are internally used to track progress of articles
+            child_database: () => {return ""},
+          });
       },
-      maxRetries, 
-      initialDelayInMs 
+      maxRetries,
+      initialDelayInMs
   );
-  const mdString = n2m.toMarkdownString(mdBlocks);
 
   const postContent = await convertMdxStringToCode(
-    mdString["parent"],
+    mdString,
     frontmatter
   );
 
@@ -258,11 +205,10 @@ const parseFrontmatterFromPost = (page: PageObjectResponse) => {
 };
 
 const imgTransformer = async (
-  block: ListBlockChildrenResponseResult,
+  imgBlock: ImageBlockObjectResponse,
   slugLowercase: string,
   setOgImageURLcallback: (url: string, ogImgName: string) => void
 ) => {
-  const imgBlock = block as ImageBlockObjectResponse;
   if (imgBlock.has_children) {
     throw new Error("unhandled case: imgBlock has children");
   }
@@ -295,10 +241,9 @@ const imgTransformer = async (
 };
 
 const videoTransformer = async (
-  block: ListBlockChildrenResponseResult,
+  videoBlock: VideoBlockObjectResponse,
   slugLowercase: string
 ) => {
-  const videoBlock = block as VideoBlockObjectResponse;
   if (videoBlock.has_children) {
     throw new Error("unhandled case: videoBlock has children");
   }
