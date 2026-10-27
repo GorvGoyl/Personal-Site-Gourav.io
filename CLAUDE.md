@@ -10,7 +10,6 @@ pnpm build            # Build Next.js app
 pnpm start            # Build and start production server
 pnpm lint             # ESLint on .ts/.tsx files
 pnpm tsc              # TypeScript type checking
-pnpm stylelint        # CSS/SCSS linting
 ```
 
 Content generation (runs automatically in postbuild):

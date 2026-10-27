@@ -26,12 +26,6 @@ const config = {
                 tabWidth: 2,
             },
         },
-        {
-            files: ['.hintrc'],
-            options: {
-                trailingComma: 'none',
-            },
-        },
     ],
     plugins: [
         'prettier-plugin-tailwindcss', //must be last

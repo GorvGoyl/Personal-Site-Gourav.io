@@ -23,7 +23,6 @@
         "vscode-icons-team.vscode-icons",
         "github.vscode-github-actions",
         "p42ai.refactor",
-        "webhint.vscode-webhint",
         "joao-mbn.react-extract"
     ]
 }
