@@ -1,8 +1,8 @@
 
 import toc from "@jsdevtools/rehype-toc";
-import { Client } from "@notionhq/client";
+import { Client, isFullDatabase } from "@notionhq/client";
 
-import type { ImageBlockObjectResponse, PageObjectResponse, RichTextItemResponse, VideoBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { CodeBlockObjectResponse, ImageBlockObjectResponse, PageObjectResponse, RichTextItemResponse, VideoBlockObjectResponse } from "@notionhq/client";
 import { bundleMDX } from "mdx-bundler";
 import { NotionToMarkdown } from "notion-to-md";
 import type { ListBlockChildrenResponseResult } from "notion-to-md/build/types";
@@ -24,13 +24,29 @@ const notionClient = new Client({ auth: NOTION_API_KEY });
 const maxRetries = 3;
 const initialDelayInMs = 1000;
 
+let blogpostsDataSourceId = "";
+
+/** Posts are queried through the database's data source, whose id differs from the database id.
+ * https://developers.notion.com/docs/upgrade-guide-2025-09-03
+ */
+async function getBlogpostsDataSourceId(): Promise<string> {
+  if (!blogpostsDataSourceId) {
+    const database = await notionClient.databases.retrieve({ database_id: NOTION_BLOGPOSTS_DB });
+    if (!isFullDatabase(database) || database.data_sources.length !== 1) {
+      throw new Error("unhandled case: blog posts database doesn't have exactly one data source");
+    }
+    blogpostsDataSourceId = database.data_sources[0].id;
+  }
+  return blogpostsDataSourceId;
+}
+
 export async function getAllPublishedAndPreviewPostsFrontmatterFromNotion(): Promise<
   FrontmatterBlogpost[]
 > {
   return await retryWithExponentialBackoff(
     async () => {
-      const response = await notionClient.databases.query({
-        database_id: NOTION_BLOGPOSTS_DB,
+      const response = await notionClient.dataSources.query({
+        data_source_id: await getBlogpostsDataSourceId(),
         filter: {
           or: [
             {
@@ -93,8 +109,8 @@ export async function getPostIdFromSlugFromNotion(
 ): Promise<FrontmatterBlogpost> {
   return await retryWithExponentialBackoff(
     async () => {
-      const response = await notionClient.databases.query({
-        database_id: NOTION_BLOGPOSTS_DB,
+      const response = await notionClient.dataSources.query({
+        data_source_id: await getBlogpostsDataSourceId(),
         filter: {
           and: [
             {
@@ -168,6 +184,16 @@ export async function getPostContentFromNotion(
   //   return ""; // 'original synced blocks' are handled like normal blocks by n2m so avoid rendering it twice
   // }
   // });
+
+  n2m.setCustomTransformer("code", (block) => {
+    // same output as notion-to-md, except it joins a code block's rich text items with newlines, which would break code made of several items
+    const { code } = block as CodeBlockObjectResponse;
+    const text = code.rich_text.map((item) => {return item.plain_text}).join("").trim();
+    if (!text) {
+      return "";
+    }
+    return `\`\`\`${code.language}\n${text}\n\`\`\``;
+  });
 
   n2m.setCustomTransformer("child_database", (block) => {
     // don't render inline databases as they are internally used to track progress of articles

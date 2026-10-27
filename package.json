@@ -39,7 +39,7 @@
         "hastscript": "^9.0.1",
         "mdx-bundler": "^10.1.1",
         "next": "16.4.3",
-        "notion-to-md": "^3.1.1",
+        "notion-to-md": "^3.1.9",
         "react": "19.3.1",
         "react-dom": "19.3.1",
         "react-dom-confetti": "^0.2.0",
@@ -57,7 +57,7 @@
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
-        "@notionhq/client": "^2.2.15",
+        "@notionhq/client": "^5.28.0",
         "@tailwindcss/typography": "^0.5.20",
         "@types/node": "^24.19.2",
         "@types/react": "19.3.0",
