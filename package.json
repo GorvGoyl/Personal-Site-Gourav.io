@@ -8,9 +8,9 @@
         "dev:debug": "cross-env NODE_OPTIONS='--inspect' next dev",
         "//prod": "starts Next.js in production server.. restart again after code change",
         "start": "next build && next start",
-        "dev:vercel": "vercel dev",
-        "vercel:build": "vercel build",
-        "deploy:preview": "vercel",
+        "dev:vercel": "pnpm dlx vercel dev",
+        "vercel:build": "pnpm dlx vercel build",
+        "deploy:preview": "pnpm dlx vercel",
         "check-updates": "ncu -i --format repo,group",
         "//": "//-internal commands-//",
         "//dont use NODE_ENV": "https://github.com/vercel/next.js/blob/master/errors/non-standard-node-env.md",
@@ -30,7 +30,7 @@
         "//lint-fix": "eslint ./components/** ./pages/** -c .eslintrc.json --fix --ext .js,.jsx,.ts,.tsx,.scss,.mdx"
     },
     "engines": {
-        "node": "22.x"
+        "node": "24.x"
     },
     "dependencies": {
         "@codeium/react-code-editor": "^1.0.12",
@@ -59,8 +59,7 @@
         "sass": "^1.106.1",
         "sugar-high": "^2.6.4",
         "unist-util-visit": "^5.2.0",
-        "uuidv7": "^1.2.1",
-        "vercel": "^65.4.0"
+        "uuidv7": "^1.2.1"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
@@ -72,7 +71,7 @@
         "@tailwindcss/typography": "^0.5.20",
         "@testing-library/dom": "^10.4.2",
         "@testing-library/react": "^16.3.3",
-        "@types/node": "^22.20.5",
+        "@types/node": "^24.19.2",
         "@types/react": "19.3.0",
         "@vitejs/plugin-react": "^6.1.2",
         "autoprefixer": "^10.6.2",

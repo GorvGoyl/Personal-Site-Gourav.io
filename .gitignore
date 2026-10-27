@@ -53,3 +53,6 @@ frontmatterOfPublishedPosts.json
 .claude/settings.local.json
 .superpowers
 docs/superpowers
+
+# env files hold secrets; set variables in Vercel instead
+.env
