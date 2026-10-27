@@ -43,8 +43,8 @@
         "next": "16.4.3",
         "notion-to-md": "^3.1.1",
         "npm-check-updates": "^23.1.1",
-        "react": "18.3.1",
-        "react-dom": "18.3.1",
+        "react": "19.3.1",
+        "react-dom": "19.3.1",
         "react-dom-confetti": "^0.2.0",
         "react-medium-image-zoom": "^5.4.9",
         "react-twitter-widgets": "^1.11.0",
@@ -115,7 +115,12 @@
             "allowedVersions": {
                 "eslint-plugin-import>eslint": "10",
                 "eslint-plugin-jsx-a11y>eslint": "10",
-                "eslint-plugin-react>eslint": "10"
+                "eslint-plugin-react>eslint": "10",
+                "@codeium/react-code-editor>react": "19",
+                "@codeium/react-code-editor>react-dom": "19",
+                "@monaco-editor/react>react": "19",
+                "@monaco-editor/react>react-dom": "19",
+                "react-twitter-widgets>react": "19"
             }
         }
     }
