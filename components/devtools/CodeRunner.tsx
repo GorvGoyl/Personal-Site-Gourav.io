@@ -57,7 +57,7 @@ export function CodeRunner() {
                     <div className="mb-4 flex justify-between text-sm">
                         <button
                             type="button"
-                            className="rounded bg-green-500 px-4 py-2 text-white transition hover:bg-green-600"
+                            className="rounded-sm bg-green-500 px-4 py-2 text-white transition hover:bg-green-600"
                             onClick={() => {
                                 runCode(validationErrors, editorValue, selectedLanguage, setOutput);
                             }}>
@@ -120,7 +120,7 @@ function CodeOutput({ code }: { code: string }) {
     return (
         <pre className="p-0">
             <div className="w-full overflow-hidden">
-                <div className={`custom_scrollbar w-full overflow-auto rounded bg-slate-800 p-2 h-[${height}]`}>
+                <div className={`custom_scrollbar w-full overflow-auto rounded-sm bg-slate-800 p-2 h-[${height}]`}>
                     <code
                         className="codeblocks text-sm"
                         dangerouslySetInnerHTML={{ __html: codeHTML }}

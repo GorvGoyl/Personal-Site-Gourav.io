@@ -12,7 +12,7 @@ export function Banner() {
     };
 
     return isVisible ? (
-        <div className="-mx-5 -mt-2 flex justify-between rounded-none bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-4 text-base text-gray-100 md:mx-0 md:rounded-b">
+        <div className="-mx-5 -mt-2 flex justify-between rounded-none bg-linear-to-r/srgb from-gray-700 to-gray-900 px-4 py-4 text-base text-gray-100 md:mx-0 md:rounded-b-sm">
             <div className="flex w-full justify-between">
                 <div className="">
                     <p>🎉 Notion ⇋ Google Calendar 2-way Sync</p>
@@ -21,7 +21,7 @@ export function Banner() {
                     <a
                         href={`https://easypie.app?ref=${pathName}`}
                         target="_blank"
-                        className={`hover:bg-current/80 inline-block cursor-pointer whitespace-nowrap rounded-2xl border border-gray-400 px-3 py-2 leading-none text-gray-200 hover:opacity-80 focus:outline-none`}>
+                        className={`inline-block cursor-pointer rounded-2xl border border-gray-400 px-3 py-2 leading-none whitespace-nowrap text-gray-200 hover:opacity-80 focus:outline-hidden`}>
                         Try for Free
                     </a>
                 </div>
@@ -31,7 +31,7 @@ export function Banner() {
                 <button
                     type="button"
                     onClick={handleClick}
-                    className="hover:bg-current/80 cursor-pointer leading-snug text-gray-200 hover:opacity-80">
+                    className="cursor-pointer leading-snug text-gray-200 hover:opacity-80">
                     {/* <p>✖</p> */}
                     <svg
                         viewBox="0 0 24 24"
@@ -61,7 +61,7 @@ export function BannerChromeExtension() {
     };
 
     return isVisible ? (
-        <div className="-mx-5 -mt-2 flex justify-between rounded-none bg-gradient-to-r from-gray-700 to-gray-900 px-4 py-4 text-base text-gray-100 md:mx-0 md:rounded-b">
+        <div className="-mx-5 -mt-2 flex justify-between rounded-none bg-linear-to-r/srgb from-gray-700 to-gray-900 px-4 py-4 text-base text-gray-100 md:mx-0 md:rounded-b-sm">
             <div className="flex w-full justify-between">
                 <div className="">
                     <p>Let AI write emails and messages for you 🔥</p>
@@ -71,7 +71,7 @@ export function BannerChromeExtension() {
                         href={`https://jetwriter.ai?ref=${pathName}`}
                         target="_blank"
                         className={
-                            'inline-block cursor-pointer whitespace-nowrap rounded-full border border-gray-400 px-3 py-2 text-sm leading-none text-gray-200 hover:border-transparent hover:bg-white hover:text-black hover:no-underline focus:outline-none'
+                            'inline-block cursor-pointer rounded-full border border-gray-400 px-3 py-2 text-sm leading-none whitespace-nowrap text-gray-200 hover:border-transparent hover:bg-white hover:text-black hover:no-underline focus:outline-hidden'
                         }>
                         Try for Free
                     </a>
@@ -82,7 +82,7 @@ export function BannerChromeExtension() {
                 <button
                     type="button"
                     onClick={handleClick}
-                    className="hover:bg-current/80 cursor-pointer leading-snug text-gray-200 hover:opacity-80">
+                    className="cursor-pointer leading-snug text-gray-200 hover:opacity-80">
                     {/* <p>✖</p> */}
                     <svg
                         viewBox="0 0 24 24"

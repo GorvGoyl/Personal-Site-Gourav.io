@@ -1,0 +1,61 @@
+@reference '../../styles/tailwind.css';
+
+.css {
+    /* table: clone-wars */
+    :global(.wrapper-outer) {
+        /* large screen: show full height table,small: show fixed width to prevent breaking page width */
+        @apply flex h-screen flex-col overflow-initial md:h-full;
+    }
+    :global(.wrapper-table) {
+        /* small screen: show fixed width and scroll to prevent breaking page width */
+        @apply w-auto overflow-auto md:w-max md:max-w-(--breakpoint-md) md:overflow-initial;
+    }
+
+    table {
+        @apply relative m-0 w-full;
+
+        thead {
+            @apply whitespace-nowrap;
+            tr {
+                th:last-child {
+                    @apply pr-3;
+                }
+                th:first-child {
+                    @apply pl-3;
+                }
+                th {
+                    @apply sticky top-0 bg-blue-200 py-3 text-blue-900;
+                }
+            }
+        }
+
+        tbody {
+            @apply bg-blue-50;
+
+            /*
+              Tailwind 3's divide-y: a line on top of every row but the first. Tailwind 4's goes below every row but
+              the last, which in this collapsed table changes the color of the first line.
+            */
+            > :not([hidden]) ~ :not([hidden]) {
+                @apply border-t border-b-0 border-gray-300;
+            }
+
+            tr {
+                td a {
+                    /* `overflow normal` to not break table links.. useful when viewing in mobile */
+                    @apply font-normal wrap-normal no-underline hover:underline;
+                }
+                td:last-child {
+                    @apply pr-3;
+                }
+                td:first-child {
+                    @apply pl-3 font-semibold;
+                }
+                td:nth-child(2),
+                td:nth-child(4) {
+                    @apply lg:wrap-break-word;
+                }
+            }
+        }
+    }
+}

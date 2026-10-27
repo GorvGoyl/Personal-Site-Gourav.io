@@ -1,0 +1,307 @@
+@import 'tailwindcss' source(none);
+@import './tailwind3-colors.css';
+@import './prose.css' layer(components);
+
+/* Only the code: markdown in content/ uses classes (md:hidden) that Tailwind 3 never generated */
+@source '../components/**/*.{js,ts,jsx,tsx}';
+@source '../pages/**/*.{js,ts,jsx,tsx,md,mdx}';
+@source '../layouts/**/*.{js,ts,jsx,tsx}';
+@source '../lib/**/*.{js,ts,jsx,tsx}';
+
+/*
+  Tailwind CSS 4 changed some defaults; keep Tailwind 3's so the site looks the same as it did.
+*/
+@theme {
+    /* --font-inter is never set, so this stack doesn't resolve: the page font comes from next/font's class on the app */
+    --font-sans:
+        var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* in px: rem breakpoints move when someone changes their browser's font size */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    /* fixed line heights rather than ratios, so text inside with another font size keeps the same line height */
+    --text-xs--line-height: 1rem;
+    --text-sm--line-height: 1.25rem;
+    --text-base--line-height: 1.5rem;
+    --text-lg--line-height: 1.75rem;
+    --text-xl--line-height: 1.75rem;
+    --text-2xl--line-height: 2rem;
+    --text-3xl--line-height: 2.25rem;
+    --text-4xl--line-height: 2.5rem;
+
+    /* rather than calc(infinity * 1px): Safari draws the edge of a circle slightly differently */
+    --radius-full: 9999px;
+}
+
+/* Inline: Tailwind 4 only splits a drop shadow made of several shadows into separate drop-shadow()s when it's inlined */
+@theme inline {
+    --drop-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.1), 0 1px 1px rgb(0 0 0 / 0.06);
+    --drop-shadow-md: 0 4px 3px rgb(0 0 0 / 0.07), 0 2px 2px rgb(0 0 0 / 0.06);
+    --drop-shadow-lg: 0 10px 8px rgb(0 0 0 / 0.04), 0 4px 3px rgb(0 0 0 / 0.1);
+    --drop-shadow-xl: 0 20px 13px rgb(0 0 0 / 0.03), 0 8px 5px rgb(0 0 0 / 0.08);
+}
+
+/* Tailwind 4 applies hover styles only on devices that can hover; Tailwind 3 applied them on tap too */
+@custom-variant hover (&:hover);
+
+@layer base {
+    /* Tailwind 4 defaults borders to currentcolor, placeholders to the text color, and buttons to the default cursor */
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: var(--color-gray-400);
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+
+    /* Tailwind 4 also squares form controls, makes fields transparent and overrides disabled opacity; keep the browser's */
+    button,
+    input,
+    select,
+    optgroup,
+    textarea,
+    ::file-selector-button {
+        border-radius: revert-layer;
+        opacity: revert-layer;
+    }
+    input:where(:not([type='button'], [type='reset'], [type='submit'])),
+    select,
+    textarea {
+        background-color: revert-layer;
+    }
+
+    /* Tailwind 4's reset also removes the browser's padding on table cells and dropdown options */
+    td,
+    th,
+    option {
+        padding: revert-layer;
+    }
+
+    /* Tailwind 3 used the sans stack itself here; Tailwind 4 falls back to a system font when it doesn't resolve */
+    html,
+    :host {
+        font-family: var(--font-sans);
+    }
+}
+
+/* Outside any layer: @font-face rules in a layer lose to next/font's unlayered Inter */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url(/fonts/inter-var-latin.woff2) format('woff2');
+    unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
+        U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@layer base {
+    /* * {
+      scrollbar-width: thin;
+    } */
+
+    /* Works on Chrome, Edge, and Safari */
+    /* *::-webkit-scrollbar {
+      background: transparent;
+      width: 10px;
+      height: 10px;
+    } */
+
+    /* *::-webkit-scrollbar-track {
+      background: #edece9;
+    } */
+
+    /* *::-webkit-scrollbar-thumb {
+      background: #d3d1cb;
+    } */
+
+    h1 {
+        @apply text-4xl! leading-tight! font-semibold!;
+    }
+    h2 {
+        @apply font-semibold!;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply wrap-break-word; /* to wrap headings with long words on mobile */
+    }
+
+    /* remove tailwind typography prose styling */
+
+    /* remove quotes from blockquote */
+    blockquote > p::before {
+        content: none !important;
+    }
+
+    blockquote > p::after {
+        content: none !important;
+    }
+
+    /* // remove backquote added by prose class to inline quote */
+    code::before {
+        content: none !important;
+    }
+
+    code::after {
+        content: none !important;
+    }
+
+    /* inline code */
+
+    code {
+        @apply rounded-md border border-gray-100 bg-[#eef1f2] px-1 py-0.5 font-mono text-sm wrap-break-word text-gray-800;
+    }
+
+    details {
+        @apply my-2;
+        summary {
+            @apply cursor-pointer hover:bg-gray-100;
+            h3,
+            h4 {
+                @apply my-0! inline-block!;
+            }
+        }
+    }
+}
+
+/*
+  In the utilities layer, like Tailwind 3's flat cascade: this outranks single-class utilities such as no-underline
+  and prose's link styles, but not hover: utilities.
+*/
+@layer utilities {
+    a:hover {
+        @apply orange-underline;
+    }
+
+    /*
+      Tailwind 4's transitions also animate outline-color, so focus rings fade in; keep Tailwind 3's lists
+      (plus translate, scale and rotate, which Tailwind 4 transforms with).
+    */
+    .transition {
+        transition-property:
+            color,
+            background-color,
+            border-color,
+            text-decoration-color,
+            fill,
+            stroke,
+            opacity,
+            box-shadow,
+            transform,
+            translate,
+            scale,
+            rotate,
+            filter,
+            -webkit-backdrop-filter,
+            backdrop-filter;
+    }
+    .transition-colors {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    }
+
+    /* Tailwind 3's outline-none drew a transparent outline; Tailwind 4's outline-hidden draws none */
+    .outline-hidden,
+    .focus\:outline-hidden:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+}
+
+/* custom component styles */
+@utility site-container {
+    @apply mx-auto max-w-(--breakpoint-md) px-5 py-20;
+}
+
+@utility twitter-btn {
+    border-radius: 4px;
+    padding: 1px 10px 1px 9px;
+    background-color: #1b95e0;
+    color: #fff;
+    font-weight: 500;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 26px;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: #0c7abf;
+    }
+}
+
+@utility badge-wrapper {
+    @apply mt-5 mb-4 flex gap-5;
+
+    img {
+        @apply m-0;
+    }
+}
+
+@utility display-inherit {
+    display: inherit;
+}
+
+@utility orange-underline {
+    @apply underline decoration-orange-500;
+}
+
+@utility overflow-initial {
+    overflow: initial;
+}
+
+:root {
+    --sh-class: #e3eaf2;
+    --sh-identifier: #c699e3;
+    --sh-sign: #66cccc;
+    --sh-property: #c699e3;
+    --sh-entity: #66cccc;
+    --sh-jsxliterals: #e3eaf2;
+    --sh-string: #91d076;
+    --sh-keyword: #e9ae7e;
+    --sh-comment: #8da1b9;
+}
+/* problem: latex equation is rendered twice (html and mathml).
+* solution: hide the html version but it's still available when copying it to clipboard (text/html).
+*/
+.katex-html {
+    display: none;
+}
+
+.codeblocks {
+    counter-reset: sh-line-number;
+    background-color: transparent;
+    border: none;
+}
+.sh__line::before {
+    counter-increment: sh-line-number 1;
+    content: counter(sh-line-number);
+    margin-right: 20px;
+    margin-left: 20px;
+    color: #a4a4a4;
+}
+.custom_scrollbar {
+    scrollbar-color: #a3a3a3 transparent;
+    scrollbar-width: thin;
+}

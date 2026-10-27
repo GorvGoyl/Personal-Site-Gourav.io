@@ -2,7 +2,7 @@ export function Footer() {
     return (
         <footer className="mt-10 text-center font-mono text-gray-600">
             <div className="select-none">• • •</div>
-            <div className="mx-auto max-w-screen-md pb-8 pt-6 md:pb-10 md:pt-7">
+            <div className="mx-auto max-w-(--breakpoint-md) pt-6 pb-8 md:pt-7 md:pb-10">
                 <div className="text-center text-xs">
                     Built with React &{' '}
                     <a

@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
-import '../styles/tailwind.scss';
+import '../styles/tailwind.css';
 
 import { useEffect } from 'react';
 import { isProd } from '../lib/envVar';

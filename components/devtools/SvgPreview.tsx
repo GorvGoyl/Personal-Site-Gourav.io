@@ -62,7 +62,7 @@ export function SvgPreview() {
                 <div className="flex w-[500px] flex-col gap-4">
                     <h2 className="text-xl font-semibold">🖼️ SVG Preview</h2>
                     <textarea
-                        className="h-32 w-full rounded border border-neutral-200 p-2 font-mono text-sm"
+                        className="h-32 w-full rounded-sm border border-neutral-200 p-2 font-mono text-sm"
                         placeholder="Paste your SVG code here..."
                         value={svgCode}
                         onChange={handleSvgInput}
@@ -74,7 +74,7 @@ export function SvgPreview() {
                         <div className="flex flex-col gap-2">
                             <p className="text-center text-base text-neutral-500">Preview</p>
                             <div
-                                className="flex items-center justify-center rounded p-4"
+                                className="flex items-center justify-center rounded-sm p-4"
                                 dangerouslySetInnerHTML={{ __html: svgCode }}
                             />
                         </div>

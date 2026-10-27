@@ -284,7 +284,7 @@ export default function TimerPage() {
                                         value={reminderInput}
                                         onChange={(e) => setReminderInput(e.target.value)}
                                         onBlur={handleReminderBlur}
-                                        className="w-16 rounded-md border border-slate-300 px-2 py-1 text-center focus:border-blue-500 focus:outline-none"
+                                        className="w-16 rounded-md border border-slate-300 px-2 py-1 text-center focus:border-blue-500 focus:outline-hidden"
                                     />
                                     <span>sec before end</span>
                                 </>

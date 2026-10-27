@@ -30,7 +30,7 @@ export function ScrollTopBtn() {
     };
     return isVisible ? (
         <div
-            className="fixed bottom-12 right-12 z-50 flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-full border border-gray-300 bg-white text-gray-500 opacity-100 shadow outline-none"
+            className="fixed right-12 bottom-12 z-50 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white text-gray-500 opacity-100 shadow-sm outline-hidden select-none"
             title="Scroll back to top"
             role="button"
             tabIndex={0}

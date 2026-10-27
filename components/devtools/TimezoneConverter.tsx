@@ -206,7 +206,7 @@ export function TimezoneConverter() {
                             onChange={(e) => {
                                 setSelectedTimezone(e.target.value);
                             }}
-                            className="rounded border border-neutral-300 p-2">
+                            className="rounded-sm border border-neutral-300 p-2">
                             <option value="">Select Timezone</option>
                             {availableTimezones.map((tz) => {
                                 return (
@@ -221,7 +221,7 @@ export function TimezoneConverter() {
                         <button
                             type="button"
                             onClick={handleAddTimezone}
-                            className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+                            className="rounded-sm bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
                             Add Timezone
                         </button>
                     </div>

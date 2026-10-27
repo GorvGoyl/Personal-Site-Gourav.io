@@ -96,7 +96,7 @@ export function Title(Props: { txt: string; homeURL: string; logo?: string }) {
                         title={Props.txt}>
                         {Props.logo && (
                             <img
-                                className="m-0 -ml-1 mr-8"
+                                className="m-0 mr-8 -ml-1"
                                 width="96"
                                 height="96"
                                 src={Props.logo}
@@ -114,7 +114,7 @@ export function Title(Props: { txt: string; homeURL: string; logo?: string }) {
 }
 
 export function TagDate(props: { children: any }) {
-    return <sup className="rounded bg-gray-200 px-1 text-gray-500">{props.children}</sup>;
+    return <sup className="rounded-sm bg-gray-200 px-1 text-gray-500">{props.children}</sup>;
 }
 
 export function Social() {

@@ -18,6 +18,6 @@
         "useUnknownInCatchVariables": true
     },
     "allowUnreachableCode": true,
-    "include": ["**/*.ts", "**/*.md", "**/*.mdx", "**/*.scss", "**/*.tsx", "**/*.js", ".eslintrc.js"],
+    "include": ["**/*.ts", "**/*.md", "**/*.mdx", "**/*.tsx", "**/*.js", ".eslintrc.js"],
     "exclude": ["node_modules", ".next", ".vercel", "out"]
 }

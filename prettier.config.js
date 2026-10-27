@@ -30,6 +30,8 @@ const config = {
     plugins: [
         'prettier-plugin-tailwindcss', //must be last
     ],
+    // Tailwind CSS 4 has no JS config: the plugin reads the theme from the stylesheet
+    tailwindStylesheet: './styles/tailwind.css',
 };
 
 module.exports = config;

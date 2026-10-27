@@ -512,7 +512,7 @@ export default function TodoApp() {
             {/* PWA Install Prompt Banner */}
             {showInstallPrompt && (
                 <div className="border-b border-blue-200 bg-blue-50 px-5 py-3">
-                    <div className="mx-auto flex max-w-screen-md items-center justify-between gap-3">
+                    <div className="mx-auto flex max-w-(--breakpoint-md) items-center justify-between gap-3">
                         <div className="flex items-center gap-3">
                             <img
                                 src="/todo.png"
@@ -532,13 +532,13 @@ export default function TodoApp() {
                                         console.error('Install failed:', error);
                                     });
                                 }}
-                                className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1">
+                                className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 focus:outline-hidden">
                                 Install
                             </button>
                             <button
                                 type="button"
                                 onClick={handleDismissInstall}
-                                className="rounded-md px-2 py-1.5 text-sm text-slate-700 hover:bg-slate-100 focus:outline-none"
+                                className="rounded-md px-2 py-1.5 text-sm text-slate-700 hover:bg-slate-100 focus:outline-hidden"
                                 aria-label="Dismiss install prompt">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -557,8 +557,8 @@ export default function TodoApp() {
                 </div>
             )}
 
-            <div className="border-b border-slate-200 bg-white shadow-sm">
-                <div className="mx-auto max-w-screen-md px-5">
+            <div className="border-b border-slate-200 bg-white shadow-xs">
+                <div className="mx-auto max-w-(--breakpoint-md) px-5">
                     <div className="flex items-center justify-between py-3">
                         <Link
                             href="/todo"
@@ -598,7 +598,7 @@ export default function TodoApp() {
                 </div>
             </div>
 
-            <div className="mx-auto max-w-screen-md px-5">
+            <div className="mx-auto max-w-(--breakpoint-md) px-5">
                 <div className="py-6">
                     <div className="mx-auto max-w-3xl">
                         {/* Sections List */}
@@ -612,7 +612,7 @@ export default function TodoApp() {
                                 return (
                                     <div
                                         key={section.id}
-                                        className="rounded-lg bg-white p-3 shadow-sm md:p-4">
+                                        className="rounded-lg bg-white p-3 shadow-xs md:p-4">
                                         {/* Section Header */}
                                         <div className="mb-3 flex items-start justify-between gap-2">
                                             {editingSectionId === section.id ? (
@@ -631,7 +631,7 @@ export default function TodoApp() {
                                                                 cancelEditingSection();
                                                             }
                                                         }}
-                                                        className="flex-1 rounded border border-slate-300 px-2 py-1 text-base font-semibold text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
+                                                        className="flex-1 rounded-sm border border-slate-300 px-2 py-1 text-base font-semibold text-slate-900 focus:border-orange-500 focus:ring-1 focus:ring-orange-200 focus:outline-hidden"
                                                         autoFocus={true}
                                                         onFocus={handleFocus}
                                                         onBlur={handleBlur}
@@ -641,13 +641,13 @@ export default function TodoApp() {
                                                         <button
                                                             type="button"
                                                             onClick={saveEditingSection}
-                                                            className="rounded bg-green-500 px-2.5 py-1 text-xs font-medium text-white hover:bg-green-600">
+                                                            className="rounded-sm bg-green-500 px-2.5 py-1 text-xs font-medium text-white hover:bg-green-600">
                                                             Save
                                                         </button>
                                                         <button
                                                             type="button"
                                                             onClick={cancelEditingSection}
-                                                            className="rounded bg-slate-300 px-2.5 py-1 text-xs font-medium text-slate-700 hover:bg-slate-400">
+                                                            className="rounded-sm bg-slate-300 px-2.5 py-1 text-xs font-medium text-slate-700 hover:bg-slate-400">
                                                             Cancel
                                                         </button>
                                                     </div>
@@ -672,7 +672,7 @@ export default function TodoApp() {
                                                                     moveSectionUp(section.id);
                                                                 }}
                                                                 disabled={index === 0}
-                                                                className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
+                                                                className="rounded-sm p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
                                                                 title="Move up">
                                                                 <svg
                                                                     xmlns="http://www.w3.org/2000/svg"
@@ -692,7 +692,7 @@ export default function TodoApp() {
                                                                     moveSectionDown(section.id);
                                                                 }}
                                                                 disabled={index === sections.length - 1}
-                                                                className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
+                                                                className="rounded-sm p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
                                                                 title="Move down">
                                                                 <svg
                                                                     xmlns="http://www.w3.org/2000/svg"
@@ -712,7 +712,7 @@ export default function TodoApp() {
                                                             onClick={() => {
                                                                 startEditingSection(section.id, section.name);
                                                             }}
-                                                            className="rounded px-2 py-0.5 text-slate-400 hover:text-slate-900"
+                                                            className="rounded-sm px-2 py-0.5 text-slate-400 hover:text-slate-900"
                                                             title="Edit section">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
@@ -727,7 +727,7 @@ export default function TodoApp() {
                                                             onClick={() => {
                                                                 deleteSection(section.id);
                                                             }}
-                                                            className="rounded px-2 py-1 text-slate-400 hover:text-red-500"
+                                                            className="rounded-sm px-2 py-1 text-slate-400 hover:text-red-500"
                                                             title="Delete section">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
@@ -763,7 +763,7 @@ export default function TodoApp() {
                                                     }
                                                 }}
                                                 placeholder="Add item..."
-                                                className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
+                                                className="flex-1 rounded-sm border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:ring-1 focus:ring-orange-200 focus:outline-hidden"
                                                 onFocus={handleFocus}
                                                 onBlur={handleBlur}
                                             />
@@ -772,7 +772,7 @@ export default function TodoApp() {
                                                 onClick={() => {
                                                     addTodo(section.id);
                                                 }}
-                                                className="rounded border border-orange-300 bg-orange-100 px-3 py-1.5 text-sm font-medium text-orange-600 hover:bg-orange-200 focus:outline-none focus:ring-1 focus:ring-orange-300">
+                                                className="rounded-sm border border-orange-300 bg-orange-100 px-3 py-1.5 text-sm font-medium text-orange-600 hover:bg-orange-200 focus:ring-1 focus:ring-orange-300 focus:outline-hidden">
                                                 Add Item
                                             </button>
                                         </div>
@@ -793,7 +793,7 @@ export default function TodoApp() {
                                                     return (
                                                         <div
                                                             key={todo.id}
-                                                            className="flex items-center gap-2 rounded border border-slate-200 bg-slate-50 px-2 py-0.5 transition-colors hover:border-slate-300">
+                                                            className="flex items-center gap-2 rounded-sm border border-slate-200 bg-slate-50 px-2 py-0.5 transition-colors hover:border-slate-300">
                                                             {editingTodoId === todo.id ? (
                                                                 <>
                                                                     <input
@@ -810,7 +810,7 @@ export default function TodoApp() {
                                                                                 cancelEditingTodo();
                                                                             }
                                                                         }}
-                                                                        className="flex-1 rounded border border-slate-300 px-2 py-1 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
+                                                                        className="flex-1 rounded-sm border border-slate-300 px-2 py-1 text-sm text-slate-900 focus:border-orange-500 focus:ring-1 focus:ring-orange-200 focus:outline-hidden"
                                                                         autoFocus={true}
                                                                         onFocus={handleFocus}
                                                                         onBlur={handleBlur}
@@ -822,13 +822,13 @@ export default function TodoApp() {
                                                                             onClick={() => {
                                                                                 saveEditingTodo(section.id);
                                                                             }}
-                                                                            className="rounded bg-green-500 px-2 py-1 text-xs font-medium text-white hover:bg-green-600">
+                                                                            className="rounded-sm bg-green-500 px-2 py-1 text-xs font-medium text-white hover:bg-green-600">
                                                                             Save
                                                                         </button>
                                                                         <button
                                                                             type="button"
                                                                             onClick={cancelEditingTodo}
-                                                                            className="rounded bg-slate-300 px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-400">
+                                                                            className="rounded-sm bg-slate-300 px-2 py-1 text-xs font-medium text-slate-700 hover:bg-slate-400">
                                                                             Cancel
                                                                         </button>
                                                                     </div>
@@ -842,7 +842,7 @@ export default function TodoApp() {
                                                                             onChange={() => {
                                                                                 toggleTodo(section.id, todo.id);
                                                                             }}
-                                                                            className="h-4 w-4 cursor-pointer rounded border-slate-300 text-orange-500 focus:ring-1 focus:ring-orange-200"
+                                                                            className="h-4 w-4 cursor-pointer rounded-sm border-slate-300 text-orange-500 focus:ring-1 focus:ring-orange-200"
                                                                         />
                                                                         <span
                                                                             className={`flex-1 text-sm ${
@@ -861,7 +861,7 @@ export default function TodoApp() {
                                                                                     moveTodoUp(section.id, todo.id);
                                                                                 }}
                                                                                 disabled={todoIndex === 0}
-                                                                                className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
+                                                                                className="rounded-sm p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
                                                                                 title="Move up">
                                                                                 <svg
                                                                                     xmlns="http://www.w3.org/2000/svg"
@@ -884,7 +884,7 @@ export default function TodoApp() {
                                                                                     todoIndex ===
                                                                                     section.todos.length - 1
                                                                                 }
-                                                                                className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
+                                                                                className="rounded-sm p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"
                                                                                 title="Move down">
                                                                                 <svg
                                                                                     xmlns="http://www.w3.org/2000/svg"
@@ -945,7 +945,7 @@ export default function TodoApp() {
                             })}
                         </div>
                         {/* Add Section Form */}
-                        <div className="mt-6 rounded-lg bg-white p-3 shadow-sm md:p-4">
+                        <div className="mt-6 rounded-lg bg-white p-3 shadow-xs md:p-4">
                             <h2 className="mb-2 text-sm font-semibold text-slate-900">Add New Section</h2>
                             <div className="flex flex-col gap-2 sm:flex-row">
                                 <input
@@ -960,20 +960,20 @@ export default function TodoApp() {
                                         }
                                     }}
                                     placeholder="e.g., Shopping, Work Tasks, Personal"
-                                    className="flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-200"
+                                    className="flex-1 rounded-sm border border-slate-300 px-3 py-1.5 text-sm text-slate-900 focus:border-orange-500 focus:ring-1 focus:ring-orange-200 focus:outline-hidden"
                                     onFocus={handleFocus}
                                     onBlur={handleBlur}
                                 />
                                 <button
                                     type="button"
                                     onClick={addSection}
-                                    className="rounded bg-slate-500 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-orange-300">
+                                    className="rounded-sm bg-slate-500 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-slate-600 focus:ring-1 focus:ring-orange-300 focus:outline-hidden">
                                     Add Section
                                 </button>
                             </div>
                         </div>
                         {sections.length === 0 && (
-                            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
+                            <div className="rounded-lg bg-white p-6 text-center shadow-xs">
                                 <p className="text-sm text-slate-500">
                                     No sections yet. Create your first section to get started!
                                 </p>

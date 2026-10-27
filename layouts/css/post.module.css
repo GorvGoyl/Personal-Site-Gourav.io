@@ -1,11 +1,13 @@
-// with minor changes: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-vsc-dark-plus.css
+@reference '../../styles/tailwind.css';
+
+/* with minor changes: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-vsc-dark-plus.css */
 
 .code_block {
     pre[class*='language-'],
     code[class*='language-'] {
         display: block;
         color: #d4d4d4;
-        // font-size: 14px;
+        /* font-size: 14px; */
         @apply text-sm;
         text-shadow: none;
         font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', 'Courier New', monospace;
@@ -46,7 +48,7 @@
         padding: 1rem;
         margin: 0.5rem 0;
         overflow: auto;
-        // background: #282c34;
+        /* background: #282c34; */
         @apply bg-gray-800;
     }
 
@@ -73,7 +75,7 @@
 
     :global(.token.comment),
     :global(.token.prolog) {
-        // color: #6a758a;
+        /* color: #6a758a; */
         @apply text-gray-500;
     }
 
@@ -295,9 +297,9 @@
         white-space: pre;
     }
 
-    // code-title
+    /* code-title */
     :global(.rehype-code-title) {
-        @apply mt-2 rounded-t border border-b-0 border-black bg-black px-4 py-2 font-mono text-sm font-bold text-white;
+        @apply mt-2 rounded-t-sm border border-b-0 border-black bg-black px-4 py-2 font-mono text-sm font-bold text-white;
     }
 
     :global(.rehype-code-title + pre) {

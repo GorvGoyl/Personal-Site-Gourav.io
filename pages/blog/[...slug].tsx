@@ -5,7 +5,7 @@ import { ScrollTopBtn } from '../../components/scrollTop';
 
 import { PHASE_PRODUCTION_BUILD } from 'next/constants';
 import { Author, AuthorImg, ShareComponent } from '../../components/tags';
-import post from '../../layouts/css/post.module.scss';
+import post from '../../layouts/css/post.module.css';
 
 import { getMDXComponent } from 'mdx-bundler/client';
 import type { GetStaticPaths } from 'next';
@@ -20,7 +20,7 @@ import {
     getPostContentFromNotion,
     getPostIdFromSlugFromNotion,
 } from '../../lib/notionUtils';
-import md from '../../styles/md.module.scss';
+import md from '../../styles/md.module.css';
 import type { FrontmatterBlogpost } from '../../types/types';
 const RELATIVE_PATH = '/blog/';
 
@@ -75,7 +75,7 @@ export default function Post(props: Post) {
             <Container layout={LayoutType.Blog}>
                 <BannerChromeExtension />
                 <Navbar link={Links.Blog} />
-                <main className="prose mx-auto max-w-screen-md">
+                <main className="prose mx-auto max-w-(--breakpoint-md)">
                     <article className={`${post.code_block} ${md.css}`}>
                         <header>
                             <h1 className="text-2xl md:text-4xl md:leading-tight">{props.frontmatter.title}</h1>

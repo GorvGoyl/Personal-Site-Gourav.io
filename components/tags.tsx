@@ -27,7 +27,7 @@ export function CopyLink() {
             onClick={handleCopy}
             title={pageURL}
             // onBlur={handleBlur}
-            className="cursor-pointer underline outline-none"
+            className="cursor-pointer underline outline-hidden"
             style={{ fontWeight: 'inherit' }}
             type="button">
             {/* <Icon type={TYPE.link} size="16" className="m-0 mr-4" /> */}
@@ -38,7 +38,7 @@ export function CopyLink() {
 
 export function Video(props: { src: string; className?: string; disableZoom?: boolean }) {
     let cls = '';
-    cls += ' border-solid border-gray-300 shadow border mx-auto';
+    cls += ' border-solid border-gray-300 shadow-sm border mx-auto';
     // add any more classes provided by prop
     if (props.className) {
         cls = `${cls} ${props.className}`;
@@ -71,7 +71,7 @@ export function Img(props: {
 }) {
     let cls = '';
     if (props.type === 'ss') {
-        cls += ' rounded border-solid border-gray-300 border mx-auto text-center shadow';
+        cls += ' rounded-sm border-solid border-gray-300 border mx-auto text-center shadow-sm';
     }
     if (props.type === 'badge') {
         cls += 'm-0 inline mx-2';
@@ -179,7 +179,7 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
             <div>
                 <a
                     ref={shareBtnRef}
-                    className="inline-block select-none font-normal no-underline outline-none hover:no-underline"
+                    className="inline-block font-normal no-underline outline-hidden select-none hover:no-underline"
                     title="Share"
                     tabIndex={0}
                     role="button"
@@ -191,8 +191,8 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
             </div>
             <div
                 className={` ${isPopupShown ? 'absolute' : 'hidden'} ${
-                    props.position === 'bottom' && '!bottom-[-190px]'
-                } bottom-full z-50 origin-top-right rounded border border-gray-300 bg-white shadow focus:outline-none`}
+                    props.position === 'bottom' && 'bottom-[-190px]!'
+                } bottom-full z-50 origin-top-right rounded-sm border border-gray-300 bg-white shadow-sm focus:outline-hidden`}
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
@@ -202,7 +202,7 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
                     role="none">
                     <button
                         // onBlur={handleBlur}
-                        className="flex w-full items-center px-4 py-2 no-underline outline-none hover:bg-gray-100 hover:text-gray-900"
+                        className="flex w-full items-center px-4 py-2 no-underline outline-hidden hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem"
                         type="button"
                         onClick={(e) => {
@@ -229,7 +229,7 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
                                 'width=626,height=626',
                             );
                         }}
-                        className="flex w-full items-center px-4 py-2 no-underline outline-none hover:bg-gray-100 hover:text-gray-900"
+                        className="flex w-full items-center px-4 py-2 no-underline outline-hidden hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem"
                         type="button">
                         <Icon
@@ -248,7 +248,7 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
                 "width=626,height=626"
               );
             }}
-            className="flex items-center w-full no-underline outline-none px-4 py-2   hover:bg-gray-100 hover:text-gray-900"
+            className="flex items-center w-full no-underline outline-hidden px-4 py-2   hover:bg-gray-100 hover:text-gray-900"
             role="menuitem"
             type="button"
           >
@@ -259,7 +259,7 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
                         onClick={handleCopy}
                         title={pageURL}
                         // onBlur={handleBlur}
-                        className="flex w-full items-center px-4 py-2 no-underline outline-none hover:bg-gray-100 hover:text-gray-900"
+                        className="flex w-full items-center px-4 py-2 no-underline outline-hidden hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem"
                         type="button">
                         <Icon
@@ -279,7 +279,7 @@ export function ShareButton(props: { children: any; position: 'top' | 'bottom' }
                                     url: pageURL,
                                 });
                             }}
-                            className="flex w-full items-center px-4 py-2 no-underline outline-none hover:bg-gray-100 hover:text-gray-900"
+                            className="flex w-full items-center px-4 py-2 no-underline outline-hidden hover:bg-gray-100 hover:text-gray-900"
                             role="menuitem">
                             <Icon
                                 type={'link'}
@@ -344,7 +344,7 @@ export function AuthorImg() {
                 <div className="text-[13px] text-gray-700">
                     <a
                         title="Connect with @GorvGoyl on Twitter"
-                        className="hover:orange-underline font-normal text-current no-underline"
+                        className="font-normal text-current no-underline hover:orange-underline"
                         href="https://twitter.com/GorvGoyl"
                         rel="noopener"
                         target="blank">
@@ -353,7 +353,7 @@ export function AuthorImg() {
                     {' · '}
                     <a
                         title="Connect with @GorvGoyl on linkedIn"
-                        className="hover:orange-underline font-normal text-current no-underline"
+                        className="font-normal text-current no-underline hover:orange-underline"
                         href="https://www.linkedin.com/in/gorvgoyl"
                         rel="noopener"
                         target="blank">
@@ -401,7 +401,7 @@ export function Author(props: { date: string | null; views: string }) {
                                 className="stroke-current"
                                 size="14"
                             />
-                            <p className="hover:orange-underline m-0 no-underline">Share</p>
+                            <p className="m-0 no-underline hover:orange-underline">Share</p>
                         </div>
                     </ShareButton>
                 </div>
@@ -437,7 +437,7 @@ export function ShareInlineBtn() {
             <ShareButton position="bottom">
                 <div
                     title="See options to share"
-                    className="flex items-center space-x-1 rounded border border-gray-400 px-1 text-sm hover:bg-gray-100 hover:opacity-80">
+                    className="flex items-center space-x-1 rounded-sm border border-gray-400 px-1 text-sm hover:bg-gray-100 hover:opacity-80">
                     <div>Share</div>
                     <Arrow />
                     {/* <Icon type={"share"} className="stroke-current" size="14" /> */}

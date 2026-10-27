@@ -13,7 +13,7 @@ export function TweetEmbed(Props: { tweetId: string }) {
             <div
                 // keep same width as twitter widget
                 style={{ maxWidth: '550px' }}
-                className="relative w-full rounded-xl border border-gray-300 px-6 pb-3 pt-4 text-gray-300">
+                className="relative w-full rounded-xl border border-gray-300 px-6 pt-4 pb-3 text-gray-300">
                 <div className="absolute right-4 ml-auto">
                     <svg
                         viewBox="328 355 335 276"
@@ -30,16 +30,16 @@ export function TweetEmbed(Props: { tweetId: string }) {
                     <div className="flex items-center">
                         <div className="h-12 w-12 rounded-full bg-gray-300" />
                         <div className="ml-2 flex flex-col space-y-2">
-                            <div className="h-3 w-16 rounded bg-gray-300" />
-                            <div className="h-2 w-16 rounded bg-gray-300" />
+                            <div className="h-3 w-16 rounded-sm bg-gray-300" />
+                            <div className="h-2 w-16 rounded-sm bg-gray-300" />
                         </div>
                     </div>
                     <div className="mt-6 space-y-3">
-                        <div className="h-2 w-3/4 rounded bg-gray-300" />
-                        <div className="h-2 rounded bg-gray-300" />
-                        <div className="h-2 w-5/6 rounded bg-gray-300" />
+                        <div className="h-2 w-3/4 rounded-sm bg-gray-300" />
+                        <div className="h-2 rounded-sm bg-gray-300" />
+                        <div className="h-2 w-5/6 rounded-sm bg-gray-300" />
                     </div>
-                    <div className="mb-3 mt-4 h-px w-full rounded bg-gray-300" />
+                    <div className="mt-4 mb-3 h-px w-full rounded-sm bg-gray-300" />
                     <div className="flex space-x-5">
                         <div>
                             <svg

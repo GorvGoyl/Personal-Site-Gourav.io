@@ -178,7 +178,7 @@ export function FullYearCalendar() {
                     return (
                         <div
                             key={month.name}
-                            className="rounded-lg border p-3 shadow-sm">
+                            className="rounded-lg border p-3 shadow-xs">
                             <h3 className="mb-2 text-center text-lg font-medium">{month.name}</h3>
                             <div className="grid grid-cols-7 text-xs font-semibold">
                                 {DAYS_IN_WEEK.map((day) => {
@@ -212,7 +212,7 @@ export function FullYearCalendar() {
                                                         {day ? day.date : ''}
                                                     </div>
                                                     {day && notes[formatDateKey(day)] && (
-                                                        <div className="pointer-events-none absolute bottom-full left-1/2 z-10 w-max -translate-x-1/2 transform rounded bg-amber-100 px-1 text-left text-[10px] shadow-lg">
+                                                        <div className="pointer-events-none absolute bottom-full left-1/2 z-10 w-max -translate-x-1/2 transform rounded-sm bg-amber-100 px-1 text-left text-[10px] shadow-lg">
                                                             <span>{notes[formatDateKey(day)]}</span>
                                                             <button
                                                                 type="button"

@@ -31,7 +31,7 @@ export function Popup({ isOpen, onClose, children }: PopupProps) {
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
             onClick={onClose}>
             <div
                 className="mx-4 max-w-[90vw] overflow-x-auto rounded-lg bg-white p-6"

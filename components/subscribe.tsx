@@ -140,7 +140,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }) {
 
     return (
         // `inline-block` to avoid margin-collapse
-        <div className="mb-4 mt-8 inline-block w-full rounded border border-yellow-500 bg-yellow-50 p-6">
+        <div className="mt-8 mb-4 inline-block w-full rounded-sm border border-yellow-500 bg-yellow-50 p-6">
             <h5 className="text-lg font-bold md:text-xl">{text[type].title}</h5>
             <p className="my-1">{text[type].desc}</p>
             <div className="absolute left-1/2 z-50 mx-auto">
@@ -150,7 +150,7 @@ export function SubscribeForm(Props: { type: FORMTYPE }) {
                 />
             </div>
             <form
-                className="relative mb-4 mt-5 flex items-center"
+                className="relative mt-5 mb-4 flex items-center"
                 onSubmit={() => {
                     return subscribe;
                 }}>
@@ -167,13 +167,13 @@ export function SubscribeForm(Props: { type: FORMTYPE }) {
                     title="Subscribe to Gourav's newsletter"
                     required={true}
                     disabled={form.state === 'loading'}
-                    className={`w-full rounded-l-md border-gray-300 bg-white px-4 py-1 outline-none focus:ring-1 focus:ring-yellow-400 ${
+                    className={`w-full rounded-l-md border-gray-300 bg-white px-4 py-1 outline-hidden focus:ring-1 focus:ring-yellow-400 ${
                         form.state === 'loading' && 'cursor-not-allowed hover:opacity-70'
                     }`}
                 />
                 <button
                     tabIndex={0}
-                    className={`rounded-r-md bg-gray-800 px-4 py-1 text-white outline-none focus:ring-1 focus:ring-yellow-400 ${
+                    className={`rounded-r-md bg-gray-800 px-4 py-1 text-white outline-hidden focus:ring-1 focus:ring-yellow-400 ${
                         form.state === 'loading' && 'cursor-not-allowed hover:opacity-70'
                     }`}
                     type="submit"

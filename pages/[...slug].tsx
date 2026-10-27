@@ -9,10 +9,10 @@ import MDXComponents from '../components/mdxComponents';
 import { Links, Navbar } from '../components/navbar';
 import { ScrollTopBtn } from '../components/scrollTop';
 import { AuthorImg, ShareComponent } from '../components/tags';
-import project from '../layouts/css/project.module.scss';
+import project from '../layouts/css/project.module.css';
 import { getMdPostSlugs, getPost } from '../lib/localContentUtils';
 import { initOutlinePosition } from '../lib/mdx';
-import md from '../styles/md.module.scss';
+import md from '../styles/md.module.css';
 import type { FrontmatterProject } from '../types/types';
 
 export default function Project(props: { matter: FrontmatterProject; source: string }) {
@@ -41,7 +41,7 @@ export default function Project(props: { matter: FrontmatterProject; source: str
             <Container layout={LayoutType.Blog}>
                 <BannerChromeExtension />
                 <Navbar link={Links.Blog} />
-                <main className="prose mx-auto max-w-screen-md">
+                <main className="prose mx-auto max-w-(--breakpoint-md)">
                     <article className={`${project.css} ${md.css}`}>
                         <MDX components={MDXComponents as any} />
                     </article>

@@ -107,7 +107,7 @@ function EditMode(props: EditModeProps) {
                     <button type="button" onClick={() => setEditMin((v) => Math.min(99, v + 1))} className={stepBtnClass} aria-label="Increase minutes">
                         +
                     </button>
-                    <span className="w-[30vw] sm:w-[10rem] text-center">{String(editMin).padStart(2, '0')}</span>
+                    <span className="w-[30vw] sm:w-40 text-center">{String(editMin).padStart(2, '0')}</span>
                     <button type="button" onClick={() => setEditMin((v) => Math.max(0, v - 1))} className={stepBtnClass} aria-label="Decrease minutes">
                         -
                     </button>
@@ -117,7 +117,7 @@ function EditMode(props: EditModeProps) {
                     <button type="button" onClick={() => setEditSec((v) => Math.min(59, v + 1))} className={stepBtnClass} aria-label="Increase seconds">
                         +
                     </button>
-                    <span className="w-[30vw] sm:w-[10rem] text-center">{String(editSec).padStart(2, '0')}</span>
+                    <span className="w-[30vw] sm:w-40 text-center">{String(editSec).padStart(2, '0')}</span>
                     <button type="button" onClick={() => setEditSec((v) => Math.max(0, v - 1))} className={stepBtnClass} aria-label="Decrease seconds">
                         -
                     </button>

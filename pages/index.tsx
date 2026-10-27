@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 function LinkStyle({ children }: { children: React.ReactNode }) {
     return (
-        <span className="hover:orange-underline inline-block cursor-pointer whitespace-pre text-left font-[400] underline focus:outline-none">
+        <span className="hover:orange-underline inline-block cursor-pointer whitespace-pre text-left font-normal underline focus:outline-hidden">
             {children}
         </span>
     );
@@ -33,7 +33,7 @@ export default function Home() {
                                 title="Homepage"
                                 className="no-underline hover:no-underline">
                                 <h1
-                                    className="mb-4 bg-clip-text pb-3 text-3xl font-bold tracking-wide text-transparent md:text-5xl" // bg-gradient-to-r from-blue-500 to-emerald-400
+                                    className="mb-4 bg-clip-text pb-3 text-3xl font-bold tracking-wide text-transparent md:text-5xl" // bg-linear-to-r from-blue-500 to-emerald-400
                                     style={{
                                         backgroundImage: 'linear-gradient(90deg,#ff4d4d,#f9cb28)',
                                     }}>
@@ -112,7 +112,7 @@ export default function Home() {
                             </a>
                             <div className="not-prose space-y-6">
                                 {/* Jetwriter AI */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <a
                                             href="https://jetwriter.ai"
@@ -140,7 +140,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Notion Boost */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <Link
                                             href="/notion-boost"
@@ -181,7 +181,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Shortcut Menubar */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <a
                                             href="https://marketplace.visualstudio.com/items?itemName=jerrygoyal.shortcut-menu-bar"
@@ -223,7 +223,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Clone Wars */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <Link
                                             href="/clone-wars"
@@ -263,7 +263,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Devtools */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <Link
                                             href="/devtools"
@@ -279,7 +279,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Todo App */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <Link
                                             href="/todo"
@@ -296,7 +296,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Timer */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <Link
                                             href="/timer"
@@ -312,7 +312,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Werewolf */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <a
                                             href="https://werewolf.gourav.io"
@@ -331,7 +331,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Calendar */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <Link
                                             href="/calendar"
@@ -347,7 +347,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Gourav.io */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
                                         <Link
                                             href="/"
@@ -399,7 +399,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Easypie App */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <div className="flex items-center gap-2">
                                             <a
@@ -418,7 +418,7 @@ export default function Home() {
                                 </div>
 
                                 {/* ChatGPT Message AI */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <div className="flex items-center gap-2">
                                             <div
@@ -438,7 +438,7 @@ export default function Home() {
                                 </div>
 
                                 {/* Gimme Summary AI */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <div className="flex items-center gap-2">
                                             <div
@@ -458,7 +458,7 @@ export default function Home() {
                                 </div>
 
                                 {/* EvrCare */}
-                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                                     <div className="mb-3">
                                         <div className="flex items-center gap-2">
                                             <a
