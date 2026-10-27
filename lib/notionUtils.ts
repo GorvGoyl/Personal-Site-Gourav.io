@@ -1,5 +1,4 @@
 
-import toc from "@jsdevtools/rehype-toc";
 import { Client, isFullDatabase } from "@notionhq/client";
 
 import type { ImageBlockObjectResponse, PageObjectResponse, RichTextItemResponse, VideoBlockObjectResponse } from "@notionhq/client";
@@ -17,6 +16,7 @@ import { NOTION_API_KEY, NOTION_BLOGPOSTS_DB } from "./envVar";
 import { downloadFile } from "./fileUtils";
 import { headingLink } from "./localContentUtils";
 import { notionPageToMarkdown } from "./notionToMarkdown";
+import { rehypeOutline } from "./rehypeOutline";
 import { hashCode, retryWithExponentialBackoff } from "./utils";
 const notionClient = new Client({ auth: NOTION_API_KEY });
 
@@ -363,17 +363,12 @@ const convertMdxStringToCode = async (
           },
         ],
         [
-          toc,
+          rehypeOutline,
           {
-            headings: ["h1", "h2", "h3", "h4", "h5", "h6"],
-            cssClasses: {
-              toc: `page-outline ${frontmatter.desktopOutline && "mobile"}`, // Change the CSS class for the TOC
-              link: `page-link ${frontmatter.mobileOutline && "mobile"}`, // Change the CSS class for links in the TOC
-            },
-            customizeTOC: (toc: any) => {
-              // whether to show toc based on frontmatter value
-              return frontmatter.desktopOutline;
-            },
+            // whether to show toc based on frontmatter value
+            show: frontmatter.desktopOutline,
+            navClass: `page-outline ${frontmatter.desktopOutline && "mobile"}`, // Change the CSS class for the TOC
+            linkClass: `page-link ${frontmatter.mobileOutline && "mobile"}`, // Change the CSS class for links in the TOC
           },
         ],
       ] as any;

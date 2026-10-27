@@ -51,7 +51,7 @@ Always use `pnpm`, never `npm` or `yarn`. This applies to installing dependencie
 
 ### MDX Processing Pipeline
 
-Content goes through: remark-gfm → rehype-slug → rehype-code-titles → rehype-prism-plus → rehype-autolink-headings → rehype-toc
+Content goes through: remark-gfm → rehype-slug → rehype-code-titles → rehype-prism-plus → rehype-autolink-headings → rehypeOutline (`lib/rehypeOutline.ts`, the "Post Outline" box)
 
 ## Testing
 

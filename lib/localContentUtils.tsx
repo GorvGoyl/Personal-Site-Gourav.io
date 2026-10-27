@@ -1,4 +1,3 @@
-import toc from '@jsdevtools/rehype-toc';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { h } from 'hastscript';
@@ -11,6 +10,7 @@ import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import type { FrontmatterProject } from '../types/types';
+import { rehypeOutline } from './rehypeOutline';
 
 function getMDFoldersList(baseDir: string): string[][] {
     const folders = [] as string[][];
@@ -132,20 +132,12 @@ export async function getPost(
                     },
                 ],
                 [
-                    toc,
+                    rehypeOutline,
                     {
-                        headings: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-                        cssClasses: {
-                            toc: `page-outline ${shouldAddMobileToc && 'mobile'}`, // Change the CSS class for the TOC
-                            link: `page-link ${shouldAddMobileToc && 'mobile'}`, // Change the CSS class for links in the TOC
-                        },
-                        customizeTOC: (toc: any) => {
-                            // whether to show toc based on frontmatter value
-                            if (shouldAddToc) {
-                                return true;
-                            }
-                            return false;
-                        },
+                        // whether to show toc based on frontmatter value
+                        show: shouldAddToc,
+                        navClass: `page-outline ${shouldAddMobileToc && 'mobile'}`, // Change the CSS class for the TOC
+                        linkClass: `page-link ${shouldAddMobileToc && 'mobile'}`, // Change the CSS class for links in the TOC
                     },
                 ],
             ] as any;
