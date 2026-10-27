@@ -1,6 +1,7 @@
 import Header from '../../components/Header';
 import { Container, LayoutType } from '../../components/layout';
 import { Links, Navbar } from '../../components/navbar';
+import { Today } from '../../components/Today';
 
 function Privacy() {
     return (
@@ -16,8 +17,7 @@ function Privacy() {
                     <header>
                         <h1>Privacy Policy</h1>
                         <p className="text-gray-600">
-                            Last Updated:{' '}
-                            {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                            Last Updated: <Today />
                         </p>
                     </header>
 
