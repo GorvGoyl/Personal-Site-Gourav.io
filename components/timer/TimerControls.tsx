@@ -58,7 +58,17 @@ function StartPauseButton(props: {
             onClick={props.onStart}
             className={`${btnBase} bg-blue-600 text-white hover:bg-blue-700`}
         >
-            {props.isFinished ? 'Restart' : props.isIdle ? 'Start' : 'Resume'}
+            {startLabel(props)}
         </button>
     );
+}
+
+function startLabel(props: { isFinished: boolean; isIdle: boolean }) {
+    if (props.isFinished) {
+        return 'Restart';
+    }
+    if (props.isIdle) {
+        return 'Start';
+    }
+    return 'Resume';
 }

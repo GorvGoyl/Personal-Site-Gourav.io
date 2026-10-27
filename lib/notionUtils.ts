@@ -240,16 +240,14 @@ const imgTransformer = async (
   if (imgBlock.has_children) {
     throw new Error("unhandled case: imgBlock has children");
   }
-  let mediaUrl = "",
-    captionPlain = "";
   const src = "aws-s3";
   if (imgBlock.image.type === "external") {
     throw new Error(`External Image found! URL: ${imgBlock.image.external.url} on article: ${slugLowercase}`)
   }
 
-  mediaUrl = imgBlock.image.file.url;
-    
-  captionPlain = imgBlock.image.caption
+  const mediaUrl = imgBlock.image.file.url;
+
+  const captionPlain = imgBlock.image.caption
     .map((item) => {return item.plain_text})
     .join("")
     .trim();
@@ -278,16 +276,14 @@ const videoTransformer = async (
   if (videoBlock.has_children) {
     throw new Error("unhandled case: videoBlock has children");
   }
-  let mediaUrl = "",
-    captionPlain = "";
   const src = "aws-s3";
   if (videoBlock.video.type === "external") {
     throw new Error(`External Video found! URL: ${videoBlock.video.external.url} on article: ${slugLowercase}`);
   }
 
-  mediaUrl = videoBlock.video.file.url;
-   
-  captionPlain = videoBlock.video.caption
+  const mediaUrl = videoBlock.video.file.url;
+
+  const captionPlain = videoBlock.video.caption
     .map((item) => {return item.plain_text})
     .join("")
     .trim();
@@ -321,8 +317,6 @@ const getDestMediaInfoFromURL = (
   mediaUrl: string,
   slugLowercase: string,
 ) => {
-  let destFileName = "";
-  
     /** ex: ['Untitled', 'png'] */
     const srcFile = mediaUrl
       .split("?")[0]
@@ -336,7 +330,7 @@ const getDestMediaInfoFromURL = (
     /** calc hash from url ending with file. ex: 749325831 */
     const hash = hashCode(mediaUrl.split("?")[0]).toString();
     /** ex: Untitled--1163d970-85c3-462c-ac0d-b2b86495539b.png */
-    destFileName = `${srcFileName}--${hash}.${fileExt}`;
+    const destFileName = `${srcFileName}--${hash}.${fileExt}`;
   
 
   if (!destFileName) {
@@ -347,7 +341,7 @@ const getDestMediaInfoFromURL = (
   /**
    * ex: Users/gogo/Documents/github/Personal-Site-Gourav.io/public/blog/git-cheatsheet/Untitled--1163d970-85c3-462c-ac0d-b2b86495539b.png
    */
-  const mediaDestination = join(process.cwd(), "public", mediaRelativePath);
+  const mediaDestination = join(/*turbopackIgnore: true*/ process.cwd(), "public", mediaRelativePath);
 
   return { mediaRelativePath, mediaDestination, destFileName };
 };

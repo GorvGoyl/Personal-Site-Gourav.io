@@ -54,7 +54,9 @@ function generateRSS() {
 
         feed.addItem({
           title: frontmatter.title,
-          id: frontmatter.title,
+          // atom ids must be URLs; the title stays the rss guid so existing subscribers don't see posts again
+          id: postURL,
+          guid: frontmatter.title,
           link: postURL,
           description: frontmatter.desc,
           // content: html + postText,

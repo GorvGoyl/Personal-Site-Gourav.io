@@ -91,10 +91,10 @@ export async function getPost(
     imgOutputRelativeDir: string,
 ): Promise<{ matter: { [key: string]: any }; source: string }> {
     // create full path from relative paths
-    const mdFilePath = join(process.cwd(), mdRelativeDir, mdFile);
-    const imgOutDir = path.join(process.cwd(), 'public', imgOutputRelativeDir);
+    const mdFilePath = join(/*turbopackIgnore: true*/ process.cwd(), mdRelativeDir, mdFile);
+    const imgOutDir = path.join(/*turbopackIgnore: true*/ process.cwd(), 'public', imgOutputRelativeDir);
 
-    const mdDir = join(process.cwd(), mdRelativeDir);
+    const mdDir = join(/*turbopackIgnore: true*/ process.cwd(), mdRelativeDir);
 
     const fileContents = fs.readFileSync(mdFilePath, 'utf8');
 

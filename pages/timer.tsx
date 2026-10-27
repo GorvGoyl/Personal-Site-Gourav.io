@@ -122,7 +122,9 @@ export default function TimerPage() {
             setRemainingSeconds(totalSeconds);
         }
 
-        if (startFrom <= 0) return;
+        if (startFrom <= 0) {
+            return;
+        }
 
         getOrCreateAudioContext(audioContextRef);
         setIsRunning(true);

@@ -84,7 +84,7 @@ type Path = {
     };
 };
 export const getStaticPaths: GetStaticPaths = () => {
-    const postsDirectory = join(process.cwd(), 'content', 'projects');
+    const postsDirectory = join(/*turbopackIgnore: true*/ process.cwd(), 'content', 'projects');
 
     const slugsArr = getMdPostSlugs(postsDirectory);
 
