@@ -56,3 +56,6 @@ docs/superpowers
 
 # env files hold secrets; set variables in Vercel instead
 .env
+
+# editor settings stay local (the repo is no longer set up for VS Code)
+.vscode/
