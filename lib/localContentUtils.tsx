@@ -102,7 +102,6 @@ export async function getPost(
 
     const frontmatter = data as FrontmatterProject;
     const shouldAddToc = frontmatter.desktopOutline;
-    const shouldAddMobileToc = frontmatter.mobileOutline;
 
     if (process.platform === 'win32') {
         process.env.ESBUILD_BINARY_PATH = path.join(process.cwd(), 'node_modules', 'esbuild', 'esbuild.exe');
@@ -131,15 +130,8 @@ export async function getPost(
                         content: headingLink,
                     },
                 ],
-                [
-                    rehypeOutline,
-                    {
-                        // whether to show toc based on frontmatter value
-                        show: shouldAddToc,
-                        navClass: `page-outline ${shouldAddMobileToc && 'mobile'}`, // Change the CSS class for the TOC
-                        linkClass: `page-link ${shouldAddMobileToc && 'mobile'}`, // Change the CSS class for links in the TOC
-                    },
-                ],
+                // whether to show toc based on frontmatter value
+                [rehypeOutline, { show: shouldAddToc }],
             ] as any;
 
             return options;

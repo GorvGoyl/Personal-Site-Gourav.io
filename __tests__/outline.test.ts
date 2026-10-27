@@ -3,9 +3,9 @@ import { h } from 'hastscript';
 import { describe, expect, it } from 'vitest';
 import { rehypeOutline } from '../lib/rehypeOutline';
 
-/** adds the outline to the page as blog posts get it, and returns the outline */
+/** adds the outline to the page and returns the outline */
 function outlineOf(page: Root): Element {
-    rehypeOutline({ show: true, navClass: 'page-outline mobile', linkClass: 'page-link mobile' })(page);
+    rehypeOutline({ show: true })(page);
     return page.children[0] as Element;
 }
 
@@ -41,13 +41,13 @@ describe('rehypeOutline', () => {
             h('blockquote', [h('h3', 'No id')]),
         ]);
         expect(outlineOf(page)).toEqual(
-            h('nav', { className: 'page-outline mobile' }, [
+            h('nav', { className: 'page-outline' }, [
                 h('ol', { className: 'toc-level toc-level-1' }, [
                     h('li', { className: 'toc-item toc-item-h2' }, [
-                        h('a', { className: 'page-link mobile page-link mobile-h2', href: '#install' }, 'Install pnpm'),
+                        h('a', { className: 'page-link page-link-h2', href: '#install' }, 'Install pnpm'),
                         h('ol', { className: 'toc-level toc-level-2' }, [
                             h('li', { className: 'toc-item toc-item-h3' }, [
-                                h('a', { className: 'page-link mobile page-link mobile-h3', href: '#' }, 'No id'),
+                                h('a', { className: 'page-link page-link-h3', href: '#' }, 'No id'),
                             ]),
                         ]),
                     ]),
@@ -65,13 +65,13 @@ describe('rehypeOutline', () => {
         expect(outlineLinesOf('h2', 'h4', 'h5', 'h3', 'h4')).toEqual(['h2', '  h4', '    h5', '    h3', '      h4']);
     });
 
-    it('adds an empty list to a page without headings, and nothing when not shown', () => {
-        expect(outlineOf(h(null, [h('p', 'text')]))).toEqual(
-            h('nav', { className: 'page-outline mobile' }, [h('ol', { className: 'toc-level toc-level-1' })]),
-        );
+    it('adds nothing to a page without headings, or when not shown', () => {
+        const withoutHeadings = h(null, [h('p', 'text')]);
+        rehypeOutline({ show: true })(withoutHeadings);
+        expect(withoutHeadings).toEqual(h(null, [h('p', 'text')]));
 
         const page = h(null, [h('h2', { id: 'title' }, 'Title')]);
-        rehypeOutline({ show: false, navClass: 'page-outline', linkClass: 'page-link' })(page);
+        rehypeOutline({ show: false })(page);
         expect(page).toEqual(h(null, [h('h2', { id: 'title' }, 'Title')]));
     });
 });

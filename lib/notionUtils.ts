@@ -196,7 +196,6 @@ const parseFrontmatterFromPost = (page: PageObjectResponse) => {
     preview: (page.properties['Preview'] as PostMetaDataCheckboxType).checkbox,
     published: (page.properties['Published'] as PostMetaDataCheckboxType).checkbox,
     desktopOutline: (page.properties['Desktop outline'] as PostMetaDataCheckboxType).checkbox,
-    mobileOutline: (page.properties['Mobile outline'] as PostMetaDataCheckboxType).checkbox,
   };
 
   const fmParsed = FrontmatterBlogpostSchema.parse(frontMatter);
@@ -362,15 +361,8 @@ const convertMdxStringToCode = async (
             content: headingLink,
           },
         ],
-        [
-          rehypeOutline,
-          {
-            // whether to show toc based on frontmatter value
-            show: frontmatter.desktopOutline,
-            navClass: `page-outline ${frontmatter.desktopOutline && "mobile"}`, // Change the CSS class for the TOC
-            linkClass: `page-link ${frontmatter.mobileOutline && "mobile"}`, // Change the CSS class for links in the TOC
-          },
-        ],
+        // whether to show toc based on frontmatter value
+        [rehypeOutline, { show: frontmatter.desktopOutline }],
       ] as any;
 
       return options;

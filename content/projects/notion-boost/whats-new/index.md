@@ -3,7 +3,6 @@ title: "Notion Boost - What's new?"
 desc: "See what's new in the latest update of Notion Boost browser extension"
 date: "09-12-2020"
 desktopOutline: true
-mobileOutline: false
 ---
 
 import logo from "../img/logo.png";

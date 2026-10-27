@@ -3,7 +3,6 @@ title: "Notion Boost - Browser extension to make Notion more productive with ton
 desc: "Boost Notion productivity with 20+ customizations like outline,small text full width for all,back to top button,hide slash command menu etc"
 date: "09-12-2020"
 desktopOutline: true
-mobileOutline: false
 ---
 
 import logo from "./img/logo.svg";

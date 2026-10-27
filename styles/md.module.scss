@@ -22,11 +22,7 @@
         @apply break-words;
     }
 
-    // contents / toc
-    :global(.page-outline.mobile) {
-        // set for mobile view
-        @apply visible block xl:fixed xl:block;
-    }
+    // contents / toc: hidden below xl
     :global(.page-outline) {
         &:before {
             content: 'Post Outline';
