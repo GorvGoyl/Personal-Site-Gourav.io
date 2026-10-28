@@ -196,14 +196,6 @@ export function Social() {
                     href="https://ko-fi.com/gorvgoyl"
                     title="Donate on Ko-fi">
                     donating on Ko-fi
-                </a>{' '}
-                or{' '}
-                <a
-                    target={'_blank'}
-                    rel="noopener"
-                    href="https://www.patreon.com/gorvgoyl"
-                    title="Become my patron on Patreon">
-                    becoming my patron
                 </a>
             </p>
 
