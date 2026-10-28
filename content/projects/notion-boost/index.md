@@ -1,6 +1,6 @@
 ---
 title: "Notion Boost - Browser extension to make Notion more productive with tons of features"
-desc: "Boost Notion productivity with 20+ customizations like outline,small text full width for all,back to top button,hide slash command menu etc"
+desc: "Boost Notion productivity with 20+ customizations like a sticky outline, small text and full width for all pages, a scroll to top button, hiding the slash command menu, and more"
 date: "09-12-2020"
 desktopOutline: true
 ---
@@ -9,13 +9,9 @@ import logo from "./img/logo.svg";
 import boldertext from "./img/boldertext.gif";
 import commenthide from "./img/commenthide.gif";
 import disableslashmenu from "./img/disableslashmenu.gif";
-import header from "./img/header.jpg";
-import helpbtn from "./img/helpbtn.gif";
 import hideslash from "./img/hideslash.gif";
 import outline from "./img/outline.gif";
-import firefox_icon from "./img/firefox_icon.png";
 import scrollbtn from "./img/scrollbtn.gif";
-import toggle from "./img/toggle.gif";
 import showHoverText from "./img/showHoverText.gif";
 import leftAlignImage from "./img/leftAlignImage.gif";
 import hideHiddenColumns from "./img/hideHiddenColumns.gif";
@@ -29,14 +25,13 @@ import hideoutline from "./img/hideoutline.gif";
 import openfullpage from "./img/openfullpage.gif";
 import narrowspace from "./img/narrowspace.gif";
 import indentation_lines from "./img/indentation_lines.jpg";
-import rollup_clickable from "./img/rollup_clickable.jpg";
 import image_frame from "./img/image_frame.gif";
 
 <Title logo={logo} txt="Notion Boost" homeURL = "/notion-boost" />
 
 <span className="lead">
-  Chrome and Firefox extension to make [Notion](https://notion.so) more productive and less distractive. Add 20+ customizations to Notion like sticky
-  outline, small text & full width by default,scroll to top button, hide slash
+  Chrome and Firefox extension to make [Notion](https://www.notion.com) more productive and less distracting. Add 20+ customizations to Notion like a sticky
+  outline, small text & full width by default, a scroll to top button, hiding the slash
   command menu, and more.
 </span>
 
@@ -59,11 +54,20 @@ import image_frame from "./img/image_frame.gif";
   
 Show sticky outline (table of contents) for pages that have headings or sub-headings. The outline will be shown on the right side of the page. Very useful for navigating a page with lots of content.
 
+It lists every heading, even on long pages where Notion shows only part of the page at a time. Click a heading to jump to it, or click 'Outline' at the top of the outline to scroll back to the top of the page.
+
 <Img src={outline} type="ss" />
 
-You can also temporarily hide the outline on the current page (until the page refresh)
+You can also temporarily hide the outline on the current page with the 'Outline' button at the top of the page (until the page refresh). To turn it off on all pages, use the extension's popup.
 
 <Img src={hideoutline} loading="lazy" type="ss" />
+
+</details>
+
+<details>
+  <summary> <h4>Hide Table of contents</h4></summary>
+
+Hide the table of contents that Notion shows on the right side of pages with headings. Useful when you use Notion Boost's outline instead.
 
 </details>
 
@@ -82,7 +86,7 @@ Set full width for all pages by default. This locally adjusts the width without 
 <details>
   <summary> <h4>'Scroll to top' button</h4></summary>
 
-Added button at the bottom-right corner of page for scrolling back to top. Quite useful for lengthy pages. The button will be visible only when the page has scrolled down a bit.
+Adds a button at the bottom-right corner of the page for scrolling back to the top. Quite useful for lengthy pages. The button shows only once the page has scrolled down a bit.
 
 <Img src={scrollbtn} loading="lazy" type="ss" />
 </details>
@@ -90,7 +94,14 @@ Added button at the bottom-right corner of page for scrolling back to top. Quite
 <details>
   <summary> <h4>Disable AI menu when pressing space key</h4> </summary>
 
-Disable AI command menu when pressing the space key.
+Don't show the Notion AI menu when pressing the space key on an empty line.
+
+</details>
+
+<details>
+  <summary> <h4>Hide AI button from pages</h4> </summary>
+
+Hide the floating Notion AI button from the bottom-right corner of pages.
 
 </details>
 
@@ -116,11 +127,10 @@ Don't show the Slash command menu when pressing '/' key. Slash command menu will
 <Img src={disableslashmenu} loading="lazy" type="ss" />
 </details>
 <details>
-  <summary> <h4>Hide floating help button from all pages</h4></summary>
+  <summary> <h4>Hide slash command placeholder</h4> </summary>
 
-This button is located on the bottom-right corner of pages.
+Hide the placeholder "Press '/' for commands…" on empty lines. Pressing '/' still opens the command menu.
 
-<Img src={helpbtn} loading="lazy" type="ss" />
 </details>
 <details>
   <summary> <h4>Hide 'Hidden columns' in board view</h4></summary>
@@ -202,9 +212,9 @@ Bypass preview and open full pages of a table, board, etc. by default.
 </details>
 
 <details>
-  <summary> <h4>Narrow spacing between list items</h4></summary>
+  <summary> <h4>Narrow spacing between items</h4></summary>
 
-Fit more content on screen by reducing space between items in a list, i.e., bullet, checkbox, toggle list, etc.
+Fit more content on screen by reducing space between items, i.e., headings, lists (bullet, checkbox, toggle list), etc.
 
 <Img src={narrowspace} loading="lazy" type="ss" />
 </details>
@@ -218,26 +228,11 @@ Add vertical indentation lines to bullet and to-do lists.
 </details>
 
 <details>
-  <summary> <h4>Make Rollup URLs clickable</h4></summary>
-
-Make URLs in Rollup property clickable. Works for both: table and as page properties.
-
-<Img src={rollup_clickable} loading="lazy" type="ss" />
-</details>
-
-<details>
   <summary> <h4>Add frame to images</h4></summary>
 
 Add frame around images to make them easily noticeable on page.
 
 <Img src={image_frame} loading="lazy" type="ss" />
-</details>
-
-<details>
-  <summary> <h4>Hide slash command placeholder</h4> </summary>
-
-Hide placeholder: Type '/' for commands
-
 </details>
 
 > Missing something? suggest / feedback on [Github](https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues)
@@ -246,30 +241,30 @@ Hide placeholder: Type '/' for commands
 
 ## ⚙ How to use
 
+Notion Boost works on notion.so, notion.com and public notion.site pages.
+
 #### Chrome / Brave / Chromium
 
-1. Install [Notion Boost Chrome extension](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd).
+1. Install [Notion Boost Chrome extension](https://chromewebstore.google.com/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd).
 2. Visit any notion page.
-3. Click on the extension icon (clickable **only** when you are on a notion page).
-4. A popup menu will appear, you can toggle features from there.
+3. Click on the Notion Boost icon in the toolbar. Don't see it? Click the puzzle-piece Extensions icon and pin Notion Boost.
+4. A popup menu will appear, you can toggle features from there. They apply right away.
 
 #### Microsoft Edge
 
-1. Visit [Notion Boost Chrome extension](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd).
-2. Allow Edge to add extension from Chrome Web Store.
+1. Visit [Notion Boost Chrome extension](https://chromewebstore.google.com/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd).
+2. Allow Edge to add extensions from the Chrome Web Store.
 3. Install Notion Boost extension.
 4. Visit any notion page.
-5. Click on the extension icon (clickable **only** when you are on a notion page).
+5. Click on the Notion Boost icon in the toolbar (or in the Extensions menu).
 6. A popup menu will appear, you can toggle features from there.
 
 #### Firefox
 
 1. Install [Notion Boost Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/notion-boost/).
 2. Visit any notion page.
-3. Click on the extension icon (it will be visible **inside URL bar** only when you are on a notion page).
+3. Click on the Extensions button (puzzle piece) in the toolbar, then on Notion Boost. To keep its icon in the toolbar, choose "Pin to Toolbar" from its ⚙ menu there.
 4. A popup menu will appear, you can toggle features from there.
-
-<Img src={firefox_icon} loading="lazy" type="ss" />
 
 ---
 
@@ -285,8 +280,8 @@ Please file a new issue on [Github](https://github.com/GorvGoyl/Notion-Boost-bro
 
 ## Who's the maker?
 
-I am a tech founder and productivity freak who relies heavily on Notion to organize things and manage work. I made this extension to make Notion more productive (and less distractive) by filling the gaps which I feel are lacked in the product. I hope you find this extension helpful :)
+I'm [Gourav Goyal](https://gourav.io), a tech founder and productivity freak who relies heavily on Notion to organize things and manage work. I made this extension to make Notion more productive (and less distracting) by filling the gaps I feel the product has. I hope you find this extension helpful :)
 
 ## Privacy Policy
 
-Notion Boost extension is an [open-source](https://github.com/GorvGoyl/Notion-Boost-browser-extension) project and has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send any data** from your Notion account.
+Notion Boost extension is an [open-source](https://github.com/GorvGoyl/Notion-Boost-browser-extension) project and has no ads, no analytics, no trackers, and no use of cookies. Furthermore, Notion Boost extension **does not store or send any data** from your Notion account. The outline reads the open page's headings from Notion itself, inside your browser.

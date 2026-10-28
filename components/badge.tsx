@@ -19,7 +19,7 @@ export function ChromeVersion() {
     return (
         <a
             title="Chrome extension link"
-            href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+            href="https://chromewebstore.google.com/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
             target="_blank"
             rel="noopener">
             <img

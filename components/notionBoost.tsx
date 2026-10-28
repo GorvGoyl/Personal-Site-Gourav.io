@@ -70,12 +70,12 @@ export function Badges() {
 
             <ChromeUsers
                 id={'eciepnnimnjaojlkcpdpcgbfkpcagahd'}
-                link={'https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd'}
+                link={'https://chromewebstore.google.com/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd'}
             />
 
             <ChromeStars
                 id={'eciepnnimnjaojlkcpdpcgbfkpcagahd'}
-                link={'https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd'}
+                link={'https://chromewebstore.google.com/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd'}
             />
 
             <FirefoxVersion />
@@ -118,23 +118,8 @@ export function TagDate(props: { children: any }) {
 }
 
 export function Social() {
-    // 👍 Liked this extension? express your love by rating [★★★★★](https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd) on chrome/firefox store.
+    // 👍 Liked this extension? express your love by rating [★★★★★](https://chromewebstore.google.com/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd) on chrome/firefox store.
     const pathName = usePath();
-
-    function PatreonLogo() {
-        return (
-            <span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="#FA5252"
-                    viewBox="0 0 50 50"
-                    width="20"
-                    height="20">
-                    <path d="M15 7H9C8.447 7 8 7.447 8 8v33c0 .553.447 1 1 1h6c.553 0 1-.447 1-1V8C16 7.447 15.553 7 15 7zM31 7A13 13 0 1031 33 13 13 0 1031 7z" />
-                </svg>
-            </span>
-        );
-    }
 
     return (
         <div>
@@ -188,7 +173,7 @@ export function Social() {
             {/* <p>
         ❤ Support Notion Boost by rating ★★★★★ on{" "}
         <A
-          href="https://chrome.google.com/webstore/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
+          href="https://chromewebstore.google.com/detail/notion-boost/eciepnnimnjaojlkcpdpcgbfkpcagahd"
           text="Chrome"
           new
           title="Add review on Chrome store"
@@ -203,16 +188,23 @@ export function Social() {
         store
       </p> */}
 
-            <p className="flex items-center gap-1">
-                <span>
-                    ❤️ Support my work,{' '}
-                    <a
-                        target={'_blank'}
-                        href="https://www.patreon.com/user?u=86740203">
-                        Become my patron
-                    </a>
-                </span>
-                <PatreonLogo />
+            <p>
+                ❤️ Notion Boost is free. Support its development by{' '}
+                <a
+                    target={'_blank'}
+                    rel="noopener"
+                    href="https://ko-fi.com/gorvgoyl"
+                    title="Donate on Ko-fi">
+                    donating on Ko-fi
+                </a>{' '}
+                or{' '}
+                <a
+                    target={'_blank'}
+                    rel="noopener"
+                    href="https://www.patreon.com/gorvgoyl"
+                    title="Become my patron on Patreon">
+                    becoming my patron
+                </a>
             </p>
 
             {/* <div>

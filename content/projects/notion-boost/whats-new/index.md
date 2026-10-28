@@ -11,6 +11,78 @@ import logo from "../img/logo.png";
 
 ## Notion Boost Extension Just Got Updated 🍾
 
+### v3.3.8
+
+<TagDate>Oct 2026</TagDate>
+
+**IMPROVEMENTS 💪**
+
+**The outline lists every heading, even on long pages**  
+ Notion now shows only part of a long page at a time, so the outline missed headings and changed while you scrolled. It now reads the headings from the page's data, which Notion loads anyway. Click any heading to jump to it, even one far down the page. Headings you add, rename or delete show up right away.
+
+**Wide tables fit next to the outline**  
+ Opening the outline no longer pushes wide tables off the page.
+
+**FIXED BUGS 🐞**
+
+- The 'Scroll to top' button shows again.
+- The Outline button shows on public notion.site pages again.
+
+**REMOVED**
+
+- 'Make Rollup URLs clickable': Notion makes these links clickable itself now.
+
+**NEW ❤️**
+
+A Donate button in the popup. Notion Boost is free, and if it saves you time, you can support it on [Ko-fi](https://ko-fi.com/gorvgoyl).
+
+**Firefox users:** this is the first Firefox update since v3.3.1, so it also brings everything from v3.3.2 to v3.3.7 below: support for notion.com, Hide AI button, Hide Table of contents, and all features free.
+
+👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
+
+---
+
+<Social/>
+
+---
+
+## Previous updates
+
+### v3.3.7
+
+<TagDate>Jun 2026</TagDate>
+
+- **Support for notion.com**  
+  Notion moved its app from notion.so to notion.com, where Notion Boost didn't load. It now works on both.
+
+### v3.3.6
+
+<TagDate>Oct 2024</TagDate>
+
+**🎉 NEW FEATURES:**
+
+- **Hide AI button from pages**  
+  Hide the floating Notion AI button from the bottom-right corner of pages. It replaces 'Hide floating help button', since Notion replaced that button with the AI button.
+
+- **Hide Table of contents**  
+  Hide the table of contents that Notion now shows on the right side of pages with headings. Useful when you use Notion Boost's outline instead.
+
+**💪 IMPROVEMENTS:**
+
+- All features are free now, including the ones that used to be `pro`.
+
+### v3.3.2
+
+<TagDate>Aug 2024</TagDate>
+
+- Moved to Manifest V3, the extension platform Chrome now requires, so Notion Boost keeps working in Chrome.
+
+### v3.3.1
+
+<TagDate>Mar 2024</TagDate>
+
+- 🐞 Fixed the outline not showing, after a change in Notion. Thanks to [lx200916](https://github.com/lx200916) for the fix.
+
 ### v3.3.0
 
 <TagDate>Jan 2024</TagDate>
@@ -23,16 +95,6 @@ import logo from "../img/logo.png";
 **FIXED BUGS 🐞**
 
 Fixed issues related to features such as enabling full width by default, hiding the slash menu, removing the notification badge, increasing page height, and setting small text as the default, among others.
-
-👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
-
----
-
-<Social/>
-
----
-
-## Previous updates
 
 ### v3.2.0
 
