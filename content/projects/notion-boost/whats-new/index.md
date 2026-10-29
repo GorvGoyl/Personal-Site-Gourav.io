@@ -11,6 +11,26 @@ import logo from "../img/logo.png";
 
 ## Notion Boost Extension Just Got Updated 🍾
 
+### v3.3.9
+
+<TagDate>Oct 2026</TagDate>
+
+**FIXED BUGS 🐞**
+
+- The outline no longer switches to another page while you hover a link to it.
+- The 'Scroll to top' button shows its arrow on every system: on Linux it showed an empty box.
+- Notion Boost no longer runs in Notion Calendar and Notion Mail, where it broke Calendar's layout.
+
+👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
+
+---
+
+<Social/>
+
+---
+
+## Previous updates
+
 ### v3.3.8
 
 <TagDate>Oct 2026</TagDate>
@@ -37,16 +57,6 @@ import logo from "../img/logo.png";
 A Donate button in the popup. Notion Boost is free, and if it saves you time, you can support it on [Ko-fi](https://ko-fi.com/gorvgoyl).
 
 **Firefox users:** this is the first Firefox update since v3.3.1, so it also brings everything from v3.3.2 to v3.3.7 below: support for notion.com, Hide AI button, Hide Table of contents, and all features free.
-
-👉 Report issues / suggest feature / provide feedback: https://github.com/GorvGoyl/Notion-Boost-browser-extension/issues
-
----
-
-<Social/>
-
----
-
-## Previous updates
 
 ### v3.3.7
 
